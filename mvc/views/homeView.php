@@ -2,17 +2,17 @@
 <html lang="zxx">
 
 <head>
-<?php require_once "block/head.php";?>
+    <?php require_once "block/head.php"; ?>
 </head>
 
 <body>
     <!-- Header Area start  -->
     <header>
-        <?php require_once "block/header.php";?>
-        <?php require_once "block/headerMobile.php";?>
+        <?php require_once "block/header.php"; ?>
+        <?php require_once "block/headerMobile.php"; ?>
     </header>
     <!-- Hero/Intro Slider Start -->
-        <?php require_once "block/slider.php";?>
+    <?php require_once "block/slider.php"; ?>
     <!-- Hero/Intro Slider End -->
 
     <!-- Banner Section Start -->
@@ -115,12 +115,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -143,15 +140,12 @@
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">-10%</span>
-                                            <span class="new">New</span>
+                                                <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -160,7 +154,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">Wooden decorations</a></h5>
                                             <span class="price">
                                                 <span class="new">$38.50</span>
-                                            <span class="old">$48.50</span>
+                                                <span class="old">$48.50</span>
                                             </span>
                                         </div>
                                     </div>
@@ -178,12 +172,9 @@
                                                 <span class="sale">-7%</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -192,7 +183,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">High quality vase bottle</a></h5>
                                             <span class="price">
                                                 <span class="new">$30.50</span>
-                                            <span class="old">$38.00</span>
+                                                <span class="old">$38.00</span>
                                             </span>
                                         </div>
                                     </div>
@@ -209,12 +200,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -238,15 +226,12 @@
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">-5%</span>
-                                            <span class="new">New</span>
+                                                <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -255,7 +240,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">Living & Bedroom Table</a></h5>
                                             <span class="price">
                                                 <span class="new">$38.50</span>
-                                            <span class="old">$40.50</span>
+                                                <span class="old">$40.50</span>
                                             </span>
                                         </div>
                                     </div>
@@ -271,12 +256,9 @@
                                             <span class="badges">
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -301,12 +283,9 @@
                                             <span class="badges">
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -331,12 +310,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -368,12 +344,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -396,15 +369,12 @@
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">-10%</span>
-                                            <span class="new">New</span>
+                                                <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -413,7 +383,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">Wooden decorations</a></h5>
                                             <span class="price">
                                                 <span class="new">$38.50</span>
-                                            <span class="old">$48.50</span>
+                                                <span class="old">$48.50</span>
                                             </span>
                                         </div>
                                     </div>
@@ -431,12 +401,9 @@
                                                 <span class="sale">-7%</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -445,7 +412,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">High quality vase bottle</a></h5>
                                             <span class="price">
                                                 <span class="new">$30.50</span>
-                                            <span class="old">$38.00</span>
+                                                <span class="old">$38.00</span>
                                             </span>
                                         </div>
                                     </div>
@@ -462,12 +429,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -491,15 +455,12 @@
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">-5%</span>
-                                            <span class="new">New</span>
+                                                <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -508,7 +469,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">Living & Bedroom Table</a></h5>
                                             <span class="price">
                                                 <span class="new">$38.50</span>
-                                            <span class="old">$40.50</span>
+                                                <span class="old">$40.50</span>
                                             </span>
                                         </div>
                                     </div>
@@ -524,12 +485,9 @@
                                             <span class="badges">
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -554,12 +512,9 @@
                                             <span class="badges">
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -584,12 +539,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -621,12 +573,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -649,15 +598,12 @@
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">-10%</span>
-                                            <span class="new">New</span>
+                                                <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -666,7 +612,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">Wooden decorations</a></h5>
                                             <span class="price">
                                                 <span class="new">$38.50</span>
-                                            <span class="old">$48.50</span>
+                                                <span class="old">$48.50</span>
                                             </span>
                                         </div>
                                     </div>
@@ -684,12 +630,9 @@
                                                 <span class="sale">-7%</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -698,7 +641,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">High quality vase bottle</a></h5>
                                             <span class="price">
                                                 <span class="new">$30.50</span>
-                                            <span class="old">$38.00</span>
+                                                <span class="old">$38.00</span>
                                             </span>
                                         </div>
                                     </div>
@@ -715,12 +658,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -744,15 +684,12 @@
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">-5%</span>
-                                            <span class="new">New</span>
+                                                <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -761,7 +698,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">Living & Bedroom Table</a></h5>
                                             <span class="price">
                                                 <span class="new">$38.50</span>
-                                            <span class="old">$40.50</span>
+                                                <span class="old">$40.50</span>
                                             </span>
                                         </div>
                                     </div>
@@ -777,12 +714,9 @@
                                             <span class="badges">
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -807,12 +741,9 @@
                                             <span class="badges">
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -837,12 +768,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -874,12 +802,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -902,15 +827,12 @@
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">-10%</span>
-                                            <span class="new">New</span>
+                                                <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -919,7 +841,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">Wooden decorations</a></h5>
                                             <span class="price">
                                                 <span class="new">$38.50</span>
-                                            <span class="old">$48.50</span>
+                                                <span class="old">$48.50</span>
                                             </span>
                                         </div>
                                     </div>
@@ -937,12 +859,9 @@
                                                 <span class="sale">-7%</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -951,7 +870,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">High quality vase bottle</a></h5>
                                             <span class="price">
                                                 <span class="new">$30.50</span>
-                                            <span class="old">$38.00</span>
+                                                <span class="old">$38.00</span>
                                             </span>
                                         </div>
                                     </div>
@@ -968,12 +887,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -997,15 +913,12 @@
                                             </a>
                                             <span class="badges">
                                                 <span class="sale">-5%</span>
-                                            <span class="new">New</span>
+                                                <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -1014,7 +927,7 @@
                                             <h5 class="title"><a href="shop-left-sidebar.html">Living & Bedroom Table</a></h5>
                                             <span class="price">
                                                 <span class="new">$38.50</span>
-                                            <span class="old">$40.50</span>
+                                                <span class="old">$40.50</span>
                                             </span>
                                         </div>
                                     </div>
@@ -1030,12 +943,9 @@
                                             <span class="badges">
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -1060,12 +970,9 @@
                                             <span class="badges">
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -1090,12 +997,9 @@
                                                 <span class="new">New</span>
                                             </span>
                                             <div class="actions">
-                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                                        class="icon-heart"></i></a>
-                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                                        class="icon-size-fullscreen"></i></a>
-                                                <a href="compare.html" class="action compare" title="Compare"><i
-                                                        class="icon-refresh"></i></a>
+                                                <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                                <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                                <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                             </div>
                                             <button title="Add To Cart" class=" add-to-cart">Add
                                                 To Cart</button>
@@ -1188,12 +1092,9 @@
                                     <span class="new">New</span>
                                 </span>
                                 <div class="actions">
-                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                            class="icon-heart"></i></a>
-                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                            class="icon-size-fullscreen"></i></a>
-                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                            class="icon-refresh"></i></a>
+                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                    <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                 </div>
                                 <button title="Add To Cart" class=" add-to-cart">Add
                                     To Cart</button>
@@ -1218,12 +1119,9 @@
                                     <span class="new">New</span>
                                 </span>
                                 <div class="actions">
-                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                            class="icon-heart"></i></a>
-                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                            class="icon-size-fullscreen"></i></a>
-                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                            class="icon-refresh"></i></a>
+                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                    <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                 </div>
                                 <button title="Add To Cart" class=" add-to-cart">Add
                                     To Cart</button>
@@ -1248,12 +1146,9 @@
                                     <span class="new">New</span>
                                 </span>
                                 <div class="actions">
-                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                            class="icon-heart"></i></a>
-                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                            class="icon-size-fullscreen"></i></a>
-                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                            class="icon-refresh"></i></a>
+                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                    <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                 </div>
                                 <button title="Add To Cart" class=" add-to-cart">Add
                                     To Cart</button>
@@ -1278,12 +1173,9 @@
                                     <span class="new">New</span>
                                 </span>
                                 <div class="actions">
-                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                            class="icon-heart"></i></a>
-                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                            class="icon-size-fullscreen"></i></a>
-                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                            class="icon-refresh"></i></a>
+                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                    <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                 </div>
                                 <button title="Add To Cart" class=" add-to-cart">Add
                                     To Cart</button>
@@ -1308,12 +1200,9 @@
                                     <span class="new">New</span>
                                 </span>
                                 <div class="actions">
-                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i
-                                            class="icon-heart"></i></a>
-                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i
-                                            class="icon-size-fullscreen"></i></a>
-                                    <a href="compare.html" class="action compare" title="Compare"><i
-                                            class="icon-refresh"></i></a>
+                                    <a href="wishlist.html" class="action wishlist" title="Wishlist"><i class="icon-heart"></i></a>
+                                    <a href="#" class="action quickview" data-link-action="quickview" title="Quick view" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="icon-size-fullscreen"></i></a>
+                                    <a href="compare.html" class="action compare" title="Compare"><i class="icon-refresh"></i></a>
                                 </div>
                                 <button title="Add To Cart" class=" add-to-cart">Add
                                     To Cart</button>
@@ -1429,19 +1318,15 @@
     <!--  Blog area End -->
 
     <!-- Footer Area Start -->
-        <?php require_once "block/footer.php";?>
+    <?php require_once "block/footer.php"; ?>
     <!-- Footer Area End -->
 
 
     <!-- Modal -->
-        <?php require_once "block/model.php";?>                                    
+    <?php require_once "block/model.php"; ?>
     <!-- Modal end -->
 
-    <script src="./public/js/vendor/vendor.min.js"></script>
-    <script src="./public/js/plugins/plugins.min.js"></script>
-
-    <!-- Main Js -->
-    <script src="./public/js/main.js"></script>
+    <?php require_once "block/jslink.php"; ?>
 </body>
 
 </html>
