@@ -1,7 +1,8 @@
 <?php
 class home extends controller{
     function show($hello){
-        $this->call_view("homeView");
+        $model = $this->call_model("homeModel");
+        $this->call_view("homeView",["homeModel"=>$model]);
     }
 }
 ?>
