@@ -110,12 +110,11 @@
                     <div class="col-md-12 align-self-center">
                         <div class="main-menu manu-color-white">
                             <ul>
-                                <li class="dropdown"><a href="#">Home <i class="ion-ios-arrow-down"></i></a></li>
-                                <li><a href="about.html">About us</a></li>
-                                <li class="dropdown position-static"><a href="#">Shop</li>
+                                <li class="dropdown"><a href="./">Trang Chủ</a></li>
+                                <li class="dropdown"><a href="#">Sản Phẩm<i class="ion-ios-arrow-down"></i></a></li>
                                 <li class="dropdown"><a href="#">Pages <i class="ion-ios-arrow-down"></i></a></li>
-                                <li class="dropdown "><a href="#">Blog <i class="ion-ios-arrow-down"></i></a></li>
-                                <li><a href="contact.html">Contact us</a></li>
+                                <li class="dropdown"><a href="#">Tin Tức</a></li>
+                                <li><a href="#">Liên Hệ</a></li>
                             </ul>
                         </div>
                     </div>
