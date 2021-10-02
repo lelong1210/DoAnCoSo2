@@ -1,4 +1,5 @@
-<div class="footer-area">
+<footer>
+    <div class="footer-area">
         <div class="footer-container">
             <div class="footer-top">
                 <div class="container">
@@ -81,8 +82,7 @@
                                                     <input type="text" value="" tabindex="-1" name="b_6bbb9b6f5827bd842d9640c82_05d85f18ef" />
                                                 </div>
                                                 <div class="clear">
-                                                    <button id="mc-embedded-subscribe" class="button btn-primary" type="submit" name="subscribe" value=""><i
-                                                            class="icon-cursor"></i> Send Mail</button>
+                                                    <button id="mc-embedded-subscribe" class="button btn-primary" type="submit" name="subscribe" value=""><i class="icon-cursor"></i> Send Mail</button>
                                                 </div>
                                             </div>
                                         </form>
@@ -112,3 +112,4 @@
             </div>
         </div>
     </div>
+</footer>

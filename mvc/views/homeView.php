@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="zxx">
-
 <head>
     <?php require_once "block/head.php"; ?>
 </head>
@@ -18,11 +17,11 @@
     <!-- Product tab Area Start -->
     <div class="section product-tab-area">
         <div class="container">
-            <div class="contentProduct" id="contentProduct">
+            <!-- <div class="contentProduct" id="contentProduct"> -->
                 <?php
                     $data["homeModel"]->ShowTypeProduct(); 
                 ?>
-            </div>
+            <!-- </div> -->
         </div>
     </div>
     <!-- Footer Area Start -->
