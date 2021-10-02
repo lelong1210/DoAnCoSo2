@@ -18,27 +18,10 @@
     <!-- Product tab Area Start -->
     <div class="section product-tab-area">
         <div class="container">
-            <div class="row">
-                <div class="col-md-12 text-center" data-aos="fade-up">
-                    <div class="section-title mb-0">
-                        <h2 class="title">Máy Hút Bụi</h2>
-                        <p class="sub-title mb-6">Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore</p>
-                    </div>
-                </div>
-
-                <!-- Tab Start -->
-                <!-- Tab End -->
-            </div>
-            <div class="row">
-                <div class="col">
-                    <div class="tab-content">
-                        <div class="tab-pane fade show active" id="tab-product-new-arrivals">
-                            <div class="row">
-                                <?php $data["homeModel"]->ShowProduct();?>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+            <div class="contentProduct" id="contentProduct">
+                <?php
+                    $data["homeModel"]->ShowTypeProduct(); 
+                ?>
             </div>
         </div>
     </div>
