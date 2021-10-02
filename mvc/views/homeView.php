@@ -3,7 +3,6 @@
 <head>
     <?php require_once "block/head.php"; ?>
 </head>
-
 <body>
     <!-- Header Area start  -->
     <header>
@@ -27,11 +26,6 @@
     <!-- Footer Area Start -->
     <?php require_once "block/footer.php"; ?>
     <!-- Footer Area End -->
-
-
-    <!-- Modal -->
-    <?php require_once "block/model.php"; ?>
-    <!-- Modal end -->
 
     <?php require_once "block/jslink.php"; ?>
 </body>

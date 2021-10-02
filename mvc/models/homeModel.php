@@ -1,5 +1,7 @@
 <?php
 class homeModel{
+    
+    // Function Support View 
     function ShowProduct(){
         echo "<div class='row'>";
             echo "<div 'class='col'>";
