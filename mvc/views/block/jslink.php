@@ -3,3 +3,5 @@
 
 <!-- Main Js -->
 <script src="./public/js/main.js"></script>
+<!-- Main Customs -->
+<script src="./public/js/mainCustom.js"></script>

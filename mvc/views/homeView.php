@@ -28,6 +28,7 @@
     <!-- Footer Area End -->
 
     <?php require_once "block/jslink.php"; ?>
+    
 </body>
 
 </html>
