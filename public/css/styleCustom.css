@@ -1,0 +1,13 @@
+.header-bottom {
+    background-color: rgba(48, 164, 211, 0.87) ;
+    padding: 29px 0;
+}
+.bg-white {
+    background-color: rgba(48, 164, 211, 0.87)!important;
+}
+.offcanvas {
+    background-color: rgba(48, 164, 211, 0.87);
+}
+.header-actions .header-action-btn .header-action-num {
+    background-color: rgba(48, 164, 211, 0.87);
+}
