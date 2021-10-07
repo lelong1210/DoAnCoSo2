@@ -3,7 +3,7 @@
 <head>
     <?php require_once "block/head.php"; ?>
 </head>
-<body>
+<body style="color:red">
     <!-- Header Area start  -->
     <header>
         <?php require_once "block/header.php"; ?>
