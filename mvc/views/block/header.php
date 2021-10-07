@@ -8,7 +8,7 @@
                     <!-- Header Logo Start -->
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="index.html"><img src="http://localhost/DoAnCoSo2/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
+                            <a href="http://localhost/DoAnCoSo2"><img src="http://localhost/DoAnCoSo2/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
@@ -59,7 +59,7 @@
                     <!-- Header Logo Start -->
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="index.html"><img src="http://localhost/DoAnCoSo2/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
+                            <a href="http://localhost/DoAnCoSo2"><img src="http://localhost/DoAnCoSo2/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
@@ -110,8 +110,16 @@
                     <div class="col-md-12 align-self-center">
                         <div class="main-menu manu-color-white">
                             <ul>
-                                <li class="dropdown"><a href="./">Trang Chủ</a></li>
-                                <li class="dropdown"><a href="#">Sản Phẩm<i class="ion-ios-arrow-down"></i></a></li>
+                                <li class="dropdown"><a href="http://localhost/DoAnCoSo2">Trang Chủ</a></li>
+                                <li class="dropdown"><a href="#">Sản Phẩm<i class="ion-ios-arrow-down"></i></a>
+                                    <ul class="sub-menu">
+                                        <li><a href="http://localhost/DoAnCoSo2/khoacuathongminh">Khóa Cửa Thông Minh</a></li>
+                                        <li><a href="http://localhost/DoAnCoSo2/mayhutbui">Máy Hút Bụi</a></li>
+                                        <li><a href="http://localhost/DoAnCoSo2/dieuhoathongminh">Điều Hòa Thông Minh</a></li>
+                                        <li><a href="http://localhost/DoAnCoSo2/denthongminh">Đèn Thông Minh</a></li>
+                                        <li><a href="http://localhost/DoAnCoSo2/camera">Camera</a></li>
+                                    </ul>
+                                </li>
                                 <li class="dropdown"><a href="#">Tin Tức</a></li>
                                 <li class="dropdown"><a href="#">Hỏi Đáp</a></li>
                                 <li><a href="#">Liên Hệ</a></li>

@@ -2,6 +2,7 @@
 <html lang="zxx">
 <head>
     <?php require_once "block/head.php"; ?>
+    <title>Trang Chủ</title>
 </head>
 <body style="color:red">
     <!-- Header Area start  -->

@@ -51,16 +51,14 @@
                         <!-- Start single blog -->
                         <div class="col-md-6 col-lg-2 col-sm-6 mb-lm-30px" data-aos="fade-up" data-aos-delay="600">
                             <div class="single-wedge">
-                                <h4 class="footer-herading">my account</h4>
+                                <h4 class="footer-herading">Tài Khoản</h4>
                                 <div class="footer-links">
                                     <div class="footer-row">
                                         <ul class="align-items-center">
-                                            <li class="li"><a class="single-link" href="my-account.html">My
-                                                    Account</a>
-                                            </li>
-                                            <li class="li"><a class="single-link" href="cart.html">My Cart</a></li>
-                                            <li class="li"><a class="single-link" href="login.html">Login</a></li>
-                                            <li class="li"><a class="single-link" href="wishlist.html">Wishlist</a></li>
+                                            <li class="li"><a class="single-link" href="my-account.html"></a>Tài Khoản Của Tôi</li>
+                                            <li class="li"><a class="single-link" href="cart.html">Giỏ Hàng</a></li>
+                                            <li class="li"><a class="single-link" href="login.html">Đăng Ký</a></li>
+                                            <li class="li"><a class="single-link" href="wishlist.html">Đăng Nhập</a></li>
                                             <li class="li"><a class="single-link" href="checkout.html">Checkout</a></li>
                                         </ul>
                                     </div>
@@ -96,19 +94,6 @@
                 </div>
             </div>
             <div class="footer-bottom">
-                <div class="container">
-                    <div class="row flex-sm-row-reverse">
-                        <div class="col-md-6 text-right">
-                            <div class="payment-link">
-                                <img src="./public/images/icons/payment.png" alt="">
-                            </div>
-                        </div>
-                        <div class="col-md-6 text-left">
-                            <p class="copy-text">Copyright © 2021 <a class="company-name" href="https://hasthemes.com/">
-                                    HasThemes</a>. All Rights Reserved</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </div>

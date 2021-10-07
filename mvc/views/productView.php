@@ -13,7 +13,7 @@
     <!-- Hero/Intro Slider End -->
         <?php 
             if($data["title"] == "overView"){
-                echo "<h1>Tong Quat</h1>";
+                require_once "page/productOverview.php";
             }else{
                 require_once "page/prductDetail.php";
             }
