@@ -55,7 +55,7 @@ class homeModel extends connectDB{
                 echo "<!-- Single Prodect -->";
                 echo "<div class='product'>";
                     echo"<div class='thumb'>";
-                        echo"<a href='./$arrChild[3]' class='image'>";
+                        echo"<a href='./$arrChild[3]/$arrChild[0]' class='image'>";
                             echo"<img src='$arrChild[5]' />";
                             echo"<img class='hover-image' src='$arrChild[5]' />";
                         echo"</a>";
@@ -65,7 +65,7 @@ class homeModel extends connectDB{
                         echo"<button title='Add To Cart' class=' add-to-cart'>Thêm Vào Giỏ Hàng</button>";
                     echo"</div>";
                     echo"<div class='content'>";
-                        echo"<h5 class='title'><a href='./$arrChild[3]'>$arrChild[1]</a></h5>";
+                        echo"<h5 class='title'><a href='./$arrChild[3]/$arrChild[0]'>$arrChild[1]</a></h5>";
                         echo"<span class='price'>";
                             echo"<span class='new'>".number_format($arrChild[2])." đ</span>";
                         echo"</span>";

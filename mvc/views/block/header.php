@@ -8,7 +8,7 @@
                     <!-- Header Logo Start -->
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="index.html"><img src="./public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
+                            <a href="index.html"><img src="http://localhost/DoAnCoSo2/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
@@ -59,7 +59,7 @@
                     <!-- Header Logo Start -->
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="index.html"><img src="./public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
+                            <a href="index.html"><img src="http://localhost/DoAnCoSo2/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->

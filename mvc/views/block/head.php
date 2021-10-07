@@ -17,19 +17,19 @@
 <meta property="og:description" content="Furns - Responsive eCommerce HTML Template" />
 <meta name="robots" content="noindex, follow" />
 <!-- Add site Favicon -->
-<link rel="icon" href="./public/images/logo/logo.jpg" sizes="32x32" />
-<link rel="icon" href="./public/images/logo/logo.jpg" sizes="192x192" />
-<link rel="apple-touch-icon" href="./public/images/logo/logo.jpg" />
-<meta name="msapplication-TileImage" content="./public/images/logo/logo.jpg" />
+<link rel="icon" href="http://localhost/DoAnCoSo2/public/images/logo/logo.jpg" sizes="32x32" />
+<link rel="icon" href="http://localhost/DoAnCoSo2/public/images/logo/logo.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="http://localhost/DoAnCoSo2/public/images/logo/logo.jpg" />
+<meta name="msapplication-TileImage" content="http://localhost/DoAnCoSo2/public/images/logo/logo.jpg" />
 <!-- Structured Data  -->
 
-<link rel="stylesheet" href="./public/css/vendor/vendor.min.css" />
-<link rel="stylesheet" href="./public/css/plugins/plugins.min.css" />
-<link rel="stylesheet" href="./public/css/style.min.css">
+<link rel="stylesheet" href="http://localhost/DoAnCoSo2/public/css/vendor/vendor.min.css" />
+<link rel="stylesheet" href="http://localhost/DoAnCoSo2/public/css/plugins/plugins.min.css" />
+<link rel="stylesheet" href="http://localhost/DoAnCoSo2/public/css/style.min.css">
 
 <!-- Font  -->
-<link rel="stylesheet" href="./public/fonts/fontawesome-free-6.0.0-beta2-web/css/all.min.css">
+<link rel="stylesheet" href="http://localhost/DoAnCoSo2/public/fonts/fontawesome-free-6.0.0-beta2-web/css/all.min.css">
 
 <!-- Main Style -->
 <!-- Style Custom -->
-<link rel="stylesheet" href="./public/css/styleCustom.css">
+<link rel="stylesheet" href="http://localhost/DoAnCoSo2/public/css/styleCustom.css">

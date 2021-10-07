@@ -1,8 +1,15 @@
 <?php
 class khoacuathongminh extends controller{
     function show($params){
-        echo $params;
-        echo " ===>toi Khoa Cua Thong Minh";
+        if($params == "overView" || $params == ""){
+            $khoacuathongminhmodel = $this->call_model("khoacuathongminhModel");
+            $title = "overView";
+            $this->call_view("productView",["khoacuaModel"=>$khoacuathongminhmodel,"title"=>$title]);
+        }else{
+            $khoacuathongminhmodel = $this->call_model("khoacuathongminhModel");
+            $title = "!overView";
+            $this->call_view("productView",["khoacuaModel"=>$khoacuathongminhmodel,"title"=>$title]);            
+        }
     }   
 }
 ?>
