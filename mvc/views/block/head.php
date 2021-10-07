@@ -48,6 +48,8 @@
 <link rel="stylesheet" href="./public/css/plugins/plugins.min.css" />
 <link rel="stylesheet" href="./public/css/style.min.css">
 
+<!-- Font  -->
+<link rel="stylesheet" href="./public/fonts/fontawesome-free-6.0.0-beta2-web/css/all.min.css">
 
 <!-- Main Style -->
 <!-- Style Custom -->

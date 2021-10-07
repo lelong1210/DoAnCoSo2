@@ -14,7 +14,7 @@
     <!-- Hero/Intro Slider End -->
 
     <!-- Product tab Area Start -->
-    <div class="section product-tab-area">
+    <div class="section product-tab-area gbcus">
         <div class="container">
             <!-- <div class="contentProduct" id="contentProduct"> -->
                 <?php

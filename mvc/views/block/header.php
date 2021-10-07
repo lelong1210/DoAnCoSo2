@@ -112,9 +112,10 @@
                             <ul>
                                 <li class="dropdown"><a href="./">Trang Chủ</a></li>
                                 <li class="dropdown"><a href="#">Sản Phẩm<i class="ion-ios-arrow-down"></i></a></li>
-                                <li class="dropdown"><a href="#">Pages <i class="ion-ios-arrow-down"></i></a></li>
                                 <li class="dropdown"><a href="#">Tin Tức</a></li>
+                                <li class="dropdown"><a href="#">Hỏi Đáp</a></li>
                                 <li><a href="#">Liên Hệ</a></li>
+                                <li class="dropdown" id="drakMode"><a><i class="fas fa-exchange-alt"></i></a></li>
                             </ul>
                         </div>
                     </div>

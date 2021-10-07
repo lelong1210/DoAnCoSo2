@@ -5,8 +5,8 @@
             <ul>
                 <li><a href="#"><span class="menu-text">Trang Chủ</span></a></li>
                 <li><a href="#"><span class="menu-text">Sản Phẩm</a></li>
-                <li><a href="#"><span class="menu-text">Pages</span></a></li>
                 <li><a href="#"><span class="menu-text">Tin Tức</span></a></li>
+                <li><a href="#"><span class="menu-text">Hỏi Đáp</span></a></li>
                 <li><a href="contact.html">Liên Hệ</a></li>
             </ul>
         </div>
