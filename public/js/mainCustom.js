@@ -3,11 +3,26 @@ $(document).ready(function () {
     var click = 0 ;
     $("#drakMode").click(function (e) { 
         if(click == 0){
-            $(".gbcus").css({"background-color": "rgba(48, 164, 211, 0.87)"});
+            DarkMode(click);
             click = 1 ;
         }else{
-            $(".gbcus").css({"background-color": "rgba(255,255,255,0.87)"});
-            click = 0 ;            
+            DarkMode(click);
+            click = 0 ;   
         }
     });
+    function DarkMode(option){
+        if(option == 0){
+            $(".header-bottom").css({"background-color": "rgba(0,0,0,0.87)"});
+            $(".bg-white").addClass('bg-BlackChg');
+            $(".offcanvas").css({"background-color": "rgba(0,0,0,0.87)"});
+            $(".header-actions .header-action-btn .header-action-num").css({"background-color": "rgba(0,0,0,0.87)"});
+            $(".gbcus").css({"background-color": "rgba(0,0,0,0.87)"});
+        }else{
+            $(".header-bottom").css({"background-color": "rgba(48, 164, 211, 0.87)"});
+            $(".bg-white").addClass('bg-whiteChg');
+            $(".offcanvas").css({"background-color": "rgba(48, 164, 211, 0.87)"});
+            $(".header-actions .header-action-btn .header-action-num").css({"background-color": "rgba(48, 164, 211, 0.87)"});
+            $(".gbcus").css({"background-color": "rgba(48, 164, 211, 0.87)"});            
+        }
+    }
 });

@@ -12,5 +12,11 @@
     background-color: rgba(48, 164, 211, 0.87);
 }
 .gbcus{
-    /* background-color: rgba(48, 164, 211, 0.87); */
+    background-color: rgba(48, 164, 211, 0.87);
+}
+.bg-BlackChg {
+    background-color: rgba(0, 0, 0, 0.87)!important;
+}
+.bg-whiteChg {
+    background-color: rgba(48, 164, 211, 0.87)!important;
 }

@@ -1,6 +1,6 @@
 <meta charset="UTF-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge" />
-<title>Furns - Furniture eCommerce HTML Template</title>
+<title>LQL</title>
 <meta name="description" content="240+ Best Bootstrap Templates are available on this website. Find your template for your project compatible with the most popular HTML library in the world." />
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
 <link rel="profile" href="https://gmpg.org/xfn/11">
@@ -22,28 +22,7 @@
 <link rel="apple-touch-icon" href="./public/images/favicon/favicon.png" />
 <meta name="msapplication-TileImage" content="./public/images/favicon/favicon.png" />
 <!-- Structured Data  -->
-<script type="application/ld+json">
-    {
-        "@context": "http://schema.org",
-        "@type": "WebSite",
-        "name": "Replace_with_your_site_title",
-        "url": "Replace_with_your_site_URL"
-    }
-</script>
 
-<!-- vendor css (Bootstrap & Icon Font) -->
-<!-- <link rel="stylesheet" href="./public/css/vendor/simple-line-icons.css" />
-    <link rel="stylesheet" href="./public/css/vendor/ionicons.min.css" /> -->
-
-<!-- plugins css (All Plugins Files) -->
-<!-- <link rel="stylesheet" href="./public/css/plugins/animate.css" />
-    <link rel="stylesheet" href="./public/css/plugins/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="./public/css/plugins/jquery-ui.min.css" />
-    <link rel="stylesheet" href="./public/css/plugins/jquery.lineProgressbar.css">
-    <link rel="stylesheet" href="./public/css/plugins/nice-select.css" />
-    <link rel="stylesheet" href="./public/css/plugins/venobox.css" /> -->
-
-<!-- Use the minified version files listed below for better performance and remove the files listed above -->
 <link rel="stylesheet" href="./public/css/vendor/vendor.min.css" />
 <link rel="stylesheet" href="./public/css/plugins/plugins.min.css" />
 <link rel="stylesheet" href="./public/css/style.min.css">
