@@ -1,6 +1,16 @@
 <?php
-class homeModel{
-    
+class homeModel extends connectDB{
+    // Function Support Database
+    function GetProcduct(){
+        $conn = $this->GetConn();
+        $sql = "SELECT * FROM sanpham";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }
+    }
     // Function Support View 
     function ShowProduct(){
         echo "<div class='row'>";
@@ -52,9 +62,10 @@ class homeModel{
         echo"</div>";
     }
     function ShowTypeProduct(){
+        // echo $this->GetProcduct();
         for ($i=0; $i < 10 ; $i++) { 
-            $this->ShowTiTle();
-            $this->ShowProduct();
+            // $this->ShowTiTle();
+            // $this->ShowProduct();
         }
     }
 }
