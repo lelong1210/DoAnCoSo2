@@ -10,7 +10,9 @@
         <?php require_once "block/headerMobile.php"; ?>
     </header>
     <!-- Hero/Intro Slider Start -->
-    <?php require_once "block/slider.php"; ?>
+    <?php 
+        $data["homeModel"]->ShowSlider();
+    ?>
     <!-- Hero/Intro Slider End -->
 
     <!-- Product tab Area Start -->

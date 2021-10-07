@@ -12,28 +12,29 @@ class homeModel extends connectDB{
         }
     }
     // Function Support View 
-    function ShowProduct(){
+    function ShowProduct($arr){
         echo "<div class='row'>";
             echo "<div 'class='col'>";
                 echo "<div class='tab-content'>";
                     echo "<div class='tab-pane fade show active' id='tab-product-new-arrivals'>";
                         echo "<div class='row'>";
-                            $this->RepeatProduct(8);
+                            $this->RepeatProduct(8,$arr);
                         echo "</div>";
                     echo "</div>";
                 echo "</div>";
             echo "</div>";
         echo "</div>";
     }
-    function RepeatProduct($numberRepeact){
+    function RepeatProduct($numberRepeact,$arr){
         for ($i=0; $i < $numberRepeact; $i++) { 
+            $arrChild = array_values((array) $arr[$i]);
             echo "<div class='col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6' data-aos='fade-up' data-aos-delay='200'>";
                 echo "<!-- Single Prodect -->";
                 echo "<div class='product'>";
                     echo"<div class='thumb'>";
                         echo"<a href='shop-left-sidebar.html' class='image'>";
-                            echo"<img src='https://novadigital.net/wp-content/uploads/IMG_1919_2048x2048.png' alt='Product' />";
-                            echo"<img class='hover-image' src='https://novadigital.net/wp-content/uploads/IMG_1919_2048x2048.png' alt='Product' />";
+                            echo"<img src='$arrChild[5]' />";
+                            echo"<img class='hover-image' src='$arrChild[5]' />";
                         echo"</a>";
                         echo"<span class='badges'>";
                             echo"<span class='new'>New</span>";
@@ -42,9 +43,9 @@ class homeModel extends connectDB{
                             echo"To Cart</button>";
                     echo"</div>";
                     echo"<div class='content'>";
-                        echo"<h5 class='title'><a href='shop-left-sidebar.html'>Simple minimal Chair </a></h5>";
+                        echo"<h5 class='title'><a href='shop-left-sidebar.html'>$arrChild[1]</a></h5>";
                         echo"<span class='price'>";
-                            echo"<span class='new'>$38.50</span>";
+                            echo"<span class='new'>".number_format($arrChild[2])." đ</span>";
                         echo"</span>";
                     echo"</div>";
                 echo"</div>";
@@ -62,10 +63,35 @@ class homeModel extends connectDB{
         echo"</div>";
     }
     function ShowTypeProduct(){
-        // echo $this->GetProcduct();
         for ($i=0; $i < 10 ; $i++) { 
-            // $this->ShowTiTle();
-            // $this->ShowProduct();
+            $this->ShowTiTle();
+            $this->ShowProduct(json_decode($this->GetProcduct()));
         }
+    }
+    function ShowSlider(){
+        echo"<div class='section '>";
+        echo"<div class='hero-slider swiper-container slider-nav-style-1 slider-dot-style-1 dot-color-white'>";
+            echo"<!-- Hero slider Active -->";
+            echo"<div class='swiper-wrapper'>";
+            echo"<!-- Single slider item -->";
+                echo"<div class='hero-slide-item slider-height-2 swiper-slide d-flex'>";
+                    echo"<div class='hero-bg-image'>";
+                        echo"<img src='https://iot.ilifesmart.com/data/upload/20210625/60d5939426873.png' alt=''>";
+                    echo"</div>";
+                echo"</div>";
+                echo"<!-- Single slider item -->";
+                echo"<div class='hero-slide-item slider-height-2 swiper-slide d-flex text-center'>";
+                    echo"<div class='hero-bg-image'>";
+                        echo"<img src='https://iot.ilifesmart.com/data/upload/20200525/5ecb260e75656.jpg' alt=''>";
+                    echo"</div>";
+                echo"</div>";
+            echo"</div>";
+            echo"<!-- Add Arrows -->";
+            echo"<div class='swiper-buttons'>";
+                echo"<div class='swiper-button-next'></div>";
+                echo"<div class='swiper-button-prev'></div>";
+            echo"</div>";
+        echo"</div>";
+    echo"</div>";
     }
 }
