@@ -33,13 +33,13 @@
                         <!-- Start single blog -->
                         <div class="col-md-6 col-sm-6 col-lg-3 mb-md-30px mb-lm-30px" data-aos="fade-up" data-aos-delay="400">
                             <div class="single-wedge">
-                                <h4 class="footer-herading">information</h4>
+                                <h4 class="footer-herading">Thông Tin</h4>
                                 <div class="footer-links">
                                     <div class="footer-row">
                                         <ul class="align-items-center">
-                                            <li class="li"><a class="single-link" href="about.html">About us</a></li>
-                                            <li class="li"><a class="single-link" href="#">Delivery Information</a></li>
-                                            <li class="li"><a class="single-link" href="privacy-policy.html">Privacy & Policy</a></li>
+                                            <li class="li"><a class="single-link" href="about.html">Về Chúng Tôi</a></li>
+                                            <li class="li"><a class="single-link" href="#">Địa Chỉ</a></li>
+                                            <li class="li"><a class="single-link" href="privacy-policy.html">Chính Sách Bảo Mật</a></li>
                                             <li class="li"><a class="single-link" href="#">Terms & Condition</a></li>
                                             <li class="li"><a class="single-link" href="#">Manufactures</a></li>
                                         </ul>

@@ -22,7 +22,8 @@
     background-color: rgba(48, 164, 211, 0.87)!important;
 }
 .imgLOGO{
-    width: 100px;
+    /* width: 100px; */
+    height: 80px;
 }
 .footer-area {
     color: #fff;
