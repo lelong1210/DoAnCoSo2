@@ -11,6 +11,17 @@ class homeModel extends connectDB{
             return json_encode($result);
         }
     }
+    function SelectTypeProduct($loaisanpham){
+        $conn = $this->GetConn();
+        $sql = "SELECT * FROM sanpham WHERE loaisanpham=:loaisanpham";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":loaisanpham",$loaisanpham);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }        
+    }
     // Function Support View 
     function ShowProduct($arr){
         echo "<div class='row'>";
@@ -69,22 +80,21 @@ class homeModel extends connectDB{
         }
     }
     function ShowSlider(){
+        $arr = json_decode($this->SelectTypeProduct("slide"));
+        $count = count($arr);
         echo"<div class='section '>";
         echo"<div class='hero-slider swiper-container slider-nav-style-1 slider-dot-style-1 dot-color-white'>";
             echo"<!-- Hero slider Active -->";
             echo"<div class='swiper-wrapper'>";
-            echo"<!-- Single slider item -->";
-                echo"<div class='hero-slide-item slider-height-2 swiper-slide d-flex'>";
-                    echo"<div class='hero-bg-image'>";
-                        echo"<img src='https://iot.ilifesmart.com/data/upload/20210625/60d5939426873.png' alt=''>";
+                for ($i=0; $i < $count; $i++) { 
+                    $arrChild = array_values((array)$arr[$i]);
+                    echo"<!-- Single slider item -->";
+                    echo"<div class='hero-slide-item slider-height-2 swiper-slide d-flex text-center'>";
+                        echo"<div class='hero-bg-image'>";
+                            echo"<img src='$arrChild[5]' alt=''>";
+                        echo"</div>";
                     echo"</div>";
-                echo"</div>";
-                echo"<!-- Single slider item -->";
-                echo"<div class='hero-slide-item slider-height-2 swiper-slide d-flex text-center'>";
-                    echo"<div class='hero-bg-image'>";
-                        echo"<img src='https://iot.ilifesmart.com/data/upload/20200525/5ecb260e75656.jpg' alt=''>";
-                    echo"</div>";
-                echo"</div>";
+                }
             echo"</div>";
             echo"<!-- Add Arrows -->";
             echo"<div class='swiper-buttons'>";
