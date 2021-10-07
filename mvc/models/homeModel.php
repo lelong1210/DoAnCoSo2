@@ -22,6 +22,17 @@ class homeModel extends connectDB{
             return json_encode($result);
         }        
     }
+    function SelectThuMucSanPham(){
+        $conn = $this->GetConn();
+        $sql = "SELECT * FROM thumucsanpham";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":loaisanpham",$loaisanpham);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }              
+    }
     // Function Support View 
     function ShowProduct($arr){
         echo "<div class='row'>";
@@ -29,58 +40,66 @@ class homeModel extends connectDB{
                 echo "<div class='tab-content'>";
                     echo "<div class='tab-pane fade show active' id='tab-product-new-arrivals'>";
                         echo "<div class='row'>";
-                            $this->RepeatProduct(8,$arr);
+                            $this->RepeatProduct($arr);
                         echo "</div>";
                     echo "</div>";
                 echo "</div>";
             echo "</div>";
         echo "</div>";
     }
-    function RepeatProduct($numberRepeact,$arr){
-        for ($i=0; $i < $numberRepeact; $i++) { 
-            $arrChild = array_values((array) $arr[$i]);
-            echo "<div class='col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6' data-aos='fade-up' data-aos-delay='200'>";
-                echo "<!-- Single Prodect -->";
-                echo "<div class='product'>";
-                    echo"<div class='thumb'>";
-                        echo"<a href='shop-left-sidebar.html' class='image'>";
-                            echo"<img src='$arrChild[5]' />";
-                            echo"<img class='hover-image' src='$arrChild[5]' />";
-                        echo"</a>";
-                        echo"<span class='badges'>";
-                            echo"<span class='new'>New</span>";
-                        echo"</span>";
-                        echo"<button title='Add To Cart' class=' add-to-cart'>Add";
-                            echo"To Cart</button>";
-                    echo"</div>";
-                    echo"<div class='content'>";
-                        echo"<h5 class='title'><a href='shop-left-sidebar.html'>$arrChild[1]</a></h5>";
-                        echo"<span class='price'>";
-                            echo"<span class='new'>".number_format($arrChild[2])." đ</span>";
-                        echo"</span>";
+    function RepeatProduct($arr){
+        $arr = array_values((array) $arr);
+        $numberRepeact = count($arr);
+        if($numberRepeact > 0){
+            for ($i=0; $i < $numberRepeact; $i++) { 
+                $arrChild = array_values((array) $arr[$i]);
+                echo "<div class='col-lg-3 col-md-6 col-sm-6 col-xs-6 mb-6' data-aos='fade-up' data-aos-delay='200'>";
+                    echo "<!-- Single Prodect -->";
+                    echo "<div class='product'>";
+                        echo"<div class='thumb'>";
+                            echo"<a href='shop-left-sidebar.html' class='image'>";
+                                echo"<img src='$arrChild[5]' />";
+                                echo"<img class='hover-image' src='$arrChild[5]' />";
+                            echo"</a>";
+                            echo"<span class='badges'>";
+                                echo"<span class='new'>New</span>";
+                            echo"</span>";
+                            echo"<button title='Add To Cart' class=' add-to-cart'>Add";
+                                echo"To Cart</button>";
+                        echo"</div>";
+                        echo"<div class='content'>";
+                            echo"<h5 class='title'><a href='shop-left-sidebar.html'>$arrChild[1]</a></h5>";
+                            echo"<span class='price'>";
+                                echo"<span class='new'>".number_format($arrChild[2])." đ</span>";
+                            echo"</span>";
+                        echo"</div>";
                     echo"</div>";
                 echo"</div>";
-            echo"</div>";
+            }
         }
     }
-    function ShowTiTle(){
+    function ShowTiTle($arr){
         echo "<div class='row'>";
             echo "<div class='col-md-12 text-center' data-aos='fade-up'>";
                 echo"<div class='section-title mb-0'>";
-                    echo"<h2 class='title'>Máy Hút Bụi</h2>";
+                    echo"<h2 class='title'>$arr[2]</h2>";
                     echo"<p class='sub-title mb-6'>Torem ipsum dolor sit amet, consectetur adipisicing elitsed do eiusmo tempor incididunt ut labore</p>";
                 echo"</div>";
             echo"</div>";
         echo"</div>";
     }
     function ShowTypeProduct(){
-        for ($i=0; $i < 10 ; $i++) { 
-            $this->ShowTiTle();
-            $this->ShowProduct(json_decode($this->GetProcduct()));
+        $arr = json_decode($this->SelectThuMucSanPham());
+        $arr = array_values((array)$arr);
+        for ($i=0; $i < count($arr) ; $i++) { 
+            $arrChild = array_values((array)$arr[$i]);
+            $this->ShowTiTle($arrChild);
+            $this->ShowProduct(json_decode($this->SelectTypeProduct($arrChild[1])));
         }
     }
     function ShowSlider(){
         $arr = json_decode($this->SelectTypeProduct("slide"));
+        $arr = array_values((array) $arr);
         $count = count($arr);
         echo"<div class='section '>";
         echo"<div class='hero-slider swiper-container slider-nav-style-1 slider-dot-style-1 dot-color-white'>";

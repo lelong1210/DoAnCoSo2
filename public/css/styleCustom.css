@@ -12,8 +12,8 @@
     background-color: rgba(48, 164, 211, 0.87);
 }
 .gbcus{
-    background-color: rgba(48, 164, 211, 0.87);
-    color:red !important;
+    /* background-color: rgba(48, 164, 211, 0.87);
+    color:red !important; */
 }
 .bg-BlackChg {
     background-color: rgba(255, 255, 255, 0.87)!important;
@@ -23,4 +23,8 @@
 }
 .imgLOGO{
     width: 100px;
+}
+.footer-area {
+    color: #fff;
+    background-color: rgba(48, 164, 211, 0.87);
 }
