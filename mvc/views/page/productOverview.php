@@ -14,22 +14,21 @@
                     <!-- Shop Top Area Start -->
                     <div class="shop-top-bar d-flex">
                         <!-- Left Side start -->
-                        <p>There Are <?php echo $count?> Products.</p>
+                        <p>Có <?php echo $count?> Sản Phẩm.</p>
                         <!-- Left Side End -->
                         <!-- Right Side Start -->
                         <div class="select-shoing-wrap d-flex align-items-center">
                             <div class="shot-product">
-                                <p>Sort By:</p>
+                                <p>Sắp Xếp Theo:</p>
                             </div>
                             <div class="shop-select">
                                 <select class="shop-sort">
-                                    <option data-display="Relevance">Relevance</option>
+                                    <!-- <option data-display="Relevance">Relevance</option>
                                     <option value="1"> Name, A to Z</option>
                                     <option value="2"> Name, Z to A</option>
                                     <option value="3"> Price, low to high</option>
-                                    <option value="4"> Price, high to low</option>
+                                    <option value="4"> Price, high to low</option> -->
                                 </select>
-
                             </div>
                         </div>
                         <!-- Right Side End -->

@@ -79,7 +79,7 @@ class homeModel extends connectDB{
         echo "<div class='row'>";
             echo "<div class='col-md-12 text-center' data-aos='fade-up'>";
                 echo"<div class='section-title mb-0'>";
-                    echo"<h2 class='title'>".mb_strtoupper($arr[2], 'UTF-8')."</h2>";
+                    echo"<a href='./$arr[1]'><h2 class='title'>".mb_strtoupper($arr[2], 'UTF-8')."</h2></a>";
                     echo"<p class='sub-title mb-6'></p>";
                 echo"</div>";
             echo"</div>";
@@ -96,29 +96,42 @@ class homeModel extends connectDB{
         }
     }
     function ShowSlider(){
-        $arr = json_decode($this->SelectTypeProduct("slide"));
+        $arr = json_decode($this->SelectSlider());
         $arr = array_values((array) $arr);
         $count = count($arr);
-        echo"<div class='section '>";
-        echo"<div class='hero-slider swiper-container slider-nav-style-1 slider-dot-style-1 dot-color-white'>";
-            echo"<!-- Hero slider Active -->";
-            echo"<div class='swiper-wrapper'>";
-                for ($i=0; $i < $count; $i++) { 
-                    $arrChild = array_values((array)$arr[$i]);
-                    echo"<!-- Single slider item -->";
-                    echo"<div class='hero-slide-item slider-height-2 swiper-slide d-flex text-center'>";
-                        echo"<div class='hero-bg-image'>";
-                            echo"<img src='$arrChild[5]' alt=''>";
+        for ($i=0; $i < $count; $i++) { 
+            $arrChild = array_values((array)$arr[$i]);
+            echo"<div class='hero-slide-item slider-height swiper-slide d-flex'>";
+                echo"<div class='container align-self-center'>";
+                    echo"<div class='row'>";
+                        echo"<div class='col-xl-6 col-lg-7 col-md-7 col-sm-7 align-self-center'>";
+                            echo"<div class='hero-slide-content slider-animated-1'>";
+                                echo"<span class='category'></span>";
+                                echo"<p >$arrChild[1]</p>";
+                                echo"<p></p>";
+                                echo"<a href='#' class='btn btn-lg btn-primary btn-hover-dark mt-5'>Mua Ngay</a>";
+                            echo"</div>";
+                        echo"</div>";
+                        echo"<div class='col-xl-6 col-lg-5 col-md-5 col-sm-5'>";
+                            echo"<div class='hero-slide-image'>";
+                                echo "<a href='./$arrChild[3]/$arrChild[0]'><img src='$arrChild[5]' alt='' /></a>";
+                            echo"</div>";
                         echo"</div>";
                     echo"</div>";
-                }
+                echo"</div>";
             echo"</div>";
-            echo"<!-- Add Arrows -->";
-            echo"<div class='swiper-buttons'>";
-                echo"<div class='swiper-button-next'></div>";
-                echo"<div class='swiper-button-prev'></div>";
-            echo"</div>";
-        echo"</div>";
-    echo"</div>";
+        }
+    }
+    function SelectSlider(){
+        $slider = 1 ;
+        $conn = $this->GetConn();
+        $sql = "SELECT * FROM sanpham WHERE dunglamslider=:dunglamslider";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":dunglamslider",$slider);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }
     }
 }

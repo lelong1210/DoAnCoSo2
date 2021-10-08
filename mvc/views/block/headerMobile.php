@@ -3,8 +3,16 @@
     <div class="inner customScroll">
         <div class="offcanvas-menu mb-4">
             <ul>
-                <li><a href="#"><span class="menu-text">Trang Chủ</span></a></li>
-                <li><a href="#"><span class="menu-text">Sản Phẩm</a></li>
+                <li><a href="http://localhost/DoAnCoSo2"><span class="menu-text">Trang Chủ</span></a></li>
+                <li><a href="#"><span class="menu-text">Sản Phẩm</a>
+                    <ul class="sub-menu">
+                        <li><a href="http://localhost/DoAnCoSo2/khoacuathongminh">Khóa Cửa Thông Minh</a></li>
+                        <li><a href="http://localhost/DoAnCoSo2/mayhutbui">Máy Hút Bụi</a></li>
+                        <li><a href="http://localhost/DoAnCoSo2/dieuhoathongminh">Điều Hòa Thông Minh</a></li>
+                        <li><a href="http://localhost/DoAnCoSo2/denthongminh">Đèn Thông Minh</a></li>
+                        <li><a href="http://localhost/DoAnCoSo2/camera">Camera</a></li>
+                    </ul>
+                </li>
                 <li><a href="#"><span class="menu-text">Tin Tức</span></a></li>
                 <li><a href="#"><span class="menu-text">Hỏi Đáp</span></a></li>
                 <li><a href="contact.html">Liên Hệ</a></li>
