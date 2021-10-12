@@ -14,16 +14,14 @@ class ajax extends controller{
         echo $model->dangky($tendangnhap,$matkhau,$email);
     }
     function dangnhap(){
-        echo "VAO DANG NHAP AJAX";
-        // $tendangnhap = $_POST["tendangnhap"];
-        // $matkhau = $_POST["matkhau"];      
+        // echo "VAO DANG NHAP AJAX";
+        $tendangnhap = $_POST["tendangnhap"];
+        $matkhau = $_POST["matkhau"];      
 
-        // $matkhau = md5($matkhau);
+        $matkhau = md5($matkhau);
 
-
-        // echo $matkhau;
-        // $model = $this->call_model("taikhoanModel");
-        // echo $model->dangnhap($tendangnhap,$matkhau);
+        $model = $this->call_model("taikhoanModel");
+        echo $model->dangnhap($tendangnhap,$matkhau);
     }
 
 }

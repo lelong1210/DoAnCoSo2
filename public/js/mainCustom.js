@@ -20,8 +20,11 @@ $(document).ready(function () {
         var matkhau = $("#matkhau_DN").val();
 
         $.post("./ajax/dangnhap", {tendangnhap: tendangnhap, matkhau: matkhau}, function (data) {
-            // alert(data);
-            $("#conn").html(data);
+            if(data){
+                location.replace("./taikhoan");
+            }else{
+                alert("DANG NHAP THAT BAI");
+            }
         });
     });
     // $("#tendangnhap_DK").keyup(function (e) { 

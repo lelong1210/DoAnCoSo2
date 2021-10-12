@@ -9,6 +9,7 @@ class taikhoanModel extends connectDB{
         $query->bindParam(":matkhau",$matkhau);
         $query->execute();
         if($query->rowCount() > 0){
+            $_SESSION["username"] = "okela";
             return true ;
         }else{
             return false ;

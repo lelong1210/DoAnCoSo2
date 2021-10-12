@@ -4,12 +4,9 @@ class taikhoan extends controller{
         if(isset($_SESSION["username"])){
             echo "TAI KHOAN EYYYY";
         }else{
-            header("Location:./taikhoan/dndk");
+            header("Location:./dndk");
         }
         
-    }
-    function dndk(){
-        $this->call_view("dangKyDangNhapView");
     }
 }
 ?>
