@@ -2,8 +2,8 @@
 -- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Oct 09, 2021 at 04:05 PM
+-- Host: localhost
+-- Generation Time: Oct 12, 2021 at 02:20 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dacoso2`
+-- Database: `DaCoSo2`
 --
 
 -- --------------------------------------------------------
@@ -56,6 +56,20 @@ INSERT INTO `hangsx` (`masx`, `tenhang`) VALUES
 (17, 'Wyze Lock'),
 (18, 'Xiaomi'),
 (19, 'Yeelight');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `nguoidung`
+--
+
+CREATE TABLE `nguoidung` (
+  `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `tennguoidung` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `diachi` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sodienthoai` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -135,6 +149,19 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `taikhoan`
+--
+
+CREATE TABLE `taikhoan` (
+  `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `matkhau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `quyen` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `mataikhoan` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `thumucsanpham`
 --
 
@@ -166,10 +193,23 @@ ALTER TABLE `hangsx`
   ADD PRIMARY KEY (`masx`);
 
 --
+-- Indexes for table `nguoidung`
+--
+ALTER TABLE `nguoidung`
+  ADD PRIMARY KEY (`tendangnhap`);
+
+--
 -- Indexes for table `sanpham`
 --
 ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`masp`);
+
+--
+-- Indexes for table `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  ADD PRIMARY KEY (`mataikhoan`),
+  ADD KEY `tendangnhap` (`tendangnhap`);
 
 --
 -- Indexes for table `thumucsanpham`
@@ -194,10 +234,26 @@ ALTER TABLE `sanpham`
   MODIFY `masp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
+-- AUTO_INCREMENT for table `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  MODIFY `mataikhoan` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `thumucsanpham`
 --
 ALTER TABLE `thumucsanpham`
   MODIFY `mathumuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `taikhoan`
+--
+ALTER TABLE `taikhoan`
+  ADD CONSTRAINT `taikhoan_ibfk_1` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE CASCADE ON UPDATE CASCADE;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
