@@ -1,9 +1,18 @@
 <?php
 class taikhoanModel extends connectDB{
     protected $quyen = 0 ;
-    function dangnhap(){
+    function dangnhap($tendangnhap,$matkhau){
         $conn = $this->GetConn();
-        // $query = 
+        $sql = "SELECT * FROM nguoidung WHERE tendangnhap=:tendangnhap AND matkhau=:matkhau";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->bindParam(":matkhau",$matkhau);
+        $query->execute();
+        if($query->rowCount() > 0){
+            return true ;
+        }else{
+            return false ;
+        }
     }
     function dangky($tendangnhap,$matkhau,$email){
         try {

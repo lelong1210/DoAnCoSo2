@@ -45,8 +45,8 @@
                                 <div class="login-form-container">
                                     <div class="login-register-form">
                                         <form method="post" class="text-center">
-                                            <input type="text" name="user-name" placeholder="Tên đăng nhập" />
-                                            <input type="password" name="user-password" placeholder="mật khẩu..." />
+                                            <input id="tendangnhap_DN"type="text" name="user-name" placeholder="Tên đăng nhập" />
+                                            <input id="matkhau_DN" type="password" name="user-password" placeholder="mật khẩu..." />
                                             <div class="button-box">
                                                 <div class="login-toggle-btn">
                                                     <!-- <input type="checkbox" /> -->
@@ -86,6 +86,7 @@
     </div>
     <!-- login area end -->
     <!-- Footer Area Start -->
+    <div class="ds" id="conn"></div>
     <?php require_once "block/footer.php"; ?>
     <!-- Footer Area End -->
 
