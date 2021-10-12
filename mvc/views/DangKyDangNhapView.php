@@ -3,6 +3,7 @@
 
 <head>
 <?php require_once "block/head.php"; ?>
+<title>Chào Mừng Bạn Đến Với LQL</title>
 </head>
 
 <body>
@@ -52,7 +53,7 @@
                                                     <!-- <a class="flote-none" href="javascript:void(0)">Remember me</a> -->
                                                     <!-- <a href="#">Forgot Password?</a> -->
                                                 </div>
-                                                <button type="button"><span>Đăng Nhập</span></button>
+                                                <button id="dangnhap" type="button"><span>Đăng Nhập</span></button>
                                             </div>
                                         </form>
                                     </div>
@@ -61,13 +62,17 @@
                             <div id="lg2" class="tab-pane">
                                 <div class="login-form-container">
                                     <div class="login-register-form">
-                                        <form method="post" class="text-center">
-                                            <input type="text" name="user-name" placeholder="Tên đăng nhập" />
-                                            <input type="password" name="user-password" placeholder="Mật khẩu...." />
-                                            <input type="password" name="user-password" placeholder="Nhậplại mật khẩu...." />
-                                            <input name="user-email" placeholder="Email" type="email" />
-                                            <div class="button-box">
-                                                <button type="button"><span>Đăng Ký</span></button>
+                                        <form>
+                                            <input id="tendangnhap_DK" type="text" name="user-name" placeholder="Tên đăng nhập" >
+                                            <span id="sptendangnhap_DK" class="span_err"></span>
+                                            <input id="matkhau_DK" type="password" name="user-password" placeholder="Mật khẩu...." />
+                                            <span id="spmatkhau_DK" class="span_err"></span>
+                                            <input id="rematkhau_DK" type="password" name="user-password" placeholder="Nhậplại mật khẩu...." />
+                                            <span id="sprematkhau_DK" class="span_err"></span>
+                                            <input id="email_DK" name="user-email" placeholder="Email" type="email" />
+                                            <span id="sptendangnhap_DK" class="span_err"></span>
+                                            <div class="button-box text-center">
+                                                <button id="dangky" type="button"><span>Đăng Ký</span></button>
                                             </div>
                                         </form>
                                     </div>
@@ -80,7 +85,6 @@
         </div>
     </div>
     <!-- login area end -->
-
     <!-- Footer Area Start -->
     <?php require_once "block/footer.php"; ?>
     <!-- Footer Area End -->

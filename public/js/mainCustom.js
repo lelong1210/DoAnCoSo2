@@ -1,28 +1,42 @@
 /*****************CUSTOM************************/
 $(document).ready(function () {
-    var click = 0 ;
-    $("#drakMode").click(function (e) { 
-        if(click == 0){
-            DarkMode(click);
-            click = 1 ;
+    $("#dangky").click(function (e) { 
+        // // alert("Da Dang Ky");
+        var tendangnhap = $("#tendangnhap_DK").val();
+        var matkhau = $("#matkhau_DK").val();
+        var rematkhau = $("#rematkhau_DK").val();
+        var email = $("#email_DK").val();
+        // alert(tendangnhap + matkhau + rematkhau + emnail);
+        if(comparePassword(matkhau,rematkhau)){
+            $.post("./ajax/dangky",{tendangnhap:tendangnhap,matkhau:matkhau,email:email},function(data){
+                alert(data);
+            });
         }else{
-            DarkMode(click);
-            click = 0 ;   
+            alert("pass !=");
         }
     });
+    $("#dangnhap").click(function (e) { 
+        alert("Da Dang Nhap");
+    });
+    // $("#tendangnhap_DK").keyup(function (e) { 
+    //     $("#sp"+$(this).attr('id')).html($(this).val());
+    //     $("#sp"+$(this).attr('id')).css({"color":"red"});
+    // });
+    $("input").keyup(function (e) { 
+        var id = $(this).attr('id');
+        spanErr(id);
+    });
 });
-function DarkMode(option){
-    if(option == 0){
-        $(".header-bottom").css({"background-color": "rgba(255,255,255,0.87)"});
-        $(".bg-white").addClass('bg-BlackChg');
-        $(".offcanvas").css({"background-color": "rgba(255,255,255,0.87)"});
-        $(".header-actions .header-action-btn .header-action-num").css({"background-color": "rgba(48, 164, 211, 0.87)"});
-        // $(".gbcus").css({"background-color": "rgba(255,255,255,0.87)"});
+function comparePassword($pass1,$pass2){
+    if($pass1 == $pass2){
+        return true ;
     }else{
-        $(".header-bottom").css({"background-color": "rgba(48, 164, 211, 0.87)"});
-        $(".bg-white").addClass('bg-whiteChg');
-        $(".offcanvas").css({"background-color": "rgba(48, 164, 211, 0.87)"});
-        $(".header-actions .header-action-btn .header-action-num").css({"background-color": "rgba(48, 164, 211, 0.87)"});
-        // $(".gbcus").css({"background-color": "rgba(48, 164, 211, 0.87)"});            
+        return false ;
     }
+}
+function spanErr(idName){
+    // $("#sp"+idName).html($("#"+idName).val());
+    // $("#sp"+idName).css({"color":"red","font-size":"small"});
+    // $("#sp"+idName).addClass("fas fa-times");
+    
 }

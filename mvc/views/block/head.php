@@ -32,3 +32,4 @@
 <!-- Main Style -->
 <!-- Style Custom -->
 <link rel="stylesheet" href="http://localhost/DoAnCoSo2/public/css/styleCustom.css">
+
