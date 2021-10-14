@@ -35,5 +35,17 @@ class taikhoanModel extends connectDB{
            return $e->getMessage();
         }
     }
+    function checkAcount($tendangnhap){
+        $conn = $this->GetConn();
+        $sql = "SELECT * FROM nguoidung WHERE tendangnhap=:tendangnhap";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->execute();
+        if($query->rowCount() > 0){
+            return true ;
+        }else{
+            return false ;
+        }        
+    }
 }
 ?>
