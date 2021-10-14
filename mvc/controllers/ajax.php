@@ -6,7 +6,7 @@ class ajax extends controller{
     function show(){
 
     }
-    function dangky(){
+    function dangky(){ 
         $tendangnhap = $_POST["tendangnhap"];
         $matkhau = $_POST["matkhau"];      
         $email = $_POST["email"];   
