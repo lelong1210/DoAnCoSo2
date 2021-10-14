@@ -32,7 +32,7 @@ class taikhoanModel extends connectDB{
                 return false ;
             }
         } catch (Exception $e) {
-           return false;
+           return $e->getMessage();
         }
     }
 }

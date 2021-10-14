@@ -1,49 +1,45 @@
 /*****************CUSTOM************************/
 $(document).ready(function () {
+    let arr = ["tendangnhap_DK", "matkhau_DK", "rematkhau_DK", "email_DK"];
+
+
     $("#dangky").click(function (e) {
-        // // alert("Da Dang Ky");
-        var tendangnhap = $("#tendangnhap_DK").val();
-        var matkhau = $("#matkhau_DK").val();
-        var rematkhau = $("#rematkhau_DK").val();
-        var email = $("#email_DK").val();
-        // alert(tendangnhap + matkhau + rematkhau + emnail);
-        if (comparePassword(matkhau, rematkhau)) {
-            $.post("./ajax/dangky", { tendangnhap: tendangnhap, matkhau: matkhau, email: email }, function (data) {
-                alert(data);
-            });
+        var tendangnhap = $("#" + arr[0]).val();
+        var matkhau = $("#" + arr[1]).val();
+        var rematkhau = $("#" + arr[2]).val();
+        var email = $("#" + arr[3]).val();
+        if (tendangnhap == "" || matkhau == "" || matkhau == "" || email == "") {
+            alert("CAC O KHONG DUOC DE TRONG");
         } else {
-            alert("pass !=");
+            if (comparePassword(matkhau, rematkhau)) {
+                $.post("./ajax/dangky", { tendangnhap: tendangnhap, matkhau: matkhau, email: email }, function (data) {
+                    alert(data);
+                });
+            } else {
+                alert("pass !=");
+            }
         }
     });
     $("#dangnhap").click(function (e) {
         var tendangnhap = $("#tendangnhap_DN").val();
         var matkhau = $("#matkhau_DN").val();
 
-        $.post("./ajax/dangnhap", {tendangnhap: tendangnhap, matkhau: matkhau}, function (data) {
-            if(data){
+        $.post("./ajax/dangnhap", { tendangnhap: tendangnhap, matkhau: matkhau }, function (data) {
+            if (data) {
                 location.replace("./taikhoan");
-            }else{
+            } else {
                 alert("DANG NHAP THAT BAI");
             }
         });
     });
-    // $("#tendangnhap_DK").keyup(function (e) { 
-    //     $("#sp"+$(this).attr('id')).html($(this).val());
-    //     $("#sp"+$(this).attr('id')).css({"color":"red"});
-    // });
     $("input").keyup(function (e) {
         var id = $(this).attr('id');
-        spanErr(id);
-    });
-    $("#test").click(function (e) { 
-        var x = $("#file").val();
-        $.post("./ajax/show1", {lurl:x}, function (data) {
-            if(data){
-                alert(data);
-            }else{
-                alert("DANG NHAP THAT BAI");
+        var count = arr.length;
+        for (let i = 0; i < count; i++) {
+            if(id == arr[i]){
+                alert("CLICK TAI "+arr[i]);
             }
-        });
+        }
     });
 });
 function comparePassword($pass1, $pass2) {
