@@ -45,7 +45,7 @@ $(document).ready(function () {
 function comparePassword($pass1, $pass2) {
     if ($pass1 == $pass2) {
         return true;
-    } else {
+    } else { 
         return false;
     }
 }
