@@ -4,9 +4,12 @@ use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 
-class sendmail extends guimail
-{
-    function show()
+class sendmail extends controller
+{   
+    function show(){
+        $this->call_view("guimail");
+    }
+    function show1()
     {
         $mail = new PHPMailer(true);
 

@@ -35,6 +35,16 @@ $(document).ready(function () {
         var id = $(this).attr('id');
         spanErr(id);
     });
+    $("#test").click(function (e) { 
+        var x = $("#file").val();
+        $.post("./ajax/show1", {lurl:x}, function (data) {
+            if(data){
+                alert(data);
+            }else{
+                alert("DANG NHAP THAT BAI");
+            }
+        });
+    });
 });
 function comparePassword($pass1, $pass2) {
     if ($pass1 == $pass2) {
