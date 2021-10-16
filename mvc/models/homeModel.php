@@ -26,7 +26,6 @@ class homeModel extends connectDB{
         $conn = $this->GetConn();
         $sql = "SELECT * FROM thumucsanpham";
         $query = $conn->prepare($sql);
-        $query->bindParam(":loaisanpham",$loaisanpham);
         $query->execute();
         if($query->rowCount() > 0){
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
