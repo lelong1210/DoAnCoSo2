@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 16, 2021 at 04:32 AM
+-- Generation Time: Oct 17, 2021 at 04:17 PM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -78,7 +78,54 @@ CREATE TABLE `nguoidung` (
 --
 
 INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`, `email`, `matkhau`, `quyen`) VALUES
-('lql', NULL, NULL, NULL, 'lequanglong1210@gmail.com', '93279e3308bdbbeed946fc965017f67a', 0);
+('abaftdon’t', NULL, NULL, NULL, 'roma61@hotmail.com', '5280e11f2452aac5aa85177aaf4b3b98', 0),
+('arcanaabounding', NULL, NULL, NULL, 'marisol39@hotmail.com', '46d014dd88ae6b32f39b60fa9756fa25', 0),
+('arousedrecruit', NULL, NULL, NULL, 'salma87@hotmail.com', 'a794275722896cac20ecdd29928a3b9d', 0),
+('banneravailable', NULL, NULL, NULL, 'marjolaine42@hotmail.com', '9c80d885bcf55293e8b999ea404ff2b2', 0),
+('befittinggeorgian', NULL, NULL, NULL, 'ena.brekke8@gmail.com', '3f2f56b3de1307423a65a09498b820ef', 0),
+('blaringchest', NULL, NULL, NULL, 'bo.larson@hotmail.com', 'c4c11f39e198267cf66289ca58f75036', 0),
+('blockbid', NULL, NULL, NULL, 'gwen.kertzmann@gmail.com', '25b722aa084517be6573456e457ac357', 0),
+('bondmenorah', NULL, NULL, NULL, 'margarita.gusikowski@gmail.com', '2bd3542420443bd39802a6c4745feb24', 0),
+('bonemealplural', NULL, NULL, NULL, 'pattie87@yahoo.com', '2f66aee216e67831066eadc473bbd340', 0),
+('capableliving', NULL, NULL, NULL, 'bo.cummerata@yahoo.com', '3faf05d2051cbbafaec8dd0c5250e608', 0),
+('couragepointed', NULL, NULL, NULL, 'mabel24@gmail.com', '09a18a90422c9793ea2418933a1b7f5e', 0),
+('dewickiranian', NULL, NULL, NULL, 'germaine_armstrong50@gmail.com', '3ef5b980b37c5751308e429ee12168bd', 0),
+('dextrousdim', NULL, NULL, NULL, 'johan_reichel24@yahoo.com', '2dd27385059cf459b6269320b72d48ce', 0),
+('discussionjoin', NULL, NULL, NULL, 'armani95@gmail.com', '6757db1a0a0b69ac17e9900bb18bc995', 0),
+('dopeychilis', NULL, NULL, NULL, 'pierce.fay46@hotmail.com', '9e7398fa314dfbb8bcb20490fbbbe46d', 0),
+('dreadfulroar', NULL, NULL, NULL, 'saul_lubowitz99@hotmail.com', '2cab535130190f28ce5e9d380de2c30f', 0),
+('drunkardscreeching', NULL, NULL, NULL, 'natasha12@yahoo.com', 'f56d3fe603775b4acf03b2a87437bfe1', 0),
+('economicstriumph', NULL, NULL, NULL, 'donato.mayer86@yahoo.com', '98217d30b464ab095ac6c230fa1b06a1', 0),
+('explorepay', NULL, NULL, NULL, 'keenan_collier@gmail.com', '14d4bea6b33c7bb80bb42c161633c85e', 0),
+('eyeballsresonant', NULL, NULL, NULL, 'deshawn.rippin23@hotmail.com', 'c98de65a904777d4ef892593bb34d8eb', 0),
+('forestperiod', NULL, NULL, NULL, 'alfonzo_price81@hotmail.com', '5d1003da0a7625e110b82bbb7db82148', 0),
+('fussytarget', NULL, NULL, NULL, 'eddie79@yahoo.com', '64fdd9f13e021d1f5a07e9162933624e', 0),
+('grandwhiteness', NULL, NULL, NULL, 'ward9@yahoo.com', '4d72bac0c7c007c23772ed8c907132a5', 0),
+('greatguard', NULL, NULL, NULL, 'carolina.schultz60@gmail.com', '1b2a93af085b2ea6cf6a437f55ef510b', 0),
+('guardsmangently', NULL, NULL, NULL, 'brennan63@yahoo.com', '4ec2dee1dccd30e9715451a74c11c47f', 0),
+('habitcocktail', NULL, NULL, NULL, 'serena_leffler@gmail.com', '9a126c56bf636e1e2c43b475c1f3586b', 0),
+('heardoptimistic', NULL, NULL, NULL, 'waldo95@hotmail.com', '8a2ed788e464bd2fb38c5ea80878c3d0', 0),
+('holygarden', NULL, NULL, NULL, 'dan_balistreri@hotmail.com', '06339ba785761735001aee34a9e3f2fc', 0),
+('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', 0),
+('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', 0),
+('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', 0),
+('longtermplayoffs', NULL, NULL, NULL, 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', 0),
+('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', 0),
+('motorwayscold', NULL, NULL, NULL, 'mariah77@gmail.com', 'cddf86a9055a2e2168733a07ef284cb6', 0),
+('obeysamoan', NULL, NULL, NULL, 'billy.labadie51@hotmail.com', '0169ad0e211c01528d9384235bc255a3', 0),
+('procedureraise', NULL, NULL, NULL, 'brennan.heathcote@yahoo.com', 'cb936b342fcf543799254520b9d13515', 0),
+('repelreprimand', NULL, NULL, NULL, 'leola_crooks93@hotmail.com', '76b30526c3489faf93241895c44a45c7', 0),
+('seedslaboratory', NULL, NULL, NULL, 'chloe.abernathy38@hotmail.com', 'daaa77b0b6ce16e7f954184dd1e2efb4', 0),
+('servantguideline', NULL, NULL, NULL, 'ludie43@hotmail.com', '09a52241d85074f867c5623d1c8b1de7', 0),
+('skiingstake', NULL, NULL, NULL, 'kimberly30@yahoo.com', '018f73cacecce78c4fddbddc14c9b266', 0),
+('skitonto', NULL, NULL, NULL, 'estel.stracke@gmail.com', '531f7c8dd1df31fdc64e4a32422b3510', 0),
+('skiverheavenly', NULL, NULL, NULL, 'daphne_hamill94@yahoo.com', 'f778987ad999b81ff931362301662119', 0),
+('sniffpentathlon', NULL, NULL, NULL, 'josh_hartmann40@yahoo.com', '5b0cbf4ca9d22505836df5c19d2bfe02', 0),
+('spoonbillhaircut', NULL, NULL, NULL, 'sarai_stanton35@yahoo.com', '32cce78caa6d507eace80d7feb4bb361', 0),
+('stipulaterowdy', NULL, NULL, NULL, 'marisol.breitenberg@yahoo.com', '2bc6b16f72e6279084c9a28917e84cec', 0),
+('surfingincreasing', NULL, NULL, NULL, 'marco_goyette@gmail.com', '15bb356fd669aa642294e65c7ab9bead', 0),
+('troupewinged', NULL, NULL, NULL, 'katarina_kiehn@yahoo.com', '936dee9afed931d02f4e39dcbe10b0c9', 0),
+('worrymost', NULL, NULL, NULL, 'kris_sanford89@yahoo.com', '62d532152864c3331a2da336056a7310', 0);
 
 -- --------------------------------------------------------
 
