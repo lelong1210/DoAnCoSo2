@@ -78,3 +78,14 @@
 <footer class="footer">
     © 2019 Zegva <span class="d-none d-sm-inline-block"> - Crafted with <i class="mdi mdi-heart text-danger"></i> by Themesdesign</span>.
 </footer>
+
+    <script src="./publicAdmin/plugins/apexchart/apexcharts.min.js"></script>
+    <script src="./publicAdmin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+    <!-- Jquery-Ui -->
+    <script src="./publicAdmin/plugins/jquery-ui/jquery-ui.min.js"></script>
+
+    <script src="./publicAdmin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
+
+    <script src="./publicAdmin/plugins/moment/moment.js"></script>
+    <script src='./publicAdmin/plugins/fullcalendar/js/fullcalendar.min.js'></script>
+    <script src="./publicAdmin/pages/calendar-init.js"></script>

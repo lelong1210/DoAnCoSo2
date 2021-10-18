@@ -9,10 +9,9 @@
     <link href="./publicAdmin/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
 
     <!--Morris Chart CSS -->
-    <link rel="stylesheet" href="./publicAdmin/plugins/morris/morris.css">
-    <!--calendar css-->
-    <link href="./publicAdmin/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="./public/plugins/morris/morris.css">
 
+    <link href="./publicAdmin/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
 
     <link href="./publicAdmin/css/bootstrap.min.css" rel="stylesheet" type="text/css">
     <link href="./publicAdmin/css/metismenu.min.css" rel="stylesheet" type="text/css">

@@ -1,10 +1,13 @@
     <!-- jQuery  -->
     <script src="./publicAdmin/js/jquery.min.js"></script>
+
     <script src="./publicAdmin/js/bootstrap.bundle.min.js"></script>
     <script src="./publicAdmin/js/metismenu.min.js"></script>
     <script src="./publicAdmin/js/jquery.slimscroll.js"></script>
     <script src="./publicAdmin/js/waves.min.js"></script>
 
+
+    <!-- INDEX START -->
     <script src="./publicAdmin/plugins/apexchart/apexcharts.min.js"></script>
     <script src="./publicAdmin/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
 
@@ -13,9 +16,10 @@
     <script src="./publicAdmin/plugins/raphael/raphael.min.js"></script>
 
     <script src="./publicAdmin/pages/dashboard.init.js"></script>
-
+    <!-- INDEX END -->
     <!-- App js -->
     <script src="./publicAdmin/js/app.js"></script>
+
 
 
     <!-- Jquery-Ui -->
@@ -29,10 +33,5 @@
 
 
 
-
-
-
-
     <!-- custom main js  -->
     <script src="./publicAdmin/js/mainCustom.js"></script>
-    

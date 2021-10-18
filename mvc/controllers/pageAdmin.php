@@ -4,7 +4,7 @@
             
         }
         function calendarpage(){
-            $this->call_view_page_admin("calendarpage");
+            $this->call_view_page_admin("indexpage");
         }
     }
 ?>
