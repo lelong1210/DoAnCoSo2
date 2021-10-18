@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 17, 2021 at 04:17 PM
+-- Generation Time: Oct 18, 2021 at 05:53 AM
 -- Server version: 10.4.21-MariaDB
 -- PHP Version: 7.3.31
 
@@ -110,6 +110,7 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', 0),
 ('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', 0),
 ('longtermplayoffs', NULL, NULL, NULL, 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', 0),
+('lql', NULL, NULL, NULL, 'lequanglong12102k2@gmail.com', '93279e3308bdbbeed946fc965017f67a', 1),
 ('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', 0),
 ('motorwayscold', NULL, NULL, NULL, 'mariah77@gmail.com', 'cddf86a9055a2e2168733a07ef284cb6', 0),
 ('obeysamoan', NULL, NULL, NULL, 'billy.labadie51@hotmail.com', '0169ad0e211c01528d9384235bc255a3', 0),
