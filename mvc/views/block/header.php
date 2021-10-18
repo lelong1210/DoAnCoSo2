@@ -8,7 +8,7 @@
                     <!-- Header Logo Start -->
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="http://localhost:41062/www/"><img src="http://localhost:41062/www//public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
+                            <a href="http://localhost/www/"><img src="http://localhost/www/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
@@ -59,7 +59,7 @@
                     <!-- Header Logo Start -->
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="http://localhost:41062/www/"><img src="http://localhost:41062/www//public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
+                            <a href="http://localhost/www/"><img src="http://localhost/www/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
@@ -110,14 +110,14 @@
                     <div class="col-md-12 align-self-center">
                         <div class="main-menu manu-color-white">
                             <ul>
-                                <li class="dropdown"><a href="http://localhost:41062/www/">Trang Chủ</a></li>
+                                <li class="dropdown"><a href="http://localhost/www/">Trang Chủ</a></li>
                                 <li class="dropdown"><a href="#">Sản Phẩm<i class="ion-ios-arrow-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="http://localhost:41062/www//khoacuathongminh">Khóa Cửa Thông Minh</a></li>
-                                        <li><a href="http://localhost:41062/www//mayhutbui">Máy Hút Bụi</a></li>
-                                        <li><a href="http://localhost:41062/www//dieuhoathongminh">Điều Hòa Thông Minh</a></li>
-                                        <li><a href="http://localhost:41062/www//denthongminh">Đèn Thông Minh</a></li>
-                                        <li><a href="http://localhost:41062/www//camera">Camera</a></li>
+                                        <li><a href="http://localhost/www/khoacuathongminh">Khóa Cửa Thông Minh</a></li>
+                                        <li><a href="http://localhost/www/mayhutbui">Máy Hút Bụi</a></li>
+                                        <li><a href="http://localhost/www/dieuhoathongminh">Điều Hòa Thông Minh</a></li>
+                                        <li><a href="http://localhost/www/denthongminh">Đèn Thông Minh</a></li>
+                                        <li><a href="http://localhost/www/camera">Camera</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">Tin Tức</a></li>
