@@ -32,6 +32,18 @@ class homeModel extends connectDB{
             return json_encode($result);
         }              
     }
+    function SelectSlider(){
+        $slider = 1 ;
+        $conn = $this->GetConn();
+        $sql = "SELECT * FROM sanpham WHERE dunglamslider=:dunglamslider";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":dunglamslider",$slider);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }
+    }
     // Function Support View 
     function ShowProduct($arr,$numberRepeact){
         echo "<div class='row'>";
@@ -119,18 +131,6 @@ class homeModel extends connectDB{
                     echo"</div>";
                 echo"</div>";
             echo"</div>";
-        }
-    }
-    function SelectSlider(){
-        $slider = 1 ;
-        $conn = $this->GetConn();
-        $sql = "SELECT * FROM sanpham WHERE dunglamslider=:dunglamslider";
-        $query = $conn->prepare($sql);
-        $query->bindParam(":dunglamslider",$slider);
-        $query->execute();
-        if($query->rowCount() > 0){
-            $result = $query->fetchAll(PDO::FETCH_ASSOC);
-            return json_encode($result);
         }
     }
 }
