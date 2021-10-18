@@ -1,7 +1,7 @@
 <?php
     class admin extends controller{
         function show(){
-            echo "ADMIN XIN CHAO";
+            $this->call_view("adminView");
         }
     }
 ?>
