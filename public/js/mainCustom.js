@@ -32,9 +32,9 @@ $(document).ready(function () {
             var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
             var email = $(this).val();
             if(pattern.test(email)){
-                
+                spanErr($(this).attr('id'),true,"");
             }else{
-                
+                spanErr($(this).attr('id'),false,"Không Phải Định Dạng Email...");
             }    
         }
     });

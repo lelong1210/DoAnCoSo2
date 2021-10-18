@@ -70,7 +70,7 @@
                                             <input id="rematkhau_DK" type="password" name="user-password" placeholder="Nhậplại mật khẩu...." />
                                             <span id="sprematkhau_DK" class="span_err"></span>
                                             <input id="email_DK" name="user-email" placeholder="Email" type="email" />
-                                            <span id="sptendangnhap_DK" class="span_err"></span>
+                                            <span id="spemail_DK" class="span_err"></span>
                                             <div class="button-box text-center">
                                                 <button id="dangky" type="button"><span>Đăng Ký</span></button>
                                             </div>
