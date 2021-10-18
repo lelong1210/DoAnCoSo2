@@ -10,6 +10,8 @@ class taikhoanModel extends connectDB{
         $query->execute();
         if($query->rowCount() > 0){
             $_SESSION["username"] = "okela";
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            $this->getQuyen(json_encode($result));
             return true ;
         }else{
             return false ;
@@ -46,6 +48,11 @@ class taikhoanModel extends connectDB{
         }else{
             return false ;
         }        
+    }
+    function getQuyen($arr){
+        $arr = json_decode($arr);
+        $arr = array_values((array)$arr[0]);
+        $_SESSION["quyen"] = $arr[6];
     }
 }
 ?>
