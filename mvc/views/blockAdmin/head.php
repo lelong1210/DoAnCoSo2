@@ -1,19 +1,14 @@
-<meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
-    <title>Zegva - Responsive Admin & Dashboard Template | Themesdesign</title>
-    <meta content="Responsive admin theme build on top of Bootstrap 4" name="description" />
-    <meta content="Themesdesign" name="author" />
-    <link rel="shortcut icon" href="./publicAdmin/images/favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Admin</title>
 
-    <link href="./publicAdmin/plugins/bootstrap-datepicker/css/bootstrap-datepicker.min.css" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="./publicAdmin/css/bootstrap.css">
 
-    <!--Morris Chart CSS -->
-    <link rel="stylesheet" href="./public/plugins/morris/morris.css">
+<link rel="stylesheet" href="./publicAdmin/vendors/iconly/bold.css">
 
-    <link href="./publicAdmin/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
-
-    <link href="./publicAdmin/css/bootstrap.min.css" rel="stylesheet" type="text/css">
-    <link href="./publicAdmin/css/metismenu.min.css" rel="stylesheet" type="text/css">
-    <link href="./publicAdmin/css/icons.css" rel="stylesheet" type="text/css">
-    <link href="./publicAdmin/css/style.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./publicAdmin/vendors/perfect-scrollbar/perfect-scrollbar.css">
+<link rel="stylesheet" href="./publicAdmin/vendors/bootstrap-icons/bootstrap-icons.css">
+<link rel="stylesheet" href="./publicAdmin/css/app.css">
+<link rel="shortcut icon" href="./publicAdmin/images/favicon.svg" type="image/x-icon">
