@@ -29,14 +29,14 @@ class app{
             // params
             if(isset($arr[2])){
                 $arr =  array_values((array)$arr); // ép cho dễ nhìn 
-                if(isset($this->params[0])){ // xem thử đã gán $arr[1] thành param chưa                     
+                if(isset($this->params[0])){ // xem thử đã gán $arr[0] thành param chưa                     
                     $this->params = array_merge($this->params,$arr); // ==> trộn 2 mảng lại
                 }else{
                     $this->params = array_values($arr); // ==> làm mới 
                 }
                 call_user_func_array(array($this->controller,$this->action),$this->params);// ==> gọi object or class và method 
             }else{
-                if(isset($this->params[0])){ // xem thử đã gán $arr[1] thành param chưa               
+                if(isset($this->params[0])){ // xem thử đã gán $arr[0] thành param chưa               
                     call_user_func_array(array($this->controller,$this->action),$this->params);
                 }else{
                     call_user_func_array(array($this->controller,$this->action),["overView"]);

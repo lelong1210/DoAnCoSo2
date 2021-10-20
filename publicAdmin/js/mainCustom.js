@@ -1,12 +1,12 @@
 $(document).ready(function () {
-    $("#calendarCustom").on("click", function () {
+    $("#calendarCustom").click(function (e) { 
         $.ajax({
             type: "post",
             url: "pageAdmin/calenderPage",
             data: {},
             // dataType: "dataType",
             success: function (response) {
-                $("#content-page").html(response);
+                $("#contetMain").html(response);
                 // alert("hello");
             }
         });
