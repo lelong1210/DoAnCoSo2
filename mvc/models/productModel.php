@@ -22,5 +22,8 @@ class productModel extends connectDB{
             return json_encode($result);
         }        
     }
+    function addProduct(){
+        
+    }
 }
 ?>
