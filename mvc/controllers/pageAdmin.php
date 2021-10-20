@@ -3,8 +3,9 @@
         function show(){
             
         }
-        function calendarpage(){
-            $this->call_view_page_admin("indexpage");
+        function calenderPage(){
+            $this->call_view_page_admin("calenderPage");
+            $this->call_block_view_admin("jslink");
         }
     }
 ?>

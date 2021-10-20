@@ -10,5 +10,8 @@ class controller{
     function call_view_page_admin($viewPage){
         require_once "./mvc/views/pageAdmin/".$viewPage.".php";
     }
+    function call_block_view_admin($viewBlock){
+        require_once "./mvc/views/blockAdmin/".$viewBlock.".php";
+    }
 }
 ?>
