@@ -31,7 +31,7 @@
                     <p class="quickview-para m-0"><?php echo $arr[4]?></p>
                     <div class="pro-details-quality">
                         <div class="pro-details-cart">
-                            <button class="add-cart btn btn-primary btn-hover-primary" href="#"> Mua Ngay</button>
+                            <button class="add-cart btn btn-primary btn-hover-primary" > Mua Ngay</button>
                         </div>
                     </div>
                     <div class="pro-details-policy">

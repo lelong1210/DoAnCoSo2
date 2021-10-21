@@ -32,37 +32,38 @@
                         </div>
                         <div class="panel panel-default single-my-account" data-aos="fade-up" data-aos-delay="400">
                             <div class="panel-heading my-account-title">
-                                <h3 class="panel-title"><span>2 .</span> <a data-bs-toggle="collapse" class="collapsed" aria-expanded="false" href="#my-account-2">Change your password </a></h3>
+                                <h3 class="panel-title"><span>2 .</span> <a data-bs-toggle="collapse" class="collapsed" aria-expanded="false" href="#my-account-2">ĐỔI MẬT KHẨU </a></h3>
                             </div>
                             <div id="my-account-2" class="panel-collapse collapse" data-bs-parent="#faq">
                                 <div class="panel-body">
                                     <div class="myaccount-info-wrapper">
                                         <div class="account-info-wrapper">
-                                            <h4>Change Password</h4>
-                                            <h5>Your Password</h5>
+                                            <h4>Nhập Mật Khẩu Mới</h4>
                                         </div>
                                         <div class="row">
                                             <div class="col-lg-12 col-md-12">
                                                 <div class="billing-info">
-                                                    <label>Password</label>
-                                                    <input type="password" />
+                                                    <label>Mật Khẩu Mới</label>
+                                                    <input type="password" id="matkhau_UP"/>
+                                                    <span id="spmatkhau_UP"></span>
                                                 </div>
                                             </div>
                                             <div class="col-lg-12 col-md-12">
                                                 <div class="billing-info">
-                                                    <label>Password Confirm</label>
-                                                    <input type="password" />
+                                                    <label>Nhập Lại Mật Khẩu Mới</label>
+                                                    <input type="password" id="rematkhau_UP"/>
+                                                    <span id="sprematkhau_UP"></span>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="billing-back-btn">
                                             <div class="billing-back">
-                                                <a href="#"><i class="icon-arrow-up-circle"></i> back</a>
+                                                <a href="#"><i class="icon-arrow-up-circle"></i> Quay Lên</a>
                                             </div>
                                             <div class="billing-btn">
-                                                <button type="submit">Continue</button>
+                                                <button type="button" id="updatePassword">Cập Nhật</button>
                                             </div>
-                                        </div>
+                                        </div>  
                                     </div>
                                 </div>
                             </div>

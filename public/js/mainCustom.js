@@ -1,6 +1,6 @@
 /*****************CUSTOM************************/
-var result = true;
 $(document).ready(function () {
+    // trang khach hang
     $("#updateAcount").click(function (e) {
         var tennguoidung = $("#tennguoidungupdate").val();
         var diachi = $("#diachiupdate").val();
@@ -12,6 +12,20 @@ $(document).ready(function () {
             alert("Sửa Không Thành Công");
         }
     });
+    $("#updatePassword").click(function(e){
+        if(checkChangePass()){
+            let arr = ["matkhau_UP","rematkhau_UP"];
+            var pass2 = $("#"+arr[1]).val();
+            changePass(pass2);
+        }else{
+            alert("Không Thể Thực Hiện");
+        }
+    });
+    $("input").keyup(function(e){
+        var id = $(this).attr("id");
+        checkChangePass(id);
+    });
+    // trang dk dn
     $("#dangnhap").click(function (e) {
         var tendangnhap = $("#tendangnhap_DN").val();
         var matkhau = $("#matkhau_DN").val();
@@ -112,6 +126,41 @@ $(document).ready(function () {
             }
         });
         return result;
+    }
+    function checkChangePass(id){
+        var result = true ;
+        let arr = ["matkhau_UP","rematkhau_UP"];
+        var pass1 = $("#"+arr[0]).val();
+        var pass2 = $("#"+arr[1]).val();
+        if(id){
+            if(id == arr[1]){
+                if(comparePassword(pass1,pass2)){
+                    spanErr(arr[1],true,"");
+                    result = true ;
+                }else{
+                    spanErr(arr[1],false,"Mật Khẩu Không Khớp");
+                    result = false ;
+                }
+            }
+            return result;
+        }else{
+            if(comparePassword(pass1,pass2)){
+                return true ;
+            }else{
+                return false;
+            }
+        }
+    }
+    function changePass(matkhau){
+        $.ajax({
+            type: "post",
+            url: "./ajax/updatePassword",
+            data: {matkhau:matkhau},
+            // dataType: "dataType",
+            success: function (response) {
+                alert(response);
+            }
+        });
     }
 
 });

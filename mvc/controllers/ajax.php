@@ -42,5 +42,19 @@ class ajax extends controller{
         $model = $this->call_model("taikhoanModel");
         echo $model->updateAcount($tennguoidung,$diachi,$sodienthoai,$email,$tendangnhap);
     }
+    function updatePassword(){
+        $tendangnhap = $_SESSION["username"];
+        $matkhau = $_POST["matkhau"];
+        
+        $matkhau = md5($matkhau);
+        
+        $model = $this->call_model("taikhoanModel");
+        if($model->updatePassword($tendangnhap,$matkhau)){
+            $_SESSION["password"] = $matkhau;
+            echo true;
+        }else{
+            echo false;
+        }
+    }
 }
 ?>

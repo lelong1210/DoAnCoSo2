@@ -82,6 +82,25 @@ class taikhoanModel extends connectDB{
             echo "FAULT".$e->getMessage();
         }
     }
+    function updatePassword($tendangnhap,$matkhau){
+        try{
+            echo $tendangnhap."==?".$matkhau;
+            $conn = $this->GetConn();
+            $sql = "UPDATE nguoidung SET matkhau = :matkhau WHERE tendangnhap = :tendangnhap";
+            $query = $conn->prepare($sql);
+            $query->bindParam(":matkhau",$matkhau);
+            $query->bindParam(":tendangnhap",$tendangnhap);
+            $query->execute();
+            if($query->rowCount() > 0){
+                // $this->dangnhap($_SESSION["username"],$_SESSION["password"]);
+                return true;
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            echo "FAULT".$e->getMessage();
+        }
+    }
     function getTitle(){
         $arr = $_SESSION["information"] ;
         $arr = json_decode($arr);

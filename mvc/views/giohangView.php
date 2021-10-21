@@ -2,8 +2,8 @@
 <html lang="zxx">
 
 <head>
-    <?php require_once "block/head.php"; ?>
-    <title>Chào Mừng Bạn Đến Với LQL</title>
+<?php require_once "block/head.php"; ?>
+<title>Giỏ Hàng</title>
 </head>
 
 <body>
@@ -23,7 +23,7 @@
 
     <!-- breadcrumb-area start -->
 
-    <?php require_once "page/khachhangPage.php"; ?>
+    <?php require_once "page/giohangPage.php";?>
     <!-- breadcrumb-area end -->
 
     <!-- login area start -->

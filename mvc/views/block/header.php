@@ -31,15 +31,15 @@
                                 <button class="dropdown-toggle header-action-btn" data-bs-toggle="dropdown"><i
                                         class="icon-user"></i></button>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a class="dropdown-item" href="./taikhoan">Tài Khoản</a></li>
+                                    <li><a class="dropdown-item" href="http://localhost/www/taikhoan">Tài Khoản</a></li>
                                     <!-- <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
                                     <li><a class="dropdown-item" href="login.html">Sign in</a></li> -->
                                 </ul>
                             </div>
                             <!-- Single Wedge End -->
-                            <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                            <a href="http://localhost/www/giohang" class="header-action-btn header-action-btn-cart">
                                 <i class="icon-handbag"></i>
-                                <span class="header-action-num">01</span>
+                                <!-- <span class="header-action-num">01</span> -->
                                 <!-- <span class="cart-amount">€30.00</span> -->
                             </a>
                             <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">
