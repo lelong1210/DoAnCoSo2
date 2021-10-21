@@ -9,9 +9,9 @@ class taikhoanModel extends connectDB{
         $query->bindParam(":matkhau",$matkhau);
         $query->execute();
         if($query->rowCount() > 0){
-            $_SESSION["username"] = "okela";
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
-            $this->getQuyen(json_encode($result));
+            $_SESSION["information"] = json_encode($result);
+            $this->getQuyenAndUser(json_encode($result));
             return true ;
         }else{
             return false ;
@@ -49,10 +49,61 @@ class taikhoanModel extends connectDB{
             return false ;
         }        
     }
-    function getQuyen($arr){
+    function getQuyenAndUser($arr){
         $arr = json_decode($arr);
         $arr = array_values((array)$arr[0]);
         $_SESSION["quyen"] = $arr[6];
+        $_SESSION["username"] = $arr[0];
+        $_SESSION["password"] = $arr[5];
+    }
+    function unloadingDATA(){
+        $arr = json_decode($_SESSION["information"]);
+        $arr = array_values((array)$arr[0]);
+        return $arr ;
+    }
+    function updateAcount($tennguoidung,$diachi,$sodienthoai,$email,$tendangnhap){
+        try{
+            $conn = $this->GetConn();
+            $sql = "UPDATE nguoidung SET tennguoidung = :tennguoidung,diachi = :diachi,sodienthoai = :sodienthoai,email = :email WHERE tendangnhap = :tendangnhap";
+            $query = $conn->prepare($sql);
+            $query->bindParam(":tennguoidung",$tennguoidung);
+            $query->bindParam(":diachi",$diachi);
+            $query->bindParam(":sodienthoai",$sodienthoai);
+            $query->bindParam(":email",$email);
+            $query->bindParam(":tendangnhap",$tendangnhap);
+            $query->execute();
+            if($query->rowCount() > 0){
+                $this->dangnhap($_SESSION["username"],$_SESSION["password"]);
+                return true;
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            echo "FAULT".$e->getMessage();
+        }
+    }
+    function getTitle(){
+        $arr = $_SESSION["information"] ;
+        $arr = json_decode($arr);
+        $arr = array_keys((array)$arr[0]);
+        return $arr ;
+    }
+
+    // function support View
+    function editInformation(){
+        $arrKey = $this->getTitle();
+        $arr = $this->unloadingDATA();
+        $arrTiTile = ["Tên Người Dùng","Địa Chỉ","Số Điện Thoại","Email"];
+        echo "<div class='row'>";
+            for($i = 0 ; $i < count($arrTiTile) ; $i++){
+                echo "<div class='col-lg-12 col-md-12'>";
+                    echo "<div class='billing-info'>";
+                        echo "<label>$arrTiTile[$i]</label>";
+                        echo "<input type='text' value='".$arr[$i+1]."' id='".$arrKey[$i+1]."update'/>";
+                    echo "</div>";
+                echo "</div>";
+            }
+        echo "</div>";
     }
 }
 ?>

@@ -1,51 +1,62 @@
 /*****************CUSTOM************************/
 var result = true;
 $(document).ready(function () {
+    $("#updateAcount").click(function (e) {
+        var tennguoidung = $("#tennguoidungupdate").val();
+        var diachi = $("#diachiupdate").val();
+        var sodienthoai = $("#sodienthoaiupdate").val();
+        var email = $("#emailupdate").val();
+        if(updateAcount(tennguoidung,diachi,sodienthoai,email)){
+            alert("Đã Cập Nhật Thông Tin");
+        }else{
+            alert("Sửa Không Thành Công");
+        }
+    });
     $("#dangnhap").click(function (e) {
         var tendangnhap = $("#tendangnhap_DN").val();
         var matkhau = $("#matkhau_DN").val();
         dangNhap(tendangnhap, matkhau);
     });
     $("#dangky").click(function () {
-        let arrDk = ["tendangnhap_DK","matkhau_DK","rematkhau_DK","email_DK"];
-        
+        let arrDk = ["tendangnhap_DK", "matkhau_DK", "rematkhau_DK", "email_DK"];
+
     });
-    $("input").keyup(function (e) { 
-        let arrDk = ["tendangnhap_DK","matkhau_DK","rematkhau_DK","email_DK"];
-        if($(this).attr('id') == arrDk[0]){
-            if(checkAcount($(this).val())){
-                spanErr($(this).attr('id'),false,"Tồn Tại...");
-            }else{
-                spanErr($(this).attr('id'),true,"");
+    $("input").keyup(function (e) {
+        let arrDk = ["tendangnhap_DK", "matkhau_DK", "rematkhau_DK", "email_DK"];
+        if ($(this).attr('id') == arrDk[0]) {
+            if (checkAcount($(this).val())) {
+                spanErr($(this).attr('id'), false, "Tồn Tại...");
+            } else {
+                spanErr($(this).attr('id'), true, "");
             }
         }
-        if($(this).attr('id') == arrDk[2]){
-            var pass1 = $("#"+arrDk[1]).val();
+        if ($(this).attr('id') == arrDk[2]) {
+            var pass1 = $("#" + arrDk[1]).val();
             var pass2 = $(this).val();
-            if(comparePassword(pass1,pass2)){
-                spanErr($(this).attr('id'),true,"");
-            }else{
-                spanErr($(this).attr('id'),false,"Mật Khẩu Không Khớp...");
-            }  
+            if (comparePassword(pass1, pass2)) {
+                spanErr($(this).attr('id'), true, "");
+            } else {
+                spanErr($(this).attr('id'), false, "Mật Khẩu Không Khớp...");
+            }
         }
-        if($(this).attr('id') == arrDk[3]){
+        if ($(this).attr('id') == arrDk[3]) {
             var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
             var email = $(this).val();
-            if(pattern.test(email)){
-                spanErr($(this).attr('id'),true,"");
-            }else{
-                spanErr($(this).attr('id'),false,"Không Phải Định Dạng Email...");
-            }    
+            if (pattern.test(email)) {
+                spanErr($(this).attr('id'), true, "");
+            } else {
+                spanErr($(this).attr('id'), false, "Không Phải Định Dạng Email...");
+            }
         }
     });
     // function support 
-    function checkAcount(tendangnhap){
+    function checkAcount(tendangnhap) {
         var php_data;
         $.ajax({
             type: "post",
             url: "./ajax/CheckAcount",
-            async: false, 
-            data: {tendangnhap:tendangnhap},
+            async: false,
+            data: { tendangnhap: tendangnhap },
             // dataType: "dataType",
             success: function (response) {
                 php_data = response;
@@ -53,7 +64,7 @@ $(document).ready(function () {
         });
         return php_data;
     }
-    function comparePassword(pass1,pass2) {
+    function comparePassword(pass1, pass2) {
         if (pass1 == pass2) {
             return true;
         } else {
@@ -69,16 +80,38 @@ $(document).ready(function () {
             }
         });
     }
-    function spanErr(idName,option,mess) {
-        if(option){
-            $("#sp"+idName).html("");
-            $("#sp"+idName).css({"color":"red","font-size":"small"});
-        }else{
-            $("#sp"+idName).html(mess);
-            $("#sp"+idName).css({"color":"red","font-size":"small"});
+    function spanErr(idName, option, mess) {
+        if (option) {
+            $("#sp" + idName).html("");
+            $("#sp" + idName).css({ "color": "red", "font-size": "small" });
+        } else {
+            $("#sp" + idName).html(mess);
+            $("#sp" + idName).css({ "color": "red", "font-size": "small" });
         }
         // $("#sp"+idName).addClass("fas fa-times");
-    
+
+    }
+    function updateAcount(tennguoidung, diachi, sodienthoai, email) {
+        var result = 0;
+
+        tennguoidung = tennguoidung.toUpperCase();
+        diachi = diachi.toUpperCase();
+
+        $.ajax({
+            type: "post",
+            url: "./ajax/updateAcount",
+            data: {
+                tennguoidung: tennguoidung,
+                diachi: diachi,
+                sodienthoai: sodienthoai,
+                email: email
+            },
+            async: false,
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
     }
 
 });
