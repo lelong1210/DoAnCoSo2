@@ -1,5 +1,7 @@
 /*****************CUSTOM************************/
 $(document).ready(function () {
+    // link tuyet doi 
+    var linkTuyetDoi = "http://localhost/www/";
     // trang khach hang
     $("#updateAcount").click(function (e) {
         var tennguoidung = $("#tennguoidungupdate").val();
@@ -61,6 +63,16 @@ $(document).ready(function () {
             } else {
                 spanErr($(this).attr('id'), false, "Không Phải Định Dạng Email...");
             }
+        }
+    });
+    // xu ly mua hang 
+    $("button").click(function (e) { 
+        var nameBtnMH = "btnMH";
+        var idThis = $(this).attr('id');
+        if(idThis.startsWith(nameBtnMH)){
+            var masp = idThis.slice(5, idThis.length);
+            var soluong = 1 
+            addProductInCart(masp,soluong);
         }
     });
     // function support 
@@ -156,6 +168,19 @@ $(document).ready(function () {
             type: "post",
             url: "./ajax/updatePassword",
             data: {matkhau:matkhau},
+            // dataType: "dataType",
+            success: function (response) {
+                alert(response);
+            }
+        });
+    }
+    function addProductInCart(masp,soluong){
+        $.ajax({
+            type: "post",
+            url: linkTuyetDoi+"ajax/addProductInCart",
+            data: {masp:masp,
+                soluong:soluong
+            },
             // dataType: "dataType",
             success: function (response) {
                 alert(response);

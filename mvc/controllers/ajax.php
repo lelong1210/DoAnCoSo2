@@ -56,5 +56,12 @@ class ajax extends controller{
             echo false;
         }
     }
+    function addProductInCart(){
+        $masp = $_POST["masp"];
+        $soluong = $_POST["soluong"];
+        $soluong = intval($soluong);
+        $model = $this->call_model("productModel");
+        $model->addProductInCart($masp,$soluong);
+    }
 }
 ?>
