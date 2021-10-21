@@ -61,7 +61,7 @@ class ajax extends controller{
         $soluong = $_POST["soluong"];
         $soluong = intval($soluong);
         $model = $this->call_model("productModel");
-        $model->addProductInCart($masp,$soluong);
+        echo $model->addProductInCart($masp,$soluong);
     }
 }
 ?>

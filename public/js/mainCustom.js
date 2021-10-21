@@ -72,7 +72,11 @@ $(document).ready(function () {
         if(idThis.startsWith(nameBtnMH)){
             var masp = idThis.slice(5, idThis.length);
             var soluong = 1 
-            addProductInCart(masp,soluong);
+            if(addProductInCart(masp,soluong)){
+                alert("Đã Thêm Vào Giỏ Hàng");
+            }else{
+                alert("...");
+            }
         }
     });
     // function support 
@@ -175,17 +179,20 @@ $(document).ready(function () {
         });
     }
     function addProductInCart(masp,soluong){
+        var result = 0 ;
         $.ajax({
             type: "post",
+            async:false,
             url: linkTuyetDoi+"ajax/addProductInCart",
             data: {masp:masp,
                 soluong:soluong
             },
             // dataType: "dataType",
             success: function (response) {
-                alert(response);
+                result = response ;
             }
         });
+        return result ;
     }
 
 });

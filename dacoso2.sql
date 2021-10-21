@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2021 at 04:42 AM
+-- Generation Time: Oct 21, 2021 at 06:32 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -29,9 +29,23 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `chitietgiohang` (
   `masp` int(11) NOT NULL,
-  `soluong` int(11) NOT NULL,
-  `magiohang` int(11) NOT NULL
+  `magiohang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `chitietgiohang`
+--
+
+INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
+(45, 'arcanaabounding-gh', 12),
+(2, 'arcanaabounding-gh', 1),
+(8, 'arcanaabounding-gh', 1),
+(11, 'arcanaabounding-gh', 1),
+(9, 'arcanaabounding-gh', 1),
+(25, 'arcanaabounding-gh', 3),
+(30, 'arcanaabounding-gh', 3),
+(63, 'arcanaabounding-gh', 1);
 
 -- --------------------------------------------------------
 
@@ -69,9 +83,16 @@ CREATE TABLE `congviec` (
 --
 
 CREATE TABLE `giohang` (
-  `magiohang` int(11) NOT NULL,
+  `magiohang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `giohang`
+--
+
+INSERT INTO `giohang` (`magiohang`, `tendangnhap`) VALUES
+('arcanaabounding-gh', 'arcanaabounding');
 
 -- --------------------------------------------------------
 
@@ -323,8 +344,8 @@ INSERT INTO `thumucsanpham` (`mathumuc`, `tenthumuc`, `tenthumuccodau`) VALUES
 -- Indexes for table `chitietgiohang`
 --
 ALTER TABLE `chitietgiohang`
-  ADD PRIMARY KEY (`masp`,`magiohang`),
-  ADD KEY `magiohang` (`magiohang`);
+  ADD KEY `magiohang` (`magiohang`),
+  ADD KEY `masp` (`masp`);
 
 --
 -- Indexes for table `chitiethoadon`
@@ -402,12 +423,6 @@ ALTER TABLE `thumucsanpham`
 --
 ALTER TABLE `congviec`
   MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT;
-
---
--- AUTO_INCREMENT for table `giohang`
---
-ALTER TABLE `giohang`
-  MODIFY `magiohang` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `hangsx`
