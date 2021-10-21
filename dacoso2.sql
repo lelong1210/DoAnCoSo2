@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 18, 2021 at 05:53 AM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 7.3.31
+-- Generation Time: Oct 21, 2021 at 04:42 AM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 8.0.7
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -20,6 +20,58 @@ SET time_zone = "+00:00";
 --
 -- Database: `DaCoSo2`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chitietgiohang`
+--
+
+CREATE TABLE `chitietgiohang` (
+  `masp` int(11) NOT NULL,
+  `soluong` int(11) NOT NULL,
+  `magiohang` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `chitiethoadon`
+--
+
+CREATE TABLE `chitiethoadon` (
+  `soluong` int(11) NOT NULL,
+  `masp` int(11) NOT NULL,
+  `mahoadon` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `congviec`
+--
+
+CREATE TABLE `congviec` (
+  `macv` int(11) NOT NULL,
+  `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `makhachhang` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `masp` int(10) NOT NULL,
+  `diadiemcongviec` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `motatcongviec` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thoigiancongviec` date NOT NULL,
+  `tiendo` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `giohang`
+--
+
+CREATE TABLE `giohang` (
+  `magiohang` int(11) NOT NULL,
+  `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -56,6 +108,30 @@ INSERT INTO `hangsx` (`masx`, `tenhang`) VALUES
 (17, 'Wyze Lock'),
 (18, 'Xiaomi'),
 (19, 'Yeelight');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `hoadon`
+--
+
+CREATE TABLE `hoadon` (
+  `mahoadon` int(11) NOT NULL,
+  `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `luong`
+--
+
+CREATE TABLE `luong` (
+  `hesoluong` decimal(10,2) NOT NULL,
+  `songaydilam` int(10) NOT NULL,
+  `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `maluong` int(11) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
 
@@ -206,6 +282,19 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `thongtinnhanxetsanpham`
+--
+
+CREATE TABLE `thongtinnhanxetsanpham` (
+  `manhanxet` int(11) NOT NULL,
+  `masp` int(11) NOT NULL,
+  `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `noidung` text COLLATE utf8mb4_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `thumucsanpham`
 --
 
@@ -231,10 +320,53 @@ INSERT INTO `thumucsanpham` (`mathumuc`, `tenthumuc`, `tenthumuccodau`) VALUES
 --
 
 --
+-- Indexes for table `chitietgiohang`
+--
+ALTER TABLE `chitietgiohang`
+  ADD PRIMARY KEY (`masp`,`magiohang`),
+  ADD KEY `magiohang` (`magiohang`);
+
+--
+-- Indexes for table `chitiethoadon`
+--
+ALTER TABLE `chitiethoadon`
+  ADD PRIMARY KEY (`masp`,`mahoadon`),
+  ADD KEY `mahoadon` (`mahoadon`);
+
+--
+-- Indexes for table `congviec`
+--
+ALTER TABLE `congviec`
+  ADD PRIMARY KEY (`macv`),
+  ADD KEY `tendangnhap` (`tendangnhap`);
+
+--
+-- Indexes for table `giohang`
+--
+ALTER TABLE `giohang`
+  ADD PRIMARY KEY (`magiohang`),
+  ADD KEY `tendangnhap` (`tendangnhap`);
+
+--
 -- Indexes for table `hangsx`
 --
 ALTER TABLE `hangsx`
   ADD PRIMARY KEY (`masx`);
+
+--
+-- Indexes for table `hoadon`
+--
+ALTER TABLE `hoadon`
+  ADD PRIMARY KEY (`mahoadon`),
+  ADD KEY `tendangnhap` (`tendangnhap`);
+
+--
+-- Indexes for table `luong`
+--
+ALTER TABLE `luong`
+  ADD PRIMARY KEY (`maluong`),
+  ADD UNIQUE KEY `tendangnhap_2` (`tendangnhap`),
+  ADD KEY `tendangnhap` (`tendangnhap`);
 
 --
 -- Indexes for table `nguoidung`
@@ -249,6 +381,13 @@ ALTER TABLE `sanpham`
   ADD PRIMARY KEY (`masp`);
 
 --
+-- Indexes for table `thongtinnhanxetsanpham`
+--
+ALTER TABLE `thongtinnhanxetsanpham`
+  ADD PRIMARY KEY (`manhanxet`),
+  ADD UNIQUE KEY `masp` (`masp`);
+
+--
 -- Indexes for table `thumucsanpham`
 --
 ALTER TABLE `thumucsanpham`
@@ -259,10 +398,34 @@ ALTER TABLE `thumucsanpham`
 --
 
 --
+-- AUTO_INCREMENT for table `congviec`
+--
+ALTER TABLE `congviec`
+  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `giohang`
+--
+ALTER TABLE `giohang`
+  MODIFY `magiohang` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `hangsx`
 --
 ALTER TABLE `hangsx`
   MODIFY `masx` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+
+--
+-- AUTO_INCREMENT for table `hoadon`
+--
+ALTER TABLE `hoadon`
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT for table `luong`
+--
+ALTER TABLE `luong`
+  MODIFY `maluong` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `sanpham`
@@ -271,10 +434,64 @@ ALTER TABLE `sanpham`
   MODIFY `masp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
+-- AUTO_INCREMENT for table `thongtinnhanxetsanpham`
+--
+ALTER TABLE `thongtinnhanxetsanpham`
+  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT for table `thumucsanpham`
 --
 ALTER TABLE `thumucsanpham`
   MODIFY `mathumuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `chitietgiohang`
+--
+ALTER TABLE `chitietgiohang`
+  ADD CONSTRAINT `chitietgiohang_ibfk_1` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `chitietgiohang_ibfk_2` FOREIGN KEY (`magiohang`) REFERENCES `giohang` (`magiohang`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `chitiethoadon`
+--
+ALTER TABLE `chitiethoadon`
+  ADD CONSTRAINT `chitiethoadon_ibfk_1` FOREIGN KEY (`mahoadon`) REFERENCES `hoadon` (`mahoadon`) ON DELETE CASCADE ON UPDATE CASCADE,
+  ADD CONSTRAINT `chitiethoadon_ibfk_2` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE CASCADE ON UPDATE CASCADE;
+
+--
+-- Constraints for table `congviec`
+--
+ALTER TABLE `congviec`
+  ADD CONSTRAINT `congviec_ibfk_1` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `giohang`
+--
+ALTER TABLE `giohang`
+  ADD CONSTRAINT `giohang_ibfk_1` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `hoadon`
+--
+ALTER TABLE `hoadon`
+  ADD CONSTRAINT `hoadon_ibfk_1` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `luong`
+--
+ALTER TABLE `luong`
+  ADD CONSTRAINT `luong_ibfk_1` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `thongtinnhanxetsanpham`
+--
+ALTER TABLE `thongtinnhanxetsanpham`
+  ADD CONSTRAINT `thongtinnhanxetsanpham_ibfk_1` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
