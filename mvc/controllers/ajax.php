@@ -63,5 +63,8 @@ class ajax extends controller{
         $model = $this->call_model("productModel");
         echo $model->addProductInCart($masp,$soluong);
     }
+    function xem(){
+
+    }
 }
 ?>
