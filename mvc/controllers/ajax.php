@@ -81,5 +81,11 @@ class ajax extends controller{
         $model = $this->call_model("productModel");
         echo $model->updateInDetailCart($masp, $magiohang, $soluong);
     }
+    function deleteInDetailCart(){
+        $masp = $_POST["masp"];
+        $magiohang = $_SESSION["username"] . "-gh";
+        $model = $this->call_model("productModel");
+        echo $model->deleteInDetailCart($masp, $magiohang);        
+    }
 }
 ?>

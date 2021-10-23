@@ -25,11 +25,11 @@
                             <div class="col-lg-12">
                                 <div class="cart-shiping-update-wrapper">
                                     <div class="cart-shiping-update">
-                                        <a href="#">Continue Shopping</a>
+                                        <a href="home">Mua Thêm</a>
                                     </div>
                                     <div class="cart-clear">
-                                        <button>Update Shopping Cart</button>
-                                        <a href="#">Clear Shopping Cart</a>
+                                        <button>Xóa</button>
+                                        <button>Thanh Toán</button>
                                     </div>
                                 </div>
                             </div>

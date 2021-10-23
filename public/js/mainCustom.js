@@ -234,26 +234,27 @@ $(document).ready(function () {
         return result;
     }
     function EditDetailOfCartFrontEnd(idThis, btnMh, valueOfInput, tdOfprice, tdOfprieLast, option) {
-        var idLast = idThis.slice(btnMh.length, idThis.length);
-        var valueOfInputLast = $("#" + valueOfInput + idLast).val();
-        var idPrice = $("#" + tdOfprice + idLast).html();
+        var masp = idThis.slice(btnMh.length, idThis.length);
+        var valueOfInputLast = $("#" + valueOfInput + masp).val();
+        var idPrice = $("#" + tdOfprice + masp).html();
         var soluong = parseInt(valueOfInputLast);
         if (option == "up") {
             soluong = parseInt(valueOfInputLast) + 1;
-            $("#" + valueOfInput + idLast).val(parseInt(valueOfInputLast) + 1);
-            $("#" + tdOfprieLast + idLast).html(parseInt(idPrice) * soluong);
-            updateDetailOfCart(idLast,soluong);
+            $("#" + valueOfInput + masp).val(parseInt(valueOfInputLast) + 1);
+            $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
+            updateDetailOfCart(masp,soluong);
             // alert(soluong);
         }
         if (option == "down") {
             // alert("vao down");
             soluong = parseInt(valueOfInputLast) - 1;
             if(soluong == 0){
-                $("#"+"tr"+idLast).remove();
+                $("#"+"tr"+masp).remove();
+                deleteInDetailCart(masp);
             }else{
-                $("#" + valueOfInput + idLast).val(parseInt(valueOfInputLast) - 1);
-                $("#" + tdOfprieLast + idLast).html(parseInt(idPrice) * soluong);
-                updateDetailOfCart(idLast,soluong);
+                $("#" + valueOfInput + masp).val(parseInt(valueOfInputLast) - 1);
+                $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
+                updateDetailOfCart(masp,soluong);
             }
         }
     }
@@ -265,6 +266,19 @@ $(document).ready(function () {
             data: {
                 masp:masp,
                 soluong:soluong
+            },
+            success: function (response) {
+                // alert(response);
+            }
+        });
+    }
+    function deleteInDetailCart(masp){
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/deleteInDetailCart",
+            data: {
+                masp:masp
             },
             success: function (response) {
                 // alert(response);
