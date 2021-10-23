@@ -101,8 +101,14 @@ $(document).ready(function () {
             EditDetailOfCartFrontEnd(idThis, btnMhDown, valueOfInput, tdOfprice, tdOfprieLast,soluongconlai, "down")
         }
     });
-    $("span").click(function (e) {
-        alert($(this).attr("id"));
+    $("#thanhtoan").click(function (e){
+        var n = $(':checkbox').length;
+        alert("co "+n+" checkbox")
+        // if($("input").is(':checked')){
+        //     alert("da chon ---> ");
+        // }else{
+        //     alert("chua chon");
+        // }
     });
     // function support 
     function checkAcount(tendangnhap) {
@@ -239,17 +245,22 @@ $(document).ready(function () {
     }
     function EditDetailOfCartFrontEnd(idThis, btnMh, valueOfInput, tdOfprice, tdOfprieLast,soluongconlai, option) {
         var masp = idThis.slice(btnMh.length, idThis.length);
-        var valueOfInputLast = $("#" + valueOfInput + masp).val();
+        var valueOfInputLast = $("#" + valueOfInput + masp).html();
         var idPrice = $("#" + tdOfprice + masp).html();
         var soluong = parseInt(valueOfInputLast);
         var soluongkhadung = $("#" + soluongconlai + masp).html();
         if (option == "up") {
             soluong = soluong + 1;
             soluongkhadung = parseInt(soluongkhadung) - 1;
-            $("#" + valueOfInput + masp).val(soluong);
-            $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
-            $("#" + soluongconlai + masp).html(soluongkhadung)
-            updateDetailOfCart(masp,soluong);
+            if(soluongkhadung < 0){
+                alert("Không Còn Đủ Sản Phẩm")
+            }else{
+                $("#" + valueOfInput + masp).html(soluong);
+                $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
+                $("#" + soluongconlai + masp).html(soluongkhadung)
+                updateDetailOfCart(masp,soluong);
+                updateSanPham(masp,soluongkhadung);
+            }
             // alert(soluong);
         }
         if (option == "down") {
@@ -259,10 +270,11 @@ $(document).ready(function () {
                 $("#"+"tr"+masp).remove();
                 deleteInDetailCart(masp);
             }else{
-                $("#" + valueOfInput + masp).val(soluong);
+                $("#" + valueOfInput + masp).html(soluong);
                 $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
                 $("#" + soluongconlai + masp).html(soluongkhadung)
                 updateDetailOfCart(masp,soluong);
+                updateSanPham(masp,soluongkhadung);
             }
         }
     }
@@ -280,14 +292,14 @@ $(document).ready(function () {
             }
         });
     }
-    function updateSanPham(){
+    function updateSanPham(masp,soluongsp){
         $.ajax({
             type: "post",
             async:false,
             url: linkTuyetDoi+"ajax/updateSanPham",
             data: {
                 masp:masp,
-                soluong:soluong
+                soluongsp:soluongsp
             },
             success: function (response) {
                 // alert(response);

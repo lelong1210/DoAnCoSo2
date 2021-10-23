@@ -88,7 +88,10 @@ class ajax extends controller{
         echo $model->deleteInDetailCart($masp, $magiohang);        
     }
     function updateSanPham(){
-        
+        $masp = $_POST["masp"];
+        $soluongsp = $_POST["soluongsp"];
+        $model = $this->call_model("productModel");
+        echo $model->updateSanPham($masp,$soluongsp);
     }
 }
 ?>

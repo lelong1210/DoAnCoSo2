@@ -149,12 +149,12 @@ class productModel extends connectDB
             return false;
         }        
     }
-    function updateSanPham(){
+    function updateSanPham($masp,$soluongsp){
         $conn = $this->GetConn();
-        $sql = "DELETE FROM chitietgiohang WHERE masp=:masp AND magiohang=:magiohang";
+        $sql = "UPDATE sanpham SET soluongsp = :soluongsp WHERE sanpham.masp = :masp";
         $query = $conn->prepare($sql);
         $query->bindParam(":masp", $masp);
-        $query->bindParam(":magiohang", $magiohang);
+        $query->bindParam(":soluongsp", $soluongsp);
         $query->execute();
         if ($query->rowCount() > 0) {
             return true;
@@ -179,14 +179,15 @@ class productModel extends connectDB
                     echo "<td class='product-quantity'>";
                         echo "<div class='cart-plus-minus'>";
                             echo "<div class='dec qtybutton' id='btnMhDown$arrChild[4]'>-</div>";
-                            echo "<input class='cart-plus-minus-box' type='text' name='qtybutton' value='$arrChild[3]' id='valueOfInput$arrChild[4]'/>";
+                            // echo "<input class='cart-plus-minus-box' type='text' name='qtybutton' value='$arrChild[3]' id='valueOfInput$arrChild[4]'/>";
+                            echo "<span class='cart-plus-minus-box' id='valueOfInput$arrChild[4]'>$arrChild[3]</span>";
                             echo "<div class='inc qtybutton' id='btnMhUp$arrChild[4]'>+</div>";
                         echo "</div>";
                     echo "</td>";
                     echo "<td class='product-price-cart' ><span class='amount' id='tdOfprieLast$arrChild[4]'>".($arrChild[2]*$arrChild[3])." </span> đ</td>";
                     echo "<td><span id='soluongconlai$arrChild[4]'>$arrChild[5]</span></td>";
                     echo "<td>";
-                        echo "<input type='checkbox' value='' style='height: 20px'>";
+                        echo "<input type='checkbox' value='' style='height: 20px' id='chonsp$arrChild[4]'>";
                     echo "</td>";
                 echo "</tr>";
             }
