@@ -149,6 +149,19 @@ class productModel extends connectDB
             return false;
         }        
     }
+    function updateSanPham(){
+        $conn = $this->GetConn();
+        $sql = "DELETE FROM chitietgiohang WHERE masp=:masp AND magiohang=:magiohang";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":masp", $masp);
+        $query->bindParam(":magiohang", $magiohang);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }          
+    }
     // chuoi hanh dong in gio hang ra ngoai VIEW 
     function showProductInCart(){
         $magiohang = $_SESSION["username"]."-gh";
@@ -171,7 +184,8 @@ class productModel extends connectDB
                         echo "</div>";
                     echo "</td>";
                     echo "<td class='product-price-cart' ><span class='amount' id='tdOfprieLast$arrChild[4]'>".($arrChild[2]*$arrChild[3])." </span> đ</td>";
-                    echo "<td class='product-remove'>";
+                    echo "<td><span id='soluongconlai$arrChild[4]'>$arrChild[5]</span></td>";
+                    echo "<td>";
                         echo "<input type='checkbox' value='' style='height: 20px'>";
                     echo "</td>";
                 echo "</tr>";
@@ -179,7 +193,7 @@ class productModel extends connectDB
         }
     }
     function getProductIncart($magiohang){
-        $sql = "SELECT sanpham.linkduongdananh,sanpham.tensp,giatien,chitietgiohang.soluong,sanpham.masp
+        $sql = "SELECT sanpham.linkduongdananh,sanpham.tensp,giatien,chitietgiohang.soluong,sanpham.masp,sanpham.soluongsp
                 FROM chitietgiohang 
                 INNER JOIN sanpham 
                 ON chitietgiohang.masp = sanpham.masp 

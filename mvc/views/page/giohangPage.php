@@ -13,7 +13,8 @@
                                         <th>Giá Tiền</th>
                                         <th>Số Lượng</th>
                                         <th>Thành Tiền</th>
-                                        <th>Hành Động</th>
+                                        <th>Số Lượng Còn Lại</th>
+                                        <th><i class="far fa-check-square" id="checkAll"></i></th>
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -28,8 +29,7 @@
                                         <a href="home">Mua Thêm</a>
                                     </div>
                                     <div class="cart-clear">
-                                        <button>Xóa</button>
-                                        <button>Thanh Toán</button>
+                                        <a>Mua Thêm</a>
                                     </div>
                                 </div>
                             </div>

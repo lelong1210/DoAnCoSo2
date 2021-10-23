@@ -93,17 +93,17 @@ $(document).ready(function () {
         var idThis = $(this).attr("id");
         var tdOfprice = "tdOfprice";
         var tdOfprieLast = "tdOfprieLast";
+        var soluongconlai = "soluongconlai";
         if (idThis.startsWith(btnMhUp)) {
-            EditDetailOfCartFrontEnd(idThis, btnMhUp, valueOfInput, tdOfprice, tdOfprieLast, "up");
+            EditDetailOfCartFrontEnd(idThis, btnMhUp, valueOfInput, tdOfprice, tdOfprieLast,soluongconlai, "up");
         }
         if (idThis.startsWith(btnMhDown)) {
-            EditDetailOfCartFrontEnd(idThis, btnMhDown, valueOfInput, tdOfprice, tdOfprieLast, "down")
+            EditDetailOfCartFrontEnd(idThis, btnMhDown, valueOfInput, tdOfprice, tdOfprieLast,soluongconlai, "down")
         }
     });
-    // $("tr").click(function (e) {
-    //     alert($(this).attr("id"));
-    // });
-
+    $("span").click(function (e) {
+        alert($(this).attr("id"));
+    });
     // function support 
     function checkAcount(tendangnhap) {
         var php_data;
@@ -199,7 +199,11 @@ $(document).ready(function () {
             data: { matkhau: matkhau },
             // dataType: "dataType",
             success: function (response) {
-                alert(response);
+               if(response){
+                   alert("Đổi Mật Khẩu Thành Công");
+               }else{
+                   alert("Đổi Mật Khẩu Thất Bại");
+               }
             }
         });
     }
@@ -233,27 +237,31 @@ $(document).ready(function () {
         });
         return result;
     }
-    function EditDetailOfCartFrontEnd(idThis, btnMh, valueOfInput, tdOfprice, tdOfprieLast, option) {
+    function EditDetailOfCartFrontEnd(idThis, btnMh, valueOfInput, tdOfprice, tdOfprieLast,soluongconlai, option) {
         var masp = idThis.slice(btnMh.length, idThis.length);
         var valueOfInputLast = $("#" + valueOfInput + masp).val();
         var idPrice = $("#" + tdOfprice + masp).html();
         var soluong = parseInt(valueOfInputLast);
+        var soluongkhadung = $("#" + soluongconlai + masp).html();
         if (option == "up") {
-            soluong = parseInt(valueOfInputLast) + 1;
-            $("#" + valueOfInput + masp).val(parseInt(valueOfInputLast) + 1);
+            soluong = soluong + 1;
+            soluongkhadung = parseInt(soluongkhadung) - 1;
+            $("#" + valueOfInput + masp).val(soluong);
             $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
+            $("#" + soluongconlai + masp).html(soluongkhadung)
             updateDetailOfCart(masp,soluong);
             // alert(soluong);
         }
         if (option == "down") {
-            // alert("vao down");
-            soluong = parseInt(valueOfInputLast) - 1;
+            soluong = soluong - 1;
+            soluongkhadung = parseInt(soluongkhadung) + 1;
             if(soluong == 0){
                 $("#"+"tr"+masp).remove();
                 deleteInDetailCart(masp);
             }else{
-                $("#" + valueOfInput + masp).val(parseInt(valueOfInputLast) - 1);
+                $("#" + valueOfInput + masp).val(soluong);
                 $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
+                $("#" + soluongconlai + masp).html(soluongkhadung)
                 updateDetailOfCart(masp,soluong);
             }
         }
@@ -271,6 +279,20 @@ $(document).ready(function () {
                 // alert(response);
             }
         });
+    }
+    function updateSanPham(){
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/updateSanPham",
+            data: {
+                masp:masp,
+                soluong:soluong
+            },
+            success: function (response) {
+                // alert(response);
+            }
+        });        
     }
     function deleteInDetailCart(masp){
         $.ajax({
