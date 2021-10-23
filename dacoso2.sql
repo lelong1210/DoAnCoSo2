@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 21, 2021 at 06:32 PM
+-- Generation Time: Oct 23, 2021 at 04:30 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -39,13 +39,16 @@ CREATE TABLE `chitietgiohang` (
 
 INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
 (45, 'arcanaabounding-gh', 12),
-(2, 'arcanaabounding-gh', 1),
+(2, 'arcanaabounding-gh', 2),
 (8, 'arcanaabounding-gh', 1),
 (11, 'arcanaabounding-gh', 1),
 (9, 'arcanaabounding-gh', 1),
 (25, 'arcanaabounding-gh', 3),
-(30, 'arcanaabounding-gh', 3),
-(63, 'arcanaabounding-gh', 1);
+(63, 'arcanaabounding-gh', 1),
+(3, 'arcanaabounding-gh', 2),
+(1, 'arcanaabounding-gh', 1),
+(2, 'longtermplayoffs-gh', 1),
+(12, 'longtermplayoffs-gh', 1);
 
 -- --------------------------------------------------------
 
@@ -92,7 +95,8 @@ CREATE TABLE `giohang` (
 --
 
 INSERT INTO `giohang` (`magiohang`, `tendangnhap`) VALUES
-('arcanaabounding-gh', 'arcanaabounding');
+('arcanaabounding-gh', 'arcanaabounding'),
+('longtermplayoffs-gh', 'longtermplayoffs');
 
 -- --------------------------------------------------------
 
@@ -176,7 +180,7 @@ CREATE TABLE `nguoidung` (
 
 INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`, `email`, `matkhau`, `quyen`) VALUES
 ('abaftdon’t', NULL, NULL, NULL, 'roma61@hotmail.com', '5280e11f2452aac5aa85177aaf4b3b98', 0),
-('arcanaabounding', NULL, NULL, NULL, 'marisol39@hotmail.com', '46d014dd88ae6b32f39b60fa9756fa25', 0),
+('arcanaabounding', 'LE QUANG LONG', 'QUANG BINH', '0904349823', 'marisol39@hotmail.com', '93279e3308bdbbeed946fc965017f67a', 0),
 ('arousedrecruit', NULL, NULL, NULL, 'salma87@hotmail.com', 'a794275722896cac20ecdd29928a3b9d', 0),
 ('banneravailable', NULL, NULL, NULL, 'marjolaine42@hotmail.com', '9c80d885bcf55293e8b999ea404ff2b2', 0),
 ('befittinggeorgian', NULL, NULL, NULL, 'ena.brekke8@gmail.com', '3f2f56b3de1307423a65a09498b820ef', 0),
@@ -206,7 +210,7 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', 0),
 ('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', 0),
 ('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', 0),
-('longtermplayoffs', NULL, NULL, NULL, 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', 0),
+('longtermplayoffs', 'PHẠM THỊ HẰNG', 'QUANG BINH', '0904349823', 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', 0),
 ('lql', NULL, NULL, NULL, 'lequanglong12102k2@gmail.com', '93279e3308bdbbeed946fc965017f67a', 1),
 ('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', 0),
 ('motorwayscold', NULL, NULL, NULL, 'mariah77@gmail.com', 'cddf86a9055a2e2168733a07ef284cb6', 0),
@@ -359,7 +363,8 @@ ALTER TABLE `chitiethoadon`
 --
 ALTER TABLE `congviec`
   ADD PRIMARY KEY (`macv`),
-  ADD KEY `tendangnhap` (`tendangnhap`);
+  ADD KEY `tendangnhap` (`tendangnhap`),
+  ADD KEY `masp` (`masp`);
 
 --
 -- Indexes for table `giohang`
@@ -406,7 +411,8 @@ ALTER TABLE `sanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
   ADD PRIMARY KEY (`manhanxet`),
-  ADD UNIQUE KEY `masp` (`masp`);
+  ADD UNIQUE KEY `masp` (`masp`),
+  ADD KEY `tendangnhap` (`tendangnhap`);
 
 --
 -- Indexes for table `thumucsanpham`
@@ -482,7 +488,8 @@ ALTER TABLE `chitiethoadon`
 -- Constraints for table `congviec`
 --
 ALTER TABLE `congviec`
-  ADD CONSTRAINT `congviec_ibfk_1` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `congviec_ibfk_1` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `congviec_ibfk_2` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `giohang`
@@ -506,7 +513,8 @@ ALTER TABLE `luong`
 -- Constraints for table `thongtinnhanxetsanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
-  ADD CONSTRAINT `thongtinnhanxetsanpham_ibfk_1` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `thongtinnhanxetsanpham_ibfk_1` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `thongtinnhanxetsanpham_ibfk_2` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
