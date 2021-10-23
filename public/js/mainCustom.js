@@ -70,14 +70,20 @@ $(document).ready(function () {
         var nameBtnMH = "btnMH";
         var idThis = $(this).attr('id');
         if(idThis.startsWith(nameBtnMH)){
-            var masp = idThis.slice(5, idThis.length);
-            var soluong = 1 
-            if(addProductInCart(masp,soluong)){
-                alert("Đã Thêm Vào Giỏ Hàng");
+            if(checkLogin()){
+                var masp = idThis.slice(5, idThis.length);
+                var soluong = 1 
+                if(addProductInCart(masp,soluong)){
+                    alert("Đã Thêm Vào Giỏ Hàng");
+                }else{
+                    alert("...");
+                }   
             }else{
-                alert("...");
+                location.replace(linkTuyetDoi+"dndk");
             }
+
         }
+
     });
     // function support 
     function checkAcount(tendangnhap) {
@@ -193,6 +199,19 @@ $(document).ready(function () {
             }
         });
         return result ;
+    }
+    function checkLogin(){
+        var result ;
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/checklogin",
+            data: {},
+            success: function (response) {
+                result = response ;
+            }
+        });
+        return result;
     }
 
 });

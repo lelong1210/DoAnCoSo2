@@ -66,5 +66,16 @@ class ajax extends controller{
     function xem(){
 
     }
+    function checklogin(){
+        if(isset($_SESSION["username"]) && isset($_SESSION["quyen"])){
+            if($_SESSION["quyen"] == 0){
+                return true ;
+            }else{
+                return false;
+            }
+        }else{
+            return false;
+        }
+    }
 }
 ?>
