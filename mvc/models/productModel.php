@@ -117,8 +117,7 @@ class productModel extends connectDB
             return false;
         }
     }
-    function updateInDetailCart($masp, $magiohang, $soluong)
-    {
+    function updateInDetailCart($masp, $magiohang, $soluong){
         $conn = $this->GetConn();
         $sql = "UPDATE chitietgiohang SET soluong=:soluong WHERE masp=:masp AND magiohang=:magiohang";
         $query = $conn->prepare($sql);
@@ -144,26 +143,28 @@ class productModel extends connectDB
         $count = count($arr);
         for ($i=0; $i < $count ; $i++) { 
             $arrChild = array_values((array)$arr[$i]);
-            echo "<tr>";
+            echo "<tr id='tr$arrChild[4]'>";
                 echo "<td class='product-thumbnail'>";
                     echo "<a href='#'><img class='img-responsive ml-3' src='$arrChild[0]' alt='' /></a>";
                 echo "</td>";
                 echo "<td class='product-name'><a href='#'>$arrChild[1]</a></td>";
-                echo "<td class='product-price-cart'><span class='amount'>".number_format($arrChild[2])." đ</span></td>";
+                echo "<td class='product-price-cart'><span class='amount' id='tdOfprice$arrChild[4]'>".($arrChild[2])." </span>đ</td>";
                 echo "<td class='product-quantity'>";
                     echo "<div class='cart-plus-minus'>";
-                        echo "<input class='cart-plus-minus-box' type='text' name='qtybutton' value='$arrChild[3]' />";
+                        echo "<div class='dec qtybutton' id='btnMhDown$arrChild[4]'>-</div>";
+                        echo "<input class='cart-plus-minus-box' type='text' name='qtybutton' value='$arrChild[3]' id='valueOfInput$arrChild[4]'/>";
+                        echo "<div class='inc qtybutton' id='btnMhUp$arrChild[4]'>+</div>";
                     echo "</div>";
                 echo "</td>";
+                echo "<td class='product-price-cart' ><span class='amount' id='tdOfprieLast$arrChild[4]'>".($arrChild[2]*$arrChild[3])." </span> đ</td>";
                 echo "<td class='product-remove'>";
-                    echo "<a href='#'><i class='icon-pencil'></i></a>";
-                    echo "<a href='#'><i class='icon-close'></i></a>";
+                    echo "<input type='checkbox' value='' style='height: 20px'>";
                 echo "</td>";
             echo "</tr>";
         }
     }
     function getProductIncart($magiohang){
-        $sql = "SELECT sanpham.linkduongdananh,sanpham.tensp,giatien,chitietgiohang.soluong
+        $sql = "SELECT sanpham.linkduongdananh,sanpham.tensp,giatien,chitietgiohang.soluong,sanpham.masp
                 FROM chitietgiohang 
                 INNER JOIN sanpham 
                 ON chitietgiohang.masp = sanpham.masp 

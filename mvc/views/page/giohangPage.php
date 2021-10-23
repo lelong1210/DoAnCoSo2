@@ -12,6 +12,7 @@
                                         <th>Tên Sản Phẩm</th>
                                         <th>Giá Tiền</th>
                                         <th>Số Lượng</th>
+                                        <th>Thành Tiền</th>
                                         <th>Hành Động</th>
                                     </tr>
                                 </thead>

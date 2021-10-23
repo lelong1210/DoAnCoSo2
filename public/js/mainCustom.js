@@ -8,22 +8,22 @@ $(document).ready(function () {
         var diachi = $("#diachiupdate").val();
         var sodienthoai = $("#sodienthoaiupdate").val();
         var email = $("#emailupdate").val();
-        if(updateAcount(tennguoidung,diachi,sodienthoai,email)){
+        if (updateAcount(tennguoidung, diachi, sodienthoai, email)) {
             alert("Đã Cập Nhật Thông Tin");
-        }else{
+        } else {
             alert("Sửa Không Thành Công");
         }
     });
-    $("#updatePassword").click(function(e){
-        if(checkChangePass()){
-            let arr = ["matkhau_UP","rematkhau_UP"];
-            var pass2 = $("#"+arr[1]).val();
+    $("#updatePassword").click(function (e) {
+        if (checkChangePass()) {
+            let arr = ["matkhau_UP", "rematkhau_UP"];
+            var pass2 = $("#" + arr[1]).val();
             changePass(pass2);
-        }else{
+        } else {
             alert("Không Thể Thực Hiện");
         }
     });
-    $("input").keyup(function(e){
+    $("input").keyup(function (e) {
         var id = $(this).attr("id");
         checkChangePass(id);
     });
@@ -66,25 +66,44 @@ $(document).ready(function () {
         }
     });
     // xu ly mua hang 
-    $("button").click(function (e) { 
+    $("button").click(function (e) {
         var nameBtnMH = "btnMH";
         var idThis = $(this).attr('id');
-        if(idThis.startsWith(nameBtnMH)){
-            if(checkLogin()){
+        if (idThis.startsWith(nameBtnMH)) {
+            if (checkLogin()) {
                 var masp = idThis.slice(5, idThis.length);
-                var soluong = 1 
-                if(addProductInCart(masp,soluong)){
+                var soluong = 1
+                if (addProductInCart(masp, soluong)) {
                     alert("Đã Thêm Vào Giỏ Hàng");
-                }else{
+                } else {
                     alert("...");
-                }   
-            }else{
-                location.replace(linkTuyetDoi+"dndk");
+                }
+            }
+            else {
+                location.replace(linkTuyetDoi + "dndk");
             }
 
         }
-
     });
+
+    $(".qtybutton").click(function (e) {
+        var btnMhUp = "btnMhUp";
+        var btnMhDown = "btnMhDown";
+        var valueOfInput = "valueOfInput";
+        var idThis = $(this).attr("id");
+        var tdOfprice = "tdOfprice";
+        var tdOfprieLast = "tdOfprieLast";
+        if (idThis.startsWith(btnMhUp)) {
+            EditDetailOfCartFrontEnd(idThis, btnMhUp, valueOfInput, tdOfprice, tdOfprieLast, "up");
+        }
+        if (idThis.startsWith(btnMhDown)) {
+            EditDetailOfCartFrontEnd(idThis, btnMhDown, valueOfInput, tdOfprice, tdOfprieLast, "down")
+        }
+    });
+    // $("tr").click(function (e) {
+    //     alert($(this).attr("id"));
+    // });
+
     // function support 
     function checkAcount(tendangnhap) {
         var php_data;
@@ -149,71 +168,109 @@ $(document).ready(function () {
         });
         return result;
     }
-    function checkChangePass(id){
-        var result = true ;
-        let arr = ["matkhau_UP","rematkhau_UP"];
-        var pass1 = $("#"+arr[0]).val();
-        var pass2 = $("#"+arr[1]).val();
-        if(id){
-            if(id == arr[1]){
-                if(comparePassword(pass1,pass2)){
-                    spanErr(arr[1],true,"");
-                    result = true ;
-                }else{
-                    spanErr(arr[1],false,"Mật Khẩu Không Khớp");
-                    result = false ;
+    function checkChangePass(id) {
+        var result = true;
+        let arr = ["matkhau_UP", "rematkhau_UP"];
+        var pass1 = $("#" + arr[0]).val();
+        var pass2 = $("#" + arr[1]).val();
+        if (id) {
+            if (id == arr[1]) {
+                if (comparePassword(pass1, pass2)) {
+                    spanErr(arr[1], true, "");
+                    result = true;
+                } else {
+                    spanErr(arr[1], false, "Mật Khẩu Không Khớp");
+                    result = false;
                 }
             }
             return result;
-        }else{
-            if(comparePassword(pass1,pass2)){
-                return true ;
-            }else{
+        } else {
+            if (comparePassword(pass1, pass2)) {
+                return true;
+            } else {
                 return false;
             }
         }
     }
-    function changePass(matkhau){
+    function changePass(matkhau) {
         $.ajax({
             type: "post",
             url: "./ajax/updatePassword",
-            data: {matkhau:matkhau},
+            data: { matkhau: matkhau },
             // dataType: "dataType",
             success: function (response) {
                 alert(response);
             }
         });
     }
-    function addProductInCart(masp,soluong){
-        var result = 0 ;
+    function addProductInCart(masp, soluong) {
+        var result = 0;
         $.ajax({
             type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/addProductInCart",
-            data: {masp:masp,
-                soluong:soluong
+            async: false,
+            url: linkTuyetDoi + "ajax/addProductInCart",
+            data: {
+                masp: masp,
+                soluong: soluong
             },
             // dataType: "dataType",
             success: function (response) {
-                result = response ;
-            }
-        });
-        return result ;
-    }
-    function checkLogin(){
-        var result ;
-        $.ajax({
-            type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/checklogin",
-            data: {},
-            success: function (response) {
-                result = response ;
+                result = response;
             }
         });
         return result;
     }
-
+    function checkLogin() {
+        var result;
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/checklogin",
+            data: {},
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+    function EditDetailOfCartFrontEnd(idThis, btnMh, valueOfInput, tdOfprice, tdOfprieLast, option) {
+        var idLast = idThis.slice(btnMh.length, idThis.length);
+        var valueOfInputLast = $("#" + valueOfInput + idLast).val();
+        var idPrice = $("#" + tdOfprice + idLast).html();
+        var soluong = parseInt(valueOfInputLast);
+        if (option == "up") {
+            soluong = parseInt(valueOfInputLast) + 1;
+            $("#" + valueOfInput + idLast).val(parseInt(valueOfInputLast) + 1);
+            $("#" + tdOfprieLast + idLast).html(parseInt(idPrice) * soluong);
+            updateDetailOfCart(idLast,soluong);
+            // alert(soluong);
+        }
+        if (option == "down") {
+            // alert("vao down");
+            soluong = parseInt(valueOfInputLast) - 1;
+            if(soluong == 0){
+                $("#"+"tr"+idLast).remove();
+            }else{
+                $("#" + valueOfInput + idLast).val(parseInt(valueOfInputLast) - 1);
+                $("#" + tdOfprieLast + idLast).html(parseInt(idPrice) * soluong);
+                updateDetailOfCart(idLast,soluong);
+            }
+        }
+    }
+   function updateDetailOfCart(masp,soluong){
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/updateDetailOfCart",
+            data: {
+                masp:masp,
+                soluong:soluong
+            },
+            success: function (response) {
+                // alert(response);
+            }
+        });
+    }
 });
 
 

@@ -63,19 +63,23 @@ class ajax extends controller{
         $model = $this->call_model("productModel");
         echo $model->addProductInCart($masp,$soluong);
     }
-    function xem(){
-
-    }
     function checklogin(){
         if(isset($_SESSION["username"]) && isset($_SESSION["quyen"])){
             if($_SESSION["quyen"] == 0){
-                return true ;
+                echo true ;
             }else{
-                return false;
+                echo false;
             }
         }else{
-            return false;
+            echo false;
         }
+    }
+    function updateDetailOfCart(){
+        $masp = $_POST["masp"];
+        $soluong = intval($_POST["soluong"]);
+        $magiohang = $_SESSION["username"] . "-gh";
+        $model = $this->call_model("productModel");
+        echo $model->updateInDetailCart($masp, $magiohang, $soluong);
     }
 }
 ?>
