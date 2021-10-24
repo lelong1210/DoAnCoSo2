@@ -7,6 +7,9 @@ class controller{
     function call_view($view,$data=[]){
         require_once "./mvc/views/".$view.".php";
     }
+    function call_view_page($viewPgae){
+        require_once "./mvc/views/page/thanhtoanPage.php";
+    }
     function call_view_page_admin($viewPage){
         require_once "./mvc/views/pageAdmin/".$viewPage.".php";
     }

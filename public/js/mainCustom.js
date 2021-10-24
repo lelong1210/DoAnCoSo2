@@ -102,15 +102,15 @@ $(document).ready(function () {
         }
     });
     $("#thanhtoan").click(function (e){
-        $("#steepMH1").slideUp();
         var n = $(':checkbox').length;
-        alert("co "+n+" checkbox");
+        // alert("co "+n+" checkbox");
         $(':checkbox').each(function () {
             // alert($(this).attr("id"));
-            if($(this).is(":checked")){
-                alert("chon "+$(this).attr("id"));
-            }
+            // if($(this).is(":checked")){
+            //     alert("chon "+$(this).attr("id"));
+            // }
         });
+        // location.replace(linkTuyetDoi+"thanhtoan");
 
     });
     // function support 

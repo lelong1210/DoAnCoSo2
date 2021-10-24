@@ -93,5 +93,8 @@ class ajax extends controller{
         $model = $this->call_model("productModel");
         echo $model->updateSanPham($masp,$soluongsp);
     }
+    function getProductToPayment(){
+        // $masp = 
+    }
 }
 ?>

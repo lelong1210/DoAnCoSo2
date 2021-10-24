@@ -13,21 +13,11 @@
         <?php require_once "block/headerMobile.php"; ?>
     </header>
     <!-- Header Area End  -->
+    <div class="contentGH" id="contentGH">
+        <?php require_once "page/giohangPage.php"; ?>
+    </div>
+    
 
-    <!-- OffCanvas Cart Start -->
-    <!-- OffCanvas Cart End -->
-
-    <!-- OffCanvas Menu Start -->
-    <!-- OffCanvas Menu End -->
-
-
-    <!-- breadcrumb-area start -->
-
-    <?php require_once "page/giohangPage.php"; ?>
-    <!-- breadcrumb-area end -->
-
-    <!-- login area start -->
-    <!-- login area end -->
     <!-- Footer Area Start -->
     <div class="ds" id="conn"></div>
     <?php require_once "block/footer.php"; ?>
