@@ -41,3 +41,4 @@ if ($uploadOk == 0) {
     }
 }
 ?>
+xin chao 
