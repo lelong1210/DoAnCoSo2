@@ -102,13 +102,16 @@ $(document).ready(function () {
         }
     });
     $("#thanhtoan").click(function (e){
+        $("#steepMH1").slideUp();
         var n = $(':checkbox').length;
-        alert("co "+n+" checkbox")
-        // if($("input").is(':checked')){
-        //     alert("da chon ---> ");
-        // }else{
-        //     alert("chua chon");
-        // }
+        alert("co "+n+" checkbox");
+        $(':checkbox').each(function () {
+            // alert($(this).attr("id"));
+            if($(this).is(":checked")){
+                alert("chon "+$(this).attr("id"));
+            }
+        });
+
     });
     // function support 
     function checkAcount(tendangnhap) {

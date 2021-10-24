@@ -1,10 +1,10 @@
 <div class="cart-main-area pt-100px pb-100px">
-        <div class="container">
-            <h3 class="cart-page-title">Your cart items</h3>
+        <div class="container" >
+            <h3 class="cart-page-title">Sản Phẩm Của Bạn</h3>
             <div class="row">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                     <form action="#">
-                        <div class="table-content table-responsive cart-table-content">
+                        <div class="table-content table-responsive cart-table-content" id="steepMH1">
                             <table>
                                 <thead>
                                     <tr>
