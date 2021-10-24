@@ -102,15 +102,30 @@ $(document).ready(function () {
         }
     });
     $("#thanhtoan").click(function (e){
+        var chonsp = "chonsp";
         var n = $(':checkbox').length;
+        var arr = [];
         // alert("co "+n+" checkbox");
         $(':checkbox').each(function () {
-            // alert($(this).attr("id"));
-            // if($(this).is(":checked")){
-            //     alert("chon "+$(this).attr("id"));
-            // }
+            if($(this).is(":checked")){
+                var idCheked = $(this).attr("id");
+                arr.push(idCheked);
+            }
         });
-        // location.replace(linkTuyetDoi+"thanhtoan");
+        alert(arr+"sa0");
+        if(arr.length > 0){
+            $.ajax({
+                type: "post",
+                url: linkTuyetDoi+"ajax/getProductToPayment",
+                data: {arr:arr},
+                // dataType: "dataType",
+                success: function (response) {
+
+                }
+            });
+        }
+
+        location.replace(linkTuyetDoi+"thanhtoan");
 
     });
     // function support 

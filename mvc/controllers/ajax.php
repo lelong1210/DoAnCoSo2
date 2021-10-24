@@ -95,6 +95,8 @@ class ajax extends controller{
     }
     function getProductToPayment(){
         // $masp = 
+        $arr = $_POST["arr"];
+        $_SESSION["thanhtoan"] = $arr; 
     }
 }
 ?>

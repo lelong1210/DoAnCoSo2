@@ -4,7 +4,7 @@
         <div class="row">
             <div class="col-lg-12 col-md-12 col-sm-12 col-12">
                 <form action="#">
-                    <div class="table-content table-responsive cart-table-content" id="steepMH1">
+                    <div class="table-content table-responsive cart-table-content">
                         <table>
                             <thead>
                                 <tr>
