@@ -8,26 +8,23 @@
                         <div class="your-order-product-info">
                             <div class="your-order-top">
                                 <ul>
-                                    <li>Product</li>
-                                    <li>Total</li>
+                                    <li>Sản Phẩm</li>
+                                    <li>Giá Tiền</li>
                                 </ul>
                             </div>
                             <div class="your-order-middle">
-                                <ul>
-                                    <li><span class="order-middle-left">Product Name X 1</span> <span class="order-price">$329 </span></li>
-                                    <li><span class="order-middle-left">Product Name X 1</span> <span class="order-price">$329 </span></li>
-                                </ul>
+                                <?php $tongtien = $data["productModel"]->showProductInPayment();?>
                             </div>
                             <div class="your-order-bottom">
                                 <ul>
-                                    <li class="your-order-shipping">Shipping</li>
-                                    <li>Free shipping</li>
+                                    <li class="your-order-shipping">Phí Vận Chuyển</li>
+                                    <li>0 đ</li>
                                 </ul>
                             </div>
                             <div class="your-order-total">
                                 <ul>
-                                    <li class="order-total">Total</li>
-                                    <li>$329</li>
+                                    <li class="order-total">Tổng Tiền</li>
+                                    <li><?php echo number_format($tongtien) ;?></li>
                                 </ul>
                             </div>
                         </div>

@@ -162,6 +162,21 @@ class productModel extends connectDB
             return false;
         }          
     }
+    function getProductIncart($magiohang){
+        $sql = "SELECT sanpham.linkduongdananh,sanpham.tensp,giatien,chitietgiohang.soluong,sanpham.masp,sanpham.soluongsp
+                FROM chitietgiohang 
+                INNER JOIN sanpham 
+                ON chitietgiohang.masp = sanpham.masp 
+                WHERE chitietgiohang.magiohang=:magiohang";
+        $conn =  $this->GetConn();
+        $query = $conn->prepare($sql);
+        $query->bindParam(":magiohang",$magiohang);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }
+    }
     // chuoi hanh dong in gio hang ra ngoai VIEW 
     function showProductInCart(){
         $magiohang = $_SESSION["username"]."-gh";
@@ -193,20 +208,33 @@ class productModel extends connectDB
             }
         }
     }
-    function getProductIncart($magiohang){
-        $sql = "SELECT sanpham.linkduongdananh,sanpham.tensp,giatien,chitietgiohang.soluong,sanpham.masp,sanpham.soluongsp
-                FROM chitietgiohang 
-                INNER JOIN sanpham 
-                ON chitietgiohang.masp = sanpham.masp 
-                WHERE chitietgiohang.magiohang=:magiohang";
-        $conn =  $this->GetConn();
-        $query = $conn->prepare($sql);
-        $query->bindParam(":magiohang",$magiohang);
-        $query->execute();
-        if ($query->rowCount() > 0) {
-            $result = $query->fetchAll(PDO::FETCH_ASSOC);
-            return json_encode($result);
+    // ket thuc chuoi in ra
+    // ===========================
+    // chuoi hanh dong in ra san pham thanh toan
+    function showProductInPayment(){
+        $arr = $_SESSION["thanhtoan"];
+        $tongtien = 0 ;
+        for ($i=0; $i < count($arr); $i++) { 
+            $arrChild = array_values((array)$arr[$i]);
+            $arrProductNumber = $this->xulyArrArrOfPayment($arrChild[0]);
+            echo "<ul>";
+                echo "<li>";
+                    echo "<span> <img src='$arrProductNumber[5]' alt='' style='max-width: 100px;'></span>";
+                    echo "<span class='order-price'>".number_format($arrProductNumber[2]*$arrChild[1])." đ</span>";
+                echo "</li>";
+                echo "<li><span class='order-middle-left'>$arrProductNumber[1] <span style='color:red'> X $arrChild[1]</span></span></li>";
+            echo "</ul>";
+            $tongtien = $tongtien + $arrProductNumber[2]*$arrChild[1];
         }
+        return $tongtien;
     }
+    function xulyArrArrOfPayment($arr){
+        $arrChild = array_values((array)$arr);
+        $arrProduct = $this->SelectProductWhereMasp($arrChild[0]);
+        $arrProduct = json_decode($arrProduct);
+        $arrProductNumber = array_values((array)$arrProduct[0]);
+        return $arrProductNumber;
+    }
+    // chuoi hnah 
 }
 ?>

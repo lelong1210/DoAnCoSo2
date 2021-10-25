@@ -1,7 +1,11 @@
 <?php 
 class thanhtoan extends controller{
     function show(){
-        $this->call_view("thanhtoanView");
+        $arrThanhToan = $_SESSION["thanhtoan"];
+        $productModel = $this->call_model("productModel");
+        $this->call_view("thanhtoanView",[
+            "productModel"=>$productModel
+        ]);
     }
 }
 ?>

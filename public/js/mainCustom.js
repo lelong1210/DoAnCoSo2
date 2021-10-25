@@ -103,16 +103,26 @@ $(document).ready(function () {
     });
     $("#thanhtoan").click(function (e){
         var chonsp = "chonsp";
+        var valueOfInput = "valueOfInput";
+        var tdOfprice = "tdOfprice";
         var n = $(':checkbox').length;
-        var arr = [];
-        // alert("co "+n+" checkbox");
+        const arr = [];
+        // kiem tra cac checkbox da tich
         $(':checkbox').each(function () {
+            const arrChild = [];
+            var text = "";
             if($(this).is(":checked")){
                 var idCheked = $(this).attr("id");
-                arr.push(idCheked);
+                var masp = idCheked.slice(chonsp.length,idCheked.length);
+                var soluong = ($("#"+valueOfInput+masp).html());
+                text = {"masp":masp,"soluong":soluong};
+            }
+            if(text.length != 0){
+                arr.push(text);
             }
         });
-        alert(arr+"sa0");
+        alert(arr.length);
+        // day du lieu len session 
         if(arr.length > 0){
             $.ajax({
                 type: "post",
@@ -124,8 +134,8 @@ $(document).ready(function () {
                 }
             });
         }
-
-        location.replace(linkTuyetDoi+"thanhtoan");
+        // chuyen sang trang thanh toan
+        location.assign(linkTuyetDoi+"thanhtoan");
 
     });
     // function support 
@@ -342,4 +352,6 @@ $(document).ready(function () {
 
 
 
-
+/*        $.each(arr, function (indexInArray, valueOfElement) { 
+             alert(JSON.stringify(valueOfElement));
+        });*/
