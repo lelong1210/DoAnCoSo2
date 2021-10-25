@@ -95,13 +95,13 @@ $(document).ready(function () {
         var tdOfprieLast = "tdOfprieLast";
         var soluongconlai = "soluongconlai";
         if (idThis.startsWith(btnMhUp)) {
-            EditDetailOfCartFrontEnd(idThis, btnMhUp, valueOfInput, tdOfprice, tdOfprieLast,soluongconlai, "up");
+            EditDetailOfCartFrontEnd(idThis, btnMhUp, valueOfInput, tdOfprice, tdOfprieLast, soluongconlai, "up");
         }
         if (idThis.startsWith(btnMhDown)) {
-            EditDetailOfCartFrontEnd(idThis, btnMhDown, valueOfInput, tdOfprice, tdOfprieLast,soluongconlai, "down")
+            EditDetailOfCartFrontEnd(idThis, btnMhDown, valueOfInput, tdOfprice, tdOfprieLast, soluongconlai, "down")
         }
     });
-    $("#thanhtoan").click(function (e){
+    $("#thanhtoan").click(function (e) {
         var chonsp = "chonsp";
         var valueOfInput = "valueOfInput";
         var tdOfprice = "tdOfprice";
@@ -111,22 +111,22 @@ $(document).ready(function () {
         $(':checkbox').each(function () {
             const arrChild = [];
             var text = "";
-            if($(this).is(":checked")){
+            if ($(this).is(":checked")) {
                 var idCheked = $(this).attr("id");
-                var masp = idCheked.slice(chonsp.length,idCheked.length);
-                var soluong = ($("#"+valueOfInput+masp).html());
-                text = {"masp":masp,"soluong":soluong};
+                var masp = idCheked.slice(chonsp.length, idCheked.length);
+                var soluong = ($("#" + valueOfInput + masp).html());
+                text = { "masp": masp, "soluong": soluong };
             }
-            if(text.length != 0){
+            if (text.length != 0) {
                 arr.push(text);
             }
         });
         // day du lieu len session 
-        if(arr.length > 0){
+        if (arr.length > 0) {
             $.ajax({
                 type: "post",
-                url: linkTuyetDoi+"ajax/getProductToPayment",
-                data: {arr:arr},
+                url: linkTuyetDoi + "ajax/getProductToPayment",
+                data: { arr: arr },
                 // dataType: "dataType",
                 success: function (response) {
 
@@ -134,8 +134,63 @@ $(document).ready(function () {
             });
         }
         // chuyen sang trang thanh toan
-        location.assign(linkTuyetDoi+"thanhtoan");
+        location.assign(linkTuyetDoi + "thanhtoan");
 
+    });
+    ///
+    $("#test").click(function (e) {
+        var tong;
+        $.ajax({
+            type: "get",
+            url: linkTuyetDoi + "public/js/diaChi.json",
+            dataType: "json",
+            success: function (response) {
+                tong = response;
+                $.each(response, function (indexInArray, valueOfElement) {
+                    $("#tentinh").append($('<option>', {
+                        value: valueOfElement.name,
+                        text: valueOfElement.name
+                    }));
+                });
+            }
+        });
+        $("select").change(function (e) { 
+            var typeId = $(this).attr("id");
+            if (typeId == "tentinh") {
+                var tentinh = this.value;
+                $("#tenhuyen").html("");
+                $.each(tong, function (indexInArray, valueOfElement) {
+                    if (valueOfElement.name == tentinh) {
+                        $.each(valueOfElement.districts, function (indexInArray, valueOfElement1) {
+                            $("#tenhuyen").append($('<option>', {
+                                value: valueOfElement1.name,
+                                text: valueOfElement1.name
+                            }));
+                        });
+                    }
+                });
+            }
+            if (typeId == "tenhuyen") {
+                var tentinh = $("#tentinh").val();
+                var tenhuyen = $("#tenhuyen").val();
+                $("#tenxa").html("");
+                $.each(tong, function (indexInArray, valueOfElement) {
+                    if (valueOfElement.name == tentinh) {
+                        $.each(valueOfElement.districts, function (indexInArray, valueOfElement1) {
+                            if(valueOfElement1.name == tenhuyen){
+                                $.each(valueOfElement1.wards, function (indexInArray, valueOfElement2) { 
+                                    $("#tenxa").append($('<option>', {
+                                        value: valueOfElement2.name,
+                                        text: valueOfElement2.name
+                                    }));
+                                });
+                            }
+                        });
+                    }
+                });
+                
+            }
+        });
     });
     // function support 
     function checkAcount(tendangnhap) {
@@ -232,11 +287,11 @@ $(document).ready(function () {
             data: { matkhau: matkhau },
             // dataType: "dataType",
             success: function (response) {
-               if(response){
-                   alert("Đổi Mật Khẩu Thành Công");
-               }else{
-                   alert("Đổi Mật Khẩu Thất Bại");
-               }
+                if (response) {
+                    alert("Đổi Mật Khẩu Thành Công");
+                } else {
+                    alert("Đổi Mật Khẩu Thất Bại");
+                }
             }
         });
     }
@@ -270,7 +325,7 @@ $(document).ready(function () {
         });
         return result;
     }
-    function EditDetailOfCartFrontEnd(idThis, btnMh, valueOfInput, tdOfprice, tdOfprieLast,soluongconlai, option) {
+    function EditDetailOfCartFrontEnd(idThis, btnMh, valueOfInput, tdOfprice, tdOfprieLast, soluongconlai, option) {
         var masp = idThis.slice(btnMh.length, idThis.length);
         var valueOfInputLast = $("#" + valueOfInput + masp).html();
         var idPrice = $("#" + tdOfprice + masp).html();
@@ -279,67 +334,67 @@ $(document).ready(function () {
         if (option == "up") {
             soluong = soluong + 1;
             soluongkhadung = parseInt(soluongkhadung) - 1;
-            if(soluongkhadung < 0){
+            if (soluongkhadung < 0) {
                 alert("Không Còn Đủ Sản Phẩm")
-            }else{
+            } else {
                 $("#" + valueOfInput + masp).html(soluong);
                 $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
                 $("#" + soluongconlai + masp).html(soluongkhadung)
-                updateDetailOfCart(masp,soluong);
-                updateSanPham(masp,soluongkhadung);
+                updateDetailOfCart(masp, soluong);
+                updateSanPham(masp, soluongkhadung);
             }
             // alert(soluong);
         }
         if (option == "down") {
             soluong = soluong - 1;
             soluongkhadung = parseInt(soluongkhadung) + 1;
-            if(soluong == 0){
-                $("#"+"tr"+masp).remove();
+            if (soluong == 0) {
+                $("#" + "tr" + masp).remove();
                 deleteInDetailCart(masp);
-            }else{
+            } else {
                 $("#" + valueOfInput + masp).html(soluong);
                 $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
                 $("#" + soluongconlai + masp).html(soluongkhadung)
-                updateDetailOfCart(masp,soluong);
-                updateSanPham(masp,soluongkhadung);
+                updateDetailOfCart(masp, soluong);
+                updateSanPham(masp, soluongkhadung);
             }
         }
     }
-   function updateDetailOfCart(masp,soluong){
+    function updateDetailOfCart(masp, soluong) {
         $.ajax({
             type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/updateDetailOfCart",
+            async: false,
+            url: linkTuyetDoi + "ajax/updateDetailOfCart",
             data: {
-                masp:masp,
-                soluong:soluong
+                masp: masp,
+                soluong: soluong
             },
             success: function (response) {
                 // alert(response);
             }
         });
     }
-    function updateSanPham(masp,soluongsp){
+    function updateSanPham(masp, soluongsp) {
         $.ajax({
             type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/updateSanPham",
+            async: false,
+            url: linkTuyetDoi + "ajax/updateSanPham",
             data: {
-                masp:masp,
-                soluongsp:soluongsp
+                masp: masp,
+                soluongsp: soluongsp
             },
             success: function (response) {
                 // alert(response);
             }
-        });        
+        });
     }
-    function deleteInDetailCart(masp){
+    function deleteInDetailCart(masp) {
         $.ajax({
             type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/deleteInDetailCart",
+            async: false,
+            url: linkTuyetDoi + "ajax/deleteInDetailCart",
             data: {
-                masp:masp
+                masp: masp
             },
             success: function (response) {
                 // alert(response);
@@ -351,6 +406,6 @@ $(document).ready(function () {
 
 
 
-/*        $.each(arr, function (indexInArray, valueOfElement) { 
+/*        $.each(arr, function (indexInArray, valueOfElement) {
              alert(JSON.stringify(valueOfElement));
         });*/
