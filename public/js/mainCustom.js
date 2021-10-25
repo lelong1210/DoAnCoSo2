@@ -121,7 +121,6 @@ $(document).ready(function () {
                 arr.push(text);
             }
         });
-        alert(arr.length);
         // day du lieu len session 
         if(arr.length > 0){
             $.ajax({

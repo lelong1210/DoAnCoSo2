@@ -17,6 +17,12 @@
                             </div>
                             <div class="your-order-bottom">
                                 <ul>
+                                    <li class="your-order-shipping">Địa Chỉ Giao Hàng</li>
+                                    <li>0 đ</li>
+                                </ul>
+                            </div>
+                            <div class="your-order-bottom">
+                                <ul>
                                     <li class="your-order-shipping">Phí Vận Chuyển</li>
                                     <li>0 đ</li>
                                 </ul>
@@ -37,28 +43,6 @@
                                             </h4>
                                         </div>
                                         <div id="my-account-1" class="panel-collapse collapse show" data-bs-parent="#faq">
-
-                                            <div class="panel-body">
-                                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default single-my-account m-0">
-                                        <div class="panel-heading my-account-title">
-                                            <h4 class="panel-title"><a data-bs-toggle="collapse" href="#my-account-2" aria-expanded="false" class="collapsed">Check payments</a></h4>
-                                        </div>
-                                        <div id="my-account-2" class="panel-collapse collapse" data-bs-parent="#faq">
-
-                                            <div class="panel-body">
-                                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="panel panel-default single-my-account m-0">
-                                        <div class="panel-heading my-account-title">
-                                            <h4 class="panel-title"><a data-bs-toggle="collapse" href="#my-account-3">Cash on delivery</a></h4>
-                                        </div>
-                                        <div id="my-account-3" class="panel-collapse collapse" data-bs-parent="#faq">
 
                                             <div class="panel-body">
                                                 <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
