@@ -35,9 +35,27 @@ $(document).ready(function () {
         if(tentinh == null || tenhuyen == null || tenxa == null || diachi == ""){
             alert("vui lòng chọn đầy đủ thông tin");
         }else{
-            alert(diachi);
+            if(insertAddressShipping(tentinh+"-"+tenhuyen+"-"+tenxa+"-"+diachi)){
+                alert("da them");
+                location.reload();
+            }else{
+                alert("that bai");
+            }
         }
         
+    });
+    $("button").click(function (e) { 
+        var VariAbledeleteAddressShipping = "deleteAddressShipping";
+        var idThis = $(this).attr("id");
+        if(idThis.startsWith(VariAbledeleteAddressShipping)){
+            var madiachigiaohang = idThis.slice(VariAbledeleteAddressShipping.length,idThis.length);
+            if(deleteAddressShipping(madiachigiaohang)){
+                alert("Đã Xóa");
+                location.reload();
+            }else{
+                alert("Thất Bại")
+            }
+        }
     });
     // trang dk dn
     $("#dangnhap").click(function (e) {
@@ -415,6 +433,34 @@ $(document).ready(function () {
                 // alert(response);
             }
         });
+    }
+    function insertAddressShipping(diachigiaohang){
+        var result = 0 ;
+        $.ajax({
+            type: "post",
+            async: false ,
+            url: linkTuyetDoi+"ajax/insertAddressShipping",
+            data: {diachigiaohang:diachigiaohang},
+            // dataType: "dataType",
+            success: function (response) {
+                result = response ;
+            }
+        });
+        return result;
+    }
+    function deleteAddressShipping(madiachigiaohang){
+        var result = 0 ;
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/deleteAddressShipping",
+            data: {madiachigiaohang:madiachigiaohang},
+            // dataType: "dataType",
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
     }
 });
 

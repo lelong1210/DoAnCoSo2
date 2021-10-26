@@ -105,7 +105,48 @@ class taikhoanModel extends connectDB{
         $arr = array_keys((array)$arr[0]);
         return $arr ;
     }
-
+    function insertAddressShipping($tendangnhap,$diachigiaohang){
+        $conn = $this->GetConn();
+        $sql = "INSERT INTO diachigiaohang(tendangnhap,diachigiaohang) values(:tendangnhap,:diachigiaohang)";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->bindParam(":diachigiaohang",$diachigiaohang);
+        $query->execute();
+        if($query->rowCount() > 0){
+            return true ;
+        }else{
+            return false ;
+        }
+    }
+    function selectAddressShipping($tendangnhap){
+        try{
+            $conn = $this->GetConn();
+            $sql = "SELECT * FROM diachigiaohang WHERE tendangnhap = :tendangnhap";
+            $query = $conn->prepare($sql);
+            $query->bindParam(":tendangnhap",$tendangnhap);
+            $query->execute();
+            if($query->rowCount() > 0){
+                $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                return json_encode($result);
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
+    }
+    function deleteAddressShipping($madiachigiaohang){
+        $conn = $this->GetConn();
+        $sql = "DELETE FROM diachigiaohang WHERE madiachigiaohang = :madiachigiaohang";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":madiachigiaohang",$madiachigiaohang);
+        $query->execute();
+        if($query->rowCount() > 0){
+            return true ;
+        }else{
+            return false ;
+        }
+    }
     // function support View
     function editInformation(){
         $arrKey = $this->getTitle();
@@ -121,6 +162,21 @@ class taikhoanModel extends connectDB{
                 echo "</div>";
             }
         echo "</div>";
+    }
+    function showAddressShipping(){
+        $tendangnhap = $_SESSION["username"];
+        $arrAddress = json_decode($this->selectAddressShipping($tendangnhap));
+        if($arrAddress){
+            for ($i=0; $i < count($arrAddress); $i++) { 
+                $arrChild = array_values((array)$arrAddress[$i]);
+                echo "<h6> $arrChild[2] ";
+                    echo "<button class='fas fa-edit' id='editAddressShipping$arrChild[0]'></button>";
+                    echo "<button class='fas fa-trash-alt' id='deleteAddressShipping$arrChild[0]'></button>";
+                echo "</h6>";
+            }            
+        }else{
+            echo "";
+        }
     }
 }
 ?>

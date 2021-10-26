@@ -70,14 +70,14 @@
                         </div>
                         <div class="panel panel-default single-my-account " data-aos="fade-up" data-aos-delay="600">
                             <div class="panel-heading my-account-title">
-                                <h3 class="panel-title"><span>3 .</span> <a data-bs-toggle="collapse" class="collapsed" aria-expanded="false" href="#my-account-3">Modify your address book entries
+                                <h3 class="panel-title"><span>3 .</span> <a data-bs-toggle="collapse" class="collapsed" aria-expanded="false" href="#my-account-3">Địa Chỉ Giao Hàng
                                     </a></h3>
                             </div>
                             <div id="my-account-3" class="panel-collapse collapse" data-bs-parent="#faq">
                                 <div class="panel-body">
                                     <div class="myaccount-info-wrapper">
                                         <div class="account-info-wrapper">
-                                            <h4>Address Book Entries</h4>
+                                            <?php  $data["taikhoanModel"]->showAddressShipping();?>
                                         </div>
                                         <div>
                                             <button id="selectAddress"><i class="far fa-plus-square"></i></button>

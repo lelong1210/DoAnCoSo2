@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 class ajax extends controller{
     function show(){
-
+        // tai khoan
     }
     function dangky(){ 
         $tendangnhap = $_POST["tendangnhap"];
@@ -56,6 +56,18 @@ class ajax extends controller{
             echo false;
         }
     }
+    function insertAddressShipping(){
+        $tendangnhap = $_SESSION["username"];
+        $diachigiaohang = $_POST["diachigiaohang"];
+        $model = $this->call_model("taikhoanModel");
+        echo $model->insertAddressShipping($tendangnhap,$diachigiaohang);
+    }
+    function deleteAddressShipping(){
+        $madiachigiaohang = $_POST["madiachigiaohang"];
+        $model = $this->call_model("taikhoanModel");
+        echo $model->deleteAddressShipping($madiachigiaohang);
+    }
+        // cart
     function addProductInCart(){
         $masp = $_POST["masp"];
         $soluong = $_POST["soluong"];
