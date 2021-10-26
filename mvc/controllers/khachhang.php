@@ -9,5 +9,8 @@ class khachhang extends controller{
             "taikhoanModel"=>$taikhoanModel
         ]);
     }
+    function suadiachigiaohang(){
+        echo "heloo";
+    }
 }
 ?>

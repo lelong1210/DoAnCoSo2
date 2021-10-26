@@ -170,7 +170,7 @@ class taikhoanModel extends connectDB{
             for ($i=0; $i < count($arrAddress); $i++) { 
                 $arrChild = array_values((array)$arrAddress[$i]);
                 echo "<h6> $arrChild[2] ";
-                    echo "<button class='fas fa-edit' id='editAddressShipping$arrChild[0]'></button>";
+                    echo "<a class='fas fa-edit' id='editAddressShipping$arrChild[0]' href='./khachhang/suadiachigiaohang/$arrChild[0]'></a>";
                     echo "<button class='fas fa-trash-alt' id='deleteAddressShipping$arrChild[0]'></button>";
                 echo "</h6>";
             }            

@@ -16,20 +16,20 @@
 <meta property="og:description" content="Furns - Responsive eCommerce HTML Template" />
 <meta name="robots" content="noindex, follow" />
 <!-- Add site Favicon -->
-<link rel="icon" href="http://localhost/www/public/images/logo/logo.jpg" sizes="32x32" />
-<link rel="icon" href="http://localhost/www/public/images/logo/logo.jpg" sizes="192x192" />
-<link rel="apple-touch-icon" href="http://localhost/www/public/images/logo/logo.jpg" />
-<meta name="msapplication-TileImage" content="http://localhost/www/public/images/logo/logo.jpg" />
+<link rel="icon" href="/www/public/images/logo/logo.jpg" sizes="32x32" />
+<link rel="icon" href="/www/public/images/logo/logo.jpg" sizes="192x192" />
+<link rel="apple-touch-icon" href="/www/public/images/logo/logo.jpg" />
+<meta name="msapplication-TileImage" content="/www/public/images/logo/logo.jpg" />
 <!-- Structured Data  -->
 
-<link rel="stylesheet" href="http://localhost/www/public/css/vendor/vendor.min.css" />
-<link rel="stylesheet" href="http://localhost/www/public/css/plugins/plugins.min.css" />
-<link rel="stylesheet" href="http://localhost/www/public/css/style.min.css">
+<link rel="stylesheet" href="/www/public/css/vendor/vendor.min.css" />
+<link rel="stylesheet" href="/www/public/css/plugins/plugins.min.css" />
+<link rel="stylesheet" href="/www/public/css/style.min.css">
 
 <!-- Font  -->
-<link rel="stylesheet" href="http://localhost/www/public/fonts/fontawesome-free-6.0.0-beta2-web/css/all.min.css">
+<link rel="stylesheet" href="/www/public/fonts/fontawesome-free-6.0.0-beta2-web/css/all.min.css">
 
 <!-- Main Style -->
 <!-- Style Custom -->
-<link rel="stylesheet" href="http://localhost/www/public/css/styleCustom.css">
+<link rel="stylesheet" href="/www/public/css/styleCustom.css">
 

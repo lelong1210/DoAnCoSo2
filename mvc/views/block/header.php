@@ -8,7 +8,7 @@
                     <!-- Header Logo Start -->
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="http://localhost/www/"><img src="http://localhost/www/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
+                            <a href="/www/"><img src="/www/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
@@ -31,13 +31,13 @@
                                 <button class="dropdown-toggle header-action-btn" data-bs-toggle="dropdown"><i
                                         class="icon-user"></i></button>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a class="dropdown-item" href="http://localhost/www/taikhoan">Tài Khoản</a></li>
+                                    <li><a class="dropdown-item" href="/www/taikhoan">Tài Khoản</a></li>
                                     <!-- <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
                                     <li><a class="dropdown-item" href="login.html">Sign in</a></li> -->
                                 </ul>
                             </div>
                             <!-- Single Wedge End -->
-                            <a href="http://localhost/www/giohang" class="header-action-btn header-action-btn-cart">
+                            <a href="/www/giohang" class="header-action-btn header-action-btn-cart">
                                 <i class="icon-handbag"></i>
                                 <!-- <span class="header-action-num">01</span> -->
                                 <!-- <span class="cart-amount">€30.00</span> -->
@@ -59,7 +59,7 @@
                     <!-- Header Logo Start -->
                     <div class="col-auto align-self-center">
                         <div class="header-logo">
-                            <a href="http://localhost/www/"><img src="http://localhost/www/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
+                            <a href="/www/"><img src="/www/public/images/logo/logo.jpg" alt="Site Logo" class="imgLOGO" /></a>
                         </div>
                     </div>
                     <!-- Header Logo End -->
@@ -110,14 +110,14 @@
                     <div class="col-md-12 align-self-center">
                         <div class="main-menu manu-color-white">
                             <ul>
-                                <li class="dropdown"><a href="http://localhost/www/">Trang Chủ</a></li>
+                                <li class="dropdown"><a href="/www/">Trang Chủ</a></li>
                                 <li class="dropdown"><a href="#">Sản Phẩm<i class="ion-ios-arrow-down"></i></a>
                                     <ul class="sub-menu">
-                                        <li><a href="http://localhost/www/khoacuathongminh">Khóa Cửa Thông Minh</a></li>
-                                        <li><a href="http://localhost/www/mayhutbui">Máy Hút Bụi</a></li>
-                                        <li><a href="http://localhost/www/dieuhoathongminh">Điều Hòa Thông Minh</a></li>
-                                        <li><a href="http://localhost/www/denthongminh">Đèn Thông Minh</a></li>
-                                        <li><a href="http://localhost/www/camera">Camera</a></li>
+                                        <li><a href="/www/khoacuathongminh">Khóa Cửa Thông Minh</a></li>
+                                        <li><a href="/www/mayhutbui">Máy Hút Bụi</a></li>
+                                        <li><a href="/www/dieuhoathongminh">Điều Hòa Thông Minh</a></li>
+                                        <li><a href="/www/denthongminh">Đèn Thông Minh</a></li>
+                                        <li><a href="/www/camera">Camera</a></li>
                                     </ul>
                                 </li>
                                 <li class="dropdown"><a href="#">Tin Tức</a></li>

@@ -5,6 +5,7 @@ class connectDB{
     protected $password = "";
     protected $dbname = "DaCoSo2";
     protected $conn ; 
+    protected $linktuyetdoi = "http://localhost/www/";
     function __construct(){
         try{
             $this->conn = new PDO("mysql:host=$this->servername;dbname=$this->dbname",$this->username,$this->password);
