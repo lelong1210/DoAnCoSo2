@@ -31,11 +31,11 @@ $(document).ready(function () {
         var tentinh = $("#tentinh").val();
         var tenhuyen = $("#tenhuyen").val();
         var tenxa = $("#tenxa").val();
-        var diachi = $("#diachi").val();
-        if(tentinh == null || tenhuyen == null || tenxa == null || diachi == ""){
+        var diachichitiet = $("#diachi").val();
+        if(tentinh == null || tenhuyen == null || tenxa == null || diachichitiet == ""){
             alert("vui lòng chọn đầy đủ thông tin");
         }else{
-            if(insertAddressShipping(tentinh+"-"+tenhuyen+"-"+tenxa+"-"+diachi)){
+            if(insertAddressShipping(tentinh,tenhuyen,tenxa,diachichitiet)){
                 alert("da them");
                 location.reload();
             }else{
@@ -434,13 +434,17 @@ $(document).ready(function () {
             }
         });
     }
-    function insertAddressShipping(diachigiaohang){
+    function insertAddressShipping(tentinh,tenhuyen,tenxa,diachichitiet){
         var result = 0 ;
         $.ajax({
             type: "post",
             async: false ,
             url: linkTuyetDoi+"ajax/insertAddressShipping",
-            data: {diachigiaohang:diachigiaohang},
+            data: {tentinh:tentinh,
+                tenhuyen:tenhuyen,
+                tenxa:tenxa,
+                diachichitiet:diachichitiet
+            },
             // dataType: "dataType",
             success: function (response) {
                 result = response ;

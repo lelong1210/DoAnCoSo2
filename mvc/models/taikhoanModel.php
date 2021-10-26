@@ -105,12 +105,15 @@ class taikhoanModel extends connectDB{
         $arr = array_keys((array)$arr[0]);
         return $arr ;
     }
-    function insertAddressShipping($tendangnhap,$diachigiaohang){
+    function insertAddressShipping($tendangnhap,$tentinh,$tenhuyen,$tenxa,$diachichitiet){
         $conn = $this->GetConn();
-        $sql = "INSERT INTO diachigiaohang(tendangnhap,diachigiaohang) values(:tendangnhap,:diachigiaohang)";
+        $sql = "INSERT INTO diachigiaohang(tendangnhap,tentinh,tenhuyen,tenxa,diachichitiet) values(:tendangnhap,:tentinh,:tenhuyen,:tenxa,:diachichitiet)";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap",$tendangnhap);
-        $query->bindParam(":diachigiaohang",$diachigiaohang);
+        $query->bindParam(":tentinh",$tentinh);
+        $query->bindParam(":tenhuyen",$tenhuyen);
+        $query->bindParam(":tenxa",$tenxa);
+        $query->bindParam(":diachichitiet",$diachichitiet);
         $query->execute();
         if($query->rowCount() > 0){
             return true ;
@@ -187,7 +190,7 @@ class taikhoanModel extends connectDB{
         if($arrAddress){
             for ($i=0; $i < count($arrAddress); $i++) { 
                 $arrChild = array_values((array)$arrAddress[$i]);
-                echo "<h6> $arrChild[2] ";
+                echo "<h6> $arrChild[2] - $arrChild[3] - $arrChild[4]";
                     echo "<a class='fas fa-edit' id='editAddressShipping$arrChild[0]' href='./khachhang/suadiachigiaohang/$arrChild[0]'></a>";
                     echo "<button class='fas fa-trash-alt' id='deleteAddressShipping$arrChild[0]'></button>";
                 echo "</h6>";
@@ -199,7 +202,7 @@ class taikhoanModel extends connectDB{
     function showAddressShippingForEdit($madiachigiaohang){
         $tendangnhap = $_SESSION["username"];
         $arrAddress = json_decode($this->selectAddressShippingWhereMadiachigiaohang($tendangnhap,$madiachigiaohang));
-        print_r($arrAddress);
+        return $arrAddress;
     }
 }
 ?>

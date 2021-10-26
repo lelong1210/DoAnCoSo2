@@ -58,9 +58,12 @@ class ajax extends controller{
     }
     function insertAddressShipping(){
         $tendangnhap = $_SESSION["username"];
-        $diachigiaohang = $_POST["diachigiaohang"];
+        $tentinh = $_POST["tentinh"];
+        $tenhuyen = $_POST["tenhuyen"];
+        $tenxa = $_POST["tenxa"];
+        $diachichitiet = $_POST["diachichitiet"];
         $model = $this->call_model("taikhoanModel");
-        echo $model->insertAddressShipping($tendangnhap,$diachigiaohang);
+        echo $model->insertAddressShipping($tendangnhap,$tentinh,$tenhuyen,$tenxa,$diachichitiet);
     }
     function deleteAddressShipping(){
         $madiachigiaohang = $_POST["madiachigiaohang"];
