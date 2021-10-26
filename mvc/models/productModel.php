@@ -235,6 +235,21 @@ class productModel extends connectDB
         $arrProductNumber = array_values((array)$arrProduct[0]);
         return $arrProductNumber;
     }
+    function showAddressShippingInPayment($arr){
+        for ($i=0; $i < count($arr); $i++) { 
+            $arrChild = array_values((array)$arr[$i]);
+            echo "<table>";
+                echo "<tr>";
+                    echo "<td>";
+                        echo "<input type='checkbox' style='height: 20px;' id='$arrChild[0]'>";
+                    echo "</td>";
+                    echo "<td>";
+                        echo "<span>$arrChild[2] - $arrChild[3] - $arrChild[4] - $arrChild[5]</span>";
+                    echo "</td>";
+                echo "</tr>";
+            echo "</table>";
+        }
+    }
     // chuoi hnah 
 }
 ?>

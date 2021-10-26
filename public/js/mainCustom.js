@@ -114,6 +114,7 @@ $(document).ready(function () {
         }
     });
     // xu ly mua hang 
+        // ==> trang gio hang
     $("button").click(function (e) {
         var nameBtnMH = "btnMH";
         var idThis = $(this).attr('id');
@@ -185,6 +186,30 @@ $(document).ready(function () {
         }else{
             alert("Bạn Chưa Chọn Sản Phẩm ^_^ !!!");
         }
+    });
+        // ==> trang thanh toan
+    $("#thanhtoan").click(function (e) {
+        const arr = [];  
+        $(":checkbox").each(function(){
+            if($(this).is(":checked")){
+                arr.push($(this).attr("id"));
+            }
+        })
+        alert(arr.length);
+        if(arr.length > 0){
+            
+        }else{
+            alert("Chua chon dia chi thanh toan");
+        }
+    });
+    $(":checkbox").click(function (e) { 
+       var idThis = $(this).attr("id");
+       $(":checkbox").each(function(){
+            if($(this).is(":checked") && idThis != $(this).attr("id")){
+                $(this).prop( "checked", false );
+            }
+        })
+
     });
     /// noi chon tinh huyen xa 
     $("#selectAddress").click(function (e) {

@@ -17,7 +17,11 @@
                             </div>
                             <div class="your-order-bottom">
                                 <ul>
-                                    <li class="your-order-shipping">Địa Chỉ Giao Hàng</li>
+                                    <li class="your-order-shipping">Địa Chỉ Giao Hàng
+                                        <?php
+                                            $data["productModel"]->showAddressShippingInPayment(json_decode($data["taikhoanModel"]->selectAddressShipping($_SESSION["username"])));
+                                        ?>
+                                    </li>
                                     <li>
                                         <a href="./taikhoan"><i class="far fa-plus-square"></i></a>
                                     </li>
@@ -56,7 +60,7 @@
                         </div>
                     </div>
                     <div class="Place-order mt-25">
-                        <a class="btn-hover" href="#">Place Order</a>
+                        <a class="btn-hover" id="thanhtoan">Thanh Toán</a>
                     </div>
                 </div>
             </div>
