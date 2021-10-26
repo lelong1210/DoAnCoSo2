@@ -189,26 +189,29 @@ $(document).ready(function () {
     });
         // ==> trang thanh toan
     $("#thanhtoan").click(function (e) {
-        const arr = [];  
+        var idAddress = "";
         $(":checkbox").each(function(){
             if($(this).is(":checked")){
-                arr.push($(this).attr("id"));
+                idAddress = $(this).attr("id");
             }
         })
-        alert(arr.length);
-        if(arr.length > 0){
-            
+        if(idAddress != ""){
+            var giaTienSp = $("#giaTienSp").html();
         }else{
             alert("Chua chon dia chi thanh toan");
         }
     });
     $(":checkbox").click(function (e) { 
        var idThis = $(this).attr("id");
+       var giaTienSp = $("#giaTienSp").html();
+       var diachi = $("#spanOfAddress"+idThis).html();
        $(":checkbox").each(function(){
             if($(this).is(":checked") && idThis != $(this).attr("id")){
                 $(this).prop( "checked", false );
             }
         })
+        $("#shippingCost").html((diachi.length)*2000);
+        $("#tongtien").html((parseInt(giaTienSp)+(diachi.length)*2000)+" đ");
 
     });
     /// noi chon tinh huyen xa 

@@ -36,27 +36,11 @@
                             <div class="your-order-total">
                                 <ul>
                                     <li class="order-total">Tổng Tiền</li>
-                                    <li><?php echo number_format($tongtien); ?></li>
+                                    <li id="tongtien"><?php echo ($tongtien); ?> đ</li>
                                 </ul>
                             </div>
                         </div>
                         <div class="payment-method">
-                            <div class="payment-accordion element-mrg">
-                                <div id="faq" class="panel-group">
-                                    <div class="panel panel-default single-my-account m-0">
-                                        <div class="panel-heading my-account-title">
-                                            <h4 class="panel-title"><a data-bs-toggle="collapse" href="#my-account-1" class="collapsed" aria-expanded="true">Direct bank transfer</a>
-                                            </h4>
-                                        </div>
-                                        <div id="my-account-1" class="panel-collapse collapse show" data-bs-parent="#faq">
-
-                                            <div class="panel-body">
-                                                <p>Please send a check to Store Name, Store Street, Store Town, Store State / County, Store Postcode.</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         </div>
                     </div>
                     <div class="Place-order mt-25">

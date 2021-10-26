@@ -220,7 +220,7 @@ class productModel extends connectDB
             echo "<ul>";
                 echo "<li>";
                     echo "<span> <img src='$arrProductNumber[5]' alt='' style='max-width: 100px;'></span>";
-                    echo "<span class='order-price'>".number_format($arrProductNumber[2]*$arrChild[1])." đ</span>";
+                    echo "<span class='order-price' id='giaTienSp'>".($arrProductNumber[2]*$arrChild[1])." đ</span>";
                 echo "</li>";
                 echo "<li><span class='order-middle-left'>$arrProductNumber[1] <span style='color:red'> X $arrChild[1]</span></span></li>";
             echo "</ul>";
@@ -244,7 +244,7 @@ class productModel extends connectDB
                         echo "<input type='checkbox' style='height: 20px;' id='$arrChild[0]'>";
                     echo "</td>";
                     echo "<td>";
-                        echo "<span>$arrChild[2] - $arrChild[3] - $arrChild[4] - $arrChild[5]</span>";
+                        echo "<span id='spanOfAddress$arrChild[0]'>$arrChild[2] - $arrChild[3] - $arrChild[4] - $arrChild[5]</span>";
                     echo "</td>";
                 echo "</tr>";
             echo "</table>";
