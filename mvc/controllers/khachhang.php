@@ -6,11 +6,17 @@ class khachhang extends controller{
     function show(){
         $taikhoanModel = $this->call_model("taikhoanModel");
         $this->call_view("khachhangView",[
-            "taikhoanModel"=>$taikhoanModel
+            "taikhoanModel"=>$taikhoanModel,
+            "option"=>0
         ]);
     }
-    function suadiachigiaohang(){
-        echo "heloo";
+    function suadiachigiaohang($params){
+        $taikhoanModel = $this->call_model("taikhoanModel");
+        $this->call_view("khachhangView",[
+            "taikhoanModel"=>$taikhoanModel,
+            "madiachigiaohang"=>$params,
+            "option"=>1
+        ]);
     }
 }
 ?>

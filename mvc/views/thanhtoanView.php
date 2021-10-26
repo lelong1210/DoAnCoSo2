@@ -13,6 +13,7 @@
         <?php require_once "block/headerMobile.php"; ?>
     </header>
     <!-- Header Area End  -->
+    
     <div class="content" id="content">
         <?php require_once "page/thanhtoanPage.php"; ?>
     </div>

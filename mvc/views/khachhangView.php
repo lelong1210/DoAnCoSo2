@@ -23,7 +23,14 @@
 
     <!-- breadcrumb-area start -->
 
-    <?php require_once "page/khachhangPage.php"; ?>
+    <?php 
+        if($data["option"] == 0){
+            require_once "page/khachhangPage.php"; 
+        }
+        if($data["option"] == 1){
+            require_once "page/suadiachigiaohangPage.php"; 
+        }
+    ?>
     <!-- breadcrumb-area end -->
 
     <!-- login area start -->

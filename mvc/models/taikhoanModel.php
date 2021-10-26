@@ -147,6 +147,24 @@ class taikhoanModel extends connectDB{
             return false ;
         }
     }
+    function selectAddressShippingWhereMadiachigiaohang($tendangnhap,$madiachigiaohang){
+        try{
+            $conn = $this->GetConn();
+            $sql = "SELECT * FROM diachigiaohang WHERE tendangnhap = :tendangnhap AND madiachigiaohang = :madiachigiaohang";
+            $query = $conn->prepare($sql);
+            $query->bindParam(":tendangnhap",$tendangnhap);
+            $query->bindParam(":madiachigiaohang",$madiachigiaohang);
+            $query->execute();
+            if($query->rowCount() > 0){
+                $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                return json_encode($result);
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }        
+    }
     // function support View
     function editInformation(){
         $arrKey = $this->getTitle();
@@ -177,6 +195,11 @@ class taikhoanModel extends connectDB{
         }else{
             echo "";
         }
+    }
+    function showAddressShippingForEdit($madiachigiaohang){
+        $tendangnhap = $_SESSION["username"];
+        $arrAddress = json_decode($this->selectAddressShippingWhereMadiachigiaohang($tendangnhap,$madiachigiaohang));
+        print_r($arrAddress);
     }
 }
 ?>
