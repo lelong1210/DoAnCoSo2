@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 23, 2021 at 05:47 PM
+-- Generation Time: Oct 26, 2021 at 11:20 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -40,7 +40,8 @@ CREATE TABLE `chitietgiohang` (
 INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
 (2, 'longtermplayoffs-gh', 1),
 (12, 'longtermplayoffs-gh', 1),
-(2, 'arcanaabounding-gh', 1);
+(2, 'arcanaabounding-gh', 15),
+(8, 'arcanaabounding-gh', 2);
 
 -- --------------------------------------------------------
 
@@ -69,6 +70,17 @@ CREATE TABLE `congviec` (
   `motatcongviec` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `thoigiancongviec` date NOT NULL,
   `tiendo` int(2) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `diachigiaohang`
+--
+
+CREATE TABLE `diachigiaohang` (
+  `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `diachigiaohang` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -246,13 +258,13 @@ CREATE TABLE `sanpham` (
 
 INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`, `linkduongdananh`, `hangsx`, `dunglamslider`, `soluongsp`, `ngaynhap`) VALUES
 (1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 0, 99, '2021-10-01'),
-(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 99, '2021-10-01'),
+(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 85, '2021-10-01'),
 (3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 99, '2021-10-01'),
 (4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 99, '2021-10-01'),
 (5, 'eufy Smart Lock Touch with Wifi Bridge – Khóa cửa vân tay, chống nước IP65', '5990000.00', 'khoacuathongminh', 'Khóa cửa thông minh eufy Smart Lock Touch – cảm biến vân tay siêu nhạy, mở khóa trong 0.3 giây Tự động khóa khi phát hiện cửa đang đóng Ứng dụng quản lý giao diện Tiếng Việt Đạt chứng nhận BHMA, bền bỉ với tuổi thọ lên tới 70 năm Có 5 cách mở khóa: Nhận diện vây tay, nhập mật mã, mở bằng chìa thông thường, sử dụng app Eufy Security và mở khóa bằng giọng nói Thiết bị có thể hoạt động trong thời tiết khắc nghiệt với chống nước IP65 Tích hợp cảm biến đóng/mở, chốt khóa điện tử kết nối Bluetooth Điều khiển từ xa với Wifi Bridge', 'https://gucongnghe.com/wp-content/uploads/2020/08/eufy-smart-lock-touch-with-bridge-1-247x296.jpg', 'eufy ', 0, 99, '2021-10-01'),
 (6, 'Khóa cửa thông minh Wyze Lock, tự động khóa – mở cửa từ xa', '2690000.00', 'khoacuathongminh', 'Khóa cửa thông minh Wyze Lock, kết nối WiFi, Bluetooth và Zigbee Sử dụng 4 viên pin tiểu AA cho thời gian sử dụng 5 – 6 tháng Khóa và mở khóa từ xa qua ứng dụng Wyze Tự động mở khóa khi bạn đến gần. Tự động khóa khi cửa được đóng. Dễ dàng lắp đặt trong vòng 15 phút Chia sẻ quyền sử dụng khóa với người khác từ xa Ra lệnh bằng giọng nói với Amazon Alexa, Google Assistant sẽ sớm được hỗ trợ', 'https://gucongnghe.com/wp-content/uploads/2020/05/khoa-thong-minh-Wyze-Lock-247x296.jpg', 'Wyze Lock', 0, 99, '2021-10-01'),
 (7, 'Khóa cửa thông minh August Smart Lock Pro + Connect, kết nối Wifi, khóa & mở từ xa', '4250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock Pro và Hub trung tâm Connect, thế hệ thứ 3 mới nhất. Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa. Hỗ trợ Samsung SmartThings. Tương thích Apple HomeKit, mở khoá bằng iPhone, Apple Watch.', 'https://gucongnghe.com/wp-content/uploads/2019/02/Khoa-cua-thong-minh-August-Smart-Lock-Pro-Connect-247x296.jpg', 'August', 0, 99, '2021-10-01'),
-(8, 'August Smart Keypad', '1790000.00', 'khoacuathongminh', 'Đóng mở cửa an toàn với mã bảo mật Tạo mã riêng biệt cho mỗi lần mở cửa dễ dàng ngay trên ứng dụng điện thoại Cách mở cửa hoàn hảo cho trẻ em hoặc nhà có khách Mã mở khóa cửa riêng cho mỗi người Khóa cửa nhanh chóng chỉ với một lần nhấn Dùng pin AAA, cài đặt và sử dụng dễ dàng.', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Smart-Keypad-gioi-thieu-247x296.jpg', 'August', 0, 99, '2021-10-01'),
+(8, 'August Smart Keypad', '1790000.00', 'khoacuathongminh', 'Đóng mở cửa an toàn với mã bảo mật Tạo mã riêng biệt cho mỗi lần mở cửa dễ dàng ngay trên ứng dụng điện thoại Cách mở cửa hoàn hảo cho trẻ em hoặc nhà có khách Mã mở khóa cửa riêng cho mỗi người Khóa cửa nhanh chóng chỉ với một lần nhấn Dùng pin AAA, cài đặt và sử dụng dễ dàng.', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Smart-Keypad-gioi-thieu-247x296.jpg', 'August', 0, 98, '2021-10-01'),
 (9, 'ECOVACS DEEBOT DJ35 robot hút bụi lau nhà', '4000000.00', 'mayhutbui', 'Tiếp nối sự thành công của T8 aivi plus hãng vừa cho ra mắt Ecovacs Deebot T9 aivi. Đây là robot đầu tiên trên thế giới được trang bị thêm tính năng lọc không khí và tỏa hương nước hoa. Hãy cùng Novadigital tìm hiểu về siêu phẩm mới ra mắt này nhé.', 'https://grobot.vn/wp-content/uploads/2019/01/dj35c2-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (10, 'Ecovacs Deebot DN320 (OZMO 900) Robot hút bụi lau nhà', '4800000.00', 'mayhutbui', 'Giống như các phiên bản trước Ecovacs Deebot T9 aivi sở hữu một thiết kế hình tròn đặt trưng. Với màu đen sang trọng, tinh tế. Chiều cao 9.3cm giúp robot có khả năng vượt chướng ngại vật lên tới 2cm.', 'https://grobot.vn/wp-content/uploads/2019/01/dn320c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (11, 'ECOVACS DEEBOT DN520 Robot hút bụi', '5700000.00', 'mayhutbui', 'Kế thừa công nghệ điều hướng của các dòng T8, T9 aivi có thể nhận biết những vật cản nhỏ 1mm. Độ nhạy bén cao gấp 10 lần so với phiên bản trước nhờ được trang bị hệ thống True Detect 3D thông minh. Trong quá trình làm sạch Robot T9 AIVI có thể phát hiện ra vật cản, mép tường, …  tự động né tránh và thay đổi đường đi nhờ bộ cảm biến SLAM thông minh.', 'https://grobot.vn/wp-content/uploads/2020/09/dn520c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
@@ -359,6 +371,13 @@ ALTER TABLE `congviec`
   ADD PRIMARY KEY (`macv`),
   ADD KEY `tendangnhap` (`tendangnhap`),
   ADD KEY `masp` (`masp`);
+
+--
+-- Indexes for table `diachigiaohang`
+--
+ALTER TABLE `diachigiaohang`
+  ADD PRIMARY KEY (`diachigiaohang`),
+  ADD KEY `diachigiaohang_ibfk_1` (`tendangnhap`);
 
 --
 -- Indexes for table `giohang`
@@ -484,6 +503,12 @@ ALTER TABLE `chitiethoadon`
 ALTER TABLE `congviec`
   ADD CONSTRAINT `congviec_ibfk_1` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION,
   ADD CONSTRAINT `congviec_ibfk_2` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+
+--
+-- Constraints for table `diachigiaohang`
+--
+ALTER TABLE `diachigiaohang`
+  ADD CONSTRAINT `diachigiaohang_ibfk_1` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `giohang`

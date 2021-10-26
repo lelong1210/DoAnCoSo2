@@ -42,11 +42,6 @@
             <!-- </div> -->
         </div>
     </div>
-    <button id="test">CLICK</button>
-    <div class="conn" id="conn"></div>
-    <select id="tentinh"></select>
-    <select id="tenhuyen"></select>
-    <select id="tenxa"></select>
     <!-- Footer Area Start -->
     <?php require_once "block/footer.php"; ?>
     <!-- Footer Area End -->

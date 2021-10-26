@@ -27,6 +27,18 @@ $(document).ready(function () {
         var id = $(this).attr("id");
         checkChangePass(id);
     });
+    $("#saveAddressShipping").click(function (e) { 
+        var tentinh = $("#tentinh").val();
+        var tenhuyen = $("#tenhuyen").val();
+        var tenxa = $("#tenxa").val();
+        var diachi = $("#diachi").val();
+        if(tentinh == null || tenhuyen == null || tenxa == null || diachi == ""){
+            alert("vui lòng chọn đầy đủ thông tin");
+        }else{
+            alert(diachi);
+        }
+        
+    });
     // trang dk dn
     $("#dangnhap").click(function (e) {
         var tendangnhap = $("#tendangnhap_DN").val();
@@ -129,17 +141,19 @@ $(document).ready(function () {
                 data: { arr: arr },
                 // dataType: "dataType",
                 success: function (response) {
-
+                    if(response){
+                        // chuyen sang trang thanh toan
+                        location.assign(linkTuyetDoi + "thanhtoan");
+                    }
                 }
             });
         }
-        // chuyen sang trang thanh toan
-        location.assign(linkTuyetDoi + "thanhtoan");
-
     });
     ///
-    $("#test").click(function (e) {
+    $("#selectAddress").click(function (e) {
         var tong;
+        var clickAddress = 0; 
+        $("#contentSelectAddress").slideDown();
         $.ajax({
             type: "get",
             url: linkTuyetDoi + "public/js/diaChi.json",
@@ -190,6 +204,7 @@ $(document).ready(function () {
                 });
                 
             }
+            $("#shippingCost").html("3000");
         });
     });
     // function support 

@@ -13,24 +13,26 @@
                                 </ul>
                             </div>
                             <div class="your-order-middle">
-                                <?php $tongtien = $data["productModel"]->showProductInPayment();?>
+                                <?php $tongtien = $data["productModel"]->showProductInPayment(); ?>
                             </div>
                             <div class="your-order-bottom">
                                 <ul>
                                     <li class="your-order-shipping">Địa Chỉ Giao Hàng</li>
-                                    <li>0 đ</li>
+                                    <li>
+                                        <a href="./taikhoan"><i class="far fa-plus-square"></i></a>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="your-order-bottom">
                                 <ul>
-                                    <li class="your-order-shipping">Phí Vận Chuyển</li>
-                                    <li>0 đ</li>
+                                    <li class="your-order-shipping" >Phí Vận Chuyển</li>
+                                    <li><span id="shippingCost"></span> đ</li>
                                 </ul>
                             </div>
                             <div class="your-order-total">
                                 <ul>
                                     <li class="order-total">Tổng Tiền</li>
-                                    <li><?php echo number_format($tongtien) ;?></li>
+                                    <li><?php echo number_format($tongtien); ?></li>
                                 </ul>
                             </div>
                         </div>

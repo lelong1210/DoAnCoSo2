@@ -29,3 +29,6 @@
     color: #fff;
     background-color: rgba(48, 164, 211, 0.87);
 }
+.contentSelectAddress{
+    display: none;
+}
