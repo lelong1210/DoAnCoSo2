@@ -70,6 +70,16 @@ class ajax extends controller{
         $model = $this->call_model("taikhoanModel");
         echo $model->deleteAddressShipping($madiachigiaohang);
     }
+    function editAddressShipping(){
+        $tentinh = $_POST["tentinh"];
+        $tenhuyen = $_POST["tenhuyen"];
+        $tenxa = $_POST["tenxa"];
+        $diachichitiet = $_POST["diachichitiet"];
+        $madiachigiaohang = $_POST["madiachigiaohang"];
+        $madiachigiaohang = intval($madiachigiaohang);
+        $model = $this->call_model("taikhoanModel");
+        echo $model->editAddressShipping($tentinh,$tenhuyen,$tenxa,$diachichitiet,$madiachigiaohang);
+    }
         // cart
     function addProductInCart(){
         $masp = $_POST["masp"];

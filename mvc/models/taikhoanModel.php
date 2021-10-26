@@ -168,6 +168,23 @@ class taikhoanModel extends connectDB{
             echo $e->getMessage();
         }        
     }
+    function editAddressShipping($tentinh,$tenhuyen,$tenxa,$diachichitiet,$madiachigiaohang){
+        $madiachigiaohang = intval($madiachigiaohang);
+        $conn = $this->GetConn();
+        $sql = "UPDATE diachigiaohang SET tentinh=:tentinh,tenhuyen=:tenhuyen,tenxa=:tenxa,diachichitiet=:diachichitiet WHERE madiachigiaohang=:madiachigiaohang";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tentinh",$tentinh);
+        $query->bindParam(":tenhuyen",$tenhuyen);
+        $query->bindParam(":tenxa",$tenxa);
+        $query->bindParam(":diachichitiet",$diachichitiet);
+        $query->bindParam(":madiachigiaohang",$madiachigiaohang);
+        $query->execute();
+        if($query->rowCount() > 0){
+            return true ;
+        }else{
+            return false ;
+        }
+    }
     // function support View
     function editInformation(){
         $arrKey = $this->getTitle();
@@ -190,7 +207,7 @@ class taikhoanModel extends connectDB{
         if($arrAddress){
             for ($i=0; $i < count($arrAddress); $i++) { 
                 $arrChild = array_values((array)$arrAddress[$i]);
-                echo "<h6> $arrChild[2] - $arrChild[3] - $arrChild[4]";
+                echo "<h6> $arrChild[2] - $arrChild[3] - $arrChild[4] - $arrChild[5]";
                     echo "<a class='fas fa-edit' id='editAddressShipping$arrChild[0]' href='./khachhang/suadiachigiaohang/$arrChild[0]'></a>";
                     echo "<button class='fas fa-trash-alt' id='deleteAddressShipping$arrChild[0]'></button>";
                 echo "</h6>";
@@ -202,7 +219,14 @@ class taikhoanModel extends connectDB{
     function showAddressShippingForEdit($madiachigiaohang){
         $tendangnhap = $_SESSION["username"];
         $arrAddress = json_decode($this->selectAddressShippingWhereMadiachigiaohang($tendangnhap,$madiachigiaohang));
-        return $arrAddress;
+        $arrChild = array_values((array)$arrAddress[0]);
+        echo "<div class='' id=''>";
+            echo "<select id='tentinh'><option value=''>$arrChild[2]</option></select>";
+            echo "<select id='tenhuyen'><option value=''>$arrChild[3]</option></select>";
+            echo "<select id='tenxa'><option value=''>$arrChild[4]</option></select>";
+            echo "<input type='text' placeholder='nhập địa chỉ...' id='diachi' value='$arrChild[5]'>";
+            echo "<button class='btn btn-lg btn-success' id='editAddressShipping$arrChild[0]'>Cập Nhật</button>";
+        echo "</div>";
     }
 }
 ?>

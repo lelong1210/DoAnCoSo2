@@ -46,6 +46,7 @@ $(document).ready(function () {
     });
     $("button").click(function (e) { 
         var VariAbledeleteAddressShipping = "deleteAddressShipping";
+        var VariaEditAddressShipping = "editAddressShipping";
         var idThis = $(this).attr("id");
         if(idThis.startsWith(VariAbledeleteAddressShipping)){
             var madiachigiaohang = idThis.slice(VariAbledeleteAddressShipping.length,idThis.length);
@@ -55,6 +56,23 @@ $(document).ready(function () {
             }else{
                 alert("Thất Bại")
             }
+        }
+        if(idThis.startsWith(VariaEditAddressShipping)){
+            var tentinh = $("#tentinh").val();
+            var tenhuyen = $("#tenhuyen").val();
+            var tenxa = $("#tenxa").val();
+            var diachichitiet = $("#diachi").val();
+            var madiachigiaohang = idThis.slice(VariaEditAddressShipping.length,idThis.length);
+            if(tentinh == "" || tenhuyen == "" || tenxa == "" || diachichitiet == ""){
+                alert("vui lòng chọn đầy đủ thông tin");
+            }else{
+                if(editAddressShipping(tentinh,tenhuyen,tenxa,diachichitiet,madiachigiaohang)){
+                    alert("da sua thanh cong");
+                    location.assign(linkTuyetDoi + "taikhoan");
+                }else{
+                    alert("that bai");
+                }
+            }  
         }
     });
     // trang dk dn
@@ -115,7 +133,6 @@ $(document).ready(function () {
 
         }
     });
-
     $(".qtybutton").click(function (e) {
         var btnMhUp = "btnMhUp";
         var btnMhDown = "btnMhDown";
@@ -131,7 +148,7 @@ $(document).ready(function () {
             EditDetailOfCartFrontEnd(idThis, btnMhDown, valueOfInput, tdOfprice, tdOfprieLast, soluongconlai, "down")
         }
     });
-    $("#thanhtoan").click(function (e) {
+    $("#toitrangthanhtoan").click(function (e) {
         var chonsp = "chonsp";
         var valueOfInput = "valueOfInput";
         var tdOfprice = "tdOfprice";
@@ -165,10 +182,69 @@ $(document).ready(function () {
                     }
                 }
             });
+        }else{
+            alert("Bạn Chưa Chọn Sản Phẩm ^_^ !!!");
         }
     });
-    ///
+    /// noi chon tinh huyen xa 
     $("#selectAddress").click(function (e) {
+        var tong;
+        var clickAddress = 0; 
+        $("#contentSelectAddress").slideDown();
+        $.ajax({
+            type: "get",
+            url: linkTuyetDoi + "public/js/diaChi.json",
+            dataType: "json",
+            success: function (response) {
+                tong = response;
+                $.each(response, function (indexInArray, valueOfElement) {
+                    $("#tentinh").append($('<option>', {
+                        value: valueOfElement.name,
+                        text: valueOfElement.name
+                    }));
+                });
+            }
+        });
+        $("select").change(function (e) { 
+            var typeId = $(this).attr("id");
+            if (typeId == "tentinh") {
+                var tentinh = this.value;
+                $("#tenhuyen").html("");
+                $.each(tong, function (indexInArray, valueOfElement) {
+                    if (valueOfElement.name == tentinh) {
+                        $.each(valueOfElement.districts, function (indexInArray, valueOfElement1) {
+                            $("#tenhuyen").append($('<option>', {
+                                value: valueOfElement1.name,
+                                text: valueOfElement1.name
+                            }));
+                        });
+                    }
+                });
+            }
+            if (typeId == "tenhuyen") {
+                var tentinh = $("#tentinh").val();
+                var tenhuyen = $("#tenhuyen").val();
+                $("#tenxa").html("");
+                $.each(tong, function (indexInArray, valueOfElement) {
+                    if (valueOfElement.name == tentinh) {
+                        $.each(valueOfElement.districts, function (indexInArray, valueOfElement1) {
+                            if(valueOfElement1.name == tenhuyen){
+                                $.each(valueOfElement1.wards, function (indexInArray, valueOfElement2) { 
+                                    $("#tenxa").append($('<option>', {
+                                        value: valueOfElement2.name,
+                                        text: valueOfElement2.name
+                                    }));
+                                });
+                            }
+                        });
+                    }
+                });
+                
+            }
+            $("#shippingCost").html("3000");
+        });
+    });
+    $("select").click(function (e) { 
         var tong;
         var clickAddress = 0; 
         $("#contentSelectAddress").slideDown();
@@ -462,6 +538,26 @@ $(document).ready(function () {
             // dataType: "dataType",
             success: function (response) {
                 result = response;
+            }
+        });
+        return result;
+    }
+    function editAddressShipping(tentinh,tenhuyen,tenxa,diachichitiet,madiachigiaohang){
+        alert(tentinh+"-"+tenhuyen+"-"+tenxa+"-"+diachichitiet+"-"+madiachigiaohang);
+        var result = 0 ;
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/editAddressShipping",
+            data: {
+                tentinh:tentinh,
+                tenhuyen:tenhuyen,
+                tenxa:tenxa,
+                diachichitiet:diachichitiet,
+                madiachigiaohang:madiachigiaohang
+            },
+            success: function (response) {
+                result = response
             }
         });
         return result;

@@ -29,7 +29,7 @@
                                     <a href="home">Mua Thêm</a>
                                 </div>
                                 <div class="cart-clear">
-                                    <a id="thanhtoan">Thanh Toán</a>
+                                    <a id="toitrangthanhtoan">Thanh Toán</a>
                                 </div>
                             </div>
                         </div>
