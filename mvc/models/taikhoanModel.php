@@ -187,7 +187,7 @@ class taikhoanModel extends connectDB{
         }
     }
     // kiem tra xem mua chua
-    function CheckSell(){
+    function checkSell(){
         $conn = $this->GetConn();
         $sql = "SELECT nguoidung.tendangnhap , hoadon.mahoadon,chitiethoadon.masp,chitiethoadon.soluong
         FROM ((hoadon 
@@ -204,6 +204,55 @@ class taikhoanModel extends connectDB{
         }
     }
     // thanh toan
+    function insertHoaDon($tendangnhap,$ngaymua,$diachigiaohang){
+        $conn = $this->GetConn();
+        $sql = "INSERT INTO hoadon(tendangnhap,ngaymua,diachigiaohang) VALUES(:tendangnhap,:ngaymua,:diachigiaohang)";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->bindParam(":ngaymua",$ngaymua);
+        $query->bindParam(":diachigiaohang",$diachigiaohang);
+        $query->execute();
+        if($query->rowCount() > 0 ){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function getLastMaHoaDon($tendangnhap){
+        $conn = $this->GetConn();
+        $sql = "SELECT mahoadon FROM hoadon 
+        WHERE tendangnhap = :tendangnhap
+        ORDER BY hoadon.mahoadon DESC 
+        LIMIT 1";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false ;
+        }
+    }
+    function insertChitietHoaDon($soluong,$masp,$mahoadon){
+        $conn = $this->GetConn();
+        $sql = "INSERT INTO chitiethoadon(soluong,masp,mahoadon) VALUES(:soluong,:masp,:mahoadon)";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":soluong",$soluong);
+        $query->bindParam(":masp",$masp);
+        $query->bindParam(":mahoadon",$mahoadon);
+        $query->execute();
+        if($query->rowCount() > 0 ){
+            return true;
+        }else{
+            return false;
+        }        
+    }
+    function thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr){
+        // if($this->insertHoaDon($tendangnhap,$ngaymua,$diachigiaohang)){
+        //     echo $this->getLastMaHoaDon($tendangnhap);
+        // }
+    }
     // function support View
     function editInformation(){
         $arrKey = $this->getTitle();

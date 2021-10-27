@@ -196,7 +196,17 @@ $(document).ready(function () {
             }
         })
         if (idAddress != "") {
-            alert($("#spanOfAddress"+idAddress).html());
+            // var diachigiaohang = $("#spanOfAddress"+idAddress).html();
+            // $.ajax({
+            //     type: "post",
+            //     async:false,
+            //     url: linkTuyetDoi+"ajax/thanhtoan",
+            //     data: {diachigiaohang:diachigiaohang},
+            //     // dataType: "dataType",
+            //     success: function (response) {
+            //         alert(response);
+            //     }
+            // });
         } else {
             alert("Chua chon dia chi thanh toan");
         }

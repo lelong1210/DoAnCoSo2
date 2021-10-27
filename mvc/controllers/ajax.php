@@ -126,5 +126,16 @@ class ajax extends controller{
             echo true;
         }
     }
+        // thanh toan
+    function thanhtoan(){
+        $tendangnhap = $_SESSION["username"];
+        $ngaymua = date("Y-m-d");
+        $diachigiaohang = $_POST["diachigiaohang"];
+        $arr = $_POST["arr"];
+        
+
+        $model = $this->call_model("taikhoanModel");
+        echo $model->thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr);
+    }
 }
 ?>
