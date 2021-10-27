@@ -222,7 +222,7 @@ class productModel extends connectDB
                     echo "<span> <img src='$arrProductNumber[5]' alt='' style='max-width: 100px;'></span>";
                     echo "<span class='order-price' id='giaTienSp'>".($arrProductNumber[2]*$arrChild[1])." đ</span>";
                 echo "</li>";
-                echo "<li><span class='order-middle-left'>$arrProductNumber[1] <span style='color:red'> X $arrChild[1]</span></span></li>";
+                echo "<li><span class='order-middle-left'>$arrProductNumber[1]  <span style='color:red'>X</span> <span style='color:red' id='soluongsp$arrProductNumber[0]'>$arrChild[1]</span></span></li>";
             echo "</ul>";
             $tongtien = $tongtien + $arrProductNumber[2]*$arrChild[1];
         }

@@ -249,9 +249,20 @@ class taikhoanModel extends connectDB{
         }        
     }
     function thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr){
-        // if($this->insertHoaDon($tendangnhap,$ngaymua,$diachigiaohang)){
-        //     echo $this->getLastMaHoaDon($tendangnhap);
-        // }
+        $result = false;
+        if($this->insertHoaDon($tendangnhap,$ngaymua,$diachigiaohang)){
+            $mahoadon = json_decode($this->getLastMaHoaDon($tendangnhap));
+            print_r($mahoadon);
+            $mahoadon = array_values((array)$mahoadon[0]);
+            for ($i=0; $i < count($arr); $i++) { 
+                $arrChild = array_values((array)$arr[$i]);
+                $result = $this->insertChitietHoaDon($arrChild[1],$arrChild[0],$mahoadon[0]);
+            }
+            return $result;
+        }else{
+            return false;
+        }
+
     }
     // function support View
     function editInformation(){

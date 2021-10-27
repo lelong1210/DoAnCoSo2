@@ -196,17 +196,23 @@ $(document).ready(function () {
             }
         })
         if (idAddress != "") {
-            // var diachigiaohang = $("#spanOfAddress"+idAddress).html();
-            // $.ajax({
-            //     type: "post",
-            //     async:false,
-            //     url: linkTuyetDoi+"ajax/thanhtoan",
-            //     data: {diachigiaohang:diachigiaohang},
-            //     // dataType: "dataType",
-            //     success: function (response) {
-            //         alert(response);
-            //     }
-            // });
+            var arr = [];
+            var diachigiaohang = $("#spanOfAddress"+idAddress).html();
+            $("span").each(function(){
+                var idSpan = $(this).attr("id");
+                var soluongsp = "soluongsp";
+                if(idSpan && idSpan.startsWith(soluongsp)){
+                    var masp = idSpan.slice(soluongsp.length,idSpan.length);
+                    var soluong = $("#"+idSpan).html();
+                    var text = {"masp":masp,"soluong":soluong};
+                    arr.push(text);
+                }
+            });
+            if(tienHanhthanhToan(diachigiaohang,arr)){
+                // alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm")
+            }else{
+                // alert("Thanh Toán Thất Bại");
+            }
         } else {
             alert("Chua chon dia chi thanh toan");
         }
@@ -599,6 +605,20 @@ $(document).ready(function () {
             },
             success: function (response) {
                 result = response
+            }
+        });
+        return result;
+    }
+    function tienHanhthanhToan(diachigiaohang,arr){
+        var result = 0 ;
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/thanhtoan",
+            data: {diachigiaohang:diachigiaohang,arr:arr},
+            success: function (response) {
+                alert(response);
+                result = response;
             }
         });
         return result;
