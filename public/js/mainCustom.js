@@ -209,9 +209,9 @@ $(document).ready(function () {
                 }
             });
             if(tienHanhthanhToan(diachigiaohang,arr)){
-                // alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm")
+                alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm")
             }else{
-                // alert("Thanh Toán Thất Bại");
+                alert("Thanh Toán Thất Bại");
             }
         } else {
             alert("Chua chon dia chi thanh toan");
@@ -617,7 +617,6 @@ $(document).ready(function () {
             url: linkTuyetDoi+"ajax/thanhtoan",
             data: {diachigiaohang:diachigiaohang,arr:arr},
             success: function (response) {
-                alert(response);
                 result = response;
             }
         });
