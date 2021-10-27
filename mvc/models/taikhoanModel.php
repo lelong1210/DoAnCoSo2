@@ -105,6 +105,7 @@ class taikhoanModel extends connectDB{
         $arr = array_keys((array)$arr[0]);
         return $arr ;
     }
+    // dia chi giao hang
     function insertAddressShipping($tendangnhap,$tentinh,$tenhuyen,$tenxa,$diachichitiet){
         $conn = $this->GetConn();
         $sql = "INSERT INTO diachigiaohang(tendangnhap,tentinh,tenhuyen,tenxa,diachichitiet) values(:tendangnhap,:tentinh,:tenhuyen,:tenxa,:diachichitiet)";
@@ -185,6 +186,24 @@ class taikhoanModel extends connectDB{
             return false ;
         }
     }
+    // kiem tra xem mua chua
+    function CheckSell(){
+        $conn = $this->GetConn();
+        $sql = "SELECT nguoidung.tendangnhap , hoadon.mahoadon,chitiethoadon.masp,chitiethoadon.soluong
+        FROM ((hoadon 
+        INNER JOIN nguoidung ON hoadon.tendangnhap = nguoidung.tendangnhap)
+        INNER JOIN 	chitiethoadon ON hoadon.mahoadon = chitiethoadon.mahoadon)
+        WHERE chitiethoadon.masp = :masp";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":masp",$masp);
+        $query->execute();
+        if($query->rowCount() > 0){
+            return true ;
+        }else{
+            return false ;
+        }
+    }
+    // thanh toan
     // function support View
     function editInformation(){
         $arrKey = $this->getTitle();

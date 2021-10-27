@@ -27,52 +27,52 @@ $(document).ready(function () {
         var id = $(this).attr("id");
         checkChangePass(id);
     });
-    $("#saveAddressShipping").click(function (e) { 
+    $("#saveAddressShipping").click(function (e) {
         var tentinh = $("#tentinh").val();
         var tenhuyen = $("#tenhuyen").val();
         var tenxa = $("#tenxa").val();
         var diachichitiet = $("#diachi").val();
-        if(tentinh == null || tenhuyen == null || tenxa == null || diachichitiet == ""){
+        if (tentinh == null || tenhuyen == null || tenxa == null || diachichitiet == "") {
             alert("vui lòng chọn đầy đủ thông tin");
-        }else{
-            if(insertAddressShipping(tentinh,tenhuyen,tenxa,diachichitiet)){
+        } else {
+            if (insertAddressShipping(tentinh, tenhuyen, tenxa, diachichitiet)) {
                 alert("da them");
                 location.reload();
-            }else{
+            } else {
                 alert("that bai");
             }
         }
-        
+
     });
-    $("button").click(function (e) { 
+    $("button").click(function (e) {
         var VariAbledeleteAddressShipping = "deleteAddressShipping";
         var VariaEditAddressShipping = "editAddressShipping";
         var idThis = $(this).attr("id");
-        if(idThis.startsWith(VariAbledeleteAddressShipping)){
-            var madiachigiaohang = idThis.slice(VariAbledeleteAddressShipping.length,idThis.length);
-            if(deleteAddressShipping(madiachigiaohang)){
+        if (idThis.startsWith(VariAbledeleteAddressShipping)) {
+            var madiachigiaohang = idThis.slice(VariAbledeleteAddressShipping.length, idThis.length);
+            if (deleteAddressShipping(madiachigiaohang)) {
                 alert("Đã Xóa");
                 location.reload();
-            }else{
+            } else {
                 alert("Thất Bại")
             }
         }
-        if(idThis.startsWith(VariaEditAddressShipping)){
+        if (idThis.startsWith(VariaEditAddressShipping)) {
             var tentinh = $("#tentinh").val();
             var tenhuyen = $("#tenhuyen").val();
             var tenxa = $("#tenxa").val();
             var diachichitiet = $("#diachi").val();
-            var madiachigiaohang = idThis.slice(VariaEditAddressShipping.length,idThis.length);
-            if(tentinh == "" || tenhuyen == "" || tenxa == "" || diachichitiet == ""){
+            var madiachigiaohang = idThis.slice(VariaEditAddressShipping.length, idThis.length);
+            if (tentinh == "" || tenhuyen == "" || tenxa == "" || diachichitiet == "") {
                 alert("vui lòng chọn đầy đủ thông tin");
-            }else{
-                if(editAddressShipping(tentinh,tenhuyen,tenxa,diachichitiet,madiachigiaohang)){
+            } else {
+                if (editAddressShipping(tentinh, tenhuyen, tenxa, diachichitiet, madiachigiaohang)) {
                     alert("da sua thanh cong");
                     location.assign(linkTuyetDoi + "taikhoan");
-                }else{
+                } else {
                     alert("that bai");
                 }
-            }  
+            }
         }
     });
     // trang dk dn
@@ -114,7 +114,7 @@ $(document).ready(function () {
         }
     });
     // xu ly mua hang 
-        // ==> trang gio hang
+    // ==> trang gio hang
     $("button").click(function (e) {
         var nameBtnMH = "btnMH";
         var idThis = $(this).attr('id');
@@ -177,47 +177,49 @@ $(document).ready(function () {
                 data: { arr: arr },
                 // dataType: "dataType",
                 success: function (response) {
-                    if(response){
+                    if (response) {
                         // chuyen sang trang thanh toan
                         location.assign(linkTuyetDoi + "thanhtoan");
                     }
                 }
             });
-        }else{
+        } else {
             alert("Bạn Chưa Chọn Sản Phẩm ^_^ !!!");
         }
     });
-        // ==> trang thanh toan
+    // ==> trang thanh toan
     $("#thanhtoan").click(function (e) {
         var idAddress = "";
-        $(":checkbox").each(function(){
-            if($(this).is(":checked")){
+        $(":checkbox").each(function () {
+            if ($(this).is(":checked")) {
                 idAddress = $(this).attr("id");
             }
         })
-        if(idAddress != ""){
-            var giaTienSp = $("#giaTienSp").html();
-        }else{
+        if (idAddress != "") {
+            alert($("#spanOfAddress"+idAddress).html());
+        } else {
             alert("Chua chon dia chi thanh toan");
         }
     });
-    $(":checkbox").click(function (e) { 
-       var idThis = $(this).attr("id");
-       var giaTienSp = $("#giaTienSp").html();
-       var diachi = $("#spanOfAddress"+idThis).html();
-       $(":checkbox").each(function(){
-            if($(this).is(":checked") && idThis != $(this).attr("id")){
-                $(this).prop( "checked", false );
-            }
-        })
-        $("#shippingCost").html((diachi.length)*2000);
-        $("#tongtien").html((parseInt(giaTienSp)+(diachi.length)*2000)+" đ");
-
+    $(":checkbox").click(function (e) {
+        var idThis = $(this).attr("id");
+        var chonsp = "chonsp";
+        if (idThis.startsWith(chonsp) == false) {
+            var giaTienSp = $("#giaTienSp").html();
+            var diachi = $("#spanOfAddress" + idThis).html();
+            $(":checkbox").each(function () {
+                if ($(this).is(":checked") && idThis != $(this).attr("id")) {
+                    $(this).prop("checked", false);
+                }
+            })
+            $("#shippingCost").html((diachi.length) * 2000);
+            $("#tongtien").html((parseInt(giaTienSp) + (diachi.length) * 2000) + " đ");
+        }
     });
     /// noi chon tinh huyen xa 
     $("#selectAddress").click(function (e) {
         var tong;
-        var clickAddress = 0; 
+        var clickAddress = 0;
         $("#contentSelectAddress").slideDown();
         $.ajax({
             type: "get",
@@ -233,7 +235,7 @@ $(document).ready(function () {
                 });
             }
         });
-        $("select").change(function (e) { 
+        $("select").change(function (e) {
             var typeId = $(this).attr("id");
             if (typeId == "tentinh") {
                 var tentinh = this.value;
@@ -256,8 +258,8 @@ $(document).ready(function () {
                 $.each(tong, function (indexInArray, valueOfElement) {
                     if (valueOfElement.name == tentinh) {
                         $.each(valueOfElement.districts, function (indexInArray, valueOfElement1) {
-                            if(valueOfElement1.name == tenhuyen){
-                                $.each(valueOfElement1.wards, function (indexInArray, valueOfElement2) { 
+                            if (valueOfElement1.name == tenhuyen) {
+                                $.each(valueOfElement1.wards, function (indexInArray, valueOfElement2) {
                                     $("#tenxa").append($('<option>', {
                                         value: valueOfElement2.name,
                                         text: valueOfElement2.name
@@ -267,14 +269,14 @@ $(document).ready(function () {
                         });
                     }
                 });
-                
+
             }
             $("#shippingCost").html("3000");
         });
     });
-    $("select").click(function (e) { 
+    $("select").click(function (e) {
         var tong;
-        var clickAddress = 0; 
+        var clickAddress = 0;
         $("#contentSelectAddress").slideDown();
         $.ajax({
             type: "get",
@@ -290,7 +292,7 @@ $(document).ready(function () {
                 });
             }
         });
-        $("select").change(function (e) { 
+        $("select").change(function (e) {
             var typeId = $(this).attr("id");
             if (typeId == "tentinh") {
                 var tentinh = this.value;
@@ -313,8 +315,8 @@ $(document).ready(function () {
                 $.each(tong, function (indexInArray, valueOfElement) {
                     if (valueOfElement.name == tentinh) {
                         $.each(valueOfElement.districts, function (indexInArray, valueOfElement1) {
-                            if(valueOfElement1.name == tenhuyen){
-                                $.each(valueOfElement1.wards, function (indexInArray, valueOfElement2) { 
+                            if (valueOfElement1.name == tenhuyen) {
+                                $.each(valueOfElement1.wards, function (indexInArray, valueOfElement2) {
                                     $("#tenxa").append($('<option>', {
                                         value: valueOfElement2.name,
                                         text: valueOfElement2.name
@@ -324,7 +326,7 @@ $(document).ready(function () {
                         });
                     }
                 });
-                
+
             }
             $("#shippingCost").html("3000");
         });
@@ -538,31 +540,18 @@ $(document).ready(function () {
             }
         });
     }
-    function insertAddressShipping(tentinh,tenhuyen,tenxa,diachichitiet){
-        var result = 0 ;
+    function insertAddressShipping(tentinh, tenhuyen, tenxa, diachichitiet) {
+        var result = 0;
         $.ajax({
             type: "post",
-            async: false ,
-            url: linkTuyetDoi+"ajax/insertAddressShipping",
-            data: {tentinh:tentinh,
-                tenhuyen:tenhuyen,
-                tenxa:tenxa,
-                diachichitiet:diachichitiet
+            async: false,
+            url: linkTuyetDoi + "ajax/insertAddressShipping",
+            data: {
+                tentinh: tentinh,
+                tenhuyen: tenhuyen,
+                tenxa: tenxa,
+                diachichitiet: diachichitiet
             },
-            // dataType: "dataType",
-            success: function (response) {
-                result = response ;
-            }
-        });
-        return result;
-    }
-    function deleteAddressShipping(madiachigiaohang){
-        var result = 0 ;
-        $.ajax({
-            type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/deleteAddressShipping",
-            data: {madiachigiaohang:madiachigiaohang},
             // dataType: "dataType",
             success: function (response) {
                 result = response;
@@ -570,19 +559,33 @@ $(document).ready(function () {
         });
         return result;
     }
-    function editAddressShipping(tentinh,tenhuyen,tenxa,diachichitiet,madiachigiaohang){
-        alert(tentinh+"-"+tenhuyen+"-"+tenxa+"-"+diachichitiet+"-"+madiachigiaohang);
-        var result = 0 ;
+    function deleteAddressShipping(madiachigiaohang) {
+        var result = 0;
         $.ajax({
             type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/editAddressShipping",
+            async: false,
+            url: linkTuyetDoi + "ajax/deleteAddressShipping",
+            data: { madiachigiaohang: madiachigiaohang },
+            // dataType: "dataType",
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+    function editAddressShipping(tentinh, tenhuyen, tenxa, diachichitiet, madiachigiaohang) {
+        alert(tentinh + "-" + tenhuyen + "-" + tenxa + "-" + diachichitiet + "-" + madiachigiaohang);
+        var result = 0;
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/editAddressShipping",
             data: {
-                tentinh:tentinh,
-                tenhuyen:tenhuyen,
-                tenxa:tenxa,
-                diachichitiet:diachichitiet,
-                madiachigiaohang:madiachigiaohang
+                tentinh: tentinh,
+                tenhuyen: tenhuyen,
+                tenxa: tenxa,
+                diachichitiet: diachichitiet,
+                madiachigiaohang: madiachigiaohang
             },
             success: function (response) {
                 result = response
