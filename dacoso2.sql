@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 27, 2021 at 05:59 PM
+-- Generation Time: Oct 28, 2021 at 12:25 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -40,11 +40,13 @@ CREATE TABLE `chitietgiohang` (
 INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
 (2, 'longtermplayoffs-gh', 1),
 (12, 'longtermplayoffs-gh', 1),
-(2, 'arcanaabounding-gh', 28),
 (8, 'arcanaabounding-gh', 2),
 (12, 'arcanaabounding-gh', 1),
 (57, 'arcanaabounding-gh', 1),
-(32, 'arcanaabounding-gh', 1);
+(32, 'arcanaabounding-gh', 1),
+(6, 'befittinggeorgian-gh', 1),
+(4, 'befittinggeorgian-gh', 1),
+(63, 'befittinggeorgian-gh', 1);
 
 -- --------------------------------------------------------
 
@@ -57,6 +59,24 @@ CREATE TABLE `chitiethoadon` (
   `masp` int(11) NOT NULL,
   `mahoadon` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `chitiethoadon`
+--
+
+INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
+(1, 2, 15),
+(2, 57, 15),
+(1, 2, 16),
+(2, 57, 16),
+(4, 2, 17),
+(1, 2, 18),
+(1, 8, 18),
+(1, 11, 18),
+(1, 12, 18),
+(1, 10, 18),
+(1, 7, 19),
+(28, 2, 20);
 
 -- --------------------------------------------------------
 
@@ -96,7 +116,8 @@ CREATE TABLE `diachigiaohang` (
 
 INSERT INTO `diachigiaohang` (`madiachigiaohang`, `tendangnhap`, `tentinh`, `tenhuyen`, `tenxa`, `diachichitiet`) VALUES
 (10, 'arcanaabounding', 'Thành phố Hà Nội', 'Quận Hoàn Kiếm', 'Phường Hàng Mã', 'VKU-123'),
-(11, 'arcanaabounding', 'Tỉnh Hà Giang', 'Huyện Đồng Văn', 'Thị trấn Phó Bảng', 'củ cãi đường');
+(11, 'arcanaabounding', 'Tỉnh Hà Giang', 'Huyện Đồng Văn', 'Thị trấn Phó Bảng', 'củ cãi đường'),
+(14, 'befittinggeorgian', 'Tỉnh Lạng Sơn', 'Huyện Chi Lăng', 'Xã Liên Sơn', 'sen sen');
 
 -- --------------------------------------------------------
 
@@ -115,6 +136,7 @@ CREATE TABLE `giohang` (
 
 INSERT INTO `giohang` (`magiohang`, `tendangnhap`) VALUES
 ('arcanaabounding-gh', 'arcanaabounding'),
+('befittinggeorgian-gh', 'befittinggeorgian'),
 ('longtermplayoffs-gh', 'longtermplayoffs');
 
 -- --------------------------------------------------------
@@ -166,6 +188,18 @@ CREATE TABLE `hoadon` (
   `diachigiaohang` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `hoadon`
+--
+
+INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`) VALUES
+(15, 'befittinggeorgian', '2021-10-28', 'Tỉnh Lạng Sơn - Huyện Chi Lăng - Xã Liên Sơn - sen sen'),
+(16, 'befittinggeorgian', '2021-10-28', 'Tỉnh Lạng Sơn - Huyện Chi Lăng - Xã Liên Sơn - sen sen'),
+(17, 'befittinggeorgian', '2021-10-28', 'Tỉnh Lạng Sơn - Huyện Chi Lăng - Xã Liên Sơn - sen sen'),
+(18, 'befittinggeorgian', '2021-10-28', 'Tỉnh Lạng Sơn - Huyện Chi Lăng - Xã Liên Sơn - sen sen'),
+(19, 'befittinggeorgian', '2021-10-28', 'Tỉnh Lạng Sơn - Huyện Chi Lăng - Xã Liên Sơn - sen sen'),
+(20, 'arcanaabounding', '2021-10-28', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Hàng Mã - VKU-123');
+
 -- --------------------------------------------------------
 
 --
@@ -204,7 +238,7 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('arcanaabounding', 'LE QUANG LONG', 'QUANG BINH', '0904349823', 'marisol39@hotmail.com', '0c0b3da4ac402bd86191d959be081114', 0),
 ('arousedrecruit', NULL, NULL, NULL, 'salma87@hotmail.com', 'a794275722896cac20ecdd29928a3b9d', 0),
 ('banneravailable', NULL, NULL, NULL, 'marjolaine42@hotmail.com', '9c80d885bcf55293e8b999ea404ff2b2', 0),
-('befittinggeorgian', NULL, NULL, NULL, 'ena.brekke8@gmail.com', '3f2f56b3de1307423a65a09498b820ef', 0),
+('befittinggeorgian', 'THANH HẰNG', 'ĐÀ NẴNG', '0923923921', 'ena.brekke8@gmail.com', '4297f44b13955235245b2497399d7a93', 0),
 ('blaringchest', NULL, NULL, NULL, 'bo.larson@hotmail.com', 'c4c11f39e198267cf66289ca58f75036', 0),
 ('blockbid', NULL, NULL, NULL, 'gwen.kertzmann@gmail.com', '25b722aa084517be6573456e457ac357', 0),
 ('bondmenorah', NULL, NULL, NULL, 'margarita.gusikowski@gmail.com', '2bd3542420443bd39802a6c4745feb24', 0),
@@ -257,7 +291,7 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 --
 
 CREATE TABLE `sanpham` (
-  `masp` int(10) NOT NULL,
+  `masp` int(11) NOT NULL,
   `tensp` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
   `giatien` decimal(10,2) NOT NULL,
   `loaisanpham` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -275,7 +309,7 @@ CREATE TABLE `sanpham` (
 
 INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`, `linkduongdananh`, `hangsx`, `dunglamslider`, `soluongsp`, `ngaynhap`) VALUES
 (1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 0, 99, '2021-10-01'),
-(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 74, '2021-10-01'),
+(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 71, '2021-10-01'),
 (3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 99, '2021-10-01'),
 (4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 99, '2021-10-01'),
 (5, 'eufy Smart Lock Touch with Wifi Bridge – Khóa cửa vân tay, chống nước IP65', '5990000.00', 'khoacuathongminh', 'Khóa cửa thông minh eufy Smart Lock Touch – cảm biến vân tay siêu nhạy, mở khóa trong 0.3 giây Tự động khóa khi phát hiện cửa đang đóng Ứng dụng quản lý giao diện Tiếng Việt Đạt chứng nhận BHMA, bền bỉ với tuổi thọ lên tới 70 năm Có 5 cách mở khóa: Nhận diện vây tay, nhập mật mã, mở bằng chìa thông thường, sử dụng app Eufy Security và mở khóa bằng giọng nói Thiết bị có thể hoạt động trong thời tiết khắc nghiệt với chống nước IP65 Tích hợp cảm biến đóng/mở, chốt khóa điện tử kết nối Bluetooth Điều khiển từ xa với Wifi Bridge', 'https://gucongnghe.com/wp-content/uploads/2020/08/eufy-smart-lock-touch-with-bridge-1-247x296.jpg', 'eufy ', 0, 99, '2021-10-01'),
@@ -337,8 +371,18 @@ CREATE TABLE `thongtinnhanxetsanpham` (
   `manhanxet` int(11) NOT NULL,
   `masp` int(11) NOT NULL,
   `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `noidung` text COLLATE utf8mb4_unicode_ci NOT NULL
+  `noidung` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sosao` int(2) NOT NULL,
+  `ngaydanggia` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `thongtinnhanxetsanpham`
+--
+
+INSERT INTO `thongtinnhanxetsanpham` (`manhanxet`, `masp`, `tendangnhap`, `noidung`, `sosao`, `ngaydanggia`) VALUES
+(7, 2, 'befittinggeorgian', 'sản phẩm rất tuyệt vời', 5, '2021-10-28'),
+(9, 2, 'arcanaabounding', 'sản phẩm này dùng khá oke', 5, '2021-10-28');
 
 -- --------------------------------------------------------
 
@@ -441,8 +485,8 @@ ALTER TABLE `sanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
   ADD PRIMARY KEY (`manhanxet`),
-  ADD UNIQUE KEY `masp` (`masp`),
-  ADD KEY `tendangnhap` (`tendangnhap`);
+  ADD KEY `tendangnhap` (`tendangnhap`),
+  ADD KEY `masp` (`masp`);
 
 --
 -- Indexes for table `thumucsanpham`
@@ -464,7 +508,7 @@ ALTER TABLE `congviec`
 -- AUTO_INCREMENT for table `diachigiaohang`
 --
 ALTER TABLE `diachigiaohang`
-  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `hangsx`
@@ -476,7 +520,7 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `luong`
@@ -488,13 +532,13 @@ ALTER TABLE `luong`
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `masp` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
 
 --
 -- AUTO_INCREMENT for table `thongtinnhanxetsanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
-  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT for table `thumucsanpham`
@@ -555,8 +599,8 @@ ALTER TABLE `luong`
 -- Constraints for table `thongtinnhanxetsanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
-  ADD CONSTRAINT `thongtinnhanxetsanpham_ibfk_1` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `thongtinnhanxetsanpham_ibfk_2` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `thongtinnhanxetsanpham_ibfk_2` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION,
+  ADD CONSTRAINT `thongtinnhanxetsanpham_ibfk_3` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
