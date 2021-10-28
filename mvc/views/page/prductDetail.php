@@ -12,6 +12,7 @@
                             $arr = array_values((array)$arr[0]);
                             echo "<title>$arr[1]</title>";
                             echo "<img class='img-responsive m-auto' src='$arr[5]' alt=''>";
+                            echo "<span id='spanOf$arr[0]'></span>";
                             ?>
                         </div>
                     </div>

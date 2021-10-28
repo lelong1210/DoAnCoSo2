@@ -187,14 +187,15 @@ class taikhoanModel extends connectDB{
         }
     }
     // kiem tra xem mua chua
-    function checkSell($masp){
+    function checkSell($tendangnhap,$masp){
         $conn = $this->GetConn();
         $sql = "SELECT nguoidung.tendangnhap , hoadon.mahoadon,chitiethoadon.masp,chitiethoadon.soluong
         FROM ((hoadon 
         INNER JOIN nguoidung ON hoadon.tendangnhap = nguoidung.tendangnhap)
         INNER JOIN 	chitiethoadon ON hoadon.mahoadon = chitiethoadon.mahoadon)
-        WHERE chitiethoadon.masp = :masp";
+        WHERE chitiethoadon.masp = :masp AND nguoidung.tendangnhap = :tendangnhap";
         $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
         $query->bindParam(":masp",$masp);
         $query->execute();
         if($query->rowCount() > 0){

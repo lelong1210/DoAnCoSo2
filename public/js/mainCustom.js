@@ -197,21 +197,21 @@ $(document).ready(function () {
         })
         if (idAddress != "") {
             var arr = [];
-            var diachigiaohang = $("#spanOfAddress"+idAddress).html();
-            $("span").each(function(){
+            var diachigiaohang = $("#spanOfAddress" + idAddress).html();
+            $("span").each(function () {
                 var idSpan = $(this).attr("id");
                 var soluongsp = "soluongsp";
-                if(idSpan && idSpan.startsWith(soluongsp)){
-                    var masp = idSpan.slice(soluongsp.length,idSpan.length);
-                    var soluong = $("#"+idSpan).html();
-                    var text = {"masp":masp,"soluong":soluong};
+                if (idSpan && idSpan.startsWith(soluongsp)) {
+                    var masp = idSpan.slice(soluongsp.length, idSpan.length);
+                    var soluong = $("#" + idSpan).html();
+                    var text = { "masp": masp, "soluong": soluong };
                     arr.push(text);
                 }
             });
-            if(tienHanhthanhToan(diachigiaohang,arr)){
+            if (tienHanhthanhToan(diachigiaohang, arr)) {
                 alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm");
                 location.assign(linkTuyetDoi);
-            }else{
+            } else {
                 alert("Thanh Toán Thất Bại");
             }
         } else {
@@ -348,13 +348,52 @@ $(document).ready(function () {
             $("#shippingCost").html("3000");
         });
     });
-    // ==> danh gia san pham 
-    $("#danhgia").click(function (e) { 
+    // ==> danh gia san pham  
+    var sosaodanhgia = 1; 
+    $("#danhgia").click(function (e) {
         if (checkLogin()) {
-            alert("chuan bi xu ly tiep");
+            var spanOf = "spanOf";
+            var masp = "";
+            $("span").each(function () {
+                var idThis = $(this).attr("id");
+                if (idThis && idThis.startsWith(spanOf)) {
+                    masp = idThis.slice(spanOf.length, idThis.length);
+                }
+            });
+            if (checkSell(masp)) {
+                var inputDanhgia = $("#inputDanhgia").val();
+                if(inputDanhgia != ""){
+                    if(danhgia(sosaodanhgia,inputDanhgia)){
+                        alert("cảm ơn bạn đã đánh giá ^_^ ");
+                    }else{
+                        alert("đánh giá thất bại")
+                    }
+                }else{
+                    alert("bạn chưa nhập nội dung...");
+                }
+            }else{
+                alert("bạn chưa mua sản phẩm này ^_^ !!! ")
+            }
         }
         else {
             location.replace(linkTuyetDoi + "dndk");
+        }
+    });
+    $("button").click(function (e) { 
+        var saodanhgiaUp = "saodanhgiaUp";
+        var saodanhgiaDown = "saodanhgiaDown";
+        idThis = $(this).attr("id");
+        if(idThis == saodanhgiaUp){
+            if(sosaodanhgia < 5){
+                sosaodanhgia = sosaodanhgia + 1; 
+                $(".contenRating").append(" <i class='ion-android-star' id='sao"+sosaodanhgia+"'></i>");
+            }
+        }
+        if(idThis == saodanhgiaDown){
+            if(sosaodanhgia > 0){
+                $("#sao"+sosaodanhgia).remove();
+                sosaodanhgia = sosaodanhgia - 1; 
+            }
         }
     });
     // function support 
@@ -619,14 +658,44 @@ $(document).ready(function () {
         });
         return result;
     }
-    function tienHanhthanhToan(diachigiaohang,arr){
+    function tienHanhthanhToan(diachigiaohang, arr) {
+        var result = 0;
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/thanhtoan",
+            data: { diachigiaohang: diachigiaohang, arr: arr },
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+    function checkSell(masp) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/checkSell",
+            data: { masp: masp },
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+    function danhgia(sosaodanhgiaa,inputDanhgia){
         var result = 0 ;
         $.ajax({
             type: "post",
             async:false,
-            url: linkTuyetDoi+"ajax/thanhtoan",
-            data: {diachigiaohang:diachigiaohang,arr:arr},
+            url: linkTuyetDoi+"ajax/danhgia",
+            data: {sosaodanhgia:sosaodanhgiaa,
+                inputDanhgia:inputDanhgia    
+            },
+            // dataType: "dataType",
             success: function (response) {
+                alert(response);
                 result = response;
             }
         });

@@ -31,7 +31,7 @@
                                                 </div>
                                             </div>
                                             <div class="review-left">
-                                                <?php echo date("Y-m-d")?>
+                                                <?php echo date("Y-m-d") ?>
                                             </div>
                                         </div>
                                         <div class="review-bottom">
@@ -76,20 +76,22 @@
                                 <div class="ratting-form">
                                     <form action="#">
                                         <div class="star-box">
-                                            <span>Your rating:</span>
-                                            <div class="rating-product">
-                                                <i class="ion-android-star"></i>
-                                                <i class="ion-android-star"></i>
-                                                <i class="ion-android-star"></i>
-                                                <i class="ion-android-star"></i>
-                                                <i class="ion-android-star"></i>
+                                            <span>Cảm Nhận Của Bạn ^_^:</span>
+                                            <div class="rating-product" id="saodanhgia">
+                                                <div class="contenRating">
+                                                    <i class="ion-android-star" id="sao1"></i>
+                                                </div>
+                                                <button type="button" class="fas fa-chevron-down" id="saodanhgiaDown"></button>
+                                                <button type="button" class="fas fa-chevron-up" id="saodanhgiaUp"></button>
                                             </div>
+                                            <br>
                                         </div>
+
                                         <div class="row">
                                             <div class="col-md-12">
                                                 <div class="rating-form-style form-submit">
-                                                    <textarea name="Your Review" placeholder="Message"></textarea>
-                                                    <button class="btn btn-primary btn-hover-color-primary " type="button" id="danhgia" >Gửi</button>
+                                                    <textarea name="Your Review" placeholder="nhập cảm nhận của bạn" id="inputDanhgia"></textarea>
+                                                    <button class="btn btn-primary btn-hover-color-primary " type="button" id="danhgia">Gửi</button>
                                                 </div>
                                             </div>
                                         </div>
