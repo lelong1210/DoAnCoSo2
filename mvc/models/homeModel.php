@@ -73,7 +73,7 @@ class homeModel extends connectDB{
                         echo"<span class='badges'>";
                             echo"<span class='new'>New</span>";
                         echo"</span>";
-                        echo"<button title='Add To Cart' class=' add-to-cart'>Thêm Vào Giỏ Hàng</button>";
+                        echo"<button title='Add To Cart' class=' add-to-cart' id='btnMH$arrChild[0]'>Thêm Vào Giỏ Hàng</button>";
                     echo"</div>";
                     echo"<div class='content'>";
                         echo"<h5 class='title'><a href='./$arrChild[3]/$arrChild[0]'>$arrChild[1]</a></h5>";

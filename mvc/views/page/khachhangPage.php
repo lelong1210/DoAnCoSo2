@@ -91,19 +91,24 @@
                                         </div>
                                         <div class="billing-back-btn">
                                             <div class="billing-back">
-                                                <a href="#"><i class="icon-arrow-up-circle"></i> back</a>
+                                                <a href="#"><i class="icon-arrow-up-circle"></i> Quay Lên</a>
                                             </div>
                                             <div class="billing-btn">
-                                                <button type="submit">Continue</button>
+                                                <button type="submit"></button>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="panel panel-default single-my-account m-0" data-aos="fade-up" data-aos-delay="800">
+                        <div class="panel panel-default single-my-account " data-aos="fade-up" data-aos-delay="800">
                             <div class="panel-heading my-account-title">
                                 <h3 class="panel-title"><span>4 .</span> <a href="./giohang">Tới Giỏ Hàng</a></h3>
+                            </div>
+                        </div>
+                        <div class="panel panel-default single-my-account m-0" style="margin-top: 20px;" data-aos="fade-up" data-aos-delay="800">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>5 .</span> <a href="./thoattaikhoan">Thoát Tài Khoản</a></h3>
                             </div>
                         </div>
                     </div>

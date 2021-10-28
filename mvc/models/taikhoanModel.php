@@ -248,7 +248,7 @@ class taikhoanModel extends connectDB{
             return false;
         }        
     }
-    function thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr){
+    function thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr,$productModel){
         $result = false;
         if($this->insertHoaDon($tendangnhap,$ngaymua,$diachigiaohang)){
             $mahoadon = json_decode($this->getLastMaHoaDon($tendangnhap));
@@ -257,6 +257,10 @@ class taikhoanModel extends connectDB{
             for ($i=0; $i < count($arr); $i++) { 
                 $arrChild = array_values((array)$arr[$i]);
                 $result = $this->insertChitietHoaDon($arrChild[1],$arrChild[0],$mahoadon[0]);
+                if($result){
+                    $magiohang = $_SESSION["username"] . "-gh";
+                    echo $productModel->deleteInDetailCart($arrChild[0], $magiohang);  
+                }
             }
             return $result;
         }else{

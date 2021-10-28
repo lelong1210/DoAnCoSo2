@@ -128,12 +128,14 @@ class ajax extends controller{
     }
         // thanh toan
     function thanhtoan(){
+        date_default_timezone_set("Asia/Ho_Chi_Minh");
         $tendangnhap = $_SESSION["username"];
         $ngaymua = date("Y-m-d");
         $diachigiaohang = $_POST["diachigiaohang"];
         $arr = $_POST["arr"];
         $model = $this->call_model("taikhoanModel");
-        echo $model->thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr);
+        $productModel = $this->call_model("productModel");
+        echo $model->thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr,$productModel);
     }
 }
 ?>
