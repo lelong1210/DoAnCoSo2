@@ -202,7 +202,7 @@ class productModel extends connectDB
                     echo "<td class='product-price-cart' ><span class='amount' id='tdOfprieLast$arrChild[4]'>".($arrChild[2]*$arrChild[3])." </span> đ</td>";
                     echo "<td><span id='soluongconlai$arrChild[4]'>$arrChild[5]</span></td>";
                     echo "<td>";
-                        echo "<input type='checkbox' value='' style='height: 20px' id='chonsp$arrChild[4]'>";
+                        echo "<input type='checkbox' value='' style='height: 20px' class='btn' id='chonsp$arrChild[4]'>";
                     echo "</td>";
                 echo "</tr>";
             }
