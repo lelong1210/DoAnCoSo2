@@ -250,6 +250,27 @@ class productModel extends connectDB
             echo "</table>";
         }
     }
-    // chuoi hnah 
+    // get review
+    function selecDanhgia($masp){
+        try{
+            $conn = $this->GetConn();
+            $sql = "SELECT nguoidung.tennguoidung ,thongtinnhanxetsanpham.sosao,thongtinnhanxetsanpham.noidung,thongtinnhanxetsanpham.ngaydanggia
+            FROM nguoidung 
+            INNER JOIN thongtinnhanxetsanpham
+            ON nguoidung.tendangnhap = thongtinnhanxetsanpham.tendangnhap
+            WHERE thongtinnhanxetsanpham.masp=:masp";
+            $query = $conn->prepare($sql);
+            $query->bindParam(":masp",$masp);
+            $query->execute();
+            if($query->rowCount() > 0){
+                $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                return json_encode($result);
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }        
+    }
 }
 ?>

@@ -697,7 +697,6 @@ $(document).ready(function () {
             },
             // dataType: "dataType",
             success: function (response) {
-                alert(response);
                 result = response;
             }
         });

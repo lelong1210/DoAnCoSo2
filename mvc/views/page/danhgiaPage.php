@@ -1,42 +1,46 @@
 <!-- product details description area start -->
+<?php
+    $arrRV = json_decode($data["productModel"]->selecDanhgia($data["params"]));
+    $count = count($arrRV);
+?>
 <div class="description-review-area pb-100px" data-aos="fade-up" data-aos-delay="200">
     <div class="container">
         <div class="description-review-wrapper">
             <div class="description-review-topbar nav">
-                <!-- <a data-bs-toggle="tab" href="#des-details1">Description</a>
-                <a  data-bs-toggle="tab" href="#des-details2">Product Details</a> -->
-                <a class="active" data-bs-toggle="tab" href="#des-details3">Đánh Giá (2)</a>
+                <a class="active" data-bs-toggle="tab" href="#des-details3">Đánh Giá (<?php echo $count?>)</a>
             </div>
             <div class="tab-content description-review-bottom">
                 <div id="" class="">
                     <div class="row">
                         <div class="col-lg-7">
-                            <div class="review-wrapper">
+                            <?php for ($i=0; $i < $count; $i++) { 
+                                $arrChild = array_values((array)$arrRV[$i]);
+                            ?>
+                                <div class="review-wrapper">
                                 <div class="single-review">
                                     <div class="review-img">
-                                        <img src="assets/images/review-image/1.png" alt="" />
+                                        <img src="/www/public/images/review-image/1.png" alt="" />
                                     </div>
                                     <div class="review-content">
                                         <div class="review-top-wrap">
                                             <div class="review-left">
                                                 <div class="review-name">
-                                                    <h4>White Lewis</h4>
+                                                    <h4><?php echo $arrChild[0]?></h4>
                                                 </div>
                                                 <div class="rating-product">
-                                                    <i class="ion-android-star"></i>
-                                                    <i class="ion-android-star"></i>
-                                                    <i class="ion-android-star"></i>
-                                                    <i class="ion-android-star"></i>
-                                                    <i class="ion-android-star"></i>
+                                                    <?php
+                                                        for ($j=0; $j < $arrChild[1]; $j++) { ?>
+                                                            <i class="ion-android-star"> </i>
+                                                    <?php } ?>
                                                 </div>
                                             </div>
                                             <div class="review-left">
-                                                <?php echo date("Y-m-d") ?>
+                                                 <?php echo "".$arrChild[3] ?>
                                             </div>
                                         </div>
                                         <div class="review-bottom">
                                             <p>
-                                                Vestibulum ante ipsum primis aucibus orci luctustrices posuere cubilia Curae Suspendisse viverra ed viverra. Mauris ullarper euismod vehicula. Phasellus quam nisi, congue id nulla.
+                                                <?php echo $arrChild[2] ?>
                                             </p>
                                         </div>
                                     </div>
@@ -68,7 +72,8 @@
                                         </div>
                                     </div>
                                 </div> -->
-                            </div>
+                            </div>    
+                            <?php }?>
                         </div>
                         <div class="col-lg-5">
                             <div class="ratting-form-wrapper pl-50">
