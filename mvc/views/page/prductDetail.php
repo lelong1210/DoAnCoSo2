@@ -7,12 +7,12 @@
                 <div class="swiper-container zoom-top">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide zoom-image-hover">
-                            <?php 
-                                $arr = json_decode($data["productModel"]->SelectProductWhereMasp($data["params"]));
-                                $arr = array_values((array)$arr[0]);
-                                echo "<title>$arr[1]</title>";
-                                echo "<img class='img-responsive m-auto' src='$arr[5]' alt=''>";
-                            ?> 
+                            <?php
+                            $arr = json_decode($data["productModel"]->SelectProductWhereMasp($data["params"]));
+                            $arr = array_values((array)$arr[0]);
+                            echo "<title>$arr[1]</title>";
+                            echo "<img class='img-responsive m-auto' src='$arr[5]' alt=''>";
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -22,16 +22,16 @@
             </div>
             <div class="col-lg-7 col-sm-12 col-xs-12" data-aos="fade-up">
                 <div class="product-details-content quickview-content">
-                    <h2><?php echo $arr[1]?></h2>
+                    <h2><?php echo $arr[1] ?></h2>
                     <div class="pricing-meta">
                         <ul>
-                            <li class="old-price not-cut"><?php echo number_format($arr[2])?> đ</li>
+                            <li class="old-price not-cut"><?php echo number_format($arr[2]) ?> đ</li>
                         </ul>
                     </div>
-                    <p class="quickview-para m-0"><?php echo $arr[4]?></p>
+                    <p class="quickview-para m-0"><?php echo $arr[4] ?></p>
                     <div class="pro-details-quality">
                         <div class="pro-details-cart">
-                            <button class="add-cart btn btn-primary btn-hover-primary" id='<?php echo "btnMH".$arr[0]?>'> Mua Ngay</button>
+                            <button class="add-cart btn btn-primary btn-hover-primary" id='<?php echo "btnMH" . $arr[0] ?>'> Mua Ngay</button>
                         </div>
                     </div>
                     <div class="pro-details-policy">

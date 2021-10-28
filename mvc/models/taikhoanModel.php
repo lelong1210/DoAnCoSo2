@@ -187,7 +187,7 @@ class taikhoanModel extends connectDB{
         }
     }
     // kiem tra xem mua chua
-    function checkSell(){
+    function checkSell($masp){
         $conn = $this->GetConn();
         $sql = "SELECT nguoidung.tendangnhap , hoadon.mahoadon,chitiethoadon.masp,chitiethoadon.soluong
         FROM ((hoadon 

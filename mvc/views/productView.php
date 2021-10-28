@@ -16,6 +16,7 @@
                 require_once "page/productOverview.php";
             }else{
                 require_once "page/prductDetail.php";
+                require_once "page/danhgiaPage.php";
             }
         ?>
     <!-- Product tab Area Start -->

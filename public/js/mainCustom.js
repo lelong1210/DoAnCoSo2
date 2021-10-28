@@ -348,6 +348,15 @@ $(document).ready(function () {
             $("#shippingCost").html("3000");
         });
     });
+    // ==> danh gia san pham 
+    $("#danhgia").click(function (e) { 
+        if (checkLogin()) {
+            alert("chuan bi xu ly tiep");
+        }
+        else {
+            location.replace(linkTuyetDoi + "dndk");
+        }
+    });
     // function support 
     function checkAcount(tendangnhap) {
         var php_data;
@@ -373,7 +382,7 @@ $(document).ready(function () {
     function dangNhap(tendangnhap, matkhau) {
         $.post("./ajax/dangnhap", { tendangnhap: tendangnhap, matkhau: matkhau }, function (data) {
             if (data) {
-                location.replace("./taikhoan");
+                location.assign("./taikhoan");
             } else {
                 alert("DANG NHAP THAT BAI");
             }
