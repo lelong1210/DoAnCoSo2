@@ -269,6 +269,23 @@ class taikhoanModel extends connectDB{
         }
 
     }
+    // danh gia
+    function danhgia($masp,$tendangnhap,$noidung,$sosao,$ngaydanggia){
+        $conn = $this->GetConn();
+        $sql = "INSERT INTO thongtinnhanxetsanpham(masp,tendangnhap,noidung,sosao,ngaydanggia) VALUES (:masp,:tendangnhap,:noidung,:sosao,:ngaydanggia)";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":masp",$masp);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->bindParam(":noidung",$noidung);
+        $query->bindParam(":sosao",$sosao);
+        $query->bindParam(":ngaydanggia",$ngaydanggia);
+        $query->execute();
+        if($query->rowCount() > 0 ){
+            return true;
+        }else{
+            return false;
+        }   
+    }
     // function support View
     function editInformation(){
         $arrKey = $this->getTitle();

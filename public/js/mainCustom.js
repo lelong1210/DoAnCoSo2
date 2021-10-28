@@ -363,8 +363,9 @@ $(document).ready(function () {
             if (checkSell(masp)) {
                 var inputDanhgia = $("#inputDanhgia").val();
                 if(inputDanhgia != ""){
-                    if(danhgia(sosaodanhgia,inputDanhgia)){
+                    if(danhgia(sosaodanhgia,inputDanhgia,masp)){
                         alert("cảm ơn bạn đã đánh giá ^_^ ");
+                        location.reload();
                     }else{
                         alert("đánh giá thất bại")
                     }
@@ -684,14 +685,15 @@ $(document).ready(function () {
         });
         return result;
     }
-    function danhgia(sosaodanhgiaa,inputDanhgia){
+    function danhgia(sosaodanhgiaa,inputDanhgia,masp){
         var result = 0 ;
         $.ajax({
             type: "post",
             async:false,
             url: linkTuyetDoi+"ajax/danhgia",
             data: {sosaodanhgia:sosaodanhgiaa,
-                inputDanhgia:inputDanhgia    
+                inputDanhgia:inputDanhgia,
+                masp:masp    
             },
             // dataType: "dataType",
             success: function (response) {

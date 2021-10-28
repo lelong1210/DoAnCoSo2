@@ -146,9 +146,15 @@ class ajax extends controller{
     }
         // danh gia 
     function danhgia(){
-        $sosaodanhgia = $_POST["sosaodanhgia"];
-        $inputDanhgia = $_POST["inputDanhgia"];
-        
+        date_default_timezone_set("Asia/Ho_Chi_Minh");
+
+        $masp = $_POST["masp"];
+        $tendangnhap = $_SESSION["username"];
+        $ngaydanggia = date("Y-m-d");
+        $sosao = $_POST["sosaodanhgia"];
+        $noidung = $_POST["inputDanhgia"];
+        $model = $this->call_model("taikhoanModel");
+        echo $model->danhgia($masp,$tendangnhap,$noidung,$sosao,$ngaydanggia);
     }
 }
 ?>
