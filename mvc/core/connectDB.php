@@ -1,5 +1,8 @@
 <?php
 class connectDB{
+    /*DB : id17847625_dacs2
+USER : id17847625_root
+PASS : 7R*New4uW2Kxb5|^*/
     protected $servername = "localhost";
     protected $username = "root";
     protected $password = "";
