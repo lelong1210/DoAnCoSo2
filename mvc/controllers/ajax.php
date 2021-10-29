@@ -4,6 +4,8 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\SMTP;
 class ajax extends controller{
     function show(){
+        $ngaynhap = date("Y-m-d h:i:s");
+        echo $ngaynhap; 
     }
     // tai khoan
     function dangky(){ 
@@ -160,6 +162,19 @@ class ajax extends controller{
     function uploadfile(){
        $model = $this->call_model("uploadModel");
        $model->uploadImg();
+    }
+    function addProduct(){
+        $tensp = $_POST["tensp"];
+        $giatien = $_POST["giatien"];
+        $loaisanpham = $_POST["loaisanpham"];
+        $motasanpham = $_POST["motasanpham"];
+        $linkduongdananh = $_POST["linkduongdananh"];
+        $hangsx = $_POST["hangsanxuat"];
+        $dunglamslider = $_POST["dunglamslider"];
+        $soluongsp = $_POST["soluong"];
+        $ngaynhap = date("Y-m-d");
+        $model = $this->call_model("productModel");
+        echo $model->AddProduct($tensp,$giatien,$loaisanpham,$motasanpham,$linkduongdananh,$hangsx,$dunglamslider,$soluongsp,$ngaynhap);
     }
 }
 ?>

@@ -1,6 +1,7 @@
 <?php
 class productModel extends connectDB
-{
+{   
+    // san phẩm
     function SelectProductWhereMasp($masp)
     {
         $conn =  $this->GetConn();
@@ -23,6 +24,27 @@ class productModel extends connectDB
         if ($query->rowCount() > 0) {
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
             return json_encode($result);
+        }
+    }
+    function addProduct($tensp,$giatien,$loaisanpham,$motasanpham,$linkduongdananh,$hangsx,$dunglamslider,$soluongsp,$ngaynhap){
+        $conn =  $this->GetConn();
+        $sql = "INSERT INTO sanpham(tensp,giatien,loaisanpham,motasanpham,linkduongdananh,hangsx,dunglamslider,soluongsp,ngaynhap) VALUES (:tensp,:giatien,:loaisanpham,:motasanpham,:linkduongdananh,:hangsx,:dunglamslider,:soluongsp,:ngaynhap)";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tensp", $tensp);
+        $query->bindParam(":giatien", $giatien);
+        $query->bindParam(":loaisanpham", $loaisanpham);
+        $query->bindParam(":motasanpham", $motasanpham);
+        $query->bindParam(":linkduongdananh", $linkduongdananh);
+        $query->bindParam(":hangsx", $hangsx);
+        $query->bindParam(":dunglamslider", $dunglamslider);
+        $query->bindParam(":soluongsp", $soluongsp);
+        $query->bindParam(":ngaynhap", $ngaynhap);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return true;
+        }else{
+            return false;
         }
     }
     // chuoi hanh dong xu ly cua gio hang 

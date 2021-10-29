@@ -1,23 +1,20 @@
 <?php
 class uploadModel extends connectDB
-{
+{    protected $linktuyetdoi = "http://localhost/www/";
     function uploadImg()
-    {
+    {  
         /* Getting file name */
-        $filename = $_FILES['file11']['name'];
-
+        $filename = $_FILES['file']['name'];
         /* Location */
         $location = "./uploads/" . $filename;
         $uploadOk = 1;
-
-        print_r($_FILES);
 
         if ($uploadOk == 0) {
             echo 0;
         } else {
             /* Upload file */
-            if (move_uploaded_file($_FILES['file11']['tmp_name'], $location)) {
-                echo 1;
+            if (move_uploaded_file($_FILES['file']['tmp_name'], $location)) {
+                echo $this->linktuyetdoi."uploads/".$filename;
             } else {
                 echo 0;
             }
