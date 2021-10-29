@@ -397,6 +397,28 @@ $(document).ready(function () {
             }
         }
     });
+    // ==> upload
+    $("#test1").click(function (e) { 
+        var fd = new FormData();
+        var files = $('#file')[0].files[0];
+        fd.append('file11', files);
+        $.ajax({
+            url: linkTuyetDoi+"ajax/uploadfile",
+            type: 'post',
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                alert(response);
+                if(response != 0){
+                   alert('file uploaded');
+                }
+                else{
+                    alert('file not uploaded');
+                }
+            },
+        });
+    });
     // function support 
     function checkAcount(tendangnhap) {
         var php_data;

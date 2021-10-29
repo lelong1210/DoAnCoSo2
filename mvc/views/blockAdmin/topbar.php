@@ -1,8 +1,8 @@
             <!-- LOGO -->
             <div class="topbar-left">
-                <a href="index.html" class="logo">
-                    <img src="http://localhost/www/publicAdmin/images/logo-light.png" class="logo-lg" alt="" height="22">
-                    <img src="http://localhost/www/publicAdmin/images/logo-sm.png" class="logo-sm" alt="" height="24">
+                <a href="./admin" class="logo">
+                    <img src="http://localhost/www/public/images/logo/logo.jpg" class="logo-lg" alt="" height="60">
+                    <img src="http://localhost/www/public/images/logo/logo.jpg" class="logo-sm" alt="" height="60">
                 </a>
             </div>
 

@@ -156,5 +156,10 @@ class ajax extends controller{
         $model = $this->call_model("taikhoanModel");
         echo $model->danhgia($masp,$tendangnhap,$noidung,$sosao,$ngaydanggia);
     }
+        // upload file 
+    function uploadfile(){
+       $model = $this->call_model("uploadModel");
+       $model->uploadImg();
+    }
 }
 ?>

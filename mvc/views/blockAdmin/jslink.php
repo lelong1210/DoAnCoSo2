@@ -25,6 +25,8 @@
 <script src="http://localhost/www/publicAdmin/plugins/moment/moment.js"></script>
 <script src='http://localhost/www/publicAdmin/plugins/fullcalendar/js/fullcalendar.min.js'></script>
 <script src="http://localhost/www/publicAdmin/pages/calendar-init.js"></script>
+
+
 <!-- App js -->
 <script src="http://localhost/www/publicAdmin/js/app.js"></script>
 <!-- custom js -->
