@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Oct 28, 2021 at 12:25 PM
+-- Generation Time: Oct 30, 2021 at 09:07 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -40,13 +40,11 @@ CREATE TABLE `chitietgiohang` (
 INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
 (2, 'longtermplayoffs-gh', 1),
 (12, 'longtermplayoffs-gh', 1),
-(8, 'arcanaabounding-gh', 2),
-(12, 'arcanaabounding-gh', 1),
-(57, 'arcanaabounding-gh', 1),
-(32, 'arcanaabounding-gh', 1),
 (6, 'befittinggeorgian-gh', 1),
 (4, 'befittinggeorgian-gh', 1),
-(63, 'befittinggeorgian-gh', 1);
+(63, 'befittinggeorgian-gh', 1),
+(16, 'arcanaabounding-gh', 1),
+(24, 'arcanaabounding-gh', 1);
 
 -- --------------------------------------------------------
 
@@ -76,7 +74,13 @@ INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
 (1, 12, 18),
 (1, 10, 18),
 (1, 7, 19),
-(28, 2, 20);
+(28, 2, 20),
+(2, 8, 21),
+(1, 7, 22),
+(1, 10, 23),
+(1, 12, 23),
+(1, 9, 24),
+(1, 25, 25);
 
 -- --------------------------------------------------------
 
@@ -198,7 +202,12 @@ INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`) VA
 (17, 'befittinggeorgian', '2021-10-28', 'Tỉnh Lạng Sơn - Huyện Chi Lăng - Xã Liên Sơn - sen sen'),
 (18, 'befittinggeorgian', '2021-10-28', 'Tỉnh Lạng Sơn - Huyện Chi Lăng - Xã Liên Sơn - sen sen'),
 (19, 'befittinggeorgian', '2021-10-28', 'Tỉnh Lạng Sơn - Huyện Chi Lăng - Xã Liên Sơn - sen sen'),
-(20, 'arcanaabounding', '2021-10-28', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Hàng Mã - VKU-123');
+(20, 'arcanaabounding', '2021-10-28', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Hàng Mã - VKU-123'),
+(21, 'arcanaabounding', '2021-10-28', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Hàng Mã - VKU-123'),
+(22, 'arcanaabounding', '2021-10-28', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Hàng Mã - VKU-123'),
+(23, 'arcanaabounding', '2021-10-29', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Hàng Mã - VKU-123'),
+(24, 'arcanaabounding', '2021-10-29', 'Tỉnh Hà Giang - Huyện Đồng Văn - Thị trấn Phó Bảng - củ cãi đường'),
+(25, 'arcanaabounding', '2021-10-29', 'Tỉnh Hà Giang - Huyện Đồng Văn - Thị trấn Phó Bảng - củ cãi đường');
 
 -- --------------------------------------------------------
 
@@ -357,9 +366,14 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 (58, 'Ring Spotlight Cam, Camera không dây dùng pin, nói chuyện 2 chiều, tích hợp đèn LED, chuông báo động', '1700000.00', 'camera', 'Wyze Cam Outdoor – Camera an ninh ngoài trời, dùng pin tới 6 tháng mỗi lần sạc** Chống nước chuẩn IP65, nói chuyện 2 chiều Thiết kế nhỏ gọn, hoàn toàn không dây, dễ lắp đặt Video chất lượng Full HD 1080p, hình ảnh sắc nét cả ngày lẫn đêm Theo dõi, quan sát ngôi nhà và nhận thông báo trên điện thoại dù ở bất kỳ đâu Hỗ trợ lưu cả trên cloud miễn phí và lưu cục bộ với thẻ microSD Ghi lại video chuyển động vào thẻ nhớ ngay cả khi không có Internet Tương thích Google Home và Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2018/11/Ring-Spotlight-Cam-247x296.jpg', 'Ring Spotlight', 0, 99, '2021-10-01'),
 (59, 'Ring Floodlight Cam, Camera ngoài trời tích hợp đèn LED siêu sáng, chuông báo động', '2490000.00', 'camera', 'Wyze Cam Outdoor – Camera an ninh ngoài trời, dùng pin tới 6 tháng mỗi lần sạc** Chống nước chuẩn IP65, nói chuyện 2 chiều Thiết kế nhỏ gọn, hoàn toàn không dây, dễ lắp đặt Video chất lượng Full HD 1080p, hình ảnh sắc nét cả ngày lẫn đêm Theo dõi, quan sát ngôi nhà và nhận thông báo trên điện thoại dù ở bất kỳ đâu Hỗ trợ lưu cả trên cloud miễn phí và lưu cục bộ với thẻ microSD Ghi lại video chuyển động vào thẻ nhớ ngay cả khi không có Internet Tương thích Google Home và Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/07/Ring-Floodlight-Camera-247x296.jpg', 'Ring Floodlight', 0, 99, '2021-10-01'),
 (60, 'Amazon Cloud Cam, camera thông minh Full HD 1080p, hỗ trợ Alexa, lưu Cloud Amazon miễn phí', '3990000.00', 'camera', 'Wyze Cam Outdoor – Camera an ninh ngoài trời, dùng pin tới 6 tháng mỗi lần sạc** Chống nước chuẩn IP65, nói chuyện 2 chiều Thiết kế nhỏ gọn, hoàn toàn không dây, dễ lắp đặt Video chất lượng Full HD 1080p, hình ảnh sắc nét cả ngày lẫn đêm Theo dõi, quan sát ngôi nhà và nhận thông báo trên điện thoại dù ở bất kỳ đâu Hỗ trợ lưu cả trên cloud miễn phí và lưu cục bộ với thẻ microSD Ghi lại video chuyển động vào thẻ nhớ ngay cả khi không có Internet Tương thích Google Home và Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2019/09/Amazon-Cloud-Cam-247x296.jpg', 'Amazon', 0, 99, '2021-10-01'),
-(61, 'Camera 2K Eufy Security Camera T84001W1, tích hợp còi báo động\r\n				', '998000.00', 'camera', 'Eufy indoor T8400 2K Tích hợp công nghệ AI tiên tiến AI thông minh có thể nhận diện giữa người và thú cưng, tránh đưa ra các cảnh báo sai, làm phiền công việc của chủ nhà. Bên cạnh đó, nó cũng sẽ tự đánh giá mức độ tiếng ồn phát ra, khi thấy cần thiết nó sẽ thông báo cho bạn ngay.', '//product.hstatic.net/200000295422/product/new_0256_t8400--800x800_1200x_32d40ade32c4435aacf27fe3cdb28dc9_grande.jpg', 'eufy ', 0, 99, '2021-10-01'),
-(62, 'Camera 360 Xiaomi Mi Home Security 360 2K  - Phân phối chính hãng\r\n				', '1190000.00', 'camera', 'Camera ezviz C6W xoay 360 độ CS-C6W Với diện mạo khác biệt, camera EZVIZ C6W sẽ giúp bạn bảo vệ ngôi nhà theo phong cách hoàn toàn mới: không chỉ chuyên nghiệp và an toàn mà còn thật Kool. Thanh lịch và linh hoạt, camera Wifi C6W là tất cả sự bảo vệ bạn cần cho một ngôi nhà rộng lớn. Camera ghi lại ở độ phân giải 2K và tự động theo dõi chuyển động ở chế độ thu phóng gấp 4 lần để đảm bảo không có gì thoát khỏi tầm mắt.', '//product.hstatic.net/200000295422/product/new_0266_camera-thong-minh-xiaomi-ptz-phien-ban-2k_425a0143ea1947768bcf3037b4a91186_grande.jpg', 'Xiaomi', 0, 99, '2021-10-01'),
-(63, 'Camera ezviz C6W xoay 360 độ\r\n				', '1349000.00', 'camera', 'Camera ezviz C6W xoay 360 độ CS-C6W Với diện mạo khác biệt, camera EZVIZ C6W sẽ giúp bạn bảo vệ ngôi nhà theo phong cách hoàn toàn mới: không chỉ chuyên nghiệp và an toàn mà còn thật Kool. Thanh lịch và linh hoạt, camera Wifi C6W là tất cả sự bảo vệ bạn cần cho một ngôi nhà rộng lớn. Camera ghi lại ở độ phân giải 2K và tự động theo dõi chuyển động ở chế độ thu phóng gấp 4 lần để đảm bảo không có gì thoát khỏi tầm mắt.', '//product.hstatic.net/200000295422/product/new_0317_6411-camera-wife-ezviz-c6w-4mp-quay-quet-360-do-11_16b53885fd444b4cae7ec2cf17c5fe95_grande.jpg', 'ezviz', 0, 99, '2021-10-01');
+(61, 'Camera 2K Eufy Security Camera T84001W1, tích hợp còi báo động\r\n				', '998000.00', 'camera', 'Eufy indoor T8400 2K Tích hợp công nghệ AI tiên tiến AI thông minh có thể nhận diện giữa người và thú cưng, tránh đưa ra các cảnh báo sai, làm phiền công việc của chủ nhà. Bên cạnh đó, nó cũng sẽ tự đánh giá mức độ tiếng ồn phát ra, khi thấy cần thiết nó sẽ thông báo cho bạn ngay.', 'https://product.hstatic.net/200000295422/product/new_0256_t8400--800x800_1200x_32d40ade32c4435aacf27fe3cdb28dc9_grande.jpg', 'eufy ', 0, 99, '2021-10-01'),
+(62, 'Camera 360 Xiaomi Mi Home Security 360 2K  - Phân phối chính hãng\r\n				', '1190000.00', 'camera', 'Camera ezviz C6W xoay 360 độ CS-C6W Với diện mạo khác biệt, camera EZVIZ C6W sẽ giúp bạn bảo vệ ngôi nhà theo phong cách hoàn toàn mới: không chỉ chuyên nghiệp và an toàn mà còn thật Kool. Thanh lịch và linh hoạt, camera Wifi C6W là tất cả sự bảo vệ bạn cần cho một ngôi nhà rộng lớn. Camera ghi lại ở độ phân giải 2K và tự động theo dõi chuyển động ở chế độ thu phóng gấp 4 lần để đảm bảo không có gì thoát khỏi tầm mắt.', 'https://product.hstatic.net/200000295422/product/new_0266_camera-thong-minh-xiaomi-ptz-phien-ban-2k_425a0143ea1947768bcf3037b4a91186_grande.jpg', 'Xiaomi', 0, 99, '2021-10-01'),
+(63, 'Camera ezviz C6W xoay 360 độ\r\n				', '1349000.00', 'camera', 'Camera ezviz C6W xoay 360 độ CS-C6W Với diện mạo khác biệt, camera EZVIZ C6W sẽ giúp bạn bảo vệ ngôi nhà theo phong cách hoàn toàn mới: không chỉ chuyên nghiệp và an toàn mà còn thật Kool. Thanh lịch và linh hoạt, camera Wifi C6W là tất cả sự bảo vệ bạn cần cho một ngôi nhà rộng lớn. Camera ghi lại ở độ phân giải 2K và tự động theo dõi chuyển động ở chế độ thu phóng gấp 4 lần để đảm bảo không có gì thoát khỏi tầm mắt.', 'https://product.hstatic.net/200000295422/product/new_0317_6411-camera-wife-ezviz-c6w-4mp-quay-quet-360-do-11_16b53885fd444b4cae7ec2cf17c5fe95_grande.jpg', 'ezviz', 0, 99, '2021-10-01'),
+(64, 'Máy Báo Thời Tiết', '10000000.00', 'máy hút bụi', 'đây là sản phẩm very good good good', 'http://localhost/www/uploads/123.jpeg', 'xaomil', 0, 99, '2021-10-29'),
+(65, 'camera 3x', '93021231.00', 'camera', 'có thể quay liên tục 30 năm mà k bị hỏng', 'http://localhost/www/uploads/camera.jpg', 'xaomii', 1, 8912, '2021-10-29'),
+(66, 'camera x 300', '1231231.00', 'camera', 'thật không thể tinh được :))))', 'http://localhost/www/uploads/456.jpeg', 'xaomi', 0, 456, '2021-10-29'),
+(67, 'điều hòa hơi nước', '8882221.00', 'dieuhoathongminh', 'rất perfect', 'http://localhost/www/uploads/789.jpg', 'Amazon', 0, 986, '2021-10-29'),
+(68, 'điều hòa hơi nước siêu phẩm', '8882221.00', 'dieuhoathongminh', 'rất perfect nha nha nha', 'http://localhost/www/uploads/11121.jpeg', 'Amazon', 0, 986, '2021-10-29');
 
 -- --------------------------------------------------------
 
@@ -382,7 +396,11 @@ CREATE TABLE `thongtinnhanxetsanpham` (
 
 INSERT INTO `thongtinnhanxetsanpham` (`manhanxet`, `masp`, `tendangnhap`, `noidung`, `sosao`, `ngaydanggia`) VALUES
 (7, 2, 'befittinggeorgian', 'sản phẩm rất tuyệt vời', 5, '2021-10-28'),
-(9, 2, 'arcanaabounding', 'sản phẩm này dùng khá oke', 5, '2021-10-28');
+(9, 2, 'arcanaabounding', 'sản phẩm này dùng khá oke', 5, '2021-10-28'),
+(10, 8, 'arcanaabounding', 'sản phẩm dùng rất tốt', 5, '2021-10-28'),
+(11, 7, 'arcanaabounding', 'tuyệt vời', 5, '2021-10-28'),
+(12, 10, 'arcanaabounding', 'sản phẩm dùng rất tốt', 1, '2021-10-29'),
+(13, 25, 'arcanaabounding', 'sản phẩm dùng rất tuyệt', 1, '2021-10-29');
 
 -- --------------------------------------------------------
 
@@ -520,7 +538,7 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `luong`
@@ -532,13 +550,13 @@ ALTER TABLE `luong`
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=69;
 
 --
 -- AUTO_INCREMENT for table `thongtinnhanxetsanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
-  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `thumucsanpham`
