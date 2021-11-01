@@ -4,7 +4,9 @@
             $this->check_user_quyen(1);
         }
         function show(){
-            $this->call_view("adminView");
+            $this->call_view("adminView",[
+    
+            ]);
         }
         /*https://projectdacs2.000webhostapp.com/*/
     }

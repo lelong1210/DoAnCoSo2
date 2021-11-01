@@ -10,7 +10,7 @@ class controller{
     function call_view_page($viewPgae){
         require_once "./mvc/views/page/thanhtoanPage.php";
     }
-    function call_view_page_admin($viewPage){
+    function call_view_page_admin($viewPage,$data=[]){
         require_once "./mvc/views/pageAdmin/".$viewPage.".php";
     }
     function call_block_view_admin($viewBlock){

@@ -14,8 +14,7 @@ class productModel extends connectDB
             return json_encode($result);
         }
     }
-    function GetTitleOverView($nameClass)
-    {
+    function GetTitleOverView($nameClass){
         $conn = $this->GetConn();
         $sql = "SELECT tenthumuccodau FROM thumucsanpham WHERE tenthumuc=:tenthumuc";
         $query = $conn->prepare($sql);
@@ -46,6 +45,20 @@ class productModel extends connectDB
         }else{
             return false;
         }
+    }
+    function selecAllProduct(){
+        $conn =  $this->GetConn();
+        $sql = "SELECT masp,tensp,giatien,loaisanpham,hangsx FROM sanpham ORDER BY masp ASC";
+        $query = $conn->prepare($sql); 
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }        
+    }
+    function getTitleTable($arr){
+        $arr = array_keys((array)$arr[0]);
+        return $arr ;
     }
     // chuoi hanh dong xu ly cua gio hang 
     function addProductInCart($masp, $soluong)

@@ -2,7 +2,7 @@ $(document).ready(function () {
     // link tuyet doi 
     var linkTuyetDoi = "http://localhost/www/";
     //
-    $("#calendarCustom").click(function (e) { 
+    $("#calendarCustom").click(function (e) {
         $.ajax({
             type: "post",
             url: "pageAdmin/calenderPage",
@@ -14,7 +14,7 @@ $(document).ready(function () {
             }
         });
     });
-    $("#themsanphamLeftSlideBar").click(function (e) { 
+    $("#themsanphamLeftSlideBar").click(function (e) {
         $.ajax({
             type: "post",
             url: "pageAdmin/addProductPage",
@@ -26,61 +26,116 @@ $(document).ready(function () {
             }
         });
     });
-    $("#addProduct").click(function (e) { 
+    $("#addProduct").click(function (e) {
         var tensp = $("#tensanpham").val();
         var giatien = $("#giatien").val();
-        var loaisanpham  = $("#loaisanpham").val();
+        var loaisanpham = $("#loaisanpham").val();
         var motasanpham = $("#motasanpham").val();
         var hangsanxuat = $("#hangsanxuat").val()
         var dunglamslider = $("#dunglamslider").val();
         var soluong = $("#soluong").val();
-        if(tensp != "" && giatien != "" && loaisanpham != "" && motasanpham != "" && hangsanxuat != "" && dunglamslider !="" && soluong != "" && $("#linkduongdananh").val() != ""){
+        if (tensp != "" && giatien != "" && loaisanpham != "" && motasanpham != "" && hangsanxuat != "" && dunglamslider != "" && soluong != "" && $("#linkduongdananh").val() != "") {
             var linkduongdananh = uploadImg();
-            if(AddProduct(tensp,giatien,loaisanpham,motasanpham,linkduongdananh,hangsanxuat,dunglamslider,soluong)){
+            if (AddProduct(tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong)) {
                 alert("đã thêm sản phẩm");
-            }else{
+            } else {
                 alert("thêm sant phẩm thất bại")
             }
-        }else{
+        } else {
             alert("các ô không được để trống !!! ");
         }
     });
+    $("#seeOverviewProductLeftSlideBar").click(function (e) {
+        $.ajax({
+            type: "post",
+            url: linkTuyetDoi + "pageAdmin/seeOverviewProduct",
+            data: {},
+            // dataType: "dataType",
+            success: function (response) {
+                $("#contetMain").html(response);
+                // alert("hello");
+            }
+        });
+    });
+    $('#datatable-buttons').on('click', '.btn-edit', function () {
+        var $row = $(this).closest("tr");    // Find the row
+        var $tds = $row.find("td");
+        const arr = [];
+        // ===> 
+        $.each($tds, function() {
+            arr.push($(this).text());
+        });
+        // ==> 
+        
+        var txt =  getProduct(arr[0]);
+        const obj = JSON.parse(txt);
+
+        $("#tensanpham").val(obj[0].tensp);
+       $("#giatien").val(obj[0].giatien);
+       $("#loaisanpham").val(obj[0].loaisanpham);
+         $("#motasanpham").val(obj[0].motasanpham);
+        $("#hangsanxuat").val(obj[0].hangsx)
+        $("#dunglamslider").val(obj[0].dunglamslider);
+        $("#soluong").val(obj[0].soluongsp); 
+        $(".table_overView").slideUp();
+        $(".model_overviewProduct").slideDown();
+    });
+    $('#datatable-buttons').on('click', '.btn-delete', function () {
+        var $row = $(this).closest("tr");
+        $($row).remove();
+    });
+
     // function support 
-    function uploadImg(){
+    function uploadImg() {
         var fd = new FormData();
         var files = $('#linkduongdananh')[0].files[0];
         fd.append('file', files);
         var result = "";
         $.ajax({
-            url: linkTuyetDoi+"ajax/uploadfile",
+            url: linkTuyetDoi + "ajax/uploadfile",
             type: 'post',
-            async:false,
+            async: false,
             data: fd,
             contentType: false,
             processData: false,
-            success: function(response){
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+    function AddProduct(tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong) {
+        var result = "";
+        $.ajax({
+            url: linkTuyetDoi + "ajax/addProduct",
+            type: 'post',
+            async: false,
+            data: {
+                tensp: tensp,
+                giatien: giatien,
+                loaisanpham: loaisanpham,
+                motasanpham: motasanpham,
+                linkduongdananh: linkduongdananh,
+                hangsanxuat: hangsanxuat,
+                dunglamslider: dunglamslider,
+                soluong: soluong
+            },
+            success: function (response) {
                 result = response;
             },
         });
         return result;
     }
-    function AddProduct(tensp,giatien,loaisanpham,motasanpham,linkduongdananh,hangsanxuat,dunglamslider,soluong){
+    function getProduct(masp){
         var result = "";
         $.ajax({
-            url: linkTuyetDoi+"ajax/addProduct",
+            url: linkTuyetDoi + "ajax/selectProductWhereMasp",
             type: 'post',
-            async:false,
-            data: {tensp:tensp,
-                giatien:giatien,
-                loaisanpham:loaisanpham,
-                motasanpham:motasanpham,
-                linkduongdananh:linkduongdananh,
-                hangsanxuat:hangsanxuat,
-                dunglamslider:dunglamslider,
-                soluong:soluong},
-            success: function(response){
+            async: false,
+            data: {masp:masp},
+            success: function (response) {
                 result = response;
-            },
+            }
         });
         return result;
     }

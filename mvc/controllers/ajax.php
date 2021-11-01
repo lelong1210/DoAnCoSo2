@@ -173,6 +173,7 @@ class ajax extends controller{
         $model = $this->call_model("productModel");
         echo $model->AddProduct($tensp,$giatien,$loaisanpham,$motasanpham,$linkduongdananh,$hangsx,$dunglamslider,$soluongsp,$ngaynhap);
     }
+        // gui mail
     function GuiMail(){
         $model = $this->call_model("guiMailModel");
         $tieude = $_POST["tieude"];
@@ -187,6 +188,11 @@ class ajax extends controller{
             }
         }
 
+    }
+    function selectProductWhereMasp(){
+        $masp = $_POST["masp"];
+        $model = $this->call_model("productModel");
+        echo $model->SelectProductWhereMasp($masp);
     }
 }
 ?>

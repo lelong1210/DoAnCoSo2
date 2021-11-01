@@ -26,6 +26,7 @@
 <link href="http://localhost/www/publicAdmin/css/metismenu.min.css" rel="stylesheet" type="text/css">
 <link href="http://localhost/www/publicAdmin/css/icons.css" rel="stylesheet" type="text/css">
 <link href="http://localhost/www/publicAdmin/css/style.css" rel="stylesheet" type="text/css">
+<link href="http://localhost/www/publicAdmin/css/styleCustom.css" rel="stylesheet" type="text/css">
 
 
 
