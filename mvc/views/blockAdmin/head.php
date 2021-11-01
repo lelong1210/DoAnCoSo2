@@ -15,7 +15,17 @@
 <link href="http://localhost/www/publicAdmin/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
 
 
+<!-- DataTables -->
+<link href="/www/publicAdmin/plugins/datatables/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+<link href="/www/publicAdmin/plugins/datatables/buttons.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
+<!-- Responsive datatable examples -->
+<link href="/www/publicAdmin/plugins/datatables/responsive.bootstrap4.min.css" rel="stylesheet" type="text/css" />
+
 <link href="http://localhost/www/publicAdmin/css/bootstrap.min.css" rel="stylesheet" type="text/css">
 <link href="http://localhost/www/publicAdmin/css/metismenu.min.css" rel="stylesheet" type="text/css">
 <link href="http://localhost/www/publicAdmin/css/icons.css" rel="stylesheet" type="text/css">
 <link href="http://localhost/www/publicAdmin/css/style.css" rel="stylesheet" type="text/css">
+
+
+

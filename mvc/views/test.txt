@@ -40,7 +40,7 @@
         <div class="content-page" id="content-page">
             <div id="contetMain">
                 <!-- Start content -->
-                <?php require_once "pageAdmin/indexPage.php"; ?>
+                <?php require_once "pageAdmin/overViewProduct.php"; ?>
                 <!-- content -->
             </div>
 

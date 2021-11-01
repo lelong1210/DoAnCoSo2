@@ -1,5 +1,4 @@
 <div class="content">
-
 <div class="container-fluid">
     <div class="page-title-box">
 

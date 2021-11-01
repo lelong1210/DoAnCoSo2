@@ -27,6 +27,25 @@
 <script src="http://localhost/www/publicAdmin/pages/calendar-init.js"></script>
 
 
+<!-- Required datatable js -->
+<script src="/www/publicAdmin/plugins/datatables/jquery.dataTables.min.js"></script>
+<script src="/www/publicAdmin/plugins/datatables/dataTables.bootstrap4.min.js"></script>
+<!-- Buttons examples -->
+<script src="/www/publicAdmin/plugins/datatables/dataTables.buttons.min.js"></script>
+<script src="/www/publicAdmin/plugins/datatables/buttons.bootstrap4.min.js"></script>
+<script src="/www/publicAdmin/plugins/datatables/jszip.min.js"></script>
+<script src="/www/publicAdmin/plugins/datatables/pdfmake.min.js"></script>
+<script src="/www/publicAdmin/plugins/datatables/vfs_fonts.js"></script>
+<script src="/www/publicAdmin/plugins/datatables/buttons.html5.min.js"></script>
+<script src="/www/publicAdmin/plugins/datatables/buttons.print.min.js"></script>
+<script src="/www/publicAdmin/plugins/datatables/buttons.colVis.min.js"></script>
+<!-- Responsive examples -->
+<script src="/www/publicAdmin/plugins/datatables/dataTables.responsive.min.js"></script>
+<script src="/www/publicAdmin/plugins/datatables/responsive.bootstrap4.min.js"></script>
+
+<!-- Datatable init js -->
+<script src="/www/publicAdmin/pages/datatables.init.js"></script>
+
 <!-- App js -->
 <script src="http://localhost/www/publicAdmin/js/app.js"></script>
 <!-- custom js -->

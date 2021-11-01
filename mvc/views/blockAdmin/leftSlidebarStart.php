@@ -25,7 +25,7 @@
     </li>
     <li class="menu-title">Sản Phẩm</li>
     <li>        
-        <a class="waves-effect"><i class="fas fa-eye"></i> <span> Xem Sản Phẩm </span> </a>
+        <a class="waves-effect" id="seeOverviewProductLeftSlideBar"><i class="fas fa-eye"></i> <span> Xem Sản Phẩm </span> </a>
         <a id="themsanphamLeftSlideBar" class="waves-effect"><i class="fas fa-upload"></i> <span> Thêm Sản Phẩm </span> </a>
         <a class="waves-effect"><i class="fas fa-search"></i> <span> Tìm Kiếm Sản Phẩm </span> </a>
     </li>
