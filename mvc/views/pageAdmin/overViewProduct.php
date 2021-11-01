@@ -50,6 +50,7 @@
                                         <?php for ($j = 0; $j < count($arrChild); $j++) { ?>
                                             <td><?php echo $arrChild[$j]; ?></td>
                                         <?php } ?>
+                                        <!-- <td><input type="checkbox"></td> -->
                                     </tr>
                                 <?php } ?>
                             </tbody>
