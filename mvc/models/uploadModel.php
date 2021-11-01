@@ -14,7 +14,7 @@ class uploadModel extends connectDB
         } else {
             /* Upload file */
             if (move_uploaded_file($_FILES['file']['tmp_name'], $location)) {
-                echo $this->linktuyetdoi."uploads/".$filename;
+                echo "/www/uploads/".$filename;
             } else {
                 echo 0;
             }

@@ -419,7 +419,45 @@ $(document).ready(function () {
             },
         });
     });
+    // ==> gui mail 
+    $("#sendMail").click(function (e) { 
+        var diachigui = $("#diachimail").val();
+        var tieude = $("#tieude").val();
+        var bodyconten = $("#noidung").val();
+        var linkanh = uploadImg();
+        $.ajax({
+            type: "post",
+            url: "./ajax/GuiMail",
+            data: {tieude:tieude, 
+                diachigui:diachigui,
+                bodyconten:bodyconten,
+                linkanh:linkanh
+            },
+            success: function (response) {
+                alert(response);
+            }
+        });
+        
+    });
     // function support 
+    function uploadImg(){
+        var fd = new FormData();
+        var files = $('#linkduongdananh')[0].files[0];
+        fd.append('file', files);
+        var result = "";
+        $.ajax({
+            url: linkTuyetDoi+"ajax/uploadfile",
+            type: 'post',
+            async:false,
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(response){
+                result = response;
+            },
+        });
+        return result;
+    }
     function checkAcount(tendangnhap) {
         var php_data;
         $.ajax({

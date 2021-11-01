@@ -13,8 +13,11 @@
         <?php require_once "block/headerMobile.php"; ?>
     </header>
     <!-- Hero/Intro Slider Start -->
-        <input id='file' name='file' type='file' /><br>
-        <button id="test">CLICK</button>
+        <label for="">Địa Chỉ Mail</label><input type="text" id="diachimail">
+        <label for="">Tiêu Đề</label><input type="text" id="tieude">
+        <label for="">Nội Dung</label><input type="text" id="noidung">
+        <label for="">File</label><input type="file" name="file" id="linkduongdananh">
+        <button id="sendMail">Gửi</button>
     <!-- Footer Area Start -->
     <?php require_once "block/footer.php"; ?>
     <!-- Footer Area End -->

@@ -1,7 +1,4 @@
 <?php
-use PHPMailer\PHPMailer\PHPMailer;
-use PHPMailer\PHPMailer\Exception;
-use PHPMailer\PHPMailer\SMTP;
 class ajax extends controller{
     function show(){
         $ngaynhap = date("Y-m-d h:i:s");
@@ -175,6 +172,21 @@ class ajax extends controller{
         $ngaynhap = date("Y-m-d");
         $model = $this->call_model("productModel");
         echo $model->AddProduct($tensp,$giatien,$loaisanpham,$motasanpham,$linkduongdananh,$hangsx,$dunglamslider,$soluongsp,$ngaynhap);
+    }
+    function GuiMail(){
+        $model = $this->call_model("guiMailModel");
+        $tieude = $_POST["tieude"];
+        $diachigui = $_POST["diachigui"];
+        $bodyconten = $_POST["bodyconten"]; 
+        $url = $_POST["linkanh"];
+        if($model->sendMail($tieude,$diachigui,$bodyconten,$url)){
+            if(unlink($url)){
+                echo true ;
+            }else{
+                echo false;
+            }
+        }
+
     }
 }
 ?>
