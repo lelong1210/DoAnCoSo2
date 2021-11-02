@@ -83,6 +83,20 @@ $(document).ready(function () {
         $(".model_overviewProduct").slideDown();
     });
     $('#datatable-buttons').on('click', '.btn-delete', function () {
+        var $row = $(this).closest("tr");    // Find the row
+        var $tds = $row.find("td");
+        const arr = [];
+        // ===> 
+        $.each($tds, function () {
+            arr.push($(this).text());
+        });
+        // ===> 
+
+        if(deleteProduct(arr[0])){
+            alert("đã xóa");
+        }
+        
+        // xoa giao dien
         var $row = $(this).closest("tr");
         $($row).remove();
     });
@@ -208,7 +222,19 @@ $(document).ready(function () {
                 soluong: soluong
             },
             success: function (response) {
-                alert(response);
+                result = response;
+            },
+        });
+        return result;
+    }
+    function deleteProduct(masp){
+        var result = "";
+        $.ajax({
+            url: linkTuyetDoi + "ajax/deleteProduct",
+            type: 'post',
+            async: false,
+            data: {masp:masp},
+            success: function (response) {
                 result = response;
             },
         });

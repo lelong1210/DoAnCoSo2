@@ -209,5 +209,10 @@ class ajax extends controller{
         $model = $this->call_model("productModel");
         echo $model->updateProduct($masp,$tensp,$giatien,$loaisanpham,$motasanpham,$linkduongdananh,$hangsx,$dunglamslider,$soluongsp,$ngaynhap);
     }
+    function deleteProduct(){
+        $masp = $_POST["masp"];
+        $model = $this->call_model("productModel");
+        echo $model->deleteProduct($masp);
+    }
 }
 ?>
