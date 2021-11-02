@@ -2,8 +2,7 @@
 class productModel extends connectDB
 {   
     // san phẩm
-    function SelectProductWhereMasp($masp)
-    {
+    function SelectProductWhereMasp($masp){
         $conn =  $this->GetConn();
         $sql = "SELECT * FROM sanpham WHERE masp=:masp";
         $query = $conn->prepare($sql);
@@ -59,6 +58,55 @@ class productModel extends connectDB
     function getTitleTable($arr){
         $arr = array_keys((array)$arr[0]);
         return $arr ;
+    }
+    function updateProduct($masp,$tensp,$giatien,$loaisanpham,$motasanpham,$linkduongdananh,$hangsx,$dunglamslider,$soluongsp,$ngaynhap){
+        $soluongsp = intval($soluongsp);
+        $giatien = intval($giatien);
+
+        try{
+            if($linkduongdananh != ""){
+                $conn =  $this->GetConn();
+                $sql = "UPDATE sanpham SET tensp=:tensp,giatien=:giatien,loaisanpham=:loaisanpham,motasanpham=:motasanpham,linkduongdananh=:linkduongdananh,hangsx=:hangsx,dunglamslider=:dunglamslider,soluongsp=:soluongsp,ngaynhap=:ngaynhap WHERE masp=:masp";
+                $query = $conn->prepare($sql);
+                $query->bindParam(":tensp", $tensp);
+                $query->bindParam(":giatien", $giatien);
+                $query->bindParam(":loaisanpham", $loaisanpham);
+                $query->bindParam(":motasanpham", $motasanpham);
+                $query->bindParam(":linkduongdananh", $linkduongdananh);
+                $query->bindParam(":hangsx", $hangsx);
+                $query->bindParam(":dunglamslider", $dunglamslider);
+                $query->bindParam(":soluongsp", $soluongsp);
+                $query->bindParam(":ngaynhap", $ngaynhap);
+                $query->bindParam(":masp",$masp);
+                $query->execute();
+                if ($query->rowCount() > 0) {
+                    return true;
+                }else{
+                    return false;
+                }   
+            }else{
+                $conn =  $this->GetConn();
+                $sql = "UPDATE sanpham SET tensp=:tensp,giatien=:giatien,loaisanpham=:loaisanpham,motasanpham=:motasanpham,hangsx=:hangsx,dunglamslider=:dunglamslider,soluongsp=:soluongsp,ngaynhap=:ngaynhap WHERE masp=:masp";
+                $query = $conn->prepare($sql);
+                $query->bindParam(":tensp", $tensp);
+                $query->bindParam(":giatien", $giatien);
+                $query->bindParam(":loaisanpham", $loaisanpham);
+                $query->bindParam(":motasanpham", $motasanpham);
+                $query->bindParam(":hangsx", $hangsx);
+                $query->bindParam(":dunglamslider", $dunglamslider);
+                $query->bindParam(":soluongsp", $soluongsp);
+                $query->bindParam(":ngaynhap", $ngaynhap);
+                $query->bindParam(":masp",$masp);
+                $query->execute();
+                if ($query->rowCount() > 0) {
+                    return true;
+                }else{
+                    return false;
+                } 
+            }
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }
     }
     // chuoi hanh dong xu ly cua gio hang 
     function addProductInCart($masp, $soluong)

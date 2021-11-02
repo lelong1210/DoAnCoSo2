@@ -160,19 +160,6 @@ class ajax extends controller{
        $model = $this->call_model("uploadModel");
        $model->uploadImg();
     }
-    function addProduct(){
-        $tensp = $_POST["tensp"];
-        $giatien = $_POST["giatien"];
-        $loaisanpham = $_POST["loaisanpham"];
-        $motasanpham = $_POST["motasanpham"];
-        $linkduongdananh = $_POST["linkduongdananh"];
-        $hangsx = $_POST["hangsanxuat"];
-        $dunglamslider = $_POST["dunglamslider"];
-        $soluongsp = $_POST["soluong"];
-        $ngaynhap = date("Y-m-d");
-        $model = $this->call_model("productModel");
-        echo $model->AddProduct($tensp,$giatien,$loaisanpham,$motasanpham,$linkduongdananh,$hangsx,$dunglamslider,$soluongsp,$ngaynhap);
-    }
         // gui mail
     function GuiMail(){
         $model = $this->call_model("guiMailModel");
@@ -193,6 +180,34 @@ class ajax extends controller{
         $masp = $_POST["masp"];
         $model = $this->call_model("productModel");
         echo $model->SelectProductWhereMasp($masp);
+    }
+    // san pham
+    function addProduct(){
+        $tensp = $_POST["tensp"];
+        $giatien = $_POST["giatien"];
+        $loaisanpham = $_POST["loaisanpham"];
+        $motasanpham = $_POST["motasanpham"];
+        $linkduongdananh = $_POST["linkduongdananh"];
+        $hangsx = $_POST["hangsanxuat"];
+        $dunglamslider = $_POST["dunglamslider"];
+        $soluongsp = $_POST["soluong"];
+        $ngaynhap = date("Y-m-d");
+        $model = $this->call_model("productModel");
+        echo $model->AddProduct($tensp,$giatien,$loaisanpham,$motasanpham,$linkduongdananh,$hangsx,$dunglamslider,$soluongsp,$ngaynhap);
+    }
+    function updateProduct(){
+        $masp = $_POST["masp"];
+        $tensp = $_POST["tensp"];
+        $giatien = $_POST["giatien"];
+        $loaisanpham = $_POST["loaisanpham"];
+        $motasanpham = $_POST["motasanpham"];
+        $linkduongdananh = $_POST["linkduongdananh"];
+        $hangsx = $_POST["hangsanxuat"];
+        $dunglamslider = $_POST["dunglamslider"];
+        $soluongsp = $_POST["soluong"];
+        $ngaynhap = date("Y-m-d");
+        $model = $this->call_model("productModel");
+        echo $model->updateProduct($masp,$tensp,$giatien,$loaisanpham,$motasanpham,$linkduongdananh,$hangsx,$dunglamslider,$soluongsp,$ngaynhap);
     }
 }
 ?>

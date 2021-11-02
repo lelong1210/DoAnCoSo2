@@ -53,7 +53,7 @@
                                             <td><?php echo $arrChild[$j]; ?></td>
                                         <?php } ?>
                                         <td><button id="xem<?php echo $arrChild[0]; ?>" class="btn btn-lg btn-success btn-edit">Xem</button></td>
-                                        <td><button id="xoa<?php echo $arrChild[0]; ?>" class="btn btn-lg btn-success btn-delete"><i class="fas fa-trash-alt"></i></button></td>    
+                                        <td><button id="xoa<?php echo $arrChild[0]; ?>" class="btn btn-lg btn-success btn-delete"><i class="fas fa-trash-alt"></i></button></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
@@ -71,6 +71,7 @@
                 <div class="card">
                     <div class="card-body">
                         <div class="form-group row">
+                            <span id="masp_edit"></span>
                             <label for="example-text-input" class="col-sm-2 col-form-label">Tên Sản Phẩm</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" id="tensanpham">
@@ -97,7 +98,10 @@
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Ảnh</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="file" id="linkduongdananh">
+                                <div id="img_div">
+                                    <img id="blah" src="#" alt="your image" style="width: 200px;"/>
+                                </div>
+                                <input class="form-control" type="file" id="linkduongdananh" value="">
                             </div>
                         </div>
                         <div class="form-group row">
@@ -118,7 +122,10 @@
                                 <input class="form-control" type="text" id="soluong">
                             </div>
                         </div>
-                        <div class="col-sm-12 text-center"><button class="btn btn-success" id="addProduct">Thêm Sản Phẩm</button></div>
+                        <div class="col-sm-12 text-center">
+                            <button class="btn btn-success" id="btn_back">Quay Lại</button>
+                            <button class="btn btn-success" id="edit_Product">Sửa</button>
+                        </div>
                     </div>
                 </div>
             </div>
