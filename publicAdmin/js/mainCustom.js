@@ -2,30 +2,6 @@ $(document).ready(function () {
     // link tuyet doi 
     var linkTuyetDoi = "http://localhost/www/";
     //
-    $("#calendarCustom").click(function (e) {
-        $.ajax({
-            type: "post",
-            url: "pageAdmin/calenderPage",
-            data: {},
-            // dataType: "dataType",
-            success: function (response) {
-                $("#contetMain").html(response);
-                // alert("hello");
-            }
-        });
-    });
-    $("#themsanphamLeftSlideBar").click(function (e) {
-        $.ajax({
-            type: "post",
-            url: "pageAdmin/addProductPage",
-            data: {},
-            // dataType: "dataType",
-            success: function (response) {
-                $("#contetMain").html(response);
-                // alert("hello");
-            }
-        });
-    });
     $("#addProduct").click(function (e) {
         var tensp = $("#tensanpham").val();
         var giatien = $("#giatien").val();
@@ -44,18 +20,6 @@ $(document).ready(function () {
         } else {
             alert("các ô không được để trống !!! ");
         }
-    });
-    $("#seeOverviewProductLeftSlideBar").click(function (e) {
-        $.ajax({
-            type: "post",
-            url: linkTuyetDoi + "pageAdmin/seeOverviewProduct",
-            data: {},
-            // dataType: "dataType",
-            success: function (response) {
-                $("#contetMain").html(response);
-                // alert("hello");
-            }
-        });
     });
     $('#datatable-buttons').on('click', '.btn-edit', function () {
         var $row = $(this).closest("tr");    // Find the row
@@ -133,6 +97,7 @@ $(document).ready(function () {
                     alert("cập nhật sản phẩm thất bại")
                 }
             }
+            location.reload();
         } else {
             alert("các ô không được để trống !!! ");
         }

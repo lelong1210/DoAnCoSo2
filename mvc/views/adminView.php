@@ -40,7 +40,21 @@
         <div class="content-page" id="content-page">
             <div id="contetMain">
                 <!-- Start content -->
-                <?php require_once "pageAdmin/indexPage.php"; ?>
+                <?php
+                    if($data["title"] == "xemsanpham"){
+                        require_once "pageAdmin/overViewProduct.php";
+                    }
+                    else if($data["title"] == "themsanpham"){
+                        require_once "pageAdmin/addProductPage.php";
+                    }
+                    else if($data["title"] == "xemnguoidung"){
+                        require_once "pageAdmin/overViewUser.php";
+                    }else{
+                        require_once "pageAdmin/indexPage.php"; 
+                    } 
+                    
+                
+                ?>
                 <!-- content -->
             </div>
 

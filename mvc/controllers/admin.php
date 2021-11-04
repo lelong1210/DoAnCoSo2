@@ -3,9 +3,33 @@
         function __construct(){
             $this->check_user_quyen(1);
         }
-        function show(){
+        function show($params){
             $this->call_view("adminView",[
     
+            ]);
+        }
+        function calendar($params){
+            echo "celendar";
+        }
+        // sản phẩm
+        function xemsanpham($params){
+            $productModel = $this->call_model("productModel");
+            $this->call_view("adminView",[
+                "title"=>"xemsanpham",
+                "productModel"=>$productModel
+            ]);
+        }
+        function themsanpham($params){
+            $this->call_view("adminView",[
+                "title"=>"themsanpham",
+            ]);
+        }
+        // người dùng
+        function xemnguoidung(){
+            $taikhoanModel = $this->call_model("taikhoanModel");
+            $this->call_view("adminView",[
+                "title"=>"xemnguoidung",
+                "taikhoanModel"=>$taikhoanModel
             ]);
         }
         /*https://projectdacs2.000webhostapp.com/*/

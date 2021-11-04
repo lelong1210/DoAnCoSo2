@@ -286,6 +286,17 @@ class taikhoanModel extends connectDB{
             return false;
         }   
     }
+    // select User 
+    function selectAllUser(){
+        $conn =  $this->GetConn();
+        $sql = "SELECT tendangnhap,tennguoidung,diachi,sodienthoai,email,quyen FROM nguoidung ORDER BY tendangnhap ASC";
+        $query = $conn->prepare($sql); 
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }           
+    }
     // function support View
     function editInformation(){
         $arrKey = $this->getTitle();
@@ -328,6 +339,10 @@ class taikhoanModel extends connectDB{
             echo "<input type='text' placeholder='nhập địa chỉ...' id='diachi' value='$arrChild[5]'>";
             echo "<button class='btn btn-lg btn-success' id='editAddressShipping$arrChild[0]'>Cập Nhật</button>";
         echo "</div>";
+    }
+    function getTitleTable($arr){
+        $arr = array_keys((array)$arr[0]);
+        return $arr ;
     }
 }
 ?>
