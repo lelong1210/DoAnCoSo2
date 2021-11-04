@@ -27,32 +27,36 @@
                             <label for="example-text-input" class="col-sm-2 col-form-label">Tên Đăng Nhập</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" id="tendangnhap">
+                                <span style="color: red;" id="sptendangnhap"></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Mật Khẩu</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" id="matkhau">
+                                <input class="form-control" type="password" id="matkhau">
+                                <span style="color: red;" id="spmatkhau"></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Nhập Lại Mật Khẩu</label>
                             <div class="col-sm-10">
-                                <input class="form-control" type="text" id="nhaplaimatkhau">
+                                <input class="form-control" type="password" id="nhaplaimatkhau">
+                                <span style="color: red;" id="spnhaplaimatkhau"></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Email</label>
                             <div class="col-sm-10">
                                 <input class="form-control" type="text" id="email">
+                                <span style="color: red;" id="spemail"></span>
                             </div>
                         </div>
                         <div class="form-group row">
                             <label for="example-text-input" class="col-sm-2 col-form-label">Quyền</label>
                             <div class="col-sm-10">
                                 <select id="quyen">
-                                    <option value="0">Admin</option>
-                                    <option value="1">Khách Hàng</option>
+                                    <option value="1">Admin</option>
+                                    <option value="0">Khách Hàng</option>
                                     <option value="2">Nhân Viên Lắp Đặt</option>
                                 </select>
                             </div>

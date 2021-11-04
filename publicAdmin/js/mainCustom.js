@@ -1,7 +1,7 @@
 $(document).ready(function () {
     // link tuyet doi 
     var linkTuyetDoi = "http://localhost/www/";
-    //
+    //san pham
     $("#addProduct").click(function (e) {
         var tensp = $("#tensanpham").val();
         var giatien = $("#giatien").val();
@@ -56,10 +56,10 @@ $(document).ready(function () {
         });
         // ===> 
 
-        if(deleteProduct(arr[0])){
+        if (deleteProduct(arr[0])) {
             alert("đã xóa");
         }
-        
+
         // xoa giao dien
         var $row = $(this).closest("tr");
         $($row).remove();
@@ -84,14 +84,14 @@ $(document).ready(function () {
         if (tensp != "" && giatien != "" && loaisanpham != "" && motasanpham != "" && hangsanxuat != "" && dunglamslider != "" && soluong != "") {
             if ($("#linkduongdananh").val() != "") {
                 var linkduongdananh = uploadImg();
-                if (updateProduct(masp , tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong)) {
+                if (updateProduct(masp, tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong)) {
                     alert("đã cập nhật sản phẩm");
                 } else {
                     alert("cập nhật sản phẩm thất bại")
                 }
             } else {
                 var linkduongdananh = "";
-                if (updateProduct(masp , tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong)) {
+                if (updateProduct(masp, tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong)) {
                     alert("đã cập nhật sản phẩm");
                 } else {
                     alert("cập nhật sản phẩm thất bại")
@@ -100,6 +100,74 @@ $(document).ready(function () {
             location.reload();
         } else {
             alert("các ô không được để trống !!! ");
+        }
+    });
+    // user 
+    $("#addUser").click(function (e) {
+        var tendangnhap = $("#tendangnhap").val();
+        var matkhau = $("#matkhau").val();
+        var nhaplaimatkhau = $("#nhaplaimatkhau").val();
+        var email = $("#email").val();
+        var quyen = $("#quyen").val();
+        if(tendangnhap != "" && matkhau != "" && nhaplaimatkhau != "" && email != ""){
+            if(!checkAcount(tendangnhap)){
+                if(checkStrongPass(matkhau)){
+                    if(comparePassword(matkhau,nhaplaimatkhau)){
+                        if(checkEmailFormat(email)){
+                            alert("sa");
+                            if(dangky(tendangnhap,matkhau,email,quyen)){
+                                alert("Đã Thêm Người Dùng")
+                            }
+                        }else{
+                            alert("Lỗi Trên Màn Hình");
+                        }
+                    }else{
+                        alert("Lỗi Trên Màn Hình");
+                    }
+                }else{
+                    alert("Lỗi Trên Màn Hình");
+                }
+            }else{
+                alert("Lỗi Trên Màn Hình");
+            }
+        }else{
+            alert("Các Ô Không Được Để Trống");
+        }
+    });
+    $("input").keyup(function (e) {
+        let arrDk = ["tendangnhap", "matkhau", "nhaplaimatkhau", "email"];
+        if ($(this).attr('id') == arrDk[0]) {
+            if (checkAcount($(this).val())) {
+                spanErr($(this).attr('id'), false, "Tồn Tại...");
+            } else {
+                spanErr($(this).attr('id'), true, "");
+            }
+        }
+        if ($(this).attr('id') == arrDk[1]) {
+            var matkhau = $(this).val();
+            if (checkStrongPass(matkhau) >= 4) {
+                spanErr($(this).attr('id'), true, "");
+            }
+            else {
+                spanErr($(this).attr('id'), false, "Mật Khẩu Phải Bao Gồm Chữ Số ,Viết Hoa ,Viết Thường,Ký Tự Đặc Biệt,Dài Từ 8 Ký Tự...");
+            }
+        }
+        if ($(this).attr('id') == arrDk[2]) {
+            var pass1 = $("#" + arrDk[1]).val();
+            var pass2 = $(this).val();
+            if (comparePassword(pass1, pass2)) {
+                spanErr($(this).attr('id'), true, "");
+            } else {
+                spanErr($(this).attr('id'), false, "Mật Khẩu Không Khớp...");
+            }
+        }
+        if ($(this).attr('id') == arrDk[3]) {
+            var email = $(this).val();
+            if (checkEmailFormat(email)) {
+                spanErr($(this).attr('id'), true, "");
+            } else {
+                spanErr($(this).attr('id'), false, "Không Phải Định Dạng Email...");
+            }
         }
     });
     // function support 
@@ -169,14 +237,14 @@ $(document).ready(function () {
         });
         return result;
     }
-    function updateProduct(masp, tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong){
+    function updateProduct(masp, tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong) {
         var result = "";
         $.ajax({
             url: linkTuyetDoi + "ajax/updateProduct",
             type: 'post',
             async: false,
             data: {
-                masp:masp,
+                masp: masp,
                 tensp: tensp,
                 giatien: giatien,
                 loaisanpham: loaisanpham,
@@ -192,16 +260,89 @@ $(document).ready(function () {
         });
         return result;
     }
-    function deleteProduct(masp){
+    function deleteProduct(masp) {
         var result = "";
         $.ajax({
             url: linkTuyetDoi + "ajax/deleteProduct",
             type: 'post',
             async: false,
-            data: {masp:masp},
+            data: { masp: masp },
             success: function (response) {
                 result = response;
             },
+        });
+        return result;
+    }
+    function spanErr(idName, option, mess) {
+        if (option) {
+            $("#sp" + idName).html("");
+            $("#sp" + idName).css({ "color": "red", "font-size": "small" });
+        } else {
+            $("#sp" + idName).html(mess);
+            $("#sp" + idName).css({ "color": "red", "font-size": "small" });
+        }
+        // $("#sp"+idName).addClass("fas fa-times");
+
+    }
+    function checkAcount(tendangnhap) {
+        var php_data;
+        $.ajax({
+            type: "post",
+            url: linkTuyetDoi + "ajax/CheckAcount",
+            async: false,
+            data: { tendangnhap: tendangnhap },
+            // dataType: "dataType",
+            success: function (response) {
+                php_data = response;
+            }
+        });
+        return php_data;
+    }
+    function comparePassword(pass1, pass2) {
+        if (pass1 == pass2) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+    function checkStrongPass(pass) {
+        var domanh = 0;
+        const arr = [/[A-Z]/, /[a-z]/, /[0-9]/, /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/];
+        if (pass.length >= 8) {
+            $.each(arr, function (indexInArray, valueOfElement) {
+                // alert(valueOfElement);
+                if (valueOfElement.test(pass)) {
+                    domanh++;
+                }
+            });
+            return domanh;
+        } else {
+            return false;
+        }
+    }
+    function checkEmailFormat(email) { 
+        var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+        if(pattern.test(email)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function dangky(tendangnhap,matkhau,email,quyen){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/dangky",
+            data: {
+                tendangnhap:tendangnhap,
+                matkhau:matkhau,
+                email:email,
+                quyen:quyen
+            },
+            success: function (response) {
+                result = response;
+            }
         });
         return result;
     }

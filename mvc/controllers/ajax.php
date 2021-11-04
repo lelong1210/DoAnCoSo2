@@ -9,11 +9,12 @@ class ajax extends controller{
         $tendangnhap = $_POST["tendangnhap"];
         $matkhau = $_POST["matkhau"];      
         $email = $_POST["email"];   
-        
+        $quyen = $_POST["quyen"];
+        $ngaythamgia = date("Y-m-d");
         $matkhau = md5($matkhau);
 
         $model = $this->call_model("taikhoanModel");
-        echo $model->dangky($tendangnhap,$matkhau,$email);
+        echo $model->dangky($tendangnhap,$matkhau,$email,$quyen,$ngaythamgia);
     }
     function dangnhap(){
         // echo "VAO DANG NHAP AJAX";

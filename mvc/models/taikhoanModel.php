@@ -1,6 +1,5 @@
 <?php
 class taikhoanModel extends connectDB{
-    protected $quyen = 0 ;
     function dangnhap($tendangnhap,$matkhau){
         $conn = $this->GetConn();
         $sql = "SELECT * FROM nguoidung WHERE tendangnhap=:tendangnhap AND matkhau=:matkhau";
@@ -17,16 +16,18 @@ class taikhoanModel extends connectDB{
             return false ;
         }
     }
-    function dangky($tendangnhap,$matkhau,$email){
+    function dangky($tendangnhap,$matkhau,$email,$quyen,$ngaythamgia){
         try {
+            $quyen = intval($quyen);
 
             $conn = $this->GetConn();
-            $sql = "INSERT INTO nguoidung(tendangnhap,email, matkhau, quyen) VALUES (:tendangnhap,:email,:matkhau,:quyen)";
+            $sql = "INSERT INTO nguoidung(tendangnhap,email, matkhau, quyen, ngaythamgia) VALUES (:tendangnhap,:email,:matkhau,:quyen,:ngaythamgia)";
             $query = $conn->prepare($sql);
             $query->bindParam(":tendangnhap",$tendangnhap);
             $query->bindParam(":matkhau",$matkhau);
             $query->bindParam(":email",$email);
-            $query->bindParam(":quyen",$this->quyen);
+            $query->bindParam(":quyen",$quyen);
+            $query->bindParam(":ngaythamgia",$ngaythamgia);
             $query->execute();
             if($query->rowCount() > 0){
                 return true ;
@@ -34,25 +35,29 @@ class taikhoanModel extends connectDB{
                 return false ;
             }
         } catch (Exception $e) {
-           return false;
+           echo $e->getMessage();
         }
     }
     function checkAcount($tendangnhap){
-        $conn = $this->GetConn();
-        $sql = "SELECT * FROM nguoidung WHERE tendangnhap=:tendangnhap";
-        $query = $conn->prepare($sql);
-        $query->bindParam(":tendangnhap",$tendangnhap);
-        $query->execute();
-        if($query->rowCount() > 0){
-            return true ;
-        }else{
-            return false ;
-        }        
+        try{
+            $conn = $this->GetConn();
+            $sql = "SELECT * FROM nguoidung WHERE tendangnhap=:tendangnhap";
+            $query = $conn->prepare($sql);
+            $query->bindParam(":tendangnhap",$tendangnhap);
+            $query->execute();
+            if($query->rowCount() > 0){
+                return true ;
+            }else{
+                return false ;
+            }    
+        }catch(PDOException $e){
+            // echo $e->getMessage();
+        }
     }
     function getQuyenAndUser($arr){
         $arr = json_decode($arr);
         $arr = array_values((array)$arr[0]);
-        $_SESSION["quyen"] = $arr[6];
+        $_SESSION["quyen"] = $arr[7];
         $_SESSION["username"] = $arr[0];
         $_SESSION["password"] = $arr[5];
     }
