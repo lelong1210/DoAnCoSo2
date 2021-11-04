@@ -5,7 +5,7 @@
         }
         function show($params){
             $this->call_view("adminView",[
-    
+                "title"=>"overView"
             ]);
         }
         function calendar($params){
@@ -30,6 +30,11 @@
             $this->call_view("adminView",[
                 "title"=>"xemnguoidung",
                 "taikhoanModel"=>$taikhoanModel
+            ]);
+        }
+        function themnguoidung(){
+            $this->call_view("adminView",[
+                "title"=>"themnguoidung",
             ]);
         }
         /*https://projectdacs2.000webhostapp.com/*/

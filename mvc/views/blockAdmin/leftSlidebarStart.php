@@ -24,7 +24,7 @@
     </li>
     <li class="menu-title">Khách Hàng</li>
     <li>        
-        <a href="xemnguoidung" class="waves-effect"><i class="fas fa-eye"></i> <span>Xem Người Dùng</span> </a>
-        <a class="waves-effect"><i class="fas fa-upload"></i> <span> Thêm Người Dùng  </span> </a>
+        <a href="/www/admin/xemnguoidung" class="waves-effect"><i class="fas fa-eye"></i> <span>Xem Người Dùng</span> </a>
+        <a href="/www/admin/themnguoidung" class="waves-effect"><i class="fas fa-upload"></i> <span> Thêm Người Dùng  </span> </a>
     </li>
 </ul>

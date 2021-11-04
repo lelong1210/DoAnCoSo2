@@ -49,6 +49,8 @@
                     }
                     else if($data["title"] == "xemnguoidung"){
                         require_once "pageAdmin/overViewUser.php";
+                    }else if($data["title"] == "themnguoidung"){
+                        require_once "pageAdmin/addUserPage.php";
                     }else{
                         require_once "pageAdmin/indexPage.php"; 
                     } 
