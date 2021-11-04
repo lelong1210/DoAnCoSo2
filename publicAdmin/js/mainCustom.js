@@ -114,9 +114,9 @@ $(document).ready(function () {
                 if(checkStrongPass(matkhau)){
                     if(comparePassword(matkhau,nhaplaimatkhau)){
                         if(checkEmailFormat(email)){
-                            alert("sa");
                             if(dangky(tendangnhap,matkhau,email,quyen)){
-                                alert("Đã Thêm Người Dùng")
+                                alert("Đã Thêm Người Dùng");
+                                location.reload();
                             }
                         }else{
                             alert("Lỗi Trên Màn Hình");

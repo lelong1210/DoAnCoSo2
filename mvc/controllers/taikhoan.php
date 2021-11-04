@@ -9,6 +9,9 @@ class taikhoan extends controller{
             if($_SESSION["quyen"]==1){
                 header("Location:./admin");
             }
+            if($_SESSION["quyen"]==2){
+               echo "vao nhan vien";
+            }
         }else{
             header("Location:./dndk");
         }

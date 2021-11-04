@@ -82,7 +82,35 @@ $(document).ready(function () {
         dangNhap(tendangnhap, matkhau);
     });
     $("#dangky").click(function () {
-        let arrDk = ["tendangnhap_DK", "matkhau_DK", "rematkhau_DK", "email_DK"];
+        var tendangnhap = $("#tendangnhap_DK").val();
+        var matkhau = $("#matkhau_DK").val();
+        var nhaplaimatkhau = $("#rematkhau_DK").val();
+        var email = $("#email_DK").val();
+        var quyen = 0;
+        if(tendangnhap != "" && matkhau != "" && nhaplaimatkhau != "" && email != ""){
+            if(!checkAcount(tendangnhap)){
+                if(checkStrongPass(matkhau)){
+                    if(comparePassword(matkhau,nhaplaimatkhau)){
+                        if(checkEmailFormat(email)){
+                            if(dangky(tendangnhap,matkhau,email,quyen)){
+                                alert("Đã Đăng Ký Thành Công");
+                                location.reload();
+                            }
+                        }else{
+                            alert("Lỗi Trên Màn Hình");
+                        }
+                    }else{
+                        alert("Lỗi Trên Màn Hình");
+                    }
+                }else{
+                    alert("Lỗi Trên Màn Hình");
+                }
+            }else{
+                alert("Lỗi Trên Màn Hình");
+            }
+        }else{
+            alert("Các Ô Không Được Để Trống");
+        }
 
     });
     $("input").keyup(function (e) {
@@ -92,6 +120,15 @@ $(document).ready(function () {
                 spanErr($(this).attr('id'), false, "Tồn Tại...");
             } else {
                 spanErr($(this).attr('id'), true, "");
+            }
+        }
+        if ($(this).attr('id') == arrDk[1]) {
+            var matkhau = $(this).val();
+            if (checkStrongPass(matkhau) >= 4) {
+                spanErr($(this).attr('id'), true, "");
+            }
+            else {
+                spanErr($(this).attr('id'), false, "Mật Khẩu Phải Bao Gồm Chữ Số ,Viết Hoa ,Viết Thường,Ký Tự Đặc Biệt,Dài Từ 8 Ký Tự...");
             }
         }
         if ($(this).attr('id') == arrDk[2]) {
@@ -104,9 +141,8 @@ $(document).ready(function () {
             }
         }
         if ($(this).attr('id') == arrDk[3]) {
-            var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
             var email = $(this).val();
-            if (pattern.test(email)) {
+            if (checkEmailFormat(email)) {
                 spanErr($(this).attr('id'), true, "");
             } else {
                 spanErr($(this).attr('id'), false, "Không Phải Định Dạng Email...");
@@ -462,7 +498,7 @@ $(document).ready(function () {
         var php_data;
         $.ajax({
             type: "post",
-            url: "./ajax/CheckAcount",
+            url: linkTuyetDoi + "ajax/CheckAcount",
             async: false,
             data: { tendangnhap: tendangnhap },
             // dataType: "dataType",
@@ -478,6 +514,47 @@ $(document).ready(function () {
         } else {
             return false;
         }
+    }
+    function checkStrongPass(pass) {
+        var domanh = 0;
+        const arr = [/[A-Z]/, /[a-z]/, /[0-9]/, /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/];
+        if (pass.length >= 8) {
+            $.each(arr, function (indexInArray, valueOfElement) {
+                // alert(valueOfElement);
+                if (valueOfElement.test(pass)) {
+                    domanh++;
+                }
+            });
+            return domanh;
+        } else {
+            return false;
+        }
+    }
+    function checkEmailFormat(email) { 
+        var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
+        if(pattern.test(email)){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    function dangky(tendangnhap,matkhau,email,quyen){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/dangky",
+            data: {
+                tendangnhap:tendangnhap,
+                matkhau:matkhau,
+                email:email,
+                quyen:quyen
+            },
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
     }
     function dangNhap(tendangnhap, matkhau) {
         $.post("./ajax/dangnhap", { tendangnhap: tendangnhap, matkhau: matkhau }, function (data) {
