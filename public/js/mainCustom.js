@@ -156,21 +156,28 @@ $(document).ready(function () {
         var btnPayLive = "btnPayLive";
         var idThis = $(this).attr('id');
         // them vao gio hang
-        if (checkLogin()) {
-            if (idThis.startsWith(nameBtnMH)) {
+        if (idThis.startsWith(nameBtnMH)) {
+            if (checkLogin()) {
                 var masp = idThis.slice(5, idThis.length);
                 var soluong = 1
                 if (addProductInCart(masp, soluong)) {
                     alert("Đã Thêm Vào Giỏ Hàng");
+                    updateSessionSoLuongTrongGioHang(1);
                 } else {
                     alert("...");
                 }
-            }else if(idThis.startsWith(btnPayLive)){
-                alert("vao han thanh toan");
             }
             else {
                 location.replace(linkTuyetDoi + "dndk");
             }
+
+        }else if(idThis.startsWith(btnPayLive)){
+            if (checkLogin()) {
+                alert("thanh toan truc tiep");
+            }
+            else {
+                location.replace(linkTuyetDoi + "dndk");
+            }            
         }
     });
     $(".qtybutton").click(function (e) {
@@ -696,6 +703,7 @@ $(document).ready(function () {
             if (soluong == 0) {
                 $("#" + "tr" + masp).remove();
                 deleteInDetailCart(masp);
+                updateSessionSoLuongTrongGioHang(0);
             } else {
                 $("#" + valueOfInput + masp).html(soluong);
                 $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
@@ -732,6 +740,20 @@ $(document).ready(function () {
                 // alert(response);
             }
         });
+    }
+    function updateSessionSoLuongTrongGioHang(option){
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/updateSecSionSoLuongTrongGioHang",
+            data: {
+                option: option
+            },
+            success: function (response) {
+                // alert(response);
+                // alert(response);
+            }
+        });        
     }
     function deleteInDetailCart(masp) {
         $.ajax({
