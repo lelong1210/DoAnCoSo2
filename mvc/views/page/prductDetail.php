@@ -32,7 +32,8 @@
                     <p class="quickview-para m-0"><?php echo $arr[4] ?></p>
                     <div class="pro-details-quality">
                         <div class="pro-details-cart">
-                            <button class="add-cart btn btn-primary btn-hover-primary" id='<?php echo "btnMH" . $arr[0] ?>'> Mua Ngay</button>
+                            <button class="btn btn-lg btn-success" id='<?php echo "btnPayLive" . $arr[0] ?>'>  Mua Hàng</button>
+                            <button class="add-cart btn btn-primary btn-hover-primary" id='<?php echo "btnMH" . $arr[0] ?>'> Thêm Vào Giỏ Hàng</button>
                         </div>
                     </div>
                     <div class="pro-details-policy">

@@ -1,6 +1,6 @@
 <?php
 class uploadModel extends connectDB
-{    protected $linktuyetdoi = "http://localhost/www/";
+{   protected $linktuyetdoi = "http://localhost/www/";
     function uploadImg()
     {  
         /* Getting file name */

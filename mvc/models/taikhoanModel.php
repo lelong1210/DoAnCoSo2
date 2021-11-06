@@ -54,12 +54,27 @@ class taikhoanModel extends connectDB{
             // echo $e->getMessage();
         }
     }
+    function getSoLuongTrongGioHang($magiohang){
+        $conn = $this->GetConn();
+        $sql = "SELECT * FROM chitietgiohang WHERE magiohang=:magiohang";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":magiohang",$magiohang);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->rowCount();
+            return $result;
+        }else{
+            return false ;
+        }        
+    }
     function getQuyenAndUser($arr){
         $arr = json_decode($arr);
         $arr = array_values((array)$arr[0]);
         $_SESSION["quyen"] = $arr[7];
         $_SESSION["username"] = $arr[0];
         $_SESSION["password"] = $arr[5];
+        $_SESSION["soluongtronggiohang"] = $this->getSoLuongTrongGioHang($arr[0]."-gh");
+        
     }
     function unloadingDATA(){
         $arr = json_decode($_SESSION["information"]);

@@ -23,8 +23,9 @@ class ajax extends controller{
 
         $matkhau = md5($matkhau);
 
+        $productModel = $this->call_model("productModel");
         $model = $this->call_model("taikhoanModel");
-        echo $model->dangnhap($tendangnhap,$matkhau);
+        echo $model->dangnhap($tendangnhap,$matkhau,$productModel);
     }
     function checkAcount(){
         $tendangnhap = $_POST["tendangnhap"];

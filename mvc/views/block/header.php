@@ -39,7 +39,7 @@
                             <!-- Single Wedge End -->
                             <a href="/www/giohang" class="header-action-btn header-action-btn-cart">
                                 <i class="icon-handbag"></i>
-                                <!-- <span class="header-action-num">01</span> -->
+                                <span class="header-action-num" id="soluongtronggiohang"><?php if(isset($_SESSION["soluongtronggiohang"])) {echo $_SESSION["soluongtronggiohang"];} ?></span>
                                 <!-- <span class="cart-amount">€30.00</span> -->
                             </a>
                             <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">

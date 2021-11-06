@@ -153,9 +153,11 @@ $(document).ready(function () {
     // ==> trang gio hang
     $("button").click(function (e) {
         var nameBtnMH = "btnMH";
+        var btnPayLive = "btnPayLive";
         var idThis = $(this).attr('id');
-        if (idThis.startsWith(nameBtnMH)) {
-            if (checkLogin()) {
+        // them vao gio hang
+        if (checkLogin()) {
+            if (idThis.startsWith(nameBtnMH)) {
                 var masp = idThis.slice(5, idThis.length);
                 var soluong = 1
                 if (addProductInCart(masp, soluong)) {
@@ -163,11 +165,12 @@ $(document).ready(function () {
                 } else {
                     alert("...");
                 }
+            }else if(idThis.startsWith(btnPayLive)){
+                alert("vao han thanh toan");
             }
             else {
                 location.replace(linkTuyetDoi + "dndk");
             }
-
         }
     });
     $(".qtybutton").click(function (e) {
