@@ -19,7 +19,10 @@
                                 <ul>
                                     <li class="your-order-shipping">Địa Chỉ Giao Hàng
                                         <?php
-                                            $data["productModel"]->showAddressShippingInPayment(json_decode($data["taikhoanModel"]->selectAddressShipping($_SESSION["username"])));
+                                            $arr = $data["taikhoanModel"]->selectAddressShipping($_SESSION["username"]);
+                                            if($arr){
+                                                $data["productModel"]->showAddressShippingInPayment(json_decode($arr));
+                                            }
                                         ?>
                                     </li>
                                     <li>
