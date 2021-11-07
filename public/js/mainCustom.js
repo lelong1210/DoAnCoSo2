@@ -491,14 +491,11 @@ $(document).ready(function () {
     $("#test").click(function (e) { 
         $.ajax({
             type: "post",
-            url: link+"tinh quang binh"+apikeyForecast,
+            url: link+"tinh quang tri"+apikeyForecast,
             dataType: "json",
             success: function (response) {
-                $.each(response.weather, function (indexInArray, valueOfElement) { 
-                    alert(response);
-                    $.each(valueOfElement, function (indexInArray, valueOfElement) { 
-                        alert(valueOfElement);
-                    });
+                $.each(response, function (indexInArray, valueOfElement) { 
+                    alert(valueOfElement);
                 });
             }
         });
