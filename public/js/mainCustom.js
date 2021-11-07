@@ -2,6 +2,8 @@
 $(document).ready(function () {
     // link tuyet doi 
     var linkTuyetDoi = "http://localhost/www/";
+    var link = "https://api.openweathermap.org/data/2.5/weather?q=";
+    var apikeyForecast = "&&appid=ba1c6a2a72bf9a46f3fa108e513d74e0";
     // trang khach hang
     $("#updateAcount").click(function (e) {
         var tennguoidung = $("#tennguoidungupdate").val();
@@ -484,6 +486,22 @@ $(document).ready(function () {
             }
         });
         
+    });
+    // tesst
+    $("#test").click(function (e) { 
+        $.ajax({
+            type: "post",
+            url: link+"tinh quang binh"+apikeyForecast,
+            dataType: "json",
+            success: function (response) {
+                $.each(response.weather, function (indexInArray, valueOfElement) { 
+                    alert(response);
+                    $.each(valueOfElement, function (indexInArray, valueOfElement) { 
+                        alert(valueOfElement);
+                    });
+                });
+            }
+        });
     });
     // function support 
     function uploadImg(){

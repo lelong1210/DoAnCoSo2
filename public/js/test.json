@@ -1,0 +1,44 @@
+{
+    "coord": {
+        "lon": 106.3333,
+        "lat": 17.5
+    },
+    "weather": [
+        {
+            "id": 803,
+            "main": "Clouds",
+            "description": "broken clouds",
+            "icon": "04n"
+        }
+    ],
+    "base": "stations",
+    "main": {
+        "temp": 292.79,
+        "feels_like": 293.19,
+        "temp_min": 292.79,
+        "temp_max": 292.79,
+        "pressure": 1012,
+        "humidity": 91,
+        "sea_level": 1012,
+        "grnd_level": 935
+    },
+    "visibility": 10000,
+    "wind": {
+        "speed": 1.49,
+        "deg": 74,
+        "gust": 3.28
+    },
+    "clouds": {
+        "all": 73
+    },
+    "dt": 1636286583,
+    "sys": {
+        "country": "VN",
+        "sunrise": 1636239348,
+        "sunset": 1636280454
+    },
+    "timezone": 25200,
+    "id": 1568839,
+    "name": "Tinh Quang Binh",
+    "cod": 200
+}

@@ -42,6 +42,7 @@
             <!-- </div> -->
         </div>
     </div>
+    <div id="test">click me</div>
     <!-- Footer Area Start -->
     <?php require_once "block/footer.php"; ?>
     <!-- Footer Area End -->
