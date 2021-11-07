@@ -133,11 +133,13 @@ class productModel extends connectDB
                 $soluong = $soluong + 1;
                 if ($this->updateInDetailCart($masp, $magiohang, $soluong)) {
                     return true;
+
                 } else {
                     return false;
                 }
             } else {
                 if ($this->insertToDetailCart($masp, $magiohang, $soluong)) {
+                    $this->updateSecSionSoLuongTrongGioHang(1);
                     return true;
                 } else {
                     return false;
@@ -366,6 +368,17 @@ class productModel extends connectDB
         }catch(PDOException $e){
             echo $e->getMessage();
         }        
+    }
+    //
+    function updateSecSionSoLuongTrongGioHang($option){
+        $result = $_SESSION["soluongtronggiohang"];
+        $result = intval($result);
+        if($option == 0){
+            $result = $result - 1;
+        }else{
+            $result = $result + 1;
+        }
+        $_SESSION["soluongtronggiohang"] = $result;
     }
 }
 ?>

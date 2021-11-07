@@ -164,7 +164,6 @@ $(document).ready(function () {
                 var soluong = 1
                 if (addProductInCart(masp, soluong)) {
                     alert("Đã Thêm Vào Giỏ Hàng");
-                    updateSessionSoLuongTrongGioHang(1);
                 } else {
                     alert("...");
                 }
