@@ -26,14 +26,26 @@
                                     </form>
                                 </div>
                             </div>
+                            <!--                                     
+                                    <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
+                                    <li><a class="dropdown-item" href="login.html">Sign in</a></li> --> 
                             <!-- Single Wedge Start -->
                             <div class="header-bottom-set dropdown">
                                 <button class="dropdown-toggle header-action-btn" data-bs-toggle="dropdown"><i
                                         class="icon-user"></i></button>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a class="dropdown-item" href="/www/taikhoan">Tài Khoản</a></li>
-                                    <!-- <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
-                                    <li><a class="dropdown-item" href="login.html">Sign in</a></li> -->
+                                    <?php 
+                                        if(isset($_SESSION["username"])){
+                                    ?>
+                                        <li><a class="dropdown-item" href="/www/taikhoan">Tài Khoản</a></li>
+                                        <li><a class="dropdown-item" href="/www/thoattaikhoan">Thoát</a></li>
+                                    <?php 
+                                        }else{
+                                    ?>
+                                        <li><a class="dropdown-item" href="/www/dndk">Đăng Nhập</a></li>
+                                    <?php
+                                        }                                    
+                                    ?>
                                 </ul>
                             </div>
                             <!-- Single Wedge End -->

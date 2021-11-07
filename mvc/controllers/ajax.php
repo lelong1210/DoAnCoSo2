@@ -92,6 +92,13 @@ class ajax extends controller{
         }
         $_SESSION["soluongtronggiohang"] = $result;
     }
+    function getSecSionSoLuongTrongGioHang(){
+        if(isset($_SESSION["soluongtronggiohang"])){
+            echo $_SESSION["soluongtronggiohang"];
+        }else{
+            echo false ;
+        }
+    }
         // cart
     function addProductInCart(){
         $masp = $_POST["masp"];

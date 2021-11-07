@@ -164,6 +164,7 @@ $(document).ready(function () {
                 var soluong = 1
                 if (addProductInCart(masp, soluong)) {
                     alert("Đã Thêm Vào Giỏ Hàng");
+                    updateScreenSoLuongTrongGioHang(getSessionSoLuongTrongGioHang);
                 } else {
                     alert("...");
                 }
@@ -488,16 +489,18 @@ $(document).ready(function () {
     });
     // tesst
     $("#test").click(function (e) { 
-        $.ajax({
-            type: "post",
-            url: link+"tinh quang tri"+apikeyForecast,
-            dataType: "json",
-            success: function (response) {
-                $.each(response, function (indexInArray, valueOfElement) { 
-                    alert(valueOfElement);
-                });
-            }
-        });
+        // $.ajax({
+        //     type: "post",
+        //     url: link+"tinh quang tri"+apikeyForecast,
+        //     dataType: "json",
+        //     success: function (response) {
+        //         $.each(response, function (indexInArray, valueOfElement) { 
+        //             alert(valueOfElement);
+        //         });
+        //     }
+        // });
+        // updateScreenSoLuongTrongGioHang();
+        alert(getSessionSoLuongTrongGioHang());
     });
     // function support 
     function uploadImg(){
@@ -718,6 +721,7 @@ $(document).ready(function () {
                 $("#" + "tr" + masp).remove();
                 deleteInDetailCart(masp);
                 updateSessionSoLuongTrongGioHang(0);
+                updateScreenSoLuongTrongGioHang(getSessionSoLuongTrongGioHang());
             } else {
                 $("#" + valueOfInput + masp).html(soluong);
                 $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
@@ -768,6 +772,21 @@ $(document).ready(function () {
                 // alert(response);
             }
         });        
+    }
+    function updateScreenSoLuongTrongGioHang(option){
+        $("#soluongtronggiohang").html(option);
+    }
+    function getSessionSoLuongTrongGioHang(){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/getSecSionSoLuongTrongGioHang",
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
     }
     function deleteInDetailCart(masp) {
         $.ajax({

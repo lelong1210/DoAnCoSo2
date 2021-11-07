@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 04, 2021 at 08:15 AM
+-- Generation Time: Nov 07, 2021 at 04:07 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -42,9 +42,7 @@ INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
 (12, 'longtermplayoffs-gh', 1),
 (6, 'befittinggeorgian-gh', 1),
 (4, 'befittinggeorgian-gh', 1),
-(63, 'befittinggeorgian-gh', 1),
-(16, 'arcanaabounding-gh', 1),
-(24, 'arcanaabounding-gh', 1);
+(63, 'befittinggeorgian-gh', 1);
 
 -- --------------------------------------------------------
 
@@ -235,6 +233,7 @@ CREATE TABLE `nguoidung` (
   `sodienthoai` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `matkhau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ngaythamgia` date NOT NULL,
   `quyen` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -242,56 +241,56 @@ CREATE TABLE `nguoidung` (
 -- Dumping data for table `nguoidung`
 --
 
-INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`, `email`, `matkhau`, `quyen`) VALUES
-('abaftdon’t', NULL, NULL, NULL, 'roma61@hotmail.com', '5280e11f2452aac5aa85177aaf4b3b98', 0),
-('arcanaabounding', 'LE QUANG LONG', 'QUANG BINH', '0904349823', 'marisol39@hotmail.com', '0c0b3da4ac402bd86191d959be081114', 0),
-('arousedrecruit', NULL, NULL, NULL, 'salma87@hotmail.com', 'a794275722896cac20ecdd29928a3b9d', 0),
-('banneravailable', NULL, NULL, NULL, 'marjolaine42@hotmail.com', '9c80d885bcf55293e8b999ea404ff2b2', 0),
-('befittinggeorgian', 'THANH HẰNG', 'ĐÀ NẴNG', '0923923921', 'ena.brekke8@gmail.com', '4297f44b13955235245b2497399d7a93', 0),
-('blaringchest', NULL, NULL, NULL, 'bo.larson@hotmail.com', 'c4c11f39e198267cf66289ca58f75036', 0),
-('blockbid', NULL, NULL, NULL, 'gwen.kertzmann@gmail.com', '25b722aa084517be6573456e457ac357', 0),
-('bondmenorah', NULL, NULL, NULL, 'margarita.gusikowski@gmail.com', '2bd3542420443bd39802a6c4745feb24', 0),
-('bonemealplural', NULL, NULL, NULL, 'pattie87@yahoo.com', '2f66aee216e67831066eadc473bbd340', 0),
-('capableliving', NULL, NULL, NULL, 'bo.cummerata@yahoo.com', '3faf05d2051cbbafaec8dd0c5250e608', 0),
-('couragepointed', NULL, NULL, NULL, 'mabel24@gmail.com', '09a18a90422c9793ea2418933a1b7f5e', 0),
-('dewickiranian', NULL, NULL, NULL, 'germaine_armstrong50@gmail.com', '3ef5b980b37c5751308e429ee12168bd', 0),
-('dextrousdim', NULL, NULL, NULL, 'johan_reichel24@yahoo.com', '2dd27385059cf459b6269320b72d48ce', 0),
-('discussionjoin', NULL, NULL, NULL, 'armani95@gmail.com', '6757db1a0a0b69ac17e9900bb18bc995', 0),
-('dopeychilis', NULL, NULL, NULL, 'pierce.fay46@hotmail.com', '9e7398fa314dfbb8bcb20490fbbbe46d', 0),
-('dreadfulroar', NULL, NULL, NULL, 'saul_lubowitz99@hotmail.com', '2cab535130190f28ce5e9d380de2c30f', 0),
-('drunkardscreeching', NULL, NULL, NULL, 'natasha12@yahoo.com', 'f56d3fe603775b4acf03b2a87437bfe1', 0),
-('economicstriumph', NULL, NULL, NULL, 'donato.mayer86@yahoo.com', '98217d30b464ab095ac6c230fa1b06a1', 0),
-('explorepay', NULL, NULL, NULL, 'keenan_collier@gmail.com', '14d4bea6b33c7bb80bb42c161633c85e', 0),
-('eyeballsresonant', NULL, NULL, NULL, 'deshawn.rippin23@hotmail.com', 'c98de65a904777d4ef892593bb34d8eb', 0),
-('forestperiod', NULL, NULL, NULL, 'alfonzo_price81@hotmail.com', '5d1003da0a7625e110b82bbb7db82148', 0),
-('fussytarget', NULL, NULL, NULL, 'eddie79@yahoo.com', '64fdd9f13e021d1f5a07e9162933624e', 0),
-('grandwhiteness', NULL, NULL, NULL, 'ward9@yahoo.com', '4d72bac0c7c007c23772ed8c907132a5', 0),
-('greatguard', NULL, NULL, NULL, 'carolina.schultz60@gmail.com', '1b2a93af085b2ea6cf6a437f55ef510b', 0),
-('guardsmangently', NULL, NULL, NULL, 'brennan63@yahoo.com', '4ec2dee1dccd30e9715451a74c11c47f', 0),
-('habitcocktail', NULL, NULL, NULL, 'serena_leffler@gmail.com', '9a126c56bf636e1e2c43b475c1f3586b', 0),
-('heardoptimistic', NULL, NULL, NULL, 'waldo95@hotmail.com', '8a2ed788e464bd2fb38c5ea80878c3d0', 0),
-('holygarden', NULL, NULL, NULL, 'dan_balistreri@hotmail.com', '06339ba785761735001aee34a9e3f2fc', 0),
-('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', 0),
-('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', 0),
-('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', 0),
-('longtermplayoffs', 'PHẠM THỊ HẰNG', 'QUANG BINH', '0904349823', 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', 0),
-('lql', NULL, NULL, NULL, 'lequanglong12102k2@gmail.com', '93279e3308bdbbeed946fc965017f67a', 1),
-('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', 0),
-('motorwayscold', NULL, NULL, NULL, 'mariah77@gmail.com', 'cddf86a9055a2e2168733a07ef284cb6', 0),
-('obeysamoan', NULL, NULL, NULL, 'billy.labadie51@hotmail.com', '0169ad0e211c01528d9384235bc255a3', 0),
-('procedureraise', NULL, NULL, NULL, 'brennan.heathcote@yahoo.com', 'cb936b342fcf543799254520b9d13515', 0),
-('repelreprimand', NULL, NULL, NULL, 'leola_crooks93@hotmail.com', '76b30526c3489faf93241895c44a45c7', 0),
-('seedslaboratory', NULL, NULL, NULL, 'chloe.abernathy38@hotmail.com', 'daaa77b0b6ce16e7f954184dd1e2efb4', 0),
-('servantguideline', NULL, NULL, NULL, 'ludie43@hotmail.com', '09a52241d85074f867c5623d1c8b1de7', 0),
-('skiingstake', NULL, NULL, NULL, 'kimberly30@yahoo.com', '018f73cacecce78c4fddbddc14c9b266', 0),
-('skitonto', NULL, NULL, NULL, 'estel.stracke@gmail.com', '531f7c8dd1df31fdc64e4a32422b3510', 0),
-('skiverheavenly', NULL, NULL, NULL, 'daphne_hamill94@yahoo.com', 'f778987ad999b81ff931362301662119', 0),
-('sniffpentathlon', NULL, NULL, NULL, 'josh_hartmann40@yahoo.com', '5b0cbf4ca9d22505836df5c19d2bfe02', 0),
-('spoonbillhaircut', NULL, NULL, NULL, 'sarai_stanton35@yahoo.com', '32cce78caa6d507eace80d7feb4bb361', 0),
-('stipulaterowdy', NULL, NULL, NULL, 'marisol.breitenberg@yahoo.com', '2bc6b16f72e6279084c9a28917e84cec', 0),
-('surfingincreasing', NULL, NULL, NULL, 'marco_goyette@gmail.com', '15bb356fd669aa642294e65c7ab9bead', 0),
-('troupewinged', NULL, NULL, NULL, 'katarina_kiehn@yahoo.com', '936dee9afed931d02f4e39dcbe10b0c9', 0),
-('worrymost', NULL, NULL, NULL, 'kris_sanford89@yahoo.com', '62d532152864c3331a2da336056a7310', 0);
+INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`, `email`, `matkhau`, `ngaythamgia`, `quyen`) VALUES
+('abaftdon’t', NULL, NULL, NULL, 'roma61@hotmail.com', '5280e11f2452aac5aa85177aaf4b3b98', '2021-11-06', 0),
+('arcanaabounding', 'LE QUANG LONG', 'QUANG BINH', '0904349823', 'marisol39@hotmail.com', '4297f44b13955235245b2497399d7a93', '2021-11-06', 0),
+('arousedrecruit', NULL, NULL, NULL, 'salma87@hotmail.com', 'a794275722896cac20ecdd29928a3b9d', '2021-11-06', 0),
+('banneravailable', NULL, NULL, NULL, 'marjolaine42@hotmail.com', '9c80d885bcf55293e8b999ea404ff2b2', '2021-11-06', 0),
+('befittinggeorgian', 'THANH HẰNG', 'ĐÀ NẴNG', '0923923921', 'ena.brekke8@gmail.com', '4297f44b13955235245b2497399d7a93', '2021-11-06', 0),
+('blaringchest', NULL, NULL, NULL, 'bo.larson@hotmail.com', 'c4c11f39e198267cf66289ca58f75036', '2021-11-06', 0),
+('blockbid', NULL, NULL, NULL, 'gwen.kertzmann@gmail.com', '25b722aa084517be6573456e457ac357', '2021-11-06', 0),
+('bondmenorah', NULL, NULL, NULL, 'margarita.gusikowski@gmail.com', '2bd3542420443bd39802a6c4745feb24', '2021-11-06', 0),
+('bonemealplural', NULL, NULL, NULL, 'pattie87@yahoo.com', '2f66aee216e67831066eadc473bbd340', '2021-11-06', 0),
+('capableliving', NULL, NULL, NULL, 'bo.cummerata@yahoo.com', '3faf05d2051cbbafaec8dd0c5250e608', '2021-11-06', 0),
+('couragepointed', NULL, NULL, NULL, 'mabel24@gmail.com', '09a18a90422c9793ea2418933a1b7f5e', '2021-11-06', 0),
+('dewickiranian', NULL, NULL, NULL, 'germaine_armstrong50@gmail.com', '3ef5b980b37c5751308e429ee12168bd', '2021-11-06', 0),
+('dextrousdim', NULL, NULL, NULL, 'johan_reichel24@yahoo.com', '2dd27385059cf459b6269320b72d48ce', '2021-11-06', 0),
+('discussionjoin', NULL, NULL, NULL, 'armani95@gmail.com', '6757db1a0a0b69ac17e9900bb18bc995', '2021-11-06', 0),
+('dopeychilis', NULL, NULL, NULL, 'pierce.fay46@hotmail.com', '9e7398fa314dfbb8bcb20490fbbbe46d', '2021-11-06', 0),
+('dreadfulroar', NULL, NULL, NULL, 'saul_lubowitz99@hotmail.com', '2cab535130190f28ce5e9d380de2c30f', '2021-11-06', 0),
+('drunkardscreeching', NULL, NULL, NULL, 'natasha12@yahoo.com', 'f56d3fe603775b4acf03b2a87437bfe1', '2021-11-06', 0),
+('economicstriumph', NULL, NULL, NULL, 'donato.mayer86@yahoo.com', '98217d30b464ab095ac6c230fa1b06a1', '2021-11-06', 0),
+('explorepay', NULL, NULL, NULL, 'keenan_collier@gmail.com', '14d4bea6b33c7bb80bb42c161633c85e', '2021-11-06', 0),
+('eyeballsresonant', NULL, NULL, NULL, 'deshawn.rippin23@hotmail.com', 'c98de65a904777d4ef892593bb34d8eb', '2021-11-06', 0),
+('forestperiod', NULL, NULL, NULL, 'alfonzo_price81@hotmail.com', '5d1003da0a7625e110b82bbb7db82148', '2021-11-06', 0),
+('fussytarget', NULL, NULL, NULL, 'eddie79@yahoo.com', '64fdd9f13e021d1f5a07e9162933624e', '2021-11-06', 0),
+('grandwhiteness', NULL, NULL, NULL, 'ward9@yahoo.com', '4d72bac0c7c007c23772ed8c907132a5', '2021-11-06', 0),
+('greatguard', NULL, NULL, NULL, 'carolina.schultz60@gmail.com', '1b2a93af085b2ea6cf6a437f55ef510b', '2021-11-06', 0),
+('guardsmangently', NULL, NULL, NULL, 'brennan63@yahoo.com', '4ec2dee1dccd30e9715451a74c11c47f', '2021-11-06', 0),
+('habitcocktail', NULL, NULL, NULL, 'serena_leffler@gmail.com', '9a126c56bf636e1e2c43b475c1f3586b', '2021-11-06', 0),
+('heardoptimistic', NULL, NULL, NULL, 'waldo95@hotmail.com', '8a2ed788e464bd2fb38c5ea80878c3d0', '2021-11-06', 0),
+('holygarden', NULL, NULL, NULL, 'dan_balistreri@hotmail.com', '06339ba785761735001aee34a9e3f2fc', '2021-11-06', 0),
+('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', '2021-11-06', 0),
+('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', '2021-11-06', 0),
+('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', '2021-11-06', 0),
+('longtermplayoffs', 'PHẠM THỊ HẰNG', 'QUANG BINH', '0904349823', 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', '2021-11-06', 0),
+('lql', NULL, NULL, NULL, 'lequanglong12102k2@gmail.com', '93279e3308bdbbeed946fc965017f67a', '2021-11-06', 1),
+('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', '2021-11-06', 0),
+('motorwayscold', NULL, NULL, NULL, 'mariah77@gmail.com', 'cddf86a9055a2e2168733a07ef284cb6', '2021-11-06', 0),
+('obeysamoan', NULL, NULL, NULL, 'billy.labadie51@hotmail.com', '0169ad0e211c01528d9384235bc255a3', '2021-11-06', 0),
+('procedureraise', NULL, NULL, NULL, 'brennan.heathcote@yahoo.com', 'cb936b342fcf543799254520b9d13515', '2021-11-06', 0),
+('repelreprimand', NULL, NULL, NULL, 'leola_crooks93@hotmail.com', '76b30526c3489faf93241895c44a45c7', '2021-11-06', 0),
+('seedslaboratory', NULL, NULL, NULL, 'chloe.abernathy38@hotmail.com', 'daaa77b0b6ce16e7f954184dd1e2efb4', '2021-11-06', 0),
+('servantguideline', NULL, NULL, NULL, 'ludie43@hotmail.com', '09a52241d85074f867c5623d1c8b1de7', '2021-11-06', 0),
+('skiingstake', NULL, NULL, NULL, 'kimberly30@yahoo.com', '018f73cacecce78c4fddbddc14c9b266', '2021-11-06', 0),
+('skitonto', NULL, NULL, NULL, 'estel.stracke@gmail.com', '531f7c8dd1df31fdc64e4a32422b3510', '2021-11-06', 0),
+('skiverheavenly', NULL, NULL, NULL, 'daphne_hamill94@yahoo.com', 'f778987ad999b81ff931362301662119', '2021-11-06', 0),
+('sniffpentathlon', NULL, NULL, NULL, 'josh_hartmann40@yahoo.com', '5b0cbf4ca9d22505836df5c19d2bfe02', '2021-11-06', 0),
+('spoonbillhaircut', NULL, NULL, NULL, 'sarai_stanton35@yahoo.com', '32cce78caa6d507eace80d7feb4bb361', '2021-11-06', 0),
+('stipulaterowdy', NULL, NULL, NULL, 'marisol.breitenberg@yahoo.com', '2bc6b16f72e6279084c9a28917e84cec', '2021-11-06', 0),
+('surfingincreasing', NULL, NULL, NULL, 'marco_goyette@gmail.com', '15bb356fd669aa642294e65c7ab9bead', '2021-11-06', 0),
+('troupewinged', NULL, NULL, NULL, 'katarina_kiehn@yahoo.com', '936dee9afed931d02f4e39dcbe10b0c9', '2021-11-06', 0),
+('worrymost', NULL, NULL, NULL, 'kris_sanford89@yahoo.com', '62d532152864c3331a2da336056a7310', '2021-11-06', 0);
 
 -- --------------------------------------------------------
 
@@ -318,22 +317,22 @@ CREATE TABLE `sanpham` (
 
 INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`, `linkduongdananh`, `hangsx`, `dunglamslider`, `soluongsp`, `ngaynhap`) VALUES
 (1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 99, '2021-11-02'),
-(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 71, '2021-10-01'),
-(3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 99, '2021-10-01'),
-(4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 99, '2021-10-01'),
+(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 73, '2021-10-01'),
+(3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 101, '2021-10-01'),
+(4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 100, '2021-10-01'),
 (5, 'eufy Smart Lock Touch with Wifi Bridge – Khóa cửa vân tay, chống nước IP65', '5990000.00', 'khoacuathongminh', 'Khóa cửa thông minh eufy Smart Lock Touch – cảm biến vân tay siêu nhạy, mở khóa trong 0.3 giây Tự động khóa khi phát hiện cửa đang đóng Ứng dụng quản lý giao diện Tiếng Việt Đạt chứng nhận BHMA, bền bỉ với tuổi thọ lên tới 70 năm Có 5 cách mở khóa: Nhận diện vây tay, nhập mật mã, mở bằng chìa thông thường, sử dụng app Eufy Security và mở khóa bằng giọng nói Thiết bị có thể hoạt động trong thời tiết khắc nghiệt với chống nước IP65 Tích hợp cảm biến đóng/mở, chốt khóa điện tử kết nối Bluetooth Điều khiển từ xa với Wifi Bridge', 'https://gucongnghe.com/wp-content/uploads/2020/08/eufy-smart-lock-touch-with-bridge-1-247x296.jpg', 'eufy ', 0, 99, '2021-10-01'),
 (6, 'Khóa cửa thông minh Wyze Lock, tự động khóa – mở cửa từ xa', '2690000.00', 'khoacuathongminh', 'Khóa cửa thông minh Wyze Lock, kết nối WiFi, Bluetooth và Zigbee Sử dụng 4 viên pin tiểu AA cho thời gian sử dụng 5 – 6 tháng Khóa và mở khóa từ xa qua ứng dụng Wyze Tự động mở khóa khi bạn đến gần. Tự động khóa khi cửa được đóng. Dễ dàng lắp đặt trong vòng 15 phút Chia sẻ quyền sử dụng khóa với người khác từ xa Ra lệnh bằng giọng nói với Amazon Alexa, Google Assistant sẽ sớm được hỗ trợ', 'https://gucongnghe.com/wp-content/uploads/2020/05/khoa-thong-minh-Wyze-Lock-247x296.jpg', 'Wyze Lock', 0, 99, '2021-10-01'),
 (7, 'Khóa cửa thông minh August Smart Lock Pro + Connect, kết nối Wifi, khóa & mở từ xa', '4250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock Pro và Hub trung tâm Connect, thế hệ thứ 3 mới nhất. Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa. Hỗ trợ Samsung SmartThings. Tương thích Apple HomeKit, mở khoá bằng iPhone, Apple Watch.', 'https://gucongnghe.com/wp-content/uploads/2019/02/Khoa-cua-thong-minh-August-Smart-Lock-Pro-Connect-247x296.jpg', 'August', 0, 99, '2021-10-01'),
 (8, 'August Smart Keypad', '1790000.00', 'khoacuathongminh', 'Đóng mở cửa an toàn với mã bảo mật Tạo mã riêng biệt cho mỗi lần mở cửa dễ dàng ngay trên ứng dụng điện thoại Cách mở cửa hoàn hảo cho trẻ em hoặc nhà có khách Mã mở khóa cửa riêng cho mỗi người Khóa cửa nhanh chóng chỉ với một lần nhấn Dùng pin AAA, cài đặt và sử dụng dễ dàng.', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Smart-Keypad-gioi-thieu-247x296.jpg', 'August', 0, 98, '2021-10-01'),
 (9, 'ECOVACS DEEBOT DJ35 robot hút bụi lau nhà', '4000000.00', 'mayhutbui', 'Tiếp nối sự thành công của T8 aivi plus hãng vừa cho ra mắt Ecovacs Deebot T9 aivi. Đây là robot đầu tiên trên thế giới được trang bị thêm tính năng lọc không khí và tỏa hương nước hoa. Hãy cùng Novadigital tìm hiểu về siêu phẩm mới ra mắt này nhé.', 'https://grobot.vn/wp-content/uploads/2019/01/dj35c2-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (10, 'Ecovacs Deebot DN320 (OZMO 900) Robot hút bụi lau nhà', '4800000.00', 'mayhutbui', 'Giống như các phiên bản trước Ecovacs Deebot T9 aivi sở hữu một thiết kế hình tròn đặt trưng. Với màu đen sang trọng, tinh tế. Chiều cao 9.3cm giúp robot có khả năng vượt chướng ngại vật lên tới 2cm.', 'https://grobot.vn/wp-content/uploads/2019/01/dn320c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
-(11, 'ECOVACS DEEBOT DN520 Robot hút bụi', '5700000.00', 'mayhutbui', 'Kế thừa công nghệ điều hướng của các dòng T8, T9 aivi có thể nhận biết những vật cản nhỏ 1mm. Độ nhạy bén cao gấp 10 lần so với phiên bản trước nhờ được trang bị hệ thống True Detect 3D thông minh. Trong quá trình làm sạch Robot T9 AIVI có thể phát hiện ra vật cản, mép tường, …  tự động né tránh và thay đổi đường đi nhờ bộ cảm biến SLAM thông minh.', 'https://grobot.vn/wp-content/uploads/2020/09/dn520c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
+(11, 'ECOVACS DEEBOT DN520 Robot hút bụi', '5700000.00', 'mayhutbui', 'Kế thừa công nghệ điều hướng của các dòng T8, T9 aivi có thể nhận biết những vật cản nhỏ 1mm. Độ nhạy bén cao gấp 10 lần so với phiên bản trước nhờ được trang bị hệ thống True Detect 3D thông minh. Trong quá trình làm sạch Robot T9 AIVI có thể phát hiện ra vật cản, mép tường, …  tự động né tránh và thay đổi đường đi nhờ bộ cảm biến SLAM thông minh.', 'https://grobot.vn/wp-content/uploads/2020/09/dn520c-300x457.jpg', 'ECOVACS', 0, 100, '2021-10-01'),
 (12, 'Robot hút bụi  Ecovacs Deebot T8', '8790000.00', 'mayhutbui', 'Ecovacs Robotics đã công bố bổ sung mới nhất cho dòng robot là:Ecovacs Deebot Ozmo T8 AIVI. Thiết bị thông minh này là một trình dọn dẹp trước có tính năng chipset AI và mô-đun máy ảnh. Theo Ecovacs, công nghệ này giúp T8 AIVI lập bản đồ nhà nhanh hơn và chính xác hơn các máy hút bụi khác sử dụng công nghệ điều hướng LDS. Ecovacs tuyên bố rằng điều này cho phép chân không phát hiện tốt hơn các chướng ngại vật trên đường đi của nó và giảm nguy cơ bị kẹt 60% so với các mô hình trước đó.', 'https://grobot.vn/wp-content/uploads/2019/01/t8c-1-300x457.jpg', 'ECOVACS', 1, 99, '2021-10-01'),
 (13, 'Robot hút bụi Ecovacs DD35 (Ozmo 600)', '4500000.00', 'mayhutbui', 'Nhà là nơi cuối cùng mà mỗi người trong chúng ta trở về sau một ngày làm việc bận rộn. Với những người có quỹ thời gian hạn hẹp, thay vì mất quá nhiều thời gian dọn dẹp thì giờ đây đã có Ecovacs Deebot DD35 lo. Với tích hợp cả 2 chức năng hút và lau đồng thời Ecovacs Deebot DD35 có khả năng đánh bay mọi bụi bẩn trong tíc tắc, mang lại một bầu không khí mới cho ngôi nhà bạn.', 'https://grobot.vn/wp-content/uploads/2019/01/dd35c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (14, 'Robot hút bụi Ecovacs Deebot Dn33 (Ozmo 900)', '6000000.00', 'mayhutbui', 'Hiện nay trên thị trường có rất nhiều sản phẩm robot hút bụi thông minh, một trong số đó không thể không nhắc tới Ecovacs Deebot Dn33  ( tên quốc tế là Ecovacs Deebot 900) đến từ thương hiệu công nghệ toàn cầu Ecovacs Robotics – nằm trong top 3 thương hiệu robot hút bụi lau nhà lớn nhất của thị trường Trung Quốc. Deebot DE55 mới ra mắt vào năm 2018, thiết bị sở hữu công nghệ thông minh của Mỹ và được lắp ráp tại Trung Quốc. ', 'https://grobot.vn/wp-content/uploads/2019/01/dn33c1-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (15, 'Robot hút bụi Ecovacs Deebot Dn55', '6500000.00', 'mayhutbui', 'Công việc dọn nhà hàng ngày tiêu tốn không chỉ thời gian mà công sức mệt nhọc của bạn. Với Robot hút bụi lau nhà thì nỗi lo không còn nữa bởi tất cả hoàn toàn tự động. Khả năng thông minh và hiệu quả làm sạch vượt trội đem lại của Robot luôn đuợc đánh giá cao hơn so với phương pháp dọn nhà thủ công. Bạn thảnh thơi mà nhà cửa vẫn sạch sẽ tinh tươm. Với Robot hút bụi lau nhà Ecovacs Deebot DN55 thời gian cho công việc dọn dẹp nhà cửa sẽ được giải phóng. Bạn có nhiều thời gian cho con cái, gia đình cũng như công việc kiếm tiền. Với mức đầu tư không quá lớn nhưng hiệu quả đem lại có thể tiết kiệm không chỉ thời gian mà còn là tiền bạc của bạn.', 'https://grobot.vn/wp-content/uploads/2020/09/dn55c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (16, 'Robot hút bụi Ecovacs Deebot T5 Hero (Ozmo 950)', '7300000.00', 'mayhutbui', 'Nhắc đến robot hút bụi lau nhà không thể không nhắc đến robot hút bụi lau nhà Ecovacs Deebot thuộc sở hữu của Ecovacs Robotics. Thật không quá khi nói robot lau nhà Ecovacs Deebot là tối ưu nhất và hoàn thiện nhất trong tất cả những dòng robot hút bụi lau nhà trên thị trường hiện nay. Và Robot hút bụi lau nhà Ecovacs Deebot T5 HERO (DX96) hội tụ đầy đủ các tính năng ưu việt đó.', 'https://grobot.vn/wp-content/uploads/2019/01/t5c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
-(23, 'BroadLink RM4 Pro – Trung tâm điều khiển hồng ngoại, vô tuyến thông minh', '660000.00', 'dieuhoathongminh', 'BroadLink RM4 Pro là thiết bị trung tâm điều khiển đa năng mới nhất của BroadLink, sử dụng thay thế cho remote của hàng ngàn thiết bị điện gia dụng trong nhà như TV, điều hòa, quạt, rèm cửa…; hỗ trợ cả sóng hồng ngoại (IR) và vô tuyến (RF).  Điều khiển bẳng giọng nói với trợ lý Google Assisstant, Alexa. Hỗ trợ IFTTT, đặc biệt BroadLink RM4 Pro còn có thể kết hợp cùng cảm biến nhiệt độ BroadLink HTS2 để tạo ngữ cảnh thông minh, tiết kiệm điện năng.', 'https://gucongnghe.com/wp-content/uploads/2020/04/Broadlink-RM4-Pro-247x296.png', 'BroadLink', 0, 99, '2021-10-01'),
+(23, 'BroadLink RM4 Pro – Trung tâm điều khiển hồng ngoại, vô tuyến thông minh', '660000.00', 'dieuhoathongminh', 'BroadLink RM4 Pro là thiết bị trung tâm điều khiển đa năng mới nhất của BroadLink, sử dụng thay thế cho remote của hàng ngàn thiết bị điện gia dụng trong nhà như TV, điều hòa, quạt, rèm cửa…; hỗ trợ cả sóng hồng ngoại (IR) và vô tuyến (RF).  Điều khiển bẳng giọng nói với trợ lý Google Assisstant, Alexa. Hỗ trợ IFTTT, đặc biệt BroadLink RM4 Pro còn có thể kết hợp cùng cảm biến nhiệt độ BroadLink HTS2 để tạo ngữ cảnh thông minh, tiết kiệm điện năng.', 'https://gucongnghe.com/wp-content/uploads/2020/04/Broadlink-RM4-Pro-247x296.png', 'BroadLink', 0, 100, '2021-10-01'),
 (24, 'BroadLink RM4 Mini – Trung tâm điều khiển hồng ngoại mới nhất 2020', '310000.00', 'dieuhoathongminh', 'BroadLink RM4 Mini – Trung tâm điều khiển hồng ngoại nhỏ nhưng có võ. Là phiên bản rút gọn với kích thước nhỏ, RM4 Mini hỗ trợ điều khiển các thiết bị điện gia dụng trong nhà như TV, điều hòa, quạt máy từ xa thông qua điện thoại hoặc lệnh giọng nói cùng trợ lý ảo.  Kết nối Wifi, điều khiển các thiết bị hồng ngoại từ xa thông qua điện thoại Tương thích với hầu hết các thiết bị: máy lạnh, TV, IPTV, quạt, âm thanh, DVD… Hỗ trợ học lệnh từ remote gốc Nhỏ gọn, tiết kiệm chi phí Điều khiển giọng nói với trợ lý Google Assistant, Amazon Alexa Kết hợp với BroadLink HTS2 thêm tính năng cảm biến nhiệt độ, độ ẩm.', 'https://gucongnghe.com/wp-content/uploads/2020/04/broadlink-RM4-mini-247x296.png', 'BroadLink', 0, 99, '2021-10-01'),
 (25, 'Trung tâm điều khiển hồng ngoại Tuya S06 Wifi IR Remote Control', '170000.00', 'dieuhoathongminh', 'Thiết bị điều khiển hồng ngoại Tuya S06 điều khiển tất cả các thiết bị sử dụng remote IR như TV, TV box, DVD, điều hòa, quạt… Kết nối trực tiếp Wifi, điều khiển các thiết bị trong nhà từ xa thông qua ứng dụng Smart Life trên điện thoại. Hỗ trợ học lệnh từ remote gốc. Hỗ trợ Google Assistant, Amazon Alexa, IFTTT. Kết hợp với Google Nest Mini ra lệnh điều khiển thiết bị bằng giọng nói.', 'https://gucongnghe.com/wp-content/uploads/2019/08/Thiet-bi-trung-tam-hong-ngoai-Tuya-S06-247x296.jpg', 'Tuya', 0, 99, '2021-10-01'),
 (26, 'Sensibo Sky – Điều khiển điều hoà thông minh, phản hồi trạng thái 2 chiều', '2490000.00', 'dieuhoathongminh', 'Điều khiển điều hoà thông minh Sensibo Sky, gen 2 mới nhất Tương thích với các loại điều hòa treo tường, điều hòa âm trần, điều hòa tổng sử dụng remote Phản hồi 2 chiều, biết được trạng thái hiện tại của điều hòa, ngay cả khi dùng điều khiển ngoài Tích hợp cảm biến nhiệt độ, độ ẩm tạo ngữ cảnh tự động hóa Lên lịch bật, tắt theo thời gian hoặc khi bạn rời đi/trước khi trở về nhà Hỗ trợ Google Assistant, Amazon Alexa, Siri shortcuts, IFTTT, Samsung SmartThings Điều khiển trực tiếp trên ứng dụng Google Home hoặc Smartphone từ mọi nơi', 'https://gucongnghe.com/wp-content/uploads/2019/09/Sensibo-Sky-247x296.jpg', 'Sensibo ', 1, 99, '2021-10-01'),
@@ -526,7 +525,7 @@ ALTER TABLE `congviec`
 -- AUTO_INCREMENT for table `diachigiaohang`
 --
 ALTER TABLE `diachigiaohang`
-  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `hangsx`
