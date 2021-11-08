@@ -33,3 +33,5 @@
 <!-- Style Custom -->
 <link rel="stylesheet" href="/www/public/css/styleCustom.css">
 
+<link rel="stylesheet" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.min.css">
+
