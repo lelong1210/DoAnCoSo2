@@ -6,5 +6,12 @@ class nhanvien extends controller{
     function show(){
         $this->call_view("nhanVienView");
     }
+    function congviecmoi(){
+        $model = $this->call_model("nhanvienModel");
+        $this->call_view("nhanVienView",[
+            "title"=>"congviecmoi",
+            "nhanVienModel"=>$model
+        ]);
+    }
 }
-?>
+?> 

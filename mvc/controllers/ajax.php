@@ -1,7 +1,7 @@
 <?php
 class ajax extends controller{
     function show(){
-        $ngaynhap = date("Y-m-d h:i:s");
+        $ngaynhap = date("Y-m-d H:i:s");
         echo $ngaynhap; 
     }
     // tai khoan
@@ -228,6 +228,15 @@ class ajax extends controller{
         $masp = $_POST["masp"];
         $model = $this->call_model("productModel");
         echo $model->deleteProduct($masp);
+    }
+    // nhan vien
+    function setCongViec(){
+        $macv = $_POST["macv"];
+        $tendangnhap = $_SESSION["username"];
+        $thoigiannhancongviec = date("Y-m-d H:i:s");
+        $danhancv = 1;
+        $model = $this->call_model("nhanvienModel");
+        echo $model->setCongViec($macv,$tendangnhap,$thoigiannhancongviec,$danhancv);
     }
 }
 ?>

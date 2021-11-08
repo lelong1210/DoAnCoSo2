@@ -41,9 +41,9 @@
             <div id="contetMain">
                 <!-- Start content -->
                 <?php
-                    // if($data["title"] == "xemsanpham"){
-                    //     require_once "pageAdmin/overViewProduct.php";
-                    // }
+                    if($data["title"] == "congviecmoi"){
+                        require_once "pageNhanVien/congviecmoiPage.php";
+                    }
                     // else if($data["title"] == "themsanpham"){
                     //     require_once "pageAdmin/addProductPage.php";
                     // }

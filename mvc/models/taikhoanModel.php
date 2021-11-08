@@ -258,6 +258,23 @@ class taikhoanModel extends connectDB
             return false;
         }
     }
+    // insert Into congviec
+    function insertCongViec($makhachhang,$masp,$soluongld,$diadiemcongviec,$danhancv){
+        $conn = $this->GetConn();
+        $sql = "INSERT INTO congviec(makhachhang, masp, soluongld,diadiemcongviec, danhancv) VALUES (:makhachhang, :masp,:soluongld, :diadiemcongviec, :danhancv)";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":makhachhang", $makhachhang);
+        $query->bindParam(":masp", $masp);
+        $query->bindParam(":soluongld",$soluongld);
+        $query->bindParam(":diadiemcongviec", $diadiemcongviec);
+        $query->bindParam(":danhancv",$danhancv);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }        
+    }
     // thanh toan
     function insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang)
     {
@@ -277,7 +294,7 @@ class taikhoanModel extends connectDB
     function getLastMaHoaDon($tendangnhap)
     {
         $conn = $this->GetConn();
-        $sql = "SELECT mahoadon FROM hoadon 
+        $sql = "SELECT mahoadon,diachigiaohang FROM hoadon 
         WHERE tendangnhap = :tendangnhap
         ORDER BY hoadon.mahoadon DESC 
         LIMIT 1";
@@ -310,14 +327,16 @@ class taikhoanModel extends connectDB
     {
         $result = false;
         if ($this->insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang)) {
-            $mahoadon = json_decode($this->getLastMaHoaDon($tendangnhap));
-            print_r($mahoadon);
-            $mahoadon = array_values((array) $mahoadon[0]);
+            $arrTT = json_decode($this->getLastMaHoaDon($tendangnhap));
+            $arrTT = array_values((array)$arrTT[0]);
+            $mahoadon = $arrTT[0];
+            $diachigiaohang = $arrTT[1];
             for ($i = 0; $i < count($arr); $i++) {
                 $arrChild = array_values((array) $arr[$i]);
-                $result = $this->insertChitietHoaDon($arrChild[1], $arrChild[0], $mahoadon[0]);
+                $result = $this->insertChitietHoaDon($arrChild[1], $arrChild[0], $mahoadon);
                 if ($result) {
                     $magiohang = $_SESSION["username"] . "-gh";
+                    $this->insertCongViec($_SESSION["username"],$arrChild[0],$arrChild[1],$diachigiaohang,0);
                     echo $productModel->deleteInDetailCart($arrChild[0], $magiohang);
                 }
             }
