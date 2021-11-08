@@ -106,6 +106,11 @@
                                 <h3 class="panel-title"><span>4 .</span> <a href="./giohang">Tới Giỏ Hàng</a></h3>
                             </div>
                         </div>
+                        <div class="panel panel-default single-my-account " data-aos="fade-up" data-aos-delay="800">
+                            <div class="panel-heading my-account-title">
+                                <h3 class="panel-title"><span>5 .</span> <a href="./hoadon">Hóa Đơn</a></h3>
+                            </div>
+                        </div>
                         <div class="panel panel-default single-my-account m-0" style="margin-top: 20px;" data-aos="fade-up" data-aos-delay="800">
                             <div class="panel-heading my-account-title">
                                 <h3 class="panel-title"><span>5 .</span> <a href="./thoattaikhoan">Thoát Tài Khoản</a></h3>

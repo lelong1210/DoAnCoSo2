@@ -175,7 +175,13 @@ $(document).ready(function () {
 
         }else if(idThis.startsWith(btnPayLive)){
             if (checkLogin()) {
-                alert("thanh toan truc tiep");
+                const arr = [];
+                var masp = idThis.slice(btnPayLive.length,idThis.length);
+                var text = {"masp":masp,"soluong":1};
+                arr.push(text);
+                if(setProductToPayment(arr)){
+                    location.assign(linkTuyetDoi + "thanhtoan");
+                }
             }
             else {
                 location.replace(linkTuyetDoi + "dndk");
@@ -212,25 +218,14 @@ $(document).ready(function () {
                 var masp = idCheked.slice(chonsp.length, idCheked.length);
                 var soluong = ($("#" + valueOfInput + masp).html());
                 text = { "masp": masp, "soluong": soluong };
-            }
-            if (text.length != 0) {
                 arr.push(text);
             }
         });
         // day du lieu len session 
         if (arr.length > 0) {
-            $.ajax({
-                type: "post",
-                url: linkTuyetDoi + "ajax/getProductToPayment",
-                data: { arr: arr },
-                // dataType: "dataType",
-                success: function (response) {
-                    if (response) {
-                        // chuyen sang trang thanh toan
-                        location.assign(linkTuyetDoi + "thanhtoan");
-                    }
-                }
-            });
+            if(setProductToPayment(arr)){
+                location.assign(linkTuyetDoi + "thanhtoan");
+            }
         } else {
             alert("Bạn Chưa Chọn Sản Phẩm ^_^ !!!");
         }
@@ -890,6 +885,20 @@ $(document).ready(function () {
                 inputDanhgia:inputDanhgia,
                 masp:masp    
             },
+            // dataType: "dataType",
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+    function setProductToPayment(arr){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi + "ajax/setProductToPayment",
+            data: { arr: arr },
             // dataType: "dataType",
             success: function (response) {
                 result = response;

@@ -137,12 +137,13 @@ class ajax extends controller{
         $model = $this->call_model("productModel");
         echo $model->updateSanPham($masp,$soluongsp);
     }
-    function getProductToPayment(){
-        // $masp = 
+    function setProductToPayment(){
         if(isset($_POST["arr"])){
             $arr = $_POST["arr"];
             $_SESSION["thanhtoan"] = $arr; 
             echo true;
+        }else{
+            echo false;
         }
     }
         // thanh toan
