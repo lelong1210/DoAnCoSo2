@@ -2,7 +2,6 @@
 class taikhoan extends controller{
     function show(){
         if(isset($_SESSION["username"]) && isset($_SESSION["quyen"])){
-            echo "j xau".$_SESSION["quyen"];
             if($_SESSION["quyen"]==0){
                 header("Location:./khachhang");
             }
@@ -10,7 +9,7 @@ class taikhoan extends controller{
                 header("Location:./admin");
             }
             if($_SESSION["quyen"]==2){
-               echo "vao nhan vien";
+                header("Location:./nhanvien");
             }
         }else{
             header("Location:./dndk");
