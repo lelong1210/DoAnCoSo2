@@ -16,7 +16,7 @@
     $arr = (json_decode($data["taikhoanModel"]->getBill($_SESSION["username"])));
     if ($arr) {
         $count = count($arr);
-        $arrTitle = ["Tên Người Dùng","Mã Hóa Đơn","Mã Sản Phẩm","Tên Sản Phẩm","Số Lượng","Loại Sản Phẩm","Hình Ảnh","Tổng Tiền"]; ?>
+        $arrTitle = ["Ngày Mua","Mã Hóa Đơn","Mã Sản Phẩm","Tên Sản Phẩm","Số Lượng","Loại Sản Phẩm","Hình Ảnh","Tổng Tiền"]; ?>
         <table class="table text-center">
             <tr>
                 <?php

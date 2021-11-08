@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 07, 2021 at 04:07 PM
+-- Generation Time: Nov 08, 2021 at 11:01 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -42,7 +42,9 @@ INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
 (12, 'longtermplayoffs-gh', 1),
 (6, 'befittinggeorgian-gh', 1),
 (4, 'befittinggeorgian-gh', 1),
-(63, 'befittinggeorgian-gh', 1);
+(63, 'befittinggeorgian-gh', 1),
+(26, 'khachhang-gh', 1),
+(23, 'khachhang-gh', 1);
 
 -- --------------------------------------------------------
 
@@ -78,7 +80,16 @@ INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
 (1, 10, 23),
 (1, 12, 23),
 (1, 9, 24),
-(1, 25, 25);
+(1, 25, 25),
+(1, 29, 26),
+(2, 1, 27),
+(1, 12, 28),
+(1, 12, 29),
+(3, 30, 30),
+(1, 2, 30),
+(2, 4, 31),
+(1, 25, 31),
+(1, 24, 31);
 
 -- --------------------------------------------------------
 
@@ -119,7 +130,8 @@ CREATE TABLE `diachigiaohang` (
 INSERT INTO `diachigiaohang` (`madiachigiaohang`, `tendangnhap`, `tentinh`, `tenhuyen`, `tenxa`, `diachichitiet`) VALUES
 (10, 'arcanaabounding', 'Thành phố Hà Nội', 'Quận Hoàn Kiếm', 'Phường Hàng Mã', 'VKU-123'),
 (11, 'arcanaabounding', 'Tỉnh Hà Giang', 'Huyện Đồng Văn', 'Thị trấn Phó Bảng', 'củ cãi đường'),
-(14, 'befittinggeorgian', 'Tỉnh Lạng Sơn', 'Huyện Chi Lăng', 'Xã Liên Sơn', 'sen sen');
+(14, 'befittinggeorgian', 'Tỉnh Lạng Sơn', 'Huyện Chi Lăng', 'Xã Liên Sơn', 'sen sen'),
+(21, 'khachhang', 'Thành phố Hà Nội', 'Quận Hoàn Kiếm', 'Phường Phúc Tân', 'bắc ninh 123');
 
 -- --------------------------------------------------------
 
@@ -139,6 +151,7 @@ CREATE TABLE `giohang` (
 INSERT INTO `giohang` (`magiohang`, `tendangnhap`) VALUES
 ('arcanaabounding-gh', 'arcanaabounding'),
 ('befittinggeorgian-gh', 'befittinggeorgian'),
+('khachhang-gh', 'khachhang'),
 ('longtermplayoffs-gh', 'longtermplayoffs');
 
 -- --------------------------------------------------------
@@ -205,7 +218,13 @@ INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`) VA
 (22, 'arcanaabounding', '2021-10-28', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Hàng Mã - VKU-123'),
 (23, 'arcanaabounding', '2021-10-29', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Hàng Mã - VKU-123'),
 (24, 'arcanaabounding', '2021-10-29', 'Tỉnh Hà Giang - Huyện Đồng Văn - Thị trấn Phó Bảng - củ cãi đường'),
-(25, 'arcanaabounding', '2021-10-29', 'Tỉnh Hà Giang - Huyện Đồng Văn - Thị trấn Phó Bảng - củ cãi đường');
+(25, 'arcanaabounding', '2021-10-29', 'Tỉnh Hà Giang - Huyện Đồng Văn - Thị trấn Phó Bảng - củ cãi đường'),
+(26, 'khachhang', '2021-11-07', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Phúc Tân - bắc ninh 123'),
+(27, 'khachhang', '2021-11-08', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Phúc Tân - bắc ninh 123'),
+(28, 'khachhang', '2021-11-08', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Phúc Tân - bắc ninh 123'),
+(29, 'khachhang', '2021-11-08', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Phúc Tân - bắc ninh 123'),
+(30, 'khachhang', '2021-11-08', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Phúc Tân - bắc ninh 123'),
+(31, 'khachhang', '2021-11-08', 'Thành phố Hà Nội - Quận Hoàn Kiếm - Phường Phúc Tân - bắc ninh 123');
 
 -- --------------------------------------------------------
 
@@ -273,6 +292,7 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', '2021-11-06', 0),
 ('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', '2021-11-06', 0),
 ('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', '2021-11-06', 0),
+('khachhang', 'LÊ QUANG LONG', 'SEN THỦY', '0921912921', 'lql@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-07', 0),
 ('longtermplayoffs', 'PHẠM THỊ HẰNG', 'QUANG BINH', '0904349823', 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', '2021-11-06', 0),
 ('lql', NULL, NULL, NULL, 'lequanglong12102k2@gmail.com', '93279e3308bdbbeed946fc965017f67a', '2021-11-06', 1),
 ('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', '2021-11-06', 0),
@@ -316,10 +336,10 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`, `linkduongdananh`, `hangsx`, `dunglamslider`, `soluongsp`, `ngaynhap`) VALUES
-(1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 99, '2021-11-02'),
+(1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 99, '2021-11-08'),
 (2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 73, '2021-10-01'),
 (3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 101, '2021-10-01'),
-(4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 100, '2021-10-01'),
+(4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 101, '2021-10-01'),
 (5, 'eufy Smart Lock Touch with Wifi Bridge – Khóa cửa vân tay, chống nước IP65', '5990000.00', 'khoacuathongminh', 'Khóa cửa thông minh eufy Smart Lock Touch – cảm biến vân tay siêu nhạy, mở khóa trong 0.3 giây Tự động khóa khi phát hiện cửa đang đóng Ứng dụng quản lý giao diện Tiếng Việt Đạt chứng nhận BHMA, bền bỉ với tuổi thọ lên tới 70 năm Có 5 cách mở khóa: Nhận diện vây tay, nhập mật mã, mở bằng chìa thông thường, sử dụng app Eufy Security và mở khóa bằng giọng nói Thiết bị có thể hoạt động trong thời tiết khắc nghiệt với chống nước IP65 Tích hợp cảm biến đóng/mở, chốt khóa điện tử kết nối Bluetooth Điều khiển từ xa với Wifi Bridge', 'https://gucongnghe.com/wp-content/uploads/2020/08/eufy-smart-lock-touch-with-bridge-1-247x296.jpg', 'eufy ', 0, 99, '2021-10-01'),
 (6, 'Khóa cửa thông minh Wyze Lock, tự động khóa – mở cửa từ xa', '2690000.00', 'khoacuathongminh', 'Khóa cửa thông minh Wyze Lock, kết nối WiFi, Bluetooth và Zigbee Sử dụng 4 viên pin tiểu AA cho thời gian sử dụng 5 – 6 tháng Khóa và mở khóa từ xa qua ứng dụng Wyze Tự động mở khóa khi bạn đến gần. Tự động khóa khi cửa được đóng. Dễ dàng lắp đặt trong vòng 15 phút Chia sẻ quyền sử dụng khóa với người khác từ xa Ra lệnh bằng giọng nói với Amazon Alexa, Google Assistant sẽ sớm được hỗ trợ', 'https://gucongnghe.com/wp-content/uploads/2020/05/khoa-thong-minh-Wyze-Lock-247x296.jpg', 'Wyze Lock', 0, 99, '2021-10-01'),
 (7, 'Khóa cửa thông minh August Smart Lock Pro + Connect, kết nối Wifi, khóa & mở từ xa', '4250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock Pro và Hub trung tâm Connect, thế hệ thứ 3 mới nhất. Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa. Hỗ trợ Samsung SmartThings. Tương thích Apple HomeKit, mở khoá bằng iPhone, Apple Watch.', 'https://gucongnghe.com/wp-content/uploads/2019/02/Khoa-cua-thong-minh-August-Smart-Lock-Pro-Connect-247x296.jpg', 'August', 0, 99, '2021-10-01'),
@@ -327,7 +347,7 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 (9, 'ECOVACS DEEBOT DJ35 robot hút bụi lau nhà', '4000000.00', 'mayhutbui', 'Tiếp nối sự thành công của T8 aivi plus hãng vừa cho ra mắt Ecovacs Deebot T9 aivi. Đây là robot đầu tiên trên thế giới được trang bị thêm tính năng lọc không khí và tỏa hương nước hoa. Hãy cùng Novadigital tìm hiểu về siêu phẩm mới ra mắt này nhé.', 'https://grobot.vn/wp-content/uploads/2019/01/dj35c2-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (10, 'Ecovacs Deebot DN320 (OZMO 900) Robot hút bụi lau nhà', '4800000.00', 'mayhutbui', 'Giống như các phiên bản trước Ecovacs Deebot T9 aivi sở hữu một thiết kế hình tròn đặt trưng. Với màu đen sang trọng, tinh tế. Chiều cao 9.3cm giúp robot có khả năng vượt chướng ngại vật lên tới 2cm.', 'https://grobot.vn/wp-content/uploads/2019/01/dn320c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (11, 'ECOVACS DEEBOT DN520 Robot hút bụi', '5700000.00', 'mayhutbui', 'Kế thừa công nghệ điều hướng của các dòng T8, T9 aivi có thể nhận biết những vật cản nhỏ 1mm. Độ nhạy bén cao gấp 10 lần so với phiên bản trước nhờ được trang bị hệ thống True Detect 3D thông minh. Trong quá trình làm sạch Robot T9 AIVI có thể phát hiện ra vật cản, mép tường, …  tự động né tránh và thay đổi đường đi nhờ bộ cảm biến SLAM thông minh.', 'https://grobot.vn/wp-content/uploads/2020/09/dn520c-300x457.jpg', 'ECOVACS', 0, 100, '2021-10-01'),
-(12, 'Robot hút bụi  Ecovacs Deebot T8', '8790000.00', 'mayhutbui', 'Ecovacs Robotics đã công bố bổ sung mới nhất cho dòng robot là:Ecovacs Deebot Ozmo T8 AIVI. Thiết bị thông minh này là một trình dọn dẹp trước có tính năng chipset AI và mô-đun máy ảnh. Theo Ecovacs, công nghệ này giúp T8 AIVI lập bản đồ nhà nhanh hơn và chính xác hơn các máy hút bụi khác sử dụng công nghệ điều hướng LDS. Ecovacs tuyên bố rằng điều này cho phép chân không phát hiện tốt hơn các chướng ngại vật trên đường đi của nó và giảm nguy cơ bị kẹt 60% so với các mô hình trước đó.', 'https://grobot.vn/wp-content/uploads/2019/01/t8c-1-300x457.jpg', 'ECOVACS', 1, 99, '2021-10-01'),
+(12, 'Robot hút bụi  Ecovacs Deebot T8', '8790000.00', 'mayhutbui', 'Ecovacs Robotics đã công bố bổ sung mới nhất cho dòng robot là:Ecovacs Deebot Ozmo T8 AIVI. Thiết bị thông minh này là một trình dọn dẹp trước có tính năng chipset AI và mô-đun máy ảnh. Theo Ecovacs, công nghệ này giúp T8 AIVI lập bản đồ nhà nhanh hơn và chính xác hơn các máy hút bụi khác sử dụng công nghệ điều hướng LDS. Ecovacs tuyên bố rằng điều này cho phép chân không phát hiện tốt hơn các chướng ngại vật trên đường đi của nó và giảm nguy cơ bị kẹt 60% so với các mô hình trước đó.', 'https://grobot.vn/wp-content/uploads/2019/01/t8c-1-300x457.jpg', 'ECOVACS', 1, 94, '2021-10-01'),
 (13, 'Robot hút bụi Ecovacs DD35 (Ozmo 600)', '4500000.00', 'mayhutbui', 'Nhà là nơi cuối cùng mà mỗi người trong chúng ta trở về sau một ngày làm việc bận rộn. Với những người có quỹ thời gian hạn hẹp, thay vì mất quá nhiều thời gian dọn dẹp thì giờ đây đã có Ecovacs Deebot DD35 lo. Với tích hợp cả 2 chức năng hút và lau đồng thời Ecovacs Deebot DD35 có khả năng đánh bay mọi bụi bẩn trong tíc tắc, mang lại một bầu không khí mới cho ngôi nhà bạn.', 'https://grobot.vn/wp-content/uploads/2019/01/dd35c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (14, 'Robot hút bụi Ecovacs Deebot Dn33 (Ozmo 900)', '6000000.00', 'mayhutbui', 'Hiện nay trên thị trường có rất nhiều sản phẩm robot hút bụi thông minh, một trong số đó không thể không nhắc tới Ecovacs Deebot Dn33  ( tên quốc tế là Ecovacs Deebot 900) đến từ thương hiệu công nghệ toàn cầu Ecovacs Robotics – nằm trong top 3 thương hiệu robot hút bụi lau nhà lớn nhất của thị trường Trung Quốc. Deebot DE55 mới ra mắt vào năm 2018, thiết bị sở hữu công nghệ thông minh của Mỹ và được lắp ráp tại Trung Quốc. ', 'https://grobot.vn/wp-content/uploads/2019/01/dn33c1-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (15, 'Robot hút bụi Ecovacs Deebot Dn55', '6500000.00', 'mayhutbui', 'Công việc dọn nhà hàng ngày tiêu tốn không chỉ thời gian mà công sức mệt nhọc của bạn. Với Robot hút bụi lau nhà thì nỗi lo không còn nữa bởi tất cả hoàn toàn tự động. Khả năng thông minh và hiệu quả làm sạch vượt trội đem lại của Robot luôn đuợc đánh giá cao hơn so với phương pháp dọn nhà thủ công. Bạn thảnh thơi mà nhà cửa vẫn sạch sẽ tinh tươm. Với Robot hút bụi lau nhà Ecovacs Deebot DN55 thời gian cho công việc dọn dẹp nhà cửa sẽ được giải phóng. Bạn có nhiều thời gian cho con cái, gia đình cũng như công việc kiếm tiền. Với mức đầu tư không quá lớn nhưng hiệu quả đem lại có thể tiết kiệm không chỉ thời gian mà còn là tiền bạc của bạn.', 'https://grobot.vn/wp-content/uploads/2020/09/dn55c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
@@ -339,7 +359,7 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 (27, 'Google Nest Thermostat E, điều khiển điều hòa âm trần thông minh', '3990000.00', 'dieuhoathongminh', 'Google Nest Thermostat E, điều khiển điều hòa thông minh, tiết kiệm năng lượng. Điều khiển điều hòa âm trần, điều hòa tổng từ xa thông qua ứng dụng Nest. Tự học thói quen điều chỉnh nhiệt độ từ người dùng. Ngữ cảnh thông minh, bật điều hòa khi bạn trở về, tắt khi ra khỏi nhà. 6 dây kết nối, tương thích tới 85% hệ thống điều hòa 24V. Hỗ trợ điều khiển bằng giọng nói với Google Assistant trên loa Google Home Mini. Tương thích cả Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2019/09/Google-Nest-Thermostat-E-247x296.jpg', 'Google', 0, 99, '2021-10-01'),
 (28, 'Sensibo Air – Điều khiển điều hòa thông minh, hỗ trợ Apple HomeKit', '2990000.00', 'dieuhoathongminh', 'Tương thích với các loại điều hòa treo tường, điều hòa âm trần, điều hòa tổng sử dụng remote Phản hồi 2 chiều, cảm biến nhiệt độ và độ ẩm thông minh Điều khiển bật/tắt từ xa, hẹn giờ lên tới 7 ngày Cài đặt dễ dàng, quản lý qua ứng dụng trên thiết bị di động Hỗ trợ Google Assistant, Amazon Alexa, Apple HomeKit, SmartThings, IFTTT, API', 'https://gucongnghe.com/wp-content/uploads/2021/08/Sensibo-Air-2-01-1-247x296.jpg', 'Sensibo', 0, 99, '2021-10-01'),
 (29, 'Tado° Smart AC Control V3+, điều khiển điều hòa thông minh, hỗ trợ HomeKit', '2790000.00', 'dieuhoathongminh', 'Điều khiển điều hoà bằng ứng dụng trên điện thoại với đèn led hiển thị trực quan, sang trọng Có thể điều khiển trực tiếp trên thiết bị Tạo ngữ cảnh thông minh, tự động hóa điều hòa với cảm biến nhiệt độ, độ ẩm tích hợp Hỗ trợ Apple HomeKit, Google Assistant, Amazon Alexa Kết nối Wifi 802.11 b/g/n, 2.4 GHz', 'https://gucongnghe.com/wp-content/uploads/2021/06/tado-smart-ac-control-v3-1-247x296.jpg', 'Tado', 0, 99, '2021-10-01'),
-(30, 'BroadLink BestCon RM4C Mini, Thiết bị điều khiển hồng ngoại thông minh', '210000.00', 'dieuhoathongminh', 'BroadLink BestCon RM4C mini là thiết bị trung tâm điều khiển hồng ngoại đời mới nhất, thay hàng loạt remote hồng ngoại thông thường; giúp điều khiển các thiết bị nhanh chóng thông qua ứng dụng điện thoại hoặc ra lệnh giọng nói với các trợ lý ảo.  Phiên bản giá rẻ, do BestCon (công ty con của BroadLink) sản xuất Kết nối Wifi, điều khiển các thiết bị hồng ngoại từ xa thông qua điện thoại Tương thích với hầu hết các thiết bị: máy lạnh, TV, IPTV, quạt, âm thanh, DVD… Hỗ trợ học lệnh từ remote gốc Nhỏ gọn, tiết kiệm chi phí Điều khiển giọng nói với trợ lý Google Assistant, Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/04/broadlink-bestcon-RM4C-mini-247x296.jpg', 'BroadLink', 0, 99, '2021-10-01'),
+(30, 'BroadLink BestCon RM4C Mini, Thiết bị điều khiển hồng ngoại thông minh', '210000.00', 'dieuhoathongminh', 'BroadLink BestCon RM4C mini là thiết bị trung tâm điều khiển hồng ngoại đời mới nhất, thay hàng loạt remote hồng ngoại thông thường; giúp điều khiển các thiết bị nhanh chóng thông qua ứng dụng điện thoại hoặc ra lệnh giọng nói với các trợ lý ảo.  Phiên bản giá rẻ, do BestCon (công ty con của BroadLink) sản xuất Kết nối Wifi, điều khiển các thiết bị hồng ngoại từ xa thông qua điện thoại Tương thích với hầu hết các thiết bị: máy lạnh, TV, IPTV, quạt, âm thanh, DVD… Hỗ trợ học lệnh từ remote gốc Nhỏ gọn, tiết kiệm chi phí Điều khiển giọng nói với trợ lý Google Assistant, Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/04/broadlink-bestcon-RM4C-mini-247x296.jpg', 'BroadLink', 0, 97, '2021-10-01'),
 (31, 'Đèn LED dây RGB Tuya, dài 5m, 16 triệu màu', '490000.00', 'denthongminh', 'Chiều dài dây 5m, mở rộng được tới 10m Điều khiển đèn từ xa, lên lịch tắt bật, điều chỉnh sáng, tối và thay đổi màu sắc Ứng dụng trong đèn trang trí, đèn hắt trần, sofa, kệ TV.. Tự động điều chỉnh ánh sáng theo nhạc qua ứng dụng hoặc micro tích hợp (trong bộ kèm Remote) Điều khiển giọng nói với Google Assistant, Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/09/Led-day-16-trieu-mau-RGB-Tuya-247x296.jpg', 'Tuya', 0, 99, '2021-10-01'),
 (32, 'Philips Hue GU10 White and Color Ambiance, đèn downlight âm trần 16 triệu màu', '1590000.00', 'denthongminh', 'Kết hợp với chóa đèn GU10 để dùng làm đèn downlight âm trần, chiếu điểm, spotlight Mặt bóng thiết kế đặc biệt chống chói, chống lóa khi nhìn chéo Ánh sáng 16 triệu màu, có thể thay đổi màu sắc, cường độ chiếu sáng Công suất 5.7W tương đương bóng 50W thường, cường độ ánh sáng 350 lumen, nhiệt độ màu 2,000 – 6,500 Kelvin Điều khiển từ xa, lên lịch tắt/bật. Hỗ trợ điều khiển bằng giọng nói với Amazon Alexa và Google Assistant hoặc Apple HomeKit (khi kết nối với Hue Bridge) Đồng bộ ánh sáng theo nhạc với Spotify Giao thức kết nối Bluetooth và Zigbee Chiếu sáng tự động theo hình ảnh trên TV với Philips Hue Play HDMI Sync Box', 'https://gucongnghe.com/wp-content/uploads/2020/09/Philips-Hue-GU10-Color-1-Pack-247x296.jpg', 'Philips', 0, 99, '2021-10-01'),
 (33, 'Thiết bị điều khiển trung tâm Philips Hue Bridge', '1350000.00', 'denthongminh', 'Thiết bị điều khiển trung tâm Philips Hue Bridge. Trái tim của hệ thống Philips Hue, quản lý toàn bộ bóng thông qua ứng dụng Philips Hue từ xa. Tích hợp điều khiển thông qua sóng Zigbee cho tốc đổ xử lý/phản hồi nhanh chóng – ổn định. Điều khiển lên đến 50 bóng đèn thông qua trợ lý ảo Siri, Alexa, Google. Phạm vi hoạt động tối đa 30m.', 'https://gucongnghe.com/wp-content/uploads/2018/12/Philips-Hue-Hub-247x296.jpg', 'Philips', 0, 99, '2021-10-01'),
@@ -399,7 +419,8 @@ INSERT INTO `thongtinnhanxetsanpham` (`manhanxet`, `masp`, `tendangnhap`, `noidu
 (10, 8, 'arcanaabounding', 'sản phẩm dùng rất tốt', 5, '2021-10-28'),
 (11, 7, 'arcanaabounding', 'tuyệt vời', 5, '2021-10-28'),
 (12, 10, 'arcanaabounding', 'sản phẩm dùng rất tốt', 1, '2021-10-29'),
-(13, 25, 'arcanaabounding', 'sản phẩm dùng rất tuyệt', 1, '2021-10-29');
+(13, 25, 'arcanaabounding', 'sản phẩm dùng rất tuyệt', 1, '2021-10-29'),
+(14, 12, 'khachhang', 'dùng rất oke la', 1, '2021-11-08');
 
 -- --------------------------------------------------------
 
@@ -525,7 +546,7 @@ ALTER TABLE `congviec`
 -- AUTO_INCREMENT for table `diachigiaohang`
 --
 ALTER TABLE `diachigiaohang`
-  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `hangsx`
@@ -537,7 +558,7 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `luong`
@@ -555,13 +576,13 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `thongtinnhanxetsanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
-  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
 -- AUTO_INCREMENT for table `thumucsanpham`
 --
 ALTER TABLE `thumucsanpham`
-  MODIFY `mathumuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `mathumuc` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables

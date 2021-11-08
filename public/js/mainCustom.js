@@ -164,7 +164,7 @@ $(document).ready(function () {
                 var soluong = 1
                 if (addProductInCart(masp, soluong)) {
                     alert("Đã Thêm Vào Giỏ Hàng");
-                    updateScreenSoLuongTrongGioHang(getSessionSoLuongTrongGioHang);
+                    updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
                 } else {
                     alert("...");
                 }
@@ -253,6 +253,7 @@ $(document).ready(function () {
             });
             if (tienHanhthanhToan(diachigiaohang, arr)) {
                 alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm");
+                updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
                 location.assign(linkTuyetDoi);
             } else {
                 alert("Thanh Toán Thất Bại");
@@ -715,8 +716,7 @@ $(document).ready(function () {
             if (soluong == 0) {
                 $("#" + "tr" + masp).remove();
                 deleteInDetailCart(masp);
-                updateSessionSoLuongTrongGioHang(0);
-                updateScreenSoLuongTrongGioHang(getSessionSoLuongTrongGioHang());
+                updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
             } else {
                 $("#" + valueOfInput + masp).html(soluong);
                 $("#" + tdOfprieLast + masp).html(parseInt(idPrice) * soluong);
@@ -754,19 +754,20 @@ $(document).ready(function () {
             }
         });
     }
-    function updateSessionSoLuongTrongGioHang(option){
+    function getSoLuongTrongGioHang(){
+        var result = "";
         $.ajax({
             type: "post",
             async: false,
-            url: linkTuyetDoi + "ajax/updateSecSionSoLuongTrongGioHang",
+            url: linkTuyetDoi + "ajax/getSoLuongTrongGioHang",
             data: {
-                option: option
+
             },
             success: function (response) {
-                // alert(response);
-                // alert(response);
+                result = response;
             }
         });        
+        return result;
     }
     function updateScreenSoLuongTrongGioHang(option){
         $("#soluongtronggiohang").html(option);

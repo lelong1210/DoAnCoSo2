@@ -243,7 +243,7 @@ class taikhoanModel extends connectDB
     function getBill($tendangnhap)
     {
         $conn = $this->GetConn();
-        $sql = "SELECT nguoidung.tennguoidung , hoadon.mahoadon, sanpham.masp,sanpham.tensp, chitiethoadon.soluong, sanpham.loaisanpham,sanpham.linkduongdananh , sanpham.giatien
+        $sql = "SELECT hoadon.ngaymua , hoadon.mahoadon, sanpham.masp,sanpham.tensp, chitiethoadon.soluong, sanpham.loaisanpham,sanpham.linkduongdananh , sanpham.giatien
         FROM (((hoadon INNER JOIN nguoidung ON hoadon.tendangnhap = nguoidung.tendangnhap) 
                INNER JOIN chitiethoadon ON hoadon.mahoadon = chitiethoadon.mahoadon) 
                INNER JOIN sanpham ON chitiethoadon.masp = sanpham.masp) 

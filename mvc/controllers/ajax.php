@@ -81,16 +81,10 @@ class ajax extends controller{
         $model = $this->call_model("taikhoanModel");
         echo $model->editAddressShipping($tentinh,$tenhuyen,$tenxa,$diachichitiet,$madiachigiaohang);
     }
-    function updateSecSionSoLuongTrongGioHang(){
-        $option = $_POST["option"];
-        $result = $_SESSION["soluongtronggiohang"];
-        $result = intval($result);
-        if($option == 0){
-            $result = $result - 1;
-        }else{
-            $result = $result + 1;
-        }
-        $_SESSION["soluongtronggiohang"] = $result;
+    function getSoLuongTrongGioHang(){
+        $model = $this->call_model("taikhoanModel");
+        $_SESSION["soluongtronggiohang"] = $model->getSoLuongTrongGioHang($_SESSION["username"]."-gh");
+        echo $_SESSION["soluongtronggiohang"];
     }
     function getSecSionSoLuongTrongGioHang(){
         if(isset($_SESSION["soluongtronggiohang"])){
