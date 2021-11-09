@@ -44,7 +44,6 @@ $(document).ready(function () {
             url: linkTuyetDoi+"ajax/xacNhanXongCongViec",
             data: {macv:macv},
             success: function (response) {
-                alert(response);
                 result = response;
             }
         });

@@ -897,7 +897,6 @@ $(document).ready(function () {
                 sodienthoaigh:sodienthoaigh
             },
             success: function (response) {
-                alert(response);
                 result = response;
             }
         });
