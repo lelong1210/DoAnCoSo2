@@ -32,6 +32,27 @@
                             </div>
                             <div class="your-order-bottom">
                                 <ul>
+                                    <li class="your-order-shipping" >Số Điện Thoại Giao Hàng
+                                            <table>
+                                                <tr>
+                                                    <td><input type="checkbox" style="height: 20px;" class="btn" id="checkedSdt"></td>   
+                                                    <td >
+                                                        <?php
+                                                            $arr1 = json_decode($data["taikhoanModel"]->getSdtGh($_SESSION["username"]));
+                                                            $arr1 = array_values((array)$arr1[0]);
+                                                        ?>
+                                                        <span id="sdtgh"><?php echo $arr1[0]?></span>
+                                                    </td>
+                                                </tr>
+                                            </table>
+                                    </li>
+                                    <li>
+                                        <a href="./taikhoan"><i class="far fa-plus-square"></i></a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="your-order-bottom">
+                                <ul>
                                     <li class="your-order-shipping" >Phí Vận Chuyển</li>
                                     <li><span id="shippingCost"></span> đ</li>
                                 </ul>

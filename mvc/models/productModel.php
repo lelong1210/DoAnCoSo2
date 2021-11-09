@@ -228,8 +228,7 @@ class productModel extends connectDB
             return false;
         }
     }
-    function xulyArr($arr)
-    {
+    function xulyArr($arr){
         $arr = array_values((array)$arr[0]);
         return $arr;
     }
@@ -338,7 +337,7 @@ class productModel extends connectDB
             echo "<table>";
                 echo "<tr>";
                     echo "<td>";
-                        echo "<input type='checkbox' style='height: 20px;' class='btn' id='$arrChild[0]'>";
+                        echo "<input type='checkbox' style='height: 20px;' class='btn' id='cboxgh$arrChild[0]'>";
                     echo "</td>";
                     echo "<td>";
                         echo "<span id='spanOfAddress$arrChild[0]'>$arrChild[2] - $arrChild[3] - $arrChild[4] - $arrChild[5]</span>";

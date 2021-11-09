@@ -259,11 +259,12 @@ class taikhoanModel extends connectDB
         }
     }
     // insert Into congviec
-    function insertCongViec($makhachhang,$masp,$soluongld,$diadiemcongviec,$danhancv){
+    function insertCongViec($makhachhang,$sdtKh,$masp,$soluongld,$diadiemcongviec,$danhancv){
         $conn = $this->GetConn();
-        $sql = "INSERT INTO congviec(makhachhang, masp, soluongld,diadiemcongviec, danhancv) VALUES (:makhachhang, :masp,:soluongld, :diadiemcongviec, :danhancv)";
+        $sql = "INSERT INTO congviec(makhachhang,sdtKh , masp, soluongld,diadiemcongviec, danhancv) VALUES (:makhachhang, :sdtKh ,:masp,:soluongld, :diadiemcongviec, :danhancv)";
         $query = $conn->prepare($sql);
         $query->bindParam(":makhachhang", $makhachhang);
+        $query->bindParam(":sdtKh",$sdtKh);
         $query->bindParam(":masp", $masp);
         $query->bindParam(":soluongld",$soluongld);
         $query->bindParam(":diadiemcongviec", $diadiemcongviec);
@@ -276,14 +277,15 @@ class taikhoanModel extends connectDB
         }        
     }
     // thanh toan
-    function insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang)
+    function insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang,$sodienthoaigh)
     {
         $conn = $this->GetConn();
-        $sql = "INSERT INTO hoadon(tendangnhap,ngaymua,diachigiaohang) VALUES(:tendangnhap,:ngaymua,:diachigiaohang)";
+        $sql = "INSERT INTO hoadon(tendangnhap,ngaymua,diachigiaohang,sodienthoaigh) VALUES(:tendangnhap,:ngaymua,:diachigiaohang,:sodienthoaigh)";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":ngaymua", $ngaymua);
         $query->bindParam(":diachigiaohang", $diachigiaohang);
+        $query->bindParam(":sodienthoaigh",$sodienthoaigh);
         $query->execute();
         if ($query->rowCount() > 0) {
             return true;
@@ -326,7 +328,10 @@ class taikhoanModel extends connectDB
     function thanhtoan($tendangnhap, $ngaymua, $diachigiaohang, $arr, $productModel)
     {
         $result = false;
-        if ($this->insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang)) {
+        $sodienthoaigh = json_decode($this->getSdtGh($_SESSION["username"]));
+        $sodienthoaigh = array_values((array)$sodienthoaigh[0]);
+        $sodienthoaigh = $sodienthoaigh[0];
+        if ($this->insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang,$sodienthoaigh)) {
             $arrTT = json_decode($this->getLastMaHoaDon($tendangnhap));
             $arrTT = array_values((array)$arrTT[0]);
             $mahoadon = $arrTT[0];
@@ -336,7 +341,7 @@ class taikhoanModel extends connectDB
                 $result = $this->insertChitietHoaDon($arrChild[1], $arrChild[0], $mahoadon);
                 if ($result) {
                     $magiohang = $_SESSION["username"] . "-gh";
-                    $this->insertCongViec($_SESSION["username"],$arrChild[0],$arrChild[1],$diachigiaohang,0);
+                    $this->insertCongViec($_SESSION["username"],$sodienthoaigh,$arrChild[0],$arrChild[1],$diachigiaohang,0);
                     echo $productModel->deleteInDetailCart($arrChild[0], $magiohang);
                 }
             }
@@ -344,6 +349,19 @@ class taikhoanModel extends connectDB
         } else {
             return false;
         }
+    }
+    function getSdtGh($tendangnhap){
+        $conn = $this->GetConn();
+        $sql = "SELECT sodienthoai FROM nguoidung WHERE tendangnhap=:tendangnhap";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap", $tendangnhap);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        } else {
+            return false;
+        }        
     }
     // danh gia
     function danhgia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)

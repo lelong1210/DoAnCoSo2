@@ -232,47 +232,57 @@ $(document).ready(function () {
     });
     // ==> trang thanh toan
     $("#thanhtoan").click(function (e) {
-        var idAddress = "";
-        $(":checkbox").each(function () {
-            if ($(this).is(":checked")) {
-                idAddress = $(this).attr("id");
-            }
-        })
-        if (idAddress != "") {
-            var arr = [];
-            var diachigiaohang = $("#spanOfAddress" + idAddress).html();
-            $("span").each(function () {
-                var idSpan = $(this).attr("id");
-                var soluongsp = "soluongsp";
-                if (idSpan && idSpan.startsWith(soluongsp)) {
-                    var masp = idSpan.slice(soluongsp.length, idSpan.length);
-                    var soluong = $("#" + idSpan).html();
-                    var text = { "masp": masp, "soluong": soluong };
-                    arr.push(text);
+        var sdt = $("#sdtgh").html();
+        if($("#checkedSdt").is(":checked") && sdt != ""){
+            var idAddress = "";
+            var cboxgh = "cboxgh";
+            $(":checkbox").each(function () {
+                var idThis = $(this).attr("id");
+                if ($(this).is(":checked") && idThis.startsWith(cboxgh)) {
+                    idAddress = $(this).attr("id");
+                    idAddress = idAddress.slice(cboxgh.length,idAddress.length);
                 }
-            });
-            if (tienHanhthanhToan(diachigiaohang, arr)) {
-                alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm");
-                updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
-                location.assign(linkTuyetDoi);
+            })
+            if (idAddress != "") {
+                var arr = [];
+                var diachigiaohang = $("#spanOfAddress" + idAddress).html();
+                $("span").each(function () {
+                    var idSpan = $(this).attr("id");
+                    var soluongsp = "soluongsp";
+                    if (idSpan && idSpan.startsWith(soluongsp)) {
+                        var masp = idSpan.slice(soluongsp.length, idSpan.length);
+                        var soluong = $("#" + idSpan).html();
+                        var text = { "masp": masp, "soluong": soluong };
+                        arr.push(text);
+                    }
+                });
+                if (tienHanhthanhToan(diachigiaohang, arr)) {
+                    alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm");
+                    updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
+                    location.assign(linkTuyetDoi);
+                } else {
+                    alert("Thanh Toán Thất Bại");
+                }
             } else {
-                alert("Thanh Toán Thất Bại");
-            }
-        } else {
-            alert("Chua chon dia chi thanh toan");
+                alert("Chua chon dia chi thanh toan");
+            }            
+        }else{
+            alert("Chưa Chọn Số Điện Thoại Hoặc Không Có Số Điện Thoại");
         }
     });
     $(":checkbox").click(function (e) {
         var idThis = $(this).attr("id");
-        var chonsp = "chonsp";
-        if (idThis.startsWith(chonsp) == false) {
+        var cboxgh = "cboxgh";
+        if(idThis.startsWith(cboxgh)){
+            var madiachigiaohang = idThis.slice(cboxgh.length,idThis.length);
             var giaTienSp = $("#giaTienSp").html();
-            var diachi = $("#spanOfAddress" + idThis).html();
+            var diachi = $("#spanOfAddress" + madiachigiaohang).html();
             $(":checkbox").each(function () {
-                if ($(this).is(":checked") && idThis != $(this).attr("id")) {
+                var idThisC = $(this).attr("id");
+                if ($(this).is(":checked") && idThis != idThisC && idThisC.startsWith(cboxgh)) {
                     $(this).prop("checked", false);
                 }
-            })
+            });
             $("#shippingCost").html((diachi.length) * 2000);
             $("#tongtien").html((parseInt(giaTienSp) + (diachi.length) * 2000) + " đ");
         }
@@ -858,6 +868,7 @@ $(document).ready(function () {
             url: linkTuyetDoi + "ajax/thanhtoan",
             data: { diachigiaohang: diachigiaohang, arr: arr },
             success: function (response) {
+                alert(response);
                 result = response;
             }
         });
