@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 08, 2021 at 04:48 PM
+-- Generation Time: Nov 09, 2021 at 04:52 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -33,6 +33,13 @@ CREATE TABLE `chitietgiohang` (
   `soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `chitietgiohang`
+--
+
+INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
+(2, 'khachhang-gh', 1);
+
 -- --------------------------------------------------------
 
 --
@@ -50,9 +57,17 @@ CREATE TABLE `chitiethoadon` (
 --
 
 INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
-(1, 8, 72),
-(1, 1, 73),
-(2, 2, 73);
+(1, 2, 78),
+(1, 2, 79),
+(1, 3, 79),
+(1, 8, 80),
+(2, 6, 80),
+(3, 4, 80),
+(1, 1, 81),
+(1, 7, 82),
+(1, 2, 83),
+(1, 4, 83),
+(1, 3, 84);
 
 -- --------------------------------------------------------
 
@@ -64,9 +79,9 @@ CREATE TABLE `congviec` (
   `macv` int(11) NOT NULL,
   `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `makhachhang` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `masp` int(10) NOT NULL,
-  `soluongld` int(11) NOT NULL,
+  `mahoadon` int(11) NOT NULL,
   `diadiemcongviec` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sdtKh` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `thoigiannhancongviec` datetime DEFAULT NULL,
   `thoigianxongcongviec` datetime DEFAULT NULL,
   `tiendo` int(2) DEFAULT NULL,
@@ -78,10 +93,13 @@ CREATE TABLE `congviec` (
 -- Dumping data for table `congviec`
 --
 
-INSERT INTO `congviec` (`macv`, `tendangnhap`, `makhachhang`, `masp`, `soluongld`, `diadiemcongviec`, `thoigiannhancongviec`, `thoigianxongcongviec`, `tiendo`, `danhgiacuakhachhang`, `danhancv`) VALUES
-(25, 'nhanvien', 'khachhang', 8, 1, 'Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy - Sen thượng 1 ', '2021-11-08 22:47:25', NULL, NULL, NULL, 1),
-(26, 'nhanvien', 'khachhang', 1, 1, 'Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy - Sen thượng 1 ', '2021-11-08 22:47:27', NULL, NULL, NULL, 1),
-(27, 'nhanvien', 'khachhang', 2, 2, 'Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy - Sen thượng 1 ', '2021-11-08 22:47:29', NULL, NULL, NULL, 1);
+INSERT INTO `congviec` (`macv`, `tendangnhap`, `makhachhang`, `mahoadon`, `diadiemcongviec`, `sdtKh`, `thoigiannhancongviec`, `thoigianxongcongviec`, `tiendo`, `danhgiacuakhachhang`, `danhancv`) VALUES
+(31, 'nhanvien1', 'khachhang', 79, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-09 21:31:24', '2021-11-09 21:31:28', 1, 5, 1),
+(32, 'nhanvien1', 'khachhang', 80, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 21:29:51', '2021-11-09 21:30:56', 1, 4, 1),
+(33, 'nhanvien', 'khachhang', 81, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-09 22:47:05', '2021-11-09 22:47:12', 1, 4, 1),
+(34, 'nhanvien', 'khachhang', 82, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:48:26', '2021-11-09 22:48:31', 1, 0, 1),
+(35, 'nhanvien', 'khachhang', 83, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:48:28', '2021-11-09 22:48:34', 1, 0, 1),
+(36, 'nhanvien', 'khachhang', 84, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:50:49', '2021-11-09 22:50:54', 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -92,6 +110,7 @@ INSERT INTO `congviec` (`macv`, `tendangnhap`, `makhachhang`, `masp`, `soluongld
 CREATE TABLE `diachigiaohang` (
   `madiachigiaohang` int(11) NOT NULL,
   `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `sdtGh` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tentinh` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tenhuyen` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `tenxa` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -102,8 +121,9 @@ CREATE TABLE `diachigiaohang` (
 -- Dumping data for table `diachigiaohang`
 --
 
-INSERT INTO `diachigiaohang` (`madiachigiaohang`, `tendangnhap`, `tentinh`, `tenhuyen`, `tenxa`, `diachichitiet`) VALUES
-(22, 'khachhang', 'Tỉnh Quảng Bình', 'Huyện Lệ Thủy', 'Xã Sen Thủy', 'Sen thượng 1 ');
+INSERT INTO `diachigiaohang` (`madiachigiaohang`, `tendangnhap`, `sdtGh`, `tentinh`, `tenhuyen`, `tenxa`, `diachichitiet`) VALUES
+(24, 'khachhang', '0123456789', 'Tỉnh Ninh Bình', 'Huyện Nho Quan', 'Xã Xích Thổ', 'Sen Bang 123'),
+(25, 'khachhang', '0832090990', 'Tỉnh Quảng Bình', 'Huyện Lệ Thủy', 'Xã Sen Thủy', 'sen thủy');
 
 -- --------------------------------------------------------
 
@@ -169,16 +189,22 @@ CREATE TABLE `hoadon` (
   `mahoadon` int(11) NOT NULL,
   `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ngaymua` date NOT NULL,
-  `diachigiaohang` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL
+  `diachigiaohang` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `sodienthoaigh` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `hoadon`
 --
 
-INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`) VALUES
-(72, 'khachhang', '2021-11-08', 'Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy - Sen thượng 1 '),
-(73, 'khachhang', '2021-11-08', 'Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy - Sen thượng 1 ');
+INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`, `sodienthoaigh`) VALUES
+(78, 'khachhang', '2021-11-09', 'Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ', '0903439812'),
+(79, 'khachhang', '2021-11-09', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990'),
+(80, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789'),
+(81, 'khachhang', '2021-11-09', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990'),
+(82, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789'),
+(83, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789'),
+(84, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789');
 
 -- --------------------------------------------------------
 
@@ -246,12 +272,13 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', '2021-11-06', 0),
 ('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', '2021-11-06', 0),
 ('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', '2021-11-06', 0),
-('khachhang', 'LÊ QUANG LONG', 'SEN THỦY', '0921912921', 'lql@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-07', 0),
+('khachhang', 'LÊ QUANG LONG', 'SEN THỦY', '0903439812', 'lql@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-07', 0),
 ('longtermplayoffs', 'PHẠM THỊ HẰNG', 'QUANG BINH', '0904349823', 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', '2021-11-06', 0),
 ('lql', NULL, NULL, NULL, 'lequanglong12102k2@gmail.com', '93279e3308bdbbeed946fc965017f67a', '2021-11-06', 1),
 ('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', '2021-11-06', 0),
 ('motorwayscold', NULL, NULL, NULL, 'mariah77@gmail.com', 'cddf86a9055a2e2168733a07ef284cb6', '2021-11-06', 0),
 ('nhanvien', NULL, NULL, NULL, 'lql@gmail.com.vn', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-08', 2),
+('nhanvien1', NULL, NULL, NULL, 'nhanvien@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-09', 2),
 ('obeysamoan', NULL, NULL, NULL, 'billy.labadie51@hotmail.com', '0169ad0e211c01528d9384235bc255a3', '2021-11-06', 0),
 ('procedureraise', NULL, NULL, NULL, 'brennan.heathcote@yahoo.com', 'cb936b342fcf543799254520b9d13515', '2021-11-06', 0),
 ('repelreprimand', NULL, NULL, NULL, 'leola_crooks93@hotmail.com', '76b30526c3489faf93241895c44a45c7', '2021-11-06', 0),
@@ -294,9 +321,9 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 (1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 99, '2021-11-08'),
 (2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 72, '2021-10-01'),
 (3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 101, '2021-10-01'),
-(4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 101, '2021-10-01'),
+(4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 99, '2021-10-01'),
 (5, 'eufy Smart Lock Touch with Wifi Bridge – Khóa cửa vân tay, chống nước IP65', '5990000.00', 'khoacuathongminh', 'Khóa cửa thông minh eufy Smart Lock Touch – cảm biến vân tay siêu nhạy, mở khóa trong 0.3 giây Tự động khóa khi phát hiện cửa đang đóng Ứng dụng quản lý giao diện Tiếng Việt Đạt chứng nhận BHMA, bền bỉ với tuổi thọ lên tới 70 năm Có 5 cách mở khóa: Nhận diện vây tay, nhập mật mã, mở bằng chìa thông thường, sử dụng app Eufy Security và mở khóa bằng giọng nói Thiết bị có thể hoạt động trong thời tiết khắc nghiệt với chống nước IP65 Tích hợp cảm biến đóng/mở, chốt khóa điện tử kết nối Bluetooth Điều khiển từ xa với Wifi Bridge', 'https://gucongnghe.com/wp-content/uploads/2020/08/eufy-smart-lock-touch-with-bridge-1-247x296.jpg', 'eufy ', 0, 99, '2021-10-01'),
-(6, 'Khóa cửa thông minh Wyze Lock, tự động khóa – mở cửa từ xa', '2690000.00', 'khoacuathongminh', 'Khóa cửa thông minh Wyze Lock, kết nối WiFi, Bluetooth và Zigbee Sử dụng 4 viên pin tiểu AA cho thời gian sử dụng 5 – 6 tháng Khóa và mở khóa từ xa qua ứng dụng Wyze Tự động mở khóa khi bạn đến gần. Tự động khóa khi cửa được đóng. Dễ dàng lắp đặt trong vòng 15 phút Chia sẻ quyền sử dụng khóa với người khác từ xa Ra lệnh bằng giọng nói với Amazon Alexa, Google Assistant sẽ sớm được hỗ trợ', 'https://gucongnghe.com/wp-content/uploads/2020/05/khoa-thong-minh-Wyze-Lock-247x296.jpg', 'Wyze Lock', 0, 99, '2021-10-01'),
+(6, 'Khóa cửa thông minh Wyze Lock, tự động khóa – mở cửa từ xa', '2690000.00', 'khoacuathongminh', 'Khóa cửa thông minh Wyze Lock, kết nối WiFi, Bluetooth và Zigbee Sử dụng 4 viên pin tiểu AA cho thời gian sử dụng 5 – 6 tháng Khóa và mở khóa từ xa qua ứng dụng Wyze Tự động mở khóa khi bạn đến gần. Tự động khóa khi cửa được đóng. Dễ dàng lắp đặt trong vòng 15 phút Chia sẻ quyền sử dụng khóa với người khác từ xa Ra lệnh bằng giọng nói với Amazon Alexa, Google Assistant sẽ sớm được hỗ trợ', 'https://gucongnghe.com/wp-content/uploads/2020/05/khoa-thong-minh-Wyze-Lock-247x296.jpg', 'Wyze Lock', 0, 98, '2021-10-01'),
 (7, 'Khóa cửa thông minh August Smart Lock Pro + Connect, kết nối Wifi, khóa & mở từ xa', '4250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock Pro và Hub trung tâm Connect, thế hệ thứ 3 mới nhất. Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa. Hỗ trợ Samsung SmartThings. Tương thích Apple HomeKit, mở khoá bằng iPhone, Apple Watch.', 'https://gucongnghe.com/wp-content/uploads/2019/02/Khoa-cua-thong-minh-August-Smart-Lock-Pro-Connect-247x296.jpg', 'August', 0, 99, '2021-10-01'),
 (8, 'August Smart Keypad', '1790000.00', 'khoacuathongminh', 'Đóng mở cửa an toàn với mã bảo mật Tạo mã riêng biệt cho mỗi lần mở cửa dễ dàng ngay trên ứng dụng điện thoại Cách mở cửa hoàn hảo cho trẻ em hoặc nhà có khách Mã mở khóa cửa riêng cho mỗi người Khóa cửa nhanh chóng chỉ với một lần nhấn Dùng pin AAA, cài đặt và sử dụng dễ dàng.', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Smart-Keypad-gioi-thieu-247x296.jpg', 'August', 0, 98, '2021-10-01'),
 (9, 'ECOVACS DEEBOT DJ35 robot hút bụi lau nhà', '4000000.00', 'mayhutbui', 'Tiếp nối sự thành công của T8 aivi plus hãng vừa cho ra mắt Ecovacs Deebot T9 aivi. Đây là robot đầu tiên trên thế giới được trang bị thêm tính năng lọc không khí và tỏa hương nước hoa. Hãy cùng Novadigital tìm hiểu về siêu phẩm mới ra mắt này nhé.', 'https://grobot.vn/wp-content/uploads/2019/01/dj35c2-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
@@ -364,6 +391,13 @@ CREATE TABLE `thongtinnhanxetsanpham` (
   `ngaydanggia` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `thongtinnhanxetsanpham`
+--
+
+INSERT INTO `thongtinnhanxetsanpham` (`manhanxet`, `masp`, `tendangnhap`, `noidung`, `sosao`, `ngaydanggia`) VALUES
+(15, 2, 'khachhang', 'Very good', 5, '2021-11-09');
+
 -- --------------------------------------------------------
 
 --
@@ -411,7 +445,7 @@ ALTER TABLE `chitiethoadon`
 ALTER TABLE `congviec`
   ADD PRIMARY KEY (`macv`),
   ADD KEY `tendangnhap` (`tendangnhap`),
-  ADD KEY `masp` (`masp`);
+  ADD KEY `mahoadon` (`mahoadon`);
 
 --
 -- Indexes for table `diachigiaohang`
@@ -482,13 +516,13 @@ ALTER TABLE `thumucsanpham`
 -- AUTO_INCREMENT for table `congviec`
 --
 ALTER TABLE `congviec`
-  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `diachigiaohang`
 --
 ALTER TABLE `diachigiaohang`
-  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT for table `hangsx`
@@ -500,7 +534,7 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
 
 --
 -- AUTO_INCREMENT for table `luong`
@@ -518,7 +552,7 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `thongtinnhanxetsanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
-  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `thumucsanpham`
@@ -549,7 +583,7 @@ ALTER TABLE `chitiethoadon`
 --
 ALTER TABLE `congviec`
   ADD CONSTRAINT `congviec_ibfk_1` FOREIGN KEY (`tendangnhap`) REFERENCES `nguoidung` (`tendangnhap`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `congviec_ibfk_2` FOREIGN KEY (`masp`) REFERENCES `sanpham` (`masp`) ON DELETE NO ACTION ON UPDATE NO ACTION;
+  ADD CONSTRAINT `congviec_ibfk_2` FOREIGN KEY (`mahoadon`) REFERENCES `hoadon` (`mahoadon`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Constraints for table `diachigiaohang`
