@@ -245,11 +245,9 @@ class taikhoanModel extends connectDB
     function getBill($tendangnhap)
     {
         $conn = $this->GetConn();
-        $sql = "SELECT hoadon.ngaymua , hoadon.mahoadon, sanpham.masp,sanpham.tensp, chitiethoadon.soluong, sanpham.loaisanpham,sanpham.linkduongdananh , sanpham.giatien
-        FROM (((hoadon INNER JOIN nguoidung ON hoadon.tendangnhap = nguoidung.tendangnhap) 
-               INNER JOIN chitiethoadon ON hoadon.mahoadon = chitiethoadon.mahoadon) 
-               INNER JOIN sanpham ON chitiethoadon.masp = sanpham.masp) 
-        WHERE nguoidung.tendangnhap = :tendangnhap";
+        $sql = "SELECT hoadon.mahoadon,hoadon.ngaymua,hoadon.diachigiaohang,hoadon.sodienthoaigh,congviec.danhgiacuakhachhang
+        FROM hoadon INNER JOIN congviec ON hoadon.mahoadon = congviec.mahoadon 
+        WHERE congviec.tiendo = 1 AND hoadon.tendangnhap = :tendangnhap";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap", $tendangnhap);
         $query->execute();
@@ -377,6 +375,24 @@ class taikhoanModel extends connectDB
             return true;
         } else {
             return false;
+        }
+    }
+    // danh gia nhan vien 
+    function danhGiaVeNhanVien($mahd,$danhgiacuakhachhang){
+        try {
+            $conn = $this->GetConn();
+            $sql = "UPDATE congviec SET danhgiacuakhachhang = :danhgiacuakhachhang WHERE congviec.mahoadon = :mahd";
+            $query = $conn->prepare($sql);
+            $query->bindParam(":danhgiacuakhachhang", $danhgiacuakhachhang);
+            $query->bindParam(":mahd", $mahd);
+            $query->execute();
+            if ($query->rowCount() > 0) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (PDOException $e) {
+            echo "FAULT" . $e->getMessage();
         }
     }
     // select User 

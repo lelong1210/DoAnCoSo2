@@ -51,13 +51,14 @@ class nhanvienModel extends connectDB{
         $arr = array_keys((array)$arr[0]);
         return $arr ;
     }
-    function xacNhanXongCongViec($macv,$thoigianxongcongviec,$tiendo){
+    function xacNhanXongCongViec($macv,$thoigianxongcongviec,$tiendo,$danhgiacuakhachhang){
         $conn = $this->GetConn(); 
-        $sql = "UPDATE congviec SET thoigianxongcongviec=:thoigianxongcongviec,tiendo=:tiendo WHERE macv=:macv";
+        $sql = "UPDATE congviec SET thoigianxongcongviec=:thoigianxongcongviec,tiendo=:tiendo,danhgiacuakhachhang=:danhgiacuakhachhang WHERE macv=:macv";
         $query = $conn->prepare($sql);
         $query->bindParam(":thoigianxongcongviec",$thoigianxongcongviec);
         $query->bindParam(":tiendo",$tiendo);
         $query->bindParam(":macv",$macv);
+        $query->bindParam(":danhgiacuakhachhang",$danhgiacuakhachhang);
         $query->execute();
         if($query->rowCount() > 0){
             return true;

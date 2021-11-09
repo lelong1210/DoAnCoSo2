@@ -13,20 +13,19 @@
         <?php require_once "block/headerMobile.php"; ?>
     </header>
     <div class="content container">
-        <?php
+        <?php 
         $arr = (json_decode($data["taikhoanModel"]->getBill($_SESSION["username"])));
         if ($arr) {
             $count = count($arr);
-            $arrTitle = ["Ngày Mua", "Mã Hóa Đơn", "Mã Sản Phẩm", "Tên Sản Phẩm", "Số Lượng", "Loại Sản Phẩm", "Hình Ảnh", "Tổng Tiền"]; ?>
-            <table id="table_bill" class="display" style="width:100%">
+            $arrTitle = ["Mã Hóa Đơn","Ngày Mua","Địa Chỉ Giao Hàng","Số Điện Thoại Nhận Hàng","Đánh Giá Về Nhân Viên Lắp Đặt"]; ?>
+            <table id="table_bill" class="display text-center" style="width:100%">
                 <thead>
                     <tr>
                         <?php
-                            for ($i = 0; $i < count($arrTitle) - 2; $i++) {
+                            for ($i = 0; $i < count($arrTitle); $i++) {
                                 echo "<th>$arrTitle[$i]</th>";
                             }
-                            echo "<th></th>";
-                            echo "<th>Tổng Tiền</th>";
+                            echo "<th>Xem Chi Tiết</th>";
                             ?>
                     </tr>
                 </thead>
@@ -35,12 +34,17 @@
                         for ($i = 0; $i < $count; $i++) {
                             echo "<tr>";
                             $arrChild = array_values((array) $arr[$i]);
+
                             $countCh = count($arrChild);
-                            for ($j = 0; $j < $countCh - 2; $j++) {
+                            for ($j = 0; $j < $countCh-1; $j++) {
                                 echo "<td>$arrChild[$j]</td>";
                             }
-                            echo "<td><a href='./$arrChild[5]/$arrChild[2]'><img src='" . $arrChild[$countCh - 2] . "' style='max-width: 50px'></a></a></td>";
-                            echo "<td>" . number_format(($arrChild[4] * $arrChild[7])) . " đ</td>";
+                            echo "<td>
+                                    <button type='button' class='fas fa-chevron-down' id='saodanhgia_NhanVienDown$arrChild[0]'></button>
+                                    <span id='nodungdanhgiaNV$arrChild[0]'>".$arrChild[$countCh-1]."</span>
+                                    <button type='button' class='fas fa-chevron-up' id='saodanhgia_NhanVienUp$arrChild[0]'></button>
+                                </td>";
+                            echo "<td><button class='btn btn-success' id='btn_chitetHD$arrChild[0]'><i class='fas fa-question-circle'></i></button></td>";
                             echo "</tr>";
                         }
                         ?>

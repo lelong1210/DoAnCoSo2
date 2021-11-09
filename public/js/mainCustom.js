@@ -449,6 +449,31 @@ $(document).ready(function () {
             }
         }
     });
+    // ==> danh gia nhan vien 
+    $("button").click(function (e) { 
+        var idThis = $(this).attr("id");
+        var saodanhgia_NhanVienDown = "saodanhgia_NhanVienDown";
+        var saodanhgia_NhanVienUp = "saodanhgia_NhanVienUp";
+        var nodungdanhgiaNV = "nodungdanhgiaNV";
+        if(idThis.startsWith(saodanhgia_NhanVienUp)){
+            var mahoadon = idThis.slice(saodanhgia_NhanVienUp.length,idThis.length);
+            var sosaodanhgia = $("#"+nodungdanhgiaNV+mahoadon).html();
+            sosaodanhgia = parseInt(sosaodanhgia)+1;
+            if(sosaodanhgia <= 5){
+                $("#"+nodungdanhgiaNV+mahoadon).html(sosaodanhgia);
+                danhGiaVeNhanVien(mahoadon,sosaodanhgia);
+            }
+        }
+        if(idThis.startsWith(saodanhgia_NhanVienDown)){
+            var mahoadon = idThis.slice(saodanhgia_NhanVienDown.length,idThis.length);
+            var sosaodanhgia = $("#"+nodungdanhgiaNV+mahoadon).html();
+            sosaodanhgia = parseInt(sosaodanhgia)-1;
+            if(sosaodanhgia >= 1){
+                $("#"+nodungdanhgiaNV+mahoadon).html(sosaodanhgia);
+                danhGiaVeNhanVien(mahoadon,sosaodanhgia);
+            }            
+        }
+    });
     // ==> upload
     $("#test1").click(function (e) { 
         var fd = new FormData();
@@ -916,6 +941,22 @@ $(document).ready(function () {
             url: linkTuyetDoi + "ajax/setProductToPayment",
             data: { arr: arr },
             // dataType: "dataType",
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+    function danhGiaVeNhanVien(mahd,danhgiacuakhachhang){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/danhGiaVeNhanVien",
+            data: {
+                mahd:mahd,
+                danhgiacuakhachhang:danhgiacuakhachhang,
+            },
             success: function (response) {
                 result = response;
             }

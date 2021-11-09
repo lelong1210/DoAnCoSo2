@@ -161,7 +161,7 @@ class ajax extends controller{
         $model = $this->call_model("taikhoanModel");
         echo $model->checkSell($tendangnhap,$masp);
     }
-        // danh gia 
+        // danh gia san pham
     function danhgia(){
         date_default_timezone_set("Asia/Ho_Chi_Minh");
 
@@ -172,6 +172,13 @@ class ajax extends controller{
         $noidung = $_POST["inputDanhgia"];
         $model = $this->call_model("taikhoanModel");
         echo $model->danhgia($masp,$tendangnhap,$noidung,$sosao,$ngaydanggia);
+    }
+        // danh gia nhan vie 
+    function danhGiaVeNhanVien(){
+        $mahd = $_POST["mahd"];
+        $danhgiacuakhachhang = $_POST["danhgiacuakhachhang"];
+        $model = $this->call_model("taikhoanModel");
+        echo $model->danhGiaVeNhanVien($mahd,$danhgiacuakhachhang);
     }
         // upload file 
     function uploadfile(){
@@ -247,7 +254,8 @@ class ajax extends controller{
         $thoigianxongcongviec = date("Y-m-d H:i:s");
         $model = $this->call_model("nhanvienModel");
         $tiendo = 1 ;
-        echo $model->xacNhanXongCongViec($macv,$thoigianxongcongviec,$tiendo);
+        $danhgiacuakhachhang = 0 ;
+        echo $model->xacNhanXongCongViec($macv,$thoigianxongcongviec,$tiendo,$danhgiacuakhachhang);
     }
 }
 ?>
