@@ -62,9 +62,10 @@ class ajax extends controller{
         $tentinh = $_POST["tentinh"];
         $tenhuyen = $_POST["tenhuyen"];
         $tenxa = $_POST["tenxa"];
+        $sodienthoaigh = $_POST["sodienthoaigh"];
         $diachichitiet = $_POST["diachichitiet"];
         $model = $this->call_model("taikhoanModel");
-        echo $model->insertAddressShipping($tendangnhap,$tentinh,$tenhuyen,$tenxa,$diachichitiet);
+        echo $model->insertAddressShipping($tendangnhap,$tentinh,$tenhuyen,$tenxa,$diachichitiet,$sodienthoaigh);
     }
     function deleteAddressShipping(){
         $madiachigiaohang = $_POST["madiachigiaohang"];
@@ -76,10 +77,11 @@ class ajax extends controller{
         $tenhuyen = $_POST["tenhuyen"];
         $tenxa = $_POST["tenxa"];
         $diachichitiet = $_POST["diachichitiet"];
+        $sodienthoaigh = $_POST["sodienthoaigh"];
         $madiachigiaohang = $_POST["madiachigiaohang"];
         $madiachigiaohang = intval($madiachigiaohang);
         $model = $this->call_model("taikhoanModel");
-        echo $model->editAddressShipping($tentinh,$tenhuyen,$tenxa,$diachichitiet,$madiachigiaohang);
+        echo $model->editAddressShipping($tentinh,$tenhuyen,$tenxa,$diachichitiet,$madiachigiaohang,$sodienthoaigh);
     }
     function getSoLuongTrongGioHang(){
         $model = $this->call_model("taikhoanModel");
@@ -147,9 +149,10 @@ class ajax extends controller{
         $ngaymua = date("Y-m-d");
         $diachigiaohang = $_POST["diachigiaohang"];
         $arr = $_POST["arr"];
+        $sodienthoaigh = $_POST["sodienthoaigh"];
         $model = $this->call_model("taikhoanModel");
         $productModel = $this->call_model("productModel");
-        echo $model->thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr,$productModel);
+        echo $model->thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr,$productModel,$sodienthoaigh);
     }
         // kiem tra da mua chua
     function checkSell(){

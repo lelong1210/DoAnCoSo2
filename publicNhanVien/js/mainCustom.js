@@ -7,7 +7,10 @@ $(document).ready(function () {
         idThis = $(this).attr("id");
         if(idThis.startsWith(btn_cv)){
             var macv = idThis.slice(btn_cv.length,idThis.length);
-            alert(setCongViec(macv));
+            if(setCongViec(macv)){
+                alert("Bạn Đã Nhận Công Việc - Với Mã Công Việc Là : "+macv+" ^_^ !!!");
+                location.reload();
+            }
         }
     });
     // function support

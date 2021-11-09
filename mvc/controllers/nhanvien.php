@@ -13,5 +13,14 @@ class nhanvien extends controller{
             "nhanVienModel"=>$model
         ]);
     }
+    function congviecdangcho(){
+        $model = $this->call_model("nhanvienModel");
+        $taikhoanModel = $this->call_model("taikhoanModel");
+        $this->call_view("nhanVienView",[
+            "title"=>"congviecdangcho",
+            "nhanVienModel"=>$model,
+            "taikhoanModel"=>$taikhoanModel,
+        ]);        
+    }
 }
 ?> 

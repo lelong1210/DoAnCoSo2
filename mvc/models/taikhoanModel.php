@@ -135,16 +135,17 @@ class taikhoanModel extends connectDB
         return $arr;
     }
     // dia chi giao hang
-    function insertAddressShipping($tendangnhap, $tentinh, $tenhuyen, $tenxa, $diachichitiet)
+    function insertAddressShipping($tendangnhap, $tentinh, $tenhuyen, $tenxa, $diachichitiet,$sdtGh)
     {
         $conn = $this->GetConn();
-        $sql = "INSERT INTO diachigiaohang(tendangnhap,tentinh,tenhuyen,tenxa,diachichitiet) values(:tendangnhap,:tentinh,:tenhuyen,:tenxa,:diachichitiet)";
+        $sql = "INSERT INTO diachigiaohang(tendangnhap,tentinh,tenhuyen,tenxa,diachichitiet,sdtGh) values(:tendangnhap,:tentinh,:tenhuyen,:tenxa,:diachichitiet,:sdtGh)";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":tentinh", $tentinh);
         $query->bindParam(":tenhuyen", $tenhuyen);
         $query->bindParam(":tenxa", $tenxa);
         $query->bindParam(":diachichitiet", $diachichitiet);
+        $query->bindParam(":sdtGh",$sdtGh);
         $query->execute();
         if ($query->rowCount() > 0) {
             return true;
@@ -202,16 +203,17 @@ class taikhoanModel extends connectDB
             echo $e->getMessage();
         }
     }
-    function editAddressShipping($tentinh, $tenhuyen, $tenxa, $diachichitiet, $madiachigiaohang)
+    function editAddressShipping($tentinh, $tenhuyen, $tenxa, $diachichitiet, $madiachigiaohang,$sdtGh)
     {
         $madiachigiaohang = intval($madiachigiaohang);
         $conn = $this->GetConn();
-        $sql = "UPDATE diachigiaohang SET tentinh=:tentinh,tenhuyen=:tenhuyen,tenxa=:tenxa,diachichitiet=:diachichitiet WHERE madiachigiaohang=:madiachigiaohang";
+        $sql = "UPDATE diachigiaohang SET tentinh=:tentinh,tenhuyen=:tenhuyen,tenxa=:tenxa,diachichitiet=:diachichitiet,sdtGh=:sdtGh WHERE madiachigiaohang=:madiachigiaohang";
         $query = $conn->prepare($sql);
         $query->bindParam(":tentinh", $tentinh);
         $query->bindParam(":tenhuyen", $tenhuyen);
         $query->bindParam(":tenxa", $tenxa);
         $query->bindParam(":diachichitiet", $diachichitiet);
+        $query->bindParam(":sdtGh",$sdtGh);
         $query->bindParam(":madiachigiaohang", $madiachigiaohang);
         $query->execute();
         if ($query->rowCount() > 0) {
@@ -259,15 +261,14 @@ class taikhoanModel extends connectDB
         }
     }
     // insert Into congviec
-    function insertCongViec($makhachhang,$sdtKh,$masp,$soluongld,$diadiemcongviec,$danhancv){
+    function insertCongViec($makhachhang,$mahoadon,$diadiemcongviec,$sdtKh,$danhancv){
         $conn = $this->GetConn();
-        $sql = "INSERT INTO congviec(makhachhang,sdtKh , masp, soluongld,diadiemcongviec, danhancv) VALUES (:makhachhang, :sdtKh ,:masp,:soluongld, :diadiemcongviec, :danhancv)";
+        $sql = "INSERT INTO congviec(makhachhang,mahoadon,diadiemcongviec,sdtKh,danhancv) VALUES (:makhachhang,:mahoadon,:diadiemcongviec,:sdtKh,:danhancv)";
         $query = $conn->prepare($sql);
         $query->bindParam(":makhachhang", $makhachhang);
-        $query->bindParam(":sdtKh",$sdtKh);
-        $query->bindParam(":masp", $masp);
-        $query->bindParam(":soluongld",$soluongld);
+        $query->bindParam(":mahoadon",$mahoadon);
         $query->bindParam(":diadiemcongviec", $diadiemcongviec);
+        $query->bindParam(":sdtKh",$sdtKh);
         $query->bindParam(":danhancv",$danhancv);
         $query->execute();
         if ($query->rowCount() > 0) {
@@ -325,12 +326,9 @@ class taikhoanModel extends connectDB
             return false;
         }
     }
-    function thanhtoan($tendangnhap, $ngaymua, $diachigiaohang, $arr, $productModel)
+    function thanhtoan($tendangnhap, $ngaymua, $diachigiaohang, $arr, $productModel,$sodienthoaigh)
     {
         $result = false;
-        $sodienthoaigh = json_decode($this->getSdtGh($_SESSION["username"]));
-        $sodienthoaigh = array_values((array)$sodienthoaigh[0]);
-        $sodienthoaigh = $sodienthoaigh[0];
         if ($this->insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang,$sodienthoaigh)) {
             $arrTT = json_decode($this->getLastMaHoaDon($tendangnhap));
             $arrTT = array_values((array)$arrTT[0]);
@@ -341,10 +339,10 @@ class taikhoanModel extends connectDB
                 $result = $this->insertChitietHoaDon($arrChild[1], $arrChild[0], $mahoadon);
                 if ($result) {
                     $magiohang = $_SESSION["username"] . "-gh";
-                    $this->insertCongViec($_SESSION["username"],$sodienthoaigh,$arrChild[0],$arrChild[1],$diachigiaohang,0);
                     echo $productModel->deleteInDetailCart($arrChild[0], $magiohang);
                 }
             }
+            $this->insertCongViec($_SESSION["username"],$mahoadon,$diachigiaohang,$sodienthoaigh,0);
             return $result;
         } else {
             return false;
@@ -417,9 +415,9 @@ class taikhoanModel extends connectDB
         if ($arrAddress) {
             for ($i = 0; $i < count($arrAddress); $i++) {
                 $arrChild = array_values((array) $arrAddress[$i]);
-                echo "<h6> $arrChild[2] - $arrChild[3] - $arrChild[4] - $arrChild[5]";
-                echo "<a class='fas fa-edit' id='editAddressShipping$arrChild[0]' href='./khachhang/suadiachigiaohang/$arrChild[0]'></a>";
-                echo "<button class='fas fa-trash-alt' id='deleteAddressShipping$arrChild[0]'></button>";
+                echo "<h6> $arrChild[3] - $arrChild[4] - $arrChild[5] - $arrChild[6] - $arrChild[2] ";
+                    echo "<a class='fas fa-edit' id='editAddressShipping$arrChild[0]' href='./khachhang/suadiachigiaohang/$arrChild[0]'></a>";
+                    echo "<button class='fas fa-trash-alt' id='deleteAddressShipping$arrChild[0]'></button>";
                 echo "</h6>";
             }
         } else {
@@ -432,11 +430,12 @@ class taikhoanModel extends connectDB
         $arrAddress = json_decode($this->selectAddressShippingWhereMadiachigiaohang($tendangnhap, $madiachigiaohang));
         $arrChild = array_values((array) $arrAddress[0]);
         echo "<div class='' id=''>";
-        echo "<select id='tentinh'><option value=''>$arrChild[2]</option></select>";
-        echo "<select id='tenhuyen'><option value=''>$arrChild[3]</option></select>";
-        echo "<select id='tenxa'><option value=''>$arrChild[4]</option></select>";
-        echo "<input type='text' placeholder='nhập địa chỉ...' id='diachi' value='$arrChild[5]'>";
-        echo "<button class='btn btn-lg btn-success' id='editAddressShipping$arrChild[0]'>Cập Nhật</button>";
+            echo "<select id='tentinh'><option value=''>$arrChild[3]</option></select>";
+            echo "<select id='tenhuyen'><option value=''>$arrChild[4]</option></select>";
+            echo "<select id='tenxa'><option value=''>$arrChild[5]</option></select>";
+            echo "<input type='text' placeholder='nhập địa chỉ...' id='diachi' value='$arrChild[6]'>";
+            echo "<input type='text' placeholder='nhập địa chỉ...' id='stdGh' value='$arrChild[2]'>";
+            echo "<button class='btn btn-lg btn-success' id='editAddressShipping$arrChild[0]'>Cập Nhật</button>";
         echo "</div>";
     }
     function getTitleTable($arr)

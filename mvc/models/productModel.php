@@ -340,7 +340,8 @@ class productModel extends connectDB
                         echo "<input type='checkbox' style='height: 20px;' class='btn' id='cboxgh$arrChild[0]'>";
                     echo "</td>";
                     echo "<td>";
-                        echo "<span id='spanOfAddress$arrChild[0]'>$arrChild[2] - $arrChild[3] - $arrChild[4] - $arrChild[5]</span>";
+                        echo "<span id='spanOfAddress$arrChild[0]'> $arrChild[3] - $arrChild[4] - $arrChild[5] - </span>";
+                        echo "<span id='spanOfNumberPhone$arrChild[0]'>$arrChild[2]</span>";
                     echo "</td>";
                 echo "</tr>";
             echo "</table>";

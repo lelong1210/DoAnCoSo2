@@ -70,13 +70,13 @@
                         </div>
                         <div class="panel panel-default single-my-account " data-aos="fade-up" data-aos-delay="600">
                             <div class="panel-heading my-account-title">
-                                <h3 class="panel-title"><span>3 .</span> <a data-bs-toggle="collapse" class="collapsed" aria-expanded="false" href="#my-account-3">Địa Chỉ Giao Hàng
+                                <h3 class="panel-title"><span>3 .</span> <a data-bs-toggle="collapse" class="collapsed" aria-expanded="false" href="#my-account-3">Thông Tin Giao Hàng
                                     </a></h3>
                             </div>
                             <div id="my-account-3" class="panel-collapse collapse" data-bs-parent="#faq">
                                 <div class="panel-body">
                                     <div class="myaccount-info-wrapper">
-                                        <div class="account-info-wrapper">
+                                        <div class="account-info-wrapper">  
                                             <?php  $data["taikhoanModel"]->showAddressShipping();?>
                                         </div>
                                         <div>
@@ -86,6 +86,7 @@
                                                 <select id="tenhuyen"></select>
                                                 <select id="tenxa"></select>
                                                 <input type="text" placeholder="nhập địa chỉ..." id="diachi">
+                                                <input type="text" placeholder="nhập số điện thoại giao hàng..." id="stdGh">
                                                 <button class="btn btn-lg btn-success" id="saveAddressShipping">Lưu</button>
                                             </div>
                                         </div>
