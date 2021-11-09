@@ -238,8 +238,16 @@ class ajax extends controller{
         $tendangnhap = $_SESSION["username"];
         $thoigiannhancongviec = date("Y-m-d H:i:s");
         $danhancv = 1;
+        $tiendo = 0 ;
         $model = $this->call_model("nhanvienModel");
-        echo $model->setCongViec($macv,$tendangnhap,$thoigiannhancongviec,$danhancv);
+        echo $model->setCongViec($macv,$tendangnhap,$thoigiannhancongviec,$danhancv,$tiendo);
+    }
+    function xacNhanXongCongViec(){
+        $macv = $_POST["macv"];
+        $thoigianxongcongviec = date("Y-m-d H:i:s");
+        $model = $this->call_model("nhanvienModel");
+        $tiendo = 1 ;
+        echo $model->xacNhanXongCongViec($macv,$thoigianxongcongviec,$tiendo);
     }
 }
 ?>

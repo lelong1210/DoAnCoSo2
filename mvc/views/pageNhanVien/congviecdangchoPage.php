@@ -29,7 +29,7 @@
                         <?php
                         $arr = json_decode($data["nhanVienModel"]->getCongViec($_SESSION["username"]));
                         if($arr){
-                        $arrTitle = ["Mã Công Việc","Tên Khách Hàng","Mã Sản Phẩm","Số Lượng","Số Điện Thoại","Địa Chỉ Công Việc"];
+                            $arrTitle = ["Mã Công Việc","Mã Hóa Đơn","Tên Khách Hàng","Địa Chỉ Công Việc","Số Điện Thoại","Tiến Độ"];
                         ?>
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
@@ -37,7 +37,6 @@
                                     <?php for ($i = 0; $i < count($arrTitle); $i++) { ?>
                                         <th><?php echo $arrTitle[$i]; ?></th>
                                     <?php } ?>
-                                    <th>Tiến Độ</th>
                                 </tr>
                             </thead>
 

@@ -2,7 +2,10 @@
 class nhanvienModel extends connectDB{
     function getCongViecMoi(){
         $conn = $this->GetConn(); 
-        $sql = "SELECT macv, makhachhang, masp, soluongld, diadiemcongviec FROM congviec WHERE danhancv = 0";
+        $sql = "SELECT congviec.macv ,hoadon.mahoadon, nguoidung.tennguoidung ,hoadon.diachigiaohang , hoadon.sodienthoaigh
+        FROM ((hoadon INNER JOIN congviec ON hoadon.mahoadon = congviec.mahoadon) 
+                      INNER JOIN nguoidung ON hoadon.tendangnhap = nguoidung.tendangnhap)
+        WHERE congviec.danhancv = 0";
         $query = $conn->prepare($sql);
         $query->execute();
         if($query->rowCount() > 0){
@@ -14,7 +17,10 @@ class nhanvienModel extends connectDB{
     }
     function getCongViec($tendangnhap){
         $conn = $this->GetConn(); 
-        $sql = "SELECT macv, masp, masp,soluongld,sdtKh, diadiemcongviec FROM congviec WHERE danhancv = 1 AND tendangnhap = :tendangnhap";
+        $sql = "SELECT congviec.macv ,hoadon.mahoadon, nguoidung.tennguoidung ,hoadon.diachigiaohang , hoadon.sodienthoaigh
+        FROM ((hoadon INNER JOIN congviec ON hoadon.mahoadon = congviec.mahoadon) 
+                      INNER JOIN nguoidung ON hoadon.tendangnhap = nguoidung.tendangnhap)
+        WHERE congviec.tendangnhap = :tendangnhap AND congviec.tiendo = 0";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap",$tendangnhap);
         $query->execute();
@@ -25,13 +31,14 @@ class nhanvienModel extends connectDB{
             return false;
         }
     }
-    function setCongViec($macv,$tendangnhap,$thoigiannhancongviec,$danhancv){
+    function setCongViec($macv,$tendangnhap,$thoigiannhancongviec,$danhancv,$tiendo){
         $conn = $this->GetConn(); 
-        $sql = "UPDATE congviec SET tendangnhap=:tendangnhap,thoigiannhancongviec=:thoigiannhancongviec,danhancv=:danhancv WHERE macv=:macv";
+        $sql = "UPDATE congviec SET tendangnhap=:tendangnhap,thoigiannhancongviec=:thoigiannhancongviec,danhancv=:danhancv,tiendo=:tiendo WHERE macv=:macv";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap",$tendangnhap);
         $query->bindParam(":thoigiannhancongviec",$thoigiannhancongviec);
         $query->bindParam(":danhancv",$danhancv);
+        $query->bindParam(":tiendo",$tiendo);
         $query->bindParam(":macv",$macv);
         $query->execute();
         if($query->rowCount() > 0){
@@ -43,6 +50,20 @@ class nhanvienModel extends connectDB{
     function getTitleTable($arr){
         $arr = array_keys((array)$arr[0]);
         return $arr ;
+    }
+    function xacNhanXongCongViec($macv,$thoigianxongcongviec,$tiendo){
+        $conn = $this->GetConn(); 
+        $sql = "UPDATE congviec SET thoigianxongcongviec=:thoigianxongcongviec,tiendo=:tiendo WHERE macv=:macv";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":thoigianxongcongviec",$thoigianxongcongviec);
+        $query->bindParam(":tiendo",$tiendo);
+        $query->bindParam(":macv",$macv);
+        $query->execute();
+        if($query->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }        
     }
 }
 ?>
