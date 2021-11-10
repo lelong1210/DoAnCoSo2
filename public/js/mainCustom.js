@@ -452,6 +452,7 @@ $(document).ready(function () {
     // ==> danh gia nhan vien 
     $("button").click(function (e) { 
         var idThis = $(this).attr("id");
+        // alert(idThis);
         var saodanhgia_NhanVienDown = "saodanhgia_NhanVienDown";
         var saodanhgia_NhanVienUp = "saodanhgia_NhanVienUp";
         var nodungdanhgiaNV = "nodungdanhgiaNV";
