@@ -246,6 +246,7 @@ $(document).ready(function () {
         if (idAddress != "") {
             var arr = [];
             var diachigiaohang = $("#spanOfAddress" + idAddress).html();
+            var phiship = (diachigiaohang.length)*2000;
             var sdtgh = $("#spanOfNumberPhone" + idAddress).html();
             $("span").each(function () {
                 var idSpan = $(this).attr("id");
@@ -257,7 +258,7 @@ $(document).ready(function () {
                     arr.push(text);
                 }
             });
-            if (tienHanhthanhToan(diachigiaohang, arr,sdtgh)) {
+            if (tienHanhthanhToan(diachigiaohang, arr,sdtgh,phiship)) {
                 alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm");
                 updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
                 location.assign(linkTuyetDoi);
@@ -519,18 +520,7 @@ $(document).ready(function () {
     });
     // tesst
     $("#test").click(function (e) { 
-        // $.ajax({
-        //     type: "post",
-        //     url: link+"tinh quang tri"+apikeyForecast,
-        //     dataType: "json",
-        //     success: function (response) {
-        //         $.each(response, function (indexInArray, valueOfElement) { 
-        //             alert(valueOfElement);
-        //         });
-        //     }
-        // });
-        // updateScreenSoLuongTrongGioHang();
-        alert(getSessionSoLuongTrongGioHang());
+        $("#contentMain").slideUp();
     });
     // function support 
     function uploadImg(){
@@ -886,7 +876,7 @@ $(document).ready(function () {
         });
         return result;
     }
-    function tienHanhthanhToan(diachigiaohang, arr,sodienthoaigh) {
+    function tienHanhthanhToan(diachigiaohang, arr,sodienthoaigh,phiship) {
         var result = 0;
         $.ajax({
             type: "post",
@@ -895,7 +885,8 @@ $(document).ready(function () {
             data: { 
                 diachigiaohang: diachigiaohang, 
                 arr: arr, 
-                sodienthoaigh:sodienthoaigh
+                sodienthoaigh:sodienthoaigh,
+                phiship:phiship
             },
             success: function (response) {
                 result = response;
