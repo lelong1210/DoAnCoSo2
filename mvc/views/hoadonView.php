@@ -91,96 +91,16 @@
             </table>
         <?php } ?>
     </div>
-    <div class="contentHidden text-center">
-        <div class="checkout-area pt-100px pb-100px">
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12 mt-md-30px mt-lm-30px ">
-                        <div class="your-order-area">
-                            <h3>Thông Tin Về Hóa Đơn</h3>
-                            <div class="your-order-wrap gray-bg-4">
-                                <div class="your-order-product-info">
-                                    <div class="your-order-top">
-                                        <ul>
-                                            <li>Sản Phẩm</li>
-                                            <li>Giá Tiền</li>
-                                        </ul>
-                                    </div>
-                                    <div class="your-order-middle">
-                                        <?php
-                                        $arrDetailBill = (json_decode($data["taikhoanModel"]->getDetailBill($_SESSION["username"], 80)));
-                                        $tongtien = 0;
-                                        for ($i = 0; $i < count($arrDetailBill); $i++) {
-                                            $arrChild = array_values((array) $arrDetailBill[$i]);
-                                            ?>
-                                            <ul>
-                                                <li>
-                                                    <span> <img src='<?php echo $arrChild[2] ?>' alt='' style='max-width: 100px;'></span>
-                                                    <span class='order-price'><?php echo number_format($arrChild[1] * $arrChild[3]);
-                                                                                    $tongtien = $tongtien + ($arrChild[1] * $arrChild[3]) ?> đ</span>
-                                                </li>
-                                                <li><span class='order-middle-left'> <?php echo $arrChild[0] ?><span style='color:red'> X</span> <span style='color:red' id='soluongsp$arrProductNumber[0]'> <?php echo $arrChild[3] ?></span></span></li>
-                                            </ul>
-                                        <?php
-                                        }
-                                        ?>
+    <div class="contentHidden " id="contentHidden">
 
-                                    </div>
-                                    <div class="your-order-bottom">
-                                        <ul>
-                                            <li class="your-order-shipping">Địa Chỉ Giao Hàng
-                                                <?php
-                                                $phivanchuyen = 0;
-                                                for ($i = 0; $i < 1; $i++) {
-                                                    $arrChild = array_values((array) $arrDetailBill[$i]); ?>
-                                                    <table>
-                                                        <tr>
-                                                            <td>
-                                                                <i class="fas fa-shipping-fast"></i>
-                                                            </td>
-                                                            <td>
-                                                                <span><?php echo $arrChild[4] ?></span> -
-                                                                <span><?php echo $arrChild[5] ?></span>
-                                                            </td>
-                                                        </tr>
-                                                    </table>
-                                                <?php
-                                                    $phivanchuyen = $arrChild[7];
-                                                }
-                                                ?>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                    <div class="your-order-bottom">
-                                        <ul>
-                                            <li class="your-order-shipping">Phí Vận Chuyển</li>
-                                            <li><span></span><?php echo number_format($phivanchuyen) ?> đ</li>
-                                        </ul>
-                                    </div>
-                                    <div class="your-order-total">
-                                        <ul>
-                                            <li class="order-total">Tổng Tiền</li>
-                                            <li id="tongtien"><?php echo number_format($tongtien + $phivanchuyen); ?> đ</li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="payment-method">
-                                </div>
-                            </div>
-                            <div class="Place-order mt-25">
-                                <a class="btn-hover" id="back_contentMain">Quay Lại</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
+    <!-- <div class="test"><button class="btn btn-success" id="test">click me</button></div> -->
     <!-- Footer Area Start -->
     <?php require_once "block/footer.php"; ?>
     <!-- Footer Area End -->
 
     <?php require_once "block/jslink.php"; ?>
+
     <script>
         $('#table_bill').DataTable();
         $('#table_bill_ed').DataTable();

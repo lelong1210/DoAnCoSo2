@@ -258,5 +258,14 @@ class ajax extends controller{
         $danhgiacuakhachhang = 0 ;
         echo $model->xacNhanXongCongViec($macv,$thoigianxongcongviec,$tiendo,$danhgiacuakhachhang);
     }
+    // xem bill detail
+    function callBillDetail(){
+        $mahoadon = $_POST["mahoadon"];
+        $model = $this->call_model("taikhoanModel");
+        $arr = $model->getDetailBill($_SESSION["username"],$mahoadon);
+        $this->call_view_page("detailBillPage",[
+            "arrBillDetail"=>$arr
+        ]);
+    }
 }
 ?>
