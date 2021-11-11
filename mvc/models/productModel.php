@@ -120,6 +120,29 @@ class productModel extends connectDB
             return false;
         }         
     }
+    // xu ly tim kiem 
+    function timkiem($ndtimkiem,$batdau,$gioihanhienthi){
+        $ndtimkiem = "%".$ndtimkiem."%";
+
+        $conn =  $this->GetConn();
+        $sql = "SELECT * FROM sanpham 
+        WHERE tensp LIKE :ndtimkiem 
+            OR masp LIKE :ndtimkiem 
+            OR hangsx LIKE :ndtimkiem 
+            OR loaisanpham LIKE :ndtimkiem 
+            OR giatien LIKE :ndtimkiem
+            LIMIT :batdau,:gioihanhienthi   
+            ";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":ndtimkiem",$ndtimkiem);
+        $query->bindParam(":batdau",$batdau,PDO::PARAM_INT);
+        $query->bindParam(":gioihanhienthi",$gioihanhienthi,PDO::PARAM_INT);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }
+    }
     // chuoi hanh dong xu ly cua gio hang 
     function addProductInCart($masp, $soluong)
     {

@@ -268,5 +268,16 @@ class ajax extends controller{
             "arrBillDetail"=>$arr
         ]);
     }
+    function getThemProductPT(){
+        $ndtimkiem = $_POST["ndtimkiem"];
+        $batdau = $_POST["batdau"];
+        $gioihanhienthi = $_POST["gioihanhienthi"];
+        $model = $this->call_model("productModel");
+        $arrNdTk = json_decode($model->timkiem($ndtimkiem,$batdau,$gioihanhienthi));
+        $arrNdTk = array_values((array) $arrNdTk);
+        $this->call_view_page("ajaxPtPage",[
+            "arrNdTk"=>$arrNdTk
+        ]);        
+    }
 }
 ?>

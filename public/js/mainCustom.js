@@ -155,7 +155,7 @@ $(document).ready(function () {
     });
     // xu ly mua hang 
     // ==> trang gio hang
-    $("button").click(function (e) {
+    $("body").on("click","button",function (e) {
         var nameBtnMH = "btnMH";
         var btnPayLive = "btnPayLive";
         var idThis = $(this).attr('id');
@@ -545,7 +545,38 @@ $(document).ready(function () {
             $("#contentHidden").slideUp();
         }
     });
+    // ==> Tim kiem 
+    $("#startSearch").click(function (e) { 
+        var ndtimkiem = $("#whatSearch").val();
+        location.assign(linkTuyetDoi+"timkiem/"+ndtimkiem);
+    });
+    var solanclickXemthemSanPham = 2 ;
+    var gioihanxuathien = 6 ;
+    $("#xemThemSanPham").click(function (e) { 
+        var ndtimkiem = $("#params").html();
+        var batdau = gioihanxuathien*(solanclickXemthemSanPham-1);
+        solanclickXemthemSanPham = solanclickXemthemSanPham + 1;
+        var data = getThemProductPT(ndtimkiem,batdau,gioihanxuathien);
+        $("#addViewProduct").append(data);
+    });
     // function support 
+    function getThemProductPT(ndtimkiem,batdau,gioihanhienthi){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/getThemProductPT",
+            data: {
+                ndtimkiem:ndtimkiem,
+                batdau:batdau,
+                gioihanhienthi:gioihanhienthi
+            },
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
     function getThongTinDonHangInThanhToan() {
         var idAddress = "";
         var ndhinhthuc = "";

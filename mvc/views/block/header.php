@@ -21,8 +21,8 @@
                                         class="icon-magnifier"></i></a>
                                 <div class="dropdown_search">
                                     <form class="action-form" action="#">
-                                        <input class="form-control" placeholder="Enter your search key" type="text">
-                                        <button class="submit" type="submit"><i class="icon-magnifier"></i></button>
+                                        <input class="form-control" placeholder="Nhập Thứ Bạn Muốn Tìm" id="whatSearch" type="text">
+                                        <button class="submit" type="button" id="startSearch"><i class="icon-magnifier"></i></button>
                                     </form>
                                 </div>
                             </div>
@@ -84,8 +84,8 @@
                                         class="icon-magnifier"></i></a>
                                 <div class="dropdown_search">
                                     <form class="action-form" action="#">
-                                        <input class="form-control" placeholder="Enter your search key" type="text">
-                                        <button class="submit" type="submit"><i class="icon-magnifier"></i></button>
+                                        <input class="form-control" placeholder="Nhập Thứ Bạn Muốn Tìm" type="text">
+                                        <button class="submit" type="button"><i class="icon-magnifier"></i></button>
                                     </form>
                                 </div>
                             </div>
