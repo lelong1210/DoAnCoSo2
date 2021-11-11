@@ -39,6 +39,7 @@
                                     <li>
                                         <?php
                                             $phivanchuyen = 0;
+                                            $hinhthucthanhtoan = 0; 
                                             for ($i = 0; $i < 1; $i++) {
                                                 $arrChild = array_values((array) $arrDetailBill[$i]); ?>
                                                 <ul>
@@ -50,6 +51,7 @@
                                                 </ul>
                                         <?php
                                                 $phivanchuyen = $arrChild[7];
+                                                $hinhthucthanhtoan = $arrChild[8];
                                             }
                                         ?>
                                     </li>                                    
@@ -66,7 +68,6 @@
                                     <li class="your-order-shipping">Tình Trạng Đơn Hàng</li>
                                     <li>
                                         <?php
-                                            $phivanchuyen = 0;
                                             for ($i = 0; $i < 1; $i++) {
                                                 $arrChild = array_values((array) $arrDetailBill[$i]); ?>
                                                 <ul>
@@ -76,6 +77,12 @@
                                                 </ul>
                                         <?php } ?>
                                     </li>                                    
+                                </ul>
+                            </div>
+                            <div class="your-order-bottom">
+                                <ul>
+                                    <li class="your-order-shipping">Hình Thức Vận Chuyển</li>
+                                    <li><span></span><?php if($hinhthucthanhtoan >0){echo "Thanh Toán Khi Nhận Hàng";}else{echo "Thanh Toán Online";} ?></li>
                                 </ul>
                             </div>
                             <div class="your-order-total">
