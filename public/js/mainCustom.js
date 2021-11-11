@@ -528,7 +528,7 @@ $(document).ready(function () {
     $("#test").click(function (e) {
     });
     // ==> XEM chi tiet hoa don
-    $("button").click(function (e) {
+    $("body").on("click", "button", function () {
         var btn_chitetHD = "btn_chitetHD";
         var idThis = $(this).attr("id");
         if (idThis.startsWith(btn_chitetHD)) {
@@ -545,10 +545,6 @@ $(document).ready(function () {
             $("#contentMain").slideDown();
             $("#contentHidden").slideUp();
         }
-    });
-    $("#opmd").click(function (e) {
-
-        // $(".checkout-area").hide();
     });
     // function support 
     function getThongTinDonHangInThanhToan() {
@@ -1040,10 +1036,3 @@ $(document).ready(function () {
         return result;
     }
 });
-
-
-
-
-/*        $.each(arr, function (indexInArray, valueOfElement) {
-             alert(JSON.stringify(valueOfElement));
-        });*/
