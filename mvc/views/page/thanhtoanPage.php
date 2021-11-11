@@ -19,10 +19,10 @@
                                 <ul>
                                     <li class="your-order-shipping">Địa Chỉ Giao Hàng
                                         <?php
-                                            $arr = $data["taikhoanModel"]->selectAddressShipping($_SESSION["username"]);
-                                            if($arr){
-                                                $data["productModel"]->showAddressShippingInPayment(json_decode($arr));
-                                            }
+                                        $arr = $data["taikhoanModel"]->selectAddressShipping($_SESSION["username"]);
+                                        if ($arr) {
+                                            $data["productModel"]->showAddressShippingInPayment(json_decode($arr));
+                                        }
                                         ?>
                                     </li>
                                     <li>
@@ -32,8 +32,24 @@
                             </div>
                             <div class="your-order-bottom">
                                 <ul>
-                                    <li class="your-order-shipping" >Phí Vận Chuyển</li>
+                                    <li class="your-order-shipping">Phí Vận Chuyển</li>
                                     <li><span id="shippingCost"></span> đ</li>
+                                </ul>
+                            </div>
+                            <div class="your-order-bottom">
+                                <ul>
+                                    <li class="your-order-shipping">Thanh Toán
+                                        <table>
+                                            <tr>
+                                                <td><input type='checkbox' style='height: 20px;' class='btn' id='checkboxTT0'></td>
+                                                <td><span id="ndhinhthuc0">Online</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type='checkbox' style='height: 20px;' class='btn' id='checkboxTT1'></td>
+                                                <td><span id="ndhinhthuc1">Khi Nhận Hàng</span></td>
+                                            </tr>
+                                        </table>
+                                    </li>
                                 </ul>
                             </div>
                             <div class="your-order-total">
@@ -52,5 +68,12 @@
                 </div>
             </div>
         </div>
+    </div>
+</div>
+<div class="contentQr text-center">
+    <div class="row">
+        <div class="col-sm-12"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Superqr.svg/1200px-Superqr.svg.png" alt="" id="img" class="imgtt"></div>
+        <div class="col-sm-6"><button class="btn btn-success">Hủy</button></div>
+        <div class="col-sm-6"><button class="btn btn-success" id="thanhtoanOnline">Thanh Toán</button></div>
     </div>
 </div>

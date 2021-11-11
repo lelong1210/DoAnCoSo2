@@ -151,9 +151,10 @@ class ajax extends controller{
         $arr = $_POST["arr"];
         $sodienthoaigh = $_POST["sodienthoaigh"];
         $phiship = $_POST["phiship"];
+        $hinhthucthanhtoan = $_POST["hinhthucthanhtoan"];
         $model = $this->call_model("taikhoanModel");
         $productModel = $this->call_model("productModel");
-        echo $model->thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr,$productModel,$sodienthoaigh,$phiship);
+        echo $model->thanhtoan($tendangnhap,$ngaymua,$diachigiaohang,$arr,$productModel,$sodienthoaigh,$phiship,$hinhthucthanhtoan);
     }
         // kiem tra da mua chua
     function checkSell(){

@@ -311,16 +311,17 @@ class taikhoanModel extends connectDB
         }        
     }
     // thanh toan
-    function insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang,$sodienthoaigh,$phiship)
+    function insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang,$sodienthoaigh,$phiship,$hinhthucthanhtoan)
     {
         $conn = $this->GetConn();
-        $sql = "INSERT INTO hoadon(tendangnhap,ngaymua,diachigiaohang,sodienthoaigh,phiship) VALUES(:tendangnhap,:ngaymua,:diachigiaohang,:sodienthoaigh,:phiship)";
+        $sql = "INSERT INTO hoadon(tendangnhap,ngaymua,diachigiaohang,sodienthoaigh,phiship,hinhthucthanhtoan) VALUES(:tendangnhap,:ngaymua,:diachigiaohang,:sodienthoaigh,:phiship,:hinhthucthanhtoan)";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":ngaymua", $ngaymua);
         $query->bindParam(":diachigiaohang", $diachigiaohang);
         $query->bindParam(":sodienthoaigh",$sodienthoaigh);
         $query->bindParam(":phiship",$phiship);
+        $query->bindParam(":hinhthucthanhtoan",$hinhthucthanhtoan);
         $query->execute();
         if ($query->rowCount() > 0) {
             return true;
@@ -360,10 +361,10 @@ class taikhoanModel extends connectDB
             return false;
         }
     }
-    function thanhtoan($tendangnhap, $ngaymua, $diachigiaohang, $arr, $productModel,$sodienthoaigh,$phiship)
+    function thanhtoan($tendangnhap, $ngaymua, $diachigiaohang, $arr, $productModel,$sodienthoaigh,$phiship,$hinhthucthanhtoan)
     {
         $result = false;
-        if ($this->insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang,$sodienthoaigh,$phiship)) {
+        if ($this->insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang,$sodienthoaigh,$phiship,$hinhthucthanhtoan)) {
             $arrTT = json_decode($this->getLastMaHoaDon($tendangnhap));
             $arrTT = array_values((array)$arrTT[0]);
             $mahoadon = $arrTT[0];

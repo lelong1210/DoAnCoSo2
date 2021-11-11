@@ -234,44 +234,41 @@ $(document).ready(function () {
     });
     // ==> trang thanh toan
     $("#thanhtoan").click(function (e) {
-        var idAddress = "";
-        var cboxgh = "cboxgh";
-        $(":checkbox").each(function () {
-            var idThis = $(this).attr("id");
-            if ($(this).is(":checked") && idThis.startsWith(cboxgh)) {
-                idAddress = $(this).attr("id");
-                idAddress = idAddress.slice(cboxgh.length, idAddress.length);
-            }
-        })
-        if (idAddress != "") {
-            var arr = [];
-            var diachigiaohang = $("#spanOfAddress" + idAddress).html();
-            var phiship = (diachigiaohang.length) * 2000;
-            var sdtgh = $("#spanOfNumberPhone" + idAddress).html();
-            $("span").each(function () {
-                var idSpan = $(this).attr("id");
-                var soluongsp = "soluongsp";
-                if (idSpan && idSpan.startsWith(soluongsp)) {
-                    var masp = idSpan.slice(soluongsp.length, idSpan.length);
-                    var soluong = $("#" + idSpan).html();
-                    var text = { "masp": masp, "soluong": soluong };
-                    arr.push(text);
+       const arr = getThongTinDonHangInThanhToan();
+       if(arr){
+            if(arr[4] == 1){
+                if(tienHanhthanhToan(arr)){
+                    alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm ^_^ !!!");
+                    location.assign(linkTuyetDoi+"hoadon");
                 }
-            });
-            if (tienHanhthanhToan(diachigiaohang, arr, sdtgh, phiship)) {
-                alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm");
-                updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
-                location.assign(linkTuyetDoi);
-            } else {
-                alert("Thanh Toán Thất Bại");
+            }else{
+                $(".contentQr").slideDown();
+                $(".checkout-area").slideUp();
             }
-        } else {
-            alert("Chua chon dia chi thanh toan");
+       }else{
+           alert("Chưa Chọn Đầy Thủ Thông Tin");
+       }
+    });
+    $("#thanhtoanOnline").click(function (e) {
+        const arr = getThongTinDonHangInThanhToan();
+        if(arr){
+             if(arr[4] == 0){
+                 if(tienHanhthanhToan(arr)){
+                     alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm ^_^ !!!");
+                     location.assign(linkTuyetDoi+"hoadon");
+                 }
+             }else{
+                alert("Thanh Toán Thất Bại");
+                location.assign(linkTuyetDoi);
+             }
+        }else{
+            alert("Chưa Chọn Đầy Thủ Thông Tin");
         }
     });
     $(":checkbox").click(function (e) {
         var idThis = $(this).attr("id");
         var cboxgh = "cboxgh";
+        var checkboxTT = "checkboxTT";
         if (idThis.startsWith(cboxgh)) {
             var madiachigiaohang = idThis.slice(cboxgh.length, idThis.length);
             var giaTienSp = $("#giaTienSp").html();
@@ -284,6 +281,14 @@ $(document).ready(function () {
             });
             $("#shippingCost").html((diachi.length) * 2000);
             $("#tongtien").html((parseInt(giaTienSp) + (diachi.length) * 2000) + " đ");
+        }
+        if (idThis.startsWith(checkboxTT)) {
+            $(":checkbox").each(function () {
+                var idThisC = $(this).attr("id");
+                if ($(this).is(":checked") && idThis != idThisC && idThisC.startsWith(checkboxTT)) {
+                    $(this).prop("checked", false);
+                }
+            });
         }
     });
     /// noi chon tinh huyen xa 
@@ -534,14 +539,57 @@ $(document).ready(function () {
         }
 
     });
-    $("body").on("click","a", function () {
+    $("body").on("click", "a", function () {
         var idThis = $(this).attr("id");
-        if(idThis.startsWith("back_contentMain")){
+        if (idThis.startsWith("back_contentMain")) {
             $("#contentMain").slideDown();
             $("#contentHidden").slideUp();
-        }   
+        }
+    });
+    $("#opmd").click(function (e) {
+
+        // $(".checkout-area").hide();
     });
     // function support 
+    function getThongTinDonHangInThanhToan() {
+        var idAddress = "";
+        var ndhinhthuc = "";
+        var cboxgh = "cboxgh";
+        var checkboxTT = "checkboxTT";
+        var idTT = "";
+        $(":checkbox").each(function () {
+            var idThis = $(this).attr("id");
+            if ($(this).is(":checked") && idThis.startsWith(cboxgh)) {
+                idAddress = $(this).attr("id");
+                idAddress = idAddress.slice(cboxgh.length, idAddress.length);
+            }
+            if ($(this).is(":checked") && idThis.startsWith(checkboxTT)) {
+                idTT = $(this).attr("id");
+                idTT = idTT.slice(checkboxTT.length, idTT.length);
+            }
+        });
+        if(idAddress != "" && idTT != ""){
+            var arr = [];
+            var diachigiaohang = $("#spanOfAddress" + idAddress).html();
+            var phiship = (diachigiaohang.length) * 2000;
+            var sdtgh = $("#spanOfNumberPhone" + idAddress).html();
+            $("span").each(function () {
+                var idSpan = $(this).attr("id");
+                var soluongsp = "soluongsp";
+                if (idSpan && idSpan.startsWith(soluongsp)) {
+                    var masp = idSpan.slice(soluongsp.length, idSpan.length);
+                    var soluong = $("#" + idSpan).html();
+                    var text = { "masp": masp, "soluong": soluong };
+                    arr.push(text);
+                }
+            });
+            const result = [diachigiaohang,arr,sdtgh,phiship,idTT];
+            return result;
+        }else{
+            return false;
+        }
+
+    }
     function showDetailBill(mahoadon) {
         var result = "";
         $.ajax({
@@ -911,17 +959,18 @@ $(document).ready(function () {
         });
         return result;
     }
-    function tienHanhthanhToan(diachigiaohang, arr, sodienthoaigh, phiship) {
+    function tienHanhthanhToan(arrTT) {
         var result = 0;
         $.ajax({
             type: "post",
             async: false,
             url: linkTuyetDoi + "ajax/thanhtoan",
             data: {
-                diachigiaohang: diachigiaohang,
-                arr: arr,
-                sodienthoaigh: sodienthoaigh,
-                phiship: phiship
+                diachigiaohang: arrTT[0],
+                arr: arrTT[1],
+                sodienthoaigh: arrTT[2],
+                phiship: arrTT[3],
+                hinhthucthanhtoan:arrTT[4]
             },
             success: function (response) {
                 result = response;
