@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 09, 2021 at 04:52 PM
+-- Generation Time: Nov 11, 2021 at 11:03 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -38,7 +38,7 @@ CREATE TABLE `chitietgiohang` (
 --
 
 INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
-(2, 'khachhang-gh', 1);
+(6, 'khachhang-gh', 1);
 
 -- --------------------------------------------------------
 
@@ -67,7 +67,30 @@ INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
 (1, 7, 82),
 (1, 2, 83),
 (1, 4, 83),
-(1, 3, 84);
+(1, 3, 84),
+(1, 2, 85),
+(1, 2, 86),
+(1, 2, 87),
+(1, 8, 88),
+(1, 2, 89),
+(1, 2, 90),
+(1, 37, 91),
+(1, 37, 92),
+(1, 37, 93),
+(1, 37, 94),
+(1, 37, 95),
+(1, 2, 96),
+(1, 2, 97),
+(1, 2, 98),
+(1, 35, 99),
+(1, 35, 100),
+(1, 23, 101),
+(1, 3, 102),
+(1, 8, 102),
+(1, 6, 102),
+(1, 5, 102),
+(1, 1, 102),
+(1, 11, 103);
 
 -- --------------------------------------------------------
 
@@ -95,11 +118,28 @@ CREATE TABLE `congviec` (
 
 INSERT INTO `congviec` (`macv`, `tendangnhap`, `makhachhang`, `mahoadon`, `diadiemcongviec`, `sdtKh`, `thoigiannhancongviec`, `thoigianxongcongviec`, `tiendo`, `danhgiacuakhachhang`, `danhancv`) VALUES
 (31, 'nhanvien1', 'khachhang', 79, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-09 21:31:24', '2021-11-09 21:31:28', 1, 5, 1),
-(32, 'nhanvien1', 'khachhang', 80, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 21:29:51', '2021-11-09 21:30:56', 1, 4, 1),
-(33, 'nhanvien', 'khachhang', 81, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-09 22:47:05', '2021-11-09 22:47:12', 1, 4, 1),
-(34, 'nhanvien', 'khachhang', 82, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:48:26', '2021-11-09 22:48:31', 1, 0, 1),
-(35, 'nhanvien', 'khachhang', 83, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:48:28', '2021-11-09 22:48:34', 1, 0, 1),
-(36, 'nhanvien', 'khachhang', 84, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:50:49', '2021-11-09 22:50:54', 1, 0, 1);
+(32, 'nhanvien1', 'khachhang', 80, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 21:29:51', '2021-11-09 21:30:56', 1, 5, 1),
+(33, 'nhanvien', 'khachhang', 81, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-09 22:47:05', '2021-11-09 22:47:12', 1, 5, 1),
+(34, 'nhanvien', 'khachhang', 82, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:48:26', '2021-11-09 22:48:31', 1, 5, 1),
+(35, 'nhanvien', 'khachhang', 83, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:48:28', '2021-11-09 22:48:34', 1, 5, 1),
+(36, 'nhanvien', 'khachhang', 84, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:50:49', '2021-11-09 22:50:54', 1, 5, 1),
+(38, 'nhanvien', 'khachhang', 87, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 08:26:38', '2021-11-11 08:26:46', 1, 4, 1),
+(39, 'nhanvien', 'khachhang', 88, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:54', '2021-11-11 16:03:09', 1, 0, 1),
+(40, 'nhanvien', 'khachhang', 89, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:56', '2021-11-11 16:03:11', 1, 0, 1),
+(41, 'nhanvien', 'khachhang', 90, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:58', '2021-11-11 16:03:13', 1, 0, 1),
+(42, 'nhanvien', 'khachhang', 91, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:00', '2021-11-11 16:03:15', 1, 0, 1),
+(43, 'nhanvien', 'khachhang', 92, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:02', '2021-11-11 16:03:17', 1, 0, 1),
+(44, 'nhanvien', 'khachhang', 93, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:04', '2021-11-11 16:03:20', 1, 0, 1),
+(45, 'nhanvien', 'khachhang', 94, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:06', '2021-11-11 16:03:21', 1, 0, 1),
+(46, NULL, 'khachhang', 95, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
+(47, NULL, 'khachhang', 96, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
+(48, NULL, 'khachhang', 97, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
+(49, NULL, 'khachhang', 98, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
+(50, NULL, 'khachhang', 99, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
+(51, NULL, 'khachhang', 100, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
+(52, 'nhanvien', 'khachhang', 101, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:30:23', '2021-11-11 16:30:26', 1, 0, 1),
+(53, 'nhanvien', 'khachhang', 102, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:33:18', '2021-11-11 16:33:23', 1, 0, 1),
+(54, NULL, 'khachhang', 103, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -190,21 +230,42 @@ CREATE TABLE `hoadon` (
   `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
   `ngaymua` date NOT NULL,
   `diachigiaohang` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `sodienthoaigh` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL
+  `sodienthoaigh` varchar(10) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `phiship` decimal(10,2) NOT NULL,
+  `hinhthucthanhtoan` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 --
 -- Dumping data for table `hoadon`
 --
 
-INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`, `sodienthoaigh`) VALUES
-(78, 'khachhang', '2021-11-09', 'Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ', '0903439812'),
-(79, 'khachhang', '2021-11-09', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990'),
-(80, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789'),
-(81, 'khachhang', '2021-11-09', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990'),
-(82, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789'),
-(83, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789'),
-(84, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789');
+INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`, `sodienthoaigh`, `phiship`, `hinhthucthanhtoan`) VALUES
+(78, 'khachhang', '2021-11-09', 'Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ', '0903439812', '94000.00', 1),
+(79, 'khachhang', '2021-11-09', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(80, 'khachhang', '2021-11-09', 'Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ', '0123456789', '94000.00', 1),
+(81, 'khachhang', '2021-11-09', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(82, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
+(83, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
+(84, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
+(85, 'khachhang', '2021-11-10', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(86, 'khachhang', '2021-11-10', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
+(87, 'khachhang', '2021-11-10', 'Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy', '0832090990', '94000.00', 1),
+(88, 'khachhang', '2021-11-10', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
+(89, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
+(90, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
+(91, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(92, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(93, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(94, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(95, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(96, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 0),
+(97, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(98, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 0),
+(99, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
+(100, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
+(101, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
+(102, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 0),
+(103, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0);
 
 -- --------------------------------------------------------
 
@@ -516,7 +577,7 @@ ALTER TABLE `thumucsanpham`
 -- AUTO_INCREMENT for table `congviec`
 --
 ALTER TABLE `congviec`
-  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT for table `diachigiaohang`
@@ -534,7 +595,7 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=85;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- AUTO_INCREMENT for table `luong`
