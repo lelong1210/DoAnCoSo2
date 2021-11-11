@@ -106,31 +106,4 @@ class homeModel extends connectDB{
             $this->ShowProduct(json_decode($this->SelectTypeProduct($arrChild[1])),$numberRepeact);
         }
     }
-    function ShowSlider(){
-        $arr = json_decode($this->SelectSlider());
-        $arr = array_values((array) $arr);
-        $count = count($arr);
-        for ($i=0; $i < $count; $i++) { 
-            $arrChild = array_values((array)$arr[$i]);
-            echo"<div class='hero-slide-item slider-height swiper-slide d-flex'>";
-                echo"<div class='container align-self-center'>";
-                    echo"<div class='row'>";
-                        echo"<div class='col-xl-6 col-lg-7 col-md-7 col-sm-7 align-self-center'>";
-                            echo"<div class='hero-slide-content slider-animated-1'>";
-                                echo"<span class='category'></span>";
-                                echo"<p >$arrChild[1]</p>";
-                                echo"<p></p>";
-                                echo"<a href='#' class='btn btn-lg btn-primary btn-hover-dark mt-5'>Mua Ngay</a>";
-                            echo"</div>";
-                        echo"</div>";
-                        echo"<div class='col-xl-6 col-lg-5 col-md-5 col-sm-5'>";
-                            echo"<div class='hero-slide-image'>";
-                                echo "<a href='./$arrChild[3]/$arrChild[0]'><img src='$arrChild[5]' alt='' /></a>";
-                            echo"</div>";
-                        echo"</div>";
-                    echo"</div>";
-                echo"</div>";
-            echo"</div>";
-        }
-    }
 }
