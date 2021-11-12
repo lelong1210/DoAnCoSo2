@@ -2,7 +2,12 @@
 <html lang="zxx">
 
 <head>
-    <?php require_once "block/head.php"; ?>
+    <?php require_once "block/head.php"; 
+        if(isset($_GET['code'])){
+            $_SESSION['code'] = $_GET['code'];
+            header("Location:/www/dndk");
+        }
+    ?>
     <title>Trang Chủ</title>
 </head>
 

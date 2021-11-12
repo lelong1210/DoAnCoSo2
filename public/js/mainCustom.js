@@ -713,13 +713,17 @@ $(document).ready(function () {
         return result;
     }
     function dangNhap(tendangnhap, matkhau) {
-        $.post("./ajax/dangnhap", { tendangnhap: tendangnhap, matkhau: matkhau }, function (data) {
-            if (data) {
-                location.assign("./taikhoan");
-            } else {
-                alert("DANG NHAP THAT BAI");
-            }
-        });
+        if(tendangnhap == "" || matkhau == ""){
+            alert("Quý Khách Vui Lòng Nhập Đầy Đủ Thông Tin");
+        }else{
+            $.post("./ajax/dangnhap", { tendangnhap: tendangnhap, matkhau: matkhau }, function (data) {
+                if (data) {
+                    location.assign("./taikhoan");
+                } else {
+                    alert("Tên Đăng Nhập Hoặc Mật Khẩu Không Đúng");
+                }
+            });
+        }
     }
     function spanErr(idName, option, mess) {
         if (option) {
