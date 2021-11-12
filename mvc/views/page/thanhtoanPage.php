@@ -3,7 +3,7 @@
         <div class="row">
             <div class="col-lg-12 mt-md-30px mt-lm-30px ">
                 <div class="your-order-area">
-                    <h3>Your order</h3>
+                    <h3>SẢn Phẩm</h3>
                     <div class="your-order-wrap gray-bg-4">
                         <div class="your-order-product-info">
                             <div class="your-order-top">
