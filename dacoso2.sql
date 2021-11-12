@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 11, 2021 at 11:03 AM
+-- Generation Time: Nov 12, 2021 at 06:36 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -38,7 +38,7 @@ CREATE TABLE `chitietgiohang` (
 --
 
 INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
-(6, 'khachhang-gh', 1);
+(2, 'khachhang-gh', 2);
 
 -- --------------------------------------------------------
 
@@ -90,7 +90,18 @@ INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
 (1, 6, 102),
 (1, 5, 102),
 (1, 1, 102),
-(1, 11, 103);
+(1, 11, 103),
+(1, 2, 104),
+(2, 3, 104),
+(1, 6, 105),
+(3, 66, 105),
+(5, 2, 105),
+(1, 8, 105),
+(1, 23, 105),
+(1, 64, 105),
+(1, 2, 106),
+(2, 2, 107),
+(1, 2, 108);
 
 -- --------------------------------------------------------
 
@@ -117,29 +128,34 @@ CREATE TABLE `congviec` (
 --
 
 INSERT INTO `congviec` (`macv`, `tendangnhap`, `makhachhang`, `mahoadon`, `diadiemcongviec`, `sdtKh`, `thoigiannhancongviec`, `thoigianxongcongviec`, `tiendo`, `danhgiacuakhachhang`, `danhancv`) VALUES
-(31, 'nhanvien1', 'khachhang', 79, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-09 21:31:24', '2021-11-09 21:31:28', 1, 5, 1),
+(31, 'nhanvien1', 'khachhang', 79, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-09 21:31:24', '2021-11-09 21:31:28', 1, 3, 1),
 (32, 'nhanvien1', 'khachhang', 80, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 21:29:51', '2021-11-09 21:30:56', 1, 5, 1),
 (33, 'nhanvien', 'khachhang', 81, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-09 22:47:05', '2021-11-09 22:47:12', 1, 5, 1),
 (34, 'nhanvien', 'khachhang', 82, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:48:26', '2021-11-09 22:48:31', 1, 5, 1),
 (35, 'nhanvien', 'khachhang', 83, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:48:28', '2021-11-09 22:48:34', 1, 5, 1),
 (36, 'nhanvien', 'khachhang', 84, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:50:49', '2021-11-09 22:50:54', 1, 5, 1),
 (38, 'nhanvien', 'khachhang', 87, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 08:26:38', '2021-11-11 08:26:46', 1, 4, 1),
-(39, 'nhanvien', 'khachhang', 88, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:54', '2021-11-11 16:03:09', 1, 0, 1),
-(40, 'nhanvien', 'khachhang', 89, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:56', '2021-11-11 16:03:11', 1, 0, 1),
-(41, 'nhanvien', 'khachhang', 90, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:58', '2021-11-11 16:03:13', 1, 0, 1),
-(42, 'nhanvien', 'khachhang', 91, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:00', '2021-11-11 16:03:15', 1, 0, 1),
-(43, 'nhanvien', 'khachhang', 92, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:02', '2021-11-11 16:03:17', 1, 0, 1),
-(44, 'nhanvien', 'khachhang', 93, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:04', '2021-11-11 16:03:20', 1, 0, 1),
-(45, 'nhanvien', 'khachhang', 94, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:06', '2021-11-11 16:03:21', 1, 0, 1),
-(46, NULL, 'khachhang', 95, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
-(47, NULL, 'khachhang', 96, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
+(39, 'nhanvien', 'khachhang', 88, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:54', '2021-11-11 16:03:09', 1, 2, 1),
+(40, 'nhanvien', 'khachhang', 89, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:56', '2021-11-11 16:03:11', 1, 5, 1),
+(41, 'nhanvien', 'khachhang', 90, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:58', '2021-11-11 16:03:13', 1, 3, 1),
+(42, 'nhanvien', 'khachhang', 91, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:00', '2021-11-11 16:03:15', 1, 3, 1),
+(43, 'nhanvien', 'khachhang', 92, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:02', '2021-11-11 16:03:17', 1, 4, 1),
+(44, 'nhanvien', 'khachhang', 93, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:04', '2021-11-11 16:03:20', 1, 5, 1),
+(45, 'nhanvien', 'khachhang', 94, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:06', '2021-11-11 16:03:21', 1, 3, 1),
+(46, 'nhanvien', 'khachhang', 95, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-12 12:01:28', '2021-11-12 12:01:51', 1, 0, 1),
+(47, 'nhanvien', 'khachhang', 96, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-12 14:11:24', '2021-11-12 14:11:31', 1, 0, 1),
 (48, NULL, 'khachhang', 97, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
 (49, NULL, 'khachhang', 98, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
 (50, NULL, 'khachhang', 99, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
 (51, NULL, 'khachhang', 100, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
-(52, 'nhanvien', 'khachhang', 101, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:30:23', '2021-11-11 16:30:26', 1, 0, 1),
-(53, 'nhanvien', 'khachhang', 102, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:33:18', '2021-11-11 16:33:23', 1, 0, 1),
-(54, NULL, 'khachhang', 103, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0);
+(52, 'nhanvien', 'khachhang', 101, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:30:23', '2021-11-11 16:30:26', 1, 5, 1),
+(53, 'nhanvien', 'khachhang', 102, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:33:18', '2021-11-11 16:33:23', 1, 5, 1),
+(54, NULL, 'khachhang', 103, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
+(55, NULL, 'khachhang', 104, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
+(56, 'nhanvien', 'khachhang', 105, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-12 14:10:48', '2021-11-12 14:11:05', 1, 0, 1),
+(57, 'nhanvien', 'khachhang', 106, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-12 08:47:02', '2021-11-12 08:47:19', 1, 5, 1),
+(58, 'nhanvien', 'lequanglong12102k2@gmail.com', 107, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-13 00:27:46', '2021-11-13 00:27:50', 1, 0, 1),
+(59, NULL, 'lqlong.20it1@vku.udn.vn', 108, ' Tỉnh Vĩnh Phúc - Huyện Tam Đảo - Xã Đạo Trù ', '0932319212', NULL, NULL, 0, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -163,7 +179,9 @@ CREATE TABLE `diachigiaohang` (
 
 INSERT INTO `diachigiaohang` (`madiachigiaohang`, `tendangnhap`, `sdtGh`, `tentinh`, `tenhuyen`, `tenxa`, `diachichitiet`) VALUES
 (24, 'khachhang', '0123456789', 'Tỉnh Ninh Bình', 'Huyện Nho Quan', 'Xã Xích Thổ', 'Sen Bang 123'),
-(25, 'khachhang', '0832090990', 'Tỉnh Quảng Bình', 'Huyện Lệ Thủy', 'Xã Sen Thủy', 'sen thủy');
+(25, 'khachhang', '0832090990', 'Tỉnh Quảng Bình', 'Huyện Lệ Thủy', 'Xã Sen Thủy', 'sen thủy'),
+(26, 'lequanglong12102k2@gmail.com', '0932183222', 'Tỉnh Lạng Sơn', 'Huyện Lộc Bình', 'Xã Tĩnh Bắc', 'Sen Thủy'),
+(27, 'lqlong.20it1@vku.udn.vn', '0932319212', 'Tỉnh Vĩnh Phúc', 'Huyện Tam Đảo', 'Xã Đạo Trù', 'senthuy');
 
 -- --------------------------------------------------------
 
@@ -181,7 +199,8 @@ CREATE TABLE `giohang` (
 --
 
 INSERT INTO `giohang` (`magiohang`, `tendangnhap`) VALUES
-('khachhang-gh', 'khachhang');
+('khachhang-gh', 'khachhang'),
+('lequanglong12102k2@gmail.com-gh', 'lequanglong12102k2@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -265,7 +284,12 @@ INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`, `s
 (100, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
 (101, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
 (102, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 0),
-(103, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0);
+(103, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
+(104, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
+(105, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
+(106, 'khachhang', '2021-11-12', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 0),
+(107, 'lequanglong12102k2@gmail.com', '2021-11-13', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(108, 'lqlong.20it1@vku.udn.vn', '2021-11-13', ' Tỉnh Vĩnh Phúc - Huyện Tam Đảo - Xã Đạo Trù ', '0932319212', '90000.00', 1);
 
 -- --------------------------------------------------------
 
@@ -292,7 +316,7 @@ CREATE TABLE `nguoidung` (
   `diachi` varchar(30) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `sodienthoai` varchar(10) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `email` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `matkhau` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `matkhau` varchar(255) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `ngaythamgia` date NOT NULL,
   `quyen` int(2) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
@@ -329,13 +353,17 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('guardsmangently', NULL, NULL, NULL, 'brennan63@yahoo.com', '4ec2dee1dccd30e9715451a74c11c47f', '2021-11-06', 0),
 ('habitcocktail', NULL, NULL, NULL, 'serena_leffler@gmail.com', '9a126c56bf636e1e2c43b475c1f3586b', '2021-11-06', 0),
 ('heardoptimistic', NULL, NULL, NULL, 'waldo95@hotmail.com', '8a2ed788e464bd2fb38c5ea80878c3d0', '2021-11-06', 0),
+('heoyeuhac@gmail.com', ' PHẠM THỊ NGỌC', '', '', 'heoyeuhac@gmail.com', '', '2021-11-13', 0),
 ('holygarden', NULL, NULL, NULL, 'dan_balistreri@hotmail.com', '06339ba785761735001aee34a9e3f2fc', '2021-11-06', 0),
 ('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', '2021-11-06', 0),
 ('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', '2021-11-06', 0),
 ('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', '2021-11-06', 0),
 ('khachhang', 'LÊ QUANG LONG', 'SEN THỦY', '0903439812', 'lql@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-07', 0),
+('lelong12102k2@gmail.com', 'LE QUANG LONG', '', '', 'lelong12102k2@gmail.com', '', '2021-11-13', 0),
+('lequanglong12102k2@gmail.com', 'LONG LE', '', '', 'lequanglong12102k2@gmail.com', '', '2021-11-13', 0),
 ('longtermplayoffs', 'PHẠM THỊ HẰNG', 'QUANG BINH', '0904349823', 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', '2021-11-06', 0),
-('lql', NULL, NULL, NULL, 'lequanglong12102k2@gmail.com', '93279e3308bdbbeed946fc965017f67a', '2021-11-06', 1),
+('lql', NULL, NULL, NULL, 'test@gmail.com', '93279e3308bdbbeed946fc965017f67a', '2021-11-06', 1),
+('lqlong.20it1@vku.udn.vn', 'LE QUANG LONG', '', '', 'lqlong.20it1@vku.udn.vn', '', '2021-11-13', 0),
 ('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', '2021-11-06', 0),
 ('motorwayscold', NULL, NULL, NULL, 'mariah77@gmail.com', 'cddf86a9055a2e2168733a07ef284cb6', '2021-11-06', 0),
 ('nhanvien', NULL, NULL, NULL, 'lql@gmail.com.vn', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-08', 2),
@@ -380,8 +408,8 @@ CREATE TABLE `sanpham` (
 
 INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`, `linkduongdananh`, `hangsx`, `dunglamslider`, `soluongsp`, `ngaynhap`) VALUES
 (1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 99, '2021-11-08'),
-(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 72, '2021-10-01'),
-(3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 101, '2021-10-01'),
+(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 71, '2021-10-01'),
+(3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 100, '2021-10-01'),
 (4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 99, '2021-10-01'),
 (5, 'eufy Smart Lock Touch with Wifi Bridge – Khóa cửa vân tay, chống nước IP65', '5990000.00', 'khoacuathongminh', 'Khóa cửa thông minh eufy Smart Lock Touch – cảm biến vân tay siêu nhạy, mở khóa trong 0.3 giây Tự động khóa khi phát hiện cửa đang đóng Ứng dụng quản lý giao diện Tiếng Việt Đạt chứng nhận BHMA, bền bỉ với tuổi thọ lên tới 70 năm Có 5 cách mở khóa: Nhận diện vây tay, nhập mật mã, mở bằng chìa thông thường, sử dụng app Eufy Security và mở khóa bằng giọng nói Thiết bị có thể hoạt động trong thời tiết khắc nghiệt với chống nước IP65 Tích hợp cảm biến đóng/mở, chốt khóa điện tử kết nối Bluetooth Điều khiển từ xa với Wifi Bridge', 'https://gucongnghe.com/wp-content/uploads/2020/08/eufy-smart-lock-touch-with-bridge-1-247x296.jpg', 'eufy ', 0, 99, '2021-10-01'),
 (6, 'Khóa cửa thông minh Wyze Lock, tự động khóa – mở cửa từ xa', '2690000.00', 'khoacuathongminh', 'Khóa cửa thông minh Wyze Lock, kết nối WiFi, Bluetooth và Zigbee Sử dụng 4 viên pin tiểu AA cho thời gian sử dụng 5 – 6 tháng Khóa và mở khóa từ xa qua ứng dụng Wyze Tự động mở khóa khi bạn đến gần. Tự động khóa khi cửa được đóng. Dễ dàng lắp đặt trong vòng 15 phút Chia sẻ quyền sử dụng khóa với người khác từ xa Ra lệnh bằng giọng nói với Amazon Alexa, Google Assistant sẽ sớm được hỗ trợ', 'https://gucongnghe.com/wp-content/uploads/2020/05/khoa-thong-minh-Wyze-Lock-247x296.jpg', 'Wyze Lock', 0, 98, '2021-10-01'),
@@ -431,11 +459,12 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 (61, 'Camera 2K Eufy Security Camera T84001W1, tích hợp còi báo động\r\n				', '998000.00', 'camera', 'Eufy indoor T8400 2K Tích hợp công nghệ AI tiên tiến AI thông minh có thể nhận diện giữa người và thú cưng, tránh đưa ra các cảnh báo sai, làm phiền công việc của chủ nhà. Bên cạnh đó, nó cũng sẽ tự đánh giá mức độ tiếng ồn phát ra, khi thấy cần thiết nó sẽ thông báo cho bạn ngay.', 'https://product.hstatic.net/200000295422/product/new_0256_t8400--800x800_1200x_32d40ade32c4435aacf27fe3cdb28dc9_grande.jpg', 'eufy ', 0, 99, '2021-10-01'),
 (62, 'Camera 360 Xiaomi Mi Home Security 360 2K  - Phân phối chính hãng\r\n				', '1190000.00', 'camera', 'Camera ezviz C6W xoay 360 độ CS-C6W Với diện mạo khác biệt, camera EZVIZ C6W sẽ giúp bạn bảo vệ ngôi nhà theo phong cách hoàn toàn mới: không chỉ chuyên nghiệp và an toàn mà còn thật Kool. Thanh lịch và linh hoạt, camera Wifi C6W là tất cả sự bảo vệ bạn cần cho một ngôi nhà rộng lớn. Camera ghi lại ở độ phân giải 2K và tự động theo dõi chuyển động ở chế độ thu phóng gấp 4 lần để đảm bảo không có gì thoát khỏi tầm mắt.', 'https://product.hstatic.net/200000295422/product/new_0266_camera-thong-minh-xiaomi-ptz-phien-ban-2k_425a0143ea1947768bcf3037b4a91186_grande.jpg', 'Xiaomi', 0, 99, '2021-10-01'),
 (63, 'Camera ezviz C6W xoay 360 độ\r\n				', '1349000.00', 'camera', 'Camera ezviz C6W xoay 360 độ CS-C6W Với diện mạo khác biệt, camera EZVIZ C6W sẽ giúp bạn bảo vệ ngôi nhà theo phong cách hoàn toàn mới: không chỉ chuyên nghiệp và an toàn mà còn thật Kool. Thanh lịch và linh hoạt, camera Wifi C6W là tất cả sự bảo vệ bạn cần cho một ngôi nhà rộng lớn. Camera ghi lại ở độ phân giải 2K và tự động theo dõi chuyển động ở chế độ thu phóng gấp 4 lần để đảm bảo không có gì thoát khỏi tầm mắt.', 'https://product.hstatic.net/200000295422/product/new_0317_6411-camera-wife-ezviz-c6w-4mp-quay-quet-360-do-11_16b53885fd444b4cae7ec2cf17c5fe95_grande.jpg', 'ezviz', 0, 99, '2021-10-01'),
-(64, 'Máy Báo Thời Tiết', '10000000.00', 'máy hút bụi', 'đây là sản phẩm very good good good', 'http://localhost/www/uploads/123.jpeg', 'xaomil', 0, 99, '2021-10-29'),
+(64, 'Máy Báo Thời Tiết', '10000000.00', 'mayhutbui', 'đây là sản phẩm very good good good', 'http://localhost/www/uploads/123.jpeg', 'xaomil', 0, 99, '2021-10-29'),
 (65, 'camera 3x', '93021231.00', 'camera', 'có thể quay liên tục 30 năm mà k bị hỏng', 'http://localhost/www/uploads/camera.jpg', 'xaomii', 1, 8912, '2021-10-29'),
 (66, 'camera x 300', '1231231.00', 'camera', 'thật không thể tinh được :))))', 'http://localhost/www/uploads/456.jpeg', 'xaomi', 0, 456, '2021-10-29'),
 (67, 'điều hòa hơi nước', '8882221.00', 'dieuhoathongminh', 'rất perfect', 'http://localhost/www/uploads/789.jpg', 'Amazon', 0, 986, '2021-10-29'),
-(68, 'điều hòa hơi nước siêu phẩm nhat', '8882221.00', 'dieuhoathongminh', 'rất perfect nha nha nha', '/www/uploads/11121.jpeg', 'Amazon', 0, 986, '2021-11-02');
+(68, 'điều hòa hơi nước siêu phẩm nhat', '8882221.00', 'dieuhoathongminh', 'rất perfect nha nha nha', '/www/uploads/11121.jpeg', 'Amazon', 0, 986, '2021-11-02'),
+(71, 'Hút Bụi Siêu Cấp', '20121212.00', 'mayhutbui', 'very cheap very good', '/www/uploads/hutbui123.jpg', 'amazon', 0, 981, '2021-11-12');
 
 -- --------------------------------------------------------
 
@@ -577,13 +606,13 @@ ALTER TABLE `thumucsanpham`
 -- AUTO_INCREMENT for table `congviec`
 --
 ALTER TABLE `congviec`
-  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `diachigiaohang`
 --
 ALTER TABLE `diachigiaohang`
-  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT for table `hangsx`
@@ -595,7 +624,7 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=109;
 
 --
 -- AUTO_INCREMENT for table `luong`
@@ -607,7 +636,7 @@ ALTER TABLE `luong`
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=71;
+  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=72;
 
 --
 -- AUTO_INCREMENT for table `thongtinnhanxetsanpham`
