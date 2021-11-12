@@ -42,8 +42,6 @@
             }
             unset($_SESSION['code']);
             header('Location: /www/dndk');
-            // echo $google_account_info;
-            // now you can use this profile info to create account in your website and make user logged in.
         }
     }
     ?>
