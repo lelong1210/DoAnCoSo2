@@ -56,7 +56,6 @@
                                                 <button id="dangnhap" type="button"><span>Đăng Nhập</span></button><br>
                                                 <hr>
                                                 <?php require_once "dangnhapMangxahoi/source_google.php"?>
-                                                <a href="./dngoogle" id="dangnhapgg" type="button"><span><i class="fab fa-google"></i></span></a>
                                             </div>
                                         </form>
                                     </div>

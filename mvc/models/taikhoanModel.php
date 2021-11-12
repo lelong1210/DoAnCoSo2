@@ -43,7 +43,7 @@ class taikhoanModel extends connectDB
     }
     function checkAcount($tendangnhap)
     {
-        try {
+        try { 
             $conn = $this->GetConn();
             $sql = "SELECT * FROM nguoidung WHERE tendangnhap=:tendangnhap";
             $query = $conn->prepare($sql);
