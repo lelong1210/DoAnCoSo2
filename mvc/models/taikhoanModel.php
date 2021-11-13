@@ -227,10 +227,11 @@ class taikhoanModel extends connectDB
     {
         $conn = $this->GetConn();
         $sql = "SELECT nguoidung.tendangnhap , hoadon.mahoadon,chitiethoadon.masp,chitiethoadon.soluong
-        FROM ((hoadon 
+        FROM (((hoadon 
         INNER JOIN nguoidung ON hoadon.tendangnhap = nguoidung.tendangnhap)
         INNER JOIN 	chitiethoadon ON hoadon.mahoadon = chitiethoadon.mahoadon)
-        WHERE chitiethoadon.masp = :masp AND nguoidung.tendangnhap = :tendangnhap";
+        INNER JOIN congviec ON hoadon.mahoadon = congviec.mahoadon)
+        WHERE chitiethoadon.masp = :masp AND nguoidung.tendangnhap = :tendangnhap AND congviec.tiendo = 1";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":masp", $masp);
@@ -396,9 +397,50 @@ class taikhoanModel extends connectDB
             return false;
         }        
     }
-    // danh gia
+    // danh gia san pham 
     function danhgia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)
-    {
+    {   
+        if($this->kiemTraDaDanhGia($tendangnhap,$masp)){
+            if($this->updateDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)){
+                return true;
+            }return false;
+        }else{
+            if($this->insertDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)){
+                return true;
+            }return false;
+        }
+    }
+    function kiemTraDaDanhGia($tendangnhap,$masp){
+        $conn = $this->GetConn();
+        $sql = "SELECT * FROM thongtinnhanxetsanpham WHERE masp = :masp AND tendangnhap = :tendangnhap";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap", $tendangnhap);
+        $query->bindParam(":masp", $masp);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
+    function updateDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia){
+        $conn = $this->GetConn();
+        $sql = "UPDATE thongtinnhanxetsanpham SET sosao = :sosao , noidung = :noidung , ngaydanggia = :ngaydanggia WHERE tendangnhap = :tendangnhap AND masp = :masp";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":masp", $masp);
+        $query->bindParam(":tendangnhap", $tendangnhap);
+        $query->bindParam(":noidung", $noidung);
+        $query->bindParam(":sosao", $sosao);
+        $query->bindParam(":ngaydanggia", $ngaydanggia);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }        
+    }
+    function insertDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia){
         $conn = $this->GetConn();
         $sql = "INSERT INTO thongtinnhanxetsanpham(masp,tendangnhap,noidung,sosao,ngaydanggia) VALUES (:masp,:tendangnhap,:noidung,:sosao,:ngaydanggia)";
         $query = $conn->prepare($sql);

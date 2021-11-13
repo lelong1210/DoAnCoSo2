@@ -36,7 +36,7 @@
                                                         </div>
                                                     </div>
                                                     <div class="review-left">
-                                                        <?php echo "" . $arrChild[3] ?>
+                                                        <?php echo " | " . $arrChild[3] ?>
                                                     </div>
                                                 </div>
                                                 <div class="review-bottom">

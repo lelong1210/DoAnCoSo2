@@ -431,7 +431,7 @@ $(document).ready(function () {
                     alert("bạn chưa nhập nội dung...");
                 }
             } else {
-                alert("bạn chưa mua sản phẩm này ^_^ !!! ")
+                alert("Quý Khách Chưa Nhận Được Sản Phẩm Này ^_^ !!!");
             }
         }
         else {
@@ -1033,7 +1033,7 @@ $(document).ready(function () {
                 masp: masp
             },
             // dataType: "dataType",
-            success: function (response) {
+            success: function (response) {  
                 result = response;
             }
         });
