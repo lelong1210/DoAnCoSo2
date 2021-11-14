@@ -172,7 +172,7 @@ $(document).ready(function () {
         }
     });
     // chat 
-    $("li").click(function (e) { 
+    $("body").on("click","li",function (e) { 
         var list_chat = "list_chat";
         var idThis = $(this).attr("id");
         if(idThis.startsWith(list_chat)){
@@ -206,6 +206,26 @@ $(document).ready(function () {
             }
         }
     }, 1000);
+    $("body").on("click","button",function (e) { 
+        // var idThis = $(this).attr("id");
+        var timkiemUser = "timkiemUser";
+        var ids = "list_chat0";
+        $("li").each(function (param) { 
+            idThis = $(this).attr("id");
+            if(idThis == ids){
+                alert($(this).attr("id"));
+                $(this).remove();
+            }
+         });
+
+    });
+    setInterval(() => {
+        var lidaudanhsach = $("#firtLi").html();
+        var result = getMessLastAdmin(lidaudanhsach);
+        if(result){
+            $("#dsChat").html(result);
+        }
+    }, 1000);
     // function support 
     // function mượn
     function readURL(input) {
@@ -220,6 +240,22 @@ $(document).ready(function () {
         }
     }
     // kết thúc function mượn 
+    function getMessLastAdmin(lidaudanhsach){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/getMessLastAdmin",
+            data: {
+                lidaudanhsach:lidaudanhsach
+            },
+            success: function (response) {
+              result = response;  
+            }
+        });
+        return result;
+
+    }
     function check_newMess_admin(matinnhan,thoigiannhan){
         var result = "";
         $.ajax({

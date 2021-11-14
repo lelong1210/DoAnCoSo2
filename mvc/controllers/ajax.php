@@ -346,5 +346,20 @@ class ajax extends controller{
             echo false;
         }
     }
+    function getMessLastAdmin(){
+        $lidaudanhsach = $_POST["lidaudanhsach"];
+        $model = $this->call_model("chatModel");
+        $arr = json_decode($model->getMessLastAdmin());
+        $arr = array_values((array) $arr[0]);
+        $arrLi = $model->getListTN();
+        if($arr[1] != $lidaudanhsach){
+            $this->call_view_page_admin("ajaxAppendMess",[
+                "arrLi"=>$arrLi
+            ]);
+        }else{
+            echo false;
+        }
+          
+    }
 }
 ?>

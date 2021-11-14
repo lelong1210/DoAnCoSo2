@@ -143,5 +143,21 @@ class chatModel extends connectDB{
             return false;
         }   
     }
+    function getMessLastAdmin(){
+        $conn = $this->GetConn();
+        $sql = "SELECT machitiettinnhan,tinnhan.matinnhan,noidung,thoigiannhan, nguoinhan , nguoidung.tennguoidung
+                FROM ((tinnhan INNER JOIN chitiettinnhan ON tinnhan.matinnhan = chitiettinnhan.matinnhan) 
+                INNER JOIN nguoidung ON chitiettinnhan.nguoinhan = nguoidung.tendangnhap)
+                ORDER BY thoigiannhan DESC
+                LIMIT 1";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }            
+    }
 }
 ?>

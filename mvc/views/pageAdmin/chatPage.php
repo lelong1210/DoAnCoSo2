@@ -31,15 +31,18 @@
                             <div class="users-container"  style="height: 565px;overflow:scroll">
                                 <div class="chat-search-box">
                                     <div class="input-group">
-                                        <input class="form-control" placeholder="Search">
+                                        <!-- <input class="form-control" placeholder="Search">
                                         <div class="input-group-btn">
-                                            <button type="button" class="btn btn-info">
+                                            <button type="button" class="btn btn-info" id="timkiemUser">
                                                 <i class="fa fa-search"></i>
                                             </button>
-                                        </div>
+                                        </div> -->
+                                        <button type="button" class="btn btn-info" id="timkiemUser">
+                                                <i class="fa fa-search"></i>
+                                            </button>
                                     </div>
                                 </div>
-                                <ul class="users">
+                                <ul class="users" id="dsChat">
                                     <?php 
                                         if($arr){
                                             $count = count($arr);
@@ -53,7 +56,10 @@
                                                         <span class="name"><?php echo $arrChild[1]?></span>
                                                         <span class="time"><?php echo $arrChild[2]?></span>
                                                     </p>
-                                                </li>   
+                                                </li>
+                                                <?php if($i == 0){?>
+                                                    <span id="firtLi" style="display: none;"><?php echo $arrChild[0]?></span>
+                                                <?php }?>
                                             <?php }?>
                                     <?php }?>
                                 </ul>
