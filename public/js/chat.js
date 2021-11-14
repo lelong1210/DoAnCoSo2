@@ -34,6 +34,7 @@ $(document).ready(function () {
             async:false,
             url: linkTuyetDoi+"ajax/check_newMess",
             success: function (response) {
+                alert(response);
                 result = response;
             }
         });
@@ -42,7 +43,7 @@ $(document).ready(function () {
     // real time chat
     setInterval(() => {
         if(check_newMess()){
-            // alert("có sự thay đổi");
+            alert("có sự thay đổi");
         }
     },1000);
 }); 

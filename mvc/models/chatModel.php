@@ -76,7 +76,10 @@ class chatModel extends connectDB{
         $arr = json_decode($this->getMessLast($matinnhan));
         $arr = array_values((array)$arr[0]);
         $countMessNew = $arr[0];
+        // echo $countMessNew;
+        echo $arr[0]."<--";
         if($this->countMes < $countMessNew){
+            // $this->countMes = $countMessNew;
             return true;
         }return false;
     }
@@ -97,3 +100,4 @@ class chatModel extends connectDB{
     }
 }
 ?>
+<!-- SELECT thoigiannhan FROM `chitiettinnhan` WHERE thoigiannhan > '2021-11-14 11:1:49' -->
