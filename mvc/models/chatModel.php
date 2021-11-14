@@ -72,24 +72,23 @@ class chatModel extends connectDB{
             return false;
         } 
     }
-    function check_newMess($matinnhan,$tendangnhap){
-        $arr = json_decode($this->getMessLast($matinnhan));
-        $arr = array_values((array)$arr[0]);
-        $countMessNew = $arr[0];
-        // echo $countMessNew;
-        echo $arr[0]."<--";
-        if($this->countMes < $countMessNew){
-            // $this->countMes = $countMessNew;
-            return true;
+    function check_newMess($matinnhan,$tendangnhap,$thoigiannhan){
+        $result = $this->getMessLast($matinnhan,$tendangnhap,$thoigiannhan);
+        if($result){
+            return $result;
         }return false;
     }
-    function getMessLast($matinnhan){
+    function getMessLast($matinnhan,$nguoinhan,$thoigiannhan){
         $conn = $this->GetConn();
-        $sql = "SELECT COUNT(chitiettinnhan.noidung) 
-                FROM chitiettinnhan 
-                WHERE chitiettinnhan.matinnhan = :matinnhan ";
+        $sql = "SELECT machitiettinnhan,tinnhan.matinnhan,noidung,thoigiannhan, nguoinhan , nguoidung.tennguoidung
+                FROM ((tinnhan INNER JOIN chitiettinnhan ON tinnhan.matinnhan = chitiettinnhan.matinnhan) 
+                            INNER JOIN nguoidung ON chitiettinnhan.nguoinhan = nguoidung.tendangnhap)
+                WHERE thoigiannhan > :thoigiannhan AND nguoinhan != :nguoinhan AND tinnhan.matinnhan = :matinnhan
+                ORDER BY thoigiannhan DESC";
         $query = $conn->prepare($sql);
         $query->bindParam(":matinnhan",$matinnhan);
+        $query->bindParam(":thoigiannhan",$thoigiannhan);
+        $query->bindParam(":nguoinhan",$nguoinhan);
         $query->execute();
         if($query->rowCount() > 0){
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -100,4 +99,3 @@ class chatModel extends connectDB{
     }
 }
 ?>
-<!-- SELECT thoigiannhan FROM `chitiettinnhan` WHERE thoigiannhan > '2021-11-14 11:1:49' -->

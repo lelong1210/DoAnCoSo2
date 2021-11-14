@@ -1,4 +1,7 @@
 <?php
+
+use function GuzzleHttp\json_decode;
+
 class ajax extends controller{
     function show(){
         $ngaynhap = date("Y-m-d H:i:s");
@@ -293,8 +296,15 @@ class ajax extends controller{
     function check_newMess(){
         $tendangnhap = $_SESSION["username"];
         $matinnhan = $_SESSION["username"]."-tn";
+        $thoigiannhan = $_POST["thoigiannhan"];
         $model = $this->call_model("chatModel");
-        echo $model->check_newMess($matinnhan,$tendangnhap);      
+        $result = $model->check_newMess($matinnhan,$tendangnhap,$thoigiannhan);   
+        print_r(json_decode($result));
+        // if($result){
+        //     $this->call_view_page("ajaxAppendMess",[
+        //         "arrMess"=>$result
+        //     ]);
+        // }
     }
 }
 ?>

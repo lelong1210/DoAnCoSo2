@@ -8,6 +8,7 @@ $(document).ready(function () {
                 var content = "<li class='clearfix'><div class='message-data text-right'><span class='message-data-time'>"+result+"</span></div><div class='message other-message float-right'>"+noidung+"</div></li>";
                 $("#dstn").append(content);
                 $("#ndTN").val("");
+                $("#lastTime").html(result);
             }
         }
     });
@@ -27,14 +28,14 @@ $(document).ready(function () {
         });
         return result;
     }
-    function check_newMess(){
+    function check_newMess(thoigiannhan){
         var result = "";
         $.ajax({
             type: "post",
             async:false,
+            data:{thoigiannhan:thoigiannhan},
             url: linkTuyetDoi+"ajax/check_newMess",
             success: function (response) {
-                alert(response);
                 result = response;
             }
         });
@@ -42,8 +43,10 @@ $(document).ready(function () {
     }
     // real time chat
     setInterval(() => {
-        if(check_newMess()){
-            alert("có sự thay đổi");
-        }
-    },1000);
+        // var lastTime = $("#lastTime").html();
+        // var result = check_newMess(lastTime);
+        // if(result){
+        //     alert(result);
+        // }
+    },10000);
 }); 

@@ -54,7 +54,10 @@
 												</div>
 												<div class="message my-message"><?php echo $arrChild[2] ?></div>
 											</li>
-										<?php } ?>
+										<?php } 
+										if($i == ($count-1)){?>
+											<span id="lastTime" style="display: none;"><?php echo $arrChild[3]?></span>
+										<?php }?>
 									<?php } ?>
 								<?php } ?>
 							</ul>
