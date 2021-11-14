@@ -59,7 +59,9 @@
 											<span id="lastTime" style="display: none;"><?php echo $arrChild[3]?></span>
 										<?php }?>
 									<?php } ?>
-								<?php } ?>
+								<?php }else {?>
+									<span id="lastTime" style="display: none;"></span>
+								<?php }?>
 							</ul>
 						</div>
 						<div class="chat-message clearfix">
