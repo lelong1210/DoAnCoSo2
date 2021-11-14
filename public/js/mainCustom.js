@@ -559,7 +559,58 @@ $(document).ready(function () {
         var data = getThemProductPT(ndtimkiem,batdau,gioihanxuathien);
         $("#addViewProduct").append(data);
     });
-    // function support 
+    // ==> chat
+    $("#gui").click(function (e) { 
+        var noidung = $("#ndTN").val();
+        if(noidung != ""){
+            var result = insertToTN(noidung);
+            if(result){
+                var content = "<li class='clearfix'><div class='message-data text-right'><span class='message-data-time'>"+result+"</span></div><div class='message other-message float-right'>"+noidung+"</div></li>";
+                $("#dstn").append(content);
+                $("#ndTN").val("");
+                $("#lastTime").html(result);
+            }
+        }
+    });
+    setInterval(() => {
+        if(checkLogin()){
+            var lastTime = $("#lastTime").html();
+            var result = check_newMess(lastTime);
+            if(result && lastTime){
+                $("#lastTime").remove();
+                $("#dstn").append(result);
+            }
+        }
+    },1000); 
+    // functio support
+    function insertToTN(noidung){
+        var result =  "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/chat",
+            data: {
+                noidung:noidung
+            },
+            success: function (response) {
+              result = response;  
+            }
+        });
+        return result;
+    }
+    function check_newMess(thoigiannhan){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            data:{thoigiannhan:thoigiannhan},
+            url: linkTuyetDoi+"ajax/check_newMess",
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
     function getThemProductPT(ndtimkiem,batdau,gioihanhienthi){
         var result = "";
         $.ajax({

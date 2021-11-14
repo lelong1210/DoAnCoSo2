@@ -7,14 +7,7 @@
     </li>
 
     <li>
-        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-mail"></i><span> Email <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-        <ul class="submenu">
-            <li><a>Inbox</a></li>
-        </ul>
-    </li>
-
-    <li>
-        <a href="/www/admin/calendar" id="calendarCustom" class="waves-effect"><i class="dripicons-calendar"></i><span> Calendar </span></a>
+        <a href="javascript:void(0);" class="waves-effect"><i class="dripicons-mail"></i><span> Tin Nhắn <span class="float-right menu-arrow"></span> </span></a>
     </li>
     <li class="menu-title">Sản Phẩm</li>
     <li>        

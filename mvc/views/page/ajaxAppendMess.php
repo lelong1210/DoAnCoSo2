@@ -1,7 +1,4 @@
 <?php
-
-use function GuzzleHttp\json_decode;
-
 $arr = $data["arrMess"];
 $arr = json_decode($arr);
 if ($arr) {
