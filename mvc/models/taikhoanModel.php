@@ -134,6 +134,19 @@ class taikhoanModel extends connectDB
         $arr = array_keys((array) $arr[0]);
         return $arr;
     }
+    function getTenNguoiDung($tendangnhap){
+        $conn = $this->GetConn();
+        $sql = "SELECT tennguoidung FROM nguoidung WHERE tendangnhap=:tendangnhap";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap", $tendangnhap);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        } else {
+            return false;
+        }
+    }
     // dia chi giao hang
     function insertAddressShipping($tendangnhap, $tentinh, $tenhuyen, $tenxa, $diachichitiet,$sdtGh)
     {

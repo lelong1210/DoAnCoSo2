@@ -173,9 +173,39 @@ $(document).ready(function () {
     });
     // chat 
     $("li").click(function (e) { 
+        var list_chat = "list_chat";
         var idThis = $(this).attr("id");
-        alert(idThis);
+        if(idThis.startsWith(list_chat)){
+            var matinnhan = idThis.slice(list_chat.length,idThis.length);
+            var result = getContentMess(matinnhan);
+            $("#content_chat_box").html(result);
+        }
     });
+    $("body").on("click","button",function (e) { 
+        var btnSend = "btnSend";
+        var idThis = $(this).attr("id");
+        if(idThis.startsWith(btnSend)){
+            var matinnhan  = idThis.slice(btnSend.length,idThis.length);
+            var noidung = $("#ndSend").val();
+            var result = insertToTN(noidung,matinnhan);
+            if(result){
+                $("#ndSend").val("");
+                $("#lastTime").remove();
+                $("#ul_chat_box").append(result);
+            }
+        }
+    });
+    setInterval(() => {
+        var lastTime = $("#lastTime").html();
+        var matinnhan = $("#matinnhan").html();
+        if(lastTime){
+            var result = check_newMess_admin(matinnhan,lastTime);
+            if(result){
+                $("#lastTime").remove();
+                $("#ul_chat_box").append(result);
+            }
+        }
+    }, 1000);
     // function support 
     // function mượn
     function readURL(input) {
@@ -190,6 +220,51 @@ $(document).ready(function () {
         }
     }
     // kết thúc function mượn 
+    function check_newMess_admin(matinnhan,thoigiannhan){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/check_newMess_admin",
+            data: {
+                matinnhan:matinnhan,
+                thoigiannhan:thoigiannhan
+            },
+            success: function (response) {
+              result = response;  
+            }
+        });
+        return result;
+    }
+    function insertToTN(noidung,matinnhan){
+        var result =  "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/chatAdmin",
+            data: {
+                noidung:noidung,
+                matinnhan:matinnhan
+            },
+            success: function (response) {
+              result = response;  
+            }
+        });
+        return result;
+    }
+    function getContentMess(matinnhan){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/getContentMess",
+            data: {matinnhan:matinnhan},
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
     function uploadImg() {
         var fd = new FormData();
         var files = $('#linkduongdananh')[0].files[0];

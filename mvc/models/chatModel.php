@@ -86,7 +86,7 @@ class chatModel extends connectDB{
                 FROM ((tinnhan INNER JOIN chitiettinnhan ON tinnhan.matinnhan = chitiettinnhan.matinnhan) 
                             INNER JOIN nguoidung ON chitiettinnhan.nguoinhan = nguoidung.tendangnhap)
                 WHERE thoigiannhan > :thoigiannhan AND nguoinhan != :nguoinhan AND tinnhan.matinnhan = :matinnhan
-                ORDER BY thoigiannhan DESC";
+                ORDER BY thoigiannhan ASC";
         $query = $conn->prepare($sql);
         $query->bindParam(":matinnhan",$matinnhan);
         $query->bindParam(":thoigiannhan",$thoigiannhan);
@@ -120,6 +120,21 @@ class chatModel extends connectDB{
                 INNER JOIN nguoidung ON tinnhan.tendangnhap = nguoidung.tendangnhap
                 ORDER BY tinnhan.thoigiannhancuoicung DESC ";
         $query = $conn->prepare($sql);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }   
+    }
+    function getNameUserMess($matinnhan){
+        $conn = $this->GetConn();
+        $sql = "SELECT nguoidung.tennguoidung 
+                FROM tinnhan INNER JOIN nguoidung ON tinnhan.tendangnhap = nguoidung.tendangnhap
+                WHERE tinnhan.matinnhan = :matinnhan";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":matinnhan",$matinnhan);
         $query->execute();
         if($query->rowCount() > 0){
             $result = $query->fetchAll(PDO::FETCH_ASSOC);

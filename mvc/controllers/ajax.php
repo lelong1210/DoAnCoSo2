@@ -302,5 +302,49 @@ class ajax extends controller{
             ]);
         }
     }
+    // chat admin
+    function getContentMess(){
+        $matinnhan = $_POST["matinnhan"];
+        $model = $this->call_model("chatModel");
+        $arr = $model->getTN($matinnhan);
+        $arrUserName = $model->getNameUserMess($matinnhan);
+        $this->call_view_page_admin("ajaxChatMess",[
+            "arrContentMess"=>$arr,
+            "arrUserName"=>$arrUserName
+        ]);
+    }
+    function chatAdmin(){
+        $tendangnhap = $_SESSION["username"];
+        $matinnhan = $_POST["matinnhan"];
+        $noidung = $_POST["noidung"];
+        $thoigian = date("Y-m-d H:i:s");
+
+        $model = $this->call_model("chatModel");
+        $taikhoanmodel = $this->call_model("taikhoanModel");
+
+        $arrAppend = [$noidung,$thoigian];
+        $tenNguoiDung = $taikhoanmodel->getTenNguoiDung($tendangnhap);
+        if($model->chat($tendangnhap,$matinnhan,$noidung,$thoigian)){
+            // echo $thoigian;
+            $this->call_view_page_admin("ajaxAppendMess",[
+                "arrAppend"=>$arrAppend,
+                "tennguoidung"=>$tenNguoiDung
+            ]);
+        }  
+    }
+    function check_newMess_admin(){
+        $tendangnhap = $_SESSION["username"];
+        $matinnhan = $_POST["matinnhan"];
+        $thoigiannhan = $_POST["thoigiannhan"];
+        $model = $this->call_model("chatModel");
+        $result = $model->check_newMess($matinnhan,$tendangnhap,$thoigiannhan);   
+        if($result){
+            $this->call_view_page_admin("ajaxAppendMess",[
+                "arrAppendKH"=>$result,
+            ]);
+        }else{
+            echo false;
+        }
+    }
 }
 ?>

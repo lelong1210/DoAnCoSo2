@@ -59,37 +59,8 @@
                                 </ul>
                             </div>
                         </div>
-                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9">
-                            <div class="selected-user">
-                                <span>To: <span class="name">Emily Russell</span></span>
-                            </div>
-                            <div class="chat-container " >
-                                <div class="box-chat-content" style="height:430px;overflow:scroll;">
-                                    <ul class="chat-box chatContainerScroll">
-                                        <li class="chat-left">
-                                            <div class="chat-avatar">
-                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcePiTSzFkV2JpaofezQ33zwNCZXl1r76oIT89uCbzo9UtQXn4r60m-IKg55ujn2g6XYY&usqp=CAU" alt="Retail Admin">
-                                                <div class="chat-name">Russell</div>
-                                            </div>
-                                            <div class="chat-text">The rest of the team is not here yet.
-                                                <br>Maybe in an hour or so?</div>
-                                            <div class="chat-hour">08:57 <span class="fa fa-check-circle"></span></div>
-                                        </li>
-                                        <li class="chat-right">
-                                            <div class="chat-hour">08:59 <span class="fa fa-check-circle"></span></div>
-                                            <div class="chat-text">Have you faced any problems at the last phase of the project?</div>
-                                            <div class="chat-avatar">
-                                                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcePiTSzFkV2JpaofezQ33zwNCZXl1r76oIT89uCbzo9UtQXn4r60m-IKg55ujn2g6XYY&usqp=CAU" alt="Retail Admin">
-                                                <div class="chat-name">Jin</div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                                <div class="form-group mt-3 mb-0 text-center row">
-                                    <input type="text" class="form-control col-sm-10" rows="3" placeholder="Type your message here..."></input> 
-                                    <button class="col-sm-2 btn btn-success">Gửi</button>
-                                </div>
-                            </div>
+                        <div class="col-xl-8 col-lg-8 col-md-8 col-sm-9 col-9" id="content_chat_box">
+                                                    <!-- content -->
                         </div>
                     </div>
                     <!-- Row end -->
