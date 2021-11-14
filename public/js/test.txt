@@ -1,26 +1,32 @@
-    var click = 0 ;
-    $("#drakMode").click(function (e) { 
-        if(click == 0){
-            DarkMode(click);
-            click = 1 ;
-        }else{
-            DarkMode(click);
-            click = 0 ;   
-        }
-    });
-    
-function DarkMode(option){
-    if(option == 0){
-        $(".header-bottom").css({"background-color": "rgba(255,255,255,0.87)"});
-        $(".bg-white").addClass('bg-BlackChg');
-        $(".offcanvas").css({"background-color": "rgba(255,255,255,0.87)"});
-        $(".header-actions .header-action-btn .header-action-num").css({"background-color": "rgba(48, 164, 211, 0.87)"});
-        // $(".gbcus").css({"background-color": "rgba(255,255,255,0.87)"});
-    }else{
-        $(".header-bottom").css({"background-color": "rgba(48, 164, 211, 0.87)"});
-        $(".bg-white").addClass('bg-whiteChg');
-        $(".offcanvas").css({"background-color": "rgba(48, 164, 211, 0.87)"});
-        $(".header-actions .header-action-btn .header-action-num").css({"background-color": "rgba(48, 164, 211, 0.87)"});
-        // $(".gbcus").css({"background-color": "rgba(48, 164, 211, 0.87)"});            
-    }
-}
+	<div class="content text-center">
+	<table class="table" id="dstn">
+			<?php
+				$arr = json_decode($data["chatModel"]->getTN($_SESSION["username"]."-tn"));
+				if($arr){
+					$count = count($arr);
+					for ($i=0; $i < $count; $i++) { 
+						$arrChild = array_values((array) $arr[$i]);
+						if($arrChild[4] == $_SESSION["username"]){?>
+							<tr>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td><?php echo $arrChild[2]?></td>
+							</tr>
+						<?php }else{?>
+							<tr>
+								<td><?php echo $arrChild[2]?></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>
+								<td></td>			
+							</tr>
+						<?php }?>
+					<?php }?>
+			<?php }?>
+		</table>
+		<input type="text" style="max-width: 500px;" id="ndTN"><br>
+	<button id="gui">Gửi</button>
+	</div>

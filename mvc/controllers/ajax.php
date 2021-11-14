@@ -279,5 +279,22 @@ class ajax extends controller{
             "arrNdTk"=>$arrNdTk
         ]);        
     }
+    // chat 
+    function chat(){
+        $tendangnhap = $_SESSION["username"];
+        $matinnhan = $_SESSION["username"]."-tn";
+        $noidung = $_POST["noidung"];
+        $thoigian = date("Y-m-d H:i:s");
+        $model = $this->call_model("chatModel");
+        if($model->chat($tendangnhap,$matinnhan,$noidung,$thoigian)){
+            echo $thoigian;
+        }  
+    }
+    function check_newMess(){
+        $tendangnhap = $_SESSION["username"];
+        $matinnhan = $_SESSION["username"]."-tn";
+        $model = $this->call_model("chatModel");
+        echo $model->check_newMess($matinnhan,$tendangnhap);      
+    }
 }
 ?>
