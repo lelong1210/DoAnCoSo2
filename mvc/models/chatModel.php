@@ -4,11 +4,13 @@ class chatModel extends connectDB{
     function chat($tendangnhap,$matinnhan,$noidung,$thoigiannhan){
         if($this->checkMaTN($matinnhan)){
             if($this->insertToCtTN($matinnhan,$noidung,$thoigiannhan,$tendangnhap)){
+                $this->updateTimeLastInTN($matinnhan,$thoigiannhan);
                 return true;
             }return false;
         }else{
             if($this->insertToTN($tendangnhap,$matinnhan)){
                 if($this->insertToCtTN($matinnhan,$noidung,$thoigiannhan,$tendangnhap)){
+                    $this->updateTimeLastInTN($matinnhan,$thoigiannhan);
                     return true;
                 }return false;
             }return false;
@@ -96,6 +98,35 @@ class chatModel extends connectDB{
         }else{
             return false;
         }            
+    }
+    function updateTimeLastInTN($matinnhan,$thoigiannhancuoicung){
+        $conn = $this->GetConn();
+        $sql = "UPDATE tinnhan SET thoigiannhancuoicung = :thoigiannhancuoicung WHERE tinnhan.matinnhan = :matinnhan";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":thoigiannhancuoicung",$thoigiannhancuoicung);
+        $query->bindParam(":matinnhan",$matinnhan);
+        $query->execute();
+        if($query->rowCount() > 0){
+            return true;
+        }else{
+            return false;
+        }
+    }
+    // admin
+    function getListTN(){
+        $conn = $this->GetConn();
+        $sql = "SELECT tinnhan.matinnhan , nguoidung.tennguoidung ,tinnhan.thoigiannhancuoicung
+                FROM tinnhan 
+                INNER JOIN nguoidung ON tinnhan.tendangnhap = nguoidung.tendangnhap
+                ORDER BY tinnhan.thoigiannhancuoicung DESC ";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }   
     }
 }
 ?>

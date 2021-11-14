@@ -14,6 +14,7 @@ $(document).ready(function () {
             var linkduongdananh = uploadImg();
             if (AddProduct(tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong)) {
                 alert("đã thêm sản phẩm");
+                location.reload();
             } else {
                 alert("thêm sant phẩm thất bại")
             }
@@ -169,6 +170,10 @@ $(document).ready(function () {
                 spanErr($(this).attr('id'), false, "Không Phải Định Dạng Email...");
             }
         }
+    });
+    // chat 
+    $("a").click(function (e) { 
+        
     });
     // function support 
     // function mượn

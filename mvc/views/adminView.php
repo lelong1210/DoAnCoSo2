@@ -43,14 +43,14 @@
                 <?php
                     if($data["title"] == "xemsanpham"){
                         require_once "pageAdmin/overViewProduct.php";
-                    }
-                    else if($data["title"] == "themsanpham"){
+                    }else if($data["title"] == "themsanpham"){
                         require_once "pageAdmin/addProductPage.php";
-                    }
-                    else if($data["title"] == "xemnguoidung"){
+                    }else if($data["title"] == "xemnguoidung"){
                         require_once "pageAdmin/overViewUser.php";
                     }else if($data["title"] == "themnguoidung"){
                         require_once "pageAdmin/addUserPage.php";
+                    }else if($data["title"] == "chatPage"){
+                        require_once "pageAdmin/chatPage.php";
                     }else{
                         require_once "pageAdmin/indexPage.php"; 
                     } 

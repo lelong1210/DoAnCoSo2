@@ -8,8 +8,12 @@
                 "title"=>"overView"
             ]);
         }
-        function calendar($params){
-            echo "celendar";
+        function chatPage($params){
+            $model = $this->call_model("chatModel");
+            $this->call_view("adminView",[
+                "title"=>"chatPage",
+                "chatModel"=>$model
+            ]);
         }
         // sản phẩm
         function xemsanpham($params){
