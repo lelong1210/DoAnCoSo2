@@ -85,7 +85,7 @@ body{margin-top:20px;}
     width: 100%;
     padding: 10px 1rem;
     cursor: pointer;
-    border-bottom: 1px solid #f0f4f8;
+    /* border-bottom: 1px solid #f0f4f8; */
 }
 
 .users .person:hover {
@@ -105,7 +105,7 @@ body{margin-top:20px;}
 }
 
 .users .person.active-user {
-    background-color: #ffffff;
+    /* background-color: #ffffff;
     /* Fallback Color */
     background-image: -webkit-gradient(linear, left top, left bottom, from(#f7f9fb), to(#ffffff));
     /* Saf4+, Chrome */
@@ -117,7 +117,7 @@ body{margin-top:20px;}
     /* IE10 */
     background-image: -o-linear-gradient(right, #f7f9fb, #ffffff);
     /* Opera 11.10+ */
-    background-image: linear-gradient(right, #f7f9fb, #ffffff);
+    background-image: linear-gradient(right, #f7f9fb, #ffffff); */
 }
 
 .users .person:last-child {
@@ -144,7 +144,7 @@ body{margin-top:20px;}
     -webkit-border-radius: 100px;
     -moz-border-radius: 100px;
     border-radius: 100px;
-    background: #e6ecf3;
+    /* background: #e6ecf3; */
     position: absolute;
     top: 0;
     right: 0;
@@ -204,7 +204,7 @@ body{margin-top:20px;}
     padding: 0 15px;
     min-height: 64px;
     line-height: 64px;
-    border-bottom: 1px solid #e6ecf3;
+    /* border-bottom: 1px solid #e6ecf3; */
     -webkit-border-radius: 0 3px 0 0;
     -moz-border-radius: 0 3px 0 0;
     border-radius: 0 3px 0 0;
@@ -263,7 +263,7 @@ body{margin-top:20px;}
     -webkit-border-radius: 4px;
     -moz-border-radius: 4px;
     border-radius: 4px;
-    background: #ffffff;
+    background: #333131;
     font-weight: 300;
     line-height: 150%;
     position: relative;
@@ -277,7 +277,7 @@ body{margin-top:20px;}
     top: 10px;
     left: -20px;
     border: 10px solid;
-    border-color: transparent #ffffff transparent transparent;
+    border-color: transparent #333131 transparent transparent;
 }
 
 .chat-container li.chat-right > .chat-text {
@@ -286,7 +286,7 @@ body{margin-top:20px;}
 
 .chat-container li.chat-right > .chat-text:before {
     right: -20px;
-    border-color: transparent transparent transparent #ffffff;
+    /* border-color: transparent transparent transparent #ffffff; */
     left: inherit;
 }
 
@@ -357,8 +357,8 @@ body{margin-top:20px;}
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: #ffffff;
-    border-top: 1px solid white;
+    /* background-color: #ffffff; */
+    /* border-top: 1px solid white; */
 }
 
 ul {
@@ -368,7 +368,7 @@ ul {
 }
 .card {
     border: 0;
-    background: #f4f5fb;
+    /* background: #f4f5fb; */
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;

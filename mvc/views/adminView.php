@@ -50,6 +50,9 @@
                     }else if($data["title"] == "themnguoidung"){
                         require_once "pageAdmin/addUserPage.php";
                     }else if($data["title"] == "chatPage"){
+                    ?>
+                        <link href="/www/publicAdmin/css/styleCustomChat.css" rel="stylesheet">
+                    <?php
                         require_once "pageAdmin/chatPage.php";
                     }else{
                         require_once "pageAdmin/indexPage.php"; 

@@ -172,8 +172,9 @@ $(document).ready(function () {
         }
     });
     // chat 
-    $("a").click(function (e) { 
-        
+    $("li").click(function (e) { 
+        var idThis = $(this).attr("id");
+        alert(idThis);
     });
     // function support 
     // function mượn
