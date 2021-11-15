@@ -6,16 +6,7 @@
       <div class="row align-items-center ">
         <div class="col-md-8">
           <div class="page-title-box">
-            <h4 class="page-title">Form Elements</h4>
-            <ol class="breadcrumb">
-              <li class="breadcrumb-item">
-                <a href="javascript:void(0);">Zegva</a>
-              </li>
-              <li class="breadcrumb-item">
-                <a href="javascript:void(0);">Forms</a>
-              </li>
-              <li class="breadcrumb-item active">Form Elements</li>
-            </ol>
+            <h4 class="page-title">Thêm Sản Phẩm</h4>
           </div>
         </div>
 
@@ -28,7 +19,6 @@
       </div>
     </div>
     <!-- end page-title -->
-
     <div class="row">
       <div class="col-12">
         <div class="card">

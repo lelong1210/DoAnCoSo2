@@ -54,6 +54,8 @@
                         <link href="/www/publicAdmin/css/styleCustomChat.css" rel="stylesheet">
                     <?php
                         require_once "pageAdmin/chatPage.php";
+                    }else if($data["title"] == "suasanpham"){
+                        require_once "pageAdmin/updateProductPage.php";
                     }else{
                         require_once "pageAdmin/indexPage.php"; 
                     } 

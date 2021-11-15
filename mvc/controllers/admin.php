@@ -28,6 +28,13 @@
                 "title"=>"themsanpham",
             ]);
         }
+        function suasanpham($params){
+            $productModel = $this->call_model("productModel");
+            $this->call_view("adminView",[
+                "title"=>"suasanpham",
+                "productModel"=>$productModel
+            ]);
+        }
         // người dùng
         function xemnguoidung(){
             $taikhoanModel = $this->call_model("taikhoanModel");

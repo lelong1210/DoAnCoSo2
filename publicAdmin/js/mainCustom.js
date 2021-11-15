@@ -103,6 +103,24 @@ $(document).ready(function () {
             alert("các ô không được để trống !!! ");
         }
     });
+    $("#btn_delete").click(function (e) { 
+        $("#content_page").html(appendTableProduct());
+    });
+    //
+    function appendTableProduct(){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async:false,
+            url: linkTuyetDoi+"ajax/appendTableProduct",
+            // data: "data",
+            // dataType: "dataType",
+            success: function (response) {
+                result = response;
+            }
+        });
+        return result;
+    }
     // user 
     $("#addUser").click(function (e) {
         var tendangnhap = $("#tendangnhap").val();

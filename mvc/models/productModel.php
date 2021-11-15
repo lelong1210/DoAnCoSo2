@@ -120,12 +120,31 @@ class productModel extends connectDB
             return false;
         }         
     }
+    function timkiemAll($ndtimkiem){
+        $ndtimkiem = "%".$ndtimkiem."%";
+
+        $conn =  $this->GetConn();
+        $sql = "SELECT masp,tensp,giatien,loaisanpham,hangsx FROM sanpham 
+        WHERE tensp LIKE :ndtimkiem 
+            OR masp LIKE :ndtimkiem 
+            OR hangsx LIKE :ndtimkiem 
+            OR loaisanpham LIKE :ndtimkiem 
+            OR giatien LIKE :ndtimkiem 
+            ";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":ndtimkiem",$ndtimkiem);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }
+    }
     // xu ly tim kiem 
     function timkiem($ndtimkiem,$batdau,$gioihanhienthi){
         $ndtimkiem = "%".$ndtimkiem."%";
 
         $conn =  $this->GetConn();
-        $sql = "SELECT * FROM sanpham 
+        $sql = "SELECT masp,tensp,giatien,loaisanpham,hangsx FROM sanpham 
         WHERE tensp LIKE :ndtimkiem 
             OR masp LIKE :ndtimkiem 
             OR hangsx LIKE :ndtimkiem 
