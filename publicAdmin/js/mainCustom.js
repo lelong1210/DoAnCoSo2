@@ -222,7 +222,7 @@ $(document).ready(function () {
     setInterval(() => {
         var lidaudanhsach = $("#firtLi").html();
         var result = getMessLastAdmin(lidaudanhsach);
-        if(result){
+        if(result && lidaudanhsach){
             $("#dsChat").html(result);
         }
     }, 1000);

@@ -3,7 +3,7 @@
 
 <head>
 	<?php require_once "block/head.php"; ?>
-	<title>Chát</title>
+	<title>Hỏi Đáp</title>
 </head>
 
 <body>
