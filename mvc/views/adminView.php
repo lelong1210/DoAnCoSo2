@@ -56,6 +56,8 @@
                         require_once "pageAdmin/chatPage.php";
                     }else if($data["title"] == "suasanpham"){
                         require_once "pageAdmin/updateProductPage.php";
+                    }else if($data["title"] == "quanlythongtin"){
+                        require_once "pageAdmin/manageInFo.php";
                     }else{
                         require_once "pageAdmin/indexPage.php"; 
                     } 

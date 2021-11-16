@@ -23,18 +23,6 @@
                 "productModel"=>$productModel
             ]);
         }
-        function themsanpham($params){
-            $this->call_view("adminView",[
-                "title"=>"themsanpham",
-            ]);
-        }
-        function suasanpham($params){
-            $productModel = $this->call_model("productModel");
-            $this->call_view("adminView",[
-                "title"=>"suasanpham",
-                "productModel"=>$productModel
-            ]);
-        }
         // người dùng
         function xemnguoidung(){
             $taikhoanModel = $this->call_model("taikhoanModel");
@@ -46,6 +34,13 @@
         function themnguoidung(){
             $this->call_view("adminView",[
                 "title"=>"themnguoidung",
+            ]);
+        }
+        // admin 
+        function quanlythongtin(){
+            $this->call_view("adminView",[
+                "title"=>"quanlythongtin"
+                
             ]);
         }
         /*https://projectdacs2.000webhostapp.com/*/
