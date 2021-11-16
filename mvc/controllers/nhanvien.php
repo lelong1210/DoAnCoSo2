@@ -22,5 +22,13 @@ class nhanvien extends controller{
             "taikhoanModel"=>$taikhoanModel,
         ]);        
     }
+    // thong tin ca nhan
+    function quanlythongtin(){
+        $taikhoanModel = $this->call_model("taikhoanModel");
+        $this->call_view("nhanVienView",[
+            "title"=>"quanlythongtin",
+            "taikhoanModel"=>$taikhoanModel,
+        ]);
+    }
 }
 ?> 
