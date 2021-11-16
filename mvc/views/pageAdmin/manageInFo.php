@@ -1,12 +1,14 @@
 <!-- Start content -->
 <div class="content">
+  <?php $arr = (json_decode($_SESSION["information"])); ?>
+  <?php $arr = array_values((array) $arr[0]); ?>
   <div class="container-fluid">
     <div class="page-title-box">
 
       <div class="row align-items-center ">
         <div class="col-md-8">
           <div class="page-title-box">
-            <h4 class="page-title">Thêm Sản Phẩm</h4>
+            <h4 class="page-title">Quản Lý Thông Tin</h4>
           </div>
         </div>
 
@@ -23,61 +25,68 @@
       <div class="col-12">
         <div class="card">
           <div class="card-body">
-            <h4 class="mt-0 header-title">Thêm Sản Phẩm</h4>
+            <h4 class="mt-0 header-title">Thông Tin Về Tài Khoản</h4>
             <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Tên Sản Phẩm</label>
+              <label for="example-text-input" class="col-sm-2 col-form-label">Tên Đăng Nhập</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" id="tensanpham">
+                <input class="form-control" type="text" value="<?php echo $arr[0] ?>">
               </div>
             </div>
             <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Giá Tiền</label>
+              <label for="example-text-input" class="col-sm-2 col-form-label">Tên Người Dùng</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" id="giatien">
+                <input class="form-control" type="text" id="tennguoidung" value="<?php echo $arr[1] ?>">
               </div>
             </div>
             <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Loại Sản Phẩm</label>
+              <label for="example-text-input" class="col-sm-2 col-form-label">Số Điện Thoại</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" id="loaisanpham">
+                <input class="form-control" type="text" id="sodienthoai" value="<?php echo $arr[3] ?>">
               </div>
             </div>
             <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Mô Tả Sản Phẩm</label>
+              <label for="example-text-input" class="col-sm-2 col-form-label">Email</label>
               <div class="col-sm-10">
-                <input class="form-control" type="text" id="motasanpham">
+                <input class="form-control" type="text" id="email" value="<?php echo $arr[4] ?>">
               </div>
             </div>
             <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Ảnh</label>
+              <label for="example-text-input" class="col-sm-2 col-form-label">Địa Chỉ</label>
               <div class="col-sm-10">
-                <input class="form-control" type="file" id="linkduongdananh">
+                <input class="form-control" type="text" id="diachi" value="<?php echo $arr[2] ?>">
               </div>
             </div>
-            <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Hãng Sản Xuất</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="text" id="hangsanxuat">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Dùng Làm Slider</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="text" id="dunglamslider">
-              </div>
-            </div>
-            <div class="form-group row">
-              <label for="example-text-input" class="col-sm-2 col-form-label">Số Lượng</label>
-              <div class="col-sm-10">
-                <input class="form-control" type="text" id="soluong">
-              </div>
-            </div>
-            <div class="col-sm-12 text-center"><button class="btn btn-success" id="addProduct">Thêm Sản Phẩm</button></div>
+            <div class="col-sm-12 text-center"><button class="btn btn-success" id="update_acount">Cập Nhập Thông Tin</button></div>
           </div>
         </div>
       </div>
     </div>
     <!-- end col -->
+    <!-- pass -->
+    <div class="row">
+      <div class="col-12">
+        <div class="card">
+          <div class="card-body">
+            <h4 class="mt-0 header-title">Đổi Mật Khẩu</h4>
+            <div class="form-group row">
+              <label for="example-text-input" class="col-sm-2 col-form-label">Mật Khẩu</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="password" id="matkhau">
+                <span style="color: red;" id="spmatkhau"></span>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="example-text-input" class="col-sm-2 col-form-label">Nhập Lại Mật Khẩu</label>
+              <div class="col-sm-10">
+                <input class="form-control" type="password" id="nhaplaimatkhau">
+                <span style="color: red;" id="spnhaplaimatkhau"></span>
+              </div>
+            </div>
+            <div class="col-sm-12 text-center"><button class="btn btn-success" id="update_pass">Cập Nhập Mật Khẩu</button></div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <!-- end row -->
 

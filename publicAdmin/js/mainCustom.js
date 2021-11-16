@@ -191,6 +191,43 @@ $(document).ready(function() {
             }
         }
     });
+    // user admin 
+    $("#update_acount").click(function(e) {
+        var tennguoidung = $("#tennguoidung").val();
+        var sodienthoai = $("#sodienthoai").val();
+        var email = $("#email").val();
+        var diachi = $("#diachi").val();
+        if (tennguoidung != "", sodienthoai != "", email != "", diachi != "") {
+            if (updateAcount(tennguoidung, sodienthoai, email, diachi)) {
+                alert("Đã Cập Nhập Thông Tin");
+                location.reload();
+            }
+        } else {
+            alert("các ô không được để trống");
+        }
+    });
+    $("#update_pass").click(function(e) {
+        var matkhau = $("#matkhau").val();
+        var nhaplaimatkhau = $("#nhaplaimatkhau").val();
+        if (matkhau != "" && nhaplaimatkhau != "") {
+            if (checkStrongPass(matkhau)) {
+                if (comparePassword(matkhau, nhaplaimatkhau)) {
+                    if (updatePass(matkhau)) {
+                        alert("Đã cập nhật mật khẩu");
+                        location.reload();
+                    } else {
+                        alert("Cập nhật thất bại");
+                    }
+                } else {
+                    alert("Lỗi Trên Màn Hình");
+                }
+            } else {
+                alert("Lỗi Trên Màn Hình");
+            }
+        } else {
+            alert("các ô không được để trống");
+        }
+    });
     // chat 
     $("body").on("click", "li", function(e) {
         var list_chat = "list_chat";
@@ -272,6 +309,25 @@ $(document).ready(function() {
         }
     }
     // kết thúc function mượn 
+    function updateAcount(tennguoidung, sodienthoai, email, diachi) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/updateAcount",
+            data: {
+                tennguoidung: tennguoidung,
+                diachi: diachi,
+                sodienthoai: sodienthoai,
+                email: email
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
     function getMessLastAdmin(lidaudanhsach) {
         var result = "";
         $.ajax({
@@ -522,6 +578,20 @@ $(document).ready(function() {
                 email: email,
                 quyen: quyen
             },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function updatePass(matkhau) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/updatePassword",
+            data: { matkhau: matkhau },
             success: function(response) {
                 result = response;
             }

@@ -77,8 +77,8 @@ class taikhoanModel extends connectDB
         $arr = json_decode($arr);
         $arr = array_values((array) $arr[0]);
         $_SESSION["quyen"] = $arr[7];
-        $_SESSION["username"] = $arr[0];
         $_SESSION["password"] = $arr[5];
+        $_SESSION["username"] = $arr[0];
         $_SESSION["soluongtronggiohang"] = $this->getSoLuongTrongGioHang($arr[0] . "-gh");
     }
     function unloadingDATA()

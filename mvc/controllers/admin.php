@@ -38,9 +38,10 @@
         }
         // admin 
         function quanlythongtin(){
+            $taikhoanModel = $this->call_model("taikhoanModel");
             $this->call_view("adminView",[
-                "title"=>"quanlythongtin"
-                
+                "title"=>"quanlythongtin",
+                "taikhoanModel"=>$taikhoanModel,
             ]);
         }
         /*https://projectdacs2.000webhostapp.com/*/
