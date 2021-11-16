@@ -12,4 +12,9 @@
     <li>
         <a href="/www/nhanvien/quanlythongtin" class="waves-effect"><i class="fas fa-cog"></i><span> Quản Lý Thông Tin <span class="float-right menu-arrow"></span> </span></a>
     </li>
+    <li class="menu-title">Lương</li>
+    <li>
+        <a href="/www/nhanvien/quanlyluong" class="waves-effect"><i class="fas fa-cog"></i><span> Quản Lý Lương <span class="float-right menu-arrow"></span> </span></a>
+    </li>
 </ul>
+<!-- echo(strtotime("2021-11-12 21:29:51") - strtotime("2021-11-09 21:29:51")); -->
