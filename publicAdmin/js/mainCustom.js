@@ -1,17 +1,17 @@
-$(document).ready(function () {
+$(document).ready(function() {
     // link tuyet doi 
     var linkTuyetDoi = "http://localhost/www/";
     //san pham
-    $("#addProduct").click(function (e) {
-        var tensp = $("#tensanpham").val();
-        var giatien = $("#giatien").val();
-        var loaisanpham = $("#loaisanpham").val();
-        var motasanpham = $("#motasanpham").val();
-        var hangsanxuat = $("#hangsanxuat").val()
-        var dunglamslider = $("#dunglamslider").val();
-        var soluong = $("#soluong").val();
-        if (tensp != "" && giatien != "" && loaisanpham != "" && motasanpham != "" && hangsanxuat != "" && dunglamslider != "" && soluong != "" && $("#linkduongdananh").val() != "") {
-            var linkduongdananh = uploadImg();
+    $("#addProduct").click(function(e) {
+        var tensp = $("#tensanpham_add").val();
+        var giatien = $("#giatien_add").val();
+        var loaisanpham = $("#loaisanpham_add").val();
+        var motasanpham = $("#motasanpham_add").val();
+        var hangsanxuat = $("#hangsanxuat_add").val()
+        var dunglamslider = $("#dunglamslider_add").val();
+        var soluong = $("#soluong_add").val();
+        if (tensp != "" && giatien != "" && loaisanpham != "" && motasanpham != "" && hangsanxuat != "" && dunglamslider != "" && soluong != "" && $("#linkduongdananh_add").val() != "") {
+            var linkduongdananh = uploadImgAdd();
             if (AddProduct(tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong)) {
                 alert("đã thêm sản phẩm");
                 location.reload();
@@ -22,12 +22,12 @@ $(document).ready(function () {
             alert("các ô không được để trống !!! ");
         }
     });
-    $('#datatable-buttons').on('click', '.btn-edit', function () {
-        var $row = $(this).closest("tr");    // Find the row
+    $('#datatable-buttons').on('click', '.btn-edit', function() {
+        var $row = $(this).closest("tr"); // Find the row
         var $tds = $row.find("td");
         const arr = [];
         // ===> 
-        $.each($tds, function () {
+        $.each($tds, function() {
             arr.push($(this).text());
         });
         // ==> 
@@ -47,12 +47,12 @@ $(document).ready(function () {
         $(".table_overView").slideUp();
         $(".model_overviewProduct").slideDown();
     });
-    $('#datatable-buttons').on('click', '.btn-delete', function () {
-        var $row = $(this).closest("tr");    // Find the row
+    $('#datatable-buttons').on('click', '.btn-delete', function() {
+        var $row = $(this).closest("tr"); // Find the row
         var $tds = $row.find("td");
         const arr = [];
         // ===> 
-        $.each($tds, function () {
+        $.each($tds, function() {
             arr.push($(this).text());
         });
         // ===> 
@@ -65,15 +65,18 @@ $(document).ready(function () {
         var $row = $(this).closest("tr");
         $($row).remove();
     });
-    $("#btn_back").click(function (e) {
+    $("#btn_back").click(function(e) {
         $(".table_overView").slideDown();
         $(".model_overviewProduct").slideUp();
 
     });
-    $("#linkduongdananh").change(function (e) {
+    $("#linkduongdananh").change(function(e) {
         readURL(this)
     });
-    $("#edit_Product").click(function (e) {
+    $("#linkduongdananh_add").change(function(e) {
+        readURL_add(this)
+    });
+    $("#edit_Product").click(function(e) {
         var masp = $("#masp_edit").html();
         var tensp = $("#tensanpham").val();
         var giatien = $("#giatien").val();
@@ -103,57 +106,57 @@ $(document).ready(function () {
             alert("các ô không được để trống !!! ");
         }
     });
-    $("#btn_delete").click(function (e) { 
+    $("#btn_delete").click(function(e) {
         $("#content_page").html(appendTableProduct());
     });
     //
-    function appendTableProduct(){
+    function appendTableProduct() {
         var result = "";
         $.ajax({
             type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/appendTableProduct",
+            async: false,
+            url: linkTuyetDoi + "ajax/appendTableProduct",
             // data: "data",
             // dataType: "dataType",
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
     // user 
-    $("#addUser").click(function (e) {
+    $("#addUser").click(function(e) {
         var tendangnhap = $("#tendangnhap").val();
         var matkhau = $("#matkhau").val();
         var nhaplaimatkhau = $("#nhaplaimatkhau").val();
         var email = $("#email").val();
         var quyen = $("#quyen").val();
-        if(tendangnhap != "" && matkhau != "" && nhaplaimatkhau != "" && email != ""){
-            if(!checkAcount(tendangnhap)){
-                if(checkStrongPass(matkhau)){
-                    if(comparePassword(matkhau,nhaplaimatkhau)){
-                        if(checkEmailFormat(email)){
-                            if(dangky(tendangnhap,matkhau,email,quyen)){
+        if (tendangnhap != "" && matkhau != "" && nhaplaimatkhau != "" && email != "") {
+            if (!checkAcount(tendangnhap)) {
+                if (checkStrongPass(matkhau)) {
+                    if (comparePassword(matkhau, nhaplaimatkhau)) {
+                        if (checkEmailFormat(email)) {
+                            if (dangky(tendangnhap, matkhau, email, quyen)) {
                                 alert("Đã Thêm Người Dùng");
                                 location.reload();
                             }
-                        }else{
+                        } else {
                             alert("Lỗi Trên Màn Hình");
                         }
-                    }else{
+                    } else {
                         alert("Lỗi Trên Màn Hình");
                     }
-                }else{
+                } else {
                     alert("Lỗi Trên Màn Hình");
                 }
-            }else{
+            } else {
                 alert("Lỗi Trên Màn Hình");
             }
-        }else{
+        } else {
             alert("Các Ô Không Được Để Trống");
         }
     });
-    $("input").keyup(function (e) {
+    $("input").keyup(function(e) {
         let arrDk = ["tendangnhap", "matkhau", "nhaplaimatkhau", "email"];
         if ($(this).attr('id') == arrDk[0]) {
             if (checkAcount($(this).val())) {
@@ -166,8 +169,7 @@ $(document).ready(function () {
             var matkhau = $(this).val();
             if (checkStrongPass(matkhau) >= 4) {
                 spanErr($(this).attr('id'), true, "");
-            }
-            else {
+            } else {
                 spanErr($(this).attr('id'), false, "Mật Khẩu Phải Bao Gồm Chữ Số ,Viết Hoa ,Viết Thường,Ký Tự Đặc Biệt,Dài Từ 8 Ký Tự...");
             }
         }
@@ -190,23 +192,23 @@ $(document).ready(function () {
         }
     });
     // chat 
-    $("body").on("click","li",function (e) { 
+    $("body").on("click", "li", function(e) {
         var list_chat = "list_chat";
         var idThis = $(this).attr("id");
-        if(idThis.startsWith(list_chat)){
-            var matinnhan = idThis.slice(list_chat.length,idThis.length);
+        if (idThis.startsWith(list_chat)) {
+            var matinnhan = idThis.slice(list_chat.length, idThis.length);
             var result = getContentMess(matinnhan);
             $("#content_chat_box").html(result);
         }
     });
-    $("body").on("click","button",function (e) { 
+    $("body").on("click", "button", function(e) {
         var btnSend = "btnSend";
         var idThis = $(this).attr("id");
-        if(idThis.startsWith(btnSend)){
-            var matinnhan  = idThis.slice(btnSend.length,idThis.length);
+        if (idThis.startsWith(btnSend)) {
+            var matinnhan = idThis.slice(btnSend.length, idThis.length);
             var noidung = $("#ndSend").val();
-            var result = insertToTN(noidung,matinnhan);
-            if(result){
+            var result = insertToTN(noidung, matinnhan);
+            if (result) {
                 $("#ndSend").val("");
                 $("#lastTime").remove();
                 $("#ul_chat_box").append(result);
@@ -216,31 +218,31 @@ $(document).ready(function () {
     setInterval(() => {
         var lastTime = $("#lastTime").html();
         var matinnhan = $("#matinnhan").html();
-        if(lastTime){
-            var result = check_newMess_admin(matinnhan,lastTime);
-            if(result){
+        if (lastTime) {
+            var result = check_newMess_admin(matinnhan, lastTime);
+            if (result) {
                 $("#lastTime").remove();
                 $("#ul_chat_box").append(result);
             }
         }
     }, 1000);
-    $("body").on("click","button",function (e) { 
+    $("body").on("click", "button", function(e) {
         // var idThis = $(this).attr("id");
         var timkiemUser = "timkiemUser";
         var ids = "list_chat0";
-        $("li").each(function (param) { 
+        $("li").each(function(param) {
             idThis = $(this).attr("id");
-            if(idThis == ids){
+            if (idThis == ids) {
                 alert($(this).attr("id"));
                 $(this).remove();
             }
-         });
+        });
 
     });
     setInterval(() => {
         var lidaudanhsach = $("#firtLi").html();
         var result = getMessLastAdmin(lidaudanhsach);
-        if(result && lidaudanhsach){
+        if (result && lidaudanhsach) {
             $("#dsChat").html(result);
         }
     }, 1000);
@@ -250,75 +252,91 @@ $(document).ready(function () {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
 
-            reader.onload = function (e) {
+            reader.onload = function(e) {
                 $('#blah').attr('src', e.target.result);
             }
 
             reader.readAsDataURL(input.files[0]);
         }
     }
+
+    function readURL_add(input) {
+        if (input.files && input.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                $('#blah_add').attr('src', e.target.result);
+            }
+
+            reader.readAsDataURL(input.files[0]);
+        }
+    }
     // kết thúc function mượn 
-    function getMessLastAdmin(lidaudanhsach){
+    function getMessLastAdmin(lidaudanhsach) {
         var result = "";
         $.ajax({
             type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/getMessLastAdmin",
+            async: false,
+            url: linkTuyetDoi + "ajax/getMessLastAdmin",
             data: {
-                lidaudanhsach:lidaudanhsach
+                lidaudanhsach: lidaudanhsach
             },
-            success: function (response) {
-              result = response;  
+            success: function(response) {
+                result = response;
             }
         });
         return result;
 
     }
-    function check_newMess_admin(matinnhan,thoigiannhan){
+
+    function check_newMess_admin(matinnhan, thoigiannhan) {
         var result = "";
         $.ajax({
             type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/check_newMess_admin",
+            async: false,
+            url: linkTuyetDoi + "ajax/check_newMess_admin",
             data: {
-                matinnhan:matinnhan,
-                thoigiannhan:thoigiannhan
+                matinnhan: matinnhan,
+                thoigiannhan: thoigiannhan
             },
-            success: function (response) {
-              result = response;  
-            }
-        });
-        return result;
-    }
-    function insertToTN(noidung,matinnhan){
-        var result =  "";
-        $.ajax({
-            type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/chatAdmin",
-            data: {
-                noidung:noidung,
-                matinnhan:matinnhan
-            },
-            success: function (response) {
-              result = response;  
-            }
-        });
-        return result;
-    }
-    function getContentMess(matinnhan){
-        var result = "";
-        $.ajax({
-            type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/getContentMess",
-            data: {matinnhan:matinnhan},
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
+    function insertToTN(noidung, matinnhan) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/chatAdmin",
+            data: {
+                noidung: noidung,
+                matinnhan: matinnhan
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function getContentMess(matinnhan) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/getContentMess",
+            data: { matinnhan: matinnhan },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
     function uploadImg() {
         var fd = new FormData();
         var files = $('#linkduongdananh')[0].files[0];
@@ -331,12 +349,32 @@ $(document).ready(function () {
             data: fd,
             contentType: false,
             processData: false,
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
+    function uploadImgAdd() {
+        var fd = new FormData();
+        var files = $('#linkduongdananh_add')[0].files[0];
+        fd.append('file', files);
+        var result = "";
+        $.ajax({
+            url: linkTuyetDoi + "ajax/uploadfile",
+            type: 'post',
+            async: false,
+            data: fd,
+            contentType: false,
+            processData: false,
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
     function AddProduct(tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong) {
         var result = "";
         $.ajax({
@@ -353,12 +391,13 @@ $(document).ready(function () {
                 dunglamslider: dunglamslider,
                 soluong: soluong
             },
-            success: function (response) {
+            success: function(response) {
                 result = response;
             },
         });
         return result;
     }
+
     function getProduct(masp) {
         var result = "";
         $.ajax({
@@ -366,12 +405,13 @@ $(document).ready(function () {
             type: 'post',
             async: false,
             data: { masp: masp },
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function updateProduct(masp, tensp, giatien, loaisanpham, motasanpham, linkduongdananh, hangsanxuat, dunglamslider, soluong) {
         var result = "";
         $.ajax({
@@ -389,12 +429,13 @@ $(document).ready(function () {
                 dunglamslider: dunglamslider,
                 soluong: soluong
             },
-            success: function (response) {
+            success: function(response) {
                 result = response;
             },
         });
         return result;
     }
+
     function deleteProduct(masp) {
         var result = "";
         $.ajax({
@@ -402,12 +443,13 @@ $(document).ready(function () {
             type: 'post',
             async: false,
             data: { masp: masp },
-            success: function (response) {
+            success: function(response) {
                 result = response;
             },
         });
         return result;
     }
+
     function spanErr(idName, option, mess) {
         if (option) {
             $("#sp" + idName).html("");
@@ -419,6 +461,7 @@ $(document).ready(function () {
         // $("#sp"+idName).addClass("fas fa-times");
 
     }
+
     function checkAcount(tendangnhap) {
         var php_data;
         $.ajax({
@@ -427,12 +470,13 @@ $(document).ready(function () {
             async: false,
             data: { tendangnhap: tendangnhap },
             // dataType: "dataType",
-            success: function (response) {
+            success: function(response) {
                 php_data = response;
             }
         });
         return php_data;
     }
+
     function comparePassword(pass1, pass2) {
         if (pass1 == pass2) {
             return true;
@@ -440,11 +484,12 @@ $(document).ready(function () {
             return false;
         }
     }
+
     function checkStrongPass(pass) {
         var domanh = 0;
         const arr = [/[A-Z]/, /[a-z]/, /[0-9]/, /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/];
         if (pass.length >= 8) {
-            $.each(arr, function (indexInArray, valueOfElement) {
+            $.each(arr, function(indexInArray, valueOfElement) {
                 // alert(valueOfElement);
                 if (valueOfElement.test(pass)) {
                     domanh++;
@@ -455,27 +500,29 @@ $(document).ready(function () {
             return false;
         }
     }
-    function checkEmailFormat(email) { 
+
+    function checkEmailFormat(email) {
         var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
-        if(pattern.test(email)){
+        if (pattern.test(email)) {
             return true;
-        }else{
+        } else {
             return false;
         }
     }
-    function dangky(tendangnhap,matkhau,email,quyen){
+
+    function dangky(tendangnhap, matkhau, email, quyen) {
         var result = "";
         $.ajax({
             type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/dangky",
+            async: false,
+            url: linkTuyetDoi + "ajax/dangky",
             data: {
-                tendangnhap:tendangnhap,
-                matkhau:matkhau,
-                email:email,
-                quyen:quyen
+                tendangnhap: tendangnhap,
+                matkhau: matkhau,
+                email: email,
+                quyen: quyen
             },
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });

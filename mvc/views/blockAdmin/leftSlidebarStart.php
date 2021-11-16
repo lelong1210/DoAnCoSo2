@@ -10,13 +10,7 @@
     </li>
     <li class="menu-title">Sản Phẩm</li>
     <li>
-        <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-cog"></i><span> Quản Lý Sản Phẩm <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
-        <ul class="submenu">
-            <li><a href="/www/admin/xemsanpham">Tìm Kiếm</a></li>
-            <li><a href="/www/admin/themsanpham">Thêm Sản Phẩm</a></li>
-            <li><a href="/www/admin/suasanpham">Sửa Sản Phẩm</a></li>
-            <li><a href="email-compose.html">Xóa Sản Phẩm</a></li>
-        </ul>
+        <a href="/www/admin/xemsanpham" class="waves-effect"><i class="fas fa-cog"></i><span> Quản Lý Sản Phẩm <span class="float-right menu-arrow"></span> </span></a>
     </li>
     <li>
         <!-- <a href="/www/admin/xemsanpham" class="waves-effect" id="seeOverviewProductLeftSlideBar"><i class="fas fa-eye"></i> <span> Xem Sản Phẩm </span> </a>
