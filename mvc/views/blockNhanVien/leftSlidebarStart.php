@@ -5,7 +5,7 @@
         <ul class="submenu">
             <li><a href="/www/nhanvien/congviecmoi" class="waves-effect" id="seeOverviewProductLeftSlideBar"><i class="fas fa-plus-circle"></i> <span>Công Việc Mới</span> </a></li>
             <li><a href="/www/nhanvien/congviecdangcho" class="waves-effect" id="seeOverviewProductLeftSlideBar"><i class="fas fa-eye"></i> <span>Công Việc Đang Chờ</span> </a></li>
-            <li><a href="/www/nhanvien/congviecdahoanthanh" id="themsanphamLeftSlideBar" class="waves-effect"><i class="fas fa-check-double"></i> <span> Công Việc Đã Xong </span> </a></li>
+            <li><a href="/www/nhanvien/congviecdahoanthanh" id="themsanphamLeftSlideBar" class="waves-effect"><i class="fas fa-check-double"></i> <span> Công Việc Đã Hoàn Thành </span> </a></li>
         </ul>
     </li>
     <li class="menu-title">Cá Nhân</li>

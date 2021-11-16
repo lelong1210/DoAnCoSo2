@@ -1,48 +1,63 @@
 .header-bottom {
-    background-color: rgba(48, 164, 211, 0.87) ;
+    background-color: rgba(48, 164, 211, 0.87);
     padding: 29px 0;
 }
+
 .bg-white {
     background-color: rgba(48, 164, 211, 0.87)!important;
 }
+
 .offcanvas {
     background-color: rgba(48, 164, 211, 0.87);
 }
+
 .header-actions .header-action-btn .header-action-num {
     background-color: rgba(48, 164, 211, 0.87);
 }
-.gbcus{
+
+.gbcus {
     /* background-color: rgba(48, 164, 211, 0.87);
     color:red !important; */
 }
+
 .bg-BlackChg {
     background-color: rgba(255, 255, 255, 0.87)!important;
 }
+
 .bg-whiteChg {
     background-color: rgba(48, 164, 211, 0.87)!important;
 }
-.imgLOGO{
+
+.imgLOGO {
     /* width: 100px; */
     height: 80px;
 }
+
 .footer-area {
     color: #fff;
     background-color: rgba(48, 164, 211, 0.87);
 }
-.contentSelectAddress{
+
+.contentSelectAddress {
     display: none;
 }
-.imgtt{
+
+.imgtt {
     max-width: 500px;
 }
-.contentQr{
+
+.contentQr {
     display: none;
 }
+
+
 /* chat */
-.content-chat{
+
+.content-chat {
     /* background-color: #f4f7f6; */
-    margin-top:20px;
+    margin-top: 20px;
 }
+
 .card {
     background: #fff;
     transition: .5s;

@@ -2,9 +2,11 @@ $(document).ready(function() {
     //link tuyet doi 
     var linkTuyetDoi = "http://localhost/www/";
     //
-    $("button").click(function(e) {
+    $("body").on("click", "button", function(e) {
         var btn_cv = "btn_cv";
         var btn_ht = "btn_ht";
+        var btn_xct = "btn_xct";
+        var back_table_congvc = "back_table_congvc";
         idThis = $(this).attr("id");
         if (idThis.startsWith(btn_cv)) {
             var macv = idThis.slice(btn_cv.length, idThis.length);
@@ -19,6 +21,16 @@ $(document).ready(function() {
                 alert("Bạn Đã Xác Hoàn Thành Nhận Công Việc - Với Mã Công Việc Là : " + macv + " ^_^ !!!");
                 location.reload();
             }
+        }
+        if (idThis.startsWith(btn_xct)) {
+            var mahoadon = idThis.slice(btn_xct.length, idThis.length);
+            $("#conn_ts").html(showDetailBill(mahoadon));
+            $("#conn_ts").slideDown();
+            $("#table_congvc").slideUp();
+        }
+        if (idThis.startsWith(back_table_congvc)) {
+            $("#table_congvc").slideDown();
+            $("#conn_ts").slideUp();
         }
 
     });
@@ -198,5 +210,22 @@ $(document).ready(function() {
         } else {
             return false;
         }
+    }
+
+    function showDetailBill(mahoadon) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/callBillDetailNV",
+            data: {
+                mahoadon: mahoadon
+            },
+            success: function(response) {
+                // alert(response);
+                result = response;
+            }
+        });
+        return result;
     }
 });

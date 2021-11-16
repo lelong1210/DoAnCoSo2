@@ -13,6 +13,9 @@ class controller{
     function call_view_page_admin($viewPage,$data=[]){
         require_once "./mvc/views/pageAdmin/".$viewPage.".php";
     }
+    function call_view_page_nhanvien($viewPage,$data=[]){
+        require_once "./mvc/views/pageNhanVien/".$viewPage.".php";
+    }
     function call_block_view_admin($viewBlock){
         require_once "./mvc/views/blockAdmin/".$viewBlock.".php";
     }

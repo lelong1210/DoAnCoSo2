@@ -1,9 +1,15 @@
-.model_overviewProduct{
+.model_overviewProduct {
     display: none;
 }
-#img_div{
+
+#img_div {
     width: 100px;
 }
-#masp_edit{
+
+#masp_edit {
+    display: none;
+}
+
+#conn_ts {
     display: none;
 }

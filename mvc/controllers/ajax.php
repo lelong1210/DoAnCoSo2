@@ -286,6 +286,14 @@ class ajax extends controller{
             "arrNdTk"=>$arrNdTk
         ]);        
     }
+    function callBillDetailNV(){
+        $mahoadon = $_POST["mahoadon"];
+        $model = $this->call_model("taikhoanModel");
+        $arr = $model->getDetailBill($_SESSION["username"],$mahoadon);
+        $this->call_view_page_nhanvien("ajaxSeeDetailBill",[
+            "arrDetail"=>$arr
+        ]);
+    }
     // chat 
     function chat(){
         $tendangnhap = $_SESSION["username"];

@@ -294,9 +294,9 @@ class taikhoanModel extends connectDB
         FROM (((congviec INNER JOIN hoadon ON congviec.mahoadon = hoadon.mahoadon ) 
                         INNER JOIN chitiethoadon ON hoadon.mahoadon = chitiethoadon.mahoadon) 
                         INNER JOIN sanpham ON chitiethoadon.masp = sanpham.masp)
-        WHERE hoadon.tendangnhap = :tendangnhap AND hoadon.mahoadon = :mahoadon";
+        WHERE hoadon.mahoadon = :mahoadon";
         $query = $conn->prepare($sql);
-        $query->bindParam(":tendangnhap", $tendangnhap);
+        // $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":mahoadon",$mahoadon);
         $query->execute();
         if ($query->rowCount() > 0) {

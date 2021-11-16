@@ -6,7 +6,7 @@
             <div class="row align-items-center ">
                 <div class="col-md-8">
                     <div class="page-title-box">
-                        <h4 class="page-title">Toàn Bộ Sản Phẩm</h4>
+                        <h4 class="page-title">Toàn Bộ Công Việc Đang Chờ</h4>
                     </div>
                 </div>
 
@@ -51,7 +51,7 @@
                                         <?php for ($j = 0; $j < count($arrChild); $j++) { ?>
                                             <td><?php echo $arrChild[$j]; ?></td>
                                         <?php } ?>
-                                        <td><button class="btn btn-lg btn-success" id="btn_ht<?php echo $arrChild[0]?>">Đã Hoàn Thành</button></td>
+                                        <td><button class="btn btn-lg btn-success" id="btn_ht<?php echo $arrChild[0]?>">Xác Nhận Hoàn Thành</button></td>
                                     </tr>
                                 <?php } ?>
                             </tbody>
