@@ -19,12 +19,6 @@
             <nav class="navbar-custom">
                 <ul class="navbar-right list-inline float-right mb-0">
 
-                    <li class="list-inline-item dropdown notification-list d-none d-md-inline-block">
-                        <a class="nav-link waves-effect toggle-search" href="#" data-target="#search-wrap">
-                            <i class="fas fa-search noti-icon"></i>
-                        </a>
-                    </li>
-
                     <!-- language-->
 
                     <!-- full screen -->
