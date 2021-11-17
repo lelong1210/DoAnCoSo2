@@ -130,6 +130,19 @@ $(document).ready(function() {
         }
     });
     // function support
+    function getCongViec12thang() {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/getCongViec12thang",
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
     function yesNoComfim(string) {
         var x = confirm(string);
         return x;
@@ -273,4 +286,33 @@ $(document).ready(function() {
         });
         return result;
     }
+    // chart js
+    // ==> thong ke cong viec trong 12 thang
+    var yValues = [];
+    const arrcount = JSON.parse(getCongViec12thang());
+    $.each(arrcount, function(indexInArray, valueOfElement) {
+        $.each(valueOfElement, function(indexInArray, valueOfElement1) {
+            yValues.push(valueOfElement1.socongviectrongthang);
+        });
+    });
+    var xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+    var barColors = ["red", "green", "blue", "orange", "brown", "Cyan", "Gray", "Navy", "#66FF00", "#FF9900", "#FF3399", "#990000"];
+
+    new Chart("myChart", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: { display: false },
+            title: {
+                display: true,
+                text: "Công Việc Hoàn Thành Theo Tháng"
+            }
+        }
+    });
 });
