@@ -7,6 +7,7 @@ $(document).ready(function() {
         var btn_ht = "btn_ht";
         var btn_xct = "btn_xct";
         var back_table_congvc = "back_table_congvc";
+        var btn_nhanLuong = "btn_nhanLuong";
         idThis = $(this).attr("id");
         if (idThis.startsWith(btn_cv)) {
             var macv = idThis.slice(btn_cv.length, idThis.length);
@@ -31,6 +32,28 @@ $(document).ready(function() {
         if (idThis.startsWith(back_table_congvc)) {
             $("#table_congvc").slideDown();
             $("#conn_ts").slideUp();
+        }
+        if (idThis.startsWith(btn_nhanLuong)) {
+            var tongluong = "tongluong";
+            var macv = idThis.slice(btn_nhanLuong.length, idThis.length);
+            var soluong = $("#" + tongluong + macv).html();
+            var danhgiacuakhach = "danhgiacuakhach";
+            var sosaodanhgiacuakhach = $("#" + danhgiacuakhach + macv).html();
+            if (sosaodanhgiacuakhach == 0) {
+                if (yesNoComfim("Lưu Ý Đánh Giá = 0 là khách hàng chưa đánh giá , nếu bạn nhận lúc này khi khách hàng đánh giá bạn sẽ không nhận được tiền thưởng nữa???")) {
+                    if (insertToLuong(macv, soluong)) {
+                        alert("Bạn Đã Nhận Lương Với Mã Công Việc Là : " + macv);
+                        $("#td_btn_nl" + macv).html("Đã Nhận");
+                    }
+                }
+            } else {
+                if (yesNoComfim("Bạn Muốn Nhận Lương ???")) {
+                    if (insertToLuong(macv, soluong)) {
+                        alert("Bạn Đã Nhận Lương Với Mã Công Việc Là : " + macv);
+                        $("#td_btn_nl" + macv).html("Đã Nhận");
+                    }
+                }
+            }
         }
 
     });
@@ -107,6 +130,28 @@ $(document).ready(function() {
         }
     });
     // function support
+    function yesNoComfim(string) {
+        var x = confirm(string);
+        return x;
+    }
+
+    function insertToLuong(macv, soluong) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/insertToLuong",
+            data: {
+                macv: macv,
+                soluong: soluong
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
     function setCongViec(macv) {
         var result = "";
         $.ajax({

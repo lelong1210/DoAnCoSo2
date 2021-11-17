@@ -6,7 +6,7 @@
             <div class="row align-items-center ">
                 <div class="col-md-8">
                     <div class="page-title-box">
-                        <h4 class="page-title">Toàn Bộ Công Việc Đang Chờ</h4>
+                        <h4 class="page-title">Toàn Bộ Lương</h4>
                     </div>
                 </div>
 
@@ -76,8 +76,15 @@
                                             }
                                         ?>
                                         <?php $tongluong = round($luongthoigian + $luongsao)?>
-                                        <td><span id="tongluong<?php echo $tongluong?>"><?php echo number_format($tongluong) ?></span></td>
-                                        <td><button class="btn btn-lg btn-success" id="btn_nhanLuong<?php echo $arrChild[0]?>">Nhận</button></td>
+                                        <td><span><?php echo number_format($tongluong) ?></span></td>
+                                        <td style="display: none;"><span id="tongluong<?php echo $arrChild[0]?>"><?php echo $tongluong?></span></td>
+                                        <td style="display: none;"><span id="danhgiacuakhach<?php echo $arrChild[0]?>"><?php echo $arrChild[2]?></span></td>
+                                        <td id="td_btn_nl<?php echo $arrChild[0]?>">
+                                            <?php if($data["nhanVienModel"]->selectLuong($arrChild[0])){echo "Đã Nhận";}else{?>
+                                                <button class="btn btn-lg btn-success" id="btn_nhanLuong<?php echo $arrChild[0]?>">Nhận</button>
+                                            <?php }?>
+                                        </td>
+                                        
                                         <td><button class="btn btn-lg btn-success" id="btn_xct<?php echo $arrChild[1]?>">?</button></td>
                                     </tr>
                                 <?php } ?>

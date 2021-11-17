@@ -97,7 +97,7 @@ class nhanvienModel extends connectDB{
             return false;
         }        
     }
-    function insertToLuong($soluong,$macv,$danhan){
+    function insertToLuong($soluong,$macv){
         $conn = $this->GetConn();
         $sql = "INSERT INTO luong(soluong, macv) VALUES (:soluong, :macv)";
         $query = $conn->prepare($sql);
@@ -110,7 +110,7 @@ class nhanvienModel extends connectDB{
             return false;
         }        
     }
-    function selectLuong(){
+    function selectLuong($macv){
         $conn = $this->GetConn();
         $sql = "SELECT * FROM luong WHERE luong.macv = :macv";
         $query = $conn->prepare($sql);

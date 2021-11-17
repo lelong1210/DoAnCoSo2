@@ -43,8 +43,7 @@
                 <?php
                     if($data["title"] == "congviecmoi"){
                         require_once "pageNhanVien/congviecmoiPage.php";
-                    }
-                    else if($data["title"] == "congviecdangcho"){
+                    }else if($data["title"] == "congviecdangcho"){
                         require_once "pageNhanVien/congviecdangchoPage.php";
                     }else if($data["title"] == "quanlythongtin"){
                         require_once "pageNhanVien/manageInFo.php";
@@ -52,14 +51,9 @@
                         require_once "pageNhanVien/congviecdahoanthanhPage.php";
                     }else if($data["title"] == "quanlyluong"){
                         require_once "pageNhanVien/nhanLuongPage.php";
+                    }else{
+                        require_once "pageNhanVien/congviecmoiPage.php";
                     }
-                    // else if($data["title"] == "xemnguoidung"){
-                    //     require_once "pageAdmin/overViewUser.php";
-                    // }else if($data["title"] == "themnguoidung"){
-                    //     require_once "pageAdmin/addUserPage.php";
-                    // }else{
-                    //     require_once "pageAdmin/indexPage.php"; 
-                    // } 
                     
                 
                 ?>

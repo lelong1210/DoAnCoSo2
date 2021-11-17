@@ -266,6 +266,15 @@ class ajax extends controller{
         $tiendo = 1 ;
         $danhgiacuakhachhang = 0 ;
         echo $model->xacNhanXongCongViec($macv,$thoigianxongcongviec,$tiendo,$danhgiacuakhachhang);
+    
+    }
+    // luong nhan vien
+    function insertToLuong(){
+        $soluong = $_POST["soluong"];
+        $macv = $_POST["macv"];
+        $model = $this->call_model("nhanvienModel");
+        echo $model->insertToLuong($soluong,$macv);
+
     }
     // xem bill detail
     function callBillDetail(){
