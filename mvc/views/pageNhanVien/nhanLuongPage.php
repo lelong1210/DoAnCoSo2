@@ -30,7 +30,7 @@
                         $arr = json_decode($data["nhanVienModel"]->getCongViecToLuong($_SESSION["username"]));
                         $luonggoc = 200000 ;
                         if($arr){
-                            $arrTitle = ["Mã Công Việc","Mã Hóa Đơn","Đánh Giá","Ngày Nhận","Ngày Hoàn Thành","Thời Gian Chênh Lệch","Lương","Nhận","Chi Tiết Công Việc"];
+                            $arrTitle = ["Mã Công Việc","Mã Hóa Đơn","Đánh Giá","Ngày Nhận","Ngày Hoàn Thành","Thời Gian Chênh Lệch [Ngày]","Lương","Nhận","Chi Tiết Công Việc"];
                         ?>
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap text-center" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
@@ -62,8 +62,8 @@
                                                 }
                                             }
                                         ?>
-                                        <td><?php $thoigianchenhlech = round(((strtotime($arrChild[4]) - strtotime($arrChild[3])) / 86400)); echo $thoigianchenhlech ?> Ngày</td>
                                         <?php
+                                            $thoigianchenhlech = $arrChild[5];
                                             $luongthoigian  = 0;
                                             if($thoigianchenhlech < 10){
                                                 if($thoigianchenhlech >= 0 && $thoigianchenhlech <= 1){

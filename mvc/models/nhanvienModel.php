@@ -84,7 +84,7 @@ class nhanvienModel extends connectDB{
     }
     function getCongViecToLuong($tendangnhap){
         $conn = $this->GetConn(); 
-        $sql = "SELECT congviec.macv , congviec.mahoadon , congviec.danhgiacuakhachhang, congviec.thoigiannhancongviec , congviec.thoigianxongcongviec 
+        $sql = "SELECT congviec.macv , congviec.mahoadon , congviec.danhgiacuakhachhang, congviec.thoigiannhancongviec , congviec.thoigianxongcongviec , DATEDIFF(congviec.thoigianxongcongviec,congviec.thoigiannhancongviec) AS thoigianht
         FROM congviec
         WHERE congviec.tendangnhap = :tendangnhap AND congviec.tiendo = 1";
         $query = $conn->prepare($sql);
@@ -97,12 +97,13 @@ class nhanvienModel extends connectDB{
             return false;
         }        
     }
-    function insertToLuong($soluong,$macv){
+    function insertToLuong($soluong,$macv,$ngaynhanluong){
         $conn = $this->GetConn();
-        $sql = "INSERT INTO luong(soluong, macv) VALUES (:soluong, :macv)";
+        $sql = "INSERT INTO luong(soluong, macv,ngaynhanluong) VALUES (:soluong, :macv, :ngaynhanluong)";
         $query = $conn->prepare($sql);
         $query->bindParam(":soluong", $soluong);
         $query->bindParam(":macv",$macv);
+        $query->bindParam(":ngaynhanluong",$ngaynhanluong);
         $query->execute();
         if ($query->rowCount() > 0) {
             return true;
@@ -121,6 +122,66 @@ class nhanvienModel extends connectDB{
         } else {
             return false;
         }  
+    }
+    function getSpeedAverage($tendangnhap){
+        $conn = $this->GetConn(); 
+        $sql = "SELECT AVG(DATEDIFF(congviec.thoigianxongcongviec,congviec.thoigiannhancongviec)) AS tocdotrungbinh
+        FROM congviec
+        WHERE congviec.tendangnhap = :tendangnhap AND congviec.tiendo = 1";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        } 
+    }
+    function getPvHk($tendangnhap){
+        $conn = $this->GetConn(); 
+        $sql = "SELECT AVG(congviec.danhgiacuakhachhang) AS pvKH
+        FROM congviec
+        WHERE congviec.tendangnhap = :tendangnhap AND congviec.tiendo = 1 AND congviec.danhgiacuakhachhang != 0";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        } 
+    }
+    function getTongluong($tendangnhap){
+        $conn = $this->GetConn(); 
+        $sql = "SELECT SUM(luong.soluong) AS tongluong
+        FROM congviec INNER JOIN luong ON congviec.macv = luong.macv
+        WHERE congviec.tendangnhap = :tendangnhap";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        } 
+    }
+    function getTongCV($tendangnhap){
+        $conn = $this->GetConn(); 
+        $sql = "SELECT luong.soluong AS tongluong
+        FROM congviec INNER JOIN luong ON congviec.macv = luong.macv
+        WHERE congviec.tendangnhap = :tendangnhap";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        } 
     }
 }
 ?>

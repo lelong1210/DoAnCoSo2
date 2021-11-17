@@ -1,106 +1,196 @@
 <div class="content">
 
-<div class="container-fluid">
-    <div class="page-title-box">
+    <div class="container-fluid">
+        <div class="page-title-box">
 
-        <div class="row align-items-center ">
-            <div class="col-md-8">
-                <div class="page-title-box">
-                    <h4 class="page-title">Dashboard</h4>
-                    <ol class="breadcrumb">
-                        <li class="breadcrumb-item active"></li>
-                    </ol>
+            <div class="row align-items-center ">
+                <div class="col-md-8">
+                    <div class="page-title-box">
+                        <h4 class="page-title">Dashboard</h4>
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item active"></li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
 
-            <div class="col-md-4">
-                <div class="float-right d-none d-md-block app-datepicker">
-                    <input type="text" class="form-control" data-date-format="MM dd, yyyy" readonly="readonly" id="datepicker">
-                    <i class="mdi mdi-chevron-down mdi-drop"></i>
+                <div class="col-md-4">
+                    <div class="float-right d-none d-md-block app-datepicker">
+                        <input type="text" class="form-control" data-date-format="MM dd, yyyy" readonly="readonly" id="datepicker">
+                        <i class="mdi mdi-chevron-down mdi-drop"></i>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
-    <!-- end page-title -->
+        <!-- end page-title -->
 
-    <!-- start top-Contant -->
-    <?php 
-        $arr = ["Công Việc Mới","Công Việc Đang Chờ","Công Việc Đã Hoàn Thành"]
-    ?>
-    <div class="row">
-        <?php for ($i=0; $i < 3; $i++) { ?>
+        <!-- start top-Contant -->
+        <?php
+        /// tieu de box
+        $arrBoxTT = ["Tốc Độ", "Thái Độ", "Tổng Lương Đã Nhận","Công Việc Đã Hoàn Thành"];
+        /// speed 
+        $arrAverage = json_decode($data["nhanVienModel"]->getSpeedAverage($_SESSION["username"]));
+        $arrAverage = array_values((array) $arrAverage[0]);
+        $arrAverage = $arrAverage[0];
+        $arrDGSpeed = ["Rất Nhanh", "Nhanh", "Khá Nhanh", "Chậm", "Rất Chậm"];
+        /// 
+        /// thai do
+        $arrThD = json_decode($data["nhanVienModel"]->getPvHk($_SESSION["username"]));
+        $arrThD = array_values((array) $arrThD[0]);
+        $arrThD = $arrThD[0];
+        $arrDGpV = ["Rất Tốt", "Tốt", "Khá Tốt", "Tệ", "Rất Tệ"];
+        /// luong 
+        $arrTongluong = json_decode($data["nhanVienModel"]->getTongluong($_SESSION["username"]));
+        $arrTongluong = array_values((array) $arrTongluong[0]);
+        $arrTongluong = $arrTongluong[0];
+        /// CV
+        $arrCV = json_decode($data["nhanVienModel"]->getTongCV($_SESSION["username"]));
+        $count = count($arrCV);
+        ?>
+        <div class="row text-center">
             <div class="col-sm-6 col-xl-3">
                 <div class="card">
                     <div class="card-body">
                         <div class="row align-items-center p-1">
-                            <div class="col-lg-6">
-                                <h5 class="font-16"><?php echo $arr[$i]?></h5>
-                                <h4 class="text-info pt-1 mb-0">$67,670</h4>
+                            <div class="col-lg-12">
+                                <p class="font-16"><?php echo $arrBoxTT[0] ?> <i class="fas fa-flag-checkered"></i></p>
+                                <h4 class="text-info pt-1 mb-0">
+                                    <?php 
+                                        if($arrAverage >= 0 && $arrAverage <= 1){
+                                            echo $arrDGSpeed[0];
+                                        }else if($arrAverage > 1 && $arrAverage <= 2){
+                                            echo $arrDGSpeed[1];
+                                        }else if($arrAverage > 2 && $arrAverage <= 3){
+                                            echo $arrDGSpeed[2];
+                                        }else if($arrAverage > 3 && $arrAverage <= 5){
+                                            echo $arrDGSpeed[3];
+                                        }else{
+                                            echo $arrDGSpeed[4];
+                                        }
+                                    ?>
+                                </h4>
                             </div>
-                            <div class="col-lg-6">
-                                <div id="chart<?php echo ($i+1)?>"></div>
-                            </div>
+                            <!-- <div class="col-lg-6">
+                                
+                            </div> -->
                         </div>
                     </div>
                 </div>
             </div>
-        <?php }?>
-    </div>
-    <!-- end top-Contant -->
-
-    <div class="row">
-        <div class="col-xl-8">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="mt-0 header-title mb-4">Sales Statistics</h4>
-                    <ul class="list-inline widget-chart mt-4 mb-0 text-center">
-                        <li class="list-inline-item">
-                            <h5>3654</h5>
-                            <p class="text-muted">Marketplace</p>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5>954</h5>
-                            <p class="text-muted">Last week</p>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5>8462</h5>
-                            <p class="text-muted">Last Month</p>
-                        </li>
-                    </ul>
-                    <div id="morris-bar-stacked" class="text-center" style="height: 350px;"></div>
-
+            <div class="col-sm-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center p-1">
+                            <div class="col-lg-12">
+                                <p class="font-16"><?php echo $arrBoxTT[1] ?> <i class="far fa-laugh-beam"></i></p>
+                                <h4 class="text-info pt-1 mb-0">
+                                    <?php 
+                                        if($arrThD >= 0 && $arrThD <= 1){
+                                            echo $arrDGpV[4];
+                                        }else if($arrThD > 1 && $arrThD <= 2){
+                                            echo $arrDGpV[3];
+                                        }else if($arrThD > 2 && $arrThD <= 3){
+                                            echo $arrDGpV[2];
+                                        }else if($arrThD > 3 && $arrThD <= 4){
+                                            echo $arrDGpV[1];
+                                        }else{
+                                            echo $arrDGpV[0];
+                                        }
+                                    ?>
+                                </h4>
+                            </div>
+                            <!-- <div class="col-lg-6">
+                                
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center p-1">
+                            <div class="col-lg-12">
+                                <p class="font-16"><?php echo $arrBoxTT[2] ?> <i class="fas fa-money-bill-wave"></i></p>
+                                <h4 class="text-info pt-1 mb-0"><?php echo number_format($arrTongluong)?> đ</h4>
+                            </div>
+                            <!-- <div class="col-lg-6">
+                                
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-xl-3">
+                <div class="card">
+                    <div class="card-body">
+                        <div class="row align-items-center p-1">
+                            <div class="col-lg-12">
+                                <p class="font-16"><?php echo $arrBoxTT[3] ?> <i class="fas fa-people-carry"></i></p>
+                                <h4 class="text-info pt-1 mb-0"><?php echo $count?></h4>
+                            </div>
+                            <!-- <div class="col-lg-6">
+                                
+                            </div> -->
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- end top-Contant -->
 
-        <div class="col-xl-4">
-            <div class="card">
-                <div class="card-body">
-                    <h4 class="mt-0 header-title mb-4">Trends Monthly</h4>
-                    <ul class="list-inline widget-chart mt-4 mb-0 text-center">
-                        <li class="list-inline-item">
-                            <h5>3654</h5>
-                            <p class="text-muted">Marketplace</p>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5>954</h5>
-                            <p class="text-muted">Last week</p>
-                        </li>
-                        <li class="list-inline-item">
-                            <h5>8462</h5>
-                            <p class="text-muted">Last Month</p>
-                        </li>
-                    </ul>
-                    <div id="morris-donut-example" class="morris-charts morris-chart-height text-center" style="height: 350px;"></div>
+        <div class="row">
+            <div class="col-xl-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title mb-4">Sales Statistics</h4>
+                        <ul class="list-inline widget-chart mt-4 mb-0 text-center">
+                            <li class="list-inline-item">
+                                <h5>3654</h5>
+                                <p class="text-muted">Marketplace</p>
+                            </li>
+                            <li class="list-inline-item">
+                                <h5>954</h5>
+                                <p class="text-muted">Last week</p>
+                            </li>
+                            <li class="list-inline-item">
+                                <h5>8462</h5>
+                                <p class="text-muted">Last Month</p>
+                            </li>
+                        </ul>
+                        <div id="morris-bar-stacked" class="text-center" style="height: 350px;"></div>
 
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-xl-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h4 class="mt-0 header-title mb-4">Trends Monthly</h4>
+                        <ul class="list-inline widget-chart mt-4 mb-0 text-center">
+                            <li class="list-inline-item">
+                                <h5>3654</h5>
+                                <p class="text-muted">Marketplace</p>
+                            </li>
+                            <li class="list-inline-item">
+                                <h5>954</h5>
+                                <p class="text-muted">Last week</p>
+                            </li>
+                            <li class="list-inline-item">
+                                <h5>8462</h5>
+                                <p class="text-muted">Last Month</p>
+                            </li>
+                        </ul>
+                        <div id="morris-donut-example" class="morris-charts morris-chart-height text-center" style="height: 350px;"></div>
+
+                    </div>
                 </div>
             </div>
         </div>
+        <!-- end row -->
+
+
     </div>
-    <!-- end row -->
-
-
-</div>
-<!-- container-fluid -->
+    <!-- container-fluid -->
 
 </div>

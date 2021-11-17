@@ -272,8 +272,9 @@ class ajax extends controller{
     function insertToLuong(){
         $soluong = $_POST["soluong"];
         $macv = $_POST["macv"];
+        $thoigian = date("Y-m-d H:i:s");
         $model = $this->call_model("nhanvienModel");
-        echo $model->insertToLuong($soluong,$macv);
+        echo $model->insertToLuong($soluong,$macv,$thoigian);
 
     }
     // xem bill detail
