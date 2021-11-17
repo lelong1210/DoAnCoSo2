@@ -30,7 +30,7 @@
                         $arr = json_decode($data["nhanVienModel"]->getCongViecToLuong($_SESSION["username"]));
                         $luonggoc = 200000 ;
                         if($arr){
-                            $arrTitle = ["Mã Công Việc","Mã Hóa Đơn","Đánh Giá","Ngày Nhận","Ngày Hoàn Thành","Thời Gian Chênh Lệch [Ngày]","Lương","Nhận","Chi Tiết Công Việc"];
+                            $arrTitle = ["Mã Công Việc","Mã Hóa Đơn","Đánh Giá","Ngày Nhận","Ngày Xong","Thời Gian HT (ngày)","Lương","Nhận","Chi Tiết Công Việc"];
                         ?>
                         <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap text-center" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
                             <thead>
@@ -49,7 +49,7 @@
 
                                 ?>
                                     <tr>
-                                        <?php for ($j = 0; $j < count($arrChild); $j++) { ?>
+                                        <?php for ($j = 0; $j < count($arrChild); $j++) {?>
                                             <td><?php echo $arrChild[$j]; ?></td>
                                         <?php } ?>
                                         <?php
@@ -77,8 +77,8 @@
                                         ?>
                                         <?php $tongluong = round($luongthoigian + $luongsao)?>
                                         <td><span><?php echo number_format($tongluong) ?></span></td>
-                                        <td style="display: none;"><span id="tongluong<?php echo $arrChild[0]?>"><?php echo $tongluong?></span></td>
-                                        <td style="display: none;"><span id="danhgiacuakhach<?php echo $arrChild[0]?>"><?php echo $arrChild[2]?></span></td>
+                                        <span style="display: none;"><span id="tongluong<?php echo $arrChild[0]?>"><?php echo $tongluong?></span></span>
+                                        <span style="display: none;"><span id="danhgiacuakhach<?php echo $arrChild[0]?>"><?php echo $arrChild[2]?></span></span>
                                         <td id="td_btn_nl<?php echo $arrChild[0]?>">
                                             <?php if($data["nhanVienModel"]->selectLuong($arrChild[0])){echo "Đã Nhận";}else{?>
                                                 <button class="btn btn-lg btn-success" id="btn_nhanLuong<?php echo $arrChild[0]?>">Nhận</button>
@@ -97,6 +97,7 @@
                 </div>
             </div>
             <!-- end col -->
+            
             <div class="conn text-center" id="conn_ts" ></div>
         </div>
         <!-- end row -->

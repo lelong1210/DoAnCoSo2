@@ -183,5 +183,28 @@ class nhanvienModel extends connectDB{
             return false;
         } 
     }
+    function countCongViecTrongThang($tendangnhap,$thang){
+        $conn = $this->GetConn(); 
+        $sql = "SELECT COUNT(congviec.thoigianxongcongviec) AS socongviectrongthang
+        FROM congviec
+        WHERE MONTH(congviec.thoigianxongcongviec) = :thang AND congviec.tendangnhap = :tendangnhap";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->bindParam(":thang",$thang);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return ($result);
+        }else{
+            return false;
+        } 
+    }
+    function countCongViec12thang($tendangnhap){
+        $arr = [];
+        for ($i=1; $i <= 12; $i++) { 
+            $arr[] = $this->countCongViecTrongThang($tendangnhap,$i);
+        }
+        return json_encode($arr);
+    }
 }
 ?>

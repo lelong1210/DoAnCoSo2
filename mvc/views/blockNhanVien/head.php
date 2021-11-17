@@ -10,7 +10,8 @@
 
 <!--Morris Chart CSS -->
 <link rel="stylesheet" href="http://localhost/www/publicNhanVien/plugins/morris/morris.css">
-
+<!-- chart w3scholl -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
 <!--calendar css-->
 <link href="http://localhost/www/publicNhanVien/plugins/fullcalendar/css/fullcalendar.min.css" rel="stylesheet" />
 

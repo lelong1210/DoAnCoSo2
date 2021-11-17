@@ -51,6 +51,7 @@
                         require_once "pageNhanVien/congviecdahoanthanhPage.php";
                     }else if($data["title"] == "quanlyluong"){
                         require_once "pageNhanVien/nhanLuongPage.php";
+                        require_once "blockNhanVien/jslink.php";
                     }else{
                         require_once "pageNhanVien/indexPage.php";
                     }
