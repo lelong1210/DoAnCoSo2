@@ -82,5 +82,20 @@ class nhanvienModel extends connectDB{
             return false;
         }
     }
+    function getCongViecToLuong($tendangnhap){
+        $conn = $this->GetConn(); 
+        $sql = "SELECT congviec.macv , congviec.mahoadon , congviec.danhgiacuakhachhang, congviec.thoigiannhancongviec , congviec.thoigianxongcongviec 
+        FROM congviec
+        WHERE congviec.tendangnhap = :tendangnhap AND congviec.tiendo = 1";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }        
+    }
 }
 ?>

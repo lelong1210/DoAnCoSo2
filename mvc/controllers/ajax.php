@@ -3,6 +3,7 @@ class ajax extends controller{
     function show(){
         $ngaynhap = date("Y-m-d H:i:s");
         echo $ngaynhap; 
+        echo "<br>".ceil(4.1);
     }
     // tai khoan
     function dangky(){ 

@@ -50,6 +50,8 @@
                         require_once "pageNhanVien/manageInFo.php";
                     }else if($data["title"] == "congviecdahoanthanh"){
                         require_once "pageNhanVien/congviecdahoanthanhPage.php";
+                    }else if($data["title"] == "quanlyluong"){
+                        require_once "pageNhanVien/nhanLuongPage.php";
                     }
                     // else if($data["title"] == "xemnguoidung"){
                     //     require_once "pageAdmin/overViewUser.php";

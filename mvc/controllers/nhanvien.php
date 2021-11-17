@@ -37,5 +37,13 @@ class nhanvien extends controller{
             "taikhoanModel"=>$taikhoanModel,
         ]);
     }
+    // luong
+    function quanlyluong(){
+        $model = $this->call_model("nhanvienModel");
+        $this->call_view("nhanVienView",[
+            "title"=>"quanlyluong",
+            "nhanVienModel"=>$model
+        ]);
+    }
 }
 ?> 

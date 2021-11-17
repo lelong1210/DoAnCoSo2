@@ -57,7 +57,7 @@
                             </tbody>
                         </table>
                     <?php }else{
-                        echo "<h1>Bạn Đã Hoàn Thành Hết Công Việc Rồi ^_^ !!!</h1>";
+                        echo "<h1>Bạn Vẫn Chưa Hoàn Thành Công Việc Nào Trên Hệ Thống !!!</h1>";
                     }?>
                     </div>
                 </div>
