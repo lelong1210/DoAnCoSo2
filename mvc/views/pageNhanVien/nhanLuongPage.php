@@ -66,13 +66,17 @@
                                         <?php
                                             $luongthoigian  = 0;
                                             if($thoigianchenhlech < 10){
-                                                $luongthoigian = ($luonggoc / $thoigianchenhlech);
+                                                if($thoigianchenhlech >= 0 && $thoigianchenhlech <= 1){
+                                                    $luongthoigian = $luonggoc;
+                                                }else{
+                                                    $luongthoigian = ($luonggoc / $thoigianchenhlech);
+                                                }
                                             }else{
                                                 $luongthoigian = ($luonggoc / 10);
                                             }
                                         ?>
                                         <?php $tongluong = round($luongthoigian + $luongsao)?>
-                                        <td><span id="tongluong<?php echo $arrChild[0]?>"><?php echo number_format($tongluong) ?></span></td>
+                                        <td><span id="tongluong<?php echo $tongluong?>"><?php echo number_format($tongluong) ?></span></td>
                                         <td><button class="btn btn-lg btn-success" id="btn_nhanLuong<?php echo $arrChild[0]?>">Nhận</button></td>
                                         <td><button class="btn btn-lg btn-success" id="btn_xct<?php echo $arrChild[1]?>">?</button></td>
                                     </tr>

@@ -5705,7 +5705,7 @@
 											"top": 676,
 											"width": 171.640625,
 											"height": 13,
-											"text": "+tên đăng nhập",
+											"text": "+Đã Nhận",
 											"horizontalAlignment": 0
 										},
 										{
@@ -5717,12 +5717,30 @@
 											"model": {
 												"$ref": "AAAAAAF9KTBc+yQP0qo="
 											},
+											"visible": false,
 											"font": "Arial;13;0",
 											"left": 861,
 											"top": 691,
 											"width": 171.640625,
 											"height": 13,
 											"text": "+Luong",
+											"horizontalAlignment": 0
+										},
+										{
+											"_type": "UMLAttributeView",
+											"_id": "AAAAAAF9LCYPxaSy7/E=",
+											"_parent": {
+												"$ref": "AAAAAAF8yk/mVf44Djg="
+											},
+											"model": {
+												"$ref": "AAAAAAF9LCYPn6Sjksc="
+											},
+											"font": "Arial;13;0",
+											"left": 861,
+											"top": 691,
+											"width": 171.640625,
+											"height": 13,
+											"text": "+Số Lương",
 											"horizontalAlignment": 0
 										}
 									],
@@ -5838,7 +5856,7 @@
 							"left": 856,
 							"top": 616,
 							"width": 181.640625,
-							"height": 146,
+							"height": 161,
 							"nameCompartment": {
 								"$ref": "AAAAAAF8yk/mVf4zd24="
 							},
@@ -9128,7 +9146,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 902,
-									"top": 780,
+									"top": 795,
 									"height": 13,
 									"alpha": -0.5235987755982988,
 									"distance": 30,
@@ -9148,7 +9166,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 888,
-									"top": 783,
+									"top": 798,
 									"height": 13,
 									"alpha": -0.7853981633974483,
 									"distance": 40,
@@ -9168,7 +9186,7 @@
 									"visible": false,
 									"font": "Arial;13;0",
 									"left": 929,
-									"top": 776,
+									"top": 791,
 									"height": 13,
 									"alpha": 0.5235987755982988,
 									"distance": 25,
@@ -9212,7 +9230,7 @@
 							"tail": {
 								"$ref": "AAAAAAF8ykPOmekJeQk="
 							},
-							"points": "1320:914;917:914;917:761",
+							"points": "1320:914;917:914;917:776",
 							"showVisibility": true,
 							"nameLabel": {
 								"$ref": "AAAAAAF9KTLpmHV7OZk="
@@ -11254,7 +11272,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8yj0YXegHq9o="
 							},
-							"name": "mã khách hàng"
+							"name": "mã khách hàng",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -11709,7 +11728,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykH08ejBbQA="
 							},
-							"name": "mã admin"
+							"name": "mã admin",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -11717,7 +11737,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykH08ejBbQA="
 							},
-							"name": "mã khách hàng"
+							"name": "mã khách hàng",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -11734,7 +11755,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykH08ejBbQA="
 							},
-							"name": "nội dung phản hồi"
+							"name": "nội dung phản hồi",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -11937,7 +11959,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykPvP+kxHXQ="
 							},
-							"name": "mã hóa đơn"
+							"name": "mã hóa đơn",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -11963,7 +11986,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykPvP+kxHXQ="
 							},
-							"name": "thời gian nhận công việc"
+							"name": "thời gian nhận công việc",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -11989,7 +12013,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykPvP+kxHXQ="
 							},
-							"name": "sdtKh"
+							"name": "sdtKh",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -11997,7 +12022,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykPvP+kxHXQ="
 							},
-							"name": "thời gian xong công việc"
+							"name": "thời gian xong công việc",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12005,7 +12031,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykPvP+kxHXQ="
 							},
-							"name": "số điện thoại khách hàng"
+							"name": "số điện thoại khách hàng",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12013,7 +12040,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykPvP+kxHXQ="
 							},
-							"name": "tiến độ"
+							"name": "tiến độ",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12021,7 +12049,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykPvP+kxHXQ="
 							},
-							"name": "đánh giá của khách hàng"
+							"name": "đánh giá của khách hàng",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12029,7 +12058,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ykPvP+kxHXQ="
 							},
-							"name": "đã nhận công việc"
+							"name": "đã nhận công việc",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12576,7 +12606,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8yk/mVP4wC3c="
 							},
-							"name": "mã công việc"
+							"name": "mã công việc",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12584,7 +12615,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8yk/mVP4wC3c="
 							},
-							"name": "mã lương"
+							"name": "mã lương",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12592,8 +12624,7 @@
 							"_parent": {
 								"$ref": "AAAAAAF8yk/mVP4wC3c="
 							},
-							"name": "tên đăng nhập",
-							"type": ""
+							"name": "Đã Nhận"
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12603,6 +12634,14 @@
 							},
 							"name": "Luong",
 							"type": ""
+						},
+						{
+							"_type": "UMLAttribute",
+							"_id": "AAAAAAF9LCYPn6Sjksc=",
+							"_parent": {
+								"$ref": "AAAAAAF8yk/mVP4wC3c="
+							},
+							"name": "Số Lương"
 						}
 					],
 					"operations": [
@@ -12798,7 +12837,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF8ylFTnwPuE7g="
 							},
-							"name": "mã khách hàng"
+							"name": "mã khách hàng",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -12892,7 +12932,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF85IHOLJfj/gY="
 							},
-							"name": "số điện thoại giao hàng"
+							"name": "số điện thoại giao hàng",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12900,7 +12941,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF85IHOLJfj/gY="
 							},
-							"name": "tên tỉnh"
+							"name": "tên tỉnh",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12908,7 +12950,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF85IHOLJfj/gY="
 							},
-							"name": "tên huyện"
+							"name": "tên huyện",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12916,7 +12959,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF85IHOLJfj/gY="
 							},
-							"name": "tên xã"
+							"name": "tên xã",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -12960,7 +13004,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF9KUO/uv67m6A="
 							},
-							"name": "mã tin nhắn"
+							"name": "mã tin nhắn",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12968,7 +13013,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF9KUO/uv67m6A="
 							},
-							"name": "mã khách hàng"
+							"name": "mã khách hàng",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -12976,7 +13022,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF9KUO/uv67m6A="
 							},
-							"name": "thời gian nhắn cuối cùng"
+							"name": "thời gian nhắn cuối cùng",
+							"type": ""
 						}
 					],
 					"operations": [
@@ -13043,7 +13090,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF9KUqjFUkScrs="
 							},
-							"name": "mã chi tiết tin nhắn"
+							"name": "mã chi tiết tin nhắn",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -13051,7 +13099,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF9KUqjFUkScrs="
 							},
-							"name": "chi tiết tin nhắn"
+							"name": "chi tiết tin nhắn",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -13059,7 +13108,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF9KUqjFUkScrs="
 							},
-							"name": "nội dung"
+							"name": "nội dung",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -13067,7 +13117,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF9KUqjFUkScrs="
 							},
-							"name": "người nhắn"
+							"name": "người nhắn",
+							"type": ""
 						},
 						{
 							"_type": "UMLAttribute",
@@ -13075,7 +13126,8 @@
 							"_parent": {
 								"$ref": "AAAAAAF9KUqjFUkScrs="
 							},
-							"name": "thời gian nhắn"
+							"name": "thời gian nhắn",
+							"type": ""
 						}
 					],
 					"operations": [

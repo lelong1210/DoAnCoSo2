@@ -97,5 +97,30 @@ class nhanvienModel extends connectDB{
             return false;
         }        
     }
+    function insertToLuong($soluong,$macv,$danhan){
+        $conn = $this->GetConn();
+        $sql = "INSERT INTO luong(soluong, macv) VALUES (:soluong, :macv)";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":soluong", $soluong);
+        $query->bindParam(":macv",$macv);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }        
+    }
+    function selectLuong(){
+        $conn = $this->GetConn();
+        $sql = "SELECT * FROM luong WHERE luong.macv = :macv";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":macv",$macv);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }  
+    }
 }
 ?>
