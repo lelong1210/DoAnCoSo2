@@ -52,7 +52,7 @@
                     }else if($data["title"] == "quanlyluong"){
                         require_once "pageNhanVien/nhanLuongPage.php";
                     }else{
-                        require_once "pageNhanVien/congviecmoiPage.php";
+                        require_once "pageNhanVien/indexPage.php";
                     }
                     
                 

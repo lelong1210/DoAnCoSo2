@@ -6,7 +6,7 @@ class nhanvien extends controller{
     function show(){
         $model = $this->call_model("nhanvienModel");
         $this->call_view("nhanVienView",[
-            "title"=>"congviecmoi",
+            "title"=>"indexPage",
             "nhanVienModel"=>$model
         ]);
     }

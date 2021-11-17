@@ -1,4 +1,7 @@
 <ul class="metismenu" id="side-menu">
+    <li>
+        <a href="/www/nhanvien/" class="waves-effect"><i class="fas fa-tachometer-alt"></i><span> Dashboard <span class="float-right menu-arrow"></span> </span></a>
+    </li>
     <li class="menu-title">Công Việc</li>
     <li>
         <a href="javascript:void(0);" class="waves-effect"><i class="fas fa-cog"></i><span> Quản Lý Công Việc <span class="float-right menu-arrow"><i class="mdi mdi-chevron-right"></i></span> </span></a>
