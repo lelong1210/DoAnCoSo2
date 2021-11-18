@@ -288,6 +288,9 @@ $(document).ready(function() {
         var xem_danhGia = "xem_danhGia";
         var idThis = $(this).attr("id");
         var back_box_containt_table_sp = ("back_box_containt_table_sp");
+        var ph_danhGia = "ph_danhGia";
+        var back_box_containt_review = "back_box_containt_review";
+        // rv
         if (idThis.startsWith(xem_danhGia)) {
             var masp = idThis.slice(xem_danhGia.length, idThis.length);
             var result = getReview(masp);
@@ -303,6 +306,18 @@ $(document).ready(function() {
         if (idThis.startsWith(back_box_containt_table_sp)) {
             $("#box_containt_table_sp").slideDown();
             $("#box_containt_review").slideUp();
+        }
+        // ph
+        if (idThis.startsWith(ph_danhGia)) {
+            var masp = idThis.slice(ph_danhGia.length, idThis.length);
+            var result = getReview_ph(masp);
+            $("#box_containt_phreview").html(result);
+            $("#box_containt_phreview").slideDown();
+            $("#box_containt_review").slideUp();
+        }
+        if (idThis.startsWith(back_box_containt_review)) {
+            $("#box_containt_phreview").slideUp();
+            $("#box_containt_review").slideDown();
         }
 
     });
@@ -338,6 +353,20 @@ $(document).ready(function() {
             type: "post",
             async: false,
             url: linkTuyetDoi + "ajax/getReview",
+            data: { masp: masp },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function getReview_ph(masp) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/getphReview",
             data: { masp: masp },
             success: function(response) {
                 result = response;

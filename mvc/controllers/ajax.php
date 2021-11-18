@@ -402,5 +402,13 @@ class ajax extends controller{
             "arrReview"=>$arrReview
         ]);
     }
+    function getphReview(){
+        $masp = $_POST["masp"];
+        $model = $this->call_model("adminModel");
+        $arrReview = $model->getReview($masp);
+        $this->call_view_page_admin("ajaxDanhGia&PhanHoi",[
+            "arrPhReview"=>$arrReview
+        ]);
+    }
 }
 ?>
