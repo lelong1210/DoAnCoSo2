@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 14, 2021 at 05:43 PM
+-- Generation Time: Nov 18, 2021 at 05:12 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -57,55 +57,21 @@ CREATE TABLE `chitiethoadon` (
 --
 
 INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
-(1, 2, 78),
-(1, 2, 79),
-(1, 3, 79),
-(1, 8, 80),
-(2, 6, 80),
-(3, 4, 80),
-(1, 1, 81),
-(1, 7, 82),
-(1, 2, 83),
-(1, 4, 83),
-(1, 3, 84),
-(1, 2, 85),
-(1, 2, 86),
-(1, 2, 87),
-(1, 8, 88),
-(1, 2, 89),
-(1, 2, 90),
-(1, 37, 91),
-(1, 37, 92),
-(1, 37, 93),
-(1, 37, 94),
-(1, 37, 95),
-(1, 2, 96),
-(1, 2, 97),
-(1, 2, 98),
-(1, 35, 99),
-(1, 35, 100),
-(1, 23, 101),
-(1, 3, 102),
-(1, 8, 102),
-(1, 6, 102),
-(1, 5, 102),
-(1, 1, 102),
-(1, 11, 103),
-(1, 2, 104),
-(2, 3, 104),
-(1, 6, 105),
-(3, 66, 105),
-(5, 2, 105),
-(1, 8, 105),
-(1, 23, 105),
-(1, 64, 105),
-(1, 2, 106),
-(2, 2, 107),
-(1, 2, 108),
-(1, 3, 109),
-(1, 64, 110),
-(1, 57, 111),
-(1, 10, 112);
+(1, 6, 124),
+(1, 2, 125),
+(1, 5, 126),
+(1, 8, 126),
+(1, 3, 127),
+(1, 2, 128),
+(1, 4, 128),
+(1, 26, 129),
+(1, 25, 130),
+(1, 2, 131),
+(1, 61, 132),
+(1, 23, 133),
+(1, 25, 134),
+(1, 1, 135),
+(1, 8, 136);
 
 -- --------------------------------------------------------
 
@@ -126,9 +92,12 @@ CREATE TABLE `chitiettinnhan` (
 --
 
 INSERT INTO `chitiettinnhan` (`machitiettinnhan`, `matinnhan`, `noidung`, `thoigiannhan`, `nguoinhan`) VALUES
-(173, 'khachhang-tn', 'chao ad ', '2021-11-14 23:40:16', 'khachhang'),
-(174, 'khachhang-tn', 'chao ban', '2021-11-14 23:40:30', 'lql'),
-(175, 'khachhang-tn', 'kaka', '2021-11-14 23:40:39', 'lql');
+(210, 'lequanglong12102k2@gmail.com-tn', 'chao ad', '2021-11-15 09:20:35', 'lequanglong12102k2@gmail.com'),
+(211, 'lequanglong12102k2@gmail.com-tn', 'kaka', '2021-11-15 09:20:47', 'lql'),
+(212, 'lequanglong12102k2@gmail.com-tn', 'hehe', '2021-11-15 09:20:54', 'lequanglong12102k2@gmail.com'),
+(213, 'lelong12102k2@gmail.com-tn', '123123', '2021-11-15 09:21:24', 'lelong12102k2@gmail.com'),
+(214, 'lelong12102k2@gmail.com-tn', '456456', '2021-11-15 09:21:33', 'lql'),
+(215, 'lequanglong12102k2@gmail.com-tn', 'hehe', '2021-11-16 10:29:10', 'lql');
 
 -- --------------------------------------------------------
 
@@ -155,38 +124,19 @@ CREATE TABLE `congviec` (
 --
 
 INSERT INTO `congviec` (`macv`, `tendangnhap`, `makhachhang`, `mahoadon`, `diadiemcongviec`, `sdtKh`, `thoigiannhancongviec`, `thoigianxongcongviec`, `tiendo`, `danhgiacuakhachhang`, `danhancv`) VALUES
-(31, 'nhanvien1', 'khachhang', 79, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-09 21:31:24', '2021-11-09 21:31:28', 1, 3, 1),
-(32, 'nhanvien1', 'khachhang', 80, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 21:29:51', '2021-11-09 21:30:56', 1, 5, 1),
-(33, 'nhanvien', 'khachhang', 81, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-09 22:47:05', '2021-11-09 22:47:12', 1, 5, 1),
-(34, 'nhanvien', 'khachhang', 82, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:48:26', '2021-11-09 22:48:31', 1, 5, 1),
-(35, 'nhanvien', 'khachhang', 83, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:48:28', '2021-11-09 22:48:34', 1, 5, 1),
-(36, 'nhanvien', 'khachhang', 84, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-09 22:50:49', '2021-11-09 22:50:54', 1, 5, 1),
-(38, 'nhanvien', 'khachhang', 87, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 08:26:38', '2021-11-11 08:26:46', 1, 4, 1),
-(39, 'nhanvien', 'khachhang', 88, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:54', '2021-11-11 16:03:09', 1, 2, 1),
-(40, 'nhanvien', 'khachhang', 89, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:56', '2021-11-11 16:03:11', 1, 5, 1),
-(41, 'nhanvien', 'khachhang', 90, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:02:58', '2021-11-11 16:03:13', 1, 3, 1),
-(42, 'nhanvien', 'khachhang', 91, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:00', '2021-11-11 16:03:15', 1, 3, 1),
-(43, 'nhanvien', 'khachhang', 92, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:02', '2021-11-11 16:03:17', 1, 4, 1),
-(44, 'nhanvien', 'khachhang', 93, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:04', '2021-11-11 16:03:20', 1, 5, 1),
-(45, 'nhanvien', 'khachhang', 94, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:03:06', '2021-11-11 16:03:21', 1, 3, 1),
-(46, 'nhanvien', 'khachhang', 95, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-12 12:01:28', '2021-11-12 12:01:51', 1, 0, 1),
-(47, 'nhanvien', 'khachhang', 96, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-12 14:11:24', '2021-11-12 14:11:31', 1, 0, 1),
-(48, NULL, 'khachhang', 97, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
-(49, NULL, 'khachhang', 98, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
-(50, NULL, 'khachhang', 99, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
-(51, NULL, 'khachhang', 100, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', NULL, NULL, 0, NULL, 0),
-(52, 'nhanvien', 'khachhang', 101, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-11 16:30:23', '2021-11-11 16:30:26', 1, 5, 1),
-(53, 'nhanvien', 'khachhang', 102, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-11 16:33:18', '2021-11-11 16:33:23', 1, 5, 1),
-(54, NULL, 'khachhang', 103, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
-(55, NULL, 'khachhang', 104, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
-(56, 'nhanvien', 'khachhang', 105, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-12 14:10:48', '2021-11-12 14:11:05', 1, 0, 1),
-(57, 'nhanvien', 'khachhang', 106, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-11-12 08:47:02', '2021-11-12 08:47:19', 1, 5, 1),
-(58, 'nhanvien', 'lequanglong12102k2@gmail.com', 107, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-13 00:27:46', '2021-11-13 00:27:50', 1, 5, 1),
-(59, NULL, 'lqlong.20it1@vku.udn.vn', 108, ' Tỉnh Vĩnh Phúc - Huyện Tam Đảo - Xã Đạo Trù ', '0932319212', NULL, NULL, 0, NULL, 0),
-(60, NULL, 'lequanglong12102k2@gmail.com', 109, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
-(61, 'nhanvien', 'lequanglong12102k2@gmail.com', 110, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-13 14:24:15', '2021-11-13 14:24:22', 1, 5, 1),
-(62, NULL, 'lequanglong12102k2@gmail.com', 111, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
-(63, NULL, 'lequanglong12102k2@gmail.com', 112, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0);
+(75, 'nhanvien', 'khachhang', 124, ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '2021-04-08 11:22:46', '2021-04-09 11:38:00', 1, 5, 1),
+(76, 'nhanvien', 'lequanglong12102k2@gmail.com', 125, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-09-08 14:29:44', '2021-09-08 18:29:57', 1, 5, 1),
+(77, 'nhanvien', 'lelong12102k2@gmail.com', 126, ' Tỉnh Bắc Ninh - Huyện Quế Võ - Xã Mộ Đạo ', '09123557', '2021-11-17 21:51:53', '2021-11-17 21:54:32', 1, 5, 1),
+(78, 'nhanvien', 'lequanglong12102k2@gmail.com', 127, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-09-14 22:19:00', '2021-09-15 22:19:06', 1, 5, 1),
+(79, 'nhanvien1', 'lequanglong12102k2@gmail.com', 128, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-17 22:20:03', '2021-11-17 22:20:09', 1, 5, 1),
+(80, 'nhanvien', 'lequanglong12102k2@gmail.com', 129, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-17 22:33:36', '2021-11-17 22:33:47', 1, 5, 1),
+(81, 'nhanvien', 'lequanglong12102k2@gmail.com', 130, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-17 22:33:37', '2021-11-17 22:33:48', 1, 1, 1),
+(82, 'nhanvien', 'lequanglong12102k2@gmail.com', 131, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-17 23:47:42', '2021-11-17 23:47:49', 1, 2, 1),
+(83, 'nhanvien', 'lequanglong12102k2@gmail.com', 132, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-17 23:47:45', '2021-11-17 23:47:52', 1, 3, 1),
+(84, 'nhanvien', 'lequanglong12102k2@gmail.com', 133, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-17 23:47:44', '2021-11-17 23:47:53', 1, 4, 1),
+(85, 'nhanvien', 'lequanglong12102k2@gmail.com', 134, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-17 23:47:46', '2021-11-17 23:47:55', 1, 5, 1),
+(86, NULL, 'lequanglong12102k2@gmail.com', 135, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
+(87, 'nhanvien', 'lequanglong12102k2@gmail.com', 136, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-18 09:37:25', '2021-11-18 09:37:30', 1, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -212,7 +162,8 @@ INSERT INTO `diachigiaohang` (`madiachigiaohang`, `tendangnhap`, `sdtGh`, `tenti
 (24, 'khachhang', '0123456789', 'Tỉnh Ninh Bình', 'Huyện Nho Quan', 'Xã Xích Thổ', 'Sen Bang 123'),
 (25, 'khachhang', '0832090990', 'Tỉnh Quảng Bình', 'Huyện Lệ Thủy', 'Xã Sen Thủy', 'sen thủy'),
 (26, 'lequanglong12102k2@gmail.com', '0932183222', 'Tỉnh Lạng Sơn', 'Huyện Lộc Bình', 'Xã Tĩnh Bắc', 'Sen Thủy'),
-(27, 'lqlong.20it1@vku.udn.vn', '0932319212', 'Tỉnh Vĩnh Phúc', 'Huyện Tam Đảo', 'Xã Đạo Trù', 'senthuy');
+(27, 'lqlong.20it1@vku.udn.vn', '0932319212', 'Tỉnh Vĩnh Phúc', 'Huyện Tam Đảo', 'Xã Đạo Trù', 'senthuy'),
+(28, 'lelong12102k2@gmail.com', '09123557', 'Tỉnh Bắc Ninh', 'Huyện Quế Võ', 'Xã Mộ Đạo', 'sen thuy');
 
 -- --------------------------------------------------------
 
@@ -231,6 +182,7 @@ CREATE TABLE `giohang` (
 
 INSERT INTO `giohang` (`magiohang`, `tendangnhap`) VALUES
 ('khachhang-gh', 'khachhang'),
+('lelong12102k2@gmail.com-gh', 'lelong12102k2@gmail.com'),
 ('lequanglong12102k2@gmail.com-gh', 'lequanglong12102k2@gmail.com');
 
 -- --------------------------------------------------------
@@ -290,41 +242,19 @@ CREATE TABLE `hoadon` (
 --
 
 INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`, `sodienthoaigh`, `phiship`, `hinhthucthanhtoan`) VALUES
-(78, 'khachhang', '2021-11-09', 'Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ', '0903439812', '94000.00', 1),
-(79, 'khachhang', '2021-11-09', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
-(80, 'khachhang', '2021-11-09', 'Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ', '0123456789', '94000.00', 1),
-(81, 'khachhang', '2021-11-09', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
-(82, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
-(83, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
-(84, 'khachhang', '2021-11-09', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
-(85, 'khachhang', '2021-11-10', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
-(86, 'khachhang', '2021-11-10', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
-(87, 'khachhang', '2021-11-10', 'Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy', '0832090990', '94000.00', 1),
-(88, 'khachhang', '2021-11-10', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
-(89, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
-(90, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
-(91, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
-(92, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
-(93, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
-(94, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
-(95, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
-(96, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 0),
-(97, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
-(98, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 0),
-(99, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
-(100, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 1),
-(101, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
-(102, 'khachhang', '2021-11-11', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 0),
-(103, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
-(104, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
-(105, 'khachhang', '2021-11-11', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
-(106, 'khachhang', '2021-11-12', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 0),
-(107, 'lequanglong12102k2@gmail.com', '2021-11-13', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
-(108, 'lqlong.20it1@vku.udn.vn', '2021-11-13', ' Tỉnh Vĩnh Phúc - Huyện Tam Đảo - Xã Đạo Trù ', '0932319212', '90000.00', 1),
-(109, 'lequanglong12102k2@gmail.com', '2021-11-13', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
-(110, 'lequanglong12102k2@gmail.com', '2021-11-13', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
-(111, 'lequanglong12102k2@gmail.com', '2021-11-14', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
-(112, 'lequanglong12102k2@gmail.com', '2021-11-14', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1);
+(124, 'khachhang', '2021-11-17', ' Tỉnh Ninh Bình - Huyện Nho Quan - Xã Xích Thổ ', '0123456789', '94000.00', 0),
+(125, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(126, 'lelong12102k2@gmail.com', '2021-11-17', ' Tỉnh Bắc Ninh - Huyện Quế Võ - Xã Mộ Đạo ', '09123557', '84000.00', 1),
+(127, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(128, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(129, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(130, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(131, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(132, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(133, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(134, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(135, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(136, 'lequanglong12102k2@gmail.com', '2021-11-18', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1);
 
 -- --------------------------------------------------------
 
@@ -333,11 +263,29 @@ INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`, `s
 --
 
 CREATE TABLE `luong` (
-  `hesoluong` decimal(10,2) NOT NULL,
-  `songaydilam` int(10) NOT NULL,
-  `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `maluong` int(11) NOT NULL
+  `soluong` decimal(10,2) NOT NULL,
+  `maluong` int(11) NOT NULL,
+  `macv` int(11) NOT NULL,
+  `ngaynhanluong` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `luong`
+--
+
+INSERT INTO `luong` (`soluong`, `maluong`, `macv`, `ngaynhanluong`) VALUES
+('250000.00', 15, 76, '2021-11-17 22:30:47'),
+('200000.00', 16, 75, '2021-11-17 22:30:47'),
+('250000.00', 17, 77, '2021-11-17 22:30:47'),
+('250000.00', 18, 78, '2021-11-17 22:30:47'),
+('250000.00', 19, 79, '2021-11-17 22:30:47'),
+('200000.00', 20, 80, '2021-11-17 22:34:00'),
+('250000.00', 21, 81, '2021-11-17 22:34:21'),
+('210000.00', 22, 82, '2021-11-17 23:48:57'),
+('210000.00', 23, 83, '2021-11-17 23:48:59'),
+('250000.00', 24, 84, '2021-11-17 23:49:02'),
+('250000.00', 25, 85, '2021-11-17 23:49:04'),
+('250000.00', 26, 87, '2021-11-18 09:37:58');
 
 -- --------------------------------------------------------
 
@@ -362,7 +310,7 @@ CREATE TABLE `nguoidung` (
 
 INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`, `email`, `matkhau`, `ngaythamgia`, `quyen`) VALUES
 ('abaftdon’t', NULL, NULL, NULL, 'roma61@hotmail.com', '5280e11f2452aac5aa85177aaf4b3b98', '2021-11-06', 0),
-('admin', 'Admin Con Mèo', NULL, NULL, 'admin@gmeil.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-14', 1),
+('admin', 'Admin Con Mèo', NULL, '2121', 'admin@gmeil.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-14', 1),
 ('arcanaabounding', 'LE QUANG LONG TK', 'QUANG BINH', '0904349823', 'marisol39@hotmail.com', '4297f44b13955235245b2497399d7a93', '2021-11-06', 0),
 ('arousedrecruit', NULL, NULL, NULL, 'salma87@hotmail.com', 'a794275722896cac20ecdd29928a3b9d', '2021-11-06', 0),
 ('banneravailable', NULL, NULL, NULL, 'marjolaine42@hotmail.com', '9c80d885bcf55293e8b999ea404ff2b2', '2021-11-06', 0),
@@ -394,16 +342,17 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', '2021-11-06', 0),
 ('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', '2021-11-06', 0),
 ('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', '2021-11-06', 0),
-('khachhang', 'LÊ THỊ HẰNG', 'SEN THỦY', '0903439812', 'lql@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-07', 0),
+('khachhang', 'LÊ THỊ HẰNG', 'SEN THỦY', '0903439812', 'lql@gmail.com', '4297f44b13955235245b2497399d7a93', '2021-11-07', 0),
 ('lelong12102k2@gmail.com', 'LE QUANG LONG', '', '', 'lelong12102k2@gmail.com', '', '2021-11-13', 0),
 ('lequanglong12102k2@gmail.com', 'LONG LE', '', '', 'lequanglong12102k2@gmail.com', '', '2021-11-13', 0),
 ('longtermplayoffs', 'PHẠM THỊ HẰNG', 'QUANG BINH', '0904349823', 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', '2021-11-06', 0),
-('lql', 'Admin Con Chó', NULL, NULL, 'test@gmail.com', '93279e3308bdbbeed946fc965017f67a', '2021-11-06', 1),
+('lql', 'Admin Con Chó :>', 'sen thuy quang binh', '09942134', 'test123@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-06', 1),
 ('lqlong.20it1@vku.udn.vn', 'LE QUANG LONG IT', '', '', 'lqlong.20it1@vku.udn.vn', '', '2021-11-13', 0),
 ('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', '2021-11-06', 0),
 ('motorwayscold', NULL, NULL, NULL, 'mariah77@gmail.com', 'cddf86a9055a2e2168733a07ef284cb6', '2021-11-06', 0),
-('nhanvien', NULL, NULL, NULL, 'lql@gmail.com.vn', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-08', 2),
+('nhanvien', 'nhân viên con vịt', 'SEN -  THỦY', '0921212', 'lql@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-08', 2),
 ('nhanvien1', NULL, NULL, NULL, 'nhanvien@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-09', 2),
+('nhanvien2', NULL, NULL, NULL, 'nhanvien2@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-16', 2),
 ('obeysamoan', NULL, NULL, NULL, 'billy.labadie51@hotmail.com', '0169ad0e211c01528d9384235bc255a3', '2021-11-06', 0),
 ('procedureraise', NULL, NULL, NULL, 'brennan.heathcote@yahoo.com', 'cb936b342fcf543799254520b9d13515', '2021-11-06', 0),
 ('repelreprimand', NULL, NULL, NULL, 'leola_crooks93@hotmail.com', '76b30526c3489faf93241895c44a45c7', '2021-11-06', 0),
@@ -422,13 +371,27 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 -- --------------------------------------------------------
 
 --
+-- Table structure for table `phanhoidanhgia`
+--
+
+CREATE TABLE `phanhoidanhgia` (
+  `maphanhoi` int(11) NOT NULL,
+  `manhanxet` int(11) NOT NULL,
+  `tenphanhoi` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `noidungphanhoi` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `ngayphanhoi` date NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+-- --------------------------------------------------------
+
+--
 -- Table structure for table `sanpham`
 --
 
 CREATE TABLE `sanpham` (
   `masp` int(11) NOT NULL,
   `tensp` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `giatien` decimal(10,2) NOT NULL,
+  `giatien` decimal(12,2) NOT NULL,
   `loaisanpham` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
   `motasanpham` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `linkduongdananh` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -443,7 +406,7 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`, `linkduongdananh`, `hangsx`, `dunglamslider`, `soluongsp`, `ngaynhap`) VALUES
-(1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 99, '2021-11-14'),
+(1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa 123', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 99, '2021-11-16'),
 (2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 71, '2021-10-01'),
 (3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 100, '2021-10-01'),
 (4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa a a a', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 99, '2021-11-14'),
@@ -500,7 +463,8 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 (66, 'camera x 300', '1231231.00', 'camera', 'thật không thể tinh được :))))', 'http://localhost/www/uploads/456.jpeg', 'xaomi', 0, 456, '2021-10-29'),
 (67, 'điều hòa hơi nước', '8882221.00', 'dieuhoathongminh', 'rất perfect', 'http://localhost/www/uploads/789.jpg', 'Amazon', 0, 986, '2021-10-29'),
 (68, 'điều hòa hơi nước siêu phẩm nhat', '8882221.00', 'dieuhoathongminh', 'rất perfect nha nha nha', '/www/uploads/11121.jpeg', 'Amazon', 0, 986, '2021-11-02'),
-(71, 'Hút Bụi Siêu Cấp', '20121212.00', 'mayhutbui', 'very cheap very good', '/www/uploads/hutbui123.jpg', 'amazon', 0, 981, '2021-11-12');
+(71, 'Hút Bụi Siêu Cấp', '20121212.00', 'mayhutbui', 'very cheap very good', '/www/uploads/hutbui123.jpg', 'amazon', 0, 981, '2021-11-12'),
+(77, 'điều hòa thông minh', '9999999999.00', 'dieuhoathongminh', 'rất đẹp , bền và đắt ', '/www/uploads/999888.jpg', 'vnx', 0, 32312313, '2021-11-16');
 
 -- --------------------------------------------------------
 
@@ -522,8 +486,8 @@ CREATE TABLE `thongtinnhanxetsanpham` (
 --
 
 INSERT INTO `thongtinnhanxetsanpham` (`manhanxet`, `masp`, `tendangnhap`, `noidung`, `sosao`, `ngaydanggia`) VALUES
-(18, 64, 'lequanglong12102k2@gmail.com', 'rất tốt', 5, '2021-11-13'),
-(23, 2, 'lequanglong12102k2@gmail.com', 'rất tốt', 5, '2021-11-13');
+(25, 8, 'lelong12102k2@gmail.com', 'kaka', 4, '2021-11-18'),
+(26, 8, 'lequanglong12102k2@gmail.com', 'rất oke', 5, '2021-11-18');
 
 -- --------------------------------------------------------
 
@@ -565,7 +529,8 @@ CREATE TABLE `tinnhan` (
 --
 
 INSERT INTO `tinnhan` (`matinnhan`, `tendangnhap`, `thoigiannhancuoicung`) VALUES
-('khachhang-tn', 'khachhang', '2021-11-14 23:40:39');
+('lelong12102k2@gmail.com-tn', 'lelong12102k2@gmail.com', '2021-11-15 09:21:33'),
+('lequanglong12102k2@gmail.com-tn', 'lequanglong12102k2@gmail.com', '2021-11-16 10:29:10');
 
 --
 -- Indexes for dumped tables
@@ -631,9 +596,7 @@ ALTER TABLE `hoadon`
 -- Indexes for table `luong`
 --
 ALTER TABLE `luong`
-  ADD PRIMARY KEY (`maluong`),
-  ADD UNIQUE KEY `tendangnhap_2` (`tendangnhap`),
-  ADD KEY `tendangnhap` (`tendangnhap`);
+  ADD PRIMARY KEY (`maluong`);
 
 --
 -- Indexes for table `nguoidung`
@@ -675,19 +638,19 @@ ALTER TABLE `tinnhan`
 -- AUTO_INCREMENT for table `chitiettinnhan`
 --
 ALTER TABLE `chitiettinnhan`
-  MODIFY `machitiettinnhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
+  MODIFY `machitiettinnhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
 
 --
 -- AUTO_INCREMENT for table `congviec`
 --
 ALTER TABLE `congviec`
-  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=64;
+  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=88;
 
 --
 -- AUTO_INCREMENT for table `diachigiaohang`
 --
 ALTER TABLE `diachigiaohang`
-  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `madiachigiaohang` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- AUTO_INCREMENT for table `hangsx`
@@ -699,25 +662,25 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=113;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=137;
 
 --
 -- AUTO_INCREMENT for table `luong`
 --
 ALTER TABLE `luong`
-  MODIFY `maluong` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `maluong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=74;
+  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
 
 --
 -- AUTO_INCREMENT for table `thongtinnhanxetsanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
-  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT for table `thumucsanpham`
