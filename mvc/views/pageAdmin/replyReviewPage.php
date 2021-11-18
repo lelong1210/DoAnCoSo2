@@ -6,7 +6,7 @@
             <div class="row align-items-center ">
                 <div class="col-md-8">
                     <div class="page-title-box">
-                        <h4 class="page-title">Toàn Bộ Sản Phẩm</h4>
+                        <h4 class="page-title">Nhận Xét</h4>
                     </div>
                 </div>
 
@@ -21,47 +21,49 @@
         <!-- end page-title -->
 
         <!-- end row -->
-
-        <div class="row table_overView">
-            <div class="col-12">
-                <div class="card">
-                    <div class="card-body">
-                        <?php
-                        $arr = json_decode($data["productModel"]->selecAllProduct());
-                        $arrTitle = ($data["productModel"]->getTitleTable($arr));
-                        ?>
-                        <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
-                            <thead>
-                                <tr>
-                                    <?php for ($i = 0; $i < count($arrTitle); $i++) { ?>
-                                        <th><?php echo $arrTitle[$i]; ?></th>
-                                    <?php } ?>
-                                    <td>Xem Đánh Giá</td>
-                                </tr>
-                            </thead>
-
-                            <tbody>
-                                <?php
-                                $count = count($arr);
-                                for ($i = 0; $i < $count; $i++) {
-                                    $arrChild = array_values((array) $arr[$i]);
-
-                                    ?>
+        <div class="box_containt_table_sp" id="box_containt_table_sp">
+            <div class="row table_overView">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <?php
+                            $arr = json_decode($data["productModel"]->selecAllProduct());
+                            $arrTitle = ($data["productModel"]->getTitleTable($arr));
+                            ?>
+                            <table id="datatable-buttons" class="table table-striped table-bordered dt-responsive nowrap" style="border-collapse: collapse; border-spacing: 0; width: 100%;">
+                                <thead>
                                     <tr>
-                                        <?php for ($j = 0; $j < count($arrChild); $j++) { ?>
-                                            <td><?php echo $arrChild[$j]; ?></td>
+                                        <?php for ($i = 0; $i < count($arrTitle); $i++) { ?>
+                                            <th><?php echo $arrTitle[$i]; ?></th>
                                         <?php } ?>
-                                        <td><button id="xem<?php echo $arrChild[0]; ?>" class="btn btn-lg btn-success btn-edit">Xem</button></td>
+                                        <td>Xem Đánh Giá</td>
                                     </tr>
-                                <?php } ?>
-                            </tbody>
-                        </table>
+                                </thead>
 
+                                <tbody>
+                                    <?php
+                                    $count = count($arr);
+                                    for ($i = 0; $i < $count; $i++) {
+                                        $arrChild = array_values((array) $arr[$i]);
+
+                                        ?>
+                                        <tr>
+                                            <?php for ($j = 0; $j < count($arrChild); $j++) { ?>
+                                                <td><?php echo $arrChild[$j]; ?></td>
+                                            <?php } ?>
+                                            <td><button id="xem_danhGia<?php echo $arrChild[0]; ?>" class="btn btn-lg btn-success">Xem</button></td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+
+                        </div>
                     </div>
                 </div>
+                <!-- end col -->
             </div>
-            <!-- end col -->
         </div>
+        <div class="box_containt_review" id="box_containt_review"></div>
         <!-- end row -->
         <!-- MODEL -->
     </div>

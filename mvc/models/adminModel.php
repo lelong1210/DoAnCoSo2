@@ -1,6 +1,6 @@
 <?php 
 class adminModel extends connectDB{
-    function getReview(){
+    function getReview($masp){
         $conn = $this->GetConn();
         $sql = "SELECT thongtinnhanxetsanpham.manhanxet , thongtinnhanxetsanpham.masp , nguoidung.tennguoidung , thongtinnhanxetsanpham.noidung , thongtinnhanxetsanpham.ngaydanggia
         FROM thongtinnhanxetsanpham INNER JOIN nguoidung ON thongtinnhanxetsanpham.tendangnhap = nguoidung.tendangnhap

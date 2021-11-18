@@ -283,6 +283,29 @@ $(document).ready(function() {
             $("#dsChat").html(result);
         }
     }, 1000);
+    // danh gia
+    $("body").on("click", "button", function(e) {
+        var xem_danhGia = "xem_danhGia";
+        var idThis = $(this).attr("id");
+        var back_box_containt_table_sp = ("back_box_containt_table_sp");
+        if (idThis.startsWith(xem_danhGia)) {
+            var masp = idThis.slice(xem_danhGia.length, idThis.length);
+            var result = getReview(masp);
+            if (result == "") {
+                alert("Sản Phẩm Chưa Có Đánh Giá");
+            } else {
+                $("#box_containt_review").html(result);
+                $('#table_reply').DataTable();
+                $("#box_containt_table_sp").slideUp();
+                $("#box_containt_review").slideDown();
+            }
+        }
+        if (idThis.startsWith(back_box_containt_table_sp)) {
+            $("#box_containt_table_sp").slideDown();
+            $("#box_containt_review").slideUp();
+        }
+
+    });
     // function support 
     // function mượn
     function readURL(input) {
@@ -309,6 +332,20 @@ $(document).ready(function() {
         }
     }
     // kết thúc function mượn 
+    function getReview(masp) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/getReview",
+            data: { masp: masp },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
     function updateAcount(tennguoidung, sodienthoai, email, diachi) {
         var result = "";
         $.ajax({

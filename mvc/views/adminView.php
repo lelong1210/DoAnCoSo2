@@ -81,7 +81,9 @@
     </div>
     <!-- END wrapper -->
     <?php require_once "blockAdmin/jslink.php"; ?>
-
+    <script>
+        
+    </script>
 </body>
 
 </html>
