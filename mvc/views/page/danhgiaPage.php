@@ -46,7 +46,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <!-- <div class="single-review child-review">
+                                        <div class="single-review child-review">
                                     <div class="review-img">
                                         <img src="assets/images/review-image/2.png" alt="" />
                                     </div>
@@ -66,13 +66,13 @@
                                             </div>
                                             <div class="review-left">
                                                 <ea href="#">Reply</a>
-                                            </div>e
+                                            </div>
                                         </div>
                                         <div class="review-bottom">
                                             <p>Vestibulum ante ipsum primis aucibus orci luctustrices posuere cubilia Curae Sus pen disse viverra ed viverra. Mauris ullarper euismod vehicula.</p>
                                         </div>
                                     </div>
-                                </div> -->
+                                </div>
                                     </div>
                                 <?php } ?>
                             </div>

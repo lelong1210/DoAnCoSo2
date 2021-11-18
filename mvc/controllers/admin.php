@@ -44,6 +44,14 @@
                 "taikhoanModel"=>$taikhoanModel,
             ]);
         }
+        // danh gia khach hang 
+        function danhgiacuakhachhang(){
+            $productModel = $this->call_model("productModel");
+            $this->call_view("adminView",[
+                "title"=>"danhgiacuakhachhang",
+                "productModel"=>$productModel
+            ]);
+        }
         /*https://projectdacs2.000webhostapp.com/*/
     }
 ?>
