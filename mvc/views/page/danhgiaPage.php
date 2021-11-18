@@ -4,23 +4,22 @@
     <div class="container">
         <div class="description-review-wrapper">
             <div class="description-review-topbar nav">
-                <a class="active" data-bs-toggle="tab" href="#des-details3">Đánh Giá (<?php if($arrRV) echo count($arrRV); ?>)</a>
+                <a class="active" data-bs-toggle="tab" href="#des-details3">Đánh Giá (<?php if ($arrRV) echo count($arrRV); ?>)</a>
             </div>
             <div class="tab-content description-review-bottom">
                 <div id="" class="">
                     <?php
-                        if ($arrRV) {
-                            $count = count($arrRV);
-                    ?>
+                    if ($arrRV) {
+                        $count = count($arrRV);
+                        ?>
                         <div class="row">
                             <div class="col-lg-7">
                                 <?php for ($i = 0; $i < $count; $i++) {
-                                    $arrChild = array_values((array)$arrRV[$i]);
-                                ?>
+                                        $arrChild = array_values((array) $arrRV[$i]); ?>
                                     <div class="review-wrapper">
                                         <div class="single-review">
                                             <div class="review-img">
-                                                <img src="/www/public/images/review-image/1.png" alt="" />
+                                                <img src="https://www.w3schools.com/howto/img_avatar.png" style="width: 50px;" alt="" />
                                             </div>
                                             <div class="review-content">
                                                 <div class="review-top-wrap">
@@ -30,7 +29,7 @@
                                                         </div>
                                                         <div class="rating-product">
                                                             <?php
-                                                            for ($j = 0; $j < $arrChild[1]; $j++) { ?>
+                                                                    for ($j = 0; $j < $arrChild[1]; $j++) { ?>
                                                                 <i class="ion-android-star"> </i>
                                                             <?php } ?>
                                                         </div>
@@ -46,33 +45,31 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="single-review child-review">
-                                    <div class="review-img">
-                                        <img src="assets/images/review-image/2.png" alt="" />
-                                    </div>
-                                    <div class="review-content">
-                                        <div class="review-top-wrap">
-                                            <div class="review-left">
-                                                <div class="review-name">
-                                                    <h4>White Lewis</h4>
+                                        <?php
+                                                $arrPh = json_decode($data["productModel"]->selectPhDGia($arrChild[4]));
+                                                for ($j = 0; $j < count($arrPh); $j++) { $arrChildPh = array_values((array)$arrPh[$j]);
+                                ?>
+                                            <div class="single-review child-review" style="margin-bottom: 6%;">
+                                                <div class="review-img">
+                                                    <img src="/www/public/images/logo/logo.jpg" style="width: 50px;" alt="" />
                                                 </div>
-                                                <div class="rating-product">
-                                                    <i class="ion-android-star"></i>
-                                                    <i class="ion-android-star"></i>
-                                                    <i class="ion-android-star"></i>
-                                                    <i class="ion-android-star"></i>
-                                                    <i class="ion-android-star"></i>
+                                                <div class="review-content">
+                                                    <div class="review-top-wrap">
+                                                        <div class="review-left">
+                                                            <div class="review-name">
+                                                                <h4><?php echo $arrChildPh[0]?></h4>
+                                                            </div>
+                                                        </div>
+                                                        <div class="review-left">
+                                                           | <?php echo $arrChildPh[2]?>
+                                                        </div>
+                                                    </div>
+                                                    <div class="review-bottom">
+                                                        <p><?php echo $arrChildPh[1]?></p>
+                                                    </div>
                                                 </div>
                                             </div>
-                                            <div class="review-left">
-                                                <ea href="#">Reply</a>
-                                            </div>
-                                        </div>
-                                        <div class="review-bottom">
-                                            <p>Vestibulum ante ipsum primis aucibus orci luctustrices posuere cubilia Curae Sus pen disse viverra ed viverra. Mauris ullarper euismod vehicula.</p>
-                                        </div>
-                                    </div>
-                                </div>
+                                        <?php } ?>
                                     </div>
                                 <?php } ?>
                             </div>

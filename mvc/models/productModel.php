@@ -393,7 +393,7 @@ class productModel extends connectDB
     function selecDanhgia($masp){
         try{
             $conn = $this->GetConn();
-            $sql = "SELECT nguoidung.tennguoidung ,thongtinnhanxetsanpham.sosao,thongtinnhanxetsanpham.noidung,thongtinnhanxetsanpham.ngaydanggia
+            $sql = "SELECT nguoidung.tennguoidung ,thongtinnhanxetsanpham.sosao,thongtinnhanxetsanpham.noidung,thongtinnhanxetsanpham.ngaydanggia,thongtinnhanxetsanpham.manhanxet
             FROM nguoidung 
             INNER JOIN thongtinnhanxetsanpham
             ON nguoidung.tendangnhap = thongtinnhanxetsanpham.tendangnhap
@@ -410,6 +410,25 @@ class productModel extends connectDB
         }catch(PDOException $e){
             echo $e->getMessage();
         }        
+    }
+    function selectPhDGia($manhanxet){
+        try{
+            $conn = $this->GetConn();
+            $sql = "SELECT nguoidung.tennguoidung, phanhoidanhgia.noidungphanhoi, phanhoidanhgia.ngayphanhoi 
+            FROM phanhoidanhgia INNER JOIN nguoidung ON phanhoidanhgia.tendangnhap = nguoidung.tendangnhap 
+            WHERE manhanxet = :manhanxet";
+            $query = $conn->prepare($sql);
+            $query->bindParam(":manhanxet",$manhanxet);
+            $query->execute();
+            if($query->rowCount() > 0){
+                $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                return json_encode($result);
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        }  
     }
     //
     function updateSecSionSoLuongTrongGioHang($option){
