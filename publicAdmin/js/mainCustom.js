@@ -307,7 +307,7 @@ $(document).ready(function() {
 
     });
     // function support 
-    // function mượn
+    // function mượn 
     function readURL(input) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
