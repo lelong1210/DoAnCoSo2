@@ -331,7 +331,7 @@ $(document).ready(function() {
             reader.readAsDataURL(input.files[0]);
         }
     }
-    // kết thúc function mượn :3
+    // kết thúc function mượn :3s
     function getReview(masp) {
         var result = "";
         $.ajax({
