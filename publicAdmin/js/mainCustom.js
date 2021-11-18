@@ -284,12 +284,16 @@ $(document).ready(function() {
         }
     }, 1000);
     // danh gia
+    var manhanxet = "";
     $("body").on("click", "button", function(e) {
         var xem_danhGia = "xem_danhGia";
         var idThis = $(this).attr("id");
         var back_box_containt_table_sp = ("back_box_containt_table_sp");
         var ph_danhGia = "ph_danhGia";
         var back_box_containt_review = "back_box_containt_review";
+        var btn_insert_danhgia = "btn_insert_danhgia";
+        var back_review = "back_review";
+        var ph_update = "ph_update";
         // rv
         if (idThis.startsWith(xem_danhGia)) {
             var masp = idThis.slice(xem_danhGia.length, idThis.length);
@@ -309,17 +313,32 @@ $(document).ready(function() {
         }
         // ph
         if (idThis.startsWith(ph_danhGia)) {
-            var masp = idThis.slice(ph_danhGia.length, idThis.length);
-            var result = getReview_ph(masp);
+            manhanxet = idThis.slice(ph_danhGia.length, idThis.length);
+            var result = getReview_ph(manhanxet);
             $("#box_containt_phreview").html(result);
             $("#box_containt_phreview").slideDown();
             $("#box_containt_review").slideUp();
+            $('#table_reply_ph').DataTable();
+
+
         }
         if (idThis.startsWith(back_box_containt_review)) {
             $("#box_containt_phreview").slideUp();
             $("#box_containt_review").slideDown();
         }
-
+        // insert or update phan hoi
+        if (idThis.startsWith(btn_insert_danhgia)) {
+            var noidungphanhoi = $("#insertDG_ND").val();
+            if (insertPhanHoi(manhanxet, noidungphanhoi)) {
+                alert("Đã Thêm Phản Hồi");
+                $("#box_containt_phreview").slideUp();
+                $("#box_containt_review").slideDown();
+            }
+        }
+        if (idThis.startsWith(back_review)) {
+            $("#box_containt_phreview").slideUp();
+            $("#box_containt_review").slideDown();
+        }
     });
     // function support 
     // function mượn 
@@ -347,6 +366,23 @@ $(document).ready(function() {
         }
     }
     // kết thúc function mượn
+    function insertPhanHoi(manhanxet, noidungphanhoi) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/insertPhanHoi",
+            data: {
+                manhanxet: manhanxet,
+                noidungphanhoi: noidungphanhoi
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
     function getReview(masp) {
         var result = "";
         $.ajax({
@@ -361,13 +397,13 @@ $(document).ready(function() {
         return result;
     }
 
-    function getReview_ph(masp) {
+    function getReview_ph(manhanxet) {
         var result = "";
         $.ajax({
             type: "post",
             async: false,
             url: linkTuyetDoi + "ajax/getphReview",
-            data: { masp: masp },
+            data: { manhanxet: manhanxet },
             success: function(response) {
                 result = response;
             }

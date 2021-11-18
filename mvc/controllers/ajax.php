@@ -403,12 +403,25 @@ class ajax extends controller{
         ]);
     }
     function getphReview(){
-        $masp = $_POST["masp"];
+        $manhanxet = $_POST["manhanxet"];
         $model = $this->call_model("adminModel");
-        $arrReview = $model->getReview($masp);
+        $arrReview = $model->getphReview($manhanxet);
         $this->call_view_page_admin("ajaxDanhGia&PhanHoi",[
             "arrPhReview"=>$arrReview
         ]);
+    }
+    function insertPhanHoi(){
+
+        $manhanxet = $_POST["manhanxet"];
+        $noidungphanhoi = $_POST["noidungphanhoi"];
+        $tendangnhap = $_SESSION["username"];
+        $ngayphanhoi = date("Y-m-d");
+        $model = $this->call_model("adminModel");
+        if($model->checkPhanHoi($manhanxet,$tendangnhap)){
+            echo $model->updatePhaHoi($manhanxet,$tendangnhap,$noidungphanhoi,$ngayphanhoi);
+        }else{
+            echo $model->insertPhanHoi($manhanxet,$tendangnhap,$noidungphanhoi,$ngayphanhoi);
+        }
     }
 }
 ?>

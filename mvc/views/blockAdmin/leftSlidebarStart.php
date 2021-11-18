@@ -7,7 +7,7 @@
     </li>
     <li>
         <a href="/www/admin/chatPage" class="waves-effect"><i class="dripicons-mail"></i><span> Tin Nhắn <span class="float-right menu-arrow"></span> </span></a>
-        <a href="/www/admin/danhgiacuakhachhang" class="waves-effect"><i class="fas fa-reply-all"></i><span> Tin Nhắn <span class="float-right menu-arrow"></span> </span></a>
+        <a href="/www/admin/danhgiacuakhachhang" class="waves-effect"><i class="fas fa-reply-all"></i><span> Phản Hồi Đánh Giá <span class="float-right menu-arrow"></span> </span></a>
     </li>
     <li class="menu-title">Sản Phẩm</li>
     <li>
