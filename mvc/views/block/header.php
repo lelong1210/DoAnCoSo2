@@ -132,9 +132,9 @@
                                         <li><a href="/www/camera">Camera</a></li>
                                     </ul>
                                 </li>
-                                <li class="dropdown"><a href="#">Tin Tức</a></li>
+                                <!-- <li class="dropdown"><a href="#">Tin Tức</a></li> -->
                                 <li class="dropdown"><a href="/www/hoidap">Hỏi Đáp</a></li>
-                                <li><a href="#">Liên Hệ</a></li>
+                                <li><a href="/www/lienhe">Liên Hệ</a></li>
                                 <li class="dropdown" id="drakMode"><a><i class="fas fa-exchange-alt"></i></a></li>
                             </ul>
                         </div>
