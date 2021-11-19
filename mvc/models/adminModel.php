@@ -73,5 +73,82 @@ class adminModel extends connectDB{
             return false;
         }
     }
+    function getTongTienThu(){
+        $conn = $this->GetConn();
+        $sql = "SELECT SUM(chitiethoadon.soluong*sanpham.giatien) AS tongtienThu
+        FROM sanpham INNER JOIN chitiethoadon ON sanpham.masp = chitiethoadon.masp";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }        
+    }
+    function getTongTienChi(){
+        $conn = $this->GetConn();
+        $sql = "SELECT SUM(luong.soluong) FROM luong ";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }  
+    }
+    function getKhachHang(){
+        $conn = $this->GetConn();
+        $sql = "SELECT COUNT(nguoidung.tendangnhap) FROM nguoidung WHERE nguoidung.quyen = 0";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }  
+    }
+    function getSanPhamDaBan(){
+        $conn = $this->GetConn();
+        $sql = "SELECT SUM(chitiethoadon.soluong) AS sosanphamdaban FROM chitiethoadon";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }  
+    }
+    function xulyArr($arr){
+        $arr = array_values((array)$arr[0]);
+        $arr = $arr[0];
+        return $arr ;
+    }
+    function getDoanhThu1Thang($thang){
+        $conn = $this->GetConn();
+        $sql = "SELECT SUM(chitiethoadon.soluong * sanpham.giatien) AS tongdoanhthuthang
+                FROM ((congviec INNER JOIN chitiethoadon ON congviec.mahoadon = chitiethoadon.mahoadon) 
+                                INNER JOIN sanpham ON chitiethoadon.masp = sanpham.masp)
+                WHERE MONTH(congviec.thoigianxongcongviec) = :thang";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":thang",$thang);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }  
+    }
+    function getDoanhThu12Thang(){
+        $arr = [];
+        for ($i=1; $i <= 12; $i++) { 
+            $arr[] = json_decode($this->getDoanhThu1Thang($i));
+        }
+        return json_encode($arr);
+    }
 }
 ?>

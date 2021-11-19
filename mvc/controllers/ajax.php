@@ -393,6 +393,11 @@ class ajax extends controller{
         }
           
     }
+    // get to char js
+    function getTongThu12Thang(){
+        $model = $this->call_model("adminModel");
+        echo $model->getDoanhThu12Thang();
+    }
     // reply review 
     function getReview(){
         $masp = $_POST["masp"];

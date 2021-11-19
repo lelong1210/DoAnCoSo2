@@ -4,8 +4,10 @@
             $this->check_user_quyen(1);
         }
         function show($params){
+            $model = $this->call_model("adminModel");
             $this->call_view("adminView",[
-                "title"=>"overView"
+                "title"=>"overView",
+                "adminModel"=>$model
             ]);
         }
         function chatPage($params){

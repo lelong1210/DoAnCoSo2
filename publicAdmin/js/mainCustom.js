@@ -700,4 +700,48 @@ $(document).ready(function() {
         });
         return result;
     }
+
+    function getTongThu12Thang() {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/getTongThu12Thang",
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+    //=========================chart JS===============================//
+    const DoanhThu12 = JSON.parse(getTongThu12Thang());
+    var yValues = [];
+    $.each(DoanhThu12, function(indexInArray, valueOfElement) {
+        $.each(valueOfElement, function(indexInArray, valueOfElement) {
+            yValues.push(valueOfElement.tongdoanhthuthang);
+        });
+    });
+    var xValues = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+
+    var barColors = ["red", "green", "blue", "orange", "brown", "Cyan", "Gray", "Navy", "#66FF00", "#FF9900", "#FF3399", "#990000"];
+
+    new Chart("bd_doanhthu", {
+        type: "bar",
+        data: {
+            labels: xValues,
+            datasets: [{
+                backgroundColor: barColors,
+                data: yValues
+            }]
+        },
+        options: {
+            legend: {
+                display: false
+            },
+            title: {
+                display: true,
+                text: "Doanh Thu Theo Tháng"
+            }
+        }
+    });
 });
