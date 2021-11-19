@@ -42,7 +42,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF9JCFlCIBdz8I="
 									},
-									"name": "Quản Lý Sản Phẩm ",
+									"name": "Chỉnh Sửa Sản Phẩm ",
 									"ownedViews": [
 										{
 											"_type": "UMLFrameView",
@@ -63,9 +63,9 @@
 													"font": "Arial;13;0",
 													"left": 24.72998046875,
 													"top": 5,
-													"width": 118.06982421875,
+													"width": 131.10791015625,
 													"height": 13,
-													"text": "Quản Lý Sản Phẩm "
+													"text": "Chỉnh Sửa Sản Phẩm "
 												},
 												{
 													"_type": "LabelView",

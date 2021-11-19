@@ -42,7 +42,7 @@
 									"_parent": {
 										"$ref": "AAAAAAF9CJ13+d99qg8="
 									},
-									"name": "Quản Lý Công Việc",
+									"name": "Nhận Công Việc",
 									"ownedViews": [
 										{
 											"_type": "UMLFrameView",
@@ -63,9 +63,9 @@
 													"font": "Arial;13;0",
 													"left": 24.72998046875,
 													"top": 5,
-													"width": 113.49951171875,
+													"width": 95.43408203125,
 													"height": 13,
-													"text": "Quản Lý Công Việc"
+													"text": "Nhận Công Việc"
 												},
 												{
 													"_type": "LabelView",
