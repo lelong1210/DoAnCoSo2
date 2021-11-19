@@ -19,7 +19,7 @@
                                     <div class="review-wrapper">
                                         <div class="single-review">
                                             <div class="review-img">
-                                                <img src="https://www.w3schools.com/howto/img_avatar.png" style="width: 50px;" alt="" />
+                                                <img src="https://static2.yan.vn/YanNews/2167221/202102/facebook-cap-nhat-avatar-doi-voi-tai-khoan-khong-su-dung-anh-dai-dien-e4abd14d.jpg" style="width: 50px;" alt="" />
                                             </div>
                                             <div class="review-content">
                                                 <div class="review-top-wrap">

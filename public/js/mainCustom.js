@@ -1,11 +1,11 @@
 /*****************CUSTOM************************/
-$(document).ready(function () {
+$(document).ready(function() {
     // link tuyet doi 
     var linkTuyetDoi = "http://localhost/www/";
     var link = "https://api.openweathermap.org/data/2.5/weather?q=";
     var apikeyForecast = "&&appid=ba1c6a2a72bf9a46f3fa108e513d74e0";
     // trang khach hang
-    $("#updateAcount").click(function (e) {
+    $("#updateAcount").click(function(e) {
         var tennguoidung = $("#tennguoidungupdate").val();
         var diachi = $("#diachiupdate").val();
         var sodienthoai = $("#sodienthoaiupdate").val();
@@ -16,7 +16,7 @@ $(document).ready(function () {
             alert("Sửa Không Thành Công");
         }
     });
-    $("#updatePassword").click(function (e) {
+    $("#updatePassword").click(function(e) {
         if (checkChangePass()) {
             let arr = ["matkhau_UP", "rematkhau_UP"];
             var pass2 = $("#" + arr[1]).val();
@@ -25,11 +25,11 @@ $(document).ready(function () {
             alert("Không Thể Thực Hiện");
         }
     });
-    $("input").keyup(function (e) {
+    $("input").keyup(function(e) {
         var id = $(this).attr("id");
         checkChangePass(id);
     });
-    $("#saveAddressShipping").click(function (e) {
+    $("#saveAddressShipping").click(function(e) {
         var tentinh = $("#tentinh").val();
         var tenhuyen = $("#tenhuyen").val();
         var tenxa = $("#tenxa").val();
@@ -47,7 +47,7 @@ $(document).ready(function () {
         }
 
     });
-    $("button").click(function (e) {
+    $("button").click(function(e) {
         var VariAbledeleteAddressShipping = "deleteAddressShipping";
         var VariaEditAddressShipping = "editAddressShipping";
         var idThis = $(this).attr("id");
@@ -80,12 +80,12 @@ $(document).ready(function () {
         }
     });
     // trang dk dn
-    $("#dangnhap").click(function (e) {
+    $("#dangnhap").click(function(e) {
         var tendangnhap = $("#tendangnhap_DN").val();
         var matkhau = $("#matkhau_DN").val();
         dangNhap(tendangnhap, matkhau);
     });
-    $("#dangky").click(function () {
+    $("#dangky").click(function() {
         var tendangnhap = $("#tendangnhap_DK").val();
         var matkhau = $("#matkhau_DK").val();
         var nhaplaimatkhau = $("#rematkhau_DK").val();
@@ -117,7 +117,7 @@ $(document).ready(function () {
         }
 
     });
-    $("input").keyup(function (e) {
+    $("input").keyup(function(e) {
         let arrDk = ["tendangnhap_DK", "matkhau_DK", "rematkhau_DK", "email_DK"];
         if ($(this).attr('id') == arrDk[0]) {
             if (checkAcount($(this).val())) {
@@ -130,8 +130,7 @@ $(document).ready(function () {
             var matkhau = $(this).val();
             if (checkStrongPass(matkhau) >= 4) {
                 spanErr($(this).attr('id'), true, "");
-            }
-            else {
+            } else {
                 spanErr($(this).attr('id'), false, "Mật Khẩu Phải Bao Gồm Chữ Số ,Viết Hoa ,Viết Thường,Ký Tự Đặc Biệt,Dài Từ 8 Ký Tự...");
             }
         }
@@ -155,7 +154,7 @@ $(document).ready(function () {
     });
     // xu ly mua hang 
     // ==> trang gio hang
-    $("body").on("click","button",function (e) {
+    $("body").on("click", "button", function(e) {
         var nameBtnMH = "btnMH";
         var btnPayLive = "btnPayLive";
         var idThis = $(this).attr('id');
@@ -170,8 +169,7 @@ $(document).ready(function () {
                 } else {
                     alert("...");
                 }
-            }
-            else {
+            } else {
                 location.replace(linkTuyetDoi + "dndk");
             }
 
@@ -184,13 +182,12 @@ $(document).ready(function () {
                 if (setProductToPayment(arr)) {
                     location.assign(linkTuyetDoi + "thanhtoan");
                 }
-            }
-            else {
+            } else {
                 location.replace(linkTuyetDoi + "dndk");
             }
         }
     });
-    $(".qtybutton").click(function (e) {
+    $(".qtybutton").click(function(e) {
         var btnMhUp = "btnMhUp";
         var btnMhDown = "btnMhDown";
         var valueOfInput = "valueOfInput";
@@ -205,14 +202,14 @@ $(document).ready(function () {
             EditDetailOfCartFrontEnd(idThis, btnMhDown, valueOfInput, tdOfprice, tdOfprieLast, soluongconlai, "down")
         }
     });
-    $("#toitrangthanhtoan").click(function (e) {
+    $("#toitrangthanhtoan").click(function(e) {
         var chonsp = "chonsp";
         var valueOfInput = "valueOfInput";
         var tdOfprice = "tdOfprice";
         var n = $(':checkbox').length;
         const arr = [];
         // kiem tra cac checkbox da tich
-        $(':checkbox').each(function () {
+        $(':checkbox').each(function() {
             const arrChild = [];
             var text = "";
             if ($(this).is(":checked")) {
@@ -233,39 +230,41 @@ $(document).ready(function () {
         }
     });
     // ==> trang thanh toan
-    $("#thanhtoan").click(function (e) {
-       const arr = getThongTinDonHangInThanhToan();
-       if(arr){
-            if(arr[4] == 1){
-                if(tienHanhthanhToan(arr)){
+    $("#thanhtoan").click(function(e) {
+        const arr = getThongTinDonHangInThanhToan();
+        if (arr) {
+            if (arr[4] == 1) {
+                if (tienHanhthanhToan(arr)) {
                     alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm ^_^ !!!");
-                    location.assign(linkTuyetDoi+"hoadon");
+                    updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
+                    location.assign(linkTuyetDoi + "hoadon");
                 }
-            }else{
+            } else {
                 $(".contentQr").slideDown();
                 $(".checkout-area").slideUp();
             }
-       }else{
-           alert("Chưa Chọn Đầy Thủ Thông Tin");
-       }
-    });
-    $("#thanhtoanOnline").click(function (e) {
-        const arr = getThongTinDonHangInThanhToan();
-        if(arr){
-             if(arr[4] == 0){
-                 if(tienHanhthanhToan(arr)){
-                     alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm ^_^ !!!");
-                     location.assign(linkTuyetDoi+"hoadon");
-                 }
-             }else{
-                alert("Thanh Toán Thất Bại");
-                location.assign(linkTuyetDoi);
-             }
-        }else{
+        } else {
             alert("Chưa Chọn Đầy Thủ Thông Tin");
         }
     });
-    $(":checkbox").click(function (e) {
+    $("#thanhtoanOnline").click(function(e) {
+        const arr = getThongTinDonHangInThanhToan();
+        if (arr) {
+            if (arr[4] == 0) {
+                if (tienHanhthanhToan(arr)) {
+                    alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm ^_^ !!!");
+                    updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
+                    location.assign(linkTuyetDoi + "hoadon");
+                }
+            } else {
+                alert("Thanh Toán Thất Bại");
+                location.assign(linkTuyetDoi);
+            }
+        } else {
+            alert("Chưa Chọn Đầy Thủ Thông Tin");
+        }
+    });
+    $(":checkbox").click(function(e) {
         var idThis = $(this).attr("id");
         var cboxgh = "cboxgh";
         var checkboxTT = "checkboxTT";
@@ -273,7 +272,7 @@ $(document).ready(function () {
             var madiachigiaohang = idThis.slice(cboxgh.length, idThis.length);
             var giaTienSp = $("#giaTienSp").html();
             var diachi = $("#spanOfAddress" + madiachigiaohang).html();
-            $(":checkbox").each(function () {
+            $(":checkbox").each(function() {
                 var idThisC = $(this).attr("id");
                 if ($(this).is(":checked") && idThis != idThisC && idThisC.startsWith(cboxgh)) {
                     $(this).prop("checked", false);
@@ -283,7 +282,7 @@ $(document).ready(function () {
             $("#tongtien").html((parseInt(giaTienSp) + (diachi.length) * 2000) + " đ");
         }
         if (idThis.startsWith(checkboxTT)) {
-            $(":checkbox").each(function () {
+            $(":checkbox").each(function() {
                 var idThisC = $(this).attr("id");
                 if ($(this).is(":checked") && idThis != idThisC && idThisC.startsWith(checkboxTT)) {
                     $(this).prop("checked", false);
@@ -291,8 +290,11 @@ $(document).ready(function () {
             });
         }
     });
+    $("#huyThanhToanOnline").click(function(e) {
+        location.reload();
+    });
     /// noi chon tinh huyen xa 
-    $("#selectAddress").click(function (e) {
+    $("#selectAddress").click(function(e) {
         var tong;
         var clickAddress = 0;
         $("#contentSelectAddress").slideDown();
@@ -300,9 +302,9 @@ $(document).ready(function () {
             type: "get",
             url: linkTuyetDoi + "public/js/diaChi.json",
             dataType: "json",
-            success: function (response) {
+            success: function(response) {
                 tong = response;
-                $.each(response, function (indexInArray, valueOfElement) {
+                $.each(response, function(indexInArray, valueOfElement) {
                     $("#tentinh").append($('<option>', {
                         value: valueOfElement.name,
                         text: valueOfElement.name
@@ -310,14 +312,14 @@ $(document).ready(function () {
                 });
             }
         });
-        $("select").change(function (e) {
+        $("select").change(function(e) {
             var typeId = $(this).attr("id");
             if (typeId == "tentinh") {
                 var tentinh = this.value;
                 $("#tenhuyen").html("");
-                $.each(tong, function (indexInArray, valueOfElement) {
+                $.each(tong, function(indexInArray, valueOfElement) {
                     if (valueOfElement.name == tentinh) {
-                        $.each(valueOfElement.districts, function (indexInArray, valueOfElement1) {
+                        $.each(valueOfElement.districts, function(indexInArray, valueOfElement1) {
                             $("#tenhuyen").append($('<option>', {
                                 value: valueOfElement1.name,
                                 text: valueOfElement1.name
@@ -330,11 +332,11 @@ $(document).ready(function () {
                 var tentinh = $("#tentinh").val();
                 var tenhuyen = $("#tenhuyen").val();
                 $("#tenxa").html("");
-                $.each(tong, function (indexInArray, valueOfElement) {
+                $.each(tong, function(indexInArray, valueOfElement) {
                     if (valueOfElement.name == tentinh) {
-                        $.each(valueOfElement.districts, function (indexInArray, valueOfElement1) {
+                        $.each(valueOfElement.districts, function(indexInArray, valueOfElement1) {
                             if (valueOfElement1.name == tenhuyen) {
-                                $.each(valueOfElement1.wards, function (indexInArray, valueOfElement2) {
+                                $.each(valueOfElement1.wards, function(indexInArray, valueOfElement2) {
                                     $("#tenxa").append($('<option>', {
                                         value: valueOfElement2.name,
                                         text: valueOfElement2.name
@@ -349,7 +351,7 @@ $(document).ready(function () {
             $("#shippingCost").html("3000");
         });
     });
-    $("select").click(function (e) {
+    $("select").click(function(e) {
         var tong;
         var clickAddress = 0;
         $("#contentSelectAddress").slideDown();
@@ -357,9 +359,9 @@ $(document).ready(function () {
             type: "get",
             url: linkTuyetDoi + "public/js/diaChi.json",
             dataType: "json",
-            success: function (response) {
+            success: function(response) {
                 tong = response;
-                $.each(response, function (indexInArray, valueOfElement) {
+                $.each(response, function(indexInArray, valueOfElement) {
                     $("#tentinh").append($('<option>', {
                         value: valueOfElement.name,
                         text: valueOfElement.name
@@ -367,14 +369,14 @@ $(document).ready(function () {
                 });
             }
         });
-        $("select").change(function (e) {
+        $("select").change(function(e) {
             var typeId = $(this).attr("id");
             if (typeId == "tentinh") {
                 var tentinh = this.value;
                 $("#tenhuyen").html("");
-                $.each(tong, function (indexInArray, valueOfElement) {
+                $.each(tong, function(indexInArray, valueOfElement) {
                     if (valueOfElement.name == tentinh) {
-                        $.each(valueOfElement.districts, function (indexInArray, valueOfElement1) {
+                        $.each(valueOfElement.districts, function(indexInArray, valueOfElement1) {
                             $("#tenhuyen").append($('<option>', {
                                 value: valueOfElement1.name,
                                 text: valueOfElement1.name
@@ -387,11 +389,11 @@ $(document).ready(function () {
                 var tentinh = $("#tentinh").val();
                 var tenhuyen = $("#tenhuyen").val();
                 $("#tenxa").html("");
-                $.each(tong, function (indexInArray, valueOfElement) {
+                $.each(tong, function(indexInArray, valueOfElement) {
                     if (valueOfElement.name == tentinh) {
-                        $.each(valueOfElement.districts, function (indexInArray, valueOfElement1) {
+                        $.each(valueOfElement.districts, function(indexInArray, valueOfElement1) {
                             if (valueOfElement1.name == tenhuyen) {
-                                $.each(valueOfElement1.wards, function (indexInArray, valueOfElement2) {
+                                $.each(valueOfElement1.wards, function(indexInArray, valueOfElement2) {
                                     $("#tenxa").append($('<option>', {
                                         value: valueOfElement2.name,
                                         text: valueOfElement2.name
@@ -408,11 +410,11 @@ $(document).ready(function () {
     });
     // ==> danh gia san pham  
     var sosaodanhgia = 1;
-    $("#danhgia").click(function (e) {
+    $("#danhgia").click(function(e) {
         if (checkLogin()) {
             var spanOf = "spanOf";
             var masp = "";
-            $("span").each(function () {
+            $("span").each(function() {
                 var idThis = $(this).attr("id");
                 if (idThis && idThis.startsWith(spanOf)) {
                     masp = idThis.slice(spanOf.length, idThis.length);
@@ -433,12 +435,11 @@ $(document).ready(function () {
             } else {
                 alert("Quý Khách Chưa Nhận Được Sản Phẩm Này ^_^ !!!");
             }
-        }
-        else {
+        } else {
             location.replace(linkTuyetDoi + "dndk");
         }
     });
-    $("button").click(function (e) {
+    $("button").click(function(e) {
         var saodanhgiaUp = "saodanhgiaUp";
         var saodanhgiaDown = "saodanhgiaDown";
         idThis = $(this).attr("id");
@@ -456,7 +457,7 @@ $(document).ready(function () {
         }
     });
     // ==> danh gia nhan vien 
-    $("body").on("click","button",function (e) {
+    $("body").on("click", "button", function(e) {
         var idThis = $(this).attr("id");
         var saodanhgia_NhanVienDown = "saodanhgia_NhanVienDown";
         var saodanhgia_NhanVienUp = "saodanhgia_NhanVienUp";
@@ -481,7 +482,7 @@ $(document).ready(function () {
         }
     });
     // ==> upload
-    $("#test1").click(function (e) {
+    $("#test1").click(function(e) {
         var fd = new FormData();
         var files = $('#file')[0].files[0];
         fd.append('file11', files);
@@ -491,19 +492,18 @@ $(document).ready(function () {
             data: fd,
             contentType: false,
             processData: false,
-            success: function (response) {
+            success: function(response) {
                 alert(response);
                 if (response != 0) {
                     alert('file uploaded');
-                }
-                else {
+                } else {
                     alert('file not uploaded');
                 }
             },
         });
     });
     // ==> gui mail 
-    $("#sendMail").click(function (e) {
+    $("#sendMail").click(function(e) {
         var diachigui = $("#diachimail").val();
         var tieude = $("#tieude").val();
         var bodyconten = $("#noidung").val();
@@ -517,17 +517,16 @@ $(document).ready(function () {
                 bodyconten: bodyconten,
                 linkanh: linkanh
             },
-            success: function (response) {
+            success: function(response) {
                 alert(response);
             }
         });
 
     });
     // tesst
-    $("#test").click(function (e) {
-    });
+    $("#test").click(function(e) {});
     // ==> XEM chi tiet hoa don
-    $("body").on("click", "button", function () {
+    $("body").on("click", "button", function() {
         var btn_chitetHD = "btn_chitetHD";
         var idThis = $(this).attr("id");
         if (idThis.startsWith(btn_chitetHD)) {
@@ -538,7 +537,7 @@ $(document).ready(function () {
         }
 
     });
-    $("body").on("click", "a", function () {
+    $("body").on("click", "a", function() {
         var idThis = $(this).attr("id");
         if (idThis.startsWith("back_contentMain")) {
             $("#contentMain").slideDown();
@@ -546,26 +545,26 @@ $(document).ready(function () {
         }
     });
     // ==> Tim kiem 
-    $("#startSearch").click(function (e) { 
+    $("#startSearch").click(function(e) {
         var ndtimkiem = $("#whatSearch").val();
-        location.assign(linkTuyetDoi+"timkiem/"+ndtimkiem);
+        location.assign(linkTuyetDoi + "timkiem/" + ndtimkiem);
     });
-    var solanclickXemthemSanPham = 2 ;
-    var gioihanxuathien = 6 ;
-    $("#xemThemSanPham").click(function (e) { 
+    var solanclickXemthemSanPham = 2;
+    var gioihanxuathien = 6;
+    $("#xemThemSanPham").click(function(e) {
         var ndtimkiem = $("#params").html();
-        var batdau = gioihanxuathien*(solanclickXemthemSanPham-1);
+        var batdau = gioihanxuathien * (solanclickXemthemSanPham - 1);
         solanclickXemthemSanPham = solanclickXemthemSanPham + 1;
-        var data = getThemProductPT(ndtimkiem,batdau,gioihanxuathien);
+        var data = getThemProductPT(ndtimkiem, batdau, gioihanxuathien);
         $("#addViewProduct").append(data);
     });
     // ==> chat
-    $("#gui").click(function (e) { 
+    $("#gui").click(function(e) {
         var noidung = $("#ndTN").val();
-        if(noidung != ""){
+        if (noidung != "") {
             var result = insertToTN(noidung);
-            if(result){
-                var content = "<li class='clearfix'><div class='message-data text-right'><span class='message-data-time'>"+result+"</span></div><div class='message other-message float-right'>"+noidung+"</div></li>";
+            if (result) {
+                var content = "<li class='clearfix'><div class='message-data text-right'><span class='message-data-time'>" + result + "</span></div><div class='message other-message float-right'>" + noidung + "</div></li>";
                 $("#dstn").append(content);
                 $("#ndTN").val("");
                 $("#lastTime").html(result);
@@ -573,68 +572,71 @@ $(document).ready(function () {
         }
     });
     setInterval(() => {
-        if(checkLogin()){
+        if (checkLogin()) {
             var lastTime = $("#lastTime").html();
             var result = check_newMess(lastTime);
-            if(result && lastTime){
+            if (result && lastTime) {
                 $("#lastTime").remove();
                 $("#dstn").append(result);
             }
         }
-    },1000); 
+    }, 1000);
     // functio support
-    function insertToTN(noidung){
-        var result =  "";
-        $.ajax({
-            type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/chat",
-            data: {
-                noidung:noidung
-            },
-            success: function (response) {
-              result = response;  
-            }
-        });
-        return result;
-    }
-    function check_newMess(thoigiannhan){
+    function insertToTN(noidung) {
         var result = "";
         $.ajax({
             type: "post",
-            async:false,
-            data:{thoigiannhan:thoigiannhan},
-            url: linkTuyetDoi+"ajax/check_newMess",
-            success: function (response) {
+            async: false,
+            url: linkTuyetDoi + "ajax/chat",
+            data: {
+                noidung: noidung
+            },
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
-    function getThemProductPT(ndtimkiem,batdau,gioihanhienthi){
+
+    function check_newMess(thoigiannhan) {
         var result = "";
         $.ajax({
             type: "post",
-            async:false,
-            url: linkTuyetDoi+"ajax/getThemProductPT",
-            data: {
-                ndtimkiem:ndtimkiem,
-                batdau:batdau,
-                gioihanhienthi:gioihanhienthi
-            },
-            success: function (response) {
+            async: false,
+            data: { thoigiannhan: thoigiannhan },
+            url: linkTuyetDoi + "ajax/check_newMess",
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
+    function getThemProductPT(ndtimkiem, batdau, gioihanhienthi) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/getThemProductPT",
+            data: {
+                ndtimkiem: ndtimkiem,
+                batdau: batdau,
+                gioihanhienthi: gioihanhienthi
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
     function getThongTinDonHangInThanhToan() {
         var idAddress = "";
         var ndhinhthuc = "";
         var cboxgh = "cboxgh";
         var checkboxTT = "checkboxTT";
         var idTT = "";
-        $(":checkbox").each(function () {
+        $(":checkbox").each(function() {
             var idThis = $(this).attr("id");
             if ($(this).is(":checked") && idThis.startsWith(cboxgh)) {
                 idAddress = $(this).attr("id");
@@ -645,12 +647,12 @@ $(document).ready(function () {
                 idTT = idTT.slice(checkboxTT.length, idTT.length);
             }
         });
-        if(idAddress != "" && idTT != ""){
+        if (idAddress != "" && idTT != "") {
             var arr = [];
             var diachigiaohang = $("#spanOfAddress" + idAddress).html();
             var phiship = (diachigiaohang.length) * 2000;
             var sdtgh = $("#spanOfNumberPhone" + idAddress).html();
-            $("span").each(function () {
+            $("span").each(function() {
                 var idSpan = $(this).attr("id");
                 var soluongsp = "soluongsp";
                 if (idSpan && idSpan.startsWith(soluongsp)) {
@@ -660,13 +662,14 @@ $(document).ready(function () {
                     arr.push(text);
                 }
             });
-            const result = [diachigiaohang,arr,sdtgh,phiship,idTT];
+            const result = [diachigiaohang, arr, sdtgh, phiship, idTT];
             return result;
-        }else{
+        } else {
             return false;
         }
 
     }
+
     function showDetailBill(mahoadon) {
         var result = "";
         $.ajax({
@@ -676,13 +679,14 @@ $(document).ready(function () {
             data: {
                 mahoadon: mahoadon
             },
-            success: function (response) {
+            success: function(response) {
                 // alert(response);
                 result = response;
             }
         });
         return result;
     }
+
     function uploadImg() {
         var fd = new FormData();
         var files = $('#linkduongdananh')[0].files[0];
@@ -695,12 +699,13 @@ $(document).ready(function () {
             data: fd,
             contentType: false,
             processData: false,
-            success: function (response) {
+            success: function(response) {
                 result = response;
             },
         });
         return result;
     }
+
     function checkAcount(tendangnhap) {
         var php_data;
         $.ajax({
@@ -709,12 +714,13 @@ $(document).ready(function () {
             async: false,
             data: { tendangnhap: tendangnhap },
             // dataType: "dataType",
-            success: function (response) {
+            success: function(response) {
                 php_data = response;
             }
         });
         return php_data;
     }
+
     function comparePassword(pass1, pass2) {
         if (pass1 == pass2) {
             return true;
@@ -722,11 +728,12 @@ $(document).ready(function () {
             return false;
         }
     }
+
     function checkStrongPass(pass) {
         var domanh = 0;
         const arr = [/[A-Z]/, /[a-z]/, /[0-9]/, /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/];
         if (pass.length >= 8) {
-            $.each(arr, function (indexInArray, valueOfElement) {
+            $.each(arr, function(indexInArray, valueOfElement) {
                 // alert(valueOfElement);
                 if (valueOfElement.test(pass)) {
                     domanh++;
@@ -737,6 +744,7 @@ $(document).ready(function () {
             return false;
         }
     }
+
     function checkEmailFormat(email) {
         var pattern = /^\b[A-Z0-9._%-]+@[A-Z0-9.-]+\.[A-Z]{2,4}\b$/i;
         if (pattern.test(email)) {
@@ -745,6 +753,7 @@ $(document).ready(function () {
             return false;
         }
     }
+
     function dangky(tendangnhap, matkhau, email, quyen) {
         var result = "";
         $.ajax({
@@ -757,17 +766,18 @@ $(document).ready(function () {
                 email: email,
                 quyen: quyen
             },
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function dangNhap(tendangnhap, matkhau) {
-        if(tendangnhap == "" || matkhau == ""){
+        if (tendangnhap == "" || matkhau == "") {
             alert("Quý Khách Vui Lòng Nhập Đầy Đủ Thông Tin");
-        }else{
-            $.post("./ajax/dangnhap", { tendangnhap: tendangnhap, matkhau: matkhau }, function (data) {
+        } else {
+            $.post("./ajax/dangnhap", { tendangnhap: tendangnhap, matkhau: matkhau }, function(data) {
                 if (data) {
                     location.assign("./taikhoan");
                 } else {
@@ -776,6 +786,7 @@ $(document).ready(function () {
             });
         }
     }
+
     function spanErr(idName, option, mess) {
         if (option) {
             $("#sp" + idName).html("");
@@ -787,6 +798,7 @@ $(document).ready(function () {
         // $("#sp"+idName).addClass("fas fa-times");
 
     }
+
     function updateAcount(tennguoidung, diachi, sodienthoai, email) {
         var result = 0;
 
@@ -803,12 +815,13 @@ $(document).ready(function () {
                 email: email
             },
             async: false,
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function checkChangePass(id) {
         var result = true;
         let arr = ["matkhau_UP", "rematkhau_UP"];
@@ -833,13 +846,14 @@ $(document).ready(function () {
             }
         }
     }
+
     function changePass(matkhau) {
         $.ajax({
             type: "post",
             url: "./ajax/updatePassword",
             data: { matkhau: matkhau },
             // dataType: "dataType",
-            success: function (response) {
+            success: function(response) {
                 if (response) {
                     alert("Đổi Mật Khẩu Thành Công");
                 } else {
@@ -848,6 +862,7 @@ $(document).ready(function () {
             }
         });
     }
+
     function addProductInCart(masp, soluong) {
         var result = 0;
         $.ajax({
@@ -859,12 +874,13 @@ $(document).ready(function () {
                 soluong: soluong
             },
             // dataType: "dataType",
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function checkLogin() {
         var result;
         $.ajax({
@@ -872,12 +888,13 @@ $(document).ready(function () {
             async: false,
             url: linkTuyetDoi + "ajax/checklogin",
             data: {},
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function EditDetailOfCartFrontEnd(idThis, btnMh, valueOfInput, tdOfprice, tdOfprieLast, soluongconlai, option) {
         var masp = idThis.slice(btnMh.length, idThis.length);
         var valueOfInputLast = $("#" + valueOfInput + masp).html();
@@ -914,6 +931,7 @@ $(document).ready(function () {
             }
         }
     }
+
     function updateDetailOfCart(masp, soluong) {
         $.ajax({
             type: "post",
@@ -923,11 +941,12 @@ $(document).ready(function () {
                 masp: masp,
                 soluong: soluong
             },
-            success: function (response) {
+            success: function(response) {
                 // alert(response);
             }
         });
     }
+
     function updateSanPham(masp, soluongsp) {
         $.ajax({
             type: "post",
@@ -937,11 +956,12 @@ $(document).ready(function () {
                 masp: masp,
                 soluongsp: soluongsp
             },
-            success: function (response) {
+            success: function(response) {
                 // alert(response);
             }
         });
     }
+
     function getSoLuongTrongGioHang() {
         var result = "";
         $.ajax({
@@ -951,27 +971,30 @@ $(document).ready(function () {
             data: {
 
             },
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function updateScreenSoLuongTrongGioHang(option) {
         $("#soluongtronggiohang").html(option);
     }
+
     function getSessionSoLuongTrongGioHang() {
         var result = "";
         $.ajax({
             type: "post",
             async: false,
             url: linkTuyetDoi + "ajax/getSecSionSoLuongTrongGioHang",
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function deleteInDetailCart(masp) {
         $.ajax({
             type: "post",
@@ -980,11 +1003,12 @@ $(document).ready(function () {
             data: {
                 masp: masp
             },
-            success: function (response) {
+            success: function(response) {
                 // alert(response);
             }
         });
     }
+
     function insertAddressShipping(tentinh, tenhuyen, tenxa, diachichitiet, sodienthoaigh) {
         var result = 0;
         $.ajax({
@@ -999,12 +1023,13 @@ $(document).ready(function () {
                 sodienthoaigh: sodienthoaigh
             },
             // dataType: "dataType",
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function deleteAddressShipping(madiachigiaohang) {
         var result = 0;
         $.ajax({
@@ -1013,12 +1038,13 @@ $(document).ready(function () {
             url: linkTuyetDoi + "ajax/deleteAddressShipping",
             data: { madiachigiaohang: madiachigiaohang },
             // dataType: "dataType",
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function editAddressShipping(tentinh, tenhuyen, tenxa, diachichitiet, madiachigiaohang, sodienthoaigh) {
         alert(tentinh + "-" + tenhuyen + "-" + tenxa + "-" + diachichitiet + "-" + sodienthoaigh);
         var result = 0;
@@ -1034,12 +1060,13 @@ $(document).ready(function () {
                 sodienthoaigh: sodienthoaigh,
                 madiachigiaohang: madiachigiaohang
             },
-            success: function (response) {
+            success: function(response) {
                 result = response
             }
         });
         return result;
     }
+
     function tienHanhthanhToan(arrTT) {
         var result = 0;
         $.ajax({
@@ -1051,14 +1078,15 @@ $(document).ready(function () {
                 arr: arrTT[1],
                 sodienthoaigh: arrTT[2],
                 phiship: arrTT[3],
-                hinhthucthanhtoan:arrTT[4]
+                hinhthucthanhtoan: arrTT[4]
             },
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function checkSell(masp) {
         var result = "";
         $.ajax({
@@ -1066,12 +1094,13 @@ $(document).ready(function () {
             async: false,
             url: linkTuyetDoi + "ajax/checkSell",
             data: { masp: masp },
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function danhgia(sosaodanhgiaa, inputDanhgia, masp) {
         var result = 0;
         $.ajax({
@@ -1084,12 +1113,13 @@ $(document).ready(function () {
                 masp: masp
             },
             // dataType: "dataType",
-            success: function (response) {  
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function setProductToPayment(arr) {
         var result = "";
         $.ajax({
@@ -1098,12 +1128,13 @@ $(document).ready(function () {
             url: linkTuyetDoi + "ajax/setProductToPayment",
             data: { arr: arr },
             // dataType: "dataType",
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });
         return result;
     }
+
     function danhGiaVeNhanVien(mahd, danhgiacuakhachhang) {
         var result = "";
         $.ajax({
@@ -1114,7 +1145,7 @@ $(document).ready(function () {
                 mahd: mahd,
                 danhgiacuakhachhang: danhgiacuakhachhang,
             },
-            success: function (response) {
+            success: function(response) {
                 result = response;
             }
         });

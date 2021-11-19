@@ -73,7 +73,7 @@
 <div class="contentQr text-center">
     <div class="row">
         <div class="col-sm-12"><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Superqr.svg/1200px-Superqr.svg.png" alt="" id="img" class="imgtt"></div>
-        <div class="col-sm-6"><button class="btn btn-success">Hủy</button></div>
+        <div class="col-sm-6"><button class="btn btn-success" id="huyThanhToanOnline">Hủy</button></div>
         <div class="col-sm-6"><button class="btn btn-success" id="thanhtoanOnline">Thanh Toán</button></div>
     </div>
 </div>

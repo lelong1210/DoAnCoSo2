@@ -199,8 +199,12 @@ $(document).ready(function() {
         var diachi = $("#diachi").val();
         if (tennguoidung != "", sodienthoai != "", email != "", diachi != "") {
             if (updateAcount(tennguoidung, sodienthoai, email, diachi)) {
-                alert("Đã Cập Nhập Thông Tin");
-                location.reload();
+                if (checkEmailFormat(email)) {
+                    alert("Đã Cập Nhập Thông Tin");
+                    location.reload();
+                } else {
+                    alert("Lỗi Trên Màn Hình");
+                }
             }
         } else {
             alert("các ô không được để trống");
@@ -431,7 +435,7 @@ $(document).ready(function() {
     }
 
     function getMessLastAdmin(lidaudanhsach) {
-        var result = "";
+        var result = ""; //
         $.ajax({
             type: "post",
             async: false,
