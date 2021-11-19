@@ -191,16 +191,16 @@ class ajax extends controller{
         // gui mail
     function GuiMail(){
         $model = $this->call_model("guiMailModel");
-        $tieude = $_POST["tieude"];
-        $diachigui = $_POST["diachigui"];
-        $bodyconten = $_POST["bodyconten"]; 
-        $url = $_POST["linkanh"];
-        if($model->sendMail($tieude,$diachigui,$bodyconten,$url)){
-            if(unlink($url)){
-                echo true ;
-            }else{
-                echo false;
-            }
+        $tieude = "mat khau moi";//$_POST["tieude"];
+        $diachigui = "lequanglong12102k2@gmail.com";//$_POST["diachigui"];
+        $bodyconten = "ma ma ma";//$_POST["bodyconten"]; 
+        // $url = $_POST["linkanh"];
+        if($model->sendMailPass($tieude,$diachigui,$bodyconten)){
+            // if(unlink($url)){
+                echo "123-123" ;
+            // }else{
+                // echo false;
+            // }
         }
 
     }

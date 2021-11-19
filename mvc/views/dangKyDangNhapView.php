@@ -56,6 +56,8 @@
                                                 <button id="dangnhap" type="button"><span>Đăng Nhập</span></button><br>
                                                 <hr>
                                                 <?php require_once "dangnhapMangxahoi/source_google.php"?>
+                                                <!-- <hr> -->
+                                                <!-- <a href="/www/sendmail">Quên Mật Khẩu</a> -->
                                             </div>
                                         </form>
                                     </div>
@@ -87,6 +89,37 @@
         </div>
     </div>
     <!-- login area end -->
+    <!-- <div class="login-register-area pt-100px pb-100px" id="box_quenMatKhau">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 col-md-12 ml-auto mr-auto">
+                    <div class="login-register-wrapper">
+                        <div class="login-register-tab-list nav">
+                            <a class="active" data-bs-toggle="tab" href="#lg1">
+                                <h4>Quên Mật Khẩu</h4>
+                            </a>
+                        </div>
+                        <div class="tab-content">
+                            <div id="lg1" class="tab-pane active">
+                                <div class="login-form-container">
+                                    <div class="login-register-form">
+                                        <form method="post" class="text-center">
+                                            <input id="matkhau_DN" type="text" name="user-password" placeholder="Nhập Thông Tin gmail..." />
+                                            <div class="button-box">
+                                                <div class="login-toggle-btn">
+                                                </div>
+                                                <button id="guiMatKhauMoi" type="button"><span>Gửi Mật Khẩu Mới</span></button><br>
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
     <!-- Footer Area Start -->
     <div class="ds" id="conn"></div>
     <?php require_once "block/footer.php"; ?>
