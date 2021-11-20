@@ -30,7 +30,7 @@
         /// speed 
         $arrAverage = json_decode($data["nhanVienModel"]->getSpeedAverage($_SESSION["username"]));
         $arrAverage = array_values((array) $arrAverage[0]);
-        $arrAverage = $arrAverage[0];
+        $arrAverage = $arrAverage[0]; 
         $arrDGSpeed = ["Rất Nhanh", "Nhanh", "Khá Nhanh", "Chậm", "Rất Chậm"];
         /// 
         /// thai do

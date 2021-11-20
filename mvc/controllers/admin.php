@@ -54,6 +54,18 @@
                 "productModel"=>$productModel
             ]);
         }
+        // nhan vien
+        function xemnhanvien(){ 
+            $taikhoanModel = $this->call_model("taikhoanModel");
+            $model = $this->call_model("adminModel");
+            $nhanvienmodel = $this->call_model("nhanvienModel");
+            $this->call_view("adminView",[
+                "title"=>"nhanvienViewPage",
+                "taikhoanModel"=>$taikhoanModel,
+                "adminModel"=>$model,
+                "nhanVienModel"=>$nhanvienmodel
+            ]); 
+        }
         /*https://projectdacs2.000webhostapp.com/*/
     }
 ?>

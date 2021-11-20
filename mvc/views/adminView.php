@@ -60,9 +60,11 @@
                         require_once "pageAdmin/manageInFo.php";
                     }else if($data["title"] == "danhgiacuakhachhang"){
                         require_once "pageAdmin/replyReviewPage.php";
+                    }else if($data["title"] == "nhanvienViewPage"){
+                        require_once "pageAdmin/nhanvienViewPage.php";
                     }else{
                         require_once "pageAdmin/indexPage.php"; 
-                    } 
+                    }
                     
                 
                 ?>

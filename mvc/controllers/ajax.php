@@ -422,6 +422,12 @@ class ajax extends controller{
         }
           
     }
+        // admin into nhan vien 
+    function getNhanVienDetail(){
+        $model = $this->call_model("adminModel");
+        $tendangnhap = $_POST["tendangnhap"];
+        echo $model->getNhanVienDetail($tendangnhap);
+    }
         // get to char js
     function getTongThu12Thang(){
         $model = $this->call_model("adminModel");

@@ -73,6 +73,7 @@ class adminModel extends connectDB{
             return false;
         }
     }
+    // thong ke 
     function getTongTienThu(){
         $conn = $this->GetConn();
         $sql = "SELECT SUM(chitiethoadon.soluong*sanpham.giatien) AS tongtienThu
@@ -149,6 +150,35 @@ class adminModel extends connectDB{
             $arr[] = json_decode($this->getDoanhThu1Thang($i));
         }
         return json_encode($arr);
+    }
+    // list nhan vien 
+    function getNhanVien(){
+        $conn = $this->GetConn();
+        $sql = "SELECT nguoidung.tendangnhap , nguoidung.tennguoidung FROM nguoidung WHERE nguoidung.quyen = 2";
+        $query = $conn->prepare($sql);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }  
+    }
+    // list nhan vien chi tiet 
+    function getNhanVienDetail($tendangnhap){
+        $conn = $this->GetConn();
+        $sql = "SELECT nguoidung.tendangnhap , nguoidung.tennguoidung , nguoidung.sodienthoai , nguoidung.diachi , nguoidung.email 
+        FROM nguoidung
+        WHERE nguoidung.tendangnhap = :tendangnhap";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }          
     }
 }
 ?>

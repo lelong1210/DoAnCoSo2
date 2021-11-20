@@ -109,21 +109,36 @@ $(document).ready(function() {
     $("#btn_delete").click(function(e) {
         $("#content_page").html(appendTableProduct());
     });
-    //
-    function appendTableProduct() {
-        var result = "";
-        $.ajax({
-            type: "post",
-            async: false,
-            url: linkTuyetDoi + "ajax/appendTableProduct",
-            // data: "data",
-            // dataType: "dataType",
-            success: function(response) {
-                result = response;
+    // admin into nhan vien 
+    $("body").on("click", "button", function() {
+        var idThis = $(this).attr("id");
+        var btnNhanvien = "btnNhanvien";
+        var manhanvien = idThis.slice(btnNhanvien.length, idThis.length);
+
+        const arrSetTTNV = ["cvdht_nhanvien", "ldnhan_nhanvien", "dgckh_nhanvien", "tocdo_nhanvien"];
+        const arrgetTTNVinTable = ["tongcv", "tongluong", "thd", "tocdo"];
+        const arrNhanVienBasic = JSON.parse(getNhanVienDetail(manhanvien));
+        if (idThis.startsWith(btnNhanvien)) {
+            $("#maNhanVien").val(manhanvien);
+            $("#tenNhanVien").val(arrNhanVienBasic[0].tennguoidung);
+            $("#soDienThoaiNhanVien").val(arrNhanVienBasic[0].sodienthoai);
+            $("#diachiNhanVien").val(arrNhanVienBasic[0].diachi);
+            $("#emailNhanVien").val(arrNhanVienBasic[0].email);
+            for (let index = 0; index < arrSetTTNV.length; index++) {
+                var value = $("#" + arrgetTTNVinTable[index] + manhanvien).html();
+                value = value.trim();
+                $("#" + arrSetTTNV[index]).val(value);
             }
-        });
-        return result;
-    }
+            //==============================//
+            $("#box_detail_nhanvien").slideDown();
+            $("#box_overview_nhanvien").slideUp();
+        }
+    });
+    $("#btn_back_table_nhanvien").click(function(e) {
+        $("#box_detail_nhanvien").slideUp();
+        $("#box_overview_nhanvien").slideDown();
+    });
+
     // user 
     $("#addUser").click(function(e) {
         var tendangnhap = $("#tendangnhap").val();
@@ -711,6 +726,35 @@ $(document).ready(function() {
             type: "post",
             async: false,
             url: linkTuyetDoi + "ajax/getTongThu12Thang",
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function appendTableProduct() {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/appendTableProduct",
+            // data: "data",
+            // dataType: "dataType",
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function getNhanVienDetail(tendangnhap) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/getNhanVienDetail",
+            data: { tendangnhap: tendangnhap },
             success: function(response) {
                 result = response;
             }

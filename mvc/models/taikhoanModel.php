@@ -43,7 +43,7 @@ class taikhoanModel extends connectDB
     }
     function checkAcount($tendangnhap)
     {
-        try { 
+        try {
             $conn = $this->GetConn();
             $sql = "SELECT * FROM nguoidung WHERE tendangnhap=:tendangnhap";
             $query = $conn->prepare($sql);
@@ -134,7 +134,8 @@ class taikhoanModel extends connectDB
         $arr = array_keys((array) $arr[0]);
         return $arr;
     }
-    function getTenNguoiDung($tendangnhap){
+    function getTenNguoiDung($tendangnhap)
+    {
         $conn = $this->GetConn();
         $sql = "SELECT tennguoidung FROM nguoidung WHERE tendangnhap=:tendangnhap";
         $query = $conn->prepare($sql);
@@ -148,7 +149,7 @@ class taikhoanModel extends connectDB
         }
     }
     // dia chi giao hang
-    function insertAddressShipping($tendangnhap, $tentinh, $tenhuyen, $tenxa, $diachichitiet,$sdtGh)
+    function insertAddressShipping($tendangnhap, $tentinh, $tenhuyen, $tenxa, $diachichitiet, $sdtGh)
     {
         $conn = $this->GetConn();
         $sql = "INSERT INTO diachigiaohang(tendangnhap,tentinh,tenhuyen,tenxa,diachichitiet,sdtGh) values(:tendangnhap,:tentinh,:tenhuyen,:tenxa,:diachichitiet,:sdtGh)";
@@ -158,7 +159,7 @@ class taikhoanModel extends connectDB
         $query->bindParam(":tenhuyen", $tenhuyen);
         $query->bindParam(":tenxa", $tenxa);
         $query->bindParam(":diachichitiet", $diachichitiet);
-        $query->bindParam(":sdtGh",$sdtGh);
+        $query->bindParam(":sdtGh", $sdtGh);
         $query->execute();
         if ($query->rowCount() > 0) {
             return true;
@@ -216,7 +217,7 @@ class taikhoanModel extends connectDB
             echo $e->getMessage();
         }
     }
-    function editAddressShipping($tentinh, $tenhuyen, $tenxa, $diachichitiet, $madiachigiaohang,$sdtGh)
+    function editAddressShipping($tentinh, $tenhuyen, $tenxa, $diachichitiet, $madiachigiaohang, $sdtGh)
     {
         $madiachigiaohang = intval($madiachigiaohang);
         $conn = $this->GetConn();
@@ -226,7 +227,7 @@ class taikhoanModel extends connectDB
         $query->bindParam(":tenhuyen", $tenhuyen);
         $query->bindParam(":tenxa", $tenxa);
         $query->bindParam(":diachichitiet", $diachichitiet);
-        $query->bindParam(":sdtGh",$sdtGh);
+        $query->bindParam(":sdtGh", $sdtGh);
         $query->bindParam(":madiachigiaohang", $madiachigiaohang);
         $query->execute();
         if ($query->rowCount() > 0) {
@@ -288,7 +289,8 @@ class taikhoanModel extends connectDB
             return false;
         }
     }
-    function getDetailBill($tendangnhap,$mahoadon){
+    function getDetailBill($tendangnhap, $mahoadon)
+    {
         $conn = $this->GetConn();
         $sql = "SELECT sanpham.tensp,sanpham.giatien,sanpham.linkduongdananh,chitiethoadon.soluong,hoadon.diachigiaohang,hoadon.sodienthoaigh,congviec.tiendo,hoadon.phiship,hoadon.hinhthucthanhtoan
         FROM (((congviec INNER JOIN hoadon ON congviec.mahoadon = hoadon.mahoadon ) 
@@ -297,35 +299,36 @@ class taikhoanModel extends connectDB
         WHERE hoadon.mahoadon = :mahoadon";
         $query = $conn->prepare($sql);
         // $query->bindParam(":tendangnhap", $tendangnhap);
-        $query->bindParam(":mahoadon",$mahoadon);
+        $query->bindParam(":mahoadon", $mahoadon);
         $query->execute();
         if ($query->rowCount() > 0) {
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
             return json_encode($result);
         } else {
             return false;
-        }        
+        }
     }
     // insert Into congviec
-    function insertCongViec($makhachhang,$mahoadon,$diadiemcongviec,$sdtKh,$danhancv,$tiendo){
+    function insertCongViec($makhachhang, $mahoadon, $diadiemcongviec, $sdtKh, $danhancv, $tiendo)
+    {
         $conn = $this->GetConn();
         $sql = "INSERT INTO congviec(makhachhang,mahoadon,diadiemcongviec,sdtKh,danhancv,tiendo) VALUES (:makhachhang,:mahoadon,:diadiemcongviec,:sdtKh,:danhancv,:tiendo)";
         $query = $conn->prepare($sql);
         $query->bindParam(":makhachhang", $makhachhang);
-        $query->bindParam(":mahoadon",$mahoadon);
+        $query->bindParam(":mahoadon", $mahoadon);
         $query->bindParam(":diadiemcongviec", $diadiemcongviec);
-        $query->bindParam(":sdtKh",$sdtKh);
-        $query->bindParam(":danhancv",$danhancv);
-        $query->bindParam(":tiendo",$tiendo);
+        $query->bindParam(":sdtKh", $sdtKh);
+        $query->bindParam(":danhancv", $danhancv);
+        $query->bindParam(":tiendo", $tiendo);
         $query->execute();
         if ($query->rowCount() > 0) {
             return true;
         } else {
             return false;
-        }        
+        }
     }
     // thanh toan
-    function insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang,$sodienthoaigh,$phiship,$hinhthucthanhtoan)
+    function insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang, $sodienthoaigh, $phiship, $hinhthucthanhtoan)
     {
         $conn = $this->GetConn();
         $sql = "INSERT INTO hoadon(tendangnhap,ngaymua,diachigiaohang,sodienthoaigh,phiship,hinhthucthanhtoan) VALUES(:tendangnhap,:ngaymua,:diachigiaohang,:sodienthoaigh,:phiship,:hinhthucthanhtoan)";
@@ -333,9 +336,9 @@ class taikhoanModel extends connectDB
         $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":ngaymua", $ngaymua);
         $query->bindParam(":diachigiaohang", $diachigiaohang);
-        $query->bindParam(":sodienthoaigh",$sodienthoaigh);
-        $query->bindParam(":phiship",$phiship);
-        $query->bindParam(":hinhthucthanhtoan",$hinhthucthanhtoan);
+        $query->bindParam(":sodienthoaigh", $sodienthoaigh);
+        $query->bindParam(":phiship", $phiship);
+        $query->bindParam(":hinhthucthanhtoan", $hinhthucthanhtoan);
         $query->execute();
         if ($query->rowCount() > 0) {
             return true;
@@ -375,12 +378,12 @@ class taikhoanModel extends connectDB
             return false;
         }
     }
-    function thanhtoan($tendangnhap, $ngaymua, $diachigiaohang, $arr, $productModel,$sodienthoaigh,$phiship,$hinhthucthanhtoan)
+    function thanhtoan($tendangnhap, $ngaymua, $diachigiaohang, $arr, $productModel, $sodienthoaigh, $phiship, $hinhthucthanhtoan)
     {
         $result = false;
-        if ($this->insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang,$sodienthoaigh,$phiship,$hinhthucthanhtoan)) {
+        if ($this->insertHoaDon($tendangnhap, $ngaymua, $diachigiaohang, $sodienthoaigh, $phiship, $hinhthucthanhtoan)) {
             $arrTT = json_decode($this->getLastMaHoaDon($tendangnhap));
-            $arrTT = array_values((array)$arrTT[0]);
+            $arrTT = array_values((array) $arrTT[0]);
             $mahoadon = $arrTT[0];
             $diachigiaohang = $arrTT[1];
             for ($i = 0; $i < count($arr); $i++) {
@@ -391,13 +394,14 @@ class taikhoanModel extends connectDB
                     echo $productModel->deleteInDetailCart($arrChild[0], $magiohang);
                 }
             }
-            $this->insertCongViec($_SESSION["username"],$mahoadon,$diachigiaohang,$sodienthoaigh,0,0);
+            $this->insertCongViec($_SESSION["username"], $mahoadon, $diachigiaohang, $sodienthoaigh, 0, 0);
             return $result;
         } else {
             return false;
         }
     }
-    function getSdtGh($tendangnhap){
+    function getSdtGh($tendangnhap)
+    {
         $conn = $this->GetConn();
         $sql = "SELECT sodienthoai FROM nguoidung WHERE tendangnhap=:tendangnhap";
         $query = $conn->prepare($sql);
@@ -408,22 +412,25 @@ class taikhoanModel extends connectDB
             return json_encode($result);
         } else {
             return false;
-        }        
+        }
     }
     // danh gia san pham 
     function danhgia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)
-    {   
-        if($this->kiemTraDaDanhGia($tendangnhap,$masp)){
-            if($this->updateDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)){
+    {
+        if ($this->kiemTraDaDanhGia($tendangnhap, $masp)) {
+            if ($this->updateDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)) {
                 return true;
-            }return false;
-        }else{
-            if($this->insertDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)){
+            }
+            return false;
+        } else {
+            if ($this->insertDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)) {
                 return true;
-            }return false;
+            }
+            return false;
         }
     }
-    function kiemTraDaDanhGia($tendangnhap,$masp){
+    function kiemTraDaDanhGia($tendangnhap, $masp)
+    {
         $conn = $this->GetConn();
         $sql = "SELECT * FROM thongtinnhanxetsanpham WHERE masp = :masp AND tendangnhap = :tendangnhap";
         $query = $conn->prepare($sql);
@@ -435,9 +442,9 @@ class taikhoanModel extends connectDB
         } else {
             return false;
         }
-
     }
-    function updateDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia){
+    function updateDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)
+    {
         $conn = $this->GetConn();
         $sql = "UPDATE thongtinnhanxetsanpham SET sosao = :sosao , noidung = :noidung , ngaydanggia = :ngaydanggia WHERE tendangnhap = :tendangnhap AND masp = :masp";
         $query = $conn->prepare($sql);
@@ -451,9 +458,10 @@ class taikhoanModel extends connectDB
             return true;
         } else {
             return false;
-        }        
+        }
     }
-    function insertDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia){
+    function insertDanhGia($masp, $tendangnhap, $noidung, $sosao, $ngaydanggia)
+    {
         $conn = $this->GetConn();
         $sql = "INSERT INTO thongtinnhanxetsanpham(masp,tendangnhap,noidung,sosao,ngaydanggia) VALUES (:masp,:tendangnhap,:noidung,:sosao,:ngaydanggia)";
         $query = $conn->prepare($sql);
@@ -470,7 +478,8 @@ class taikhoanModel extends connectDB
         }
     }
     // danh gia nhan vien 
-    function danhGiaVeNhanVien($mahd,$danhgiacuakhachhang){
+    function danhGiaVeNhanVien($mahd, $danhgiacuakhachhang)
+    {
         try {
             $conn = $this->GetConn();
             $sql = "UPDATE congviec SET danhgiacuakhachhang = :danhgiacuakhachhang WHERE congviec.mahoadon = :mahd";
@@ -524,8 +533,8 @@ class taikhoanModel extends connectDB
             for ($i = 0; $i < count($arrAddress); $i++) {
                 $arrChild = array_values((array) $arrAddress[$i]);
                 echo "<h6> $arrChild[3] - $arrChild[4] - $arrChild[5] - $arrChild[6] - $arrChild[2] ";
-                    echo "<a class='fas fa-edit' id='editAddressShipping$arrChild[0]' href='./khachhang/suadiachigiaohang/$arrChild[0]'></a>";
-                    echo "<button class='fas fa-trash-alt' id='deleteAddressShipping$arrChild[0]'></button>";
+                echo "<a class='fas fa-edit' id='editAddressShipping$arrChild[0]' href='./khachhang/suadiachigiaohang/$arrChild[0]'></a>";
+                echo "<button class='fas fa-trash-alt' id='deleteAddressShipping$arrChild[0]'></button>";
                 echo "</h6>";
             }
         } else {
@@ -538,12 +547,12 @@ class taikhoanModel extends connectDB
         $arrAddress = json_decode($this->selectAddressShippingWhereMadiachigiaohang($tendangnhap, $madiachigiaohang));
         $arrChild = array_values((array) $arrAddress[0]);
         echo "<div class='' id=''>";
-            echo "<select id='tentinh'><option value=''>$arrChild[3]</option></select>";
-            echo "<select id='tenhuyen'><option value=''>$arrChild[4]</option></select>";
-            echo "<select id='tenxa'><option value=''>$arrChild[5]</option></select>";
-            echo "<input type='text' placeholder='nhập địa chỉ...' id='diachi' value='$arrChild[6]'>";
-            echo "<input type='text' placeholder='nhập địa chỉ...' id='stdGh' value='$arrChild[2]'>";
-            echo "<button class='btn btn-lg btn-success' id='editAddressShipping$arrChild[0]'>Cập Nhật</button>";
+        echo "<select id='tentinh'><option value=''>$arrChild[3]</option></select>";
+        echo "<select id='tenhuyen'><option value=''>$arrChild[4]</option></select>";
+        echo "<select id='tenxa'><option value=''>$arrChild[5]</option></select>";
+        echo "<input type='text' placeholder='nhập địa chỉ...' id='diachi' value='$arrChild[6]'>";
+        echo "<input type='text' placeholder='nhập địa chỉ...' id='stdGh' value='$arrChild[2]'>";
+        echo "<button class='btn btn-lg btn-success' id='editAddressShipping$arrChild[0]'>Cập Nhật</button>";
         echo "</div>";
     }
     function getTitleTable($arr)
@@ -551,28 +560,30 @@ class taikhoanModel extends connectDB
         $arr = array_keys((array) $arr[0]);
         return $arr;
     }
-    function insertKey($email,$keyxacnhan,$thoigiantao,$tendangnhap){
+    function insertKey($email, $keyxacnhan, $thoigiantao, $tendangnhap)
+    {
         $conn = $this->GetConn();
         $sql = "INSERT INTO resetpass(tendangnhap, email, keyxacnhan, thoigiantao) VALUES (:tendangnhap, :email, :keyxacnhan, :thoigiantao)";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":email", $email);
-        $query->bindParam(":keyxacnhan",$keyxacnhan);
+        $query->bindParam(":keyxacnhan", $keyxacnhan);
         $query->bindParam(":thoigiantao", $thoigiantao);
         $query->execute();
         if ($query->rowCount() > 0) {
             return true;
         } else {
             return false;
-        }  
-    }   
-    function getkKey($email,$keyxacnhan,$tendangnhap){
+        }
+    }
+    function getkKey($email, $keyxacnhan, $tendangnhap)
+    {
         $conn = $this->GetConn();
         $sql = "SELECT resetpass.thoigiantao FROM resetpass WHERE resetpass.email = :email AND resetpass.keyxacnhan = :keyxacnhan AND tendangnhap = :tendangnhap";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":email", $email);
-        $query->bindParam(":keyxacnhan",$keyxacnhan);
+        $query->bindParam(":keyxacnhan", $keyxacnhan);
         $query->execute();
         if ($query->rowCount() > 0) {
             $result = $query->fetchAll(PDO::FETCH_ASSOC);
@@ -580,38 +591,40 @@ class taikhoanModel extends connectDB
         } else {
             return false;
         }
-
     }
-    function checkTimeOfkey($timeOfKey){
+    function checkTimeOfkey($timeOfKey)
+    {
         $timeNow = date("Y-m-d H:i:s");
         $phut = strtotime($timeNow) - strtotime($timeOfKey);
-        $phut = ($phut/60);
-        if($phut > 5){
+        $phut = ($phut / 60);
+        if ($phut > 5) {
             return false;
-        }else{
+        } else {
             return true;
         }
     }
-    function checkKey($email,$keyxacnhan,$tendangnhap){
-        $timeOfKey = $this->getkKey($email,$keyxacnhan,$tendangnhap);
-        if($timeOfKey){
+    function checkKey($email, $keyxacnhan, $tendangnhap)
+    {
+        $timeOfKey = $this->getkKey($email, $keyxacnhan, $tendangnhap);
+        if ($timeOfKey) {
             $timeOfKey = json_decode($timeOfKey);
-            $timeOfKey = array_values((array)$timeOfKey[0]);
+            $timeOfKey = array_values((array) $timeOfKey[0]);
             $timeOfKey = $timeOfKey[0];
             return $this->checkTimeOfkey($timeOfKey);
-        }else{
+        } else {
             return false;
         }
     }
-    function checkAcountAndEmail($tendangnhap,$email){
+    function checkAcountAndEmail($tendangnhap, $email)
+    {
         $conn = $this->GetConn();
         $sql = "SELECT * FROM nguoidung WHERE nguoidung.tendangnhap = :tendangnhap AND nguoidung.email = :email";
         $query = $conn->prepare($sql);
         $query->bindParam(":email", $email);
-        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->bindParam(":tendangnhap", $tendangnhap);
         $query->execute();
         if ($query->rowCount() > 0) {
-            return true ;
+            return true;
         } else {
             return false;
         }
