@@ -114,11 +114,12 @@ $(document).ready(function() {
         var idThis = $(this).attr("id");
         var btnNhanvien = "btnNhanvien";
         var manhanvien = idThis.slice(btnNhanvien.length, idThis.length);
+        var btn_back_table_nhanvien = "btn_back_table_nhanvien";
 
-        const arrSetTTNV = ["cvdht_nhanvien", "ldnhan_nhanvien", "dgckh_nhanvien", "tocdo_nhanvien"];
-        const arrgetTTNVinTable = ["tongcv", "tongluong", "thd", "tocdo"];
-        const arrNhanVienBasic = JSON.parse(getNhanVienDetail(manhanvien));
         if (idThis.startsWith(btnNhanvien)) {
+            const arrSetTTNV = ["cvdht_nhanvien", "ldnhan_nhanvien", "dgckh_nhanvien", "tocdo_nhanvien"];
+            const arrgetTTNVinTable = ["tongcv", "tongluong", "thd", "tocdo"];
+            const arrNhanVienBasic = JSON.parse(getNhanVienDetail(manhanvien));
             $("#maNhanVien").val(manhanvien);
             $("#tenNhanVien").val(arrNhanVienBasic[0].tennguoidung);
             $("#soDienThoaiNhanVien").val(arrNhanVienBasic[0].sodienthoai);
@@ -133,12 +134,29 @@ $(document).ready(function() {
             $("#box_detail_nhanvien").slideDown();
             $("#box_overview_nhanvien").slideUp();
         }
+        if (idThis.startsWith(btn_back_table_nhanvien)) {
+            $("#box_detail_nhanvien").slideUp();
+            $("#box_overview_nhanvien").slideDown();
+        }
+        // ========================================== //
     });
-    $("#btn_back_table_nhanvien").click(function(e) {
-        $("#box_detail_nhanvien").slideUp();
-        $("#box_overview_nhanvien").slideDown();
-    });
+    // bill 
+    $("body").on("click", "button", function() {
+        var btn_xct = "btn_xct";
+        var back_table_congvc = "back_table_congvc";
+        idThis = $(this).attr("id");
+        if (idThis.startsWith(btn_xct)) {
+            var mahoadon = idThis.slice(btn_xct.length, idThis.length);
+            $("#conn_ts").html(showDetailBill(mahoadon));
+            $("#conn_ts").slideDown();
+            $("#table_congvc").slideUp();
+        }
+        if (idThis.startsWith(back_table_congvc)) {
+            $("#table_congvc").slideDown();
+            $("#conn_ts").slideUp();
+        }
 
+    });
     // user 
     $("#addUser").click(function(e) {
         var tendangnhap = $("#tendangnhap").val();
@@ -271,17 +289,17 @@ $(document).ready(function() {
             }
         }
     });
-    setInterval(() => {
-        var lastTime = $("#lastTime").html();
-        var matinnhan = $("#matinnhan").html();
-        if (lastTime) {
-            var result = check_newMess_admin(matinnhan, lastTime);
-            if (result) {
-                $("#lastTime").remove();
-                $("#ul_chat_box").append(result);
-            }
-        }
-    }, 1000);
+    // setInterval(() => {
+    //     var lastTime = $("#lastTime").html();
+    //     var matinnhan = $("#matinnhan").html();
+    //     if (lastTime) {
+    //         var result = check_newMess_admin(matinnhan, lastTime);
+    //         if (result) {
+    //             $("#lastTime").remove();
+    //             $("#ul_chat_box").append(result);
+    //         }
+    //     }
+    // }, 1000);
     $("body").on("click", "button", function(e) {
         // var idThis = $(this).attr("id");
         var timkiemUser = "timkiemUser";
@@ -295,13 +313,13 @@ $(document).ready(function() {
         });
 
     });
-    setInterval(() => {
-        var lidaudanhsach = $("#firtLi").html();
-        var result = getMessLastAdmin(lidaudanhsach);
-        if (result && lidaudanhsach) {
-            $("#dsChat").html(result);
-        }
-    }, 1000);
+    // setInterval(() => {
+    //     var lidaudanhsach = $("#firtLi").html();
+    //     var result = getMessLastAdmin(lidaudanhsach);
+    //     if (result && lidaudanhsach) {
+    //         $("#dsChat").html(result);
+    //     }
+    // }, 1000);
     // danh gia
     var manhanxet = "";
     $("body").on("click", "button", function(e) {
@@ -756,6 +774,23 @@ $(document).ready(function() {
             url: linkTuyetDoi + "ajax/getNhanVienDetail",
             data: { tendangnhap: tendangnhap },
             success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function showDetailBill(mahoadon) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/callBillDetailAdmin",
+            data: {
+                mahoadon: mahoadon
+            },
+            success: function(response) {
+                // alert(response);
                 result = response;
             }
         });

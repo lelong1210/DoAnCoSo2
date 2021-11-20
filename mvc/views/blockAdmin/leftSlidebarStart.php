@@ -27,6 +27,11 @@
         <a href="/www/admin/xemnhanvien" class="waves-effect"><i class="fas fa-eye"></i> <span>Xem Nhân Viên</span> </a>
         <!-- <a href="/www/admin/themnguoidung" class="waves-effect"><i class="fas fa-upload"></i> <span> Thêm Người Dùng </span> </a> -->
     </li>
+    <li class="menu-title">Hóa Đơn</li>
+    <li>
+        <a href="/www/admin/xemhoadon" class="waves-effect"><i class="fas fa-file-invoice-dollar"></i> <span>Xem Hóa Đơn</span> </a>
+        <!-- <a href="/www/admin/themnguoidung" class="waves-effect"><i class="fas fa-upload"></i> <span> Thêm Người Dùng </span> </a> -->
+    </li>
     <li class="menu-title">Cá Nhân</li>
     <li>
         <a href="/www/admin/quanlythongtin" class="waves-effect"><i class="fas fa-cog"></i><span> Quản Lý Thông Tin <span class="float-right menu-arrow"></span> </span></a>

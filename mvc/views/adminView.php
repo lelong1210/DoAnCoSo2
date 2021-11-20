@@ -62,6 +62,8 @@
                         require_once "pageAdmin/replyReviewPage.php";
                     }else if($data["title"] == "nhanvienViewPage"){
                         require_once "pageAdmin/nhanvienViewPage.php";
+                    }else if($data["title"] == "xemhoadon"){
+                        require_once "pageAdmin/xemhoadonViewPage.php";
                     }else{
                         require_once "pageAdmin/indexPage.php"; 
                     }
