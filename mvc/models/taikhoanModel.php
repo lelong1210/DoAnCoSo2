@@ -91,12 +91,12 @@ class taikhoanModel extends connectDB
     {
         try {
             $conn = $this->GetConn();
-            $sql = "UPDATE nguoidung SET tennguoidung = :tennguoidung,diachi = :diachi,sodienthoai = :sodienthoai,email = :email WHERE tendangnhap = :tendangnhap";
+            $sql = "UPDATE nguoidung SET tennguoidung = :tennguoidung,diachi = :diachi,sodienthoai = :sodienthoai WHERE tendangnhap = :tendangnhap";
             $query = $conn->prepare($sql);
             $query->bindParam(":tennguoidung", $tennguoidung);
             $query->bindParam(":diachi", $diachi);
             $query->bindParam(":sodienthoai", $sodienthoai);
-            $query->bindParam(":email", $email);
+            // $query->bindParam(":email", $email); ,email = :email
             $query->bindParam(":tendangnhap", $tendangnhap);
             $query->execute();
             if ($query->rowCount() > 0) {

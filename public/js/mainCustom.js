@@ -12,6 +12,7 @@ $(document).ready(function() {
         var email = $("#emailupdate").val();
         if (updateAcount(tennguoidung, diachi, sodienthoai, email)) {
             alert("Đã Cập Nhật Thông Tin");
+            location.reload();
         } else {
             alert("Sửa Không Thành Công");
         }
@@ -525,10 +526,10 @@ $(document).ready(function() {
     });
     // ==> quen mat khau 
     $("#guiMatKhauMoi").click(function(e) {
-        alert("Mail Đang Được Gửi Đi");
         var diachigui = $("#email_in_key").val();
         var tendangnhap = $("#ten_dang_nhap_key").val();
         if (checkAcountAndEmail(tendangnhap, diachigui)) {
+            alert("Mail Đang Được Gửi Đi");
             if (guiKeyXacNhan(diachigui)) {
                 alert("Đã Gửi Mail Bạn Vui Lòng Kiểm Tra Mail");
                 $("#box_quenMatKhau").slideUp();
@@ -964,6 +965,7 @@ $(document).ready(function() {
             success: function(response) {
                 if (response) {
                     alert("Đổi Mật Khẩu Thành Công");
+                    location.reload();
                 } else {
                     alert("Đổi Mật Khẩu Thất Bại");
                 }
