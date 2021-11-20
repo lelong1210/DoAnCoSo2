@@ -18,17 +18,39 @@ $(document).ready(function() {
         }
     });
     $("#updatePassword").click(function(e) {
-        if (checkChangePass()) {
-            let arr = ["matkhau_UP", "rematkhau_UP"];
-            var pass2 = $("#" + arr[1]).val();
-            changePass(pass2);
+        matkhau = $("#matkhau_UP").val();
+        nhaplaimatkhau = $("#rematkhau_UP").val();
+        if (checkStrongPass(matkhau)) {
+            if (comparePassword(matkhau, nhaplaimatkhau)) {
+                changePass(matkhau);
+            } else {
+                alert("Lỗi Trên Màn Hình");
+            }
         } else {
-            alert("Không Thể Thực Hiện");
+            alert("Lỗi Trên Màn Hình");
         }
     });
     $("input").keyup(function(e) {
-        var id = $(this).attr("id");
-        checkChangePass(id);
+        // var id = $(this).attr("id");
+        // checkChangePass(id);
+        let arrDk = ["matkhau_UP", "rematkhau_UP"];
+        if ($(this).attr('id') == arrDk[0]) {
+            var matkhau = $(this).val();
+            if (checkStrongPass(matkhau) >= 4) {
+                spanErr($(this).attr('id'), true, "");
+            } else {
+                spanErr($(this).attr('id'), false, "Mật Khẩu Phải Bao Gồm Chữ Số ,Viết Hoa ,Viết Thường,Ký Tự Đặc Biệt,Dài Từ 8 Ký Tự...");
+            }
+        }
+        if ($(this).attr('id') == arrDk[1]) {
+            var pass1 = $("#" + arrDk[0]).val();
+            var pass2 = $(this).val();
+            if (comparePassword(pass1, pass2)) {
+                spanErr($(this).attr('id'), true, "");
+            } else {
+                spanErr($(this).attr('id'), false, "Mật Khẩu Không Khớp...");
+            }
+        }
     });
     $("#saveAddressShipping").click(function(e) {
         var tentinh = $("#tentinh").val();
@@ -566,76 +588,6 @@ $(document).ready(function() {
             alert("Key Không Đúng Hoặc Quá Hạn");
         }
     });
-
-    function guiKeyXacNhan(diachigui, tendangnhap) {
-        var result = "";
-        $.ajax({
-            type: "post",
-            async: false,
-            url: linkTuyetDoi + "ajax/guiKeyXacNhan",
-            data: {
-                diachigui: diachigui,
-                tendangnhap: tendangnhap
-            },
-            success: function(response) {
-                alert(response);
-                result = response;
-            }
-        });
-        return result;
-    }
-
-    function checkKey(diachigui, keyxacnhan, tendangnhap) {
-        var result = "";
-        $.ajax({
-            type: "post",
-            async: false,
-            url: linkTuyetDoi + "ajax/checkKey",
-            data: {
-                diachigui: diachigui,
-                keyxacnhan: keyxacnhan,
-                tendangnhap: tendangnhap
-            },
-            success: function(response) {
-                result = response;
-            }
-        });
-        return result;
-    }
-
-    function checkAcountAndEmail(tendangnhap, diachigui) {
-        var result = "";
-        $.ajax({
-            type: "post",
-            async: false,
-            url: linkTuyetDoi + "ajax/checkAcountAndEmail",
-            data: {
-                diachigui: diachigui,
-                tendangnhap: tendangnhap
-            },
-            success: function(response) {
-                result = response;
-            }
-        });
-        return result;
-    }
-
-    function updatePasswordReset(tendangnhap, matkhau) {
-        var result = "";
-        $.ajax({
-            type: "post",
-            async: false,
-            url: linkTuyetDoi + "ajax/updatePasswordReset",
-            data: {
-                tendangnhap: tendangnhap,
-                matkhau: matkhau
-            },
-            success: function(response) {
-                result = response;
-            }
-        });
-        return result;
-    }
     // tesst
     $("#test").click(function(e) {});
     // ==> XEM chi tiet hoa don
@@ -1258,6 +1210,76 @@ $(document).ready(function() {
             data: {
                 mahd: mahd,
                 danhgiacuakhachhang: danhgiacuakhachhang,
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function guiKeyXacNhan(diachigui, tendangnhap) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/guiKeyXacNhan",
+            data: {
+                diachigui: diachigui,
+                tendangnhap: tendangnhap
+            },
+            success: function(response) {
+                alert(response);
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function checkKey(diachigui, keyxacnhan, tendangnhap) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/checkKey",
+            data: {
+                diachigui: diachigui,
+                keyxacnhan: keyxacnhan,
+                tendangnhap: tendangnhap
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function checkAcountAndEmail(tendangnhap, diachigui) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/checkAcountAndEmail",
+            data: {
+                diachigui: diachigui,
+                tendangnhap: tendangnhap
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function updatePasswordReset(tendangnhap, matkhau) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/updatePasswordReset",
+            data: {
+                tendangnhap: tendangnhap,
+                matkhau: matkhau
             },
             success: function(response) {
                 result = response;
