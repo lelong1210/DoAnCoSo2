@@ -530,7 +530,7 @@ $(document).ready(function() {
         var tendangnhap = $("#ten_dang_nhap_key").val();
         if (checkAcountAndEmail(tendangnhap, diachigui)) {
             alert("Mail Đang Được Gửi Đi");
-            if (guiKeyXacNhan(diachigui)) {
+            if (guiKeyXacNhan(diachigui, tendangnhap)) {
                 alert("Đã Gửi Mail Bạn Vui Lòng Kiểm Tra Mail");
                 $("#box_quenMatKhau").slideUp();
                 $("#box_doipass").slideDown();
@@ -547,7 +547,7 @@ $(document).ready(function() {
         var diachigui = $("#email_in_key").val();
         var matkhau = $("#matkhau_DK").val();
         var nhaplaimatkhau = $("#rematkhau_DK").val();
-        if (checkKey(diachigui, keyxacnhan)) {
+        if (checkKey(diachigui, keyxacnhan, tendangnhap)) {
             if (checkStrongPass(matkhau)) {
                 if (comparePassword(matkhau, nhaplaimatkhau)) {
                     if (updatePasswordReset(tendangnhap, matkhau)) {
@@ -567,13 +567,16 @@ $(document).ready(function() {
         }
     });
 
-    function guiKeyXacNhan(diachigui) {
+    function guiKeyXacNhan(diachigui, tendangnhap) {
         var result = "";
         $.ajax({
             type: "post",
             async: false,
             url: linkTuyetDoi + "ajax/guiKeyXacNhan",
-            data: { diachigui: diachigui },
+            data: {
+                diachigui: diachigui,
+                tendangnhap: tendangnhap
+            },
             success: function(response) {
                 alert(response);
                 result = response;
@@ -582,7 +585,7 @@ $(document).ready(function() {
         return result;
     }
 
-    function checkKey(diachigui, keyxacnhan) {
+    function checkKey(diachigui, keyxacnhan, tendangnhap) {
         var result = "";
         $.ajax({
             type: "post",
@@ -590,7 +593,8 @@ $(document).ready(function() {
             url: linkTuyetDoi + "ajax/checkKey",
             data: {
                 diachigui: diachigui,
-                keyxacnhan: keyxacnhan
+                keyxacnhan: keyxacnhan,
+                tendangnhap: tendangnhap
             },
             success: function(response) {
                 result = response;

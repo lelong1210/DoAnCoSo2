@@ -201,9 +201,10 @@ class ajax extends controller{
         $taikhoanModel = $this->call_model("taikhoanModel");
         $tieude = "key Xac Nhan";
         $diachigui = $_POST["diachigui"];
+        $tendangnhap = $_POST["tendangnhap"];
         $thoigiantao = date("Y-m-d H:i:s");
         $bodyconten = rand();
-        if($taikhoanModel->insertKey($diachigui,$bodyconten,$thoigiantao)){
+        if($taikhoanModel->insertKey($diachigui,$bodyconten,$thoigiantao,$tendangnhap)){
             echo $model->sendMailPass($tieude,$diachigui,$bodyconten);
         }
     }
@@ -219,7 +220,8 @@ class ajax extends controller{
         $taikhoanModel = $this->call_model("taikhoanModel");
         $keyxacnhan = $_POST["keyxacnhan"];
         $diachigui = $_POST["diachigui"];
-        echo $taikhoanModel->checkKey($diachigui,$keyxacnhan);
+        $tendangnhap = $_POST["tendangnhap"];
+        echo $taikhoanModel->checkKey($diachigui,$keyxacnhan,$tendangnhap);
     }
         // update pass reset
     function updatePasswordReset(){

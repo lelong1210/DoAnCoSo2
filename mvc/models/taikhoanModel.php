@@ -568,7 +568,7 @@ class taikhoanModel extends connectDB
     }   
     function getkKey($email,$keyxacnhan,$tendangnhap){
         $conn = $this->GetConn();
-        $sql = "SELECT resetpass.thoigiantao FROM resetpass WHERE resetpass.email = :email AND resetpass.keyxacnhan = :keyxacnhan AND resetpass.tendangnhap =:tendangnhap";
+        $sql = "SELECT resetpass.thoigiantao FROM resetpass WHERE resetpass.email = :email AND resetpass.keyxacnhan = :keyxacnhan AND tendangnhap = :tendangnhap";
         $query = $conn->prepare($sql);
         $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":email", $email);
@@ -592,8 +592,8 @@ class taikhoanModel extends connectDB
             return true;
         }
     }
-    function checkKey($email,$keyxacnhan){
-        $timeOfKey = $this->getkKey($email,$keyxacnhan);
+    function checkKey($email,$keyxacnhan,$tendangnhap){
+        $timeOfKey = $this->getkKey($email,$keyxacnhan,$tendangnhap);
         if($timeOfKey){
             $timeOfKey = json_decode($timeOfKey);
             $timeOfKey = array_values((array)$timeOfKey[0]);
