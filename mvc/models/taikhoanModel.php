@@ -551,10 +551,11 @@ class taikhoanModel extends connectDB
         $arr = array_keys((array) $arr[0]);
         return $arr;
     }
-    function insertKey($email,$keyxacnhan,$thoigiantao){
+    function insertKey($email,$keyxacnhan,$thoigiantao,$tendangnhap){
         $conn = $this->GetConn();
-        $sql = "INSERT INTO resetpass(email, keyxacnhan, thoigiantao) VALUES (:email, :keyxacnhan, :thoigiantao)";
+        $sql = "INSERT INTO resetpass(tendangnhap, email, keyxacnhan, thoigiantao) VALUES (:tendangnhap, :email, :keyxacnhan, :thoigiantao)";
         $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":email", $email);
         $query->bindParam(":keyxacnhan",$keyxacnhan);
         $query->bindParam(":thoigiantao", $thoigiantao);
@@ -565,10 +566,11 @@ class taikhoanModel extends connectDB
             return false;
         }  
     }   
-    function getkKey($email,$keyxacnhan){
+    function getkKey($email,$keyxacnhan,$tendangnhap){
         $conn = $this->GetConn();
-        $sql = "SELECT resetpass.thoigiantao FROM resetpass WHERE resetpass.email = :email AND resetpass.keyxacnhan = :keyxacnhan";
+        $sql = "SELECT resetpass.thoigiantao FROM resetpass WHERE resetpass.email = :email AND resetpass.keyxacnhan = :keyxacnhan AND resetpass.tendangnhap =:tendangnhap";
         $query = $conn->prepare($sql);
+        $query->bindParam(":tendangnhap", $tendangnhap);
         $query->bindParam(":email", $email);
         $query->bindParam(":keyxacnhan",$keyxacnhan);
         $query->execute();

@@ -5,7 +5,7 @@ class ajax extends controller{
         echo $ngaynhap; 
         echo "<br>".ceil(4.1);
     }
-        // tai khoan
+        // tai khoan //
     function dangky(){ 
         $tendangnhap = $_POST["tendangnhap"];
         $matkhau = $_POST["matkhau"];      
