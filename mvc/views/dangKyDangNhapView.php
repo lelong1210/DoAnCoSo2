@@ -56,8 +56,8 @@
                                                 <button id="dangnhap" type="button"><span>Đăng Nhập</span></button><br>
                                                 <hr>
                                                 <?php require_once "dangnhapMangxahoi/source_google.php"?>
-                                                <!-- <hr> -->
-                                                <!-- <a href="/www/sendmail">Quên Mật Khẩu</a> -->
+                                                <hr>
+                                                <a href="/www/quenmatkhau">Quên Mật Khẩu</a>
                                             </div>
                                         </form>
                                     </div>

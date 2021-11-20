@@ -551,5 +551,55 @@ class taikhoanModel extends connectDB
         $arr = array_keys((array) $arr[0]);
         return $arr;
     }
+    function insertKey($email,$keyxacnhan,$thoigiantao){
+        $conn = $this->GetConn();
+        $sql = "INSERT INTO resetpass(email, keyxacnhan, thoigiantao) VALUES (:email, :keyxacnhan, :thoigiantao)";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":email", $email);
+        $query->bindParam(":keyxacnhan",$keyxacnhan);
+        $query->bindParam(":thoigiantao", $thoigiantao);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            return true;
+        } else {
+            return false;
+        }  
+    }   
+    function getkKey($email,$keyxacnhan){
+        $conn = $this->GetConn();
+        $sql = "SELECT resetpass.thoigiantao FROM resetpass WHERE resetpass.email = :email AND resetpass.keyxacnhan = :keyxacnhan";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":email", $email);
+        $query->bindParam(":keyxacnhan",$keyxacnhan);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        } else {
+            return false;
+        }
+
+    }
+    function checkTimeOfkey($timeOfKey){
+        $timeNow = date("Y-m-d H:i:s");
+        $phut = strtotime($timeNow) - strtotime($timeOfKey);
+        $phut = ($phut/60);
+        if($phut > 5){
+            return false;
+        }else{
+            return true;
+        }
+    }
+    function checkKey($email,$keyxacnhan){
+        $timeOfKey = $this->getkKey($email,$keyxacnhan);
+        if($timeOfKey){
+            $timeOfKey = json_decode($timeOfKey);
+            $timeOfKey = array_values((array)$timeOfKey[0]);
+            $timeOfKey = $timeOfKey[0];
+            return $this->checkTimeOfkey($timeOfKey);
+        }else{
+            return false;
+        }
+    }
 }
 ?>

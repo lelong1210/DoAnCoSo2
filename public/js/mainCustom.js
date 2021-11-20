@@ -523,6 +523,65 @@ $(document).ready(function() {
         });
 
     });
+    // ==> quen mat khau 
+    $("#guiMatKhauMoi").click(function(e) {
+        var diachigui = $("#email_in_key").val();
+        if (guiKeyXacNhan(diachigui)) {
+            alert("Đã Gửi Mail Bạn Vui Lòng Kiểm Tra Mail");
+            $("#box_quenMatKhau").slideUp();
+            $("#box_doipass").slideDown();
+        } else {
+            alert("Gửi Mail Thất Bại");
+        }
+    });
+    $("#doimatkhau_reset").click(function(e) {
+        var keyxacnhan = $("#key_reset").val();
+        var diachigui = $("#email_in_key").val();
+        var matkhau = $("#matkhau_DK").val();
+        var nhaplaimatkhau = $("#rematkhau_DK").val();
+        alert(checkKey(diachigui, keyxacnhan));
+        // if (checkStrongPass(matkhau)) {
+        //     if (comparePassword(matkhau, nhaplaimatkhau)) {
+
+        //     } else {
+        //         alert("Lỗi Trên Màn Hình");
+        //     }
+        // } else {
+        //     alert("Lỗi Trên Màn Hình");
+        // }
+    });
+
+    function guiKeyXacNhan(diachigui) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/guiKeyXacNhan",
+            data: { diachigui: diachigui },
+            success: function(response) {
+                alert(response);
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function checkKey(diachigui, keyxacnhan) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/checkKey",
+            data: {
+                diachigui: diachigui,
+                keyxacnhan: keyxacnhan
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
     // tesst
     $("#test").click(function(e) {});
     // ==> XEM chi tiet hoa don

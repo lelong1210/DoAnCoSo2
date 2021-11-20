@@ -189,25 +189,29 @@ class ajax extends controller{
        $model->uploadImg();
     }
         // gui mail
-    function GuiMail(){
-        $model = $this->call_model("guiMailModel");
-        $tieude = "mat khau moi";//$_POST["tieude"];
-        $diachigui = "lequanglong12102k2@gmail.com";//$_POST["diachigui"];
-        $bodyconten = "ma ma ma";//$_POST["bodyconten"]; 
-        // $url = $_POST["linkanh"];
-        if($model->sendMailPass($tieude,$diachigui,$bodyconten)){
-            // if(unlink($url)){
-                echo "123-123" ;
-            // }else{
-                // echo false;
-            // }
-        }
-
-    }
     function selectProductWhereMasp(){
         $masp = $_POST["masp"];
         $model = $this->call_model("productModel");
         echo $model->SelectProductWhereMasp($masp);
+    }
+        // gui mail xac nhan 
+    function guiKeyXacNhan(){
+        $model = $this->call_model("guiMailModel");
+        $taikhoanModel = $this->call_model("taikhoanModel");
+        $tieude = "key Xac Nhan";
+        $diachigui = $_POST["diachigui"];
+        $thoigiantao = date("Y-m-d H:i:s");
+        $bodyconten = rand();
+        if($taikhoanModel->insertKey($diachigui,$bodyconten,$thoigiantao)){
+            echo $model->sendMailPass($tieude,$diachigui,$bodyconten);
+        }
+    }
+        // kiem tra key 
+    function checkKey(){
+        $taikhoanModel = $this->call_model("taikhoanModel");
+        $keyxacnhan = $_POST["keyxacnhan"];
+        $diachigui = $_POST["diachigui"];
+        echo $taikhoanModel->checkKey($diachigui,$keyxacnhan);
     }
     // san pham
     function addProduct(){
