@@ -601,5 +601,18 @@ class taikhoanModel extends connectDB
             return false;
         }
     }
+    function checkAcountAndEmail($tendangnhap,$email){
+        $conn = $this->GetConn();
+        $sql = "SELECT * FROM nguoidung WHERE nguoidung.tendangnhap = :tendangnhap AND nguoidung.email = :email";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":email", $email);
+        $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            return true ;
+        } else {
+            return false;
+        }
+    }
 }
 ?>

@@ -42,6 +42,7 @@
                                 <div class="login-form-container">
                                     <div class="login-register-form">
                                         <form method="post" class="text-center">
+                                            <input id="ten_dang_nhap_key" type="text" name="user-password" placeholder="Nhập Tên Đăng Nhập..." />
                                             <input id="email_in_key" type="text" name="user-password" placeholder="Nhập Thông Tin gmail..." />
                                             <div class="button-box">
                                                 <div class="login-toggle-btn">

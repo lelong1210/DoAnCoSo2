@@ -4,7 +4,6 @@
 <head>
     <?php require_once "block/head.php";
     if (isset($_GET['code'])) {
-        // require_once './mvc/vendor/autoload.php';
         require_once "./mvc/google/vendor/autoload.php";
         // init configuration
         $clientID = '892983593171-fue6cco6othcpsp4jdrrde3ctijtur1i.apps.googleusercontent.com';

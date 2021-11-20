@@ -5,7 +5,7 @@ class ajax extends controller{
         echo $ngaynhap; 
         echo "<br>".ceil(4.1);
     }
-    // tai khoan
+        // tai khoan
     function dangky(){ 
         $tendangnhap = $_POST["tendangnhap"];
         $matkhau = $_POST["matkhau"];      
@@ -194,6 +194,7 @@ class ajax extends controller{
         $model = $this->call_model("productModel");
         echo $model->SelectProductWhereMasp($masp);
     }
+    // ====> quên mật khẩu
         // gui mail xac nhan 
     function guiKeyXacNhan(){
         $model = $this->call_model("guiMailModel");
@@ -206,6 +207,13 @@ class ajax extends controller{
             echo $model->sendMailPass($tieude,$diachigui,$bodyconten);
         }
     }
+        // kiem tra ten dang nhap va email
+    function checkAcountAndEmail(){
+        $diachigui = $_POST["diachigui"];
+        $tendangnhap = $_POST["tendangnhap"];
+        $taikhoanModel = $this->call_model("taikhoanModel");
+        echo $taikhoanModel->checkAcountAndEmail($tendangnhap,$diachigui);
+    }
         // kiem tra key 
     function checkKey(){
         $taikhoanModel = $this->call_model("taikhoanModel");
@@ -213,7 +221,22 @@ class ajax extends controller{
         $diachigui = $_POST["diachigui"];
         echo $taikhoanModel->checkKey($diachigui,$keyxacnhan);
     }
-    // san pham
+        // update pass reset
+    function updatePasswordReset(){
+        $tendangnhap = $_POST["tendangnhap"];
+        $matkhau = $_POST["matkhau"];
+        
+        $matkhau = md5($matkhau);
+        
+        $model = $this->call_model("taikhoanModel");
+        if($model->updatePassword($tendangnhap,$matkhau)){
+            echo true;
+        }else{
+            echo false;
+        }
+    }
+    // ====> kết quên mật khẩu
+        // san pham
     function addProduct(){
         $tensp = $_POST["tensp"];
         $giatien = $_POST["giatien"];
@@ -253,7 +276,7 @@ class ajax extends controller{
         ]);
         $this->call_block_view_admin("jslink");
     }
-    // nhan vien
+        // nhan vien
     function setCongViec(){
         $macv = $_POST["macv"];
         $tendangnhap = $_SESSION["username"];
@@ -272,7 +295,7 @@ class ajax extends controller{
         echo $model->xacNhanXongCongViec($macv,$thoigianxongcongviec,$tiendo,$danhgiacuakhachhang);
     
     }
-    // luong nhan vien
+        // luong nhan vien
     function insertToLuong(){
         $soluong = $_POST["soluong"];
         $macv = $_POST["macv"];
@@ -281,13 +304,13 @@ class ajax extends controller{
         echo $model->insertToLuong($soluong,$macv,$thoigian);
 
     }
-    // cong viec 12 thang
+        // cong viec 12 thang
     function getCongViec12thang(){
         $tendangnhap = $_SESSION["username"];
         $model = $this->call_model("nhanvienModel");
         echo $model->countCongViec12thang($tendangnhap);
     }
-    // xem bill detail
+        // xem bill detail
     function callBillDetail(){
         $mahoadon = $_POST["mahoadon"];
         $model = $this->call_model("taikhoanModel");
@@ -315,7 +338,7 @@ class ajax extends controller{
             "arrDetail"=>$arr
         ]);
     }
-    // chat 
+        // chat 
     function chat(){
         $tendangnhap = $_SESSION["username"];
         $matinnhan = $_SESSION["username"]."-tn";
@@ -338,7 +361,7 @@ class ajax extends controller{
             ]);
         }
     }
-    // chat admin
+        // chat admin
     function getContentMess(){
         $matinnhan = $_POST["matinnhan"];
         $model = $this->call_model("chatModel");
@@ -397,12 +420,12 @@ class ajax extends controller{
         }
           
     }
-    // get to char js
+        // get to char js
     function getTongThu12Thang(){
         $model = $this->call_model("adminModel");
         echo $model->getDoanhThu12Thang();
     }
-    // reply review 
+        // reply review 
     function getReview(){
         $masp = $_POST["masp"];
         $model = $this->call_model("adminModel");

@@ -525,30 +525,45 @@ $(document).ready(function() {
     });
     // ==> quen mat khau 
     $("#guiMatKhauMoi").click(function(e) {
+        alert("Mail Đang Được Gửi Đi");
         var diachigui = $("#email_in_key").val();
-        if (guiKeyXacNhan(diachigui)) {
-            alert("Đã Gửi Mail Bạn Vui Lòng Kiểm Tra Mail");
-            $("#box_quenMatKhau").slideUp();
-            $("#box_doipass").slideDown();
+        var tendangnhap = $("#ten_dang_nhap_key").val();
+        if (checkAcountAndEmail(tendangnhap, diachigui)) {
+            if (guiKeyXacNhan(diachigui)) {
+                alert("Đã Gửi Mail Bạn Vui Lòng Kiểm Tra Mail");
+                $("#box_quenMatKhau").slideUp();
+                $("#box_doipass").slideDown();
+            } else {
+                alert("Gửi Mail Thất Bại");
+            }
         } else {
-            alert("Gửi Mail Thất Bại");
+            alert("Tên Đăng Nhập Hoặc Email Không Đúng !!!");
         }
     });
     $("#doimatkhau_reset").click(function(e) {
+        var tendangnhap = $("#ten_dang_nhap_key").val();
         var keyxacnhan = $("#key_reset").val();
         var diachigui = $("#email_in_key").val();
         var matkhau = $("#matkhau_DK").val();
         var nhaplaimatkhau = $("#rematkhau_DK").val();
-        alert(checkKey(diachigui, keyxacnhan));
-        // if (checkStrongPass(matkhau)) {
-        //     if (comparePassword(matkhau, nhaplaimatkhau)) {
-
-        //     } else {
-        //         alert("Lỗi Trên Màn Hình");
-        //     }
-        // } else {
-        //     alert("Lỗi Trên Màn Hình");
-        // }
+        if (checkKey(diachigui, keyxacnhan)) {
+            if (checkStrongPass(matkhau)) {
+                if (comparePassword(matkhau, nhaplaimatkhau)) {
+                    if (updatePasswordReset(tendangnhap, matkhau)) {
+                        alert("Đã Cập Nhật Mật Khẩu Mới");
+                        location.replace("/www/dndk");
+                    } else {
+                        alert("Cập Nhật Mật Khẩu Thất Bại");
+                    }
+                } else {
+                    alert("Lỗi Trên Màn Hình");
+                }
+            } else {
+                alert("Lỗi Trên Màn Hình");
+            }
+        } else {
+            alert("Key Không Đúng Hoặc Quá Hạn");
+        }
     });
 
     function guiKeyXacNhan(diachigui) {
@@ -575,6 +590,40 @@ $(document).ready(function() {
             data: {
                 diachigui: diachigui,
                 keyxacnhan: keyxacnhan
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function checkAcountAndEmail(tendangnhap, diachigui) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/checkAcountAndEmail",
+            data: {
+                diachigui: diachigui,
+                tendangnhap: tendangnhap
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
+    function updatePasswordReset(tendangnhap, matkhau) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/updatePasswordReset",
+            data: {
+                tendangnhap: tendangnhap,
+                matkhau: matkhau
             },
             success: function(response) {
                 result = response;
