@@ -289,17 +289,17 @@ $(document).ready(function() {
             }
         }
     });
-    // setInterval(() => {
-    //     var lastTime = $("#lastTime").html();
-    //     var matinnhan = $("#matinnhan").html();
-    //     if (lastTime) {
-    //         var result = check_newMess_admin(matinnhan, lastTime);
-    //         if (result) {
-    //             $("#lastTime").remove();
-    //             $("#ul_chat_box").append(result);
-    //         }
-    //     }
-    // }, 1000);
+    setInterval(() => {
+        var lastTime = $("#lastTime").html();
+        var matinnhan = $("#matinnhan").html();
+        if (lastTime) {
+            var result = check_newMess_admin(matinnhan, lastTime);
+            if (result) {
+                $("#lastTime").remove();
+                $("#ul_chat_box").append(result);
+            }
+        }
+    }, 1000);
     $("body").on("click", "button", function(e) {
         // var idThis = $(this).attr("id");
         var timkiemUser = "timkiemUser";
@@ -313,13 +313,13 @@ $(document).ready(function() {
         });
 
     });
-    // setInterval(() => {
-    //     var lidaudanhsach = $("#firtLi").html();
-    //     var result = getMessLastAdmin(lidaudanhsach);
-    //     if (result && lidaudanhsach) {
-    //         $("#dsChat").html(result);
-    //     }
-    // }, 1000);
+    setInterval(() => {
+        var lidaudanhsach = $("#firtLi").html();
+        var result = getMessLastAdmin(lidaudanhsach);
+        if (result && lidaudanhsach) {
+            $("#dsChat").html(result);
+        }
+    }, 1000);
     // danh gia
     var manhanxet = "";
     $("body").on("click", "button", function(e) {
