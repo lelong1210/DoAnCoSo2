@@ -1,7 +1,7 @@
 <?php
 $arrNdTk = $data["arrNdTk"];
 for ($j = 0; $j < count($arrNdTk); $j++) {
-    $arrChildTypeProduct = array_values((array) $arrNdTk[$j]); ?>
+    $arrChildTypeProduct = array_values((array) $arrNdTk[$j]);?>
     <div class="col-lg-4  col-md-6 col-sm-6 col-xs-6" data-aos="fade-up" data-aos-delay="400">
         <!-- Single Prodect -->
         <div class='product'>

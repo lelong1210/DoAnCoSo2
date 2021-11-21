@@ -614,6 +614,10 @@ $(document).ready(function() {
         var ndtimkiem = $("#whatSearch").val();
         location.assign(linkTuyetDoi + "timkiem/" + ndtimkiem);
     });
+    $("#startSearch_dt").click(function(e) {
+        var ndtimkiem = $("#whatSearch").val();
+        location.assign(linkTuyetDoi + "timkiem/" + ndtimkiem);
+    });
     var solanclickXemthemSanPham = 2;
     var gioihanxuathien = 6;
     $("#xemThemSanPham").click(function(e) {

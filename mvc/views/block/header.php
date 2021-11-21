@@ -85,7 +85,7 @@
                                 <div class="dropdown_search">
                                     <form class="action-form" action="#">
                                         <input class="form-control" placeholder="Nhập Thứ Bạn Muốn Tìm" type="text">
-                                        <button class="submit" type="button"><i class="icon-magnifier"></i></button>
+                                        <button class="submit" type="button" id="startSearch_dt"><i class="icon-magnifier"></i></button>
                                     </form>
                                 </div>
                             </div>

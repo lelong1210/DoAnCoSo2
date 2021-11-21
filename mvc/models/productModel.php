@@ -144,7 +144,7 @@ class productModel extends connectDB
         $ndtimkiem = "%".$ndtimkiem."%";
 
         $conn =  $this->GetConn();
-        $sql = "SELECT masp,tensp,giatien,loaisanpham,hangsx FROM sanpham 
+        $sql = "SELECT masp,tensp,giatien,loaisanpham,hangsx,linkduongdananh FROM sanpham 
         WHERE tensp LIKE :ndtimkiem 
             OR masp LIKE :ndtimkiem 
             OR hangsx LIKE :ndtimkiem 
