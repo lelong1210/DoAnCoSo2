@@ -620,13 +620,31 @@ $(document).ready(function() {
     });
     var solanclickXemthemSanPham = 2;
     var gioihanxuathien = 6;
-    $("#xemThemSanPham").click(function(e) {
-        var ndtimkiem = $("#params").html();
-        var batdau = gioihanxuathien * (solanclickXemthemSanPham - 1);
-        solanclickXemthemSanPham = solanclickXemthemSanPham + 1;
-        var data = getThemProductPT(ndtimkiem, batdau, gioihanxuathien);
-        $("#addViewProduct").append(data);
+    var option = 5;
+    $("body").on("click", "button", function(e) {
+        var idThis = $(this).attr("id");
+        if (idThis.startsWith("xemThemSanPham")) {
+            var ndtimkiem = $("#params").html();
+            var batdau = gioihanxuathien * (solanclickXemthemSanPham - 1);
+            solanclickXemthemSanPham = solanclickXemthemSanPham + 1;
+            var data = getThemProductPT(ndtimkiem, batdau, gioihanxuathien, option);
+            $("#addViewProduct").append(data);
+        }
     });
+    $("select").change(function(e) {
+        var idThis = $(this).attr("id");
+        var sapxep = "sapxep";
+        if (idThis.startsWith("sapxep")) {
+            ndtimkiem = idThis.slice(sapxep.length, idThis.length);
+            option = $(this).val();
+            var result = timkiemSapXep(ndtimkiem, 0, gioihanxuathien, option);
+            $("#box_nd_timkiem").html(result);
+            solanclickXemthemSanPham = 2;
+        }
+    });
+    // $("body").on("click", "button", function() {
+    //     alert("131312");
+    // });
     // ==> chat
     $("#gui").click(function(e) {
         var noidung = $("#ndTN").val();
@@ -651,6 +669,25 @@ $(document).ready(function() {
         }
     }, 1000);
     // functio support
+    function timkiemSapXep(ndtimkiem, batdau, gioihanhienthi, option) {
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/timkiemSapXep",
+            data: {
+                ndtimkiem: ndtimkiem,
+                batdau: batdau,
+                gioihanhienthi: gioihanhienthi,
+                option: option
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+
     function insertToTN(noidung) {
         var result = "";
         $.ajax({
@@ -681,7 +718,7 @@ $(document).ready(function() {
         return result;
     }
 
-    function getThemProductPT(ndtimkiem, batdau, gioihanhienthi) {
+    function getThemProductPT(ndtimkiem, batdau, gioihanhienthi, option) {
         var result = "";
         $.ajax({
             type: "post",
@@ -690,7 +727,8 @@ $(document).ready(function() {
             data: {
                 ndtimkiem: ndtimkiem,
                 batdau: batdau,
-                gioihanhienthi: gioihanhienthi
+                gioihanhienthi: gioihanhienthi,
+                option: option
             },
             success: function(response) {
                 result = response;

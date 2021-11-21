@@ -356,18 +356,6 @@ class ajax extends controller
             "arrBillDetail" => $arr
         ]);
     }
-    function getThemProductPT()
-    {
-        $ndtimkiem = $_POST["ndtimkiem"];
-        $batdau = $_POST["batdau"];
-        $gioihanhienthi = $_POST["gioihanhienthi"];
-        $model = $this->call_model("productModel");
-        $arrNdTk = json_decode($model->timkiem($ndtimkiem, $batdau, $gioihanhienthi));
-        $arrNdTk = array_values((array) $arrNdTk);
-        $this->call_view_page("ajaxPtPage", [
-            "arrNdTk" => $arrNdTk
-        ]);
-    }
     function callBillDetailNV()
     {
         $mahoadon = $_POST["mahoadon"];
@@ -376,6 +364,32 @@ class ajax extends controller
         $this->call_view_page_nhanvien("ajaxSeeDetailBill", [
             "arrDetail" => $arr
         ]);
+    }
+    // ajax tim kiem 
+    function getThemProductPT()
+    {
+        $ndtimkiem = $_POST["ndtimkiem"];
+        $batdau = $_POST["batdau"];
+        $option = $_POST["option"];
+        $gioihanhienthi = $_POST["gioihanhienthi"];
+        $model = $this->call_model("productModel");
+        $arrNdTk = json_decode($model->timkiemSapXep($ndtimkiem, $batdau, $gioihanhienthi,$option));
+        $arrNdTk = array_values((array) $arrNdTk);
+        $this->call_view_page("ajaxPtPage", [
+            "arrNdTk" => $arrNdTk
+        ]);
+    }
+    function timkiemSapXep(){
+        $ndtimkiem = $_POST["ndtimkiem"];
+        $batdau = $_POST["batdau"];
+        $gioihanhienthi = $_POST["gioihanhienthi"];
+        $option = $_POST["option"];
+        $model = $this->call_model("productModel");
+        $arrTypeProduct = json_decode($model->timkiemSapXep($ndtimkiem, $batdau, $gioihanhienthi,$option));
+        $arrTypeProduct = array_values((array) $arrTypeProduct);
+        $this->call_view_page("ajaxTimKiem", [
+            "arrTypeProduct" => $arrTypeProduct
+        ]);        
     }
     // chat 
     function chat()

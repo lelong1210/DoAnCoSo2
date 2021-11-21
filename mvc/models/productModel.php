@@ -162,6 +162,48 @@ class productModel extends connectDB
             return json_encode($result);
         }
     }
+    function timkiemSapXep($ndtimkiem,$batdau,$gioihanhienthi,$option){
+        $ndtimkiem = "%".$ndtimkiem."%";
+        $where = "";
+        //
+        $tiengiam = "ORDER BY sanpham.giatien DESC";
+        $tientang = "ORDER BY sanpham.giatien ASC";
+        $tentang = "ORDER BY sanpham.tensp ASC";
+        $tengiam = "ORDER BY sanpham.tensp DESC";
+
+        //
+        if($option == 1){
+            $where = $tiengiam;
+        }else if($option == 2){
+            $where = $tientang;
+        }else if($option == 3){
+            $where = $tentang;
+        }else if($option == 4){
+            $where = $tengiam;
+        }else{
+            $where = "";
+        }
+        //
+        $conn =  $this->GetConn();
+        $sql = "SELECT masp,tensp,giatien,loaisanpham,hangsx,linkduongdananh FROM sanpham 
+        WHERE tensp LIKE :ndtimkiem 
+            OR masp LIKE :ndtimkiem 
+            OR hangsx LIKE :ndtimkiem 
+            OR loaisanpham LIKE :ndtimkiem 
+            OR giatien LIKE :ndtimkiem
+            ".$where."
+            LIMIT :batdau,:gioihanhienthi   
+            ";
+        $query = $conn->prepare($sql);
+        $query->bindParam(":ndtimkiem",$ndtimkiem);
+        $query->bindParam(":batdau",$batdau,PDO::PARAM_INT);
+        $query->bindParam(":gioihanhienthi",$gioihanhienthi,PDO::PARAM_INT);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }        
+    }
     // chuoi hanh dong xu ly cua gio hang 
     function addProductInCart($masp, $soluong)
     {
