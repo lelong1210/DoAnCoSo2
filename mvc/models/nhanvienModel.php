@@ -206,5 +206,28 @@ class nhanvienModel extends connectDB{
         }
         return json_encode($arr);
     }
+    // admin
+    function getCongViecHoanThanhAdmin(){
+        $conn = $this->GetConn(); 
+        $sql = "SELECT congviec.macv ,hoadon.mahoadon, nguoidung.tennguoidung ,hoadon.diachigiaohang , hoadon.sodienthoaigh
+        FROM ((hoadon INNER JOIN congviec ON hoadon.mahoadon = congviec.mahoadon) 
+                      INNER JOIN nguoidung ON hoadon.tendangnhap = nguoidung.tendangnhap)
+        WHERE congviec.tiendo = 1";
+        $query = $conn->prepare($sql);
+        // $query->bindParam(":tendangnhap",$tendangnhap);
+        $query->execute();
+        if($query->rowCount() > 0){
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        }else{
+            return false;
+        }
+    }
+    function getTTNVinAdminBill(){
+        $sql = "SELECT nguoidung.tendangnhap , nguoidung.tennguoidung , congviec.macv
+        FROM congviec INNER JOIN nguoidung ON congviec.tendangnhap =  nguoidung.tendangnhap
+        WHERE congviec.mahoadon = 124";
+    }
 }
+
 ?>

@@ -44,5 +44,20 @@
             <td><?php echo $arrChild[5]?></td>
         </tr>
     </table>
+    <h2>Thông Tin Về Nhân Viên</h2>
+    <table class="table text-center" style="margin-top: 5%;"> 
+        <tr>
+            <th>Mã Nhân Viên</th>
+            <th>Tên Nhân Viên</th>
+            <th>Email</th>
+            <th>Số Điện Thoại</th>
+        </tr>
+        <tr>
+            <td><?php echo $arrChild[9]?></td>
+            <td><?php echo $arrChild[10]?></td>
+            <td><?php echo $arrChild[11]?></td>
+            <td><?php echo $arrChild[12]?></td>
+        </tr>
+    </table>
     <button id="back_table_congvc" class="btn btn-success">Quay Lại</button>
 <?php } ?>

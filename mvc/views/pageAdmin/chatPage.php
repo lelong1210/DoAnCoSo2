@@ -37,9 +37,9 @@
                                                 <i class="fa fa-search"></i>
                                             </button>
                                         </div> -->
-                                        <button type="button" class="btn btn-info" id="timkiemUser">
+                                        <!-- <button type="button" class="btn btn-info" id="timkiemUser">
                                                 <i class="fa fa-search"></i>
-                                            </button>
+                                            </button> -->
                                     </div>
                                 </div>
                                 <ul class="users" id="dsChat">

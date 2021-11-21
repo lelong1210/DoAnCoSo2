@@ -27,7 +27,7 @@
                 <div class="card">
                     <div class="card-body">
                         <?php
-                        $arr = json_decode($data["nhanVienModel"]->getCongViecHoanThanh("nhanvien"));
+                        $arr = json_decode($data["nhanVienModel"]->getCongViecHoanThanhAdmin());
                         if($arr){
                             $arrTitle = ["Mã Công Việc","Mã Hóa Đơn","Tên Khách Hàng","Địa Chỉ Công Việc","Số Điện Thoại","Xem Chi Tiết"];
                         ?>

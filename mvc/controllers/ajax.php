@@ -476,10 +476,10 @@ class ajax extends controller
     {
         $mahoadon = $_POST["mahoadon"];
         $model = $this->call_model("taikhoanModel");
-        $arr = $model->getDetailBill($_SESSION["username"], $mahoadon);
+        $arr = $model->getDetailBillAdmin($mahoadon);
         $this->call_view_page_admin("ajaxDetailBill", [
             "arrDetail" => $arr
-        ]);
+        ]); 
     }
     // get to char js
     function getTongThu12Thang()

@@ -308,6 +308,27 @@ class taikhoanModel extends connectDB
             return false;
         }
     }
+    // detail bill admin
+    function getDetailBillAdmin($mahoadon)
+    {
+        $conn = $this->GetConn();
+        $sql = "SELECT sanpham.tensp,sanpham.giatien,sanpham.linkduongdananh,chitiethoadon.soluong,hoadon.diachigiaohang,hoadon.sodienthoaigh,congviec.tiendo,hoadon.phiship,hoadon.hinhthucthanhtoan,nguoidung.tendangnhap ,nguoidung.tennguoidung,nguoidung.email,nguoidung.sodienthoai
+                FROM ((((congviec   INNER JOIN hoadon ON congviec.mahoadon = hoadon.mahoadon ) 
+                                    INNER JOIN chitiethoadon ON hoadon.mahoadon = chitiethoadon.mahoadon) 
+                                    INNER JOIN sanpham ON chitiethoadon.masp = sanpham.masp)
+                                    INNER JOIN nguoidung ON congviec.tendangnhap = nguoidung.tendangnhap )
+                WHERE hoadon.mahoadon = :mahoadon";
+        $query = $conn->prepare($sql);
+        // $query->bindParam(":tendangnhap", $tendangnhap);
+        $query->bindParam(":mahoadon", $mahoadon);
+        $query->execute();
+        if ($query->rowCount() > 0) {
+            $result = $query->fetchAll(PDO::FETCH_ASSOC);
+            return json_encode($result);
+        } else {
+            return false;
+        }
+    }
     // insert Into congviec
     function insertCongViec($makhachhang, $mahoadon, $diadiemcongviec, $sdtKh, $danhancv, $tiendo)
     {
