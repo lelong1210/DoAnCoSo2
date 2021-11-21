@@ -521,3 +521,4 @@ class ajax extends controller
         }
     }
 }
+?>

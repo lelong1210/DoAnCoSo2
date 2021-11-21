@@ -100,9 +100,9 @@
                                 </ul>
                             </div>
                             <!-- Single Wedge End -->
-                            <a href="#offcanvas-cart" class="header-action-btn header-action-btn-cart offcanvas-toggle pr-0">
+                            <a href="/www/giohang" class="header-action-btn header-action-btn-cart pr-0">
                                 <i class="icon-handbag"></i>
-                                <span class="header-action-num">01</span>
+                                <span class="header-action-num" id="soluongtronggiohang_dt"><?php if(isset($_SESSION["soluongtronggiohang"])) {echo $_SESSION["soluongtronggiohang"];} ?></span>
                                 <!-- <span class="cart-amount">€30.00</span> -->
                             </a>
                             <a href="#offcanvas-mobile-menu" class="header-action-btn header-action-btn-menu offcanvas-toggle d-lg-none">

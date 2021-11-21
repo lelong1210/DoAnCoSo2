@@ -1046,6 +1046,7 @@ $(document).ready(function() {
 
     function updateScreenSoLuongTrongGioHang(option) {
         $("#soluongtronggiohang").html(option);
+        $("#soluongtronggiohang_dt").html(option);
     }
 
     function getSessionSoLuongTrongGioHang() {

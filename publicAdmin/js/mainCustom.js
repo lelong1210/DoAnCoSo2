@@ -300,19 +300,19 @@ $(document).ready(function() {
             }
         }
     }, 1000);
-    $("body").on("click", "button", function(e) {
-        // var idThis = $(this).attr("id");
-        var timkiemUser = "timkiemUser";
-        var ids = "list_chat0";
-        $("li").each(function(param) {
-            idThis = $(this).attr("id");
-            if (idThis == ids) {
-                alert($(this).attr("id"));
-                $(this).remove();
-            }
-        });
+    // $("body").on("click", "button", function(e) {
+    //     // var idThis = $(this).attr("id");
+    //     var timkiemUser = "timkiemUser";
+    //     var ids = "list_chat0";
+    //     $("li").each(function(param) {
+    //         idThis = $(this).attr("id");
+    //         if (idThis == ids) {
+    //             alert($(this).attr("id"));
+    //             $(this).remove();
+    //         }
+    //     });
 
-    });
+    // });
     setInterval(() => {
         var lidaudanhsach = $("#firtLi").html();
         var result = getMessLastAdmin(lidaudanhsach);

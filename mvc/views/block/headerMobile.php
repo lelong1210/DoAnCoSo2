@@ -13,9 +13,9 @@
                         <li><a href="/www/camera">Camera</a></li>
                     </ul>
                 </li>
-                <li><a href="#"><span class="menu-text">Tin Tức</span></a></li>
-                <li><a href="#"><span class="menu-text">Hỏi Đáp</span></a></li>
-                <li><a href="contact.html">Liên Hệ</a></li>
+                <!-- <li><a href="#"><span class="menu-text">Tin Tức</span></a></li> -->
+                <li><a href="/www/hoidap"><span class="menu-text">Hỏi Đáp</span></a></li>
+                <li><a href="/www/lienhe">Liên Hệ</a></li>
             </ul>
         </div>
     </div>
