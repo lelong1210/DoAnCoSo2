@@ -94,7 +94,7 @@
                                 <button class="dropdown-toggle header-action-btn" data-bs-toggle="dropdown"><i
                                         class="icon-user"></i></button>
                                 <ul class="dropdown-menu dropdown-menu-right">
-                                    <li><a class="dropdown-item" href="./taikhoan">Tài Khoản</a></li>
+                                    <li><a class="dropdown-item" href="/www/taikhoan">Tài Khoản</a></li>
                                     <!-- <li><a class="dropdown-item" href="checkout.html">Checkout</a></li>
                                     <li><a class="dropdown-item" href="login.html">Sign in</a></li> -->
                                 </ul>
