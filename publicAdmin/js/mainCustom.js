@@ -106,9 +106,9 @@ $(document).ready(function() {
             alert("các ô không được để trống !!! ");
         }
     });
-    $("#btn_delete").click(function(e) {
-        $("#content_page").html(appendTableProduct());
-    });
+    // $("#btn_delete").click(function(e) {
+    //     $("#content_page").html(appendTableProduct());
+    // });
     // admin into nhan vien 
     $("body").on("click", "button", function() {
         var idThis = $(this).attr("id");
@@ -751,20 +751,20 @@ $(document).ready(function() {
         return result;
     }
 
-    function appendTableProduct() {
-        var result = "";
-        $.ajax({
-            type: "post",
-            async: false,
-            url: linkTuyetDoi + "ajax/appendTableProduct",
-            // data: "data",
-            // dataType: "dataType",
-            success: function(response) {
-                result = response;
-            }
-        });
-        return result;
-    }
+    // function appendTableProduct() {
+    //     var result = "";
+    //     $.ajax({
+    //         type: "post",
+    //         async: false,
+    //         url: linkTuyetDoi + "ajax/appendTableProduct",
+    //         // data: "data",
+    //         // dataType: "dataType",
+    //         success: function(response) {
+    //             result = response;
+    //         }
+    //     });
+    //     return result;
+    // }
 
     function getNhanVienDetail(tendangnhap) {
         var result = "";

@@ -302,14 +302,14 @@ class ajax extends controller
         $model = $this->call_model("productModel");
         echo $model->deleteProduct($masp);
     }
-    function appendTableProduct()
-    {
-        $model = $this->call_model("productModel");
-        $this->call_view_page_admin("ajaxProduct_Up_De", [
-            "productModel" => $model
-        ]);
-        $this->call_block_view_admin("jslink");
-    }
+    // function appendTableProduct()
+    // {
+    //     $model = $this->call_model("productModel");
+    //     $this->call_view_page_admin("ajaxProduct_Up_De", [
+    //         "productModel" => $model
+    //     ]);
+    //     $this->call_block_view_admin("jslink");
+    // }
     // nhan vien
     function setCongViec()
     {
