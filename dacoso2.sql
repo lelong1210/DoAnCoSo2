@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 18, 2021 at 05:50 PM
+-- Generation Time: Nov 23, 2021 at 04:45 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -32,6 +32,14 @@ CREATE TABLE `chitietgiohang` (
   `magiohang` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `soluong` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `chitietgiohang`
+--
+
+INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
+(4, 'lequanglong12102k2@gmail.com-gh', 1),
+(8, 'lequanglong12102k2@gmail.com-gh', 1);
 
 -- --------------------------------------------------------
 
@@ -66,7 +74,17 @@ INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
 (1, 1, 135),
 (1, 8, 136),
 (1, 2, 137),
-(1, 71, 138);
+(1, 71, 138),
+(1, 2, 139),
+(2, 2, 140),
+(2, 3, 140),
+(2, 4, 140),
+(1, 2, 141),
+(1, 8, 142),
+(1, 2, 143),
+(2, 3, 144),
+(2, 1, 145),
+(1, 2, 146);
 
 -- --------------------------------------------------------
 
@@ -92,7 +110,22 @@ INSERT INTO `chitiettinnhan` (`machitiettinnhan`, `matinnhan`, `noidung`, `thoig
 (212, 'lequanglong12102k2@gmail.com-tn', 'hehe', '2021-11-15 09:20:54', 'lequanglong12102k2@gmail.com'),
 (213, 'lelong12102k2@gmail.com-tn', '123123', '2021-11-15 09:21:24', 'lelong12102k2@gmail.com'),
 (214, 'lelong12102k2@gmail.com-tn', '456456', '2021-11-15 09:21:33', 'lql'),
-(215, 'lequanglong12102k2@gmail.com-tn', 'hehe', '2021-11-16 10:29:10', 'lql');
+(215, 'lequanglong12102k2@gmail.com-tn', 'hehe', '2021-11-16 10:29:10', 'lql'),
+(216, 'lqlong.20it1@vku.udn.vn-tn', 'xin chào admin', '2021-11-19 12:09:34', 'lqlong.20it1@vku.udn.vn'),
+(217, 'lqlong.20it1@vku.udn.vn-tn', 'xin chào bạn', '2021-11-19 12:09:45', 'lql'),
+(218, 'lequanglong12102k2@gmail.com-tn', 'chao ad ', '2021-11-21 10:23:38', 'lequanglong12102k2@gmail.com'),
+(219, 'lequanglong12102k2@gmail.com-tn', 'ad chao lai', '2021-11-21 10:24:20', 'admin'),
+(220, 'lequanglong12102k2@gmail.com-tn', 'kaka', '2021-11-21 10:24:28', 'lequanglong12102k2@gmail.com'),
+(221, 'khachhang-tn', 'chào ad', '2021-11-21 14:52:22', 'khachhang'),
+(222, 'khachhang-tn', 'chào hehe', '2021-11-21 14:55:14', 'lql'),
+(223, 'hyh-tn', 'ad ơi', '2021-11-21 14:56:47', 'hyh'),
+(224, 'hyh-tn', 'ad nghe ạ', '2021-11-21 14:56:57', 'lql'),
+(225, 'hyh-tn', 'kaka', '2021-11-21 14:58:46', 'admin'),
+(226, 'heoyeuhac@gmail.com-tn', 'kaka', '2021-11-21 15:07:26', 'heoyeuhac@gmail.com'),
+(227, 'heoyeuhac@gmail.com-tn', 'kaak lại', '2021-11-21 15:07:34', 'lql'),
+(228, 'heoyeuhac@gmail.com-tn', '-.-', '2021-11-21 15:07:40', 'heoyeuhac@gmail.com'),
+(229, 'heoyeuhac@gmail.com-tn', ':>', '2021-11-21 15:07:45', 'lql'),
+(230, 'heoyeuhac@gmail.com-tn', 'hehe', '2021-11-21 15:07:53', 'lql');
 
 -- --------------------------------------------------------
 
@@ -130,10 +163,18 @@ INSERT INTO `congviec` (`macv`, `tendangnhap`, `makhachhang`, `mahoadon`, `diadi
 (83, 'nhanvien', 'lequanglong12102k2@gmail.com', 132, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-17 23:47:45', '2021-11-17 23:47:52', 1, 3, 1),
 (84, 'nhanvien', 'lequanglong12102k2@gmail.com', 133, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-17 23:47:44', '2021-11-17 23:47:53', 1, 4, 1),
 (85, 'nhanvien', 'lequanglong12102k2@gmail.com', 134, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-17 23:47:46', '2021-11-17 23:47:55', 1, 5, 1),
-(86, 'nhanvien', 'lequanglong12102k2@gmail.com', 135, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-18 22:29:05', '2021-11-18 22:29:11', 1, 0, 1),
+(86, 'nhanvien', 'lequanglong12102k2@gmail.com', 135, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-18 22:29:05', '2021-11-18 22:29:11', 1, 5, 1),
 (87, 'nhanvien', 'lequanglong12102k2@gmail.com', 136, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-18 09:37:25', '2021-11-18 09:37:30', 1, 5, 1),
 (88, 'nhanvien', 'khachhang', 137, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-18 22:29:06', '2021-11-18 22:29:13', 1, 0, 1),
-(89, 'nhanvien', 'khachhang', 138, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-18 22:29:08', '2021-11-18 22:29:14', 1, 0, 1);
+(89, 'nhanvien', 'khachhang', 138, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '2021-11-18 22:29:08', '2021-11-18 22:29:14', 1, 0, 1),
+(90, 'nhanvien', 'lqlong.20it1@vku.udn.vn', 139, ' Tỉnh Vĩnh Phúc - Huyện Tam Đảo - Xã Đạo Trù ', '0932319212', '2021-11-19 11:45:02', '2021-11-19 11:45:26', 1, 0, 1),
+(91, 'nhanvien', 'lequanglong12102k2@gmail.com', 140, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-19 20:45:53', '2021-11-19 20:46:15', 1, 4, 1),
+(92, 'nhanvien2', 'lequanglong12102k2@gmail.com', 141, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-20 23:27:53', '2021-11-20 23:27:58', 1, 4, 1),
+(93, 'nhanvien2', 'lequanglong12102k2@gmail.com', 142, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-20 23:27:55', '2021-11-20 23:28:00', 1, 5, 1),
+(94, 'nhanvien3', 'lequanglong12102k2@gmail.com', 143, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-21 10:11:19', '2021-11-21 10:11:24', 1, 0, 1),
+(95, NULL, 'khachhang', 144, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
+(96, NULL, 'khachhang', 145, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
+(97, NULL, 'lequanglong12102k2@gmail.com', 146, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -253,7 +294,15 @@ INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`, `s
 (135, 'lequanglong12102k2@gmail.com', '2021-11-17', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
 (136, 'lequanglong12102k2@gmail.com', '2021-11-18', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
 (137, 'khachhang', '2021-11-18', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
-(138, 'khachhang', '2021-11-18', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1);
+(138, 'khachhang', '2021-11-18', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(139, 'lqlong.20it1@vku.udn.vn', '2021-11-19', ' Tỉnh Vĩnh Phúc - Huyện Tam Đảo - Xã Đạo Trù ', '0932319212', '90000.00', 0),
+(140, 'lequanglong12102k2@gmail.com', '2021-11-19', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(141, 'lequanglong12102k2@gmail.com', '2021-11-19', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(142, 'lequanglong12102k2@gmail.com', '2021-11-19', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(143, 'lequanglong12102k2@gmail.com', '2021-11-19', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(144, 'khachhang', '2021-11-21', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
+(145, 'khachhang', '2021-11-21', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
+(146, 'lequanglong12102k2@gmail.com', '2021-11-21', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0);
 
 -- --------------------------------------------------------
 
@@ -284,7 +333,11 @@ INSERT INTO `luong` (`soluong`, `maluong`, `macv`, `ngaynhanluong`) VALUES
 ('210000.00', 23, 83, '2021-11-17 23:48:59'),
 ('250000.00', 24, 84, '2021-11-17 23:49:02'),
 ('250000.00', 25, 85, '2021-11-17 23:49:04'),
-('250000.00', 26, 87, '2021-11-18 09:37:58');
+('250000.00', 26, 87, '2021-11-18 09:37:58'),
+('200000.00', 27, 86, '2021-11-20 23:09:07'),
+('200000.00', 28, 92, '2021-11-20 23:28:54'),
+('200000.00', 29, 93, '2021-11-20 23:28:57'),
+('200000.00', 30, 94, '2021-11-21 10:11:33');
 
 -- --------------------------------------------------------
 
@@ -309,7 +362,7 @@ CREATE TABLE `nguoidung` (
 
 INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`, `email`, `matkhau`, `ngaythamgia`, `quyen`) VALUES
 ('abaftdon’t', NULL, NULL, NULL, 'roma61@hotmail.com', '5280e11f2452aac5aa85177aaf4b3b98', '2021-11-06', 0),
-('admin', 'Admin 2', NULL, '2121', 'admin@gmeil.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-14', 1),
+('admin', 'Admin 2', NULL, '2121', 'lequanglong12102k2@gmail.com', '1cb4cde11502fc72922bc859d70352e9', '2021-11-14', 1),
 ('arcanaabounding', 'LE QUANG LONG TK', 'QUANG BINH', '0904349823', 'marisol39@hotmail.com', '4297f44b13955235245b2497399d7a93', '2021-11-06', 0),
 ('arousedrecruit', NULL, NULL, NULL, 'salma87@hotmail.com', 'a794275722896cac20ecdd29928a3b9d', '2021-11-06', 0),
 ('banneravailable', NULL, NULL, NULL, 'marjolaine42@hotmail.com', '9c80d885bcf55293e8b999ea404ff2b2', '2021-11-06', 0),
@@ -336,22 +389,25 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('guardsmangently', NULL, NULL, NULL, 'brennan63@yahoo.com', '4ec2dee1dccd30e9715451a74c11c47f', '2021-11-06', 0),
 ('habitcocktail', NULL, NULL, NULL, 'serena_leffler@gmail.com', '9a126c56bf636e1e2c43b475c1f3586b', '2021-11-06', 0),
 ('heardoptimistic', NULL, NULL, NULL, 'waldo95@hotmail.com', '8a2ed788e464bd2fb38c5ea80878c3d0', '2021-11-06', 0),
-('heoyeuhac@gmail.com', ' PHẠM THỊ NGỌC', '', '', 'heoyeuhac@gmail.com', '', '2021-11-13', 0),
+('heoyeuhac@gmail.com', 'LE QUANG LONG', 'QUANG BINH', '0904349823', 'heoyeuhac@gmail.com', '', '2021-11-21', 0),
 ('holygarden', NULL, NULL, NULL, 'dan_balistreri@hotmail.com', '06339ba785761735001aee34a9e3f2fc', '2021-11-06', 0),
 ('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', '2021-11-06', 0),
+('hyh', 'PHẠM THỊ NGỌC ><', 'MỸ THỦY', '0909273912', 'heoyeuhac@gmail.com', '980274bc5d77eaff3610a9ee9f0ce909', '2021-11-20', 0),
+('hyh1', NULL, NULL, NULL, 'heoyeuhac@gmail.com', '1cb4cde11502fc72922bc859d70352e9', '2021-11-20', 0),
 ('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', '2021-11-06', 0),
 ('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', '2021-11-06', 0),
-('khachhang', 'LÊ THỊ HẰNG', 'SEN THỦY', '0903439812', 'lql@gmail.com', '4297f44b13955235245b2497399d7a93', '2021-11-07', 0),
+('khachhang', 'LÊ THỊ HẰNG', 'SEN THỦY', '0903439812', 'lql123@gmail.com', '4297f44b13955235245b2497399d7a93', '2021-11-07', 0),
 ('lelong12102k2@gmail.com', 'LE QUANG LONG', '', '', 'lelong12102k2@gmail.com', '', '2021-11-13', 0),
 ('lequanglong12102k2@gmail.com', 'LONG LE', '', '', 'lequanglong12102k2@gmail.com', '', '2021-11-13', 0),
 ('longtermplayoffs', 'PHẠM THỊ HẰNG', 'QUANG BINH', '0904349823', 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', '2021-11-06', 0),
-('lql', 'Admin 1', 'sen thuy quang binh', '09942134', 'test123@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-06', 1),
+('lql', 'Admin123', 'sen thuy quang binh', '099421341', 'lequanglong12102k2@gmail.com', '980274bc5d77eaff3610a9ee9f0ce909', '2021-11-06', 1),
 ('lqlong.20it1@vku.udn.vn', 'LE QUANG LONG IT', '', '', 'lqlong.20it1@vku.udn.vn', '', '2021-11-13', 0),
 ('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', '2021-11-06', 0),
 ('motorwayscold', NULL, NULL, NULL, 'mariah77@gmail.com', 'cddf86a9055a2e2168733a07ef284cb6', '2021-11-06', 0),
-('nhanvien', 'nhân viên con vịt', 'SEN -  THỦY', '0921212', 'lql@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-08', 2),
-('nhanvien1', NULL, NULL, NULL, 'nhanvien@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-09', 2),
-('nhanvien2', NULL, NULL, NULL, 'nhanvien2@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-16', 2),
+('nhanvien', 'nhân viên 678', 'SEN -  THỦY', '0904948301', 'lql@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-08', 2),
+('nhanvien1', 'nhân viên 123', NULL, NULL, 'nhanvien@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-09', 2),
+('nhanvien2', 'nhân viên 345', 'senthuy', '0903921133', 'nhanvien2@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-16', 2),
+('nhanvien3', NULL, NULL, NULL, 'nhanvien3@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-21', 2),
 ('obeysamoan', NULL, NULL, NULL, 'billy.labadie51@hotmail.com', '0169ad0e211c01528d9384235bc255a3', '2021-11-06', 0),
 ('procedureraise', NULL, NULL, NULL, 'brennan.heathcote@yahoo.com', 'cb936b342fcf543799254520b9d13515', '2021-11-06', 0),
 ('repelreprimand', NULL, NULL, NULL, 'leola_crooks93@hotmail.com', '76b30526c3489faf93241895c44a45c7', '2021-11-06', 0),
@@ -387,11 +443,40 @@ CREATE TABLE `phanhoidanhgia` (
 
 INSERT INTO `phanhoidanhgia` (`maphanhoi`, `manhanxet`, `tendangnhap`, `noidungphanhoi`, `ngayphanhoi`) VALUES
 (8, 25, 'lql', 'cảm ơn quý khách', '2021-11-18'),
-(9, 26, 'lql', 'rất cảm ơn quý khách', '2021-11-18'),
+(9, 26, 'lql', 'cảm ơn rất nhiều ', '2021-11-19'),
 (10, 28, 'lql', 'Cảm ơn quý khách ', '2021-11-18'),
 (12, 25, 'admin', 'cảm ơn rất nhiều', '2021-11-18'),
 (13, 29, 'lql', 'cảm ơn quý khách đã phản hồi', '2021-11-18'),
 (14, 26, 'admin', 'cam on vi da tin tuong trung toi', '2021-11-18');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `resetpass`
+--
+
+CREATE TABLE `resetpass` (
+  `id` int(11) NOT NULL,
+  `tendangnhap` varchar(30) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `keyxacnhan` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `thoigiantao` datetime NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `resetpass`
+--
+
+INSERT INTO `resetpass` (`id`, `tendangnhap`, `email`, `keyxacnhan`, `thoigiantao`) VALUES
+(12, 'hyh', 'heoyeuhac@gmail.com', '46484573', '2021-11-20 21:47:01'),
+(13, 'hyh', 'heoyeuhac@gmail.com', '1059970686', '2021-11-20 21:48:00'),
+(14, 'hyh', 'heoyeuhac@gmail.com', '1723256227', '2021-11-20 21:50:23'),
+(15, 'hyh1', 'heoyeuhac@gmail.com', '1132287148', '2021-11-20 21:50:25'),
+(16, 'hyh', 'heoyeuhac@gmail.com', '2129379538', '2021-11-20 21:53:13'),
+(17, 'hyh1', 'heoyeuhac@gmail.com', '902968570', '2021-11-20 21:53:16'),
+(18, 'hyh', 'heoyeuhac@gmail.com', '1487480979', '2021-11-20 21:59:59'),
+(19, 'lql', 'lequanglong12102k2@gmail.com', '500033255', '2021-11-21 14:54:16'),
+(20, 'admin', 'lequanglong12102k2@gmail.com', '666105722', '2021-11-21 14:57:39');
 
 -- --------------------------------------------------------
 
@@ -467,7 +552,6 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 (59, 'Ring Floodlight Cam, Camera ngoài trời tích hợp đèn LED siêu sáng, chuông báo động', '2490000.00', 'camera', 'Wyze Cam Outdoor – Camera an ninh ngoài trời, dùng pin tới 6 tháng mỗi lần sạc** Chống nước chuẩn IP65, nói chuyện 2 chiều Thiết kế nhỏ gọn, hoàn toàn không dây, dễ lắp đặt Video chất lượng Full HD 1080p, hình ảnh sắc nét cả ngày lẫn đêm Theo dõi, quan sát ngôi nhà và nhận thông báo trên điện thoại dù ở bất kỳ đâu Hỗ trợ lưu cả trên cloud miễn phí và lưu cục bộ với thẻ microSD Ghi lại video chuyển động vào thẻ nhớ ngay cả khi không có Internet Tương thích Google Home và Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/07/Ring-Floodlight-Camera-247x296.jpg', 'Ring Floodlight', 0, 99, '2021-10-01'),
 (60, 'Amazon Cloud Cam, camera thông minh Full HD 1080p, hỗ trợ Alexa, lưu Cloud Amazon miễn phí', '3990000.00', 'camera', 'Wyze Cam Outdoor – Camera an ninh ngoài trời, dùng pin tới 6 tháng mỗi lần sạc** Chống nước chuẩn IP65, nói chuyện 2 chiều Thiết kế nhỏ gọn, hoàn toàn không dây, dễ lắp đặt Video chất lượng Full HD 1080p, hình ảnh sắc nét cả ngày lẫn đêm Theo dõi, quan sát ngôi nhà và nhận thông báo trên điện thoại dù ở bất kỳ đâu Hỗ trợ lưu cả trên cloud miễn phí và lưu cục bộ với thẻ microSD Ghi lại video chuyển động vào thẻ nhớ ngay cả khi không có Internet Tương thích Google Home và Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2019/09/Amazon-Cloud-Cam-247x296.jpg', 'Amazon', 0, 99, '2021-10-01'),
 (61, 'Camera 2K Eufy Security Camera T84001W1, tích hợp còi báo động\r\n				', '998000.00', 'camera', 'Eufy indoor T8400 2K Tích hợp công nghệ AI tiên tiến AI thông minh có thể nhận diện giữa người và thú cưng, tránh đưa ra các cảnh báo sai, làm phiền công việc của chủ nhà. Bên cạnh đó, nó cũng sẽ tự đánh giá mức độ tiếng ồn phát ra, khi thấy cần thiết nó sẽ thông báo cho bạn ngay.', 'https://product.hstatic.net/200000295422/product/new_0256_t8400--800x800_1200x_32d40ade32c4435aacf27fe3cdb28dc9_grande.jpg', 'eufy ', 0, 99, '2021-10-01'),
-(62, 'Camera 360 Xiaomi Mi Home Security 360 2K  - Phân phối chính hãng\r\n				', '1190000.00', 'camera', 'Camera ezviz C6W xoay 360 độ CS-C6W Với diện mạo khác biệt, camera EZVIZ C6W sẽ giúp bạn bảo vệ ngôi nhà theo phong cách hoàn toàn mới: không chỉ chuyên nghiệp và an toàn mà còn thật Kool. Thanh lịch và linh hoạt, camera Wifi C6W là tất cả sự bảo vệ bạn cần cho một ngôi nhà rộng lớn. Camera ghi lại ở độ phân giải 2K và tự động theo dõi chuyển động ở chế độ thu phóng gấp 4 lần để đảm bảo không có gì thoát khỏi tầm mắt.', 'https://product.hstatic.net/200000295422/product/new_0266_camera-thong-minh-xiaomi-ptz-phien-ban-2k_425a0143ea1947768bcf3037b4a91186_grande.jpg', 'Xiaomi', 0, 99, '2021-10-01'),
 (63, 'Camera ezviz C6W xoay 360 độ\r\n				', '1349000.00', 'camera', 'Camera ezviz C6W xoay 360 độ CS-C6W Với diện mạo khác biệt, camera EZVIZ C6W sẽ giúp bạn bảo vệ ngôi nhà theo phong cách hoàn toàn mới: không chỉ chuyên nghiệp và an toàn mà còn thật Kool. Thanh lịch và linh hoạt, camera Wifi C6W là tất cả sự bảo vệ bạn cần cho một ngôi nhà rộng lớn. Camera ghi lại ở độ phân giải 2K và tự động theo dõi chuyển động ở chế độ thu phóng gấp 4 lần để đảm bảo không có gì thoát khỏi tầm mắt.', 'https://product.hstatic.net/200000295422/product/new_0317_6411-camera-wife-ezviz-c6w-4mp-quay-quet-360-do-11_16b53885fd444b4cae7ec2cf17c5fe95_grande.jpg', 'ezviz', 0, 99, '2021-10-01'),
 (64, 'Máy Báo Thời Tiết', '10000000.00', 'mayhutbui', 'đây là sản phẩm very good good good', 'http://localhost/www/uploads/123.jpeg', 'xaomil', 0, 99, '2021-10-29'),
 (65, 'camera 3x', '93021231.00', 'camera', 'có thể quay liên tục 30 năm mà k bị hỏng', 'http://localhost/www/uploads/camera.jpg', 'xaomii', 1, 8912, '2021-10-29'),
@@ -498,7 +582,7 @@ CREATE TABLE `thongtinnhanxetsanpham` (
 
 INSERT INTO `thongtinnhanxetsanpham` (`manhanxet`, `masp`, `tendangnhap`, `noidung`, `sosao`, `ngaydanggia`) VALUES
 (25, 8, 'lelong12102k2@gmail.com', 'kaka', 4, '2021-11-18'),
-(26, 8, 'lequanglong12102k2@gmail.com', 'rất oke', 5, '2021-11-18'),
+(26, 8, 'lequanglong12102k2@gmail.com', 'rất oke', 5, '2021-11-19'),
 (27, 6, 'khachhang', 'dùng rất tiện', 5, '2021-11-18'),
 (28, 71, 'khachhang', 'Dùng Rất Chuyên Nghiệp', 5, '2021-11-18'),
 (29, 5, 'lelong12102k2@gmail.com', 'dùng rất tốt', 5, '2021-11-18');
@@ -543,8 +627,12 @@ CREATE TABLE `tinnhan` (
 --
 
 INSERT INTO `tinnhan` (`matinnhan`, `tendangnhap`, `thoigiannhancuoicung`) VALUES
+('heoyeuhac@gmail.com-tn', 'heoyeuhac@gmail.com', '2021-11-21 15:07:53'),
+('hyh-tn', 'hyh', '2021-11-21 14:58:46'),
+('khachhang-tn', 'khachhang', '2021-11-21 14:55:14'),
 ('lelong12102k2@gmail.com-tn', 'lelong12102k2@gmail.com', '2021-11-15 09:21:33'),
-('lequanglong12102k2@gmail.com-tn', 'lequanglong12102k2@gmail.com', '2021-11-16 10:29:10');
+('lequanglong12102k2@gmail.com-tn', 'lequanglong12102k2@gmail.com', '2021-11-21 10:24:28'),
+('lqlong.20it1@vku.udn.vn-tn', 'lqlong.20it1@vku.udn.vn', '2021-11-19 12:09:45');
 
 --
 -- Indexes for dumped tables
@@ -625,6 +713,12 @@ ALTER TABLE `phanhoidanhgia`
   ADD PRIMARY KEY (`maphanhoi`);
 
 --
+-- Indexes for table `resetpass`
+--
+ALTER TABLE `resetpass`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `sanpham`
 --
 ALTER TABLE `sanpham`
@@ -658,13 +752,13 @@ ALTER TABLE `tinnhan`
 -- AUTO_INCREMENT for table `chitiettinnhan`
 --
 ALTER TABLE `chitiettinnhan`
-  MODIFY `machitiettinnhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=216;
+  MODIFY `machitiettinnhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
 
 --
 -- AUTO_INCREMENT for table `congviec`
 --
 ALTER TABLE `congviec`
-  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
+  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
 
 --
 -- AUTO_INCREMENT for table `diachigiaohang`
@@ -682,13 +776,13 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=139;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
 
 --
 -- AUTO_INCREMENT for table `luong`
 --
 ALTER TABLE `luong`
-  MODIFY `maluong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `maluong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `phanhoidanhgia`
@@ -697,10 +791,16 @@ ALTER TABLE `phanhoidanhgia`
   MODIFY `maphanhoi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 
 --
+-- AUTO_INCREMENT for table `resetpass`
+--
+ALTER TABLE `resetpass`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+
+--
 -- AUTO_INCREMENT for table `sanpham`
 --
 ALTER TABLE `sanpham`
-  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=82;
+  MODIFY `masp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- AUTO_INCREMENT for table `thongtinnhanxetsanpham`
