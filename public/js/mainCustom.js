@@ -642,9 +642,6 @@ $(document).ready(function() {
             solanclickXemthemSanPham = 2;
         }
     });
-    // $("body").on("click", "button", function() {
-    //     alert("131312");
-    // });
     // ==> chat
     $("#gui").click(function(e) {
         var noidung = $("#ndTN").val();
