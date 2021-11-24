@@ -47,29 +47,34 @@
                                         </div>
                                         <?php
                                                 $arrPh = json_decode($data["productModel"]->selectPhDGia($arrChild[4]));
-                                                for ($j = 0; $j < count($arrPh); $j++) { $arrChildPh = array_values((array)$arrPh[$j]);
-                                ?>
-                                            <div class="single-review child-review" style="margin-bottom: 6%;">
-                                                <div class="review-img">
-                                                    <img src="/www/public/images/logo/logo.jpg" style="width: 50px;" alt="" />
-                                                </div>
-                                                <div class="review-content">
-                                                    <div class="review-top-wrap">
-                                                        <div class="review-left">
-                                                            <div class="review-name">
-                                                                <h4><?php echo $arrChildPh[0]?></h4>
+                                                if ($arrPh) {
+                                                    for ($j = 0; $j < count($arrPh); $j++) {
+                                                        $arrChildPh = array_values((array) $arrPh[$j]);
+                                                        ?>
+                                                <div class="single-review child-review" style="margin-bottom: 6%;">
+                                                    <div class="review-img">
+                                                        <img src="/www/public/images/logo/logo.jpg" style="width: 50px;" alt="" />
+                                                    </div>
+                                                    <div class="review-content">
+                                                        <div class="review-top-wrap">
+                                                            <div class="review-left">
+                                                                <div class="review-name">
+                                                                    <h4><?php echo $arrChildPh[0] ?></h4>
+                                                                </div>
+                                                            </div>
+                                                            <div class="review-left">
+                                                                | <?php echo $arrChildPh[2] ?>
                                                             </div>
                                                         </div>
-                                                        <div class="review-left">
-                                                           | <?php echo $arrChildPh[2]?>
+                                                        <div class="review-bottom">
+                                                            <p><?php echo $arrChildPh[1] ?></p>
                                                         </div>
                                                     </div>
-                                                    <div class="review-bottom">
-                                                        <p><?php echo $arrChildPh[1]?></p>
-                                                    </div>
                                                 </div>
-                                            </div>
-                                        <?php } ?>
+                                        <?php
+                                                    }
+                                                }
+                                                ?>
                                     </div>
                                 <?php } ?>
                             </div>
