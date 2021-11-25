@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 23, 2021 at 04:45 AM
+-- Generation Time: Nov 25, 2021 at 02:17 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -84,7 +84,8 @@ INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
 (1, 2, 143),
 (2, 3, 144),
 (2, 1, 145),
-(1, 2, 146);
+(1, 2, 146),
+(1, 12, 147);
 
 -- --------------------------------------------------------
 
@@ -125,7 +126,9 @@ INSERT INTO `chitiettinnhan` (`machitiettinnhan`, `matinnhan`, `noidung`, `thoig
 (227, 'heoyeuhac@gmail.com-tn', 'kaak lại', '2021-11-21 15:07:34', 'lql'),
 (228, 'heoyeuhac@gmail.com-tn', '-.-', '2021-11-21 15:07:40', 'heoyeuhac@gmail.com'),
 (229, 'heoyeuhac@gmail.com-tn', ':>', '2021-11-21 15:07:45', 'lql'),
-(230, 'heoyeuhac@gmail.com-tn', 'hehe', '2021-11-21 15:07:53', 'lql');
+(230, 'heoyeuhac@gmail.com-tn', 'hehe', '2021-11-21 15:07:53', 'lql'),
+(231, 'lequanglong12102k2@gmail.com-tn', 'chao ad', '2021-11-24 09:45:26', 'lequanglong12102k2@gmail.com'),
+(232, 'lequanglong12102k2@gmail.com-tn', 'chao lại', '2021-11-24 09:46:50', 'lql');
 
 -- --------------------------------------------------------
 
@@ -174,7 +177,8 @@ INSERT INTO `congviec` (`macv`, `tendangnhap`, `makhachhang`, `mahoadon`, `diadi
 (94, 'nhanvien3', 'lequanglong12102k2@gmail.com', 143, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-21 10:11:19', '2021-11-21 10:11:24', 1, 0, 1),
 (95, NULL, 'khachhang', 144, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
 (96, NULL, 'khachhang', 145, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
-(97, NULL, 'lequanglong12102k2@gmail.com', 146, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0);
+(97, NULL, 'lequanglong12102k2@gmail.com', 146, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
+(98, 'nhanvien', 'lequanglong12102k2@gmail.com', 147, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-24 09:44:07', '2021-11-24 09:44:11', 1, 5, 1);
 
 -- --------------------------------------------------------
 
@@ -302,7 +306,8 @@ INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`, `s
 (143, 'lequanglong12102k2@gmail.com', '2021-11-19', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
 (144, 'khachhang', '2021-11-21', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
 (145, 'khachhang', '2021-11-21', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
-(146, 'lequanglong12102k2@gmail.com', '2021-11-21', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0);
+(146, 'lequanglong12102k2@gmail.com', '2021-11-21', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(147, 'lequanglong12102k2@gmail.com', '2021-11-24', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1);
 
 -- --------------------------------------------------------
 
@@ -337,7 +342,8 @@ INSERT INTO `luong` (`soluong`, `maluong`, `macv`, `ngaynhanluong`) VALUES
 ('200000.00', 27, 86, '2021-11-20 23:09:07'),
 ('200000.00', 28, 92, '2021-11-20 23:28:54'),
 ('200000.00', 29, 93, '2021-11-20 23:28:57'),
-('200000.00', 30, 94, '2021-11-21 10:11:33');
+('200000.00', 30, 94, '2021-11-21 10:11:33'),
+('250000.00', 31, 98, '2021-11-24 09:44:48');
 
 -- --------------------------------------------------------
 
@@ -447,7 +453,8 @@ INSERT INTO `phanhoidanhgia` (`maphanhoi`, `manhanxet`, `tendangnhap`, `noidungp
 (10, 28, 'lql', 'Cảm ơn quý khách ', '2021-11-18'),
 (12, 25, 'admin', 'cảm ơn rất nhiều', '2021-11-18'),
 (13, 29, 'lql', 'cảm ơn quý khách đã phản hồi', '2021-11-18'),
-(14, 26, 'admin', 'cam on vi da tin tuong trung toi', '2021-11-18');
+(14, 26, 'admin', 'cam on vi da tin tuong trung toi', '2021-11-18'),
+(15, 30, 'lql', 'cảm ơn quý khách đã đánh giá', '2021-11-24');
 
 -- --------------------------------------------------------
 
@@ -585,7 +592,8 @@ INSERT INTO `thongtinnhanxetsanpham` (`manhanxet`, `masp`, `tendangnhap`, `noidu
 (26, 8, 'lequanglong12102k2@gmail.com', 'rất oke', 5, '2021-11-19'),
 (27, 6, 'khachhang', 'dùng rất tiện', 5, '2021-11-18'),
 (28, 71, 'khachhang', 'Dùng Rất Chuyên Nghiệp', 5, '2021-11-18'),
-(29, 5, 'lelong12102k2@gmail.com', 'dùng rất tốt', 5, '2021-11-18');
+(29, 5, 'lelong12102k2@gmail.com', 'dùng rất tốt', 5, '2021-11-18'),
+(30, 12, 'lequanglong12102k2@gmail.com', 'oke', 5, '2021-11-24');
 
 -- --------------------------------------------------------
 
@@ -631,7 +639,7 @@ INSERT INTO `tinnhan` (`matinnhan`, `tendangnhap`, `thoigiannhancuoicung`) VALUE
 ('hyh-tn', 'hyh', '2021-11-21 14:58:46'),
 ('khachhang-tn', 'khachhang', '2021-11-21 14:55:14'),
 ('lelong12102k2@gmail.com-tn', 'lelong12102k2@gmail.com', '2021-11-15 09:21:33'),
-('lequanglong12102k2@gmail.com-tn', 'lequanglong12102k2@gmail.com', '2021-11-21 10:24:28'),
+('lequanglong12102k2@gmail.com-tn', 'lequanglong12102k2@gmail.com', '2021-11-24 09:46:50'),
 ('lqlong.20it1@vku.udn.vn-tn', 'lqlong.20it1@vku.udn.vn', '2021-11-19 12:09:45');
 
 --
@@ -752,13 +760,13 @@ ALTER TABLE `tinnhan`
 -- AUTO_INCREMENT for table `chitiettinnhan`
 --
 ALTER TABLE `chitiettinnhan`
-  MODIFY `machitiettinnhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=231;
+  MODIFY `machitiettinnhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
 
 --
 -- AUTO_INCREMENT for table `congviec`
 --
 ALTER TABLE `congviec`
-  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=98;
+  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
 
 --
 -- AUTO_INCREMENT for table `diachigiaohang`
@@ -776,19 +784,19 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=147;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
 
 --
 -- AUTO_INCREMENT for table `luong`
 --
 ALTER TABLE `luong`
-  MODIFY `maluong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `maluong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `phanhoidanhgia`
 --
 ALTER TABLE `phanhoidanhgia`
-  MODIFY `maphanhoi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `maphanhoi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT for table `resetpass`
@@ -806,7 +814,7 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `thongtinnhanxetsanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
-  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=30;
+  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `thumucsanpham`
