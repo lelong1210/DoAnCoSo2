@@ -516,7 +516,7 @@ $(document).ready(function() {
             contentType: false,
             processData: false,
             success: function(response) {
-                alert(response);
+                // alert(response);
                 if (response != 0) {
                     alert('file uploaded');
                 } else {
@@ -541,7 +541,7 @@ $(document).ready(function() {
                 linkanh: linkanh
             },
             success: function(response) {
-                alert(response);
+                // alert(response);
             }
         });
 
