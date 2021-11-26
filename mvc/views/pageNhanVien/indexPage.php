@@ -46,7 +46,8 @@
         $arrCV = json_decode($data["nhanVienModel"]->getTongCV($_SESSION["username"]));
         /// cv 1 thang
         ?>
-        <?php if ($arrCV) { $count = count($arrCV);?>
+        <?php if ($arrCV) {
+            $count = count($arrCV); ?>
             <div class="row text-center">
                 <div class="col-sm-6 col-xl-3">
                     <div class="card">
@@ -56,18 +57,18 @@
                                     <p class="font-16"><?php echo $arrBoxTT[0] ?> <i class="fas fa-flag-checkered"></i></p>
                                     <h4 class="text-info pt-1 mb-0">
                                         <?php
-                                            if ($arrAverage >= 0 && $arrAverage <= 1) {
-                                                echo $arrDGSpeed[0];
-                                            } else if ($arrAverage > 1 && $arrAverage <= 2) {
-                                                echo $arrDGSpeed[1];
-                                            } else if ($arrAverage > 2 && $arrAverage <= 3) {
-                                                echo $arrDGSpeed[2];
-                                            } else if ($arrAverage > 3 && $arrAverage <= 5) {
-                                                echo $arrDGSpeed[3];
-                                            } else {
-                                                echo $arrDGSpeed[4];
-                                            }
-                                            ?>
+                                        if ($arrAverage >= 0 && $arrAverage <= 1) {
+                                            echo $arrDGSpeed[0];
+                                        } else if ($arrAverage > 1 && $arrAverage <= 2) {
+                                            echo $arrDGSpeed[1];
+                                        } else if ($arrAverage > 2 && $arrAverage <= 3) {
+                                            echo $arrDGSpeed[2];
+                                        } else if ($arrAverage > 3 && $arrAverage <= 5) {
+                                            echo $arrDGSpeed[3];
+                                        } else {
+                                            echo $arrDGSpeed[4];
+                                        }
+                                        ?>
                                     </h4>
                                 </div>
                                 <!-- <div class="col-lg-6">
@@ -85,18 +86,18 @@
                                     <p class="font-16"><?php echo $arrBoxTT[1] ?> <i class="far fa-laugh-beam"></i></p>
                                     <h4 class="text-info pt-1 mb-0">
                                         <?php
-                                            if ($arrThD >= 0 && $arrThD <= 1) {
-                                                echo $arrDGpV[4];
-                                            } else if ($arrThD > 1 && $arrThD <= 2) {
-                                                echo $arrDGpV[3];
-                                            } else if ($arrThD > 2 && $arrThD <= 3) {
-                                                echo $arrDGpV[2];
-                                            } else if ($arrThD > 3 && $arrThD <= 4) {
-                                                echo $arrDGpV[1];
-                                            } else {
-                                                echo $arrDGpV[0];
-                                            }
-                                            ?>
+                                        if ($arrThD >= 0 && $arrThD <= 1) {
+                                            echo $arrDGpV[4];
+                                        } else if ($arrThD > 1 && $arrThD <= 2) {
+                                            echo $arrDGpV[3];
+                                        } else if ($arrThD > 2 && $arrThD <= 3) {
+                                            echo $arrDGpV[2];
+                                        } else if ($arrThD > 3 && $arrThD <= 4) {
+                                            echo $arrDGpV[1];
+                                        } else {
+                                            echo $arrDGpV[0];
+                                        }
+                                        ?>
                                     </h4>
                                 </div>
                                 <!-- <div class="col-lg-6">
@@ -146,10 +147,17 @@
                         </div>
                     </div>
                 </div>
+                <div class="col-xl-4 text-center">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="/www/public/images/logo/logo.jpg" alt="" m>
+                        </div>
+                    </div>
+                </div>
             </div>
-        <?php }else{?>
+        <?php } else { ?>
             <h2>Tạm Chưa Có Thống Kê</h2>
-        <?php }?>
+        <?php } ?>
 
         <!-- end top-Contant -->
 

@@ -1269,7 +1269,7 @@ $(document).ready(function() {
                 tendangnhap: tendangnhap
             },
             success: function(response) {
-                alert(response);
+                // alert(response);
                 result = response;
             }
         });

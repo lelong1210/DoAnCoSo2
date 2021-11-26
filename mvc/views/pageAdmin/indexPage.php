@@ -96,7 +96,7 @@
                     <div class="card-body">
                         <canvas id="bd_doanhthu" style="width:100%;max-width:6000px"></canvas>
                     </div>
-                </div>
+                </div> 
             </div>
             <div class="col-xl-4 text-center">
                 <div class="card">
