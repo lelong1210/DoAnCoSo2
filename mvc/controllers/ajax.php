@@ -305,7 +305,7 @@ class ajax extends controller
     {
         $masp = $_POST["masp"];
         $model = $this->call_model("productModel");
-        echo $model->deleteProduct($masp);
+        echo $model->deleteProduct($masp); 
     }
     // function appendTableProduct()
     // {

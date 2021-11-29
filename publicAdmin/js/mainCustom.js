@@ -62,8 +62,8 @@ $(document).ready(function() {
         }
 
         // xoa giao dien
-        var $row = $(this).closest("tr");
-        $($row).remove();
+        // var $row = $(this).closest("tr");
+        // $($row).remove();
     });
     $("#btn_back").click(function(e) {
         $(".table_overView").slideDown();
@@ -640,6 +640,7 @@ $(document).ready(function() {
             data: { masp: masp },
             success: function(response) {
                 result = response;
+                // alert(result);
             },
         });
         return result;

@@ -108,17 +108,8 @@ class productModel extends connectDB
             echo $e->getMessage();
         }
     }
-    function deleteProduct($masp){
-        $conn =  $this->GetConn();
-        $sql = "DELETE FROM sanpham WHERE masp = :masp";
-        $query = $conn->prepare($sql);
-        $query->bindParam(":masp",$masp);
-        $query->execute();
-        if ($query->rowCount() > 0) {
-            return true;
-        }else{
-            return false;
-        }         
+    function deleteProduct($masp){         
+        echo $this->updateSanPham($masp,0);
     }
     function timkiemAll($ndtimkiem){
         $ndtimkiem = "%".$ndtimkiem."%";
