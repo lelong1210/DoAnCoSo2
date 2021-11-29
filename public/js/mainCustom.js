@@ -185,8 +185,13 @@ $(document).ready(function() {
         if (idThis.startsWith(nameBtnMH)) {
             if (checkLogin()) {
                 var masp = idThis.slice(5, idThis.length);
-                var soluong = 1
+                var soluong = 1;
+                var txt = getsoluongSp(masp);
+                const obj = JSON.parse(txt);
+                var soluongsp = obj[0].soluongsp;
+                soluongsp = soluongsp - 1 ;
                 if (addProductInCart(masp, soluong)) {
+                    updateSanPham(masp,soluongsp);
                     alert("Đã Thêm Vào Giỏ Hàng");
                     updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
                 } else {
@@ -200,7 +205,7 @@ $(document).ready(function() {
             if (checkLogin()) {
                 const arr = [];
                 var masp = idThis.slice(btnPayLive.length, idThis.length);
-                var text = { "masp": masp, "soluong": 1 };
+                var text = { "masp": masp, "soluong": 1 , "paylive":1 };
                 arr.push(text);
                 if (setProductToPayment(arr)) {
                     location.assign(linkTuyetDoi + "thanhtoan");
@@ -239,7 +244,7 @@ $(document).ready(function() {
                 var idCheked = $(this).attr("id");
                 var masp = idCheked.slice(chonsp.length, idCheked.length);
                 var soluong = ($("#" + valueOfInput + masp).html());
-                text = { "masp": masp, "soluong": soluong };
+                text = { "masp": masp, "soluong": soluong ,"paylive":0 };
                 arr.push(text);
             }
         });
@@ -257,6 +262,12 @@ $(document).ready(function() {
         const arr = getThongTinDonHangInThanhToan();
         if (arr) {
             if (arr[4] == 1) {
+                if(arr[5] == 1){
+                    var masp = $("#masp").html();
+                    var soluongsp = $("#soluongsp").html();
+                    soluongsp = soluongsp - 1;
+                    updateSanPham(masp,soluongsp);
+                }
                 if (tienHanhthanhToan(arr)) {
                     alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm ^_^ !!!");
                     updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
@@ -274,6 +285,12 @@ $(document).ready(function() {
         const arr = getThongTinDonHangInThanhToan();
         if (arr) {
             if (arr[4] == 0) {
+                if(arr[5] == 1){
+                    var masp = $("#masp").html();
+                    var soluongsp = $("#soluongsp").html();
+                    soluongsp = soluongsp - 1;
+                    updateSanPham(masp,soluongsp);
+                }
                 if (tienHanhthanhToan(arr)) {
                     alert("Cảm Ơn Quý Khách Đã Mua Sản Phẩm ^_^ !!!");
                     updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
@@ -740,6 +757,7 @@ $(document).ready(function() {
         var cboxgh = "cboxgh";
         var checkboxTT = "checkboxTT";
         var idTT = "";
+        var spanPaylive = $("#spanPaylive").html();
         $(":checkbox").each(function() {
             var idThis = $(this).attr("id");
             if ($(this).is(":checked") && idThis.startsWith(cboxgh)) {
@@ -766,7 +784,7 @@ $(document).ready(function() {
                     arr.push(text);
                 }
             });
-            const result = [diachigiaohang, arr, sdtgh, phiship, idTT];
+            const result = [diachigiaohang, arr, sdtgh, phiship, idTT,spanPaylive];
             return result;
         } else {
             return false;
@@ -1320,6 +1338,21 @@ $(document).ready(function() {
             data: {
                 tendangnhap: tendangnhap,
                 matkhau: matkhau
+            },
+            success: function(response) {
+                result = response;
+            }
+        });
+        return result;
+    }
+    function getsoluongSp(masp){
+        var result = "";
+        $.ajax({
+            type: "post",
+            async: false,
+            url: linkTuyetDoi + "ajax/getsoluongSp",
+            data: {
+                masp: masp
             },
             success: function(response) {
                 result = response;

@@ -32,8 +32,12 @@
                     <p class="quickview-para m-0"><?php echo $arr[4] ?></p>
                     <div class="pro-details-quality">
                         <div class="pro-details-cart">
-                            <button class="btn btn-lg btn-success" id='<?php echo "btnPayLive" . $arr[0] ?>'>  Mua Hàng</button>
-                            <button class="add-cart btn btn-primary btn-hover-primary" id='<?php echo "btnMH" . $arr[0] ?>'> Thêm Vào Giỏ Hàng</button>
+                            <?php if ($arr[8] != 0) { ?>
+                                <button class="btn btn-lg btn-success" id='<?php echo "btnPayLive" . $arr[0] ?>'> Mua Hàng</button>
+                                <button class="add-cart btn btn-primary btn-hover-primary" id='<?php echo "btnMH" . $arr[0] ?>'> Thêm Vào Giỏ Hàng</button>
+                            <?php }else{?>
+                                <span style="color: red;">Hiện Sản Phẩm Đã Tạm Thời Hết !!!</span>
+                            <?php }?>
                         </div>
                     </div>
                     <div class="pro-details-policy">

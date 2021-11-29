@@ -483,5 +483,22 @@ class productModel extends connectDB
         }
         $_SESSION["soluongtronggiohang"] = $result;
     }
+    function getsoluongSp($masp){
+        try{
+            $conn = $this->GetConn();
+            $sql = "SELECT sanpham.soluongsp FROM sanpham WHERE sanpham.masp = :masp";
+            $query = $conn->prepare($sql);
+            $query->bindParam(":masp",$masp);
+            $query->execute();
+            if($query->rowCount() > 0){
+                $result = $query->fetchAll(PDO::FETCH_ASSOC);
+                return json_encode($result);
+            }else{
+                return false;
+            }
+        }catch(PDOException $e){
+            echo $e->getMessage();
+        } 
+    }
 }
 ?>

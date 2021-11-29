@@ -109,6 +109,11 @@ class ajax extends controller
         }
     }
     // cart
+    function getsoluongSp(){
+        $masp = $_POST["masp"];
+        $model = $this->call_model("productModel");
+        echo $model->getsoluongSp($masp);
+    }
     function addProductInCart()
     {
         $masp = $_POST["masp"];
@@ -163,7 +168,7 @@ class ajax extends controller
     }
     // thanh toan
     function thanhtoan()
-    {
+    {//
         date_default_timezone_set("Asia/Ho_Chi_Minh");
         $tendangnhap = $_SESSION["username"];
         $ngaymua = date("Y-m-d");
