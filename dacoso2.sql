@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 01, 2021 at 10:48 AM
+-- Generation Time: Dec 01, 2021 at 02:44 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -435,7 +435,7 @@ CREATE TABLE `nguoidung` (
 
 INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`, `email`, `matkhau`, `ngaythamgia`, `quyen`) VALUES
 ('abaftdon’t', NULL, NULL, NULL, 'roma61@hotmail.com', '5280e11f2452aac5aa85177aaf4b3b98', '2021-11-06', 0),
-('admin', 'Admin 2', NULL, '2121', 'lequanglong12102k2@gmail.com', '1cb4cde11502fc72922bc859d70352e9', '2021-11-14', 1),
+('admin', 'Admin 2', 'sen sen', '2121', 'lequanglong12102k2@gmail.com', '1cb4cde11502fc72922bc859d70352e9', '2021-11-14', 1),
 ('arcanaabounding', 'LE QUANG LONG TK', 'QUANG BINH', '0904349823', 'marisol39@hotmail.com', '4297f44b13955235245b2497399d7a93', '2021-11-06', 0),
 ('arousedrecruit', NULL, NULL, NULL, 'salma87@hotmail.com', 'a794275722896cac20ecdd29928a3b9d', '2021-11-06', 0),
 ('banneravailable', NULL, NULL, NULL, 'marjolaine42@hotmail.com', '9c80d885bcf55293e8b999ea404ff2b2', '2021-11-06', 0),
@@ -465,7 +465,7 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('heoyeuhac@gmail.com', 'LE QUANG LONG', 'QUANG BINH', '0904349823', 'heoyeuhac@gmail.com', '', '2021-11-21', 0),
 ('holygarden', NULL, NULL, NULL, 'dan_balistreri@hotmail.com', '06339ba785761735001aee34a9e3f2fc', '2021-11-06', 0),
 ('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', '2021-11-06', 0),
-('hyh', 'PHẠM THỊ NGỌC ><', 'MỸ THỦY', '0909273912', 'heoyeuhac@gmail.com', 'a1a95fe163115058f5d196226c2e60f6', '2021-11-20', 0),
+('hyh', 'PHẠM THỊ NGỌC ><', 'MỸ THỦY', '0909273912', 'heoyeuhac@gmail.com', 'f5bb0c8de146c67b44babbf4e6584cc0', '2021-11-20', 0),
 ('hyh1', NULL, NULL, NULL, 'heoyeuhac@gmail.com', '1cb4cde11502fc72922bc859d70352e9', '2021-11-20', 0),
 ('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', '2021-11-06', 0),
 ('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', '2021-11-06', 0),
@@ -474,15 +474,17 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('lequanglong12102k2@gmail.com', 'LONG LE', '', '', 'lequanglong12102k2@gmail.com', '', '2021-11-13', 0),
 ('longtermplayoffs', 'PHẠM THỊ HẰNG', 'QUANG BINH', '0904349823', 'buck.kerluke@gmail.com', '8c09ef24b73d69f5ef32f64cd6868f33', '2021-11-06', 0),
 ('lql', 'Admin123', 'sen thuy quang binh', '099421341', 'lequanglong12102k2@gmail.com', '980274bc5d77eaff3610a9ee9f0ce909', '2021-11-06', 1),
+('lql123', NULL, NULL, NULL, 'admin123@smarthome.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-12-01', 1),
 ('lqlong.20it1@vku.udn.vn', 'LE QUANG LONG IT', '', '', 'lqlong.20it1@vku.udn.vn', '', '2021-11-13', 0),
 ('modedue', NULL, NULL, NULL, 'eileen.stehr@hotmail.com', '6232a249c838d1d2e33e50edc51557eb', '2021-11-06', 0),
 ('motorwayscold', NULL, NULL, NULL, 'mariah77@gmail.com', 'cddf86a9055a2e2168733a07ef284cb6', '2021-11-06', 0),
-('nhanvien', 'nhân viên 678', 'SEN -  THỦY', '0904948301', 'lql@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-08', 2),
+('nhanvien', 'nhân viên 678', 'SEN -  THỦY - BÌNH', '0904948301', 'lql@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-08', 2),
 ('nhanvien1', 'nhân viên 123', NULL, NULL, 'nhanvien@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-09', 2),
 ('nhanvien2', 'nhân viên 345', 'senthuy', '0903921133', 'nhanvien2@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-16', 2),
 ('nhanvien3', NULL, NULL, NULL, 'nhanvien3@gmail.com', '6f575fbe74c6d5f367a8aa4b398cc7da', '2021-11-21', 2),
 ('obeysamoan', NULL, NULL, NULL, 'billy.labadie51@hotmail.com', '0169ad0e211c01528d9384235bc255a3', '2021-11-06', 0),
 ('procedureraise', NULL, NULL, NULL, 'brennan.heathcote@yahoo.com', 'cb936b342fcf543799254520b9d13515', '2021-11-06', 0),
+('project', 'PROECT 2', 'QUANG BINH', '0992837162', 'lequanglong20021210@gmail.com', 'bfbfb35ac1feaf85538f5717e2b38575', '2021-12-01', 0),
 ('repelreprimand', NULL, NULL, NULL, 'leola_crooks93@hotmail.com', '76b30526c3489faf93241895c44a45c7', '2021-11-06', 0),
 ('seedslaboratory', NULL, NULL, NULL, 'chloe.abernathy38@hotmail.com', 'daaa77b0b6ce16e7f954184dd1e2efb4', '2021-11-06', 0),
 ('servantguideline', NULL, NULL, NULL, 'ludie43@hotmail.com', '09a52241d85074f867c5623d1c8b1de7', '2021-11-06', 0),
@@ -554,7 +556,15 @@ INSERT INTO `resetpass` (`id`, `tendangnhap`, `email`, `keyxacnhan`, `thoigianta
 (20, 'admin', 'lequanglong12102k2@gmail.com', '666105722', '2021-11-21 14:57:39'),
 (21, 'hyh', 'heoyeuhac@gmail.com', '1294926447', '2021-11-25 23:14:04'),
 (22, 'hyh', 'heoyeuhac@gmail.com', '761786946', '2021-11-27 00:27:36'),
-(23, 'hyh', 'heoyeuhac@gmail.com', '1207741165', '2021-11-27 00:31:25');
+(23, 'hyh', 'heoyeuhac@gmail.com', '1207741165', '2021-11-27 00:31:25'),
+(24, 'hyh', 'heoyeuhac@gmail.com', '1889371402', '2021-12-01 20:19:19'),
+(25, 'hyh', 'heoyeuhac@gmail.com', '1415020065', '2021-12-01 20:20:30'),
+(26, 'hyh', 'heoyeuhac@gmail.com', '1402644136', '2021-12-01 20:22:09'),
+(27, 'hyh', 'heoyeuhac@gmail.com', '109325198', '2021-12-01 20:24:07'),
+(28, 'hyh', 'heoyeuhac@gmail.com', '530292796', '2021-12-01 20:26:27'),
+(29, 'hyh', 'heoyeuhac@gmail.com', '996872527', '2021-12-01 20:28:29'),
+(30, 'hyh', 'heoyeuhac@gmail.com', '1321382233', '2021-12-01 20:31:35'),
+(31, 'project', 'lequanglong20021210@gmail.com', '1853329439', '2021-12-01 20:37:58');
 
 -- --------------------------------------------------------
 
@@ -874,7 +884,7 @@ ALTER TABLE `phanhoidanhgia`
 -- AUTO_INCREMENT for table `resetpass`
 --
 ALTER TABLE `resetpass`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `sanpham`
