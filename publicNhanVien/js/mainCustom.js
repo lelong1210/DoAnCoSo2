@@ -76,7 +76,7 @@ $(document).ready(function() {
         var matkhau = $("#matkhau").val();
         var nhaplaimatkhau = $("#nhaplaimatkhau").val();
         if (matkhau != "" && nhaplaimatkhau != "") {
-            if (checkStrongPass(matkhau)) {
+            if (checkStrongPass(matkhau) >= 4) {
                 if (comparePassword(matkhau, nhaplaimatkhau)) {
                     if (updatePass(matkhau)) {
                         alert("Đã cập nhật mật khẩu");
