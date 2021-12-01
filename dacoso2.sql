@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Dec 01, 2021 at 02:44 PM
+-- Generation Time: Dec 01, 2021 at 03:45 PM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -40,7 +40,7 @@ CREATE TABLE `chitietgiohang` (
 INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
 (10, 'hyh-gh', 1),
 (23, 'hyh-gh', 1),
-(3, 'lequanglong12102k2@gmail.com-gh', 3);
+(1, 'lequanglong12102k2@gmail.com-gh', 5);
 
 -- --------------------------------------------------------
 
@@ -116,7 +116,10 @@ INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
 (14, 3, 171),
 (1, 2, 171),
 (14, 3, 172),
-(1, 2, 172);
+(1, 2, 172),
+(1, 1, 173),
+(1, 1, 174),
+(1, 2, 175);
 
 -- --------------------------------------------------------
 
@@ -162,7 +165,18 @@ INSERT INTO `chitiettinnhan` (`machitiettinnhan`, `matinnhan`, `noidung`, `thoig
 (232, 'lequanglong12102k2@gmail.com-tn', 'chao lại', '2021-11-24 09:46:50', 'lql'),
 (233, 'lequanglong12102k2@gmail.com-tn', 'xin chào kaka', '2021-11-29 08:33:11', 'lequanglong12102k2@gmail.com'),
 (234, 'lequanglong12102k2@gmail.com-tn', 'hehe', '2021-11-29 08:33:25', 'lql'),
-(235, 'lequanglong12102k2@gmail.com-tn', '123', '2021-11-29 08:33:35', 'lql');
+(235, 'lequanglong12102k2@gmail.com-tn', '123', '2021-11-29 08:33:35', 'lql'),
+(236, 'lequanglong12102k2@gmail.com-tn', 'helo admin', '2021-12-01 21:31:00', 'lequanglong12102k2@gmail.com'),
+(237, 'lequanglong12102k2@gmail.com-tn', 'kaka', '2021-12-01 21:31:36', 'lequanglong12102k2@gmail.com'),
+(238, 'lequanglong12102k2@gmail.com-tn', ':333', '2021-12-01 21:31:43', 'lequanglong12102k2@gmail.com'),
+(239, 'lequanglong12102k2@gmail.com-tn', '-.-', '2021-12-01 21:32:35', 'admin'),
+(240, 'lequanglong12102k2@gmail.com-tn', ':>', '2021-12-01 21:32:44', 'lequanglong12102k2@gmail.com'),
+(241, 'lequanglong12102k2@gmail.com-tn', 'rất vui khi được phục vụ quý khách', '2021-12-01 21:33:11', 'admin'),
+(242, 'lequanglong12102k2@gmail.com-tn', 'kaka', '2021-12-01 21:35:50', 'admin'),
+(243, 'lequanglong12102k2@gmail.com-tn', 'rất vui ib admin', '2021-12-01 21:36:37', 'lequanglong12102k2@gmail.com'),
+(244, 'lequanglong12102k2@gmail.com-tn', 'cx rất vui khi ib với bạn', '2021-12-01 21:38:57', 'admin'),
+(245, 'lequanglong12102k2@gmail.com-tn', 'hihi', '2021-12-01 21:40:19', 'lql'),
+(246, 'lequanglong12102k2@gmail.com-tn', 'kaka', '2021-12-01 21:40:31', 'lequanglong12102k2@gmail.com');
 
 -- --------------------------------------------------------
 
@@ -213,13 +227,13 @@ INSERT INTO `congviec` (`macv`, `tendangnhap`, `makhachhang`, `mahoadon`, `diadi
 (96, NULL, 'khachhang', 145, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
 (97, NULL, 'lequanglong12102k2@gmail.com', 146, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
 (98, 'nhanvien', 'lequanglong12102k2@gmail.com', 147, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-24 09:44:07', '2021-11-24 09:44:11', 1, 5, 1),
-(99, 'nhanvien', 'lequanglong12102k2@gmail.com', 148, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-29 16:40:49', '2021-11-29 16:40:58', 1, 0, 1),
+(99, 'nhanvien', 'lequanglong12102k2@gmail.com', 148, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-29 16:40:49', '2021-11-29 16:40:58', 1, 5, 1),
 (100, NULL, 'lequanglong12102k2@gmail.com', 149, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
 (101, NULL, 'lequanglong12102k2@gmail.com', 150, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
 (102, NULL, 'lequanglong12102k2@gmail.com', 151, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
 (103, NULL, 'lequanglong12102k2@gmail.com', 152, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
 (104, NULL, 'lequanglong12102k2@gmail.com', 153, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
-(105, NULL, 'lequanglong12102k2@gmail.com', 154, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0);
+(105, 'nhanvien', 'lequanglong12102k2@gmail.com', 154, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-12-01 21:42:19', '2021-12-01 21:42:23', 1, 0, 1);
 
 -- --------------------------------------------------------
 
@@ -374,7 +388,10 @@ INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`, `s
 (169, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
 (170, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
 (171, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
-(172, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0);
+(172, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(173, 'lequanglong12102k2@gmail.com', '2021-12-01', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(174, 'lequanglong12102k2@gmail.com', '2021-12-01', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(175, 'lequanglong12102k2@gmail.com', '2021-12-01', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0);
 
 -- --------------------------------------------------------
 
@@ -410,7 +427,8 @@ INSERT INTO `luong` (`soluong`, `maluong`, `macv`, `ngaynhanluong`) VALUES
 ('200000.00', 28, 92, '2021-11-20 23:28:54'),
 ('200000.00', 29, 93, '2021-11-20 23:28:57'),
 ('200000.00', 30, 94, '2021-11-21 10:11:33'),
-('250000.00', 31, 98, '2021-11-24 09:44:48');
+('250000.00', 31, 98, '2021-11-24 09:44:48'),
+('250000.00', 32, 99, '2021-12-01 21:43:31');
 
 -- --------------------------------------------------------
 
@@ -590,9 +608,9 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`, `linkduongdananh`, `hangsx`, `dunglamslider`, `soluongsp`, `ngaynhap`) VALUES
-(1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa 123', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 0, '2021-11-29'),
-(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 57, '2021-10-01'),
-(3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 86, '2021-10-01'),
+(1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa 123', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 92, '2021-11-29'),
+(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 56, '2021-10-01'),
+(3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 87, '2021-10-01'),
 (4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa a a a', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 99, '2021-11-14'),
 (5, 'eufy Smart Lock Touch with Wifi Bridge – Khóa cửa vân tay, chống nước IP65', '5990000.00', 'khoacuathongminh', 'Khóa cửa thông minh eufy Smart Lock Touch – cảm biến vân tay siêu nhạy, mở khóa trong 0.3 giây Tự động khóa khi phát hiện cửa đang đóng Ứng dụng quản lý giao diện Tiếng Việt Đạt chứng nhận BHMA, bền bỉ với tuổi thọ lên tới 70 năm Có 5 cách mở khóa: Nhận diện vây tay, nhập mật mã, mở bằng chìa thông thường, sử dụng app Eufy Security và mở khóa bằng giọng nói Thiết bị có thể hoạt động trong thời tiết khắc nghiệt với chống nước IP65 Tích hợp cảm biến đóng/mở, chốt khóa điện tử kết nối Bluetooth Điều khiển từ xa với Wifi Bridge', 'https://gucongnghe.com/wp-content/uploads/2020/08/eufy-smart-lock-touch-with-bridge-1-247x296.jpg', 'eufy ', 0, 99, '2021-10-01'),
 (6, 'Khóa cửa thông minh Wyze Lock, tự động khóa – mở cửa từ xa', '2690000.00', 'khoacuathongminh', 'Khóa cửa thông minh Wyze Lock, kết nối WiFi, Bluetooth và Zigbee Sử dụng 4 viên pin tiểu AA cho thời gian sử dụng 5 – 6 tháng Khóa và mở khóa từ xa qua ứng dụng Wyze Tự động mở khóa khi bạn đến gần. Tự động khóa khi cửa được đóng. Dễ dàng lắp đặt trong vòng 15 phút Chia sẻ quyền sử dụng khóa với người khác từ xa Ra lệnh bằng giọng nói với Amazon Alexa, Google Assistant sẽ sớm được hỗ trợ', 'https://gucongnghe.com/wp-content/uploads/2020/05/khoa-thong-minh-Wyze-Lock-247x296.jpg', 'Wyze Lock', 0, 98, '2021-10-01'),
@@ -721,7 +739,7 @@ INSERT INTO `tinnhan` (`matinnhan`, `tendangnhap`, `thoigiannhancuoicung`) VALUE
 ('hyh-tn', 'hyh', '2021-11-21 14:58:46'),
 ('khachhang-tn', 'khachhang', '2021-11-21 14:55:14'),
 ('lelong12102k2@gmail.com-tn', 'lelong12102k2@gmail.com', '2021-11-15 09:21:33'),
-('lequanglong12102k2@gmail.com-tn', 'lequanglong12102k2@gmail.com', '2021-11-29 08:33:35'),
+('lequanglong12102k2@gmail.com-tn', 'lequanglong12102k2@gmail.com', '2021-12-01 21:40:31'),
 ('lqlong.20it1@vku.udn.vn-tn', 'lqlong.20it1@vku.udn.vn', '2021-11-19 12:09:45');
 
 --
@@ -842,7 +860,7 @@ ALTER TABLE `tinnhan`
 -- AUTO_INCREMENT for table `chitiettinnhan`
 --
 ALTER TABLE `chitiettinnhan`
-  MODIFY `machitiettinnhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=236;
+  MODIFY `machitiettinnhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=247;
 
 --
 -- AUTO_INCREMENT for table `congviec`
@@ -866,13 +884,13 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=176;
 
 --
 -- AUTO_INCREMENT for table `luong`
 --
 ALTER TABLE `luong`
-  MODIFY `maluong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
+  MODIFY `maluong` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `phanhoidanhgia`
