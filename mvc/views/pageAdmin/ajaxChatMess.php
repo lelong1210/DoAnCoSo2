@@ -9,7 +9,7 @@
     <span>Tới: <span class="name"><?php echo $arrUserName;?></span></span>
 </div>
 <div class="chat-container ">
-    <div class="box-chat-content" style="height:430px;overflow:scroll;">
+    <div class="box-chat-content" id="box_chat" style="height:430px;overflow:scroll;">
         <ul class="chat-box chatContainerScroll" id="ul_chat_box">
             <?php 
                 if($arr){ 
@@ -49,3 +49,9 @@
         <button class="col-sm-2 btn btn-success" id="btnSend<?php echo $arrChild[1]?>">Gửi</button>
     </div>
 </div>
+<script>
+    $(document).ready(function () {
+        myscroll = $('#box_chat');
+        myscroll.scrollTop(myscroll.get(0).scrollHeight);
+    });
+</script>

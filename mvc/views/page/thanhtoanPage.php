@@ -15,9 +15,9 @@
                             <div class="your-order-middle">
                                 <?php $tongtien = $data["productModel"]->showProductInPayment(); $arr1 = $_SESSION["thanhtoan"]; ?>
                                 <!-- span dung cho mua truc tiep -->
-                                <span style="color: red;" id="spanPaylive"><?php $arr1 = array_values((array)$arr1[0]) ; echo $arr1[2]?></span>
-                                <span style="color: green;" id="masp"><?php echo $arr1[0]?></span>
-                                <span style="color: blue;" id="soluongsp">
+                                <span style="color: red;display: none;" id="spanPaylive"><?php $arr1 = array_values((array)$arr1[0]) ; echo $arr1[2]?></span>
+                                <span style="color: green;display: none;" id="masp"><?php echo $arr1[0]?></span>
+                                <span style="color: blue;display: none;" id="soluongsp">
                                     <?php 
                                         $soluongsp = json_decode($data["productModel"]->getsoluongSp($arr1[0]));
                                         $soluongsp = array_values((array)$soluongsp[0]);

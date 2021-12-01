@@ -300,25 +300,16 @@ $(document).ready(function() {
             }
         }
     }, 1000);
-    // $("body").on("click", "button", function(e) {
-    //     // var idThis = $(this).attr("id");
-    //     var timkiemUser = "timkiemUser";
-    //     var ids = "list_chat0";
-    //     $("li").each(function(param) {
-    //         idThis = $(this).attr("id");
-    //         if (idThis == ids) {
-    //             alert($(this).attr("id"));
-    //             $(this).remove();
-    //         }
-    //     });
-
-    // });
     setInterval(() => {
         var lidaudanhsach = $("#firtLi").html();
         var result = getMessLastAdmin(lidaudanhsach);
         if (result && lidaudanhsach) {
             $("#dsChat").html(result);
         }
+    }, 1000);
+    setInterval(() => {
+        myscroll = $('#box_chat');
+        myscroll.scrollTop(myscroll.get(0).scrollHeight);
     }, 1000);
     // danh gia
     var manhanxet = "";

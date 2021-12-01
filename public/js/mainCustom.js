@@ -190,12 +190,12 @@ $(document).ready(function () {
                 const obj = JSON.parse(txt);
                 var soluongsp = obj[0].soluongsp;
                 soluongsp = soluongsp - 1;
-                if (addProductInCart(masp, soluong)) {
+                if (soluongsp >= 0 && addProductInCart(masp, soluong)) {
                     updateSanPham(masp, soluongsp);
                     alert("Đã Thêm Vào Giỏ Hàng");
                     updateScreenSoLuongTrongGioHang(getSoLuongTrongGioHang());
                 } else {
-                    alert("...");
+                    alert("Sản Phẩm Không Còn Đủ ^_^ !!!");
                 }
             } else {
                 location.replace(linkTuyetDoi + "dndk");
@@ -682,6 +682,8 @@ $(document).ready(function () {
             }
         }
     }, 1000);
+    myscroll = $('#box_chat');
+    myscroll.scrollTop(myscroll.get(0).scrollHeight);
     // functio support
     function timkiemSapXep(ndtimkiem, batdau, gioihanhienthi, option) {
         var result = "";

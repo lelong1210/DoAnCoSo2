@@ -33,7 +33,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="chat-history" style="height:500px;overflow:scroll">
+						<div class="chat-history" style="height:500px;overflow:scroll" id="box_chat">
 							<ul class="m-b-0"  id="dstn"> 
 								<?php
 								if ($arr) {
