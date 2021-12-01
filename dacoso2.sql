@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Nov 25, 2021 at 02:17 PM
+-- Generation Time: Dec 01, 2021 at 10:48 AM
 -- Server version: 10.4.19-MariaDB
 -- PHP Version: 8.0.7
 
@@ -38,8 +38,9 @@ CREATE TABLE `chitietgiohang` (
 --
 
 INSERT INTO `chitietgiohang` (`masp`, `magiohang`, `soluong`) VALUES
-(4, 'lequanglong12102k2@gmail.com-gh', 1),
-(8, 'lequanglong12102k2@gmail.com-gh', 1);
+(10, 'hyh-gh', 1),
+(23, 'hyh-gh', 1),
+(3, 'lequanglong12102k2@gmail.com-gh', 3);
 
 -- --------------------------------------------------------
 
@@ -85,7 +86,37 @@ INSERT INTO `chitiethoadon` (`soluong`, `masp`, `mahoadon`) VALUES
 (2, 3, 144),
 (2, 1, 145),
 (1, 2, 146),
-(1, 12, 147);
+(1, 12, 147),
+(1, 1, 148),
+(1, 2, 149),
+(1, 8, 150),
+(2, 1, 150),
+(1, 3, 151),
+(1, 4, 152),
+(1, 4, 153),
+(1, 4, 154),
+(1, 12, 155),
+(1, 12, 156),
+(1, 12, 157),
+(1, 2, 158),
+(1, 3, 159),
+(1, 4, 159),
+(1, 2, 159),
+(2, 2, 160),
+(2, 2, 161),
+(2, 2, 162),
+(2, 2, 163),
+(1, 2, 164),
+(1, 2, 165),
+(1, 2, 166),
+(1, 2, 167),
+(14, 2, 168),
+(1, 2, 169),
+(1, 2, 170),
+(14, 3, 171),
+(1, 2, 171),
+(14, 3, 172),
+(1, 2, 172);
 
 -- --------------------------------------------------------
 
@@ -128,7 +159,10 @@ INSERT INTO `chitiettinnhan` (`machitiettinnhan`, `matinnhan`, `noidung`, `thoig
 (229, 'heoyeuhac@gmail.com-tn', ':>', '2021-11-21 15:07:45', 'lql'),
 (230, 'heoyeuhac@gmail.com-tn', 'hehe', '2021-11-21 15:07:53', 'lql'),
 (231, 'lequanglong12102k2@gmail.com-tn', 'chao ad', '2021-11-24 09:45:26', 'lequanglong12102k2@gmail.com'),
-(232, 'lequanglong12102k2@gmail.com-tn', 'chao lại', '2021-11-24 09:46:50', 'lql');
+(232, 'lequanglong12102k2@gmail.com-tn', 'chao lại', '2021-11-24 09:46:50', 'lql'),
+(233, 'lequanglong12102k2@gmail.com-tn', 'xin chào kaka', '2021-11-29 08:33:11', 'lequanglong12102k2@gmail.com'),
+(234, 'lequanglong12102k2@gmail.com-tn', 'hehe', '2021-11-29 08:33:25', 'lql'),
+(235, 'lequanglong12102k2@gmail.com-tn', '123', '2021-11-29 08:33:35', 'lql');
 
 -- --------------------------------------------------------
 
@@ -178,7 +212,14 @@ INSERT INTO `congviec` (`macv`, `tendangnhap`, `makhachhang`, `mahoadon`, `diadi
 (95, NULL, 'khachhang', 144, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
 (96, NULL, 'khachhang', 145, ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', NULL, NULL, 0, NULL, 0),
 (97, NULL, 'lequanglong12102k2@gmail.com', 146, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
-(98, 'nhanvien', 'lequanglong12102k2@gmail.com', 147, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-24 09:44:07', '2021-11-24 09:44:11', 1, 5, 1);
+(98, 'nhanvien', 'lequanglong12102k2@gmail.com', 147, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-24 09:44:07', '2021-11-24 09:44:11', 1, 5, 1),
+(99, 'nhanvien', 'lequanglong12102k2@gmail.com', 148, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '2021-11-29 16:40:49', '2021-11-29 16:40:58', 1, 0, 1),
+(100, NULL, 'lequanglong12102k2@gmail.com', 149, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
+(101, NULL, 'lequanglong12102k2@gmail.com', 150, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
+(102, NULL, 'lequanglong12102k2@gmail.com', 151, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
+(103, NULL, 'lequanglong12102k2@gmail.com', 152, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
+(104, NULL, 'lequanglong12102k2@gmail.com', 153, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0),
+(105, NULL, 'lequanglong12102k2@gmail.com', 154, ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', NULL, NULL, 0, NULL, 0);
 
 -- --------------------------------------------------------
 
@@ -223,6 +264,7 @@ CREATE TABLE `giohang` (
 --
 
 INSERT INTO `giohang` (`magiohang`, `tendangnhap`) VALUES
+('hyh-gh', 'hyh'),
 ('khachhang-gh', 'khachhang'),
 ('lelong12102k2@gmail.com-gh', 'lelong12102k2@gmail.com'),
 ('lequanglong12102k2@gmail.com-gh', 'lequanglong12102k2@gmail.com');
@@ -307,7 +349,32 @@ INSERT INTO `hoadon` (`mahoadon`, `tendangnhap`, `ngaymua`, `diachigiaohang`, `s
 (144, 'khachhang', '2021-11-21', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 1),
 (145, 'khachhang', '2021-11-21', ' Tỉnh Quảng Bình - Huyện Lệ Thủy - Xã Sen Thủy ', '0832090990', '94000.00', 0),
 (146, 'lequanglong12102k2@gmail.com', '2021-11-21', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
-(147, 'lequanglong12102k2@gmail.com', '2021-11-24', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1);
+(147, 'lequanglong12102k2@gmail.com', '2021-11-24', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(148, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(149, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(150, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(151, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(152, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(153, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(154, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(155, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(156, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(157, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(158, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(159, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(160, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(161, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(162, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(163, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(164, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(165, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(166, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(167, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(168, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(169, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0),
+(170, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(171, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 1),
+(172, 'lequanglong12102k2@gmail.com', '2021-11-29', ' Tỉnh Lạng Sơn - Huyện Lộc Bình - Xã Tĩnh Bắc ', '0932183222', '92000.00', 0);
 
 -- --------------------------------------------------------
 
@@ -398,7 +465,7 @@ INSERT INTO `nguoidung` (`tendangnhap`, `tennguoidung`, `diachi`, `sodienthoai`,
 ('heoyeuhac@gmail.com', 'LE QUANG LONG', 'QUANG BINH', '0904349823', 'heoyeuhac@gmail.com', '', '2021-11-21', 0),
 ('holygarden', NULL, NULL, NULL, 'dan_balistreri@hotmail.com', '06339ba785761735001aee34a9e3f2fc', '2021-11-06', 0),
 ('hugappraiser', NULL, NULL, NULL, 'alexane.jacobs38@hotmail.com', '2c47cc6b02052a1dd12391ae394d63ef', '2021-11-06', 0),
-('hyh', 'PHẠM THỊ NGỌC ><', 'MỸ THỦY', '0909273912', 'heoyeuhac@gmail.com', '980274bc5d77eaff3610a9ee9f0ce909', '2021-11-20', 0),
+('hyh', 'PHẠM THỊ NGỌC ><', 'MỸ THỦY', '0909273912', 'heoyeuhac@gmail.com', 'a1a95fe163115058f5d196226c2e60f6', '2021-11-20', 0),
 ('hyh1', NULL, NULL, NULL, 'heoyeuhac@gmail.com', '1cb4cde11502fc72922bc859d70352e9', '2021-11-20', 0),
 ('hypothesispattern', NULL, NULL, NULL, 'jeramie_huel@yahoo.com', '8ac0fabdcfded318b2aa04ab49ccc4fb', '2021-11-06', 0),
 ('kentishdamage', NULL, NULL, NULL, 'daphne_schimmel@yahoo.com', '755b7b8c0a072a8a2eea55377de7e396', '2021-11-06', 0),
@@ -454,7 +521,8 @@ INSERT INTO `phanhoidanhgia` (`maphanhoi`, `manhanxet`, `tendangnhap`, `noidungp
 (12, 25, 'admin', 'cảm ơn rất nhiều', '2021-11-18'),
 (13, 29, 'lql', 'cảm ơn quý khách đã phản hồi', '2021-11-18'),
 (14, 26, 'admin', 'cam on vi da tin tuong trung toi', '2021-11-18'),
-(15, 30, 'lql', 'cảm ơn quý khách đã đánh giá', '2021-11-24');
+(15, 30, 'lql', 'cảm ơn quý khách đã đánh giá', '2021-11-24'),
+(16, 31, 'lql', 'cảm ơn quý khách', '2021-11-29');
 
 -- --------------------------------------------------------
 
@@ -483,7 +551,10 @@ INSERT INTO `resetpass` (`id`, `tendangnhap`, `email`, `keyxacnhan`, `thoigianta
 (17, 'hyh1', 'heoyeuhac@gmail.com', '902968570', '2021-11-20 21:53:16'),
 (18, 'hyh', 'heoyeuhac@gmail.com', '1487480979', '2021-11-20 21:59:59'),
 (19, 'lql', 'lequanglong12102k2@gmail.com', '500033255', '2021-11-21 14:54:16'),
-(20, 'admin', 'lequanglong12102k2@gmail.com', '666105722', '2021-11-21 14:57:39');
+(20, 'admin', 'lequanglong12102k2@gmail.com', '666105722', '2021-11-21 14:57:39'),
+(21, 'hyh', 'heoyeuhac@gmail.com', '1294926447', '2021-11-25 23:14:04'),
+(22, 'hyh', 'heoyeuhac@gmail.com', '761786946', '2021-11-27 00:27:36'),
+(23, 'hyh', 'heoyeuhac@gmail.com', '1207741165', '2021-11-27 00:31:25');
 
 -- --------------------------------------------------------
 
@@ -509,9 +580,9 @@ CREATE TABLE `sanpham` (
 --
 
 INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`, `linkduongdananh`, `hangsx`, `dunglamslider`, `soluongsp`, `ngaynhap`) VALUES
-(1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa 123', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 99, '2021-11-16'),
-(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 71, '2021-10-01'),
-(3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 100, '2021-10-01'),
+(1, 'Khóa cửa thông minh August Wifi Smart Lock, kết nối Wifi, khoá & mở từ xa 123', '5850000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa', 'https://gucongnghe.com/wp-content/uploads/2020/05/August-Wifi-Smart-Lock.png', 'August', 1, 0, '2021-11-29'),
+(2, 'Công tắc cửa cuốn thông minh Tuya, điều khiển từ xa qua điện thoại', '490000.00', 'khoacuathongminh', 'Sử dụng để thay thế công tắc âm tường hiện tại, hoặc lắp thêm song song Biến cửa cuốn thông thường trở nên thông minh, điều khiển đóng, mở từ xa qua điện thoại Tương thích với 99% các loại cửa cuốn ở Việt Nam, không ảnh hưởng tới những tính năng sẵn có Lên lịch tự động đóng mở, chia sẻ phân quyền cho người khác từ xa Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa Tương thích với các sản phẩm khác trong hệ sinh thái Tuya Có hướng dẫn lắp đặt chi tiết bằng tiếng Việt đi kèm', 'https://gucongnghe.com/wp-content/uploads/2021/03/Cong-tac-cua-cuon-Tuya-3-new-247x296.jpg', 'Tuya', 0, 57, '2021-10-01'),
+(3, 'Điều khiển cửa cuốn thông minh Sonoff – Đóng mở từ xa, ra lệnh giọng nói, lên lịch tự động', '950000.00', 'khoacuathongminh', 'Đóng mở cửa cuốn từ xa thông qua mạng Internet. Hoạt động độc lập không cần hub trung tâm, kết nối trực tiếp với mạng Wifi. Lên lịch hẹn giờ đóng, mở cửa tự động. Chia sẻ quyền quản lý, không giới hạn số lượng. Có lưu lịch sử đóng mở. Lắp đặt dễ dàng trong vòng 30 phút, không cần khoan đục. Tương thích với mọi loại cửa cuốn trên thị trường. Ra lệnh bằng giọng nói với trợ lý Google, Amazon Alexa. Hỗ trợ IFTTT.', 'https://gucongnghe.com/wp-content/uploads/2019/07/Dieu-khien-cua-cuon-Sonoff-247x296.jpg', 'snoff', 0, 86, '2021-10-01'),
 (4, 'Khóa cửa thông minh August Smart Lock + Connect, kết nối wifi, khóa & mở từ xa a a a', '3250000.00', 'khoacuathongminh', 'Bộ sản phẩm bao gồm Ổ khóa thông minh August Smart Lock thế hệ 3 mới nhất và Hub trung tâm Connect Kết nối Bluetooth với điện thoại, tự động mở khi về và khoá cửa khi rời khỏi nhà. August Connect giúp mở cửa và phân quyền cho người khác từ xa. Phù hợp nhất cho nhà thuê Airbnb. Dễ dàng lắp đặt trên tất cả loại cửa: cửa gỗ, cửa nhôm, cửa sắt… Điều khiển bằng giọng nói với trợ lý Google hoặc Amazon Alexa.', 'https://gucongnghe.com/wp-content/uploads/2020/06/August-Smart-Lock-va-hub-trung-tam-247x296.jpg', 'August', 0, 99, '2021-11-14'),
 (5, 'eufy Smart Lock Touch with Wifi Bridge – Khóa cửa vân tay, chống nước IP65', '5990000.00', 'khoacuathongminh', 'Khóa cửa thông minh eufy Smart Lock Touch – cảm biến vân tay siêu nhạy, mở khóa trong 0.3 giây Tự động khóa khi phát hiện cửa đang đóng Ứng dụng quản lý giao diện Tiếng Việt Đạt chứng nhận BHMA, bền bỉ với tuổi thọ lên tới 70 năm Có 5 cách mở khóa: Nhận diện vây tay, nhập mật mã, mở bằng chìa thông thường, sử dụng app Eufy Security và mở khóa bằng giọng nói Thiết bị có thể hoạt động trong thời tiết khắc nghiệt với chống nước IP65 Tích hợp cảm biến đóng/mở, chốt khóa điện tử kết nối Bluetooth Điều khiển từ xa với Wifi Bridge', 'https://gucongnghe.com/wp-content/uploads/2020/08/eufy-smart-lock-touch-with-bridge-1-247x296.jpg', 'eufy ', 0, 99, '2021-10-01'),
 (6, 'Khóa cửa thông minh Wyze Lock, tự động khóa – mở cửa từ xa', '2690000.00', 'khoacuathongminh', 'Khóa cửa thông minh Wyze Lock, kết nối WiFi, Bluetooth và Zigbee Sử dụng 4 viên pin tiểu AA cho thời gian sử dụng 5 – 6 tháng Khóa và mở khóa từ xa qua ứng dụng Wyze Tự động mở khóa khi bạn đến gần. Tự động khóa khi cửa được đóng. Dễ dàng lắp đặt trong vòng 15 phút Chia sẻ quyền sử dụng khóa với người khác từ xa Ra lệnh bằng giọng nói với Amazon Alexa, Google Assistant sẽ sớm được hỗ trợ', 'https://gucongnghe.com/wp-content/uploads/2020/05/khoa-thong-minh-Wyze-Lock-247x296.jpg', 'Wyze Lock', 0, 98, '2021-10-01'),
@@ -520,7 +591,7 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 (9, 'ECOVACS DEEBOT DJ35 robot hút bụi lau nhà', '4000000.00', 'mayhutbui', 'Tiếp nối sự thành công của T8 aivi plus hãng vừa cho ra mắt Ecovacs Deebot T9 aivi. Đây là robot đầu tiên trên thế giới được trang bị thêm tính năng lọc không khí và tỏa hương nước hoa. Hãy cùng Novadigital tìm hiểu về siêu phẩm mới ra mắt này nhé.', 'https://grobot.vn/wp-content/uploads/2019/01/dj35c2-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (10, 'Ecovacs Deebot DN320 (OZMO 900) Robot hút bụi lau nhà', '4800000.00', 'mayhutbui', 'Giống như các phiên bản trước Ecovacs Deebot T9 aivi sở hữu một thiết kế hình tròn đặt trưng. Với màu đen sang trọng, tinh tế. Chiều cao 9.3cm giúp robot có khả năng vượt chướng ngại vật lên tới 2cm.', 'https://grobot.vn/wp-content/uploads/2019/01/dn320c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (11, 'ECOVACS DEEBOT DN520 Robot hút bụi', '5700000.00', 'mayhutbui', 'Kế thừa công nghệ điều hướng của các dòng T8, T9 aivi có thể nhận biết những vật cản nhỏ 1mm. Độ nhạy bén cao gấp 10 lần so với phiên bản trước nhờ được trang bị hệ thống True Detect 3D thông minh. Trong quá trình làm sạch Robot T9 AIVI có thể phát hiện ra vật cản, mép tường, …  tự động né tránh và thay đổi đường đi nhờ bộ cảm biến SLAM thông minh.', 'https://grobot.vn/wp-content/uploads/2020/09/dn520c-300x457.jpg', 'ECOVACS', 0, 100, '2021-10-01'),
-(12, 'Robot hút bụi  Ecovacs Deebot T8', '8790000.00', 'mayhutbui', 'Ecovacs Robotics đã công bố bổ sung mới nhất cho dòng robot là:Ecovacs Deebot Ozmo T8 AIVI. Thiết bị thông minh này là một trình dọn dẹp trước có tính năng chipset AI và mô-đun máy ảnh. Theo Ecovacs, công nghệ này giúp T8 AIVI lập bản đồ nhà nhanh hơn và chính xác hơn các máy hút bụi khác sử dụng công nghệ điều hướng LDS. Ecovacs tuyên bố rằng điều này cho phép chân không phát hiện tốt hơn các chướng ngại vật trên đường đi của nó và giảm nguy cơ bị kẹt 60% so với các mô hình trước đó.', 'https://grobot.vn/wp-content/uploads/2019/01/t8c-1-300x457.jpg', 'ECOVACS', 1, 94, '2021-10-01'),
+(12, 'Robot hút bụi  Ecovacs Deebot T8', '8790000.00', 'mayhutbui', 'Ecovacs Robotics đã công bố bổ sung mới nhất cho dòng robot là:Ecovacs Deebot Ozmo T8 AIVI. Thiết bị thông minh này là một trình dọn dẹp trước có tính năng chipset AI và mô-đun máy ảnh. Theo Ecovacs, công nghệ này giúp T8 AIVI lập bản đồ nhà nhanh hơn và chính xác hơn các máy hút bụi khác sử dụng công nghệ điều hướng LDS. Ecovacs tuyên bố rằng điều này cho phép chân không phát hiện tốt hơn các chướng ngại vật trên đường đi của nó và giảm nguy cơ bị kẹt 60% so với các mô hình trước đó.', 'https://grobot.vn/wp-content/uploads/2019/01/t8c-1-300x457.jpg', 'ECOVACS', 1, 12, '2021-10-01'),
 (13, 'Robot hút bụi Ecovacs DD35 (Ozmo 600)', '4500000.00', 'mayhutbui', 'Nhà là nơi cuối cùng mà mỗi người trong chúng ta trở về sau một ngày làm việc bận rộn. Với những người có quỹ thời gian hạn hẹp, thay vì mất quá nhiều thời gian dọn dẹp thì giờ đây đã có Ecovacs Deebot DD35 lo. Với tích hợp cả 2 chức năng hút và lau đồng thời Ecovacs Deebot DD35 có khả năng đánh bay mọi bụi bẩn trong tíc tắc, mang lại một bầu không khí mới cho ngôi nhà bạn.', 'https://grobot.vn/wp-content/uploads/2019/01/dd35c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (14, 'Robot hút bụi Ecovacs Deebot Dn33 (Ozmo 900)', '6000000.00', 'mayhutbui', 'Hiện nay trên thị trường có rất nhiều sản phẩm robot hút bụi thông minh, một trong số đó không thể không nhắc tới Ecovacs Deebot Dn33  ( tên quốc tế là Ecovacs Deebot 900) đến từ thương hiệu công nghệ toàn cầu Ecovacs Robotics – nằm trong top 3 thương hiệu robot hút bụi lau nhà lớn nhất của thị trường Trung Quốc. Deebot DE55 mới ra mắt vào năm 2018, thiết bị sở hữu công nghệ thông minh của Mỹ và được lắp ráp tại Trung Quốc. ', 'https://grobot.vn/wp-content/uploads/2019/01/dn33c1-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
 (15, 'Robot hút bụi Ecovacs Deebot Dn55', '6500000.00', 'mayhutbui', 'Công việc dọn nhà hàng ngày tiêu tốn không chỉ thời gian mà công sức mệt nhọc của bạn. Với Robot hút bụi lau nhà thì nỗi lo không còn nữa bởi tất cả hoàn toàn tự động. Khả năng thông minh và hiệu quả làm sạch vượt trội đem lại của Robot luôn đuợc đánh giá cao hơn so với phương pháp dọn nhà thủ công. Bạn thảnh thơi mà nhà cửa vẫn sạch sẽ tinh tươm. Với Robot hút bụi lau nhà Ecovacs Deebot DN55 thời gian cho công việc dọn dẹp nhà cửa sẽ được giải phóng. Bạn có nhiều thời gian cho con cái, gia đình cũng như công việc kiếm tiền. Với mức đầu tư không quá lớn nhưng hiệu quả đem lại có thể tiết kiệm không chỉ thời gian mà còn là tiền bạc của bạn.', 'https://grobot.vn/wp-content/uploads/2020/09/dn55c-300x457.jpg', 'ECOVACS', 0, 99, '2021-10-01'),
@@ -566,7 +637,7 @@ INSERT INTO `sanpham` (`masp`, `tensp`, `giatien`, `loaisanpham`, `motasanpham`,
 (67, 'điều hòa hơi nước', '8882221.00', 'dieuhoathongminh', 'rất perfect', 'http://localhost/www/uploads/789.jpg', 'Amazon', 0, 986, '2021-10-29'),
 (68, 'điều hòa hơi nước siêu phẩm nhat', '8882221.00', 'dieuhoathongminh', 'rất perfect nha nha nha', '/www/uploads/11121.jpeg', 'Amazon', 0, 986, '2021-11-02'),
 (71, 'Hút Bụi Siêu Cấp', '20121212.00', 'mayhutbui', 'very cheap very good', '/www/uploads/hutbui123.jpg', 'amazon', 0, 981, '2021-11-12'),
-(77, 'điều hòa thông minh', '9999999999.00', 'dieuhoathongminh', 'rất đẹp , bền và đắt ', '/www/uploads/999888.jpg', 'vnx', 0, 32312313, '2021-11-16');
+(77, 'điều hòa thông minh', '9999999999.00', 'dieuhoathongminh', 'rất đẹp , bền và đắt ', '/www/uploads/999888.jpg', 'vnx', 0, 0, '2021-11-29');
 
 -- --------------------------------------------------------
 
@@ -593,7 +664,8 @@ INSERT INTO `thongtinnhanxetsanpham` (`manhanxet`, `masp`, `tendangnhap`, `noidu
 (27, 6, 'khachhang', 'dùng rất tiện', 5, '2021-11-18'),
 (28, 71, 'khachhang', 'Dùng Rất Chuyên Nghiệp', 5, '2021-11-18'),
 (29, 5, 'lelong12102k2@gmail.com', 'dùng rất tốt', 5, '2021-11-18'),
-(30, 12, 'lequanglong12102k2@gmail.com', 'oke', 5, '2021-11-24');
+(30, 12, 'lequanglong12102k2@gmail.com', 'oke', 5, '2021-11-24'),
+(31, 1, 'lequanglong12102k2@gmail.com', 'sản phẩm rất tốt', 5, '2021-11-29');
 
 -- --------------------------------------------------------
 
@@ -639,7 +711,7 @@ INSERT INTO `tinnhan` (`matinnhan`, `tendangnhap`, `thoigiannhancuoicung`) VALUE
 ('hyh-tn', 'hyh', '2021-11-21 14:58:46'),
 ('khachhang-tn', 'khachhang', '2021-11-21 14:55:14'),
 ('lelong12102k2@gmail.com-tn', 'lelong12102k2@gmail.com', '2021-11-15 09:21:33'),
-('lequanglong12102k2@gmail.com-tn', 'lequanglong12102k2@gmail.com', '2021-11-24 09:46:50'),
+('lequanglong12102k2@gmail.com-tn', 'lequanglong12102k2@gmail.com', '2021-11-29 08:33:35'),
 ('lqlong.20it1@vku.udn.vn-tn', 'lqlong.20it1@vku.udn.vn', '2021-11-19 12:09:45');
 
 --
@@ -760,13 +832,13 @@ ALTER TABLE `tinnhan`
 -- AUTO_INCREMENT for table `chitiettinnhan`
 --
 ALTER TABLE `chitiettinnhan`
-  MODIFY `machitiettinnhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=233;
+  MODIFY `machitiettinnhan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=236;
 
 --
 -- AUTO_INCREMENT for table `congviec`
 --
 ALTER TABLE `congviec`
-  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=99;
+  MODIFY `macv` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
 
 --
 -- AUTO_INCREMENT for table `diachigiaohang`
@@ -784,7 +856,7 @@ ALTER TABLE `hangsx`
 -- AUTO_INCREMENT for table `hoadon`
 --
 ALTER TABLE `hoadon`
-  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=148;
+  MODIFY `mahoadon` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=173;
 
 --
 -- AUTO_INCREMENT for table `luong`
@@ -796,13 +868,13 @@ ALTER TABLE `luong`
 -- AUTO_INCREMENT for table `phanhoidanhgia`
 --
 ALTER TABLE `phanhoidanhgia`
-  MODIFY `maphanhoi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `maphanhoi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `resetpass`
 --
 ALTER TABLE `resetpass`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=24;
 
 --
 -- AUTO_INCREMENT for table `sanpham`
@@ -814,7 +886,7 @@ ALTER TABLE `sanpham`
 -- AUTO_INCREMENT for table `thongtinnhanxetsanpham`
 --
 ALTER TABLE `thongtinnhanxetsanpham`
-  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
+  MODIFY `manhanxet` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
 -- AUTO_INCREMENT for table `thumucsanpham`
